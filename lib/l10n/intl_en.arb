@@ -1,0 +1,15 @@
+{
+    "@@locale": "en",
+    "@@author": "Simbre Achraf simbreachraf@gmail.com",
+    "@@context": "This is a real estate buying and selling application.",
+    "authorName": "Simbre Achraf",
+    "@authorName": {
+        "description": "The name of the author of the application"
+    },
+    "appName": "Chess Traps",
+    "@appName": {
+        "description": "The name of the application"
+    },
+    "chessTraps": "Chess Traps",
+    "home": "Home"
+}

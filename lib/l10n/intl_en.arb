@@ -11,5 +11,9 @@
         "description": "The name of the application"
     },
     "chessTraps": "Chess Traps",
-    "home": "Home"
+    "home": "Home",
+    "traps": "Traps",
+    "favorite": "Favorite",
+    "training": "Training",
+    "profile": "Profile"
 }

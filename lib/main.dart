@@ -1,8 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-// ignore: unused_import
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:chess_traps/generated/assets.dart';
 import 'package:chess_traps/router.dart';
@@ -11,9 +12,9 @@ import 'package:splash_master/core/splash_master.dart';
 import 'l10n/app_localizations.dart';
 import 'theme/theme.dart';
 import 'theme/theme_utils.dart';
+import 'package:device_preview/device_preview.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
-import 'package:device_preview/device_preview.dart';
 
 void main() {
   if (kIsWeb) {
@@ -25,12 +26,16 @@ void main() {
     );
     yield LicenseEntryWithLineBreaks(<String>['google_fonts'], license);
   });
+  LicenseRegistry.addLicense(() async* {
+    final String license = "Creative Commons BY, https://rive.app/@Ayushb58/";
+    yield LicenseEntryWithLineBreaks(<String>['Ayushb58'], license);
+  });
 
   WidgetsFlutterBinding.ensureInitialized();
   SplashMaster.initialize();
   SplashMaster.resume();
 
-  if (kDebugMode && kIsWeb) {
+  if (kDebugMode && (kIsWeb || Platform.isWindows)) {
     // Animate.restartOnHotReload = true;
     runApp(
       DevicePreview(
@@ -60,7 +65,7 @@ class MainApp extends StatelessWidget {
         title: 'Chess traps',
         themeMode: ThemeMode.light,
         theme: theme.light(),
-        darkTheme: theme.light(),
+        darkTheme: theme.dark(),
         home: MaterialApp.router(
           debugShowCheckedModeBanner: false,
           routerConfig: router,
@@ -80,7 +85,7 @@ class MainApp extends StatelessWidget {
       title: 'Chess traps',
       themeMode: ThemeMode.light,
       theme: theme.light(),
-      darkTheme: theme.light(),
+      darkTheme: theme.dark(),
       home: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         routerConfig: router,

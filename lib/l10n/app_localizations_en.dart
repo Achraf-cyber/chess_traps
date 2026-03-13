@@ -31,4 +31,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile => 'Profile';
+
+  @override
+  String get trapOfTheDay => 'Trap of the day';
+
+  @override
+  String get recentTraps => 'Recent Traps';
 }

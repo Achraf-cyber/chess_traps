@@ -15,5 +15,7 @@
     "traps": "Traps",
     "favorite": "Favorite",
     "training": "Training",
-    "profile": "Profile"
+    "profile": "Profile",
+    "trapOfTheDay": "Trap of the day",
+    "recentTraps": "Recent Traps"
 }

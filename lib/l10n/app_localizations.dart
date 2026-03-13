@@ -149,6 +149,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Profile'**
   String get profile;
+
+  /// No description provided for @trapOfTheDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Trap of the day'**
+  String get trapOfTheDay;
+
+  /// No description provided for @recentTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent Traps'**
+  String get recentTraps;
 }
 
 class _AppLocalizationsDelegate

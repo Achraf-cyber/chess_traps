@@ -10,6 +10,6 @@ class TrainingSubscreen extends StatefulWidget {
 class _TrainingSubscreenState extends State<TrainingSubscreen> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const Column(children: []);
   }
 }

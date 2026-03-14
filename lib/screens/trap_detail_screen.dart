@@ -36,7 +36,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           var fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
           if (currentMoveIndex > 0) {
             // Replay the game to calculate FEN
-            var replayGame = Game.initial();
+            Position replayGame = Chess.initial;
             final pgnData = trap?.cleanMoves ?? '';
             final movesParams = pgnData.replaceAll(RegExp(r'\d+\.'), '').trim().split(RegExp(r'\s+'));
             
@@ -46,7 +46,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               try {
                 final move = replayGame.parseSan(moveStr);
                 if (move != null) {
-                  replayGame = replayGame.playUnsafe(move);
+                  replayGame = replayGame.playUnchecked(move);
                 }
               } catch (e) {
                 // Ignore parse errors

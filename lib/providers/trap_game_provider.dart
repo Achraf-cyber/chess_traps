@@ -1,9 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:dartchess/dartchess.dart';
-import '../models/chess_trap.dart';
 import 'traps_provider.dart';
 
-final trapGameProvider = FutureProvider.family<Game, int>((ref, index) async {
+final trapGameProvider = FutureProvider.family<Position, int>((ref, index) async {
   final traps = await ref.watch(trapsProvider.future);
   if (index < 0 || index >= traps.length) {
     throw Exception('Trap not found');
@@ -12,7 +11,7 @@ final trapGameProvider = FutureProvider.family<Game, int>((ref, index) async {
   final trap = traps[index];
   
   // Create a new game
-  var game = Game.initial();
+  Position game = Chess.initial;
   
   // Parse the clean_moves PGN string
   // E.g., "1.e4 e5 2.Ne2 Bc5 3.f4 Qf6 4.c3 Nc6"
@@ -29,7 +28,7 @@ final trapGameProvider = FutureProvider.family<Game, int>((ref, index) async {
     try {
       final move = game.parseSan(moveStr);
       if (move != null) {
-        game = game.playUnsafe(move);
+        game = game.playUnchecked(move);
       }
     } catch (e) {
       print('Error parsing move $moveStr: $e');

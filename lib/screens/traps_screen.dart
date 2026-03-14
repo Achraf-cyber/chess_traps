@@ -21,13 +21,28 @@ class TrapsScreen extends ConsumerWidget {
             itemCount: traps.length,
             itemBuilder: (context, index) {
               final trap = traps[index];
-              return ListTile(
-                title: Text(trap.trapName),
-                subtitle: Text(trap.opening),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  context.push('/trap/$index');
-                },
+              return Card(
+                margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                child: ListTile(
+                  contentPadding: const EdgeInsets.all(16),
+                  leading: CircleAvatar(
+                    backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                    child: const Icon(Icons.psychology),
+                  ),
+                  title: Text(
+                    trap.trapName,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Padding(
+                    padding: const EdgeInsets.only(top: 8.0),
+                    child: Text(trap.opening),
+                  ),
+                  trailing: const Icon(Icons.chevron_right),
+                  onTap: () {
+                    context.push('/trap/$index');
+                  },
+                ),
               );
             },
           );

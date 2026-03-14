@@ -1,29 +1,25 @@
 import 'dart:io';
 
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:chess_traps/generated/assets.dart';
-import 'package:chess_traps/router.dart';
-import 'package:splash_master/core/splash_master.dart';
-
-import 'l10n/app_localizations.dart';
-import 'theme/theme.dart';
-import 'theme/theme_utils.dart';
-import 'package:device_preview/device_preview.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
+
+import 'generated/assets.dart';
+import 'l10n/app_localizations.dart';
+import 'router.dart';
+import 'theme/theme.dart';
+import 'theme/theme_utils.dart';
 
 void main() {
   if (kIsWeb) {
     usePathUrlStrategy();
   }
   LicenseRegistry.addLicense(() async* {
-    final String license = await rootBundle.loadString(
-      AppAssets.googleFontsQuicksandOflTxt,
-    );
+    final String license = await rootBundle.loadString(AppAssets.googleFontsQuicksandOflTxt);
     yield LicenseEntryWithLineBreaks(<String>['google_fonts'], license);
   });
   LicenseRegistry.addLicense(() async* {
@@ -32,8 +28,6 @@ void main() {
   });
 
   WidgetsFlutterBinding.ensureInitialized();
-  SplashMaster.initialize();
-  SplashMaster.resume();
 
   if (kDebugMode && (kIsWeb || Platform.isWindows)) {
     // Animate.restartOnHotReload = true;

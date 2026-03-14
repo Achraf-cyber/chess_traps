@@ -1,32 +1,57 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'features/home/view/home_screen.dart';
 
-part 'router.g.dart';
+import 'screens/home_screen.dart';
+import 'screens/traps_screen.dart';
+import 'screens/favorites_screen.dart';
+import 'screens/train_screen.dart';
+import 'screens/profile_screen.dart';
+import 'screens/trap_detail_screen.dart';
+import 'screens/main_scaffold.dart';
 
-final GoRouter router = GoRouter(routes: $appRoutes);
+final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
+final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>();
 
-@TypedGoRoute<HomeRoute>(path: '/')
-class HomeRoute extends GoRouteData with $HomeRoute {
-  const HomeRoute();
-
-  @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) {
-    return CustomTransitionPage<void>(
-      key: state.pageKey,
-      child: HomeScreen(),
-      transitionDuration: Durations.extralong1,
-      transitionsBuilder:
-          (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-            Widget child,
-          ) {
-            return FadeTransition(opacity: animation, child: child);
-          },
-    );
-  }
-}
+final GoRouter router = GoRouter(
+  initialLocation: '/',
+  navigatorKey: _rootNavigatorKey,
+  routes: [
+    ShellRoute(
+      navigatorKey: _shellNavigatorKey,
+      builder: (context, state, child) {
+        return MainScaffold(child: child);
+      },
+      routes: [
+        GoRoute(
+          path: '/',
+          pageBuilder: (context, state) => const NoTransitionPage(child: HomeScreen()),
+        ),
+        GoRoute(
+          path: '/traps',
+          pageBuilder: (context, state) => const NoTransitionPage(child: TrapsScreen()),
+        ),
+        GoRoute(
+          path: '/favorites',
+          pageBuilder: (context, state) => const NoTransitionPage(child: FavoritesScreen()),
+        ),
+        GoRoute(
+          path: '/train',
+          pageBuilder: (context, state) => const NoTransitionPage(child: TrainScreen()),
+        ),
+        GoRoute(
+          path: '/profile',
+          pageBuilder: (context, state) => const NoTransitionPage(child: ProfileScreen()),
+        ),
+      ],
+    ),
+    GoRoute(
+      path: '/trap/:index',
+      parentNavigatorKey: _rootNavigatorKey,
+      builder: (context, state) {
+        final indexStr = state.pathParameters['index']!;
+        final index = int.tryParse(indexStr) ?? 0;
+        return TrapDetailScreen(trapIndex: index);
+      },
+    ),
+  ],
+);

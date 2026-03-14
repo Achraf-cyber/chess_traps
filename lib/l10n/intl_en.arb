@@ -17,5 +17,7 @@
     "training": "Training",
     "profile": "Profile",
     "trapOfTheDay": "Trap of the day",
-    "recentTraps": "Recent Traps"
+    "recentTraps": "Recent Traps",
+    "exampleTrap": "Fryied Attack",
+    "lastTimeChecked": "Last time checked"
 }

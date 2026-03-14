@@ -24,6 +24,8 @@ class MainSubscreen extends StatelessWidget {
                   orientation: .white,
                   fen: initialBoardFen,
                 ),
+                Text(context.phrase.exampleTrap),
+                Text(context.phrase.lastTimeChecked),
               ],
             ),
           ],

@@ -37,4 +37,10 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get recentTraps => 'Recent Traps';
+
+  @override
+  String get exampleTrap => 'Fryied Attack';
+
+  @override
+  String get lastTimeChecked => 'Last time checked';
 }

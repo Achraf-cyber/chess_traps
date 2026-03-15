@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
-import '../providers/traps_provider.dart';
+import '../../../router.dart';
+import '../../../utils.dart';
+import '../data/chess_trap.dart';
+import '../provider/traps_provider.dart';
 
 class TrapsScreen extends ConsumerWidget {
   const TrapsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final trapsAsync = ref.watch(trapsProvider);
+    final AsyncValue<List<ChessTrap>> trapsAsync = ref.watch(trapsProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Traps')),
+      appBar: AppBar(title: Text(context.phrase.traps)),
       body: trapsAsync.when(
         data: (traps) {
           if (traps.isEmpty) {
-            return const Center(child: Text('No traps found.'));
+            return Center(child: Text(context.phrase.noTrapsFound));
           }
           return ListView.builder(
             itemCount: traps.length,
             itemBuilder: (context, index) {
-              final trap = traps[index];
+              final ChessTrap trap = traps[index];
               return Card(
                 margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -39,9 +41,7 @@ class TrapsScreen extends ConsumerWidget {
                     child: Text(trap.opening),
                   ),
                   trailing: const Icon(Icons.chevron_right),
-                  onTap: () {
-                    context.push('/trap/$index');
-                  },
+                  onTap: () => TrapDetailRoute(index: index).push<void>(context),
                 ),
               );
             },

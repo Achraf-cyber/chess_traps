@@ -1,15 +1,9 @@
 {
     "@@locale": "en",
     "@@author": "Simbre Achraf simbreachraf@gmail.com",
-    "@@context": "This is a real estate buying and selling application.",
+    "@@context": "This is an application for discovering chess traps.",
     "authorName": "Simbre Achraf",
-    "@authorName": {
-        "description": "The name of the author of the application"
-    },
     "appName": "Chess Traps",
-    "@appName": {
-        "description": "The name of the application"
-    },
     "chessTraps": "Chess Traps",
     "home": "Home",
     "traps": "Traps",
@@ -18,6 +12,22 @@
     "profile": "Profile",
     "trapOfTheDay": "Trap of the day",
     "recentTraps": "Recent Traps",
-    "exampleTrap": "Fryied Attack",
-    "lastTimeChecked": "Last time checked"
+    "exampleTrap": "Fried Liver Attack",
+    "lastTimeChecked": "Last time checked",
+    "explore": "Explore",
+    "viewAllTraps": "View All Traps",
+    "errorLoadingTraps": "Error loading traps",
+    "noTrapsFound": "No traps found",
+    "theme": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark",
+    "appLanguage": "App Language",
+    "openSourceLicense": "Open source license",
+    "usedPackages": "Packages that were used",
+    "developer": "Developer",
+    "editProfile": "Edit Profile",
+    "logout": "Logout",
+    "masteredTraps": "{count} Mastered traps ({percentage}%)",
+    "english": "English"
 }

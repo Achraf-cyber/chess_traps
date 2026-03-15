@@ -100,13 +100,13 @@ abstract class AppLocalizations {
     Locale('fr'),
   ];
 
-  /// The name of the author of the application
+  /// No description provided for @authorName.
   ///
   /// In en, this message translates to:
   /// **'Simbre Achraf'**
   String get authorName;
 
-  /// The name of the application
+  /// No description provided for @appName.
   ///
   /// In en, this message translates to:
   /// **'Chess Traps'**
@@ -163,7 +163,7 @@ abstract class AppLocalizations {
   /// No description provided for @exampleTrap.
   ///
   /// In en, this message translates to:
-  /// **'Fryied Attack'**
+  /// **'Fried Liver Attack'**
   String get exampleTrap;
 
   /// No description provided for @lastTimeChecked.
@@ -171,6 +171,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Last time checked'**
   String get lastTimeChecked;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @viewAllTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'View All Traps'**
+  String get viewAllTraps;
+
+  /// No description provided for @errorLoadingTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading traps'**
+  String get errorLoadingTraps;
+
+  /// No description provided for @noTrapsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No traps found'**
+  String get noTrapsFound;
+
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// No description provided for @system.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get system;
+
+  /// No description provided for @light.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get light;
+
+  /// No description provided for @dark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get dark;
+
+  /// No description provided for @appLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'App Language'**
+  String get appLanguage;
+
+  /// No description provided for @openSourceLicense.
+  ///
+  /// In en, this message translates to:
+  /// **'Open source license'**
+  String get openSourceLicense;
+
+  /// No description provided for @usedPackages.
+  ///
+  /// In en, this message translates to:
+  /// **'Packages that were used'**
+  String get usedPackages;
+
+  /// No description provided for @developer.
+  ///
+  /// In en, this message translates to:
+  /// **'Developer'**
+  String get developer;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
+  /// No description provided for @masteredTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Mastered traps ({percentage}%)'**
+  String masteredTraps(Object count, Object percentage);
+
+  /// No description provided for @english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get english;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

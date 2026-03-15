@@ -41,7 +41,7 @@ final class FavoritesNotifierProvider
   }
 }
 
-String _$favoritesNotifierHash() => r'ff6c79c921f5211203488683053bcf9add7b3ab2';
+String _$favoritesNotifierHash() => r'1370259a8e759b3a2b2e4709a7093e5c735789c9';
 
 abstract class _$FavoritesNotifier extends $Notifier<List<int>> {
   List<int> build();

@@ -39,8 +39,58 @@ class AppLocalizationsEn extends AppLocalizations {
   String get recentTraps => 'Recent Traps';
 
   @override
-  String get exampleTrap => 'Fryied Attack';
+  String get exampleTrap => 'Fried Liver Attack';
 
   @override
   String get lastTimeChecked => 'Last time checked';
+
+  @override
+  String get explore => 'Explore';
+
+  @override
+  String get viewAllTraps => 'View All Traps';
+
+  @override
+  String get errorLoadingTraps => 'Error loading traps';
+
+  @override
+  String get noTrapsFound => 'No traps found';
+
+  @override
+  String get theme => 'Theme';
+
+  @override
+  String get system => 'System';
+
+  @override
+  String get light => 'Light';
+
+  @override
+  String get dark => 'Dark';
+
+  @override
+  String get appLanguage => 'App Language';
+
+  @override
+  String get openSourceLicense => 'Open source license';
+
+  @override
+  String get usedPackages => 'Packages that were used';
+
+  @override
+  String get developer => 'Developer';
+
+  @override
+  String get editProfile => 'Edit Profile';
+
+  @override
+  String get logout => 'Logout';
+
+  @override
+  String masteredTraps(Object count, Object percentage) {
+    return '$count Mastered traps ($percentage%)';
+  }
+
+  @override
+  String get english => 'English';
 }

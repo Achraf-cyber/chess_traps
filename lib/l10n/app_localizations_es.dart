@@ -12,35 +12,85 @@ class AppLocalizationsEs extends AppLocalizations {
   String get authorName => 'Simbre Achraf';
 
   @override
-  String get appName => 'chess_traps';
+  String get appName => 'Celadas de Ajedrez';
 
   @override
-  String get chessTraps => 'Chess Traps';
+  String get chessTraps => 'Celadas de Ajedrez';
 
   @override
-  String get home => 'Home';
+  String get home => 'Inicio';
 
   @override
-  String get traps => 'Traps';
+  String get traps => 'Celadas';
 
   @override
-  String get favorite => 'Favorite';
+  String get favorite => 'Favorito';
 
   @override
-  String get training => 'Training';
+  String get training => 'Entrenamiento';
 
   @override
-  String get profile => 'Profile';
+  String get profile => 'Perfil';
 
   @override
-  String get trapOfTheDay => 'Trap of the day';
+  String get trapOfTheDay => 'Celada del día';
 
   @override
-  String get recentTraps => 'Recent Traps';
+  String get recentTraps => 'Celadas recientes';
 
   @override
-  String get exampleTrap => 'Fryied Attack';
+  String get exampleTrap => 'Ataque Fried Liver';
 
   @override
-  String get lastTimeChecked => 'Last time checked';
+  String get lastTimeChecked => 'Última vez verificado';
+
+  @override
+  String get explore => 'Explorar';
+
+  @override
+  String get viewAllTraps => 'Ver todas las celadas';
+
+  @override
+  String get errorLoadingTraps => 'Error al cargar las celadas';
+
+  @override
+  String get noTrapsFound => 'No se encontraron celadas';
+
+  @override
+  String get theme => 'Tema';
+
+  @override
+  String get system => 'Sistema';
+
+  @override
+  String get light => 'Claro';
+
+  @override
+  String get dark => 'Oscuro';
+
+  @override
+  String get appLanguage => 'Idioma de la aplicación';
+
+  @override
+  String get openSourceLicense => 'Licencia de código abierto';
+
+  @override
+  String get usedPackages => 'Paquetes que se utilizaron';
+
+  @override
+  String get developer => 'Desarrollador';
+
+  @override
+  String get editProfile => 'Editar perfil';
+
+  @override
+  String get logout => 'Cerrar sesión';
+
+  @override
+  String masteredTraps(Object count, Object percentage) {
+    return '$count Celadas dominadas ($percentage%)';
+  }
+
+  @override
+  String get english => 'Inglés';
 }

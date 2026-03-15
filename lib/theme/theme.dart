@@ -1,11 +1,11 @@
-import "package:flutter/material.dart";
+import 'package:flutter/material.dart';
 
-import "white_spaces.dart";
+import 'white_spaces.dart';
 
 class MaterialTheme {
-  final TextTheme textTheme;
 
   const MaterialTheme(this.textTheme);
+  final TextTheme textTheme;
 
   static ColorScheme lightScheme() {
     return const ColorScheme(
@@ -352,7 +352,7 @@ class MaterialTheme {
         fillColor: WidgetStateProperty.resolveWith((_) => Colors.transparent),
         checkColor: WidgetStateProperty.resolveWith((_) => Colors.black),
         side: WidgetStateBorderSide.resolveWith(
-          (_) => BorderSide(color: Colors.black54, width: 1),
+          (_) => const BorderSide(color: Colors.black54),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -361,7 +361,7 @@ class MaterialTheme {
         floatingLabelBehavior: FloatingLabelBehavior.always,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(WhiteSpaces.buttonBorderRadius),
-          borderSide: BorderSide(width: 2),
+          borderSide: const BorderSide(width: 2),
         ),
       ),
       filledButtonTheme: FilledButtonThemeData(
@@ -380,13 +380,6 @@ class MaterialTheme {
 }
 
 class ExtendedColor {
-  final Color seed, value;
-  final ColorFamily light;
-  final ColorFamily lightHighContrast;
-  final ColorFamily lightMediumContrast;
-  final ColorFamily dark;
-  final ColorFamily darkHighContrast;
-  final ColorFamily darkMediumContrast;
 
   const ExtendedColor({
     required this.seed,
@@ -398,6 +391,13 @@ class ExtendedColor {
     required this.darkHighContrast,
     required this.darkMediumContrast,
   });
+  final Color seed, value;
+  final ColorFamily light;
+  final ColorFamily lightHighContrast;
+  final ColorFamily lightMediumContrast;
+  final ColorFamily dark;
+  final ColorFamily darkHighContrast;
+  final ColorFamily darkMediumContrast;
 }
 
 class ColorFamily {

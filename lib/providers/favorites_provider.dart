@@ -14,8 +14,8 @@ class FavoritesNotifier extends _$FavoritesNotifier {
   }
 
   Future<void> _load() async {
-    final prefs = await SharedPreferences.getInstance();
-    final strings = prefs.getStringList(_key) ?? [];
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final List<String> strings = prefs.getStringList(_key) ?? [];
     state = strings.map((e) => int.parse(e)).toList();
   }
 
@@ -29,7 +29,7 @@ class FavoritesNotifier extends _$FavoritesNotifier {
     
     state = newList;
     
-    final prefs = await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(_key, newList.map((e) => e.toString()).toList());
   }
 }

@@ -11,12 +11,12 @@ class ThemeModeNotifier extends Notifier<String> {
   }
 
   Future<void> _load() async {
-    final prefs = await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     state = prefs.getString(_key) ?? 'system';
   }
 
   Future<void> setThemeMode(String mode) async {
-    final prefs = await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString(_key, mode);
     state = mode;
   }
@@ -34,12 +34,12 @@ class LanguageNotifier extends Notifier<String> {
   }
 
   Future<void> _load() async {
-    final prefs = await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     state = prefs.getString(_key) ?? 'en';
   }
 
   Future<void> setLanguage(String code) async {
-    final prefs = await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString(_key, code);
     state = code;
   }

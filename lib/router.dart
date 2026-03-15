@@ -1,57 +1,88 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'screens/home_screen.dart';
-import 'screens/traps_screen.dart';
-import 'screens/favorites_screen.dart';
-import 'screens/train_screen.dart';
-import 'screens/profile_screen.dart';
-import 'screens/trap_detail_screen.dart';
-import 'screens/main_scaffold.dart';
+import 'features/favorites/view/favorites_screen.dart';
+import 'features/home/view/main_scaffold.dart';
+import 'features/home/view/main_subscreen.dart';
+import 'features/profile/view/profile_screen.dart';
+import 'features/training/view/train_screen.dart';
+import 'features/traps/view/trap_detail_screen.dart';
+import 'features/traps/view/traps_screen.dart';
+
+part 'router.g.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
-final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>();
 
 final GoRouter router = GoRouter(
   initialLocation: '/',
   navigatorKey: _rootNavigatorKey,
-  routes: [
-    ShellRoute(
-      navigatorKey: _shellNavigatorKey,
-      builder: (context, state, child) {
-        return MainScaffold(child: child);
-      },
-      routes: [
-        GoRoute(
-          path: '/',
-          pageBuilder: (context, state) => const NoTransitionPage(child: HomeScreen()),
-        ),
-        GoRoute(
-          path: '/traps',
-          pageBuilder: (context, state) => const NoTransitionPage(child: TrapsScreen()),
-        ),
-        GoRoute(
-          path: '/favorites',
-          pageBuilder: (context, state) => const NoTransitionPage(child: FavoritesScreen()),
-        ),
-        GoRoute(
-          path: '/train',
-          pageBuilder: (context, state) => const NoTransitionPage(child: TrainScreen()),
-        ),
-        GoRoute(
-          path: '/profile',
-          pageBuilder: (context, state) => const NoTransitionPage(child: ProfileScreen()),
-        ),
-      ],
-    ),
-    GoRoute(
-      path: '/trap/:index',
-      parentNavigatorKey: _rootNavigatorKey,
-      builder: (context, state) {
-        final indexStr = state.pathParameters['index']!;
-        final index = int.tryParse(indexStr) ?? 0;
-        return TrapDetailScreen(trapIndex: index);
-      },
-    ),
-  ],
+  routes: $appRoutes,
 );
+
+@TypedShellRoute<MainShellRouteData>(
+  routes: <TypedRoute<RouteData>>[
+    TypedGoRoute<HomeRoute>(path: '/'),
+    TypedGoRoute<TrapsRoute>(path: '/traps'),
+    TypedGoRoute<FavoritesRoute>(path: '/favorites'),
+    TypedGoRoute<TrainRoute>(path: '/train'),
+    TypedGoRoute<ProfileRoute>(path: '/profile'),
+  ],
+)
+class MainShellRouteData extends ShellRouteData {
+  const MainShellRouteData();
+
+  @override
+  Widget builder(BuildContext context, GoRouterState state, Widget child) {
+    return MainScaffold(child: child);
+  }
+}
+
+class HomeRoute extends GoRouteData with $HomeRoute {
+  const HomeRoute();
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      const NoTransitionPage(child: MainSubscreen());
+}
+
+class TrapsRoute extends GoRouteData with $TrapsRoute {
+  const TrapsRoute();
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      const NoTransitionPage(child: TrapsScreen());
+}
+
+class FavoritesRoute extends GoRouteData with $FavoritesRoute {
+  const FavoritesRoute();
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      const NoTransitionPage(child: FavoritesScreen());
+}
+
+class TrainRoute extends GoRouteData with $TrainRoute {
+  const TrainRoute();
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      const NoTransitionPage(child: TrainScreen());
+}
+
+class ProfileRoute extends GoRouteData with $ProfileRoute {
+  const ProfileRoute();
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      const NoTransitionPage(child: ProfileScreen());
+}
+
+@TypedGoRoute<TrapDetailRoute>(path: '/trap/:index')
+class TrapDetailRoute extends GoRouteData with $TrapDetailRoute {
+  const TrapDetailRoute({required this.index});
+  final int index;
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      TrapDetailScreen(trapIndex: index);
+}

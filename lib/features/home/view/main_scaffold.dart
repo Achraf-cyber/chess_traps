@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ionicons/ionicons.dart';
+
+import '../../../router.dart';
+import '../../../utils.dart';
 
 class MainScaffold extends ConsumerWidget {
-  final Widget child;
-  
   const MainScaffold({super.key, required this.child});
+  final Widget child;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     // Current URI path to determine which bottom nav item is selected
-    final uri = GoRouterState.of(context).uri;
+    final Uri uri = GoRouterState.of(context).uri;
     var currentIndex = 0;
     if (uri.path.startsWith('/traps')) {
       currentIndex = 1;
@@ -29,47 +33,42 @@ class MainScaffold extends ConsumerWidget {
         onDestinationSelected: (idx) {
           switch (idx) {
             case 0:
-              context.go('/');
-              break;
+              const HomeRoute().go(context);
             case 1:
-              context.go('/traps');
-              break;
+              const TrapsRoute().go(context);
             case 2:
-              context.go('/favorites');
-              break;
+              const FavoritesRoute().go(context);
             case 3:
-              context.go('/train');
-              break;
+              const TrainRoute().go(context);
             case 4:
-              context.go('/profile');
-              break;
+              const ProfileRoute().go(context);
           }
         },
-        destinations: const [
+        destinations: [
           NavigationDestination(
-            icon: Icon(Icons.home_outlined),
-            selectedIcon: Icon(Icons.home),
-            label: 'Home',
+            icon: const Icon(Icons.home_outlined),
+            selectedIcon: const Icon(Icons.home),
+            label: context.phrase.home,
           ),
           NavigationDestination(
-            icon: Icon(Icons.list_alt_outlined),
-            selectedIcon: Icon(Icons.list_alt),
-            label: 'Traps',
+            icon: const Icon(FontAwesomeIcons.chess),
+            selectedIcon: const Icon(FontAwesomeIcons.chess),
+            label: context.phrase.traps,
           ),
           NavigationDestination(
-            icon: Icon(Icons.favorite_outline),
-            selectedIcon: Icon(Icons.favorite),
-            label: 'Favorite',
+            icon: const Icon(Icons.favorite_outline),
+            selectedIcon: const Icon(Icons.favorite),
+            label: context.phrase.favorite,
           ),
           NavigationDestination(
-            icon: Icon(Icons.fitness_center_outlined),
-            selectedIcon: Icon(Icons.fitness_center),
-            label: 'Train',
+            icon: const Icon(Ionicons.train_outline),
+            selectedIcon: const Icon(Ionicons.train),
+            label: context.phrase.training,
           ),
           NavigationDestination(
-            icon: Icon(Icons.person_outline),
-            selectedIcon: Icon(Icons.person),
-            label: 'Profile',
+            icon: const Icon(Icons.person_outline),
+            selectedIcon: const Icon(Icons.person),
+            label: context.phrase.profile,
           ),
         ],
       ),

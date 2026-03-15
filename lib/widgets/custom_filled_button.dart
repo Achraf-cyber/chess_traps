@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:chess_traps/theme/white_spaces.dart';
-import 'package:chess_traps/utils.dart';
+import '../theme/white_spaces.dart';
+import '../utils.dart';
 
 class CustomFilledButton extends StatelessWidget {
-  final void Function() onPressed;
 
   const CustomFilledButton({
     super.key,
     required this.label,
     required this.onPressed,
   });
+  final void Function() onPressed;
 
   final String label;
 
@@ -19,10 +19,9 @@ class CustomFilledButton extends StatelessWidget {
       width: 300,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(WhiteSpaces.buttonBorderRadius),
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          tileMode: TileMode.clamp,
           colors: [Colors.black, Color(0xff333333)],
         ),
       ),

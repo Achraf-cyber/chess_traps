@@ -23,22 +23,17 @@ void main() {
     yield LicenseEntryWithLineBreaks(<String>['google_fonts'], license);
   });
   LicenseRegistry.addLicense(() async* {
-    final String license = "Creative Commons BY, https://rive.app/@Ayushb58/";
-    yield LicenseEntryWithLineBreaks(<String>['Ayushb58'], license);
+    const license = 'Creative Commons BY, https://rive.app/@Ayushb58/';
+    yield const LicenseEntryWithLineBreaks(<String>['Ayushb58'], license);
   });
 
   WidgetsFlutterBinding.ensureInitialized();
 
   if (kDebugMode && (kIsWeb || Platform.isWindows)) {
     // Animate.restartOnHotReload = true;
-    runApp(
-      DevicePreview(
-        enabled: !kReleaseMode,
-        builder: (context) => ProviderScope(child: const MainApp()),
-      ),
-    );
+    runApp(DevicePreview(builder: (context) => const ProviderScope(child: MainApp())));
   } else {
-    runApp(ProviderScope(child: const MainApp()));
+    runApp(const ProviderScope(child: MainApp()));
   }
 }
 
@@ -48,12 +43,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: unused_local_variable
-    final brightness = View.of(context).platformDispatcher.platformBrightness;
-    final quicksand = "Quicksand";
-    TextTheme textTheme = createTextTheme(context, quicksand, quicksand);
+    final Brightness brightness = View.of(context).platformDispatcher.platformBrightness;
+    const quicksand = 'Quicksand';
+    final TextTheme textTheme = createTextTheme(context, quicksand, quicksand);
 
-    MaterialTheme theme = MaterialTheme(textTheme);
-    if (kDebugMode && kIsWeb) {
+    final theme = MaterialTheme(textTheme);
+    if (kDebugMode && (kIsWeb || Platform.isWindows)) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Chess traps',

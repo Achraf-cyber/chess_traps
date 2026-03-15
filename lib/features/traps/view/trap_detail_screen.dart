@@ -1,15 +1,19 @@
+import 'package:chessground/chessground.dart' as cg;
+import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:chessground/chessground.dart' as cg;
-import 'package:dartchess/dartchess.dart';
-import '../providers/trap_game_provider.dart';
-import '../providers/traps_provider.dart';
+
+import '../../../utils.dart';
+
+import '../data/chess_trap.dart';
+import '../provider/trap_game_provider.dart';
+import '../provider/traps_provider.dart';
 
 class TrapDetailScreen extends ConsumerStatefulWidget {
-  final int trapIndex;
   
   const TrapDetailScreen({super.key, required this.trapIndex});
+  final int trapIndex;
 
   @override
   ConsumerState<TrapDetailScreen> createState() => _TrapDetailScreenState();
@@ -20,31 +24,33 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final trapGameAsync = ref.watch(trapGameProvider(widget.trapIndex));
-    final trapsAsync = ref.watch(trapsProvider);
+    final AsyncValue<Position> trapGameAsync = ref.watch(trapGameProvider(widget.trapIndex));
+    final AsyncValue<List<ChessTrap>> trapsAsync = ref.watch(trapsProvider);
 
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(onPressed: () => context.pop()),
-        title: const Text('Trap Details'),
+        title: Text(context.phrase.chessTraps),
       ),
       body: trapGameAsync.when(
         data: (game) {
-          final trap = trapsAsync.value?[widget.trapIndex];
+          final ChessTrap? trap = trapsAsync.value?[widget.trapIndex];
           
           // Get FEN up to the current move index
           var fen = 'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
           if (currentMoveIndex > 0) {
             // Replay the game to calculate FEN
             Position replayGame = Chess.initial;
-            final pgnData = trap?.cleanMoves ?? '';
-            final movesParams = pgnData.replaceAll(RegExp(r'\d+\.'), '').trim().split(RegExp(r'\s+'));
+            final String pgnData = trap?.cleanMoves ?? '';
+            final List<String> movesParams = pgnData.replaceAll(RegExp(r'\d+\.'), '').trim().split(RegExp(r'\s+'));
             
-            for (int i = 0; i < currentMoveIndex && i < movesParams.length; i++) {
-              final moveStr = movesParams[i];
-              if (moveStr.isEmpty) continue;
+            for (var i = 0; i < currentMoveIndex && i < movesParams.length; i++) {
+              final String moveStr = movesParams[i];
+              if (moveStr.isEmpty) {
+                continue;
+              }
               try {
-                final move = replayGame.parseSan(moveStr);
+                final Move? move = replayGame.parseSan(moveStr);
                 if (move != null) {
                   replayGame = replayGame.playUnchecked(move);
                 }
@@ -55,7 +61,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
             fen = replayGame.fen;
           }
 
-          final maxMoves = trap?.cleanMoves.replaceAll(RegExp(r'\d+\.'), '').trim().split(RegExp(r'\s+')).length ?? 0;
+          final int maxMoves = trap?.cleanMoves.replaceAll(RegExp(r'\d+\.'), '').trim().split(RegExp(r'\s+')).length ?? 0;
 
           return Column(
             children: [

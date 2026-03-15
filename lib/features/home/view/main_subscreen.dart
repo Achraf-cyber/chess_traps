@@ -1,36 +1,90 @@
-import 'package:chess_traps/data/fens.dart';
-import 'package:chess_traps/generated/assets.dart';
-import 'package:chess_traps/utils.dart';
-import 'package:chess_traps/widgets/trap_with_name.dart';
-import 'package:chessground/chessground.dart';
-import 'package:flutter/material.dart';
+import 'dart:math';
 
-class MainSubscreen extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import '../../../router.dart';
+import '../../../utils.dart';
+import '../../traps/data/chess_trap.dart';
+import '../../traps/provider/traps_provider.dart';
+
+class MainSubscreen extends ConsumerWidget {
   const MainSubscreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(AppAssets.imagesHomeImagePng),
-        Row(children: [TrapWithName(), TrapWithName()]),
-        Column(
+  Widget build(BuildContext context, WidgetRef ref) {
+    final AsyncValue<List<ChessTrap>> trapsAsync = ref.watch(trapsProvider);
+
+    return trapsAsync.when(
+      data: (traps) {
+        if (traps.isEmpty) {
+          return Center(child: Text(context.phrase.noTrapsFound));
+        }
+        
+        final int randomTrapIndex = Random().nextInt(traps.length);
+        final ChessTrap randomTrap = traps[randomTrapIndex];
+
+        return ListView(
+          padding: const EdgeInsets.all(16.0),
           children: [
-            Text(context.phrase.recentTraps),
-            Row(
-              children: [
-                Chessboard.fixed(
-                  size: 200,
-                  orientation: .white,
-                  fen: initialBoardFen,
+            Text(
+              context.phrase.trapOfTheDay,
+              style: context.textTheme.headlineSmall,
+            ),
+            const SizedBox(height: 16),
+            Card(
+              elevation: 4,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: InkWell(
+                onTap: () => TrapDetailRoute(index: randomTrapIndex).push<void>(context),
+                child: Padding(
+                  padding: const EdgeInsets.all(24.0),
+                  child: Column(
+                    children: [
+                      Icon(
+                        Icons.psychology,
+                        size: 64,
+                        color: context.colors.primary,
+                      ),
+                      const SizedBox(height: 16),
+                      Text(
+                        randomTrap.trapName,
+                        style: context.textTheme.titleLarge,
+                      ),
+                      Text(randomTrap.opening),
+                    ],
+                  ),
                 ),
-                Text(context.phrase.exampleTrap),
-                Text(context.phrase.lastTimeChecked),
-              ],
+              ),
+            ),
+            const SizedBox(height: 32),
+            Text(
+              context.phrase.explore,
+              style: context.textTheme.headlineSmall,
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton.icon(
+              onPressed: () {
+                // In this modular structure, the HomeScreen handles the index.
+                // But context.go('/traps') might or might not work depending on how router is setup.
+                // architecture.md says use Routing System for inter-feature communication.
+                const TrapsRoute().push<void>(context); 
+              },
+              icon: const Icon(Icons.explore),
+              label: Text(context.phrase.viewAllTraps),
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(16),
+              ),
             ),
           ],
-        ),
-      ],
+        );
+      },
+      loading: () => const Center(child: CircularProgressIndicator()),
+      error: (err, stack) => Center(
+        child: Text('${context.phrase.errorLoadingTraps}: $err'),
+      ),
     );
   }
 }

@@ -7,12 +7,8 @@ class FavoritesScreen extends ConsumerWidget {
   const FavoritesScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
-      appBar: AppBar(title: Text(context.phrase.favorite)),
-      body: Center(
-        child: Text(context.phrase.favorite),
-      ),
-    );
-  }
+  Widget build(BuildContext context, WidgetRef ref) => Scaffold(
+    appBar: AppBar(title: Text(context.phrase.favorite)),
+    body: Center(child: Text(context.phrase.favorite)),
+  );
 }

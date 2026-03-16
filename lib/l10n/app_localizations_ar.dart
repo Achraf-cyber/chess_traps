@@ -93,4 +93,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get english => 'الإنجليزية';
+
+  @override
+  String get randomTrap => 'Random Trap';
 }

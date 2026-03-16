@@ -93,4 +93,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get english => 'Inglés';
+
+  @override
+  String get randomTrap => 'Random Trap';
 }

@@ -29,5 +29,6 @@
     "editProfile": "Edit Profile",
     "logout": "Logout",
     "masteredTraps": "{count} Mastered traps ({percentage}%)",
-    "english": "English"
+    "english": "English",
+    "randomTrap": "Random Trap"
 }

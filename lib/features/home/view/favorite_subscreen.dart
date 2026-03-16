@@ -9,7 +9,5 @@ class FavoriteSubscreen extends StatefulWidget {
 
 class _FavoriteSubscreenState extends State<FavoriteSubscreen> {
   @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
+  Widget build(BuildContext context) => const Placeholder();
 }

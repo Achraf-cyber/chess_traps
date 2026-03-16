@@ -26,9 +26,9 @@ class FavoritesNotifier extends _$FavoritesNotifier {
     } else {
       newList.add(index);
     }
-    
+
     state = newList;
-    
+
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(_key, newList.map((e) => e.toString()).toList());
   }

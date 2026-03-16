@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'features/favorites/view/favorites_screen.dart';
-import 'features/home/view/main_scaffold.dart';
+import 'features/home/view/main_screen.dart';
 import 'features/home/view/main_subscreen.dart';
 import 'features/profile/view/profile_screen.dart';
 import 'features/training/view/train_screen.dart';
@@ -32,8 +32,8 @@ class MainShellRouteData extends ShellRouteData {
   const MainShellRouteData();
 
   @override
-  Widget builder(BuildContext context, GoRouterState state, Widget child) {
-    return MainScaffold(child: child);
+  Widget builder(BuildContext context, GoRouterState state, Widget navigator) {
+    return MainScreen(child: navigator);
   }
 }
 

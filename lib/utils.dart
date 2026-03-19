@@ -36,6 +36,21 @@ Position pgnToPosition(String pgn) {
   return position;
 }
 
+Position pgnToPositionIndex(String pgn, int index) {
+  final game = PgnGame.parsePgn(pgn);
+  var position = PgnGame.startingPosition(game.headers);
+
+  final mainline = game.moves.mainline().toList();
+  for (var i = 0; i < index && i < mainline.length; i++) {
+    final node = mainline[i];
+    final move = position.parseSan(node.san);
+    if (move == null) break;
+    position = position.play(move);
+  }
+
+  return position;
+}
+
 String pgnToFen(String pgn) {
   return pgnToPosition(pgn).fen;
 }

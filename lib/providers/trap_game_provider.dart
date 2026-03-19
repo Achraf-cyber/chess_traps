@@ -8,7 +8,7 @@ import '../data/chess_trap.dart';
 part 'trap_game_provider.g.dart';
 
 @riverpod
-Position trapGame(Ref ref, int index) {
+ChessTrap trapGame(Ref ref, int index) {
   final List<ChessTrap> traps = chessTraps;
   if (index < 0 || index >= traps.length) {
     throw Exception('Trap not found');
@@ -16,5 +16,5 @@ Position trapGame(Ref ref, int index) {
 
   final ChessTrap trap = traps[index];
 
-  return pgnToPosition(trap.cleanMoves);
+  return trap;
 }

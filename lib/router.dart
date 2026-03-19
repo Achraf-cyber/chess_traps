@@ -1,3 +1,4 @@
+import 'package:chess_traps/features/home/view/traps_subscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -50,7 +51,7 @@ class TrapsRoute extends GoRouteData with $TrapsRoute {
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) =>
-      const NoTransitionPage(child: TrapsScreen());
+      const NoTransitionPage(child: TrapsSubscreen());
 }
 
 class FavoritesRoute extends GoRouteData with $FavoritesRoute {

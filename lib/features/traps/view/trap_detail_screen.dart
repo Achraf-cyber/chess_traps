@@ -23,7 +23,9 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final trapGame = ref.watch(TrapGameProvider);
+    final trap = ref.watch(trapGameProvider(widget.trapIndex));
+    final maxMoves = trap.moves.length;
+    final position = pgnToPositionIndex(trap.cleanMoves, currentMoveIndex);
 
     return Scaffold(
       appBar: AppBar(
@@ -33,16 +35,13 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       body: Column(
         children: [
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Center(
-                child: AspectRatio(
-                  aspectRatio: 1.0,
-                  child: cg.Chessboard.fixed(
-                    size: MediaQuery.of(context).size.width - 32,
-                    orientation: Side.white,
-                    fen: fen,
-                  ),
+            child: Center(
+              child: AspectRatio(
+                aspectRatio: 1.0,
+                child: cg.Chessboard.fixed(
+                  size: MediaQuery.of(context).size.width - 32,
+                  orientation: Side.white,
+                  fen: position.fen,
                 ),
               ),
             ),
@@ -56,7 +55,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    ?.trapName ?? 'Loading...',
+                    trap.trapName,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -66,7 +65,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   Expanded(
                     child: SingleChildScrollView(
                       child: Text(
-                        trap?.commentedMoves ?? '',
+                        trap.cleanMoves,
                         style: const TextStyle(fontSize: 16),
                       ),
                     ),

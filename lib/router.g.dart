@@ -6,7 +6,11 @@ part of 'router.dart';
 // GoRouterGenerator
 // **************************************************************************
 
-List<RouteBase> get $appRoutes => [$mainShellRouteData, $trapDetailRoute];
+List<RouteBase> get $appRoutes => [
+  $mainShellRouteData,
+  $trapDetailRoute,
+  $trapGroupRoute,
+];
 
 RouteBase get $mainShellRouteData => ShellRouteData.$route(
   factory: $MainShellRouteDataExtension._fromState,
@@ -140,6 +144,35 @@ mixin $TrapDetailRoute on GoRouteData {
   String get location => GoRouteData.$location(
     '/trap/${Uri.encodeComponent(_self.index.toString())}',
   );
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $trapGroupRoute => GoRouteData.$route(
+  path: '/group/:name',
+  factory: $TrapGroupRoute._fromState,
+);
+
+mixin $TrapGroupRoute on GoRouteData {
+  static TrapGroupRoute _fromState(GoRouterState state) =>
+      TrapGroupRoute(name: state.pathParameters['name']!);
+
+  TrapGroupRoute get _self => this as TrapGroupRoute;
+
+  @override
+  String get location =>
+      GoRouteData.$location('/group/${Uri.encodeComponent(_self.name)}');
 
   @override
   void go(BuildContext context) => context.go(location);

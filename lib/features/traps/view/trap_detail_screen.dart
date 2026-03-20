@@ -6,9 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../../utils.dart';
 
-import '../../../data/chess_trap.dart';
 import '../../../providers/trap_game_provider.dart';
-import '../../../providers/traps_provider.dart';
 
 class TrapDetailScreen extends ConsumerStatefulWidget {
   const TrapDetailScreen({super.key, required this.trapIndex});

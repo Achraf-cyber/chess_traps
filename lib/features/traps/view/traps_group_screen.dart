@@ -1,29 +1,23 @@
-import 'package:chess_traps/providers/favorites_provider.dart';
-import 'package:chess_traps/utils.dart';
+import 'package:chess_traps/providers/traps_group_provider.dart';
+import 'package:chess_traps/router.dart';
 import 'package:chessground/chessground.dart';
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/traps_provider.dart';
-import '../../../router.dart';
+import '../../../utils.dart';
 
-class FavoritesScreen extends ConsumerWidget {
-  const FavoritesScreen({super.key});
+class TrapsGroupScreen extends ConsumerWidget {
+  const TrapsGroupScreen({super.key, required this.groupName});
+  final String groupName;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final elements = ref.watch(favoritesProvider).map(indexToChessTrap);
-    return SafeArea(
-      child: Column(
+    final elements = ref.watch(trapsOfGroupProvider(groupName));
+    return Scaffold(
+      appBar: AppBar(title: Text(groupName)),
+      body: Column(
         children: [
-          Text(
-            context.phrase.yourFavoriteChessTraps,
-            style: context.textTheme.titleLarge!.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 16),
           Expanded(
             child: GridView.count(
               crossAxisCount: 2,
@@ -49,7 +43,7 @@ class FavoritesScreen extends ConsumerWidget {
                           ),
                           Center(
                             child: Text(
-                              trap.trapName,
+                              groupName,
                               style: context.textTheme.bodySmall!.copyWith(
                                 fontWeight: .bold,
                               ),

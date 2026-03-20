@@ -96,4 +96,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get randomTrap => 'Random Trap';
+
+  @override
+  String get yourFavoriteChessTraps => 'You favorite chess traps';
 }

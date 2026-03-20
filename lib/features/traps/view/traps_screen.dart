@@ -6,11 +6,28 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../router.dart';
 import '../../../utils.dart';
 
-class TrapsScreen extends ConsumerWidget {
+class TrapsScreen extends ConsumerStatefulWidget {
   const TrapsScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<TrapsScreen> createState() => _TrapsScreenState();
+}
+
+class _TrapsScreenState extends ConsumerState<TrapsScreen> {
+  final controler = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    controler.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final trapsGroups = ref.watch(trapsGroupSourceProvider);
     return Column(
       children: [
@@ -24,7 +41,7 @@ class TrapsScreen extends ConsumerWidget {
                 Card(
                   child: InkWell(
                     onTap: () {
-                      TrapDetailRoute(index: value[0]).push(context);
+                      TrapGroupRoute(name: key).push<void>(context);
                     },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,

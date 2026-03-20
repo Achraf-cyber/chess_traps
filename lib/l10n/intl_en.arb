@@ -30,5 +30,6 @@
     "logout": "Logout",
     "masteredTraps": "{count} Mastered traps ({percentage}%)",
     "english": "English",
-    "randomTrap": "Random Trap"
+    "randomTrap": "Random Trap",
+    "yourFavoriteChessTraps": "You favorite chess traps"
 }

@@ -27,3 +27,7 @@ ChessTrap randomTrap(Ref ref) {
   final int id = Random().nextInt(maxInd);
   return chessTraps[id];
 }
+
+ChessTrap indexToChessTrap(int index) {
+  return chessTraps[index];
+}

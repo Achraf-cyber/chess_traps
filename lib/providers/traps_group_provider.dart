@@ -11,8 +11,14 @@ Map<String, List<int>> trapsGroupSource(Ref ref) {
 }
 
 @riverpod
-Map<String, List<ChessTrap>> trapsOfGroup(Ref ref, String groupName) {
-  return trapsGroup.map((key, value) {
-    return MapEntry(key, [for (final i in value) chessTraps[i]]);
-  });
+Map<String, List<int>> trapsSearchByName(Ref ref, String name) {
+  return trapsGroup;
+}
+
+@riverpod
+List<ChessTrap> trapsOfGroup(Ref ref, String groupName) {
+  return trapsGroup[groupName]!
+      .toList()
+      .map((element) => chessTraps[element])
+      .toList();
 }

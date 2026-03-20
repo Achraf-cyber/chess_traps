@@ -8,28 +8,32 @@ class FavoritesNotifier extends _$FavoritesNotifier {
   static const _key = 'favorite_traps';
 
   @override
-  List<int> build() {
+  Set<int> build() {
     _load();
-    return [];
+    return {};
   }
 
   Future<void> _load() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final List<String> strings = prefs.getStringList(_key) ?? [];
-    state = strings.map((e) => int.parse(e)).toList();
+    state = strings.map((e) => int.parse(e)).toSet();
+  }
+
+  bool isFavorite(int index) {
+    return state.contains(index);
   }
 
   Future<void> toggleFavorite(int index) async {
-    final newList = List<int>.from(state);
-    if (newList.contains(index)) {
-      newList.remove(index);
+    final newSet = Set<int>.from(state);
+    if (newSet.contains(index)) {
+      newSet.remove(index);
     } else {
-      newList.add(index);
+      newSet.add(index);
     }
 
-    state = newList;
+    state = newSet;
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setStringList(_key, newList.map((e) => e.toString()).toList());
+    await prefs.setStringList(_key, newSet.map((e) => e.toString()).toList());
   }
 }

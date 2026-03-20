@@ -1,3 +1,4 @@
+import 'package:chess_traps/providers/favorites_provider.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     final trap = ref.watch(trapGameProvider(widget.trapIndex));
     final maxMoves = trap.moves.length;
     final position = pgnToPositionIndex(trap.cleanMoves, currentMoveIndex);
+    final favorite = ref.watch(favoritesProvider.notifier);
+    final isFavorite = ref.watch(favoritesProvider).contains(trap.id);
 
     return Scaffold(
       appBar: AppBar(
@@ -52,12 +55,24 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    trap.trapName,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Text(
+                        trap.trapName,
+                        style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          favorite.toggleFavorite(trap.id);
+                        },
+                        icon: isFavorite
+                            ? const Icon(Icons.favorite, color: Colors.red)
+                            : const Icon(Icons.favorite),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 8),
                   Expanded(

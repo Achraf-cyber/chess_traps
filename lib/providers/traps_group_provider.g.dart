@@ -61,12 +61,8 @@ final trapsOfGroupProvider = TrapsOfGroupFamily._();
 
 final class TrapsOfGroupProvider
     extends
-        $FunctionalProvider<
-          Map<String, List<ChessTrap>>,
-          Map<String, List<ChessTrap>>,
-          Map<String, List<ChessTrap>>
-        >
-    with $Provider<Map<String, List<ChessTrap>>> {
+        $FunctionalProvider<List<ChessTrap>, List<ChessTrap>, List<ChessTrap>>
+    with $Provider<List<ChessTrap>> {
   TrapsOfGroupProvider._({
     required TrapsOfGroupFamily super.from,
     required String super.argument,
@@ -90,21 +86,20 @@ final class TrapsOfGroupProvider
 
   @$internal
   @override
-  $ProviderElement<Map<String, List<ChessTrap>>> $createElement(
-    $ProviderPointer pointer,
-  ) => $ProviderElement(pointer);
+  $ProviderElement<List<ChessTrap>> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
 
   @override
-  Map<String, List<ChessTrap>> create(Ref ref) {
+  List<ChessTrap> create(Ref ref) {
     final argument = this.argument as String;
     return trapsOfGroup(ref, argument);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(Map<String, List<ChessTrap>> value) {
+  Override overrideWithValue(List<ChessTrap> value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<Map<String, List<ChessTrap>>>(value),
+      providerOverride: $SyncValueProvider<List<ChessTrap>>(value),
     );
   }
 
@@ -119,10 +114,10 @@ final class TrapsOfGroupProvider
   }
 }
 
-String _$trapsOfGroupHash() => r'6bfe27ebf29744b38555d08ccbc0dbc8268c909c';
+String _$trapsOfGroupHash() => r'38e0d00c429c75b4ce4d39d2f152b3e257477bec';
 
 final class TrapsOfGroupFamily extends $Family
-    with $FunctionalFamilyOverride<Map<String, List<ChessTrap>>, String> {
+    with $FunctionalFamilyOverride<List<ChessTrap>, String> {
   TrapsOfGroupFamily._()
     : super(
         retry: null,

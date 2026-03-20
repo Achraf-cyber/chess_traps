@@ -1,4 +1,4 @@
-import 'package:chess_traps/features/view/traps_group_screen.dart';
+import 'package:chess_traps/features/traps/view/traps_group_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -95,5 +95,5 @@ class TrapGroupRoute extends GoRouteData with $TrapGroupRoute {
 
   @override
   Widget build(BuildContext context, GoRouterState state) =>
-      TrapsGroupScreen(name: name);
+      TrapsGroupScreen(groupName: name);
 }

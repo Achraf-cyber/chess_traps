@@ -275,6 +275,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Random Trap'**
   String get randomTrap;
+
+  /// No description provided for @yourFavoriteChessTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'You favorite chess traps'**
+  String get yourFavoriteChessTraps;
 }
 
 class _AppLocalizationsDelegate

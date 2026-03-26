@@ -42,6 +42,8 @@ class MainScreen extends ConsumerWidget {
               const TrainRoute().go(context);
             case 4:
               const ProfileRoute().go(context);
+            case 5:
+              const ProfileRoute().go(context);
           }
         },
         destinations: [

@@ -56,6 +56,84 @@ final class TrapsGroupSourceProvider
 
 String _$trapsGroupSourceHash() => r'f056212c5ce3b9b042fc24df337432fd3d280d0c';
 
+@ProviderFor(trapsSearchByName)
+final trapsSearchByNameProvider = TrapsSearchByNameFamily._();
+
+final class TrapsSearchByNameProvider
+    extends
+        $FunctionalProvider<List<ChessTrap>, List<ChessTrap>, List<ChessTrap>>
+    with $Provider<List<ChessTrap>> {
+  TrapsSearchByNameProvider._({
+    required TrapsSearchByNameFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'trapsSearchByNameProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$trapsSearchByNameHash();
+
+  @override
+  String toString() {
+    return r'trapsSearchByNameProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  $ProviderElement<List<ChessTrap>> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  List<ChessTrap> create(Ref ref) {
+    final argument = this.argument as String;
+    return trapsSearchByName(ref, argument);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(List<ChessTrap> value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<List<ChessTrap>>(value),
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is TrapsSearchByNameProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$trapsSearchByNameHash() => r'0fdf72f211cfaaa6f335b558bf25ef39b82a9d56';
+
+final class TrapsSearchByNameFamily extends $Family
+    with $FunctionalFamilyOverride<List<ChessTrap>, String> {
+  TrapsSearchByNameFamily._()
+    : super(
+        retry: null,
+        name: r'trapsSearchByNameProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  TrapsSearchByNameProvider call(String name) =>
+      TrapsSearchByNameProvider._(argument: name, from: this);
+
+  @override
+  String toString() => r'trapsSearchByNameProvider';
+}
+
 @ProviderFor(trapsOfGroup)
 final trapsOfGroupProvider = TrapsOfGroupFamily._();
 

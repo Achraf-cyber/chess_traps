@@ -31,5 +31,6 @@
     "masteredTraps": "{count} Mastered traps ({percentage}%)",
     "english": "English",
     "randomTrap": "Random Trap",
-    "yourFavoriteChessTraps": "You favorite chess traps"
+    "yourFavoriteChessTraps": "You favorite chess traps",
+    "wildGambit": "Wild Gambit"
 }

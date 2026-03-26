@@ -99,4 +99,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get yourFavoriteChessTraps => 'You favorite chess traps';
+
+  @override
+  String get wildGambit => 'Wild Gambit';
 }

@@ -29,5 +29,34 @@
     "editProfile": "Editar perfil",
     "logout": "Cerrar sesión",
     "masteredTraps": "{count} Celadas dominadas ({percentage}%)",
-    "english": "Inglés"
+    "english": "Inglés",
+    "randomTrap": "Celada aleatoria",
+    "yourFavoriteChessTraps": "Tus celadas de ajedrez favoritas",
+    "wildGambit": "Gambito salvaje",
+    "search": "Buscar",
+    "playTheMoves": "Juega las jugadas",
+    "matchingTraps": "Celadas coincidentes",
+    "playMovesToNarrow": "Juega movimientos para acotar resultados",
+    "resetBoard": "Reiniciar tablero",
+    "noTrapsFoundForSequence": "No se encontraron celadas para esta secuencia",
+    "appearance": "Apariencia",
+    "dataManagement": "Gestión de datos",
+    "about": "Acerca de",
+    "yourFavorites": "Tus favoritos",
+    "favoritesCount": "{count} celadas guardadas",
+    "@favoritesCount": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "appVersion": "Versión de la app",
+    "profileTitle": "Jugador de ajedrez",
+    "copyright": "Celadas de Ajedrez © 2026",
+    "clearFavoritesTitle": "Borrar favoritos",
+    "clearFavoritesHint": "Esto no se puede deshacer",
+    "clearFavoritesConfirm": "¿Seguro que deseas eliminar todas las celadas guardadas de favoritos?",
+    "clearFavoritesCancel": "Cancelar",
+    "clearFavoritesAction": "Borrar todo"
 }

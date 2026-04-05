@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
-import 'package:ionicons/ionicons.dart';
 
 import '../../../router.dart';
 import '../../../utils.dart';
@@ -13,14 +12,14 @@ class MainScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Current URI path to determine which bottom nav item is selected
     final Uri uri = GoRouterState.of(context).uri;
-    var currentIndex = 0;
+    
+    int currentIndex = 0;
     if (uri.path.startsWith('/traps')) {
       currentIndex = 1;
     } else if (uri.path.startsWith('/favorites')) {
       currentIndex = 2;
-    } else if (uri.path.startsWith('/train')) {
+    } else if (uri.path.startsWith('/searchbymoves')) {
       currentIndex = 3;
     } else if (uri.path.startsWith('/profile')) {
       currentIndex = 4;
@@ -39,10 +38,8 @@ class MainScreen extends ConsumerWidget {
             case 2:
               const FavoritesRoute().go(context);
             case 3:
-              const TrainRoute().go(context);
+              const SearchByMovesRoute().go(context);
             case 4:
-              const ProfileRoute().go(context);
-            case 5:
               const ProfileRoute().go(context);
           }
         },
@@ -63,15 +60,15 @@ class MainScreen extends ConsumerWidget {
             label: context.phrase.favorite,
           ),
           NavigationDestination(
-            icon: const Icon(Ionicons.train_outline),
-            selectedIcon: const Icon(Ionicons.train),
-            label: context.phrase.training,
+            icon: const Icon(Icons.search),
+            selectedIcon: const Icon(Icons.search_outlined),
+            label: context.phrase.search,
           ),
-          // NavigationDestination(
-          //   icon: const Icon(Icons.person_outline),
-          //   selectedIcon: const Icon(Icons.person),
-          //   label: context.phrase.profile,
-          // ),
+          NavigationDestination(
+            icon: const Icon(Icons.person_outline),
+            selectedIcon: const Icon(Icons.person),
+            label: context.phrase.profile,
+          ),
         ],
       ),
     );

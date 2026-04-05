@@ -32,5 +32,31 @@
     "english": "English",
     "randomTrap": "Random Trap",
     "yourFavoriteChessTraps": "You favorite chess traps",
-    "wildGambit": "Wild Gambit"
+    "wildGambit": "Wild Gambit",
+    "search": "Search",
+    "playTheMoves": "Play the moves",
+    "matchingTraps": "Matching traps",
+    "playMovesToNarrow": "Play moves to narrow results",
+    "resetBoard": "Reset board",
+    "noTrapsFoundForSequence": "No traps found for this sequence",
+    "appearance": "Appearance",
+    "dataManagement": "Data management",
+    "about": "About",
+    "yourFavorites": "Your favorites",
+    "favoritesCount": "{count} traps saved",
+    "@favoritesCount": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "appVersion": "App version",
+    "profileTitle": "Chess player",
+    "copyright": "Chess Traps © 2026",
+    "clearFavoritesTitle": "Clear favorites",
+    "clearFavoritesHint": "This cannot be undone",
+    "clearFavoritesConfirm": "Are you sure you want to remove all saved traps from your favorites?",
+    "clearFavoritesCancel": "Cancel",
+    "clearFavoritesAction": "Clear all"
 }

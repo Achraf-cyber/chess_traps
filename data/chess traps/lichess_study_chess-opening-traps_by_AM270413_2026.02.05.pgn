@@ -1,0 +1,64 @@
+[Event "Chess Opening Traps: Noah's Ark🚢"]
+[Date "2026.02.05"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C71"]
+[Opening "Ruy Lopez: Noah's Ark Trap"]
+[StudyName "Chess Opening Traps"]
+[ChapterName "Noah's Ark🚢"]
+[ChapterURL "https://lichess.org/study/CZu7iEYO/tTkEBHBG"]
+[Annotator "https://lichess.org/@/AM270413"]
+[UTCDate "2026.02.05"]
+[UTCTime "00:06:04"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 { starts off with the ruy lopez } 3... a6 { kick the bishop back } 4. Ba4 d6 5. d4 b5 6. Bb3 { exchanging the pieces } 6... Nxd4 7. Nxd4 exd4 8. Qxd4?? { BLUNDER!!! } 8... c5! { queen has to move } 9. Qd5 { threatning rook and checkmate at the same time..but.. } { [%csl Ga8][%cal Gb3f7,Gd5a8] } 9... Be6! 10. Qc6+ Bd7 11. Qd5 { don't move the bishop back..instead... } 11... c4! { wins a piece } *
+
+
+[Event "Chess Opening Traps: Legal's Mate⚖️"]
+[Date "2026.02.05"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C46"]
+[Opening "Three Knights Opening"]
+[StudyName "Chess Opening Traps"]
+[ChapterName "Legal's Mate⚖️"]
+[ChapterURL "https://lichess.org/study/CZu7iEYO/ot9jQdV7"]
+[Annotator "https://lichess.org/@/AM270413"]
+[UTCDate "2026.02.05"]
+[UTCTime "13:22:16"]
+
+1. e4 e5 2. Nf3 Nc6 3. Nc3 (3. Bc4 d6 4. Nc3 Bg4 5. h3 Bh5 6. Nxe5 Bxd1 (6... Nxe5 7. Qxh5 Nxc4 (7... Nf6 8. Qe2 Nxc4 9. Qxc4) 8. Qb5+) 7. Bxf7+ Ke7 8. Nd5#) 3... d6 4. Bc4 Bg4 5. h3 Bh5 6. Nxe5 Bxd1 7. Bxf7+ Ke7 8. Nd5# *
+
+
+[Event "Chess Opening Traps: Lasker Trap✌️"]
+[Date "2026.02.06"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D08"]
+[Opening "Queen's Gambit Declined: Albin Countergambit, Lasker Trap"]
+[StudyName "Chess Opening Traps"]
+[ChapterName "Lasker Trap✌️"]
+[ChapterURL "https://lichess.org/study/CZu7iEYO/DMgUdp3H"]
+[Annotator "https://lichess.org/@/AM270413"]
+[UTCDate "2026.02.06"]
+[UTCTime "13:27:24"]
+
+1. d4 d5 2. c4 e5 3. dxe5 d4 4. e3 Bb4+ 5. Bd2 dxe3 6. Bxb4?? exf2+ 7. Ke2 fxg1=N+ 8. Ke1 Qh4+ 9. Kd2 Nc6 10. Rxg1 Qd4+ { [%cal Gd4g1,Gd4d2,Gc6b4] } *
+
+
+[Event "Chess Opening Traps: Rubenstien Trap😶‍🌫️"]
+[Date "2026.02.07"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D63"]
+[Opening "Queen's Gambit Declined: Orthodox Defense, Main Line"]
+[StudyName "Chess Opening Traps"]
+[ChapterName "Rubenstien Trap😶‍🌫️"]
+[ChapterURL "https://lichess.org/study/CZu7iEYO/xBbi02yW"]
+[Annotator "https://lichess.org/@/AM270413"]
+[UTCDate "2026.02.07"]
+[UTCTime "15:09:02"]
+
+1. d4 d5 2. Nf3 Nf6 3. c4 e6 4. Bg5 Nbd7 5. e3 Be7 6. Nc3 O-O 7. Rc1 Re8 8. Qc2 a6 9. cxd5 exd5 10. Bd3 c6 11. O-O Ne4 12. Bf4 f5?? 13. Nxd5 cxd5 14. Bc7 Qxc7 15. Qxc7 *
+
+

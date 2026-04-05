@@ -10,7 +10,6 @@ List<RouteBase> get $appRoutes => [
   $mainShellRouteData,
   $trapDetailRoute,
   $trapGroupRoute,
-  $searchByMovesRoute,
 ];
 
 RouteBase get $mainShellRouteData => ShellRouteData.$route(
@@ -19,8 +18,11 @@ RouteBase get $mainShellRouteData => ShellRouteData.$route(
     GoRouteData.$route(path: '/', factory: $HomeRoute._fromState),
     GoRouteData.$route(path: '/traps', factory: $TrapsRoute._fromState),
     GoRouteData.$route(path: '/favorites', factory: $FavoritesRoute._fromState),
-    GoRouteData.$route(path: '/train', factory: $TrainRoute._fromState),
     GoRouteData.$route(path: '/profile', factory: $ProfileRoute._fromState),
+    GoRouteData.$route(
+      path: '/searchbymoves',
+      factory: $SearchByMovesRoute._fromState,
+    ),
   ],
 );
 
@@ -90,11 +92,11 @@ mixin $FavoritesRoute on GoRouteData {
   void replace(BuildContext context) => context.replace(location);
 }
 
-mixin $TrainRoute on GoRouteData {
-  static TrainRoute _fromState(GoRouterState state) => const TrainRoute();
+mixin $ProfileRoute on GoRouteData {
+  static ProfileRoute _fromState(GoRouterState state) => const ProfileRoute();
 
   @override
-  String get location => GoRouteData.$location('/train');
+  String get location => GoRouteData.$location('/profile');
 
   @override
   void go(BuildContext context) => context.go(location);
@@ -110,11 +112,12 @@ mixin $TrainRoute on GoRouteData {
   void replace(BuildContext context) => context.replace(location);
 }
 
-mixin $ProfileRoute on GoRouteData {
-  static ProfileRoute _fromState(GoRouterState state) => const ProfileRoute();
+mixin $SearchByMovesRoute on GoRouteData {
+  static SearchByMovesRoute _fromState(GoRouterState state) =>
+      const SearchByMovesRoute();
 
   @override
-  String get location => GoRouteData.$location('/profile');
+  String get location => GoRouteData.$location('/searchbymoves');
 
   @override
   void go(BuildContext context) => context.go(location);
@@ -174,32 +177,6 @@ mixin $TrapGroupRoute on GoRouteData {
   @override
   String get location =>
       GoRouteData.$location('/group/${Uri.encodeComponent(_self.name)}');
-
-  @override
-  void go(BuildContext context) => context.go(location);
-
-  @override
-  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
-
-  @override
-  void pushReplacement(BuildContext context) =>
-      context.pushReplacement(location);
-
-  @override
-  void replace(BuildContext context) => context.replace(location);
-}
-
-RouteBase get $searchByMovesRoute => GoRouteData.$route(
-  path: '/searchbymoves',
-  factory: $SearchByMovesRoute._fromState,
-);
-
-mixin $SearchByMovesRoute on GoRouteData {
-  static SearchByMovesRoute _fromState(GoRouterState state) =>
-      const SearchByMovesRoute();
-
-  @override
-  String get location => GoRouteData.$location('/searchbymoves');
 
   @override
   void go(BuildContext context) => context.go(location);

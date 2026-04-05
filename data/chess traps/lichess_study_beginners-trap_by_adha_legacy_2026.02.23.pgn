@@ -1,0 +1,64 @@
+[Event "Beginners Trap: Stafford Gambit 1"]
+[Date "2026.02.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Beginners Trap"]
+[ChapterName "Stafford Gambit 1"]
+[ChapterURL "https://lichess.org/study/lVdR5yyH/FtZesbvn"]
+[Annotator "https://lichess.org/@/adha_legacy"]
+[UTCDate "2026.02.23"]
+[UTCTime "11:11:11"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Bg5 Nxe4 7. Bxd8 Bxf2+ 8. Ke2 Bg4# *
+
+
+[Event "Beginners Trap: Kostic Gambit 2"]
+[Date "2026.02.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Blackburne-Kostić Gambit"]
+[StudyName "Beginners Trap"]
+[ChapterName "Kostic Gambit 2"]
+[ChapterURL "https://lichess.org/study/lVdR5yyH/Vghy5HQB"]
+[Annotator "https://lichess.org/@/adha_legacy"]
+[UTCDate "2026.02.23"]
+[UTCTime "11:12:37"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 4. Nxe5 Qg5 5. Nxf7 Qxg2 6. Rf1 Qxe4+ 7. Be2 Nf3# *
+
+
+[Event "Beginners Trap: Englund Gambit 3"]
+[Date "2026.02.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A40"]
+[Opening "Englund Gambit: Soller Gambit"]
+[StudyName "Beginners Trap"]
+[ChapterName "Englund Gambit 3"]
+[ChapterURL "https://lichess.org/study/lVdR5yyH/FmziTX65"]
+[Annotator "https://lichess.org/@/adha_legacy"]
+[UTCDate "2026.02.23"]
+[UTCTime "11:14:07"]
+
+1. d4 e5 2. dxe5 f6 3. exf6 Nxf6 4. Nf3 Bc5 5. Bg5 Ne4 6. Bxd8 Bxf2# *
+
+
+[Event "Beginners Trap: Bishop Opening 4"]
+[Date "2026.02.23"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C23"]
+[Opening "Bishop's Opening"]
+[StudyName "Beginners Trap"]
+[ChapterName "Bishop Opening 4"]
+[ChapterURL "https://lichess.org/study/lVdR5yyH/Op1SOsPE"]
+[Annotator "https://lichess.org/@/adha_legacy"]
+[UTCDate "2026.02.23"]
+[UTCTime "11:15:19"]
+
+1. e4 e5 2. Bc4 b6 3. Qh5 g6 4. Qxe5+ *
+
+

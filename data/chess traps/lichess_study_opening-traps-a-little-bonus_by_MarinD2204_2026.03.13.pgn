@@ -1,0 +1,49 @@
+[Event "opening traps+ a little bonus: Shool mat-works on low rated players"]
+[Date "2026.03.13"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C20"]
+[Opening "King's Pawn Game: Wayward Queen Attack"]
+[StudyName "opening traps+ a little bonus"]
+[ChapterName "Shool mat-works on low rated players"]
+[ChapterURL "https://lichess.org/study/nWTQI5EE/wx2FB4vL"]
+[Annotator "https://lichess.org/@/MarinD2204"]
+[UTCDate "2026.03.13"]
+[UTCTime "17:09:12"]
+
+1. e4 e5 2. Qh5 { try to first open your queen ,because almost everyone will play Nf6 } (2. Bc4 Nf6) 2... Nc6 3. Bc4 g6 4. Qf3 Nf6 5. g4 { play g4 to kick their night ,high rated players will play Nd4 and cook u,but low rated players will play someting random or h6: } { [%cal Gb7b6,Gh7h6] } 5... h6 (5... b6 { someting random } 6. g5 Be7 7. gxf6 Bxf6 8. c3) 6. Nh3 { play this for g5 to heppend } 6... d6 { trying to attack g4 } 7. g5 Bxh3 8. gxf6 Bd7 { and u have that pawn on f6 so good, play normal from here but first push
+c6!!! } { [%cal Gc2c3] } 9. c3! *
+
+
+[Event "opening traps+ a little bonus: Italian game, crush it!!"]
+[Date "2026.03.13"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Blackburne-Kostić Gambit"]
+[StudyName "opening traps+ a little bonus"]
+[ChapterName "Italian game, crush it!!"]
+[ChapterURL "https://lichess.org/study/nWTQI5EE/5GedMyl6"]
+[Annotator "https://lichess.org/@/MarinD2204"]
+[UTCDate "2026.03.13"]
+[UTCTime "17:23:10"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 { every one of low rated players will take e5, but... } 4. Nxe5?? Qg5! { attack everything they will probably fork u } 5. Nxf7 Qxg2 6. Rf1 { run run but u cant hide } 6... Qxe4+ { take and they have 2 moves } 7. Qe2 $7 { practically the only move } (7. Be2 { but if they are greedy ,SMASH THEM } 7... Nf3#) 7... Nxe2 *
+
+
+[Event "opening traps+ a little bonus: Ruy lopez ,more like ruy looser"]
+[Date "2026.03.13"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C65"]
+[Opening "Ruy Lopez: Berlin Defense, Fishing Pole Variation"]
+[StudyName "opening traps+ a little bonus"]
+[ChapterName "Ruy lopez ,more like ruy looser"]
+[ChapterURL "https://lichess.org/study/nWTQI5EE/n3Q9Rggh"]
+[Annotator "https://lichess.org/@/MarinD2204"]
+[UTCDate "2026.03.13"]
+[UTCTime "17:30:11"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Ng4 { we need to set a trap with Ng4 } 5. h3 { sack THE NIGHT } 5... h5 6. hxg4?? hxg4 7. Nh2 Qh4 { treat a checkmate } 8. f3 { they will try to escape, but... } 8... g3 9. Re1 Qxh2+ 10. Kf1 Nd4 { close e2 square for him } 11. Bxd7+ Kxd7 12. Qe2 { dont take just mate } 12... Qh1# *
+
+

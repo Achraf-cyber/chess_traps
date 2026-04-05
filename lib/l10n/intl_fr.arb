@@ -29,5 +29,34 @@
     "editProfile": "Modifier le profil",
     "logout": "Déconnexion",
     "masteredTraps": "{count} Pièges maîtrisés ({percentage}%)",
-    "english": "Anglais"
+    "english": "Anglais",
+    "randomTrap": "Piège aléatoire",
+    "yourFavoriteChessTraps": "Vos pièges d'échecs favoris",
+    "wildGambit": "Gambit sauvage",
+    "search": "Rechercher",
+    "playTheMoves": "Jouer les coups",
+    "matchingTraps": "Pièges correspondants",
+    "playMovesToNarrow": "Jouez des coups pour affiner les résultats",
+    "resetBoard": "Réinitialiser l'échiquier",
+    "noTrapsFoundForSequence": "Aucun piège trouvé pour cette séquence",
+    "appearance": "Apparence",
+    "dataManagement": "Gestion des données",
+    "about": "À propos",
+    "yourFavorites": "Vos favoris",
+    "favoritesCount": "{count} pièges enregistrés",
+    "@favoritesCount": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "appVersion": "Version de l'application",
+    "profileTitle": "Joueur d'échecs",
+    "copyright": "Pièges d'échecs © 2026",
+    "clearFavoritesTitle": "Effacer les favoris",
+    "clearFavoritesHint": "Cette action est irréversible",
+    "clearFavoritesConfirm": "Voulez-vous vraiment supprimer tous les pièges enregistrés dans les favoris ?",
+    "clearFavoritesCancel": "Annuler",
+    "clearFavoritesAction": "Tout effacer"
 }

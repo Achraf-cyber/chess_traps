@@ -10,6 +10,8 @@ We use a simplified **GitHub Flow** to manage our Flutter + Supabase environment
 * **Bug Fixes**: `fix/SCRUM-ID-description`.
 * **Hotfixes**: `hotfix/description` (only for immediate production patches).
 
+> **Note**: Branch naming is strictly enforced by the `.husky/pre-push` git hook. Pushing a branch with an unapproved name convention will be rejected. See [Git Hooks Documentation](docs/git_hooks.md) for details.
+
 ## 🛠 Environment Separation
 
 We use **Flutter Flavors** to switch between Supabase instances.

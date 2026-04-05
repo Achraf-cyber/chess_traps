@@ -13,34 +13,61 @@ class TrapWithName extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 2,
+      clipBehavior: Clip.antiAlias,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
         onTap: () {
-          TrapDetailRoute(index: trap.id).push(context);
+          TrapDetailRoute(index: trap.id).push<void>(context);
         },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Text(
-                  label,
-                  style: context.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              return Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    label,
+                    style: context.textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.bold,
+                      color: context.colors.primary,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
                   ),
-                ),
-              ),
-              const SizedBox(height: 8),
-              StaticChessboard(size: 144, orientation: .white, fen: trap.fen),
-              const SizedBox(height: 8),
-              Padding(
-                padding: const EdgeInsets.all(4.0),
-                child: Text(
-                  trap.trapName,
-                  style: context.textTheme.bodySmall?.copyWith(),
-                ),
-              ),
-            ],
+                  const SizedBox(height: 4),
+                  Flexible(
+                    child: Center(
+                      child: Builder(builder: (context) {
+                        final boardSize = constraints.maxWidth.isFinite
+                            ? constraints.maxWidth
+                            : 120.0;
+                        return SizedBox.square(
+                          dimension: boardSize,
+                          child: StaticChessboard(
+                            size: boardSize,
+                            orientation: .white,
+                            fen: trap.fen,
+                          ),
+                        );
+                      }),
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    trap.trapName,
+                    textAlign: TextAlign.center,
+                    style: context.textTheme.bodySmall?.copyWith(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w500,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              );
+            },
           ),
         ),
       ),

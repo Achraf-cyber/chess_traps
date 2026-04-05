@@ -29,5 +29,34 @@
     "editProfile": "تعديل الملف الشخصي",
     "logout": "تسجيل الخروج",
     "masteredTraps": "{count} فخاخ متقنة ({percentage}%)",
-    "english": "الإنجليزية"
+    "english": "الإنجليزية",
+    "randomTrap": "فخ عشوائي",
+    "yourFavoriteChessTraps": "فخاخ الشطرنج المفضلة لديك",
+    "wildGambit": "المناورة الجامحة",
+    "search": "بحث",
+    "playTheMoves": "العب النقلات",
+    "matchingTraps": "الفخاخ المطابقة",
+    "playMovesToNarrow": "العب النقلات لتضييق النتائج",
+    "resetBoard": "إعادة ضبط الرقعة",
+    "noTrapsFoundForSequence": "لم يتم العثور على فخاخ لهذا التسلسل",
+    "appearance": "المظهر",
+    "dataManagement": "إدارة البيانات",
+    "about": "حول",
+    "yourFavorites": "مفضلاتك",
+    "favoritesCount": "تم حفظ {count} فخاخ",
+    "@favoritesCount": {
+      "placeholders": {
+        "count": {
+          "type": "int"
+        }
+      }
+    },
+    "appVersion": "إصدار التطبيق",
+    "profileTitle": "لاعب شطرنج",
+    "copyright": "فخاخ الشطرنج © 2026",
+    "clearFavoritesTitle": "مسح المفضلة",
+    "clearFavoritesHint": "لا يمكن التراجع عن هذا",
+    "clearFavoritesConfirm": "هل أنت متأكد أنك تريد إزالة جميع الفخاخ المحفوظة من المفضلة؟",
+    "clearFavoritesCancel": "إلغاء",
+    "clearFavoritesAction": "مسح الكل"
 }

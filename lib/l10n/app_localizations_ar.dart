@@ -95,11 +95,71 @@ class AppLocalizationsAr extends AppLocalizations {
   String get english => 'الإنجليزية';
 
   @override
-  String get randomTrap => 'Random Trap';
+  String get randomTrap => 'فخ عشوائي';
 
   @override
-  String get yourFavoriteChessTraps => 'You favorite chess traps';
+  String get yourFavoriteChessTraps => 'فخاخ الشطرنج المفضلة لديك';
 
   @override
-  String get wildGambit => 'Wild Gambit';
+  String get wildGambit => 'المناورة الجامحة';
+
+  @override
+  String get search => 'بحث';
+
+  @override
+  String get playTheMoves => 'العب النقلات';
+
+  @override
+  String get matchingTraps => 'الفخاخ المطابقة';
+
+  @override
+  String get playMovesToNarrow => 'العب النقلات لتضييق النتائج';
+
+  @override
+  String get resetBoard => 'إعادة ضبط الرقعة';
+
+  @override
+  String get noTrapsFoundForSequence => 'لم يتم العثور على فخاخ لهذا التسلسل';
+
+  @override
+  String get appearance => 'المظهر';
+
+  @override
+  String get dataManagement => 'إدارة البيانات';
+
+  @override
+  String get about => 'حول';
+
+  @override
+  String get yourFavorites => 'مفضلاتك';
+
+  @override
+  String favoritesCount(int count) {
+    return 'تم حفظ $count فخاخ';
+  }
+
+  @override
+  String get appVersion => 'إصدار التطبيق';
+
+  @override
+  String get profileTitle => 'لاعب شطرنج';
+
+  @override
+  String get copyright => 'فخاخ الشطرنج © 2026';
+
+  @override
+  String get clearFavoritesTitle => 'مسح المفضلة';
+
+  @override
+  String get clearFavoritesHint => 'لا يمكن التراجع عن هذا';
+
+  @override
+  String get clearFavoritesConfirm =>
+      'هل أنت متأكد أنك تريد إزالة جميع الفخاخ المحفوظة من المفضلة؟';
+
+  @override
+  String get clearFavoritesCancel => 'إلغاء';
+
+  @override
+  String get clearFavoritesAction => 'مسح الكل';
 }

@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:chess_traps/providers/theme_provider.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 
@@ -18,6 +19,8 @@ void main() {
   if (kIsWeb) {
     usePathUrlStrategy();
   }
+  WidgetsFlutterBinding.ensureInitialized();
+
   LicenseRegistry.addLicense(() async* {
     final String license = await rootBundle.loadString(AppAssets.googleFontsQuicksandOflTxt);
     yield LicenseEntryWithLineBreaks(<String>['google_fonts'], license);
@@ -27,8 +30,6 @@ void main() {
     yield const LicenseEntryWithLineBreaks(<String>['Ayushb58'], license);
   });
 
-  WidgetsFlutterBinding.ensureInitialized();
-
   if (kDebugMode && (kIsWeb || Platform.isWindows)) {
     // Animate.restartOnHotReload = true;
     runApp(DevicePreview(builder: (context) => const ProviderScope(child: MainApp())));
@@ -37,11 +38,12 @@ void main() {
   }
 }
 
-class MainApp extends StatelessWidget {
+class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeMode = ref.watch(themeProvider);
     // ignore: unused_local_variable
     final Brightness brightness = View.of(context).platformDispatcher.platformBrightness;
     const quicksand = 'Quicksand';
@@ -52,7 +54,7 @@ class MainApp extends StatelessWidget {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Chess traps',
-        themeMode: ThemeMode.light,
+        themeMode: themeMode,
         theme: theme.light(),
         darkTheme: theme.dark(),
         home: MaterialApp.router(
@@ -65,6 +67,7 @@ class MainApp extends StatelessWidget {
           builder: DevicePreview.appBuilder,
           theme: theme.light(),
           darkTheme: theme.dark(),
+          themeMode: themeMode,
         ),
       );
     }
@@ -72,7 +75,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Chess traps',
-      themeMode: ThemeMode.light,
+      themeMode: themeMode,
       theme: theme.light(),
       darkTheme: theme.dark(),
       home: MaterialApp.router(
@@ -83,7 +86,7 @@ class MainApp extends StatelessWidget {
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         theme: theme.light(),
         darkTheme: theme.dark(),
-        themeMode: ThemeMode.light,
+        themeMode: themeMode,
       ),
     );
   }

@@ -95,11 +95,72 @@ class AppLocalizationsEs extends AppLocalizations {
   String get english => 'Inglés';
 
   @override
-  String get randomTrap => 'Random Trap';
+  String get randomTrap => 'Celada aleatoria';
 
   @override
-  String get yourFavoriteChessTraps => 'You favorite chess traps';
+  String get yourFavoriteChessTraps => 'Tus celadas de ajedrez favoritas';
 
   @override
-  String get wildGambit => 'Wild Gambit';
+  String get wildGambit => 'Gambito salvaje';
+
+  @override
+  String get search => 'Buscar';
+
+  @override
+  String get playTheMoves => 'Juega las jugadas';
+
+  @override
+  String get matchingTraps => 'Celadas coincidentes';
+
+  @override
+  String get playMovesToNarrow => 'Juega movimientos para acotar resultados';
+
+  @override
+  String get resetBoard => 'Reiniciar tablero';
+
+  @override
+  String get noTrapsFoundForSequence =>
+      'No se encontraron celadas para esta secuencia';
+
+  @override
+  String get appearance => 'Apariencia';
+
+  @override
+  String get dataManagement => 'Gestión de datos';
+
+  @override
+  String get about => 'Acerca de';
+
+  @override
+  String get yourFavorites => 'Tus favoritos';
+
+  @override
+  String favoritesCount(int count) {
+    return '$count celadas guardadas';
+  }
+
+  @override
+  String get appVersion => 'Versión de la app';
+
+  @override
+  String get profileTitle => 'Jugador de ajedrez';
+
+  @override
+  String get copyright => 'Celadas de Ajedrez © 2026';
+
+  @override
+  String get clearFavoritesTitle => 'Borrar favoritos';
+
+  @override
+  String get clearFavoritesHint => 'Esto no se puede deshacer';
+
+  @override
+  String get clearFavoritesConfirm =>
+      '¿Seguro que deseas eliminar todas las celadas guardadas de favoritos?';
+
+  @override
+  String get clearFavoritesCancel => 'Cancelar';
+
+  @override
+  String get clearFavoritesAction => 'Borrar todo';
 }

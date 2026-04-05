@@ -1,0 +1,96 @@
+[Event "6 Traps to use in games: Trap 1"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A06"]
+[Opening "Zukertort Opening: Tennison Gambit"]
+[StudyName "6 Traps to use in games"]
+[ChapterName "Trap 1"]
+[ChapterURL "https://lichess.org/study/aE6Y40Sj/LG9I7sws"]
+[Annotator "https://lichess.org/@/EkuPotter"]
+[UTCDate "2026.03.16"]
+[UTCTime "00:55:16"]
+
+1. Nf3 d5 2. e4 dxe4 3. Ng5 Nf6 4. d3 exd3 5. Bxd3 h6 6. Nxf7 Kxf7 7. Bg6+ Kxg6 8. Qxd8 *
+
+
+[Event "6 Traps to use in games: Trap 2"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A40"]
+[Opening "Englund Gambit"]
+[StudyName "6 Traps to use in games"]
+[ChapterName "Trap 2"]
+[ChapterURL "https://lichess.org/study/aE6Y40Sj/ZVpQP6Eh"]
+[Annotator "https://lichess.org/@/EkuPotter"]
+[UTCDate "2026.03.16"]
+[UTCTime "00:55:16"]
+
+1. d4 e5 2. dxe5 Bc5 3. Nf3 d6 4. exd6 Ne7 5. dxe7 Bxf2+ 6. Kxf2 Qxd1 *
+
+
+[Event "6 Traps to use in games: Trap 3"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C23"]
+[Opening "Bishop's Opening"]
+[StudyName "6 Traps to use in games"]
+[ChapterName "Trap 3"]
+[ChapterURL "https://lichess.org/study/aE6Y40Sj/CWMGnjxz"]
+[Annotator "https://lichess.org/@/EkuPotter"]
+[UTCDate "2026.03.16"]
+[UTCTime "00:55:16"]
+
+1. e4 e5 2. Bc4 Nc6 3. Qf3 f5 4. Qxf5 d5 5. Bxd5 Bxf5 *
+
+
+[Event "6 Traps to use in games: Trap 4"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C44"]
+[Opening "Scotch Game: Haxo Gambit"]
+[StudyName "6 Traps to use in games"]
+[ChapterName "Trap 4"]
+[ChapterURL "https://lichess.org/study/aE6Y40Sj/AtzCco2V"]
+[Annotator "https://lichess.org/@/EkuPotter"]
+[UTCDate "2026.03.16"]
+[UTCTime "00:55:16"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d4 exd4 5. c3 dxc3 6. Bxf7+ Kxf7 7. Qd5+ Ke8 8. Qh5+ g6 9. Qxc5 *
+
+
+[Event "6 Traps to use in games: Trap 5"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Damiano Variation"]
+[StudyName "6 Traps to use in games"]
+[ChapterName "Trap 5"]
+[ChapterURL "https://lichess.org/study/aE6Y40Sj/vseepI9I"]
+[Annotator "https://lichess.org/@/EkuPotter"]
+[UTCDate "2026.03.16"]
+[UTCTime "00:55:16"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nxe4 4. Qe2 Nf6 5. Nc6+ *
+
+
+[Event "6 Traps to use in games: Trap 6"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D20"]
+[Opening "Queen's Gambit Accepted: Old Variation"]
+[StudyName "6 Traps to use in games"]
+[ChapterName "Trap 6"]
+[ChapterURL "https://lichess.org/study/aE6Y40Sj/oI2KKqPI"]
+[Annotator "https://lichess.org/@/EkuPotter"]
+[UTCDate "2026.03.16"]
+[UTCTime "00:55:16"]
+
+1. d4 d5 2. c4 dxc4 3. e3 b5 4. a4 c6 (4... a6 5. axb5 axb5 6. Rxa8) 5. axb5 cxb5 6. Qf3 Nc6 7. Qxc6+ *
+
+

@@ -7,7 +7,6 @@ import 'features/home/view/main_screen.dart';
 import 'features/home/view/main_subscreen.dart';
 import 'features/profile/view/profile_screen.dart';
 import 'features/search_by_moves/view/search_by_moves_screen.dart';
-import 'features/training/view/train_screen.dart';
 import 'features/traps/view/trap_detail_screen.dart';
 import 'features/traps/view/traps_screen.dart';
 
@@ -26,8 +25,8 @@ final GoRouter router = GoRouter(
     TypedGoRoute<HomeRoute>(path: '/'),
     TypedGoRoute<TrapsRoute>(path: '/traps'),
     TypedGoRoute<FavoritesRoute>(path: '/favorites'),
-    TypedGoRoute<TrainRoute>(path: '/train'),
     TypedGoRoute<ProfileRoute>(path: '/profile'),
+    TypedGoRoute<SearchByMovesRoute>(path: '/searchbymoves'),
   ],
 )
 class MainShellRouteData extends ShellRouteData {
@@ -63,12 +62,12 @@ class FavoritesRoute extends GoRouteData with $FavoritesRoute {
       const NoTransitionPage(child: FavoritesScreen());
 }
 
-class TrainRoute extends GoRouteData with $TrainRoute {
-  const TrainRoute();
+class SearchByMovesRoute extends GoRouteData with $SearchByMovesRoute {
+  const SearchByMovesRoute();
 
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) =>
-      const NoTransitionPage(child: TrainScreen());
+      const NoTransitionPage(child: SearchByMovesScreen());
 }
 
 class ProfileRoute extends GoRouteData with $ProfileRoute {
@@ -97,13 +96,4 @@ class TrapGroupRoute extends GoRouteData with $TrapGroupRoute {
   @override
   Widget build(BuildContext context, GoRouterState state) =>
       TrapsGroupScreen(groupName: name);
-}
-
-@TypedGoRoute<SearchByMovesRoute>(path: '/searchbymoves')
-class SearchByMovesRoute extends GoRouteData with $SearchByMovesRoute {
-  const SearchByMovesRoute();
-
-  @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const SearchByMovesScreen();
 }

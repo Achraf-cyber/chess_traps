@@ -287,6 +287,120 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Wild Gambit'**
   String get wildGambit;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// No description provided for @playTheMoves.
+  ///
+  /// In en, this message translates to:
+  /// **'Play the moves'**
+  String get playTheMoves;
+
+  /// No description provided for @matchingTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'Matching traps'**
+  String get matchingTraps;
+
+  /// No description provided for @playMovesToNarrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Play moves to narrow results'**
+  String get playMovesToNarrow;
+
+  /// No description provided for @resetBoard.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset board'**
+  String get resetBoard;
+
+  /// No description provided for @noTrapsFoundForSequence.
+  ///
+  /// In en, this message translates to:
+  /// **'No traps found for this sequence'**
+  String get noTrapsFoundForSequence;
+
+  /// No description provided for @appearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get appearance;
+
+  /// No description provided for @dataManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Data management'**
+  String get dataManagement;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @yourFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Your favorites'**
+  String get yourFavorites;
+
+  /// No description provided for @favoritesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} traps saved'**
+  String favoritesCount(int count);
+
+  /// No description provided for @appVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'App version'**
+  String get appVersion;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chess player'**
+  String get profileTitle;
+
+  /// No description provided for @copyright.
+  ///
+  /// In en, this message translates to:
+  /// **'Chess Traps © 2026'**
+  String get copyright;
+
+  /// No description provided for @clearFavoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear favorites'**
+  String get clearFavoritesTitle;
+
+  /// No description provided for @clearFavoritesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'This cannot be undone'**
+  String get clearFavoritesHint;
+
+  /// No description provided for @clearFavoritesConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to remove all saved traps from your favorites?'**
+  String get clearFavoritesConfirm;
+
+  /// No description provided for @clearFavoritesCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get clearFavoritesCancel;
+
+  /// No description provided for @clearFavoritesAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all'**
+  String get clearFavoritesAction;
 }
 
 class _AppLocalizationsDelegate

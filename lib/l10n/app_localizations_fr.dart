@@ -95,11 +95,72 @@ class AppLocalizationsFr extends AppLocalizations {
   String get english => 'Anglais';
 
   @override
-  String get randomTrap => 'Random Trap';
+  String get randomTrap => 'Piège aléatoire';
 
   @override
-  String get yourFavoriteChessTraps => 'You favorite chess traps';
+  String get yourFavoriteChessTraps => 'Vos pièges d\'échecs favoris';
 
   @override
-  String get wildGambit => 'Wild Gambit';
+  String get wildGambit => 'Gambit sauvage';
+
+  @override
+  String get search => 'Rechercher';
+
+  @override
+  String get playTheMoves => 'Jouer les coups';
+
+  @override
+  String get matchingTraps => 'Pièges correspondants';
+
+  @override
+  String get playMovesToNarrow => 'Jouez des coups pour affiner les résultats';
+
+  @override
+  String get resetBoard => 'Réinitialiser l\'échiquier';
+
+  @override
+  String get noTrapsFoundForSequence =>
+      'Aucun piège trouvé pour cette séquence';
+
+  @override
+  String get appearance => 'Apparence';
+
+  @override
+  String get dataManagement => 'Gestion des données';
+
+  @override
+  String get about => 'À propos';
+
+  @override
+  String get yourFavorites => 'Vos favoris';
+
+  @override
+  String favoritesCount(int count) {
+    return '$count pièges enregistrés';
+  }
+
+  @override
+  String get appVersion => 'Version de l\'application';
+
+  @override
+  String get profileTitle => 'Joueur d\'échecs';
+
+  @override
+  String get copyright => 'Pièges d\'échecs © 2026';
+
+  @override
+  String get clearFavoritesTitle => 'Effacer les favoris';
+
+  @override
+  String get clearFavoritesHint => 'Cette action est irréversible';
+
+  @override
+  String get clearFavoritesConfirm =>
+      'Voulez-vous vraiment supprimer tous les pièges enregistrés dans les favoris ?';
+
+  @override
+  String get clearFavoritesCancel => 'Annuler';
+
+  @override
+  String get clearFavoritesAction => 'Tout effacer';
 }

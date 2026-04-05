@@ -2,6 +2,7 @@ import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 
 import 'l10n/app_localizations.dart';
+import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 
 extension I10nfromContext on BuildContext {
   AppLocalizations get phrase => AppLocalizations.of(this)!;
@@ -53,4 +54,12 @@ Position pgnToPositionIndex(String pgn, int index) {
 
 String pgnToFen(String pgn) {
   return pgnToPosition(pgn).fen;
+}
+
+extension LegalMovesToIMapType on IMap<Square, SquareSet> {
+  IMap<Square, ISet<Square>> get asIMapSquareISet {
+    return map((key, value) {
+      return MapEntry(key, value.squares.toISet());
+    });
+  }
 }

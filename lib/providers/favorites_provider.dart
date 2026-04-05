@@ -36,4 +36,10 @@ class FavoritesNotifier extends _$FavoritesNotifier {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(_key, newSet.map((e) => e.toString()).toList());
   }
+
+  Future<void> clear() async {
+    state = {};
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.remove(_key);
+  }
 }

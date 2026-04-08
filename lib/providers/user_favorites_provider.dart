@@ -1,10 +1,10 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-part 'favorites_provider.g.dart';
+part 'user_favorites_provider.g.dart';
 
 @riverpod
-class FavoritesNotifier extends _$FavoritesNotifier {
+class UserFavoritesNotifier extends _$UserFavoritesNotifier {
   static const _key = 'favorite_traps';
 
   @override

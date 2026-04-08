@@ -163,4 +163,57 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get clearFavoritesAction => 'Tout effacer';
+
+  @override
+  String get searchByName => 'Search by name';
+
+  @override
+  String get yourPersonalCollectionOfTacticalBrilliance =>
+      'Your personal collection of tactical brilliance.';
+
+  @override
+  String get noFavoriteYet => 'No favorites yet';
+
+  @override
+  String get taptheHeartIconAction =>
+      'Tap the heart icon on any trap detail screen to save it here for quick access.';
+
+  @override
+  String get elevateYourGame => 'Elevate Your Game';
+
+  @override
+  String get discoverWinningSequencesByMasters =>
+      'Discover winning sequences used by masters.';
+
+  @override
+  String get highlight => 'Highlights';
+
+  @override
+  String get exploreMore => 'Explore More';
+
+  @override
+  String get testYourPatternRecog =>
+      'Test your pattern recognition with a mystery trap.';
+
+  @override
+  String get strategyGuide => 'Strategy Guide';
+
+  @override
+  String get comingSoonDeepDives =>
+      'Coming soon: Deep dives into opening theory.';
+
+  @override
+  String get proPlan => 'Pro Member';
+
+  @override
+  String get freePlan => 'freePlan';
+
+  @override
+  String get manageYourMembership => 'Manage your membership';
+
+  @override
+  String get upgradeToUnlock => 'Upgrade to unlock all features';
+
+  @override
+  String get account => 'Account';
 }

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-part 'theme_provider.g.dart';
+part 'app_theme_provider.g.dart';
 
 @riverpod
-class ThemeNotifier extends _$ThemeNotifier {
+class AppThemeNotifier extends _$AppThemeNotifier {
   static const _themeModeKey = 'theme_mode';
 
   @override

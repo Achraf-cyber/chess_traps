@@ -1,3 +1,7 @@
+import 'package:chess_traps/providers/ads_provider.dart';
+import 'package:chess_traps/providers/user_premium_provider.dart';
+import 'package:chess_traps/widgets/ad_banner_widget.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:chess_traps/data/chess_move_node.dart';
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 import 'package:chess_traps/generated/chess/prebuilt_move_trie.dart';
@@ -6,15 +10,16 @@ import 'package:chess_traps/utils.dart';
 import 'package:chessground/chessground.dart';
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class SearchByMovesScreen extends StatefulWidget {
-  const SearchByMovesScreen({super.key});
+class TrapSearchScreen extends ConsumerStatefulWidget {
+  const TrapSearchScreen({super.key});
 
   @override
-  State<SearchByMovesScreen> createState() => _SearchByMovesScreenState();
+  ConsumerState<TrapSearchScreen> createState() => _TrapSearchScreenState();
 }
 
-class _SearchByMovesScreenState extends State<SearchByMovesScreen> {
+class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   var position = Position.initialPosition(Rule.chess);
   var orientation = Side.white;
   NormalMove? promotionMove;
@@ -22,11 +27,60 @@ class _SearchByMovesScreenState extends State<SearchByMovesScreen> {
   List<Move> history = [];
   ChessMoveNode? _currentNode = moveTrie;
   List<int> _currentTrapIds = [];
+  
+  // Rewarded Ad logic
+  RewardedAd? _rewardedAd;
+  int _bonusMoves = 0;
 
   @override
   void initState() {
     super.initState();
     _updateTraps();
+    _loadRewardedAd();
+  }
+
+  void _loadRewardedAd() {
+    if (ref.read(userPremiumProvider)) return;
+    
+    RewardedAd.load(
+      adUnitId: AdsStateNotifier.rewardedAdUnitId,
+      request: const AdRequest(),
+      rewardedAdLoadCallback: RewardedAdLoadCallback(
+        onAdLoaded: (ad) {
+          setState(() {
+            _rewardedAd = ad;
+          });
+        },
+        onAdFailedToLoad: (err) {
+          _rewardedAd = null;
+        },
+      ),
+    );
+  }
+
+  void _showRewardedAd() {
+    if (_rewardedAd == null) return;
+
+    _rewardedAd!.fullScreenContentCallback = FullScreenContentCallback(
+      onAdDismissedFullScreenContent: (ad) {
+        ad.dispose();
+        _loadRewardedAd();
+      },
+      onAdFailedToShowFullScreenContent: (ad, err) {
+        ad.dispose();
+        _loadRewardedAd();
+      },
+    );
+
+    _rewardedAd!.show(onUserEarnedReward: (ad, reward) {
+      setState(() {
+        _bonusMoves += 5;
+      });
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Unlocked 5 extra moves!")),
+      );
+    });
+    _rewardedAd = null;
   }
 
   void _updateTraps() {
@@ -47,6 +101,17 @@ class _SearchByMovesScreenState extends State<SearchByMovesScreen> {
   }
 
   void onMove(Move move, {bool? viaDragAndDrop}) {
+    final isPro = ref.read(userPremiumProvider);
+    final freeLimit = 6 + _bonusMoves;
+    
+    if (!isPro && history.length >= freeLimit) {
+      if (_rewardedAd != null) {
+        _showAdOptionDialog();
+      } else {
+        context.showPaywall();
+      }
+      return;
+    }
     final (nextPos, san) = position.makeSan(move);
     setState(() {
       history.add(move);
@@ -55,6 +120,35 @@ class _SearchByMovesScreenState extends State<SearchByMovesScreen> {
       _currentNode = _currentNode?.children[san];
     });
     _updateTraps();
+  }
+
+  void _showAdOptionDialog() {
+    showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text("Limit Reached"),
+        content: const Text(
+          "You've reached the free move limit for this search. Upgrade to Pro for unlimited depth, or watch a quick video to unlock 5 more moves.",
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              context.showPaywall();
+            },
+            child: const Text("UPGRADE"),
+          ),
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.pop(context);
+              _showRewardedAd();
+            },
+            icon: const Icon(Icons.play_circle_fill_rounded),
+            label: const Text("WATCH AD"),
+          ),
+        ],
+      ),
+    );
   }
 
   void onPromotionSelection(Role? role) {
@@ -79,6 +173,9 @@ class _SearchByMovesScreenState extends State<SearchByMovesScreen> {
 
   void _reset() {
     _resetTo([]);
+    setState(() {
+      _bonusMoves = 0;
+    });
   }
 
   void _resetTo(List<Move> newHistory) {
@@ -111,6 +208,7 @@ class _SearchByMovesScreenState extends State<SearchByMovesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: const AdBannerWidget(),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -191,7 +289,7 @@ class _SearchByMovesScreenState extends State<SearchByMovesScreen> {
   }
 
   Widget _buildFloatingHeader() {
-    return _SearchFloatingHeader(
+    return _TrapSearchFloatingHeader(
       title: context.phrase.search,
       resetTooltip: context.phrase.resetBoard,
       onUndo: _undo,
@@ -240,10 +338,15 @@ class _SearchByMovesScreenState extends State<SearchByMovesScreen> {
     );
   }
 
+  @override
+  void dispose() {
+    _rewardedAd?.dispose();
+    super.dispose();
+  }
 }
 
-class _SearchFloatingHeader extends StatelessWidget {
-  const _SearchFloatingHeader({
+class _TrapSearchFloatingHeader extends StatelessWidget {
+  const _TrapSearchFloatingHeader({
     required this.title,
     required this.resetTooltip,
     required this.onUndo,

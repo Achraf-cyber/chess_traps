@@ -1,4 +1,5 @@
-import 'package:chess_traps/providers/favorites_provider.dart';
+import 'package:chess_traps/providers/user_premium_provider.dart';
+import 'package:chess_traps/providers/user_favorites_provider.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
@@ -24,8 +25,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   void _scrollToCurrentMove() {
     if (!_scrollController.hasClients) return;
 
-    // Approximate width of a move item (move number + white move + black move + spacings)
-    // Each move item in the list is roughly 60-80 pixels wide
     final double targetOffset = (currentMoveIndex > 0)
         ? (currentMoveIndex - 1) * 70.0
         : 0.0;
@@ -39,6 +38,16 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
 
   void _updateMoveIndex(int newIndex, int maxMoves) {
     if (newIndex < 0 || newIndex > maxMoves) return;
+
+    // Premium check
+    if (newIndex > 6) {
+      final isPro = ref.read(userPremiumProvider);
+      if (!isPro) {
+        context.showPaywall();
+        return;
+      }
+    }
+
     setState(() {
       currentMoveIndex = newIndex;
     });
@@ -56,8 +65,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     final trap = ref.watch(trapGameProvider(widget.trapIndex));
     final maxMoves = trap.moves.length;
     final position = pgnToPositionIndex(trap.cleanMoves, currentMoveIndex);
-    final favorite = ref.watch(favoritesProvider.notifier);
-    final isFavorite = ref.watch(favoritesProvider).contains(trap.id);
+    final favorite = ref.watch(userFavoritesProvider.notifier);
+    final isFavorite = ref.watch(userFavoritesProvider).contains(trap.id);
 
     return Scaffold(
       appBar: AppBar(

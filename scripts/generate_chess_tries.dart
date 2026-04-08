@@ -52,6 +52,7 @@ void main() async {
       normalizeName(trap.opening),
       normalizeName(trap.trapName),
     ]) {
+      if (key.isEmpty) continue;
       nameIndex.putIfAbsent(key, () => <int>[]).add(trap.id);
     }
   }

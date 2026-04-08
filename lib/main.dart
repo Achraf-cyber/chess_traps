@@ -5,7 +5,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:chess_traps/providers/theme_provider.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:chess_traps/providers/app_theme_provider.dart';
+import 'package:chess_traps/services/billing_service.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 
@@ -15,11 +17,16 @@ import 'router.dart';
 import 'theme/theme.dart';
 import 'theme/theme_utils.dart';
 
-void main() {
+void main() async {
   if (kIsWeb) {
     usePathUrlStrategy();
   }
   WidgetsFlutterBinding.ensureInitialized();
+  
+  if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+    await MobileAds.instance.initialize();
+    await BillingService.init();
+  }
 
   LicenseRegistry.addLicense(() async* {
     final String license = await rootBundle.loadString(AppAssets.googleFontsQuicksandOflTxt);
@@ -43,51 +50,23 @@ class MainApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeMode = ref.watch(themeProvider);
-    // ignore: unused_local_variable
-    final Brightness brightness = View.of(context).platformDispatcher.platformBrightness;
+    final themeMode = ref.watch(appThemeProvider);
     const quicksand = 'Quicksand';
     final TextTheme textTheme = createTextTheme(context, quicksand, quicksand);
 
     final theme = MaterialTheme(textTheme);
-    if (kDebugMode && (kIsWeb || Platform.isWindows)) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Chess traps',
-        themeMode: themeMode,
-        theme: theme.light(),
-        darkTheme: theme.dark(),
-        home: MaterialApp.router(
-          debugShowCheckedModeBanner: false,
-          routerConfig: router,
-          onGenerateTitle: (context) => AppLocalizations.of(context)!.appName,
-          supportedLocales: AppLocalizations.supportedLocales,
-          localizationsDelegates: AppLocalizations.localizationsDelegates,
-          locale: DevicePreview.locale(context),
-          builder: DevicePreview.appBuilder,
-          theme: theme.light(),
-          darkTheme: theme.dark(),
-          themeMode: themeMode,
-        ),
-      );
-    }
-
-    return MaterialApp(
+    
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-      title: 'Chess traps',
-      themeMode: themeMode,
+      routerConfig: router,
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appName,
+      supportedLocales: AppLocalizations.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      locale: kDebugMode && (kIsWeb || Platform.isWindows) ? DevicePreview.locale(context) : null,
+      builder: kDebugMode && (kIsWeb || Platform.isWindows) ? DevicePreview.appBuilder : null,
       theme: theme.light(),
       darkTheme: theme.dark(),
-      home: MaterialApp.router(
-        debugShowCheckedModeBanner: false,
-        routerConfig: router,
-        onGenerateTitle: (context) => AppLocalizations.of(context)!.appName,
-        supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: AppLocalizations.localizationsDelegates,
-        theme: theme.light(),
-        darkTheme: theme.dark(),
-        themeMode: themeMode,
-      ),
+      themeMode: themeMode,
     );
   }
 }

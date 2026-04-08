@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 import '../utils.dart';
 
-class FeaturedTrapCard extends StatelessWidget {
-  const FeaturedTrapCard({super.key, required this.trap, required this.title});
+class TrapFeaturedCard extends StatelessWidget {
+  const TrapFeaturedCard({super.key, required this.trap, required this.title});
   final ChessTrap trap;
   final String title;
 

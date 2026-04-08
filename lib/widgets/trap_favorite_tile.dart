@@ -4,8 +4,8 @@ import 'package:chess_traps/utils.dart';
 import 'package:chessground/chessground.dart';
 import 'package:flutter/material.dart';
 
-class FavoriteTrapTile extends StatelessWidget {
-  const FavoriteTrapTile({
+class TrapFavoriteTile extends StatelessWidget {
+  const TrapFavoriteTile({
     super.key,
     required this.trap,
     this.onRemove,

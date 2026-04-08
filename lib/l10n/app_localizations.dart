@@ -401,6 +401,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Clear all'**
   String get clearFavoritesAction;
+
+  /// No description provided for @searchByName.
+  ///
+  /// In en, this message translates to:
+  /// **'Search by name'**
+  String get searchByName;
+
+  /// No description provided for @yourPersonalCollectionOfTacticalBrilliance.
+  ///
+  /// In en, this message translates to:
+  /// **'Your personal collection of tactical brilliance.'**
+  String get yourPersonalCollectionOfTacticalBrilliance;
+
+  /// No description provided for @noFavoriteYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No favorites yet'**
+  String get noFavoriteYet;
+
+  /// No description provided for @taptheHeartIconAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the heart icon on any trap detail screen to save it here for quick access.'**
+  String get taptheHeartIconAction;
+
+  /// No description provided for @elevateYourGame.
+  ///
+  /// In en, this message translates to:
+  /// **'Elevate Your Game'**
+  String get elevateYourGame;
+
+  /// No description provided for @discoverWinningSequencesByMasters.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover winning sequences used by masters.'**
+  String get discoverWinningSequencesByMasters;
+
+  /// No description provided for @highlight.
+  ///
+  /// In en, this message translates to:
+  /// **'Highlights'**
+  String get highlight;
+
+  /// No description provided for @exploreMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore More'**
+  String get exploreMore;
+
+  /// No description provided for @testYourPatternRecog.
+  ///
+  /// In en, this message translates to:
+  /// **'Test your pattern recognition with a mystery trap.'**
+  String get testYourPatternRecog;
+
+  /// No description provided for @strategyGuide.
+  ///
+  /// In en, this message translates to:
+  /// **'Strategy Guide'**
+  String get strategyGuide;
+
+  /// No description provided for @comingSoonDeepDives.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon: Deep dives into opening theory.'**
+  String get comingSoonDeepDives;
+
+  /// No description provided for @proPlan.
+  ///
+  /// In en, this message translates to:
+  /// **'Pro Member'**
+  String get proPlan;
+
+  /// No description provided for @freePlan.
+  ///
+  /// In en, this message translates to:
+  /// **'freePlan'**
+  String get freePlan;
+
+  /// No description provided for @manageYourMembership.
+  ///
+  /// In en, this message translates to:
+  /// **'Manage your membership'**
+  String get manageYourMembership;
+
+  /// No description provided for @upgradeToUnlock.
+  ///
+  /// In en, this message translates to:
+  /// **'Upgrade to unlock all features'**
+  String get upgradeToUnlock;
+
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
 }
 
 class _AppLocalizationsDelegate

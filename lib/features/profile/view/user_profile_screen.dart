@@ -1,24 +1,27 @@
-import 'package:chess_traps/providers/favorites_provider.dart';
-import 'package:chess_traps/providers/theme_provider.dart';
+import 'package:chess_traps/providers/user_favorites_provider.dart';
+import 'package:chess_traps/providers/user_premium_provider.dart';
+import 'package:chess_traps/providers/app_theme_provider.dart';
 import 'package:chess_traps/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:chess_traps/services/billing_service.dart';
 
 import '../../../utils.dart';
 
-class ProfileScreen extends ConsumerWidget {
-  const ProfileScreen({super.key});
+class UserProfileScreen extends ConsumerWidget {
+  const UserProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final themeMode = ref.watch(themeProvider);
-    final ThemeNotifier themeNotifier = ref.read(themeProvider.notifier);
-    final favoritesCount = ref.watch(favoritesProvider).length;
+    final themeMode = ref.watch(appThemeProvider);
+    final AppThemeNotifier themeNotifier = ref.read(appThemeProvider.notifier);
+    final favoritesCount = ref.watch(userFavoritesProvider).length;
+    final isPro = ref.watch(userPremiumProvider);
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          const _ProfileHeaderSliver(),
+          _ProfileHeaderSliver(isPro: isPro),
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(24.0),
@@ -31,6 +34,60 @@ class ProfileScreen extends ConsumerWidget {
                     currentMode: themeMode,
                     notifier: themeNotifier,
                   ),
+                  const SizedBox(height: 32),
+                  _ProfileSectionTitle(title: context.phrase.account),
+                  const SizedBox(height: 16),
+                  _ProfileSettingsTile(
+                    icon: isPro
+                        ? Icons.workspace_premium_rounded
+                        : Icons.star_outline_rounded,
+                    title: isPro
+                        ? context.phrase.proPlan
+                        : context.phrase.freePlan,
+                    subtitle: isPro
+                        ? context.phrase.manageYourMembership
+                        : context.phrase.upgradeToUnlock,
+                    iconColor: isPro ? Colors.amber : null,
+                    onTap: () async {
+                      if (isPro) {
+                        await BillingService.showCustomerCenter();
+                      } else {
+                        await context.showPaywall();
+                      }
+                    },
+                  ),
+                  if (!isPro) ...[
+                    const SizedBox(height: 16),
+                    _ProfileSettingsTile(
+                      icon: Icons.restore_rounded,
+                      title: "Restore Purchases",
+                      subtitle: "Already bought? Restore it here.",
+                      onTap: () async {
+                        try {
+                          await ref
+                              .read(userPremiumProvider.notifier)
+                              .restorePurchases();
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text(
+                                  "Purchases restored successfully!",
+                                ),
+                              ),
+                            );
+                          }
+                        } catch (e) {
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              const SnackBar(
+                                content: Text("Failed to restore purchases."),
+                              ),
+                            );
+                          }
+                        }
+                      },
+                    ),
+                  ],
                   const SizedBox(height: 32),
                   _ProfileSectionTitle(title: context.phrase.dataManagement),
                   const SizedBox(height: 16),
@@ -76,7 +133,7 @@ class ProfileScreen extends ConsumerWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 100), 
+                  const SizedBox(height: 100),
                 ],
               ),
             ),
@@ -99,7 +156,7 @@ class ProfileScreen extends ConsumerWidget {
           ),
           TextButton(
             onPressed: () {
-              ref.read(favoritesProvider.notifier).clear();
+              ref.read(userFavoritesProvider.notifier).clear();
               Navigator.pop(context);
             },
             child: Text(
@@ -114,7 +171,8 @@ class ProfileScreen extends ConsumerWidget {
 }
 
 class _ProfileHeaderSliver extends StatelessWidget {
-  const _ProfileHeaderSliver();
+  const _ProfileHeaderSliver({required this.isPro});
+  final bool isPro;
 
   @override
   Widget build(BuildContext context) {
@@ -131,8 +189,10 @@ class _ProfileHeaderSliver extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    context.colors.primaryContainer,
-                    context.colors.surface,
+                    isPro
+                        ? Colors.amber.shade700
+                        : context.colors.primaryContainer,
+                    isPro ? Colors.orange.shade400 : context.colors.surface,
                   ],
                 ),
               ),
@@ -142,17 +202,54 @@ class _ProfileHeaderSliver extends StatelessWidget {
               left: 24,
               child: Row(
                 children: [
-                  CircleAvatar(
-                    radius: 40,
-                    backgroundColor: context.colors.primary,
-                    child: const Icon(Icons.person_rounded, size: 40, color: Colors.white),
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundColor: isPro
+                            ? Colors.amber
+                            : context.colors.primary,
+                        child: Icon(
+                          isPro
+                              ? Icons.workspace_premium_rounded
+                              : Icons.person_rounded,
+                          size: 40,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
                   ),
                   const SizedBox(width: 20),
-                  Text(
-                    context.phrase.profileTitle,
-                    style: context.textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.w900,
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        context.phrase.profileTitle,
+                        style: context.textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.w900,
+                        ),
+                      ),
+                      if (isPro)
+                        Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 2,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8),
+                          ),
+                          child: const Text(
+                            "PRO MEMBER",
+                            style: TextStyle(
+                              color: Colors.amber,
+                              fontWeight: FontWeight.w900,
+                              fontSize: 10,
+                            ),
+                          ),
+                        ),
+                    ],
                   ),
                 ],
               ),
@@ -189,7 +286,7 @@ class _ProfileThemeSelector extends StatelessWidget {
   });
 
   final ThemeMode currentMode;
-  final ThemeNotifier notifier;
+  final AppThemeNotifier notifier;
 
   @override
   Widget build(BuildContext context) {
@@ -198,7 +295,9 @@ class _ProfileThemeSelector extends StatelessWidget {
       decoration: BoxDecoration(
         color: context.colors.surfaceContainerLow,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: context.colors.outlineVariant.withValues(alpha: 0.3)),
+        border: Border.all(
+          color: context.colors.outlineVariant.withValues(alpha: 0.3),
+        ),
       ),
       child: Row(
         children: [
@@ -252,12 +351,19 @@ class _ProfileThemeOption extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Icon(icon, color: isSelected ? context.colors.onPrimary : context.colors.onSurfaceVariant),
+              Icon(
+                icon,
+                color: isSelected
+                    ? context.colors.onPrimary
+                    : context.colors.onSurfaceVariant,
+              ),
               const SizedBox(height: 4),
               Text(
                 label,
                 style: context.textTheme.labelSmall?.copyWith(
-                  color: isSelected ? context.colors.onPrimary : context.colors.onSurfaceVariant,
+                  color: isSelected
+                      ? context.colors.onPrimary
+                      : context.colors.onSurfaceVariant,
                   fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                 ),
               ),
@@ -296,7 +402,9 @@ class _ProfileSettingsTile extends StatelessWidget {
           decoration: BoxDecoration(
             color: context.colors.surfaceContainerLow,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: context.colors.outlineVariant.withValues(alpha: 0.3)),
+            border: Border.all(
+              color: context.colors.outlineVariant.withValues(alpha: 0.3),
+            ),
           ),
           child: Row(
             children: [
@@ -306,14 +414,27 @@ class _ProfileSettingsTile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(title, style: context.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold)),
+                    Text(
+                      title,
+                      style: context.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     if (subtitle != null)
-                      Text(subtitle!, style: context.textTheme.labelMedium?.copyWith(color: context.colors.onSurfaceVariant)),
+                      Text(
+                        subtitle!,
+                        style: context.textTheme.labelMedium?.copyWith(
+                          color: context.colors.onSurfaceVariant,
+                        ),
+                      ),
                   ],
                 ),
               ),
               if (onTap != null)
-                Icon(Icons.chevron_right_rounded, color: context.colors.outlineVariant),
+                Icon(
+                  Icons.chevron_right_rounded,
+                  color: context.colors.outlineVariant,
+                ),
             ],
           ),
         ),

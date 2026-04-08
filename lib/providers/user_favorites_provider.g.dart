@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'favorites_provider.dart';
+part of 'user_favorites_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,28 +9,28 @@ part of 'favorites_provider.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(FavoritesNotifier)
-final favoritesProvider = FavoritesNotifierProvider._();
+@ProviderFor(UserFavoritesNotifier)
+final userFavoritesProvider = UserFavoritesNotifierProvider._();
 
-final class FavoritesNotifierProvider
-    extends $NotifierProvider<FavoritesNotifier, Set<int>> {
-  FavoritesNotifierProvider._()
+final class UserFavoritesNotifierProvider
+    extends $NotifierProvider<UserFavoritesNotifier, Set<int>> {
+  UserFavoritesNotifierProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'favoritesProvider',
+        name: r'userFavoritesProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$favoritesNotifierHash();
+  String debugGetCreateSourceHash() => _$userFavoritesNotifierHash();
 
   @$internal
   @override
-  FavoritesNotifier create() => FavoritesNotifier();
+  UserFavoritesNotifier create() => UserFavoritesNotifier();
 
   /// {@macro riverpod.override_with_value}
   Override overrideWithValue(Set<int> value) {
@@ -41,9 +41,10 @@ final class FavoritesNotifierProvider
   }
 }
 
-String _$favoritesNotifierHash() => r'7f729d4eeee81b9a9fb1cab3dde589c41d440923';
+String _$userFavoritesNotifierHash() =>
+    r'392a9ffc78c7f57f28bf909c124eaa2de15cd8be';
 
-abstract class _$FavoritesNotifier extends $Notifier<Set<int>> {
+abstract class _$UserFavoritesNotifier extends $Notifier<Set<int>> {
   Set<int> build();
   @$mustCallSuper
   @override

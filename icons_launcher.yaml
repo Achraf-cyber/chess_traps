@@ -7,3 +7,7 @@ icons_launcher:
       enable: true
     web: 
       enable: true
+    windows: 
+      enable: true
+    linux: 
+      enable: true

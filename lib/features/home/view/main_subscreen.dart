@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:chess_traps/generated/assets.dart';
 import 'package:chess_traps/router.dart';
-import 'package:chess_traps/widgets/featured_trap_card.dart';
+import 'package:chess_traps/widgets/trap_featured_card.dart';
 import 'package:chess_traps/widgets/quick_action_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -49,14 +49,14 @@ class MainSubscreen extends ConsumerWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Text(
-                            "Elevate Your Game",
+                            context.phrase.elevateYourGame,
                             style: context.textTheme.headlineSmall?.copyWith(
                               fontWeight: FontWeight.w900,
                               color: context.colors.primary,
                             ),
                           ),
                           Text(
-                            "Discover winning sequences used by masters.",
+                            context.phrase.discoverWinningSequencesByMasters,
                             style: context.textTheme.bodyMedium?.copyWith(
                               color: context.colors.onSurfaceVariant,
                             ),
@@ -77,20 +77,20 @@ class MainSubscreen extends ConsumerWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Highlights",
+                  context.phrase.highlight,
                   style: context.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w800,
                     letterSpacing: -0.5,
                   ),
                 ),
                 const SizedBox(height: 16),
-                FeaturedTrapCard(
+                TrapFeaturedCard(
                   trap: trapOfTheDay,
                   title: context.phrase.trapOfTheDay,
                 ),
                 const SizedBox(height: 24),
                 Text(
-                  "Explore More",
+                  context.phrase.exploreMore,
                   style: context.textTheme.titleLarge?.copyWith(
                     fontWeight: FontWeight.w800,
                     letterSpacing: -0.5,
@@ -99,18 +99,22 @@ class MainSubscreen extends ConsumerWidget {
                 const SizedBox(height: 16),
                 QuickActionCard(
                   title: context.phrase.randomTrap,
-                  subtitle: "Test your pattern recognition with a mystery trap.",
+                  subtitle: context.phrase.testYourPatternRecog,
                   icon: Icons.shuffle_rounded,
-                  color: context.colors.secondaryContainer.withValues(alpha: 0.5),
+                  color: context.colors.secondaryContainer.withValues(
+                    alpha: 0.5,
+                  ),
                   onTap: () =>
                       TrapDetailRoute(index: randomTrap.id).push<void>(context),
                 ),
                 const SizedBox(height: 12),
                 QuickActionCard(
-                  title: "Strategy Guide",
-                  subtitle: "Coming soon: Deep dives into opening theory.",
+                  title: context.phrase.strategyGuide,
+                  subtitle: context.phrase.comingSoonDeepDives,
                   icon: Icons.auto_stories_rounded,
-                  color: context.colors.tertiaryContainer.withValues(alpha: 0.4),
+                  color: context.colors.tertiaryContainer.withValues(
+                    alpha: 0.4,
+                  ),
                   onTap: () {},
                 ),
               ],

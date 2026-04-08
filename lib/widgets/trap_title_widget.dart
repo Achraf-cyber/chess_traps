@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 
 import '../utils.dart';
 
-class TrapWithName extends StatelessWidget {
-  const TrapWithName({super.key, required this.label, required this.trap});
+class TrapTitleWidget extends StatelessWidget {
+  const TrapTitleWidget({super.key, required this.label, required this.trap});
   final String label;
   final ChessTrap trap;
 

@@ -2,12 +2,14 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dartchess/dartchess.dart' hide File;
+import 'package:chess_traps/data/openings.dart';
 
 const String reset = '\x1B[0m';
 const String green = '\x1B[32m';
 
 void main() async {
   final trapsDir = Directory('data/chess traps');
+  // ignore: avoid_slow_async_io
   if (!await trapsDir.exists()) {
     stderr.writeln('Folder not found: ${trapsDir.path}');
     return;
@@ -55,10 +57,19 @@ void main() async {
     uniques.add(cleanMoves);
 
     final fen = _pgnToFen(cleanMoves);
-    final opening = game.headers['Opening'] ?? '';
-    final trapName = game.headers['ChapterName'] ??
-        game.headers['Event'] ??
-        opening;
+
+    // Look up opening from our openings database
+    final openingIdMatch = _findOpeningId(sanMoves);
+    final openingId = openingIdMatch.isNotEmpty
+        ? openingIdMatch
+        : ''; // A default opening ID could be provided or handled as empty
+
+    final openingName =
+        ecoOpeningIndexes.byId[openingId]?.name ??
+        game.headers['Opening'] ??
+        '';
+    final trapName =
+        game.headers['ChapterName'] ?? game.headers['Event'] ?? openingName;
     final metadata = _buildMetadata(game.headers);
 
     final moveList = sanMoves.map(_encode).join(',');
@@ -67,7 +78,8 @@ void main() async {
     content.writeln('  id: ${id++},');
     content.writeln('  cleanMoves: ${_encode(cleanMoves)},');
     content.writeln('  metadata: ${_encode(metadata)},');
-    content.writeln('  opening: ${_encode(opening)},');
+    content.writeln('  openingId: ${_encode(openingId)},');
+    content.writeln('  opening: ${_encode(openingName)},');
     content.writeln('  trapName: ${_encode(trapName)},');
 
     // NOTE: commentedMoves not needed yet -> keep as plain cleaned moves.
@@ -91,6 +103,29 @@ void main() async {
   await _runDartCommand(['run', 'scripts/generate_chess_tries.dart']);
 
   stdout.writeln('$green Finished generating traps and tries $reset');
+}
+
+/// Finds the longest matching opening from [ecoOpenings] that is a prefix of [trapMoves].
+String _findOpeningId(List<String> trapMoves) {
+  OpeningEntry? bestMatch;
+  for (final opening in ecoOpenings) {
+    if (opening.moves.length > trapMoves.length) continue;
+
+    bool match = true;
+    for (int i = 0; i < opening.moves.length; i++) {
+      if (opening.moves[i] != trapMoves[i]) {
+        match = false;
+        break;
+      }
+    }
+
+    if (match) {
+      if (bestMatch == null || opening.moves.length > bestMatch.moves.length) {
+        bestMatch = opening;
+      }
+    }
+  }
+  return bestMatch?.id ?? '';
 }
 
 String _pgnToFen(String pgn) {

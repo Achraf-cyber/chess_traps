@@ -1,4 +1,4 @@
-import 'package:chess_traps/providers/favorites_provider.dart';
+import 'package:chess_traps/providers/user_favorites_provider.dart';
 import 'package:chess_traps/utils.dart';
 import 'package:chess_traps/widgets/trap_grid_card.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +11,11 @@ class FavoritesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final elements = ref.watch(favoritesProvider).map(indexToChessTrap).toList();
-    
+    final elements = ref
+        .watch(userFavoritesProvider)
+        .map(indexToChessTrap)
+        .toList();
+
     return Scaffold(
       body: SafeArea(
         child: CustomScrollView(
@@ -32,7 +35,7 @@ class FavoritesScreen extends ConsumerWidget {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      "Your personal collection of tactical brilliance.",
+                      context.phrase.yourPersonalCollectionOfTacticalBrilliance,
                       style: context.textTheme.bodySmall?.copyWith(
                         color: context.colors.onSurfaceVariant,
                       ),
@@ -51,7 +54,8 @@ class FavoritesScreen extends ConsumerWidget {
                       Container(
                         padding: const EdgeInsets.all(24),
                         decoration: BoxDecoration(
-                          color: context.colors.surfaceContainerHighest.withValues(alpha: 0.5),
+                          color: context.colors.surfaceContainerHighest
+                              .withValues(alpha: 0.5),
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
@@ -62,7 +66,7 @@ class FavoritesScreen extends ConsumerWidget {
                       ),
                       const SizedBox(height: 24),
                       Text(
-                        "No favorites yet",
+                        context.phrase.noFavoriteYet,
                         style: context.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
@@ -71,7 +75,7 @@ class FavoritesScreen extends ConsumerWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 48),
                         child: Text(
-                          "Tap the heart icon on any trap detail screen to save it here for quick access.",
+                          context.phrase.taptheHeartIconAction,
                           textAlign: TextAlign.center,
                           style: context.textTheme.bodyMedium?.copyWith(
                             color: context.colors.onSurfaceVariant,

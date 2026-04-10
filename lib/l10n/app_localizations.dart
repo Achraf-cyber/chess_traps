@@ -468,35 +468,35 @@ abstract class AppLocalizations {
   /// **'Coming soon: Deep dives into opening theory.'**
   String get comingSoonDeepDives;
 
-  /// No description provided for @proPlan.
-  ///
-  /// In en, this message translates to:
-  /// **'Pro Member'**
-  String get proPlan;
-
-  /// No description provided for @freePlan.
-  ///
-  /// In en, this message translates to:
-  /// **'freePlan'**
-  String get freePlan;
-
-  /// No description provided for @manageYourMembership.
-  ///
-  /// In en, this message translates to:
-  /// **'Manage your membership'**
-  String get manageYourMembership;
-
-  /// No description provided for @upgradeToUnlock.
-  ///
-  /// In en, this message translates to:
-  /// **'Upgrade to unlock all features'**
-  String get upgradeToUnlock;
-
   /// No description provided for @account.
   ///
   /// In en, this message translates to:
   /// **'Account'**
   String get account;
+
+  /// No description provided for @sequenceHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Sequence History'**
+  String get sequenceHistory;
+
+  /// No description provided for @theory.
+  ///
+  /// In en, this message translates to:
+  /// **'Theory'**
+  String get theory;
+
+  /// No description provided for @undo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undo;
+
+  /// No description provided for @flip.
+  ///
+  /// In en, this message translates to:
+  /// **'Flip'**
+  String get flip;
 }
 
 class _AppLocalizationsDelegate

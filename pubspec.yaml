@@ -31,9 +31,11 @@ dependencies:
   shared_preferences: ^2.5.4
   url_launcher: ^6.3.2
   fast_immutable_collections: ^11.1.0
-  purchases_flutter: ^9.16.0
-  purchases_ui_flutter: ^9.16.0
   google_mobile_ads: ^7.0.0
+  flutter_dotenv: ^6.0.0
+  splash_master: ^0.0.3
+  flutter_local_notifications: ^21.0.0
+  timezone: ^0.11.0
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +57,43 @@ flutter:
   uses-material-design: true
   generate: true
   assets:
+    - .env.dev
+    - .env.prod
     - assets/app/
     - assets/images/
     - assets/google_fonts/
+splash_master:
+  # Use to specifies the color for the splash screen
+  color: '#FFFFFF'
+  # Use to specifies the splash image
+  image: 'assets/app/splash_image.png'
+  # Provides content mode for splash image in iOS
+  # iOS content mode options: scaleToFill, scaleAspectFit, scaleAspectFill, redraw, center, top, bottom,
+  # left, right, topLeft, topRight, bottomLeft, bottomRight.
+  ios_content_mode: 'center'
+  # Provides gravity for splash image in Android
+  # Android gravity options: center, clip_horizontal, clip_vertical, fill_horizontal, fill, center_vertical, 
+  # bottom, fill_vertical, center_horizontal, top, end, left, right, start
+  android_gravity: 'center'
+  # Use to specifies the splash image
+  background_image: 'assets/app/background_image.png'
+  # Provided content mode for splash image in background for iOS
+  ios_background_content_mode: 'scaleToFill'
+  # Provides gravity for background image in Android
+  # Android gravity options: center, clip_horizontal, clip_vertical, fill_horizontal, fill, center_vertical, 
+  # bottom, fill_vertical, center_horizontal, top, end, left, right, start
+  android_background_image_gravity: 'fill'
+  # Use to specifies image for android in dark mode
+  image_dark_android: 'assets/app/splash_image_dark.png'
+  # Provides gravity for splash image for Android in dark mode
+  android_dark_gravity_key: 'center'
+  # Use to specifies the color for the splash screen for Android in dark mode
+  color_dark_android: '#000000'
+  # Section to specifies the configuration for the splash in Android 12+
+  android_12_and_above:
+    # Provides the background color of splash screen
+    color: '#FFFFFF'
+    # Provides custom icon to replace the default app icon
+    image: 'assets/app/splash_image.png'
+    # Provides branding image which is shown under main icon image. 
+    # branding_image: 'assets/branding_image.png'

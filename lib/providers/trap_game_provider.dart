@@ -1,6 +1,4 @@
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
-import 'package:chess_traps/utils.dart';
-import 'package:dartchess/dartchess.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../data/chess_trap.dart';

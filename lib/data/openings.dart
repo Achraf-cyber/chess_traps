@@ -10,17 +10,16 @@ class EcoRange {
 }
 
 class OpeningEntry {
-  final String id;
-  final EcoRange eco;
-  final String name;
-  final List<String> moves;
-
   const OpeningEntry({
     required this.id,
     required this.eco,
     required this.name,
     required this.moves,
   });
+  final String id;
+  final EcoRange eco;
+  final String name;
+  final List<String> moves;
 
   String get firstMove => moves.isEmpty ? '' : moves.first;
 
@@ -29,18 +28,6 @@ class OpeningEntry {
 }
 
 class OpeningIndexes {
-  final List<OpeningEntry> entries;
-
-  final Map<String, OpeningEntry> byId;
-  final Map<String, List<OpeningEntry>> byEcoCode;
-  final Map<String, List<OpeningEntry>> byName;
-  final Map<String, List<OpeningEntry>> byFirstMove;
-  final Map<String, List<OpeningEntry>> byMoveSequence;
-
-  final Map<String, String> ecoCodeToName;
-  final Map<String, List<String>> nameToEcoCodes;
-  final Map<String, List<String>> firstMoveToIds;
-
   OpeningIndexes._({
     required this.entries,
     required this.byId,
@@ -95,6 +82,17 @@ class OpeningIndexes {
       firstMoveToIds: firstMoveToIds,
     );
   }
+  final List<OpeningEntry> entries;
+
+  final Map<String, OpeningEntry> byId;
+  final Map<String, List<OpeningEntry>> byEcoCode;
+  final Map<String, List<OpeningEntry>> byName;
+  final Map<String, List<OpeningEntry>> byFirstMove;
+  final Map<String, List<OpeningEntry>> byMoveSequence;
+
+  final Map<String, String> ecoCodeToName;
+  final Map<String, List<String>> nameToEcoCodes;
+  final Map<String, List<String>> firstMoveToIds;
 
   static List<String> expandEcoRange(EcoRange range) {
     final startLetter = range.start[0];

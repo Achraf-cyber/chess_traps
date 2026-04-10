@@ -165,55 +165,55 @@ class AppLocalizationsFr extends AppLocalizations {
   String get clearFavoritesAction => 'Tout effacer';
 
   @override
-  String get searchByName => 'Search by name';
+  String get searchByName => 'Rechercher par nom';
 
   @override
   String get yourPersonalCollectionOfTacticalBrilliance =>
-      'Your personal collection of tactical brilliance.';
+      'Votre collection personnelle de brillance tactique.';
 
   @override
-  String get noFavoriteYet => 'No favorites yet';
+  String get noFavoriteYet => 'Pas encore de favoris';
 
   @override
   String get taptheHeartIconAction =>
-      'Tap the heart icon on any trap detail screen to save it here for quick access.';
+      'Appuyez sur l\'icône de cœur sur n\'importe quel écran de détail de piège pour l\'enregistrer ici pour un accès rapide.';
 
   @override
-  String get elevateYourGame => 'Elevate Your Game';
+  String get elevateYourGame => 'Élevez votre jeu';
 
   @override
   String get discoverWinningSequencesByMasters =>
-      'Discover winning sequences used by masters.';
+      'Découvrez des séquences gagnantes utilisées par des maîtres.';
 
   @override
-  String get highlight => 'Highlights';
+  String get highlight => 'Points forts';
 
   @override
-  String get exploreMore => 'Explore More';
+  String get exploreMore => 'Explorer plus';
 
   @override
   String get testYourPatternRecog =>
-      'Test your pattern recognition with a mystery trap.';
+      'Testez votre reconnaissance de motifs avec un piège mystère.';
 
   @override
-  String get strategyGuide => 'Strategy Guide';
+  String get strategyGuide => 'Guide de stratégie';
 
   @override
   String get comingSoonDeepDives =>
-      'Coming soon: Deep dives into opening theory.';
+      'Prochainement : plongée profonde dans la théorie des ouvertures.';
 
   @override
-  String get proPlan => 'Pro Member';
+  String get account => 'Compte';
 
   @override
-  String get freePlan => 'freePlan';
+  String get sequenceHistory => 'Historique des séquences';
 
   @override
-  String get manageYourMembership => 'Manage your membership';
+  String get theory => 'Théorie';
 
   @override
-  String get upgradeToUnlock => 'Upgrade to unlock all features';
+  String get undo => 'Annuler';
 
   @override
-  String get account => 'Account';
+  String get flip => 'Retourner';
 }

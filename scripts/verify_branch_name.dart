@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'dart:io';
 
 void main() {
@@ -22,7 +24,8 @@ void main() {
   if (exactAllowed.contains(branchName)) {
     print('✅ Branch name "$branchName" is allowed.');
     exit(0);
-  } else if (featFixPattern.hasMatch(branchName) || hotfixPattern.hasMatch(branchName)) {
+  } else if (featFixPattern.hasMatch(branchName) ||
+      hotfixPattern.hasMatch(branchName)) {
     print('✅ Branch name "$branchName" follows convention.');
     exit(0);
   } else {

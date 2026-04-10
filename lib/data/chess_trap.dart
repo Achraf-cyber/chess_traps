@@ -1,8 +1,8 @@
 class ChessTrap {
   const ChessTrap({
     required this.id,
-    required this.openingId,
     required this.opening,
+    required this.openingId,
     required this.trapName,
     required this.cleanMoves,
     required this.commentedMoves,
@@ -12,8 +12,8 @@ class ChessTrap {
   });
 
   final int id;
-  final String openingId;
   final String opening;
+  final String openingId;
 
   final String trapName;
 

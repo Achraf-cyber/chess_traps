@@ -1,12 +1,12 @@
 import 'package:chess_traps/providers/user_favorites_provider.dart';
-import 'package:chess_traps/providers/user_premium_provider.dart';
-import 'package:chess_traps/providers/app_theme_provider.dart';
-import 'package:chess_traps/router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:chess_traps/services/billing_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:chess_traps/providers/app_theme_provider.dart';
+import 'package:chess_traps/router.dart';
 
 import '../../../utils.dart';
+import '../../../services/notification_service.dart';
 
 class UserProfileScreen extends ConsumerWidget {
   const UserProfileScreen({super.key});
@@ -16,12 +16,11 @@ class UserProfileScreen extends ConsumerWidget {
     final themeMode = ref.watch(appThemeProvider);
     final AppThemeNotifier themeNotifier = ref.read(appThemeProvider.notifier);
     final favoritesCount = ref.watch(userFavoritesProvider).length;
-    final isPro = ref.watch(userPremiumProvider);
 
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          _ProfileHeaderSliver(isPro: isPro),
+          const _ProfileHeaderSliver(),
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(24.0),
@@ -35,59 +34,9 @@ class UserProfileScreen extends ConsumerWidget {
                     notifier: themeNotifier,
                   ),
                   const SizedBox(height: 32),
-                  _ProfileSectionTitle(title: context.phrase.account),
+                  const _ProfileSectionTitle(title: "Notifications"),
                   const SizedBox(height: 16),
-                  _ProfileSettingsTile(
-                    icon: isPro
-                        ? Icons.workspace_premium_rounded
-                        : Icons.star_outline_rounded,
-                    title: isPro
-                        ? context.phrase.proPlan
-                        : context.phrase.freePlan,
-                    subtitle: isPro
-                        ? context.phrase.manageYourMembership
-                        : context.phrase.upgradeToUnlock,
-                    iconColor: isPro ? Colors.amber : null,
-                    onTap: () async {
-                      if (isPro) {
-                        await BillingService.showCustomerCenter();
-                      } else {
-                        await context.showPaywall();
-                      }
-                    },
-                  ),
-                  if (!isPro) ...[
-                    const SizedBox(height: 16),
-                    _ProfileSettingsTile(
-                      icon: Icons.restore_rounded,
-                      title: "Restore Purchases",
-                      subtitle: "Already bought? Restore it here.",
-                      onTap: () async {
-                        try {
-                          await ref
-                              .read(userPremiumProvider.notifier)
-                              .restorePurchases();
-                          if (context.mounted) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text(
-                                  "Purchases restored successfully!",
-                                ),
-                              ),
-                            );
-                          }
-                        } catch (e) {
-                          if (context.mounted) {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text("Failed to restore purchases."),
-                              ),
-                            );
-                          }
-                        }
-                      },
-                    ),
-                  ],
+                  const _ProfileNotificationSettings(),
                   const SizedBox(height: 32),
                   _ProfileSectionTitle(title: context.phrase.dataManagement),
                   const SizedBox(height: 16),
@@ -171,8 +120,7 @@ class UserProfileScreen extends ConsumerWidget {
 }
 
 class _ProfileHeaderSliver extends StatelessWidget {
-  const _ProfileHeaderSliver({required this.isPro});
-  final bool isPro;
+  const _ProfileHeaderSliver();
 
   @override
   Widget build(BuildContext context) {
@@ -189,10 +137,8 @@ class _ProfileHeaderSliver extends StatelessWidget {
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    isPro
-                        ? Colors.amber.shade700
-                        : context.colors.primaryContainer,
-                    isPro ? Colors.orange.shade400 : context.colors.surface,
+                    context.colors.primaryContainer,
+                    context.colors.surface,
                   ],
                 ),
               ),
@@ -206,13 +152,9 @@ class _ProfileHeaderSliver extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 40,
-                        backgroundColor: isPro
-                            ? Colors.amber
-                            : context.colors.primary,
-                        child: Icon(
-                          isPro
-                              ? Icons.workspace_premium_rounded
-                              : Icons.person_rounded,
+                        backgroundColor: context.colors.primary,
+                        child: const Icon(
+                          Icons.person_rounded,
                           size: 40,
                           color: Colors.white,
                         ),
@@ -230,25 +172,6 @@ class _ProfileHeaderSliver extends StatelessWidget {
                           fontWeight: FontWeight.w900,
                         ),
                       ),
-                      if (isPro)
-                        Container(
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 8,
-                            vertical: 2,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: const Text(
-                            "PRO MEMBER",
-                            style: TextStyle(
-                              color: Colors.amber,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 10,
-                            ),
-                          ),
-                        ),
                     ],
                   ),
                 ],
@@ -438,6 +361,127 @@ class _ProfileSettingsTile extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _ProfileNotificationSettings extends StatefulWidget {
+  const _ProfileNotificationSettings();
+
+  @override
+  State<_ProfileNotificationSettings> createState() =>
+      _ProfileNotificationSettingsState();
+}
+
+class _ProfileNotificationSettingsState
+    extends State<_ProfileNotificationSettings> {
+  bool _enabled = true;
+  TimeOfDay _time = const TimeOfDay(hour: 9, minute: 0);
+  bool _loading = true;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadSettings();
+  }
+
+  Future<void> _loadSettings() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      _enabled = prefs.getBool('notification_enabled') ?? true;
+      final hour = prefs.getInt('notification_time_hour') ?? 9;
+      final minute = prefs.getInt('notification_time_minute') ?? 0;
+      _time = TimeOfDay(hour: hour, minute: minute);
+      _loading = false;
+    });
+  }
+
+  Future<void> _updateSettings(bool enabled, TimeOfDay time) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('notification_enabled', enabled);
+    await prefs.setInt('notification_time_hour', time.hour);
+    await prefs.setInt('notification_time_minute', time.minute);
+
+    setState(() {
+      _enabled = enabled;
+      _time = time;
+    });
+
+    if (enabled) {
+      await NotificationService().scheduleDailyNotification(time);
+    } else {
+      await NotificationService().cancelNotifications();
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (_loading) return const SizedBox.shrink();
+
+    return Container(
+      decoration: BoxDecoration(
+        color: context.colors.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(
+          // ignore: deprecated_member_use
+          color: context.colors.outlineVariant.withValues(alpha: 0.3),
+        ),
+      ),
+      child: Column(
+        children: [
+          SwitchListTile(
+            title: Text(
+              "Daily Trap Reminder",
+              style: context.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            subtitle: Text(
+              "Get notified to check the trap of the day",
+              style: context.textTheme.labelMedium?.copyWith(
+                color: context.colors.onSurfaceVariant,
+              ),
+            ),
+            value: _enabled,
+            onChanged: (val) {
+              _updateSettings(val, _time);
+            },
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+            ),
+          ),
+          if (_enabled)
+            ListTile(
+              title: Text(
+                "Reminder Time",
+                style: context.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              subtitle: Text(
+                _time.format(context),
+                style: context.textTheme.labelMedium?.copyWith(
+                  color: context.colors.onSurfaceVariant,
+                ),
+              ),
+              trailing: const Icon(Icons.access_time_rounded),
+              onTap: () async {
+                final newTime = await showTimePicker(
+                  context: context,
+                  initialTime: _time,
+                );
+                if (newTime != null) {
+                  _updateSettings(true, newTime);
+                }
+              },
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  bottom: Radius.circular(16),
+                ),
+              ),
+            ),
+        ],
       ),
     );
   }

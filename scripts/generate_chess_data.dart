@@ -59,17 +59,13 @@ void main() async {
     final fen = _pgnToFen(cleanMoves);
 
     // Look up opening from our openings database
-    final openingIdMatch = _findOpeningId(sanMoves);
-    final openingId = openingIdMatch.isNotEmpty
-        ? openingIdMatch
-        : ''; // A default opening ID could be provided or handled as empty
+    final openingNameMatch = _findOpeningName(sanMoves);
+    final opening = openingNameMatch.isNotEmpty
+        ? openingNameMatch
+        : (game.headers['Opening'] ?? '');
 
-    final openingName =
-        ecoOpeningIndexes.byId[openingId]?.name ??
-        game.headers['Opening'] ??
-        '';
     final trapName =
-        game.headers['ChapterName'] ?? game.headers['Event'] ?? openingName;
+        game.headers['ChapterName'] ?? game.headers['Event'] ?? opening;
     final metadata = _buildMetadata(game.headers);
 
     final moveList = sanMoves.map(_encode).join(',');
@@ -78,8 +74,7 @@ void main() async {
     content.writeln('  id: ${id++},');
     content.writeln('  cleanMoves: ${_encode(cleanMoves)},');
     content.writeln('  metadata: ${_encode(metadata)},');
-    content.writeln('  openingId: ${_encode(openingId)},');
-    content.writeln('  opening: ${_encode(openingName)},');
+    content.writeln('  opening: ${_encode(opening)},');
     content.writeln('  trapName: ${_encode(trapName)},');
 
     // NOTE: commentedMoves not needed yet -> keep as plain cleaned moves.
@@ -106,7 +101,7 @@ void main() async {
 }
 
 /// Finds the longest matching opening from [ecoOpenings] that is a prefix of [trapMoves].
-String _findOpeningId(List<String> trapMoves) {
+String _findOpeningName(List<String> trapMoves) {
   OpeningEntry? bestMatch;
   for (final opening in ecoOpenings) {
     if (opening.moves.length > trapMoves.length) continue;
@@ -125,7 +120,7 @@ String _findOpeningId(List<String> trapMoves) {
       }
     }
   }
-  return bestMatch?.id ?? '';
+  return bestMatch?.name ?? '';
 }
 
 String _pgnToFen(String pgn) {

@@ -1,7 +1,7 @@
-import 'package:chess_traps/providers/ads_provider.dart';
-import 'package:chess_traps/providers/user_premium_provider.dart';
 import 'package:chess_traps/widgets/ad_banner_widget.dart';
+import 'package:chess_traps/providers/ads_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/data/chess_move_node.dart';
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 import 'package:chess_traps/generated/chess/prebuilt_move_trie.dart';
@@ -10,7 +10,6 @@ import 'package:chess_traps/utils.dart';
 import 'package:chessground/chessground.dart';
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class TrapSearchScreen extends ConsumerStatefulWidget {
   const TrapSearchScreen({super.key});
@@ -40,8 +39,6 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   }
 
   void _loadRewardedAd() {
-    if (ref.read(userPremiumProvider)) return;
-    
     RewardedAd.load(
       adUnitId: AdsStateNotifier.rewardedAdUnitId,
       request: const AdRequest(),
@@ -101,14 +98,15 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   }
 
   void onMove(Move move, {bool? viaDragAndDrop}) {
-    final isPro = ref.read(userPremiumProvider);
     final freeLimit = 6 + _bonusMoves;
     
-    if (!isPro && history.length >= freeLimit) {
+    if (history.length >= freeLimit) {
       if (_rewardedAd != null) {
         _showAdOptionDialog();
       } else {
-        context.showPaywall();
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Move limit reached. Ad not ready yet, please wait or reset.")),
+        );
       }
       return;
     }
@@ -128,15 +126,14 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
       builder: (context) => AlertDialog(
         title: const Text("Limit Reached"),
         content: const Text(
-          "You've reached the free move limit for this search. Upgrade to Pro for unlimited depth, or watch a quick video to unlock 5 more moves.",
+          "You've reached the free move limit for this search. Watch a short video ad to unlock 5 more moves.",
         ),
         actions: [
           TextButton(
             onPressed: () {
               Navigator.pop(context);
-              context.showPaywall();
             },
-            child: const Text("UPGRADE"),
+            child: const Text("CANCEL"),
           ),
           ElevatedButton.icon(
             onPressed: () {

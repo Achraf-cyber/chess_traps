@@ -60,8 +60,8 @@ class MainScreen extends ConsumerWidget {
             label: context.phrase.favorite,
           ),
           NavigationDestination(
-            icon: const Icon(Icons.search),
-            selectedIcon: const Icon(Icons.search_outlined),
+            icon: const Icon(Icons.search_outlined),
+            selectedIcon: const Icon(Icons.search),
             label: context.phrase.search,
           ),
           NavigationDestination(

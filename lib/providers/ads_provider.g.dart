@@ -41,7 +41,7 @@ final class AdsStateNotifierProvider
   }
 }
 
-String _$adsStateNotifierHash() => r'a59b64b3593e1012767f6b60dc8e175b3e8829b6';
+String _$adsStateNotifierHash() => r'94430c9e743cbf8bc057aa9f1700d56c3f9372ca';
 
 abstract class _$AdsStateNotifier extends $Notifier<void> {
   void build();

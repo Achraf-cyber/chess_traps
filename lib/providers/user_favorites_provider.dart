@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 part 'user_favorites_provider.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class UserFavoritesNotifier extends _$UserFavoritesNotifier {
   static const _key = 'favorite_traps';
 

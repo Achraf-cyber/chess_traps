@@ -20,7 +20,7 @@ final class UserFavoritesNotifierProvider
         argument: null,
         retry: null,
         name: r'userFavoritesProvider',
-        isAutoDispose: true,
+        isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
@@ -42,7 +42,7 @@ final class UserFavoritesNotifierProvider
 }
 
 String _$userFavoritesNotifierHash() =>
-    r'392a9ffc78c7f57f28bf909c124eaa2de15cd8be';
+    r'ebdb59ef465c423937bc1d42135120b7d383ef59';
 
 abstract class _$UserFavoritesNotifier extends $Notifier<Set<int>> {
   Set<int> build();

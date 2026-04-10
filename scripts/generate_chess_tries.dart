@@ -36,7 +36,7 @@ void main() async {
   }
 
   // --- Build move trie ---
-  final ChessMoveNode moveTrieRoot = ChessMoveNode(
+  final ChessMoveNode moveTrieRoot = const ChessMoveNode(
     move: '',
     children: <String, ChessMoveNode>{},
     values: <int>[],
@@ -52,7 +52,6 @@ void main() async {
       normalizeName(trap.opening),
       normalizeName(trap.trapName),
     ]) {
-      if (key.isEmpty) continue;
       nameIndex.putIfAbsent(key, () => <int>[]).add(trap.id);
     }
   }

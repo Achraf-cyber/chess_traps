@@ -58,5 +58,21 @@
     "clearFavoritesHint": "لا يمكن التراجع عن هذا",
     "clearFavoritesConfirm": "هل أنت متأكد أنك تريد إزالة جميع الفخاخ المحفوظة من المفضلة؟",
     "clearFavoritesCancel": "إلغاء",
-    "clearFavoritesAction": "مسح الكل"
+    "clearFavoritesAction": "مسح الكل",
+    "searchByName": "بحث بالاسم",
+    "yourPersonalCollectionOfTacticalBrilliance": "مجموعتك الشخصية من التألق التكتيكي.",
+    "noFavoriteYet": "لا توجد مفضلات بعد",
+    "taptheHeartIconAction": "اضغط على أيقونة القلب في أي شاشة تفاصيل للفخ لحفظه هنا للوصول السريع.",
+    "elevateYourGame": "ارفع مستوى لعبك",
+    "discoverWinningSequencesByMasters": "اكتشف تسلسلات الفوز التي يستخدمها الأساتذة.",
+    "highlight": "أبرز النقاط",
+    "exploreMore": "استكشف المزيد",
+    "testYourPatternRecog": "اختبر تعرفك على الأنماط مع فخ غامض.",
+    "strategyGuide": "دليل الإستراتيجية",
+    "comingSoonDeepDives": "قريباً: تعمق في نظرية الافتتاحيات.",
+    "account": "الحساب",
+    "sequenceHistory": "سجل التسلسل",
+    "theory": "نظري",
+    "undo": "تراجع",
+    "flip": "قلب"
 }

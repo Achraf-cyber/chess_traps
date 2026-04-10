@@ -58,5 +58,21 @@
     "clearFavoritesHint": "Esto no se puede deshacer",
     "clearFavoritesConfirm": "¿Seguro que deseas eliminar todas las celadas guardadas de favoritos?",
     "clearFavoritesCancel": "Cancelar",
-    "clearFavoritesAction": "Borrar todo"
+    "clearFavoritesAction": "Borrar todo",
+    "searchByName": "Buscar por nombre",
+    "yourPersonalCollectionOfTacticalBrilliance": "Tu colección personal de brillantez táctica.",
+    "noFavoriteYet": "Aún no hay favoritos",
+    "taptheHeartIconAction": "Toca el ícono del corazón en cualquier pantalla de detalle de celada para guardarla aquí para un acceso rápido.",
+    "elevateYourGame": "Eleva tu juego",
+    "discoverWinningSequencesByMasters": "Descubre secuencias ganadoras utilizadas por maestros.",
+    "highlight": "Destacados",
+    "exploreMore": "Explorar más",
+    "testYourPatternRecog": "Prueba tu reconocimiento de patrones con una celada misteriosa.",
+    "strategyGuide": "Guía de estrategia",
+    "comingSoonDeepDives": "Próximamente: Inmersiones profundas en la teoría de aperturas.",
+    "account": "Cuenta",
+    "sequenceHistory": "Historial de secuencias",
+    "theory": "Teoría",
+    "undo": "Deshacer",
+    "flip": "Girar"
 }

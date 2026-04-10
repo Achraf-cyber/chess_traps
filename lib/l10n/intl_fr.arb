@@ -58,5 +58,21 @@
     "clearFavoritesHint": "Cette action est irréversible",
     "clearFavoritesConfirm": "Voulez-vous vraiment supprimer tous les pièges enregistrés dans les favoris ?",
     "clearFavoritesCancel": "Annuler",
-    "clearFavoritesAction": "Tout effacer"
+    "clearFavoritesAction": "Tout effacer",
+    "searchByName": "Rechercher par nom",
+    "yourPersonalCollectionOfTacticalBrilliance": "Votre collection personnelle de brillance tactique.",
+    "noFavoriteYet": "Pas encore de favoris",
+    "taptheHeartIconAction": "Appuyez sur l'icône de cœur sur n'importe quel écran de détail de piège pour l'enregistrer ici pour un accès rapide.",
+    "elevateYourGame": "Élevez votre jeu",
+    "discoverWinningSequencesByMasters": "Découvrez des séquences gagnantes utilisées par des maîtres.",
+    "highlight": "Points forts",
+    "exploreMore": "Explorer plus",
+    "testYourPatternRecog": "Testez votre reconnaissance de motifs avec un piège mystère.",
+    "strategyGuide": "Guide de stratégie",
+    "comingSoonDeepDives": "Prochainement : plongée profonde dans la théorie des ouvertures.",
+    "account": "Compte",
+    "sequenceHistory": "Historique des séquences",
+    "theory": "Théorie",
+    "undo": "Annuler",
+    "flip": "Retourner"
 }

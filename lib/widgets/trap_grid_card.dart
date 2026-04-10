@@ -52,8 +52,9 @@ class TrapGridCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
-                      color: context.colors.outlineVariant.withValues(alpha: 0.5),
-                      width: 1,
+                      color: context.colors.outlineVariant.withValues(
+                        alpha: 0.5,
+                      ),
                     ),
                   ),
                   clipBehavior: Clip.antiAlias,

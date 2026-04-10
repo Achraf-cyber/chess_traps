@@ -19,8 +19,7 @@ List<ChessTrap> trapsSearchByName(Ref ref, String name) {
 
 @riverpod
 List<ChessTrap> trapsOfGroup(Ref ref, String groupName) {
-  return trapsGroup[groupName]!
-      .toList()
+  return (trapsGroup[groupName] ?? [])
       .map((element) => chessTraps[element])
       .toList();
 }

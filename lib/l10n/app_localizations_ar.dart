@@ -164,55 +164,53 @@ class AppLocalizationsAr extends AppLocalizations {
   String get clearFavoritesAction => 'مسح الكل';
 
   @override
-  String get searchByName => 'Search by name';
+  String get searchByName => 'بحث بالاسم';
 
   @override
   String get yourPersonalCollectionOfTacticalBrilliance =>
-      'Your personal collection of tactical brilliance.';
+      'مجموعتك الشخصية من التألق التكتيكي.';
 
   @override
-  String get noFavoriteYet => 'No favorites yet';
+  String get noFavoriteYet => 'لا توجد مفضلات بعد';
 
   @override
   String get taptheHeartIconAction =>
-      'Tap the heart icon on any trap detail screen to save it here for quick access.';
+      'اضغط على أيقونة القلب في أي شاشة تفاصيل للفخ لحفظه هنا للوصول السريع.';
 
   @override
-  String get elevateYourGame => 'Elevate Your Game';
+  String get elevateYourGame => 'ارفع مستوى لعبك';
 
   @override
   String get discoverWinningSequencesByMasters =>
-      'Discover winning sequences used by masters.';
+      'اكتشف تسلسلات الفوز التي يستخدمها الأساتذة.';
 
   @override
-  String get highlight => 'Highlights';
+  String get highlight => 'أبرز النقاط';
 
   @override
-  String get exploreMore => 'Explore More';
+  String get exploreMore => 'استكشف المزيد';
 
   @override
-  String get testYourPatternRecog =>
-      'Test your pattern recognition with a mystery trap.';
+  String get testYourPatternRecog => 'اختبر تعرفك على الأنماط مع فخ غامض.';
 
   @override
-  String get strategyGuide => 'Strategy Guide';
+  String get strategyGuide => 'دليل الإستراتيجية';
 
   @override
-  String get comingSoonDeepDives =>
-      'Coming soon: Deep dives into opening theory.';
+  String get comingSoonDeepDives => 'قريباً: تعمق في نظرية الافتتاحيات.';
 
   @override
-  String get proPlan => 'Pro Member';
+  String get account => 'الحساب';
 
   @override
-  String get freePlan => 'freePlan';
+  String get sequenceHistory => 'سجل التسلسل';
 
   @override
-  String get manageYourMembership => 'Manage your membership';
+  String get theory => 'نظري';
 
   @override
-  String get upgradeToUnlock => 'Upgrade to unlock all features';
+  String get undo => 'تراجع';
 
   @override
-  String get account => 'Account';
+  String get flip => 'قلب';
 }

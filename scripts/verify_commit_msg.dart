@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print, unnecessary_non_null_assertion
+
 import 'dart:io';
 
 void main(List<String> args) {
@@ -27,7 +29,9 @@ void main(List<String> args) {
   }
 
   // Pattern: type(scope): description [SCRUM-ID]
-  final pattern = RegExp(r'^([a-z]+)(?:\(([a-zA-Z0-9_\-]+)\))?:\s(.+)\s\[([a-zA-Z]+-\d+)\]$');
+  final pattern = RegExp(
+    r'^([a-z]+)(?:\(([a-zA-Z0-9_\-]+)\))?:\s(.+)\s\[([a-zA-Z]+-\d+)\]$',
+  );
   final match = pattern.firstMatch(subject);
 
   void failCheck(String error) {
@@ -61,7 +65,9 @@ Examples of Valid Commits:
 
   final allowedTypes = ['feat', 'fix', 'docs', 'style', 'refactor', 'chore'];
   if (!allowedTypes.contains(type)) {
-    failCheck('Invalid type "$type". Allowed types are: ${allowedTypes.join(', ')}');
+    failCheck(
+      'Invalid type "$type". Allowed types are: ${allowedTypes.join(', ')}',
+    );
   }
 
   if (!description.startsWith(RegExp(r'[a-z]'))) {

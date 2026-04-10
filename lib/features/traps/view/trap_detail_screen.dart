@@ -1,13 +1,14 @@
-import 'package:chess_traps/providers/user_premium_provider.dart';
 import 'package:chess_traps/providers/user_favorites_provider.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
+import 'package:chess_traps/services/interstitial_ad_manager.dart';
 
 import '../../../utils.dart';
 import '../../../providers/trap_game_provider.dart';
+import '../../../widgets/ad_banner_widget.dart';
 
 class TrapDetailScreen extends ConsumerStatefulWidget {
   const TrapDetailScreen({super.key, required this.trapIndex});
@@ -21,6 +22,14 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   int currentMoveIndex = 0;
   Side orientation = Side.white;
   final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      InterstitialAdManager().onTrapViewed();
+    });
+  }
 
   void _scrollToCurrentMove() {
     if (!_scrollController.hasClients) return;
@@ -38,15 +47,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
 
   void _updateMoveIndex(int newIndex, int maxMoves) {
     if (newIndex < 0 || newIndex > maxMoves) return;
-
-    // Premium check
-    if (newIndex > 6) {
-      final isPro = ref.read(userPremiumProvider);
-      if (!isPro) {
-        context.showPaywall();
-        return;
-      }
-    }
 
     setState(() {
       currentMoveIndex = newIndex;
@@ -191,7 +191,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Text(
-                                "Theory",
+                                context.phrase.theory,
                                 style: context.textTheme.labelSmall?.copyWith(
                                   color: context.colors.onTertiaryContainer,
                                   fontWeight: FontWeight.bold,
@@ -211,7 +211,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(24, 16, 24, 8),
                           child: Text(
-                            "Sequence History",
+                            context.phrase.sequenceHistory,
                             style: context.textTheme.labelLarge?.copyWith(
                               fontWeight: FontWeight.bold,
                               color: context.colors.outline,
@@ -226,6 +226,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               ),
             ),
           ),
+          const AdBannerWidget(),
         ],
       ),
     );

@@ -17,25 +17,16 @@ class AppThemeNotifier extends _$AppThemeNotifier {
   Future<void> _loadThemeMode() async {
     final prefs = await SharedPreferences.getInstance();
     final modeValue = prefs.getString(_themeModeKey);
-    switch (modeValue) {
-      case 'light':
-        state = ThemeMode.light;
-      case 'dark':
-        state = ThemeMode.dark;
-      case 'system':
-      default:
-        state = ThemeMode.system;
-    }
+    if (!ref.mounted) return;
+    state = modeValue != null
+        ? ThemeMode.values.byName(modeValue)
+        : ThemeMode.system;
   }
 
   Future<void> setThemeMode(ThemeMode mode) async {
     state = mode;
     final prefs = await SharedPreferences.getInstance();
-    final value = switch (mode) {
-      ThemeMode.light => 'light',
-      ThemeMode.dark => 'dark',
-      ThemeMode.system => 'system',
-    };
+    final value = mode.name;
     await prefs.setString(_themeModeKey, value);
   }
 }

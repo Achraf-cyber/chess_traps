@@ -1,10 +1,10 @@
 import 'package:chess_traps/data/chess_trap.dart';
-import 'package:chess_traps/providers/user_premium_provider.dart';
 import 'package:chess_traps/providers/traps_group_provider.dart';
 import 'package:chess_traps/widgets/ad_banner_widget.dart';
 import 'package:chess_traps/widgets/trap_grid_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 
 import '../../../router.dart';
 import '../../../utils.dart';
@@ -59,9 +59,10 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
                 ),
               ),
             ),
-            if (_searchValue.isEmpty)
-              TrapGroupGridSliver(trapsGroups: trapsGroups)
-            else
+            if (_searchValue.isEmpty) ...[
+              const SliverToBoxAdapter(child: _TrapOfTheDayCard()),
+              TrapGroupGridSliver(trapsGroups: trapsGroups),
+            ] else
               TrapsGridSliver(traps: trapsSearched),
             const SliverToBoxAdapter(child: SizedBox(height: 100)),
           ],
@@ -100,13 +101,7 @@ class TrapGroupGridSliver extends ConsumerWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(24),
               onTap: () {
-                final isPro = ref.read(userPremiumProvider);
-                final isLocked = !isPro && entry.key != 'Common Openings';
-                if (isLocked) {
-                  context.showPaywall();
-                } else {
-                  TrapGroupRoute(name: entry.key).push<void>(context);
-                }
+                TrapGroupRoute(name: entry.key).push<void>(context);
               },
               child: Stack(
                 children: [
@@ -168,24 +163,6 @@ class TrapGroupGridSliver extends ConsumerWidget {
                       ),
                     ],
                   ),
-                  if (!ref.watch(userPremiumProvider) &&
-                      entry.key != 'Common Openings')
-                    Positioned(
-                      top: 12,
-                      right: 12,
-                      child: Container(
-                        padding: const EdgeInsets.all(4),
-                        decoration: BoxDecoration(
-                          color: context.colors.surface.withValues(alpha: 0.8),
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.lock_rounded,
-                          size: 16,
-                          color: context.colors.primary,
-                        ),
-                      ),
-                    ),
                 ],
               ),
             ),
@@ -270,6 +247,45 @@ class FloatingSearchTextField extends StatelessWidget {
             vertical: 20,
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _TrapOfTheDayCard extends StatelessWidget {
+  const _TrapOfTheDayCard();
+
+  @override
+  Widget build(BuildContext context) {
+    if (chessTraps.isEmpty) return const SizedBox.shrink();
+
+    // Deterministic random based on the day of the year
+    final dayOfYear = DateTime.now()
+        .difference(DateTime(DateTime.now().year))
+        .inDays;
+    final index = dayOfYear % chessTraps.length;
+    final trap = chessTraps[index];
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
+            child: Text(
+              '✨ Trap of the Day',
+              style: context.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.bold,
+                color: context.colors.primary,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 140, // Adjust height as necessary
+            child: TrapGridCard(trap: trap),
+          ),
+        ],
       ),
     );
   }

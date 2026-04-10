@@ -202,17 +202,17 @@ class AppLocalizationsEn extends AppLocalizations {
       'Coming soon: Deep dives into opening theory.';
 
   @override
-  String get proPlan => 'Pro Member';
-
-  @override
-  String get freePlan => 'freePlan';
-
-  @override
-  String get manageYourMembership => 'Manage your membership';
-
-  @override
-  String get upgradeToUnlock => 'Upgrade to unlock all features';
-
-  @override
   String get account => 'Account';
+
+  @override
+  String get sequenceHistory => 'Sequence History';
+
+  @override
+  String get theory => 'Theory';
+
+  @override
+  String get undo => 'Undo';
+
+  @override
+  String get flip => 'Flip';
 }

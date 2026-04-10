@@ -70,9 +70,9 @@
   "testYourPatternRecog": "Test your pattern recognition with a mystery trap.",
   "strategyGuide": "Strategy Guide",
   "comingSoonDeepDives": "Coming soon: Deep dives into opening theory.",
-  "proPlan": "Pro Member",
-  "freePlan": "freePlan",
-  "manageYourMembership": "Manage your membership",
-  "upgradeToUnlock": "Upgrade to unlock all features",
-  "account": "Account"
+  "account": "Account",
+  "sequenceHistory": "Sequence History",
+  "theory": "Theory",
+  "undo": "Undo",
+  "flip": "Flip"
 }

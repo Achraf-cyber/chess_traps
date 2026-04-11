@@ -13,8 +13,8 @@ part of 'trap_game_provider.dart';
 final trapGameProvider = TrapGameFamily._();
 
 final class TrapGameProvider
-    extends $FunctionalProvider<ChessTrap, ChessTrap, ChessTrap>
-    with $Provider<ChessTrap> {
+    extends $FunctionalProvider<ChessTrap?, ChessTrap?, ChessTrap?>
+    with $Provider<ChessTrap?> {
   TrapGameProvider._({
     required TrapGameFamily super.from,
     required int super.argument,
@@ -38,20 +38,20 @@ final class TrapGameProvider
 
   @$internal
   @override
-  $ProviderElement<ChessTrap> $createElement($ProviderPointer pointer) =>
+  $ProviderElement<ChessTrap?> $createElement($ProviderPointer pointer) =>
       $ProviderElement(pointer);
 
   @override
-  ChessTrap create(Ref ref) {
+  ChessTrap? create(Ref ref) {
     final argument = this.argument as int;
     return trapGame(ref, argument);
   }
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(ChessTrap value) {
+  Override overrideWithValue(ChessTrap? value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<ChessTrap>(value),
+      providerOverride: $SyncValueProvider<ChessTrap?>(value),
     );
   }
 
@@ -66,10 +66,10 @@ final class TrapGameProvider
   }
 }
 
-String _$trapGameHash() => r'a1b120f576544da31a0bcbdafc0b6a8c89f20e01';
+String _$trapGameHash() => r'2f0ccddb35c28fbb749ef7b003d44396b433e760';
 
 final class TrapGameFamily extends $Family
-    with $FunctionalFamilyOverride<ChessTrap, int> {
+    with $FunctionalFamilyOverride<ChessTrap?, int> {
   TrapGameFamily._()
     : super(
         retry: null,
@@ -143,7 +143,7 @@ final class TrapPositionProvider
   }
 }
 
-String _$trapPositionHash() => r'2fa18d6801a3fe6771d06f67eab586c1b11c7831';
+String _$trapPositionHash() => r'0c308a7f3a599d7bac4d37ee4a531a6c73253591';
 
 final class TrapPositionFamily extends $Family
     with $FunctionalFamilyOverride<Position, (int, int)> {

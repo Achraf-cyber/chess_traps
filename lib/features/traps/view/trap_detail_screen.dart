@@ -8,8 +8,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:chess_traps/services/interstitial_ad_manager.dart';
 
+import '../../../services/app_link_service.dart';
 import '../../../utils.dart';
 import '../../../providers/trap_game_provider.dart';
 import '../../../providers/engine_analysis_provider.dart';
@@ -31,6 +33,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   final ScrollController _scrollController = ScrollController();
   Timer? _autoPlayTimer;
   bool isAutoPlaying = false;
+  bool isPracticeMode = false;
+  NormalMove? promotionMove;
 
   @override
   void initState() {
@@ -69,6 +73,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   }
 
   void _toggleAutoPlay(int maxMoves) {
+    if (isPracticeMode) setState(() => isPracticeMode = false);
     if (isAutoPlaying) {
       _autoPlayTimer?.cancel();
       setState(() => isAutoPlaying = false);
@@ -84,6 +89,63 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     }
   }
 
+  void _onPracticeMove(Move move, {bool? viaDragAndDrop}) {
+    final trap = ref.read(trapGameProvider(widget.trapIndex));
+    if (trap == null) return;
+    if (currentMoveIndex >= trap.moves.length) return;
+
+    final position = ref.read(trapPositionProvider(widget.trapIndex, currentMoveIndex));
+    final (_, san) = position.makeSan(move);
+    final expectedSan = trap.moves[currentMoveIndex];
+
+    if (san == expectedSan) {
+      HapticFeedback.heavyImpact();
+      _updateMoveIndex(currentMoveIndex + 1, trap.moves.length);
+
+      if (currentMoveIndex < trap.moves.length) {
+        Future.delayed(const Duration(milliseconds: 600), () {
+          if (!mounted || !isPracticeMode) return;
+          _updateMoveIndex(currentMoveIndex + 1, trap.moves.length);
+          
+          if (currentMoveIndex >= trap.moves.length) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text("Trap completed! Well done!")),
+            );
+            setState(() => isPracticeMode = false);
+          }
+        });
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Trap completed! Well done!")),
+        );
+        setState(() => isPracticeMode = false);
+      }
+    } else {
+      HapticFeedback.vibrate();
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: const Text("Incorrect move. Try again!"),
+          behavior: SnackBarBehavior.floating,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        ),
+      );
+    }
+  }
+
+  void _onPromotionSelection(Role? role) {
+    if (promotionMove != null && role != null) {
+      final move = NormalMove(
+        from: promotionMove!.from,
+        to: promotionMove!.to,
+        promotion: role,
+      );
+      _onPracticeMove(move);
+      setState(() {
+        promotionMove = null;
+      });
+    }
+  }
+
   @override
   void dispose() {
     _autoPlayTimer?.cancel();
@@ -94,6 +156,27 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final trap = ref.watch(trapGameProvider(widget.trapIndex));
+
+    if (trap == null) {
+      return Scaffold(
+        appBar: AppBar(leading: const BackButton()),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(Icons.error_outline_rounded, size: 64, color: Colors.grey),
+              const SizedBox(height: 16),
+              const Text("Trap not found", style: TextStyle(fontWeight: FontWeight.bold)),
+              TextButton(
+                onPressed: () => context.pop(),
+                child: const Text("Go Back"),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     final maxMoves = trap.moves.length;
     final position = ref.watch(
       trapPositionProvider(widget.trapIndex, currentMoveIndex),
@@ -148,9 +231,40 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
         ),
         actions: [
           IconButton(
+            onPressed: () async {
+              final link = AppLinkService.buildTrapLink(widget.trapIndex);
+              await Share.share("Can you survive this trap? Check out ${trap.trapName}!\n$link");
+            },
+            icon: const Icon(Icons.share_rounded),
+            tooltip: "Share Trap",
+          ),
+          IconButton(
+
+            onPressed: () {
+              setState(() {
+                isPracticeMode = !isPracticeMode;
+                if (isPracticeMode && isAutoPlaying) {
+                  _toggleAutoPlay(maxMoves);
+                }
+              });
+              if (isPracticeMode) {
+                 ScaffoldMessenger.of(context).showSnackBar(
+                   const SnackBar(content: Text("Practice mode active. Play the correct moves!"))
+                 );
+              }
+            },
+            icon: Icon(
+              isPracticeMode ? Icons.school_rounded : Icons.school_outlined,
+              color: isPracticeMode ? context.colors.primary : null,
+            ),
+            tooltip: isPracticeMode ? "Exit Practice Mode" : "Practice Mode",
+          ),
+          IconButton(
             onPressed: () => _toggleAutoPlay(maxMoves),
             icon: Icon(
-              isAutoPlaying ? Icons.pause_circle_filled_rounded : Icons.play_circle_filled_rounded,
+              isAutoPlaying
+                  ? Icons.pause_circle_filled_rounded
+                  : Icons.play_circle_filled_rounded,
               color: isAutoPlaying ? context.colors.primary : null,
             ),
             tooltip: isAutoPlaying ? "Stop Auto Play" : "Start Auto Play",
@@ -219,8 +333,9 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                             // Horizontal Evaluation Bar
                             if (engineState.depth >= 0)
                               Padding(
-                                padding:
-                                    const EdgeInsets.symmetric(horizontal: 4),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 4,
+                                ),
                                 child: SizedBox(
                                   width: size,
                                   height: barHeight,
@@ -247,9 +362,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                   : whiteCaptured,
                               isWhite: orientation == Side.black,
                               advantage: orientation == Side.white
-                                  ? (materialScore > 0
-                                        ? "+$materialScore"
-                                        : "")
+                                  ? (materialScore > 0 ? "+$materialScore" : "")
                                   : (materialScore < 0
                                         ? "+${-materialScore}"
                                         : ""),
@@ -263,24 +376,40 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                 borderRadius: BorderRadius.circular(12),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withValues(
-                                      alpha: 0.15,
-                                    ),
+                                    color: Colors.black.withValues(alpha: 0.15),
                                     blurRadius: 15,
                                     offset: const Offset(0, 8),
                                   ),
                                 ],
                               ),
                               clipBehavior: Clip.antiAlias,
-                              child: cg.Chessboard.fixed(
-                                size: size,
-                                orientation: orientation,
-                                fen: position.fen,
-                                settings: cg.ChessboardSettings(
-                                  colorScheme: settings.boardTheme.colorScheme,
-                                ),
-                                shapes: arrows,
-                              ),
+                              child: isPracticeMode && position.turn == orientation
+                                  ? cg.Chessboard(
+                                      size: size,
+                                      orientation: orientation,
+                                      fen: position.fen,
+                                      settings: cg.ChessboardSettings(
+                                        colorScheme: settings.boardTheme.colorScheme,
+                                      ),
+                                      game: cg.GameData(
+                                        playerSide: position.turn == Side.white ? cg.PlayerSide.white : cg.PlayerSide.black,
+                                        sideToMove: position.turn,
+                                        validMoves: position.legalMoves.asIMapSquareISet,
+                                        promotionMove: promotionMove,
+                                        onMove: _onPracticeMove,
+                                        isCheck: position.isCheck,
+                                        onPromotionSelection: _onPromotionSelection,
+                                      ),
+                                    )
+                                  : cg.Chessboard.fixed(
+                                      size: size,
+                                      orientation: orientation,
+                                      fen: position.fen,
+                                      settings: cg.ChessboardSettings(
+                                        colorScheme: settings.boardTheme.colorScheme,
+                                      ),
+                                      shapes: isPracticeMode ? ISet() : arrows,
+                                    ),
                             ),
                             const SizedBox(height: 4),
                             CapturedPiecesRow(

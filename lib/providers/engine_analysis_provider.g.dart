@@ -106,7 +106,7 @@ final class EngineAnalysisProvider
   }
 }
 
-String _$engineAnalysisHash() => r'8bd8921cd0abed60a3a4469ac79fc3a35d4baa87';
+String _$engineAnalysisHash() => r'b9f77d307f859188a2f7e896b269ca9f5d4d938b';
 
 final class EngineAnalysisFamily extends $Family
     with

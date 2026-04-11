@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:chess_traps/features/traps/view/trap_detail_screen.dart';
 import 'package:chess_traps/features/traps/view/traps_group_screen.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,9 @@ final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 final GoRouter router = GoRouter(
   initialLocation: '/',
   navigatorKey: _rootNavigatorKey,
+  observers: [
+    FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
+  ],
   routes: $appRoutes,
 );
 

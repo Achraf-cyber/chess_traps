@@ -17,15 +17,21 @@ void main() async {
     int trapId, [
     ChessMoveNode? root,
   ]) {
-    root ??= const ChessMoveNode(move: '', children: {}, values: []);
+    root ??= ChessMoveNode(
+      move: '',
+      children: Map<String, ChessMoveNode>.from({}),
+      values: List<int>.from([]),
+    );
     var node = root;
 
     for (final move in moves) {
-      node.children[move] ??= ChessMoveNode(
-        move: move,
-        children: {},
-        values: [],
-      );
+      if (!node.children.containsKey(move)) {
+        node.children[move] = ChessMoveNode(
+          move: move,
+          children: Map<String, ChessMoveNode>.from({}),
+          values: List<int>.from([]),
+        );
+      }
       node = node.children[move]!;
     }
 
@@ -36,10 +42,10 @@ void main() async {
   }
 
   // --- Build move trie ---
-  final ChessMoveNode moveTrieRoot = const ChessMoveNode(
+  final ChessMoveNode moveTrieRoot = ChessMoveNode(
     move: '',
-    children: <String, ChessMoveNode>{},
-    values: <int>[],
+    children: Map<String, ChessMoveNode>.from({}),
+    values: List<int>.from([]),
   );
   for (final trap in chessTraps) {
     insertMoves(trap.moves, trap.id, moveTrieRoot);

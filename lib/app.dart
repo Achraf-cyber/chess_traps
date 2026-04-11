@@ -1,4 +1,7 @@
 import 'dart:io';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:chess_traps/firebase_options.dart';
 
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -22,35 +25,73 @@ import 'router.dart';
 import 'theme/theme.dart';
 import 'theme/theme_utils.dart';
 
+import 'services/app_link_service.dart';
+
 Future<void> runMainApp(String envFile) async {
   if (kIsWeb) {
     usePathUrlStrategy();
   }
   debugPrint('app started');
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize Firebase
+  try {
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    // Initialize Native Deep Linking via app_links (replacing Firebase Dynamic Links)
+    if (!kIsWeb) {
+      await AppLinkService.init(router);
+    }
+  } catch (e) {
+    debugPrint('Firebase initialization failed: $e');
+  }
+
+  if (!kIsWeb) {
+    try {
+      // Pass all uncaught "fatal" errors from the framework to Crashlytics
+      FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+      // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+      PlatformDispatcher.instance.onError = (error, stack) {
+        FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+        return true;
+      };
+    } catch (e) {
+      debugPrint('Crashlytics setup failed: $e');
+    }
+  }
+
   debugPrint('widget binding');
 
   // Defer first frame to keep the native splash screen until SplashMaster.resume() is called.
   SplashMaster.initialize();
 
-  await dotenv.load(fileName: envFile);
-  debugPrint('loading dotenv');
+  try {
+    await dotenv.load(fileName: envFile);
+    debugPrint('loading dotenv');
+  } catch (e) {
+    debugPrint('Dotenv loading failed: $e');
+  }
 
   await NotificationService().init();
 
   if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
-    // Request privacy consent before initializing MobileAds
-    await ConsentManager().requestConsentUpdate();
-    
-    // Initialize MobileAds and AppOpenAd
-    MobileAds.instance.initialize().then(
-      (_) {
-        debugPrint('initialize mobile ads');
-        final appOpenAdManager = AppOpenAdManager()..loadAd();
-        AppLifecycleReactor(appOpenAdManager: appOpenAdManager)
-            .listenToAppStateChanges();
-      },
-    );
+    try {
+      // Request privacy consent before initializing MobileAds
+      await ConsentManager().requestConsentUpdate();
+      
+      // Initialize MobileAds and AppOpenAd
+      MobileAds.instance.initialize().then(
+        (_) {
+          debugPrint('initialize mobile ads');
+          final appOpenAdManager = AppOpenAdManager()..loadAd();
+          AppLifecycleReactor(appOpenAdManager: appOpenAdManager)
+              .listenToAppStateChanges();
+        },
+      );
+    } catch (e) {
+      debugPrint('Consent/AdMob initialization failed: $e');
+    }
   }
 
   LicenseRegistry.addLicense(() async* {

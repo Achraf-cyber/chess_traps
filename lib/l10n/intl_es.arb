@@ -74,5 +74,7 @@
     "sequenceHistory": "Historial de secuencias",
     "theory": "Teoría",
     "undo": "Deshacer",
-    "flip": "Girar"
+    "flip": "Girar",
+    "privacyPolicy": "Política de privacidad",
+    "termsOfUse": "Términos de uso"
 }

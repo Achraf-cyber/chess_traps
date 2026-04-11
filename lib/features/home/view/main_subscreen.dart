@@ -83,16 +83,6 @@ class MainSubscreen extends ConsumerWidget {
                                       size: 14,
                                       color: Colors.green.shade800,
                                     ),
-                                    const SizedBox(width: 4),
-                                    Text(
-                                      "OFFLINE READY",
-                                      style: TextStyle(
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.green.shade800,
-                                        letterSpacing: 0.5,
-                                      ),
-                                    ),
                                   ],
                                 ),
                               ),

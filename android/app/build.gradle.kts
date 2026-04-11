@@ -9,6 +9,9 @@ if (keystorePropertiesFile.exists()) {
 
 plugins {
     id("com.android.application")
+    // START: FlutterFire Configuration
+    id("com.google.gms.google-services")
+    // END: FlutterFire Configuration
     id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
@@ -46,7 +49,7 @@ android {
     productFlavors {
         create("dev") {
             dimension = "app"
-            applicationIdSuffix = ".dev"
+            // Removed applicationIdSuffix = ".dev" to match google-services.json
             resValue("string", "app_name", "Chess Traps Dev")
             manifestPlaceholders["admobAppId"] = "ca-app-pub-3940256099942544~3347511713"
         }
@@ -86,4 +89,3 @@ flutter {
 dependencies {
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }
-

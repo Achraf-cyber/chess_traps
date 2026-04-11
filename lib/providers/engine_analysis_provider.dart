@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../services/chess_engine_service.dart';
 
@@ -75,63 +76,71 @@ class EngineAnalysis extends _$EngineAnalysis {
   }
 
   void _onLine(String line) {
-    if (!line.startsWith('info') ||
-        !line.contains('score') ||
-        !line.contains(' pv ')) {
-      return;
-    }
-
-    int? depth;
-    int multipv = 1;
-    double? cp;
-    int? mate;
-    List<String> pv = [];
-
-    final parts = line.split(' ');
-    for (int i = 0; i < parts.length; i++) {
-      switch (parts[i]) {
-        case 'depth':
-          if (i + 1 < parts.length) depth = int.tryParse(parts[i + 1]);
-        case 'multipv':
-          if (i + 1 < parts.length) multipv = int.tryParse(parts[i + 1]) ?? 1;
-        case 'score':
-          if (i + 1 < parts.length) {
-            if (parts[i + 1] == 'cp' && i + 2 < parts.length) {
-              cp = double.tryParse(parts[i + 2]);
-            } else if (parts[i + 1] == 'mate' && i + 2 < parts.length) {
-              mate = int.tryParse(parts[i + 2]);
-            }
-          }
-        case 'pv':
-          if (i + 1 < parts.length) pv = parts.sublist(i + 1);
+    try {
+      if (!line.startsWith('info') ||
+          !line.contains('score') ||
+          !line.contains(' pv ')) {
+        return;
       }
-    }
 
-    if (pv.isEmpty) return;
+      int? depth;
+      int multipv = 1;
+      double? cp;
+      int? mate;
+      List<String> pv = [];
 
-    final isWhiteToMove =
-        state.fen.split(' ').length > 1 && state.fen.split(' ')[1] == 'w';
-    final sign = isWhiteToMove ? 1.0 : -1.0;
+      final parts = line.split(' ');
+      for (int i = 0; i < parts.length; i++) {
+        final part = parts[i];
+        if (i + 1 >= parts.length) continue; // Safety check
 
-    final targetState = _pendingState ?? state;
-    final pvMap = Map<int, List<String>>.from(targetState.multiPv)
-      ..[multipv] = pv;
-
-    _pendingState = targetState.copyWith(
-      scoreCp: cp != null ? cp * sign : targetState.scoreInCentipawns,
-      mateIn: mate != null ? (mate * sign).round() : null,
-      clearMate: mate == null && cp != null,
-      multiPv: pvMap,
-      depth: depth ?? targetState.depth,
-    );
-
-    if (_throttleTimer == null || !_throttleTimer!.isActive) {
-      _throttleTimer = Timer(const Duration(milliseconds: 150), () {
-        if (_pendingState != null) {
-          state = _pendingState!;
-          _pendingState = null;
+        switch (part) {
+          case 'depth':
+            depth = int.tryParse(parts[i + 1]);
+          case 'multipv':
+            multipv = int.tryParse(parts[i + 1]) ?? 1;
+          case 'score':
+            if (i + 2 < parts.length) {
+              if (parts[i + 1] == 'cp') {
+                cp = double.tryParse(parts[i + 2]);
+              } else if (parts[i + 1] == 'mate') {
+                mate = int.tryParse(parts[i + 2]);
+              }
+            }
+          case 'pv':
+            pv = parts.sublist(i + 1);
         }
-      });
+      }
+
+      if (pv.isEmpty) return;
+
+      final currentFenParts = state.fen.split(' ');
+      final isWhiteToMove =
+          currentFenParts.length > 1 && currentFenParts[1] == 'w';
+      final sign = isWhiteToMove ? 1.0 : -1.0;
+
+      final targetState = _pendingState ?? state;
+      final pvMap = Map<int, List<String>>.from(targetState.multiPv)
+        ..[multipv] = pv;
+
+      _pendingState = targetState.copyWith(
+        scoreCp: cp != null ? cp * sign : targetState.scoreInCentipawns,
+        mateIn: mate != null ? (mate * sign).round() : null,
+        clearMate: mate == null && cp != null,
+        multiPv: pvMap,
+        depth: depth ?? targetState.depth,
+      );
+
+      if (_throttleTimer == null || !_throttleTimer!.isActive) {
+        _throttleTimer = Timer(const Duration(milliseconds: 150), () {
+          if (_pendingState != null) {
+            state = _pendingState!;
+            _pendingState = null;
+          }
+        });
+      }
+    } catch (e, stack) {
+      debugPrint('Error parsing engine output: $e\n$stack');
     }
   }
 }

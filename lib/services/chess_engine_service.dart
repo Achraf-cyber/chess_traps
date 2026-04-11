@@ -19,9 +19,12 @@ class ChessEngineService {
         _outputController.add(line);
       });
 
+      // Listen for the "ready" state centrally to process pending commands
+      _stockfish.state.addListener(_onStateChanged);
+
       // Start engine asynchronously and send UCI options once ready
       _stockfish.start().then((_) {
-        _stockfish.stdin = 'setoption name MultiPV value $_multiPv';
+        _safeWrite('setoption name MultiPV value $_multiPv');
         _isInit = true;
       }).catchError((Object e) {
         debugPrint('Stockfish start error: $e');
@@ -31,50 +34,62 @@ class ChessEngineService {
     }
   }
 
+  void _onStateChanged() {
+    if (_stockfish.state.value == StockfishState.ready && _pendingCommand != null) {
+      final command = _pendingCommand!;
+      _pendingCommand = null;
+      try {
+        command();
+      } catch (e) {
+        debugPrint('Error executing pending command: $e');
+      }
+    }
+  }
+
+  void _safeWrite(String command) {
+    try {
+      _stockfish.stdin = command;
+    } catch (e) {
+      debugPrint('Error writing to engine stdin: $e');
+    }
+  }
+
   void startAnalysis(String fen) {
     _sendWhenReady(() {
-      _stockfish.stdin = 'stop';
-      _stockfish.stdin = 'position fen $fen';
-      _stockfish.stdin = 'go depth 20';
+      _safeWrite('stop');
+      _safeWrite('position fen $fen');
+      _safeWrite('go depth 20');
     });
   }
 
   void setMultiPv(int count) {
     _multiPv = count;
     _sendWhenReady(() {
-      _stockfish.stdin = 'stop';
-      _stockfish.stdin = 'setoption name MultiPV value $count';
+      _safeWrite('stop');
+      _safeWrite('setoption name MultiPV value $count');
     });
   }
 
   void Function()? _pendingCommand;
 
-  /// Sends commands only if the engine is in the ready state.
+  /// Stores the command to be sent once the engine is ready.
   void _sendWhenReady(void Function() send) {
     if (_stockfish.state.value == StockfishState.ready) {
       _pendingCommand = null;
-      send();
+      try {
+        send();
+      } catch (e) {
+        debugPrint('Error sending ready command: $e');
+      }
     } else {
       // Store only the latest command
       _pendingCommand = send;
-      
-      // Listen for state change and then send the latest pending command
-      void listener() {
-        if (_stockfish.state.value == StockfishState.ready) {
-          _stockfish.state.removeListener(listener);
-          if (_pendingCommand != null) {
-            _pendingCommand!();
-            _pendingCommand = null;
-          }
-        }
-      }
-      _stockfish.state.addListener(listener);
     }
   }
 
   void stopAnalysis() {
     if (_stockfish.state.value == StockfishState.ready) {
-      _stockfish.stdin = 'stop';
+      _safeWrite('stop');
     }
   }
 

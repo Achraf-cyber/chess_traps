@@ -1,9 +1,0 @@
-This a chess traps app 
-it contains a lot of chess traps ( can be found in the /assets/chess/g700.json file)
-it has a friendly UI
-it does not have a backend/login system yet
-
-AI should : 
-- convert the pdf file into easy to understand for ai format 
-- read content of the pdf file to build the app
-- install any package need ( first check the packages in place )

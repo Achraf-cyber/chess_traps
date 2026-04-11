@@ -9,15 +9,19 @@ class ConsentManager {
 
   /// Requests the latest consent information and shows the consent form if required.
   Future<void> requestConsentUpdate() async {
-    final params = ConsentRequestParameters();
+    final ConsentRequestParameters params;
 
-    // In debug mode, you can force a specific consent status for testing
-    // params = ConsentRequestParameters(
-    //   debugSettings: ConsentDebugSettings(
-    //     debugGeography: DebugGeography.debugGeographyEea,
-    //     testDeviceIds: ['YOUR_DEVICE_ID'],
-    //   ),
-    // );
+    if (kDebugMode) {
+      params = ConsentRequestParameters(
+        tagForUnderAgeOfConsent: false,
+        consentDebugSettings: ConsentDebugSettings(
+          debugGeography: DebugGeography.debugGeographyEea,
+          testIdentifiers: ['YOUR_DEVICE_ID'],
+        ),
+      );
+    } else {
+      params = ConsentRequestParameters();
+    }
 
     final completer = Completer<void>();
 

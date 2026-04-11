@@ -1,0 +1,138 @@
+:root {
+  --background: #050505;
+  --foreground: #ffffff;
+  --accent: #d4af37; /* Gold */
+  --accent-soft: #b8860b;
+  --card-bg: rgba(20, 20, 20, 0.8);
+  --glass: rgba(255, 255, 255, 0.05);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  background: radial-gradient(circle at center, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 5%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: #e5c100;
+  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--accent);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+/* New CSS Classes for WoW Layout */
+.bg-gradient-hero {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.text-subtle { color: rgba(255, 255, 255, 0.6); }
+.text-muted { color: rgba(255, 255, 255, 0.4); }
+.text-faint { color: rgba(255, 255, 255, 0.2); }
+
+.heading-xl { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; line-height: 1; letter-spacing: -0.05em; }
+.paragraph-l { font-size: 1.25rem; line-height: 1.6; }
+
+.container-wide { max-width: 80rem; margin: 0 auto; width: 100%; }
+.container-mid { max-width: 72rem; margin: 0 auto; width: 100%; }
+
+.section-hero { padding-top: 10rem; padding-bottom: 5rem; text-align: center; }
+.section-pad { padding: 5rem 0; }
+
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-col { display: flex; flex-direction: column; }
+.gap-4 { gap: 1rem; }
+.gap-8 { gap: 2rem; }
+
+.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+.img-container {
+  position: relative;
+  width: 100%;
+  border-radius: 32px;
+  box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.img-hero {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-hero:hover {
+  transform: scale(1.05);
+}

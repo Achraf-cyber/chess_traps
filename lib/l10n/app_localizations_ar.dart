@@ -215,8 +215,8 @@ class AppLocalizationsAr extends AppLocalizations {
   String get flip => 'قلب';
 
   @override
-  String get privacyPolicy => 'Privacy Policy';
+  String get privacyPolicy => 'سياسة الخصوصية';
 
   @override
-  String get termsOfUse => 'Terms of Use';
+  String get termsOfUse => 'شروط الاستخدام';
 }

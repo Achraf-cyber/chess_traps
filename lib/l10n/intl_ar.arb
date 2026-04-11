@@ -74,5 +74,7 @@
     "sequenceHistory": "سجل التسلسل",
     "theory": "نظري",
     "undo": "تراجع",
-    "flip": "قلب"
+    "flip": "قلب",
+    "privacyPolicy": "سياسة الخصوصية",
+    "termsOfUse": "شروط الاستخدام"
 }

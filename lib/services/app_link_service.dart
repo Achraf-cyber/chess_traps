@@ -6,7 +6,7 @@ class AppLinkService {
   static final _appLinks = AppLinks();
   
   // Update this to your deployed Vercel/Website domain
-  static const String _host = 'chesstraps-web.vercel.app';
+  static const String _host = 'chess-traps.vercel.app';
 
   static Future<void> init(GoRouter router) async {
     // 1. Handle initial link (opened when app was closed)

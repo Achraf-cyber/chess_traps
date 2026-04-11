@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     default: "Chess Traps - Master the Art of the Trap",
     template: "%s | Chess Traps",
   },
-  metadataBase: new URL("https://chesstraps-web.vercel.app"),
+  metadataBase: new URL("https://chess-traps.vercel.app"),
   description: "Stop losing to early blunders. Learn over 1,000 professional chess traps with interactive practice, engine analysis, and master-level sequences.",
   keywords: ["chess traps", "chess openings", "chess tactics", "chess practice", "stockfish engine", "chess trainer"],
   authors: [{ name: "Achraf Cyber" }],
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Chess Traps - Master the Art of the Trap",
     description: "Learn over 1,000 professional chess traps with interactive practice and engine analysis.",
-    url: "https://chesstraps-web.vercel.app",
+    url: "https://chess-traps.vercel.app",
     siteName: "Chess Traps",
     locale: "en_US",
     type: "website",

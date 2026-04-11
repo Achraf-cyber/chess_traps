@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://chesstraps-web.vercel.app";
+  const baseUrl = "https://chess-traps.vercel.app";
   
   return [
     {

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/_next/",
     },
-    sitemap: "https://chesstraps-web.vercel.app/sitemap.xml",
+    sitemap: "https://chess-traps.vercel.app/sitemap.xml",
   };
 }

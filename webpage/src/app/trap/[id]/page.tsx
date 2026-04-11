@@ -39,7 +39,7 @@ export default async function TrapPage({ params }: Props) {
         </p>
         
         <div className="flex-col gap-4">
-          <a href={`market://details?id=chesstraps.achrafcyber.com&url=https://chesstraps-web.vercel.app/trap/${id}`} 
+          <a href={`market://details?id=chesstraps.achrafcyber.com&url=https://chess-traps.vercel.app/trap/${id}`} 
              className="btn-primary w-full py-4 rounded-xl font-bold text-lg shadow-xl shadow-accent/10 hover:shadow-accent/30 flex-center">
             Open in App
           </a>

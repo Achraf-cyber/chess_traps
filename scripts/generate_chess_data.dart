@@ -46,23 +46,27 @@ void main() async {
   content.writeln('const List<ChessTrap> chessTraps = [\n');
   var id = 0;
   final uniques = <String>{};
+  final groups = <String, List<int>>{};
   for (final game in games) {
     final sanMoves = game.moves.mainline().map((n) => n.san).toList();
     if (sanMoves.isEmpty) continue;
 
     final cleanMoves = _sanMovesToNumberedPgn(sanMoves);
-    if (uniques.contains(cleanMoves)) {
+    final uniqueKey = sanMoves.join(' ');
+    if (uniques.contains(uniqueKey)) {
       continue;
     }
-    uniques.add(cleanMoves);
+    uniques.add(uniqueKey);
 
     final fen = _pgnToFen(cleanMoves);
 
     // Look up opening from our openings database
-    final openingNameMatch = _findOpeningName(sanMoves);
-    final opening = openingNameMatch.isNotEmpty
-        ? openingNameMatch
-        : (game.headers['Opening'] ?? '');
+    final matchedOpening = _findOpening(sanMoves);
+    final opening = matchedOpening?.name ?? (game.headers['Opening'] ?? '');
+    final openingId = matchedOpening?.id ?? '';
+
+    // Add to groups
+    groups.putIfAbsent(opening, () => []).add(id);
 
     final trapName =
         game.headers['ChapterName'] ?? game.headers['Event'] ?? opening;
@@ -75,6 +79,7 @@ void main() async {
     content.writeln('  cleanMoves: ${_encode(cleanMoves)},');
     content.writeln('  metadata: ${_encode(metadata)},');
     content.writeln('  opening: ${_encode(opening)},');
+    content.writeln('  openingId: ${_encode(openingId)},');
     content.writeln('  trapName: ${_encode(trapName)},');
 
     // NOTE: commentedMoves not needed yet -> keep as plain cleaned moves.
@@ -94,6 +99,18 @@ void main() async {
 
   await _runDartCommand(['format', baseFile.path]);
 
+  // Generate chess_groups.dart
+  final groupsFile = File('lib/generated/chess_groups.dart');
+  final groupsContent = StringBuffer();
+  groupsContent.writeln('const trapsGroup = {');
+  final sortedGroupNames = groups.keys.toList()..sort();
+  for (final name in sortedGroupNames) {
+    groupsContent.writeln('${jsonEncode(name)} : ${groups[name]},');
+  }
+  groupsContent.writeln('};');
+  await groupsFile.writeAsString(groupsContent.toString());
+  await _runDartCommand(['format', groupsFile.path]);
+
   // Generate trie + name index from the updated chessTraps list
   await _runDartCommand(['run', 'scripts/generate_chess_tries.dart']);
 
@@ -101,7 +118,7 @@ void main() async {
 }
 
 /// Finds the longest matching opening from [ecoOpenings] that is a prefix of [trapMoves].
-String _findOpeningName(List<String> trapMoves) {
+OpeningEntry? _findOpening(List<String> trapMoves) {
   OpeningEntry? bestMatch;
   for (final opening in ecoOpenings) {
     if (opening.moves.length > trapMoves.length) continue;
@@ -120,7 +137,7 @@ String _findOpeningName(List<String> trapMoves) {
       }
     }
   }
-  return bestMatch?.name ?? '';
+  return bestMatch;
 }
 
 String _pgnToFen(String pgn) {

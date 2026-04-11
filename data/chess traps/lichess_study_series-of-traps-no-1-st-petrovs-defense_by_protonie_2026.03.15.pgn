@@ -99,26 +99,6 @@
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6?! 4. Nxc6 dxc6 5. d3 Bc5 6. Be2 h5 7. O-O? Ng4 8. h3 { Sac it! } 8... Qd6!! { You'll see! } 9. hxg4 hxg4 10. e5?? { The idea of delaying... Fortunately it is abseloutely a gre- jk its POINTLESS! } 10... Qxe5 11. Bf4?? { Also pointless } 11... Qxf4 12. g3?? { What do you think? } 12... Qxg3# (12... Qd6?? { Coward. I will count this as a blunder. }) *
 
 
-[Event "Series of Traps: No. 1 - St. Petrov's Defense: -- Bonus Tip 🤓 --"]
-[Date "2026.03.16"]
-[Result "*"]
-[Variant "Standard"]
-[ECO "?"]
-[Opening "?"]
-[StudyName "Series of Traps: No. 1 - St. Petrov's Defense"]
-[ChapterName "-- Bonus Tip 🤓 --"]
-[ChapterURL "https://lichess.org/study/k3gPpJ4B/csQsNZsN"]
-[Annotator "https://lichess.org/@/protonie"]
-[FEN "r1bqk2r/ppp2ppp/2p5/2b1P3/4P3/8/PPP2PPP/RNBQKB1R b KQkq - 0 7"]
-[SetUp "1"]
-[UTCDate "2026.03.16"]
-[UTCTime "14:05:04"]
-[ChapterMode "gamebook"]
-
-{ do Bxf2+ }
-7... Bxf2+! { They may do this tho } 8. Ke2?? { But you can just do a skewer like this: } 8... Bg4+!! { They are forced to take the bishop now } 9. Kxf2 $7 *
-
-
 [Event "Series of Traps: No. 1 - St. Petrov's Defense: -- Outro 🔥 --"]
 [Date "2026.03.16"]
 [Result "*"]

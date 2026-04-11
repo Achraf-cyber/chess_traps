@@ -216,4 +216,10 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get flip => 'Retourner';
+
+  @override
+  String get privacyPolicy => 'Politique de Confidentialité';
+
+  @override
+  String get termsOfUse => 'Conditions d\'Utilisation';
 }

@@ -213,4 +213,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get flip => 'قلب';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get termsOfUse => 'Terms of Use';
 }

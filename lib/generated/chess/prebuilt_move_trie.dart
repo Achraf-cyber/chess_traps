@@ -510,7 +510,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                         ChessMoveNode
                                                                       >{},
                                                                   values: <int>[
-                                                                    104,
+                                                                    103,
                                                                   ],
                                                                 ),
                                                               },
@@ -2328,7 +2328,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                   <
                                                                                     int
                                                                                   >[
-                                                                                    116,
+                                                                                    115,
                                                                                   ],
                                                                             ),
                                                                           },
@@ -2623,7 +2623,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                                                                                                                                                                                                                                           <
                                                                                                                                                                                                                                                                                                                             int
                                                                                                                                                                                                                                                                                                                           >[
-                                                                                                                                                                                                                                                                                                                            100,
+                                                                                                                                                                                                                                                                                                                            99,
                                                                                                                                                                                                                                                                                                                           ],
                                                                                                                                                                                                                                                                                                                     ),
                                                                                                                                                                                                                                                                                                                   },
@@ -3306,7 +3306,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                         ChessMoveNode
                                                                       >{},
                                                                   values: <int>[
-                                                                    118,
+                                                                    117,
                                                                   ],
                                                                 ),
                                                               },
@@ -4365,7 +4365,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                           <
                                                                                                             int
                                                                                                           >[
-                                                                                                            107,
+                                                                                                            106,
                                                                                                           ],
                                                                                                     ),
                                                                                                   },
@@ -4452,7 +4452,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                     ChessMoveNode
                                                                   >{},
                                                               values: <int>[
-                                                                111,
+                                                                110,
                                                               ],
                                                             ),
                                                           },
@@ -4949,7 +4949,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                 String,
                                                                 ChessMoveNode
                                                               >{},
-                                                          values: <int>[115],
+                                                          values: <int>[114],
                                                         ),
                                                       },
                                                   values: <int>[],
@@ -5247,7 +5247,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                           <
                                                                                             int
                                                                                           >[
-                                                                                            98,
+                                                                                            97,
                                                                                           ],
                                                                                     ),
                                                                                   },
@@ -5315,7 +5315,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                   <
                                                                                     int
                                                                                   >[
-                                                                                    97,
+                                                                                    96,
                                                                                   ],
                                                                             ),
                                                                           },
@@ -5391,7 +5391,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                   <
                                                                                                     int
                                                                                                   >[
-                                                                                                    99,
+                                                                                                    98,
                                                                                                   ],
                                                                                             ),
                                                                                           },
@@ -5483,7 +5483,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                           },
                                                                       values:
                                                                           <int>[
-                                                                            92,
+                                                                            91,
                                                                           ],
                                                                     ),
                                                                   },
@@ -5530,7 +5530,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                           >{},
                                                                       values:
                                                                           <int>[
-                                                                            93,
+                                                                            92,
                                                                           ],
                                                                     ),
                                                                   },
@@ -5589,7 +5589,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                           >{},
                                                                       values:
                                                                           <int>[
-                                                                            94,
+                                                                            93,
                                                                           ],
                                                                     ),
                                                                   },
@@ -5680,7 +5680,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                                           <
                                                                                                                             int
                                                                                                                           >[
-                                                                                                                            95,
+                                                                                                                            94,
                                                                                                                           ],
                                                                                                                     ),
                                                                                                                   },
@@ -5849,7 +5849,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                                                                                           <
                                                                                                                                                                             int
                                                                                                                                                                           >[
-                                                                                                                                                                            96,
+                                                                                                                                                                            95,
                                                                                                                                                                           ],
                                                                                                                                                                     ),
                                                                                                                                                                   },
@@ -5946,7 +5946,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                       values: <int>[],
                                     ),
                                   },
-                                  values: <int>[91],
+                                  values: <int>[90],
                                 ),
                               },
                               values: <int>[],
@@ -6089,7 +6089,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                                                                                   <
                                                                                                                                                                     int
                                                                                                                                                                   >[
-                                                                                                                                                                    105,
+                                                                                                                                                                    104,
                                                                                                                                                                   ],
                                                                                                                                                             ),
                                                                                                                                                           },
@@ -6374,7 +6374,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                             "Qxf7#": ChessMoveNode(
                               move: "Qxf7#",
                               children: <String, ChessMoveNode>{},
-                              values: <int>[114],
+                              values: <int>[113],
                             ),
                           },
                           values: <int>[],
@@ -6548,7 +6548,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                                                                                                                   <
                                                                                                                                                                                                     int
                                                                                                                                                                                                   >[
-                                                                                                                                                                                                    106,
+                                                                                                                                                                                                    105,
                                                                                                                                                                                                   ],
                                                                                                                                                                                             ),
                                                                                                                                                                                           },
@@ -6784,7 +6784,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                                                   <
                                                                                                                                     int
                                                                                                                                   >[
-                                                                                                                                    117,
+                                                                                                                                    116,
                                                                                                                                   ],
                                                                                                                             ),
                                                                                                                           },
@@ -7969,7 +7969,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                         ChessMoveNode
                                                                       >{},
                                                                   values: <int>[
-                                                                    119,
+                                                                    118,
                                                                   ],
                                                                 ),
                                                               },
@@ -8860,7 +8860,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                     "Qh5#": ChessMoveNode(
                       move: "Qh5#",
                       children: <String, ChessMoveNode>{},
-                      values: <int>[113],
+                      values: <int>[112],
                     ),
                   },
                   values: <int>[],
@@ -8872,7 +8872,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
           values: <int>[],
         ),
       },
-      values: <int>[101],
+      values: <int>[100],
     ),
     "d4": ChessMoveNode(
       move: "d4",
@@ -11342,7 +11342,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                                                                                                   <
                                                                                                                                                                     int
                                                                                                                                                                   >[
-                                                                                                                                                                    108,
+                                                                                                                                                                    107,
                                                                                                                                                                   ],
                                                                                                                                                             ),
                                                                                                                                                           },
@@ -11495,7 +11495,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                           <
                                                                                             int
                                                                                           >[
-                                                                                            110,
+                                                                                            109,
                                                                                           ],
                                                                                     ),
                                                                                   },
@@ -11997,7 +11997,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                           <
                                                                                             int
                                                                                           >[
-                                                                                            103,
+                                                                                            102,
                                                                                           ],
                                                                                     ),
                                                                                   },
@@ -12048,7 +12048,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                     ChessMoveNode
                                                                   >{},
                                                               values: <int>[
-                                                                109,
+                                                                108,
                                                               ],
                                                             ),
                                                           },
@@ -12140,7 +12140,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                                   <
                                                                                     int
                                                                                   >[
-                                                                                    112,
+                                                                                    111,
                                                                                   ],
                                                                             ),
                                                                           },
@@ -13829,29 +13829,6 @@ const ChessMoveNode moveTrie = ChessMoveNode(
       },
       values: <int>[],
     ),
-    "Bxf2+": ChessMoveNode(
-      move: "Bxf2+",
-      children: <String, ChessMoveNode>{
-        "Ke2": ChessMoveNode(
-          move: "Ke2",
-          children: <String, ChessMoveNode>{
-            "Bg4+": ChessMoveNode(
-              move: "Bg4+",
-              children: <String, ChessMoveNode>{
-                "Kxf2": ChessMoveNode(
-                  move: "Kxf2",
-                  children: <String, ChessMoveNode>{},
-                  values: <int>[90],
-                ),
-              },
-              values: <int>[],
-            ),
-          },
-          values: <int>[],
-        ),
-      },
-      values: <int>[],
-    ),
     "d5": ChessMoveNode(
       move: "d5",
       children: <String, ChessMoveNode>{
@@ -13903,7 +13880,7 @@ const ChessMoveNode moveTrie = ChessMoveNode(
                                                                     ChessMoveNode
                                                                   >{},
                                                               values: <int>[
-                                                                102,
+                                                                101,
                                                               ],
                                                             ),
                                                           },

@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chess_traps/providers/app_theme_provider.dart';
 import 'package:chess_traps/router.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils.dart';
 import '../../../services/notification_service.dart';
@@ -60,6 +61,22 @@ class UserProfileScreen extends ConsumerWidget {
                     icon: Icons.info_outline_rounded,
                     title: context.phrase.appVersion,
                     subtitle: "1.2.0 (Premium UI)",
+                  ),
+                  _ProfileSettingsTile(
+                    icon: Icons.privacy_tip_outlined,
+                    title: context.phrase.privacyPolicy,
+                    onTap: () => launchUrl(
+                      Uri.parse(
+                        "https://achraf-cyber.github.io/privacy/privacy-policy.html",
+                      ),
+                    ),
+                  ),
+                  _ProfileSettingsTile(
+                    icon: Icons.gavel_rounded,
+                    title: context.phrase.termsOfUse,
+                    onTap: () {
+                      // Placeholder for Terms of Use if needed, or link to same page if applicable
+                    },
                   ),
                   _ProfileSettingsTile(
                     icon: Icons.article_outlined,

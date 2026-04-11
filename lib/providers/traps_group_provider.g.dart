@@ -192,7 +192,7 @@ final class TrapsOfGroupProvider
   }
 }
 
-String _$trapsOfGroupHash() => r'e2b9db79f6b520feade3536327dbd602481b80da';
+String _$trapsOfGroupHash() => r'71d472f9dbffae1c0201d810a576e299fa41eb5e';
 
 final class TrapsOfGroupFamily extends $Family
     with $FunctionalFamilyOverride<List<ChessTrap>, String> {

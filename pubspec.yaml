@@ -1,7 +1,7 @@
 name: chess_traps
 description: "A new Flutter project."
 publish_to: "none"
-version: 0.1.0
+version: 1.2.0+1
 
 environment:
   sdk: ^3.10.0
@@ -36,6 +36,7 @@ dependencies:
   splash_master: ^0.0.3
   flutter_local_notifications: ^21.0.0
   timezone: ^0.11.0
+  multistockfish_chess: ^0.3.0
 
 dev_dependencies:
   flutter_test:

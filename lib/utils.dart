@@ -62,3 +62,77 @@ extension LegalMovesToIMapType on IMap<Square, SquareSet> {
     });
   }
 }
+
+Map<Side, List<Role>> getCapturedPieces(Board board) {
+  final Map<Role, int> standardCounts = {
+    Role.pawn: 8,
+    Role.knight: 2,
+    Role.bishop: 2,
+    Role.rook: 2,
+    Role.queen: 1,
+  };
+
+  final Map<Side, Map<Role, int>> currentCounts = {
+    Side.white: {
+      Role.pawn: 0,
+      Role.knight: 0,
+      Role.bishop: 0,
+      Role.rook: 0,
+      Role.queen: 0,
+    },
+    Side.black: {
+      Role.pawn: 0,
+      Role.knight: 0,
+      Role.bishop: 0,
+      Role.rook: 0,
+      Role.queen: 0,
+    },
+  };
+
+  for (final piece in board.pieces.map((item) => item.$2)) {
+    if (piece.role != Role.king) {
+      currentCounts[piece.color]![piece.role] =
+          (currentCounts[piece.color]![piece.role] ?? 0) + 1;
+    }
+  }
+  List<Role> getMissing(Side opponentColor) {
+    final missing = <Role>[];
+    for (final role in [
+      Role.queen,
+      Role.rook,
+      Role.bishop,
+      Role.knight,
+      Role.pawn,
+    ]) {
+      final count = currentCounts[opponentColor]![role] ?? 0;
+      final diff = standardCounts[role]! - count;
+      for (var i = 0; i < diff; i++) {
+        missing.add(role);
+      }
+    }
+    return missing;
+  }
+
+  return {
+    Side.white: getMissing(Side.black), // Pieces captured by White
+    Side.black: getMissing(Side.white), // Pieces captured by Black
+  };
+}
+
+int calculateMaterialScore(Board board) {
+  const values = {
+    Role.pawn: 1,
+    Role.knight: 3,
+    Role.bishop: 3,
+    Role.rook: 5,
+    Role.queen: 9,
+    Role.king: 0,
+  };
+
+  int score = 0;
+  for (final piece in board.pieces.map((item) => item.$2)) {
+    final value = values[piece.role] ?? 0;
+    score += (piece.color == Side.white ? value : -value);
+  }
+  return score;
+}

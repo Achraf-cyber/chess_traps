@@ -90,45 +90,4 @@ final class TrapOfTheDayProvider
   }
 }
 
-String _$trapOfTheDayHash() => r'8da060d8bcd444409dabd94f728e0015f7be9b08';
-
-@ProviderFor(randomTrap)
-final randomTrapProvider = RandomTrapProvider._();
-
-final class RandomTrapProvider
-    extends $FunctionalProvider<ChessTrap, ChessTrap, ChessTrap>
-    with $Provider<ChessTrap> {
-  RandomTrapProvider._()
-    : super(
-        from: null,
-        argument: null,
-        retry: null,
-        name: r'randomTrapProvider',
-        isAutoDispose: true,
-        dependencies: null,
-        $allTransitiveDependencies: null,
-      );
-
-  @override
-  String debugGetCreateSourceHash() => _$randomTrapHash();
-
-  @$internal
-  @override
-  $ProviderElement<ChessTrap> $createElement($ProviderPointer pointer) =>
-      $ProviderElement(pointer);
-
-  @override
-  ChessTrap create(Ref ref) {
-    return randomTrap(ref);
-  }
-
-  /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(ChessTrap value) {
-    return $ProviderOverride(
-      origin: this,
-      providerOverride: $SyncValueProvider<ChessTrap>(value),
-    );
-  }
-}
-
-String _$randomTrapHash() => r'1b04c4b7b563fc6a6892a1c11911f297aa7b437c';
+String _$trapOfTheDayHash() => r'cdd0d938bc4f37575c675f30459d9625284797e4';

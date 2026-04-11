@@ -1,7 +1,9 @@
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/providers/traps_group_provider.dart';
 import 'package:chess_traps/widgets/ad_banner_widget.dart';
-import 'package:chess_traps/widgets/trap_grid_card.dart';
+import 'package:chess_traps/widgets/explore_trap_card.dart';
+import 'package:chessground/chessground.dart';
+import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
@@ -187,11 +189,11 @@ class TrapsGridSliver extends StatelessWidget {
           crossAxisCount: 2,
           mainAxisSpacing: 16,
           crossAxisSpacing: 16,
-          childAspectRatio: 0.85,
+          childAspectRatio: 0.72,
         ),
         delegate: SliverChildBuilderDelegate((context, index) {
           final trap = traps[index];
-          return TrapGridCard(trap: trap);
+          return ExploreTrapCard(trap: trap);
         }, childCount: traps.length),
       ),
     );
@@ -259,31 +261,101 @@ class _TrapOfTheDayCard extends StatelessWidget {
   Widget build(BuildContext context) {
     if (chessTraps.isEmpty) return const SizedBox.shrink();
 
-    // Deterministic random based on the day of the year
-    final dayOfYear = DateTime.now()
-        .difference(DateTime(DateTime.now().year))
-        .inDays;
+    final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year)).inDays;
     final index = dayOfYear % chessTraps.length;
     final trap = chessTraps[index];
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 8.0, bottom: 8.0),
-            child: Text(
-              '✨ Trap of the Day',
-              style: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: context.colors.primary,
+          Row(
+            children: [
+              Icon(Icons.auto_awesome_rounded, size: 18, color: context.colors.primary),
+              const SizedBox(width: 8),
+              Text(
+                'TRAP OF THE DAY',
+                style: context.textTheme.labelLarge?.copyWith(
+                  fontWeight: FontWeight.w900,
+                  letterSpacing: 1.2,
+                  color: context.colors.primary,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Container(
+            height: 180,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  context.colors.primaryContainer.withValues(alpha: 0.5),
+                  context.colors.surface,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(32),
+              border: Border.all(
+                color: context.colors.primary.withValues(alpha: 0.1),
               ),
             ),
-          ),
-          SizedBox(
-            height: 140, // Adjust height as necessary
-            child: TrapGridCard(trap: trap),
+            padding: const EdgeInsets.all(4),
+            child: Row(
+              children: [
+                Expanded(
+                  flex: 3,
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          trap.trapName,
+                          style: context.textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.w900,
+                            letterSpacing: -0.5,
+                          ),
+                          maxLines: 2,
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          trap.opening,
+                          style: context.textTheme.labelSmall?.copyWith(
+                            color: context.colors.onSurfaceVariant,
+                          ),
+                          maxLines: 1,
+                        ),
+                        const SizedBox(height: 12),
+                        FilledButton.tonal(
+                          onPressed: () => TrapDetailRoute(index: trap.id).push<void>(context),
+                          style: FilledButton.styleFrom(
+                            visualDensity: VisualDensity.compact,
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
+                          ),
+                          child: const Text("Master Now"),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(28),
+                    child: IgnorePointer(
+                      child: StaticChessboard(
+                        size: 150,
+                        orientation: Side.white,
+                        fen: trap.fen,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ],
       ),

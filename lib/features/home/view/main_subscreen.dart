@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'dart:ui';
 import 'package:chess_traps/generated/assets.dart';
 import 'package:chess_traps/router.dart';
@@ -6,6 +7,7 @@ import 'package:chess_traps/widgets/quick_action_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../services/interstitial_ad_manager.dart';
 import '../../../utils.dart';
 import '../../../providers/traps_provider.dart';
 
@@ -15,7 +17,7 @@ class MainSubscreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final trapOfTheDay = ref.watch(trapOfTheDayProvider);
-    final randomTrap = ref.watch(randomTrapProvider);
+    final allTraps = ref.watch(trapsProvider);
 
     return CustomScrollView(
       slivers: [
@@ -25,21 +27,36 @@ class MainSubscreen extends ConsumerWidget {
               Image.asset(
                 AppAssets.imagesHomeImagePng,
                 width: double.infinity,
+                height: 280,
                 fit: BoxFit.cover,
               ),
+              Positioned.fill(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.transparent,
+                        context.colors.surface.withValues(alpha: 0.9),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
               Positioned(
-                bottom: 24,
-                left: 24,
-                right: 24,
+                bottom: 20,
+                left: 20,
+                right: 20,
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
+                  borderRadius: BorderRadius.circular(24),
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
                     child: Container(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                        color: context.colors.surface.withValues(alpha: 0.8),
-                        borderRadius: BorderRadius.circular(16),
+                        color: context.colors.surface.withValues(alpha: 0.7),
+                        borderRadius: BorderRadius.circular(24),
                         border: Border.all(
                           color: context.colors.primary.withValues(alpha: 0.1),
                         ),
@@ -48,17 +65,53 @@ class MainSubscreen extends ConsumerWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.green.shade100,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Row(
+                                  children: [
+                                    Icon(
+                                      Icons.offline_pin_rounded,
+                                      size: 14,
+                                      color: Colors.green.shade800,
+                                    ),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      "OFFLINE READY",
+                                      style: TextStyle(
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w900,
+                                        color: Colors.green.shade800,
+                                        letterSpacing: 0.5,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
                           Text(
-                            context.phrase.elevateYourGame,
+                            "Elevate Your Game",
                             style: context.textTheme.headlineSmall?.copyWith(
                               fontWeight: FontWeight.w900,
                               color: context.colors.primary,
+                              letterSpacing: -0.5,
                             ),
                           ),
                           Text(
-                            context.phrase.discoverWinningSequencesByMasters,
+                            "Discover winning sequences used by masters.",
                             style: context.textTheme.bodyMedium?.copyWith(
                               color: context.colors.onSurfaceVariant,
+                              letterSpacing: 0.1,
                             ),
                           ),
                         ],
@@ -104,8 +157,12 @@ class MainSubscreen extends ConsumerWidget {
                   color: context.colors.secondaryContainer.withValues(
                     alpha: 0.5,
                   ),
-                  onTap: () =>
-                      TrapDetailRoute(index: randomTrap.id).push<void>(context),
+                  onTap: () {
+                    final randomId = Random().nextInt(allTraps.length);
+                    final randomTrap = allTraps[randomId];
+                    InterstitialAdManager().onTrapViewed();
+                    TrapDetailRoute(index: randomTrap.id).push<void>(context);
+                  },
                 ),
                 const SizedBox(height: 12),
                 QuickActionCard(

@@ -215,4 +215,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get flip => 'Flip';
+
+  @override
+  String get privacyPolicy => 'Privacy Policy';
+
+  @override
+  String get termsOfUse => 'Terms of Use';
 }

@@ -8,8 +8,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.e4 c6 2.Nf3 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     metadata:
         "50 Opening Traps,Part 1 - oh no, smothered mate! - B10 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "caro_kann_defence",
     opening: "Caro-Kann defence",
+    openingId: "caro_kann_defence",
     trapName: "oh no, smothered mate!",
     commentedMoves: "1.e4 c6 2.Nf3 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     moves: [
@@ -34,8 +34,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nf3 Bg4 5.Nc3 Bxf3 6.Nxd5 Bxd1 7.Nxc7+ Kd8 8.Nxa8 Bxc2 9.Bf4 Nxd4 10.Nc7 e5 11.Bxe5 Bb4#",
     metadata:
         "50 Opening Traps,Part 1 - what, checkmate? - B00 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "kings_pawn_opening_b00",
     opening: "King's pawn opening",
+    openingId: "kings_pawn_opening_b00",
     trapName: "what, checkmate?",
     commentedMoves:
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nf3 Bg4 5.Nc3 Bxf3 6.Nxd5 Bxd1 7.Nxc7+ Kd8 8.Nxa8 Bxc2 9.Bf4 Nxd4 10.Nc7 e5 11.Bxe5 Bb4#",
@@ -72,8 +72,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 Nf6 2.Nc3 d5 3.exd5 Nxd5 4.Nge2 Nc6 5.g3 Bg4 6.Bg2 Nd4 7.Bxd5 Qxd5 8.Nxd5 Nf3+ 9.Kf1 Bh3#",
     metadata:
         "50 Opening Traps,Part 1 - Knight and Bishop Mate - B02 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "alekhines_defence",
     opening: "Alekhine's defence",
+    openingId: "alekhines_defence",
     trapName: "Knight and Bishop Mate",
     commentedMoves:
         "1.e4 Nf6 2.Nc3 d5 3.exd5 Nxd5 4.Nge2 Nc6 5.g3 Bg4 6.Bg2 Nd4 7.Bxd5 Qxd5 8.Nxd5 Nf3+ 9.Kf1 Bh3#",
@@ -106,8 +106,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 c6 2.Nf3 d5 3.Nc3 Bg4 4.h3 Bxf3 5.Qxf3 Nf6 6.d4 dxe4 7.Qe3 Nd5 8.Qxe4 Nxc3 9.bxc3 e6 10.Rb1 Qc8 11.Bd3 Nd7 12.Bg5 h6 13.Qxe6+ fxe6 14.Bg6#",
     metadata:
         "50 Opening Traps,Part 1 - Bishop Brother's Mate - B11 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "caro_kann_defence",
     opening: "Caro-Kann defence",
+    openingId: "caro_kann_defence",
     trapName: "Bishop Brother's Mate",
     commentedMoves:
         "1.e4 c6 2.Nf3 d5 3.Nc3 Bg4 4.h3 Bxf3 5.Qxf3 Nf6 6.d4 dxe4 7.Qe3 Nd5 8.Qxe4 Nxc3 9.bxc3 e6 10.Rb1 Qc8 11.Bd3 Nd7 12.Bg5 h6 13.Qxe6+ fxe6 14.Bg6#",
@@ -149,8 +149,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Nc3 Bb4 6.Nxc6 bxc6 7.Qf3 h6 8.a3 Bxc3+ 9.Qxc3 O-O 10.Bd3 Re8 11.f3 d5 12.Qxc6 dxe4 13.fxe4 Nxe4 14.O-O Qd4+ 15.Kh1 Bd7 16.Qc4 Nf2+ 17.Kg1 Nh3+ 18.Kh1 Qg1+ 19.Rxg1 Nf2#",
     metadata:
         "50 Opening Traps,Part 1 - Smothered Mate in the corner - C45 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "scotch_game",
     opening: "Scotch game",
+    openingId: "scotch_game",
     trapName: "Smothered Mate in the corner",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Nc3 Bb4 6.Nxc6 bxc6 7.Qf3 h6 8.a3 Bxc3+ 9.Qxc3 O-O 10.Bd3 Re8 11.f3 d5 12.Qxc6 dxe4 13.fxe4 Nxe4 14.O-O Qd4+ 15.Kh1 Bd7 16.Qc4 Nf2+ 17.Kg1 Nh3+ 18.Kh1 Qg1+ 19.Rxg1 Nf2#",
@@ -203,8 +203,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d3 h6 5.Bb3 Bc5 6.c3 Bb6 7.Nbd2 d6 8.Nf1 Bg4 9.h3 Bh5 10.Ng3 Bxf3 11.Qxf3 O-O 12.Nf5 Ne7 13.Nxh6+ gxh6 14.Qxf6",
     metadata:
         "50 Opening Traps,Part 1 - Sacrifice the Knight! - C55 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "two_knights_defence",
     opening: "Two knights defence",
+    openingId: "two_knights_defence",
     trapName: "Sacrifice the Knight!",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d3 h6 5.Bb3 Bc5 6.c3 Bb6 7.Nbd2 d6 8.Nf1 Bg4 9.h3 Bh5 10.Ng3 Bxf3 11.Qxf3 O-O 12.Nf5 Ne7 13.Nxh6+ gxh6 14.Qxf6",
@@ -246,8 +246,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 Nf6 2.Bg5 e6 3.Nf3 Be7 4.Nbd2 d5 5.e3 c5 6.c3 Nbd7 7.Bd3 b6 8.Qa4 O-O 9.Ne5 Nxe5 10.dxe5 Nd7 11.Qh4",
     metadata:
         "50 Opening Traps,Part 1 - Double Attack with the Queen - A46 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_pawn_game_a45",
     opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_a45",
     trapName: "Double Attack with the Queen",
     commentedMoves:
         "1.d4 Nf6 2.Bg5 e6 3.Nf3 Be7 4.Nbd2 d5 5.e3 c5 6.c3 Nbd7 7.Bd3 b6 8.Qa4 O-O 9.Ne5 Nxe5 10.dxe5 Nd7 11.Qh4",
@@ -283,8 +283,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Bd3 e5 6.Nf3 Nc6 7.O-O Bc5 8.h3 O-O 9.Nc3 d5 10.exd5 Nxd5 11.Nxd5 Qxd5 12.Bxh7+ Kxh7 13.Qxd5",
     metadata:
         "50 Opening Traps,Part 1 - Win the Queen with Bxh7+ - B28 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "sicilian_defence",
     opening: "Sicilian defence",
+    openingId: "sicilian_defence",
     trapName: "Win the Queen with Bxh7+",
     commentedMoves:
         "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Bd3 e5 6.Nf3 Nc6 7.O-O Bc5 8.h3 O-O 9.Nc3 d5 10.exd5 Nxd5 11.Nxd5 Qxd5 12.Bxh7+ Kxh7 13.Qxd5",
@@ -324,8 +324,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 d6 3.Bc4 c6 4.d4 Nd7 5.c3 Be7 6.Qb3 d5 7.exd5 b5 8.Bd3 exd4 9.cxd4 c5 10.Bxb5 Nf6 11.Bc6",
     metadata:
         "50 Opening Traps,Part 1 - Attack on f7 - C41 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "philidors_defence",
     opening: "Philidor's defence",
+    openingId: "philidors_defence",
     trapName: "Attack on f7",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 c6 4.d4 Nd7 5.c3 Be7 6.Qb3 d5 7.exd5 b5 8.Bd3 exd4 9.cxd4 c5 10.Bxb5 Nf6 11.Bc6",
@@ -361,8 +361,8 @@ const List<ChessTrap> chessTraps = [
         "1.Nf3 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.O-O a6 6.Na3 c5 7.Nxc4 b5 8.Nce5 Bb7 9.Nxf7 Kxf7 10.Ng5+ Ke8 11.Bxb7",
     metadata:
         "50 Opening Traps,Part 1 - Sacrifice on F7 - A13 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "reti_opening",
     opening: "Reti opening",
+    openingId: "reti_opening",
     trapName: "Sacrifice on F7",
     commentedMoves:
         "1.Nf3 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.O-O a6 6.Na3 c5 7.Nxc4 b5 8.Nce5 Bb7 9.Nxf7 Kxf7 10.Ng5+ Ke8 11.Bxb7",
@@ -398,8 +398,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 c6 2.d4 d5 3.f3 dxe4 4.fxe4 e5 5.Nf3 Bg4 6.Bc4 Nf6 7.Bxf7+ Kxf7 8.Nxe5+ Ke8 9.Nxg4 Nxg4 10.Qxg4 Qxd4 11.Nc3",
     metadata:
         "50 Opening Traps,Part 1 - Brilliant unpin - B12 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "caro_kann_defence",
     opening: "Caro-Kann defence",
+    openingId: "caro_kann_defence",
     trapName: "Brilliant unpin",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.f3 dxe4 4.fxe4 e5 5.Nf3 Bg4 6.Bc4 Nf6 7.Bxf7+ Kxf7 8.Nxe5+ Ke8 9.Nxg4 Nxg4 10.Qxg4 Qxd4 11.Nc3",
@@ -434,8 +434,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.d4 Nf6 2.c4 e5 3.d5 Bc5 4.Bg5 Bxf2+ 5.Kxf2 Ng4+ 6.Ke1 Qxg5",
     metadata:
         "50 Opening Traps,Part 1 - Catastrophe on f2 - A51 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "budapest_defence",
     opening: "Budapest defence",
+    openingId: "budapest_defence",
     trapName: "Catastrophe on f2",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.d5 Bc5 4.Bg5 Bxf2+ 5.Kxf2 Ng4+ 6.Ke1 Qxg5",
@@ -462,8 +462,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.Bc4 Nf6 5.d4 c6 6.Nf3 Bg4 7.Bxf7+ Kxf7 8.Ne5+ Qxe5+ 9.dxe5 Bxd1",
     metadata:
         "50 Opening Traps,Part 1 - Blunder unpin - B01 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "scandinavian_defence",
     opening: "Scandinavian (centre counter) defence",
+    openingId: "scandinavian_defence",
     trapName: "Blunder unpin",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.Bc4 Nf6 5.d4 c6 6.Nf3 Bg4 7.Bxf7+ Kxf7 8.Ne5+ Qxe5+ 9.dxe5 Bxd1",
@@ -496,8 +496,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 d6 5.Nc3 g6 6.Nd5 Bg7 7.Nb5",
     metadata:
         "50 Opening Traps,Part 1 - Just Attack c7 - C45 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "scotch_game",
     opening: "Scotch game",
+    openingId: "scotch_game",
     trapName: "Just Attack c7",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 d6 5.Nc3 g6 6.Nd5 Bg7 7.Nb5",
@@ -525,8 +525,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nd4 6.d6 Qxd6 7.Nxf7 Qc6 8.Nxh8 Qxg2 9.Rf1 Qe4+ 10.Be2 Nf3#",
     metadata:
         "50 Opening Traps,Part 1 - OMG Trap - C57 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "two_knights_defence",
     opening: "Two knights defence",
+    openingId: "two_knights_defence",
     trapName: "OMG Trap",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nd4 6.d6 Qxd6 7.Nxf7 Qc6 8.Nxh8 Qxg2 9.Rf1 Qe4+ 10.Be2 Nf3#",
@@ -561,8 +561,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.Bc4 Nd7 5.Bxf7+ Kxf7 6.Ng5+ Ke8 7.Ne6",
     metadata:
         "50 Opening Traps,Part 1 - Win the Queen with Bxf7+ - B06 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "robatsch_modern_defence",
     opening: "Robatsch (modern) defence",
+    openingId: "robatsch_modern_defence",
     trapName: "Win the Queen with Bxf7+",
     commentedMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.Bc4 Nd7 5.Bxf7+ Kxf7 6.Ng5+ Ke8 7.Ne6",
@@ -590,8 +590,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Bc5 4.O-O Nge7 5.c3 f5 6.d4 Bb6 7.d5 fxe4 8.Ng5 Nb8 9.Ne6",
     metadata:
         "50 Opening Traps,Part 1 - The Bishop helps to win the Queen - C64 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "ruy_lopez",
     opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
     trapName: "The Bishop helps to win the Queen",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Bc5 4.O-O Nge7 5.c3 f5 6.d4 Bb6 7.d5 fxe4 8.Ng5 Nb8 9.Ne6",
@@ -623,8 +623,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4",
     metadata:
         "50 Opening Traps,Part 1 - Win the Bishop on b3 - C71 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "ruy_lopez",
     opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
     trapName: "Win the Bishop on b3",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4",
@@ -661,8 +661,8 @@ const List<ChessTrap> chessTraps = [
         "1.Nf3 d5 2.b3 Bf5 3.Bb2 e6 4.g3 Nf6 5.Bg2 Nbd7 6.O-O Bd6 7.d3 O-O 8.Nbd2 h6 9.Re1 c6 10.e4 Bg4 11.e5",
     metadata:
         "50 Opening Traps,Part 1 - Pawn Fork - A06 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "reti_opening",
     opening: "Reti opening",
+    openingId: "reti_opening",
     trapName: "Pawn Fork",
     commentedMoves:
         "1.Nf3 d5 2.b3 Bf5 3.Bb2 e6 4.g3 Nf6 5.Bg2 Nbd7 6.O-O Bd6 7.d3 O-O 8.Nbd2 h6 9.Re1 c6 10.e4 Bg4 11.e5",
@@ -698,8 +698,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.d4 Nf6 2.Bf4 c5 3.Nf3 cxd4 4.Nxd4 e5 5.Bxe5 Qa5+",
     metadata:
         "50 Opening Traps,Part 1 - Sacrifice  pawn, win Bishop - A45 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_pawn_game_a45",
     opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_a45",
     trapName: "Sacrifice  pawn, win Bishop",
     commentedMoves: "1.d4 Nf6 2.Bf4 c5 3.Nf3 cxd4 4.Nxd4 e5 5.Bxe5 Qa5+",
     moves: [
@@ -723,8 +723,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 Nf6 2.c4 e6 3.Nc3 d5 4.Bg5 c5 5.Nf3 cxd4 6.Nxd4 e5 7.Ndb5 a6 8.Nxd5 axb5 9.Nxf6+ Qxf6 10.Bxf6 Bb4+",
     metadata:
         "50 Opening Traps,Part 1 - Sacrifice the Queen!! - D40 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_pawn_game_e00",
     opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_e00",
     trapName: "Sacrifice the Queen!!",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 d5 4.Bg5 c5 5.Nf3 cxd4 6.Nxd4 e5 7.Ndb5 a6 8.Nxd5 axb5 9.Nxf6+ Qxf6 10.Bxf6 Bb4+",
@@ -758,8 +758,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.d4 Nf6 2.Bg5 Ne4 3.Bh4 c5 4.Qd3 Qb6 5.b3 Qh6 6.Qxe4 Qc1#",
     metadata:
         "50 Opening Traps,Part 1 - Brother of the Englud Trap - A45 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_pawn_game_a45",
     opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_a45",
     trapName: "Brother of the Englud Trap",
     commentedMoves:
         "1.d4 Nf6 2.Bg5 Ne4 3.Bh4 c5 4.Qd3 Qb6 5.b3 Qh6 6.Qxe4 Qc1#",
@@ -786,8 +786,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 c5 5.Ne2 d5 6.Bd2 Qa5 7.a3 Nc6 8.axb4 Nxb4 9.Rxa5 Nd3#",
     metadata:
         "50 Opening Traps,Part 1 - Smothered Mate 2.0 - E42 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "nimzo_indian_defence",
     opening: "Nimzo-Indian defence",
+    openingId: "nimzo_indian_defence",
     trapName: "Smothered Mate 2.0",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 c5 5.Ne2 d5 6.Bd2 Qa5 7.a3 Nc6 8.axb4 Nxb4 9.Rxa5 Nd3#",
@@ -820,8 +820,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Qc7 7.O-O Nf6 8.Qe2 Ng4 9.h3 Nd4 10.Nxd4 Qh2#",
     metadata:
         "50 Opening Traps,Part 1 - Sacrifice the Knight 2.0 - B21 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "sicilian_defence",
     opening: "Sicilian defence",
+    openingId: "sicilian_defence",
     trapName: "Sacrifice the Knight 2.0",
     commentedMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Qc7 7.O-O Nf6 8.Qe2 Ng4 9.h3 Nd4 10.Nxd4 Qh2#",
@@ -856,8 +856,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.g3 Bb4+ 5.Bd2 Be7 6.Qb3 O-O 7.Bg2 c6 8.Bb4 dxc4 9.Qxc4 Qd5 10.Qc3 Ne4 11.Qa3 Qc4",
     metadata:
         "50 Opening Traps,Part 1 - Double Attack - D02 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_pawn_game_d02",
     opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_d02",
     trapName: "Double Attack",
     commentedMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.g3 Bb4+ 5.Bd2 Be7 6.Qb3 O-O 7.Bg2 c6 8.Bb4 dxc4 9.Qxc4 Qd5 10.Qc3 Ne4 11.Qa3 Qc4",
@@ -894,8 +894,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e6 5.Nc3 a6 6.a3 Qc7 7.Be2 d6 8.O-O Nge7 9.Ndb5 axb5 10.Nxb5 Qd8 11.Nxd6+ Kd7 12.Nxf7+",
     metadata:
         "50 Opening Traps,Part 1 - The Knight opens the door for his brother - B46 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "sicilian_defence",
     opening: "Sicilian defence",
+    openingId: "sicilian_defence",
     trapName: "The Knight opens the door for his brother",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e6 5.Nc3 a6 6.a3 Qc7 7.Be2 d6 8.O-O Nge7 9.Ndb5 axb5 10.Nxb5 Qd8 11.Nxd6+ Kd7 12.Nxf7+",
@@ -933,8 +933,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.c4 e6 3.Nc3 c6 4.e4 Bb4 5.Bd3 e5 6.dxe5 dxe4 7.Bxe4 Bxc3+ 8.bxc3 Qxd1+ 9.Kxd1 Be6 10.Rb1 Na6 11.Rxb7 O-O-O+",
     metadata:
         "50 Opening Traps,Part 1 - Castle Queenside with check - D31 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_gambit_declined",
     opening: "Queen's gambit declined",
+    openingId: "queens_gambit_declined",
     trapName: "Castle Queenside with check",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 c6 4.e4 Bb4 5.Bd3 e5 6.dxe5 dxe4 7.Bxe4 Bxc3+ 8.bxc3 Qxd1+ 9.Kxd1 Be6 10.Rb1 Na6 11.Rxb7 O-O-O+",
@@ -971,8 +971,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.e3 c6 6.Nf3 Qa5 7.Nd2 Bb4 8.Qc2 O-O 9.Bd3 dxc4 10.Bxc4 Qxg5",
     metadata:
         "50 Opening Traps,Part 1 - Cambridge springs Trap - D52 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "qgd_4_bg5",
     opening: "Queen's Gambit Declined, 4.Bg5",
+    openingId: "qgd_4_bg5",
     trapName: "Cambridge springs Trap",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.e3 c6 6.Nf3 Qa5 7.Nd2 Bb4 8.Qc2 O-O 9.Bd3 dxc4 10.Bxc4 Qxg5",
@@ -1007,8 +1007,8 @@ const List<ChessTrap> chessTraps = [
         "1.g3 g6 2.Bg2 Bg7 3.e4 c5 4.d3 Nc6 5.c3 d6 6.Be3 Qb6 7.Qd2 Ne5 8.Na3 Qxb2 9.Qxb2 Nxd3+ 10.Kd2 Nxb2",
     metadata:
         "50 Opening Traps,Part 1 - Queen Sacrifice for a Knight fork - A00 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "",
     opening: "Hungarian Opening: Symmetrical Variation",
+    openingId: "",
     trapName: "Queen Sacrifice for a Knight fork",
     commentedMoves:
         "1.g3 g6 2.Bg2 Bg7 3.e4 c5 4.d3 Nc6 5.c3 d6 6.Be3 Qb6 7.Qd2 Ne5 8.Na3 Qxb2 9.Qxb2 Nxd3+ 10.Kd2 Nxb2",
@@ -1042,8 +1042,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.d4 d5 2.c4 dxc4 3.Nf3 c6 4.e3 Be6 5.Ng5 Qa5+",
     metadata:
         "50 Opening Traps,Part 1 - The Bishop on e6 is not bad - D21 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_gambit_accepted",
     opening: "Queen's gambit accepted",
+    openingId: "queens_gambit_accepted",
     trapName: "The Bishop on e6 is not bad",
     commentedMoves: "1.d4 d5 2.c4 dxc4 3.Nf3 c6 4.e3 Be6 5.Ng5 Qa5+",
     moves: ["d4", "d5", "c4", "dxc4", "Nf3", "c6", "e3", "Be6", "Ng5", "Qa5+"],
@@ -1055,8 +1055,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 b6 5.Ne2 Ba6 6.Ng3 d5 7.Qa4+",
     metadata:
         "50 Opening Traps,Part 1 - The rare Bishop on a6 - E45 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "nimzo_indian_defence",
     opening: "Nimzo-Indian defence",
+    openingId: "nimzo_indian_defence",
     trapName: "The rare Bishop on a6",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 b6 5.Ne2 Ba6 6.Ng3 d5 7.Qa4+",
@@ -1085,8 +1085,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.bxa6 g6 6.g3 Bg7 7.Bg2 d6 8.Nc3 O-O 9.Nf3 Bxa6 10.O-O Nbd7 11.Re1 Ng4 12.Qc2 Rb8 13.Qa4",
     metadata:
         "50 Opening Traps,Part 1 - Queen Fork 2.0 - A58 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "benko_gambit",
     opening: "Benko gambit",
+    openingId: "benko_gambit",
     trapName: "Queen Fork 2.0",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.bxa6 g6 6.g3 Bg7 7.Bg2 d6 8.Nc3 O-O 9.Nf3 Bxa6 10.O-O Nbd7 11.Re1 Ng4 12.Qc2 Rb8 13.Qa4",
@@ -1126,8 +1126,8 @@ const List<ChessTrap> chessTraps = [
         "1.g3 d5 2.Nf3 c5 3.Bg2 Nc6 4.O-O e5 5.d3 f5 6.c4 d4 7.e3 Nf6 8.exd4 cxd4 9.Nxe5 Nxe5 10.Re1 Ng4 11.f4 Bb4 12.Re2",
     metadata:
         "50 Opening Traps,Part 1 - Pin on the e-File - A08 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "",
     opening: "King's Indian Attack: French Variation",
+    openingId: "",
     trapName: "Pin on the e-File",
     commentedMoves:
         "1.g3 d5 2.Nf3 c5 3.Bg2 Nc6 4.O-O e5 5.d3 f5 6.c4 d4 7.e3 Nf6 8.exd4 cxd4 9.Nxe5 Nxe5 10.Re1 Ng4 11.f4 Bb4 12.Re2",
@@ -1165,8 +1165,8 @@ const List<ChessTrap> chessTraps = [
         "1.Nf3 d5 2.c4 Nf6 3.cxd5 Nxd5 4.e4 Nf6 5.Nc3 Nc6 6.d4 Bg4 7.d5 Ne5 8.Nxe5 Bxd1 9.Bb5+ c6 10.dxc6 a6 11.c7+ axb5 12.cxd8=Q+ Rxd8 13.Nxd1",
     metadata:
         "50 Opening Traps,Part 1 - Sacrifice the Queen!! 2.0 - A15 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "reti_opening",
     opening: "Reti opening",
+    openingId: "reti_opening",
     trapName: "Sacrifice the Queen!! 2.0",
     commentedMoves:
         "1.Nf3 d5 2.c4 Nf6 3.cxd5 Nxd5 4.e4 Nf6 5.Nc3 Nc6 6.d4 Bg4 7.d5 Ne5 8.Nxe5 Bxd1 9.Bb5+ c6 10.dxc6 a6 11.c7+ axb5 12.cxd8=Q+ Rxd8 13.Nxd1",
@@ -1206,8 +1206,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 Be6 9.Nc4 Rc8 10.Ne3 Be7 11.Bd3 Nxe4 12.Bxe7 Nxc3 13.Bxd8 Nxd1",
     metadata:
         "50 Opening Traps,Part 1 - Sicilian Unpin - B33 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "sicilian_defence",
     opening: "Sicilian defence",
+    openingId: "sicilian_defence",
     trapName: "Sicilian Unpin",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 Be6 9.Nc4 Rc8 10.Ne3 Be7 11.Bd3 Nxe4 12.Bxe7 Nxc3 13.Bxd8 Nxd1",
@@ -1248,8 +1248,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 d6 2.d4 Nf6 3.Nc3 e5 4.Nf3 exd4 5.Qxd4 a6 6.Bg5 Be7 7.h3 Nc6 8.Qd2 Be6 9.Nd4 Nxd4 10.Qxd4 O-O 11.Be2 Re8 12.O-O Nxe4 13.Qxe4 Bxg5 14.Qxb7 Rb8 15.Qxa6 Rxb2",
     metadata:
         "50 Opening Traps,Part 1 - The Brother of the Sicilian unpin - B00 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "pirc_defence",
     opening: "Pirc defence",
+    openingId: "pirc_defence",
     trapName: "The Brother of the Sicilian unpin",
     commentedMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 e5 4.Nf3 exd4 5.Qxd4 a6 6.Bg5 Be7 7.h3 Nc6 8.Qd2 Be6 9.Nd4 Nxd4 10.Qxd4 O-O 11.Be2 Re8 12.O-O Nxe4 13.Qxe4 Bxg5 14.Qxb7 Rb8 15.Qxa6 Rxb2",
@@ -1294,8 +1294,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 Nf6 2.Bg5 Ne4 3.Bf4 c5 4.f3 Nf6 5.dxc5 Na6 6.e4 Nxc5 7.Nc3 d6 8.Qd2 Bd7 9.O-O-O Qa5 10.Kb1 Rd8 11.Nd5 Qxd2 12.Nc7#",
     metadata:
         "50 Opening Traps,Part 1 - Queen vs. Queen - A45 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_pawn_game_a45",
     opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_a45",
     trapName: "Queen vs. Queen",
     commentedMoves:
         "1.d4 Nf6 2.Bg5 Ne4 3.Bf4 c5 4.f3 Nf6 5.dxc5 Na6 6.e4 Nxc5 7.Nc3 d6 8.Qd2 Bd7 9.O-O-O Qa5 10.Kb1 Rd8 11.Nd5 Qxd2 12.Nc7#",
@@ -1333,8 +1333,8 @@ const List<ChessTrap> chessTraps = [
         "1.c4 c5 2.Nc3 b6 3.g3 Bb7 4.e4 e6 5.Bg2 Nf6 6.Nge2 Be7 7.O-O d6 8.e5 Bxg2 9.exf6 Bxf1 10.fxe7 Qxe7 11.Qxf1",
     metadata:
         "50 Opening Traps,Part 1 - Pawn Running - A34 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "english_opening",
     opening: "English opening",
+    openingId: "english_opening",
     trapName: "Pawn Running",
     commentedMoves:
         "1.c4 c5 2.Nc3 b6 3.g3 Bb7 4.e4 e6 5.Bg2 Nf6 6.Nge2 Be7 7.O-O d6 8.e5 Bxg2 9.exf6 Bxf1 10.fxe7 Qxe7 11.Qxf1",
@@ -1370,8 +1370,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 e6 2.Nf3 f5 3.g3 b6 4.d5 Be7 5.Bg2 Bb7 6.Ne5 d6 7.Nf7 Kxf7 8.dxe6+",
     metadata:
         "50 Opening Traps,Part 1 - Sacrifice the Knight on f7 - A40 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "queens_pawn_a40",
     opening: "Queen's pawn",
+    openingId: "queens_pawn_a40",
     trapName: "Sacrifice the Knight on f7",
     commentedMoves:
         "1.d4 e6 2.Nf3 f5 3.g3 b6 4.d5 Be7 5.Bg2 Bb7 6.Ne5 d6 7.Nf7 Kxf7 8.dxe6+",
@@ -1401,8 +1401,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Qb3 dxc4 6.Qxc4 O-O 7.e4 a6 8.a4 b5 9.axb5 axb5 10.Qxb5 Rxa1",
     metadata:
         "50 Opening Traps,Part 1 - Anton the Pawn Attacks the Queen - D97 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "gruenfeld_defence",
     opening: "Gruenfeld defence",
+    openingId: "gruenfeld_defence",
     trapName: "Anton the Pawn Attacks the Queen",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Qb3 dxc4 6.Qxc4 O-O 7.e4 a6 8.a4 b5 9.axb5 axb5 10.Qxb5 Rxa1",
@@ -1437,8 +1437,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.c3 Nf6 5.Bd3 O-O 6.O-O c5 7.h3 Nc6 8.d5 Na5 9.Re1 e5 10.b4",
     metadata:
         "50 Opening Traps,Part 1 - The Pawn wins the Knight - B07 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "robatsch_modern_defence",
     opening: "Robatsch (modern) defence",
+    openingId: "robatsch_modern_defence",
     trapName: "The Pawn wins the Knight",
     commentedMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.c3 Nf6 5.Bd3 O-O 6.O-O c5 7.h3 Nc6 8.d5 Na5 9.Re1 e5 10.b4",
@@ -1473,8 +1473,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 d6 2.d4 Nf6 3.Nc3 c6 4.f4 Qa5 5.Bd3 e5 6.Nf3 Bg4 7.Be3 exf4 8.Bxf4 Qb6 9.Na4 Qa5+ 10.Nc3 Qb4 11.a3 Qxb2 12.Na4 Bxf3 13.gxf3 Qxd4 14.c3",
     metadata:
         "50 Opening Traps,Part 1 - B2:Pawn with Poison - B07 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "pirc_defence",
     opening: "Pirc defence",
+    openingId: "pirc_defence",
     trapName: "B2:Pawn with Poison",
     commentedMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 c6 4.f4 Qa5 5.Bd3 e5 6.Nf3 Bg4 7.Be3 exf4 8.Bxf4 Qb6 9.Na4 Qa5+ 10.Nc3 Qb4 11.a3 Qxb2 12.Na4 Bxf3 13.gxf3 Qxd4 14.c3",
@@ -1516,8 +1516,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 c5 2.Nf3 Nc6 3.Bb5 g6 4.O-O Bg7 5.c3 Nf6 6.e5 Nd5 7.d4 cxd4 8.cxd4 O-O 9.Bg5 Qb6 10.Bc4 Qxb2 11.Bxd5 Qxa1 12.Qd2",
     metadata:
         "50 Opening Traps,Part 1 - Win the Queen - B31 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "sicilian_defence",
     opening: "Sicilian defence",
+    openingId: "sicilian_defence",
     trapName: "Win the Queen",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.Bb5 g6 4.O-O Bg7 5.c3 Nf6 6.e5 Nd5 7.d4 cxd4 8.cxd4 O-O 9.Bg5 Qb6 10.Bc4 Qxb2 11.Bxd5 Qxa1 12.Qd2",
@@ -1555,8 +1555,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O Nf6 5.d4 exd4 6.e5 d5 7.exf6 dxc4 8.Re1+ Be6 9.fxg7 Rg8 10.Bg5 Qd5 11.Nc3 Qf5 12.Ne4 Rxg7 13.Nh4",
     metadata:
         "50 Opening Traps,Part 1 - Win the Queen in the middle of the board - C56 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "italian_game",
     opening: "Italian Game",
+    openingId: "italian_game",
     trapName: "Win the Queen in the middle of the board",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O Nf6 5.d4 exd4 6.e5 d5 7.exf6 dxc4 8.Re1+ Be6 9.fxg7 Rg8 10.Bg5 Qd5 11.Nc3 Qf5 12.Ne4 Rxg7 13.Nh4",
@@ -1596,8 +1596,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Bd7 5.Nf3 Bc6 6.Bd3 Nf6 7.Nxf6+ Qxf6 8.Bg5 Bxf3 9.Qd2 Qxd4 10.Bb5+",
     metadata:
         "50 Opening Traps,Part 1 - Win the Queen like a GM - C10 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "french_defence",
     opening: "French defence",
+    openingId: "french_defence",
     trapName: "Win the Queen like a GM",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Bd7 5.Nf3 Bc6 6.Bd3 Nf6 7.Nxf6+ Qxf6 8.Bg5 Bxf3 9.Qd2 Qxd4 10.Bb5+",
@@ -1631,8 +1631,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.Nf3 O-O 6.e3 h6 7.Bh4 Ne4 8.Bxe7 Qxe7 9.cxd5 Nxc3 10.bxc3 exd5 11.Bd3 Bg4 12.Rb1 Nd7 13.Rxb7 Nb6 14.Qb3 Bc8 15.Rxb6 axb6 16.Qxd5 Be6 17.Qe4 f5 18.Qe5 Ra5",
     metadata:
         "50 Opening Traps,Part 1 - A  mousetrap for rooks - D57 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "qgd_4_bg5",
     opening: "Queen's Gambit Declined, 4.Bg5",
+    openingId: "qgd_4_bg5",
     trapName: "A  mousetrap for rooks",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.Nf3 O-O 6.e3 h6 7.Bh4 Ne4 8.Bxe7 Qxe7 9.cxd5 Nxc3 10.bxc3 exd5 11.Bd3 Bg4 12.Rb1 Nd7 13.Rxb7 Nb6 14.Qb3 Bc8 15.Rxb6 axb6 16.Qxd5 Be6 17.Qe4 f5 18.Qe5 Ra5",
@@ -1683,8 +1683,8 @@ const List<ChessTrap> chessTraps = [
         "1.c4 Nf6 2.Nc3 d5 3.cxd5 Nxd5 4.g3 g6 5.Bg2 Nxc3 6.bxc3 Bg7 7.Rb1 O-O 8.Rxb7 Bxb7 9.Bxb7 Nd7 10.Bxa8 Qxa8 11.Nf3",
     metadata:
         "50 Opening Traps,Part 1 - Steal the cheese - A16 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "english_opening",
     opening: "English opening",
+    openingId: "english_opening",
     trapName: "Steal the cheese",
     commentedMoves:
         "1.c4 Nf6 2.Nc3 d5 3.cxd5 Nxd5 4.g3 g6 5.Bg2 Nxc3 6.bxc3 Bg7 7.Rb1 O-O 8.Rxb7 Bxb7 9.Bxb7 Nd7 10.Bxa8 Qxa8 11.Nf3",
@@ -1720,8 +1720,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3 Nb8 10.d4 Nbd7 11.Nbd2 Re8 12.Bxf7+ Kxf7 13.Ng5+ Kg8 14.Ne6",
     metadata:
         "50 Opening Traps,Part 1 - win the Queen with Bxf7+ 2.0 - C95 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "ruy_lopez",
     opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
     trapName: "win the Queen with Bxf7+ 2.0",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3 Nb8 10.d4 Nbd7 11.Nbd2 Re8 12.Bxf7+ Kxf7 13.Ng5+ Kg8 14.Ne6",
@@ -1763,8 +1763,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 d6 3.Bc4 Be7 4.d4 exd4 5.Nxd4 Nd7 6.Bxf7+ Kxf7 7.Ne6 Qe8 8.Nxc7 Qf8 9.Qh5+ g6 10.Qd5+ Kf6 11.Bg5+ Kg7 12.Ne6+",
     metadata:
         "50 Opening Traps,Part 1 - Fischer trap - C41 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "philidors_defence",
     opening: "Philidor's defence",
+    openingId: "philidors_defence",
     trapName: "Fischer trap",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Be7 4.d4 exd4 5.Nxd4 Nd7 6.Bxf7+ Kxf7 7.Ne6 Qe8 8.Nxc7 Qf8 9.Qh5+ g6 10.Qd5+ Kf6 11.Bg5+ Kg7 12.Ne6+",
@@ -1802,8 +1802,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.Re1 Nc5 7.Nc3 Nxa4 8.Nxe5 Nxe5 9.Rxe5+ Be7 10.Nd5 O-O 11.Nxe7+ Kh8 12.Qh5 d6 13.Qxh7+ Kxh7 14.Rh5#",
     metadata:
         "50 Opening Traps,Part 1 - Anastasia's Mate - C80 - https://lichess.org/@/CHESSLUCAFD",
-    openingId: "ruy_lopez",
     opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
     trapName: "Anastasia's Mate",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.Re1 Nc5 7.Nc3 Nxa4 8.Nxe5 Nxe5 9.Rxe5+ Be7 10.Nd5 O-O 11.Nxe7+ Kh8 12.Qh5 d6 13.Qxh7+ Kxh7 14.Rh5#",
@@ -1845,8 +1845,8 @@ const List<ChessTrap> chessTraps = [
         "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
     metadata:
         "6 Traps to use in games - Trap 1 - A06 - https://lichess.org/@/EkuPotter",
-    openingId: "reti_opening",
     opening: "Reti opening",
+    openingId: "reti_opening",
     trapName: "Trap 1",
     commentedMoves:
         "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
@@ -1876,8 +1876,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 e5 2.dxe5 Bc5 3.Nf3 d6 4.exd6 Ne7 5.dxe7 Bxf2+ 6.Kxf2 Qxd1",
     metadata:
         "6 Traps to use in games - Trap 2 - A40 - https://lichess.org/@/EkuPotter",
-    openingId: "queens_pawn_a40",
     opening: "Queen's pawn",
+    openingId: "queens_pawn_a40",
     trapName: "Trap 2",
     commentedMoves:
         "1.d4 e5 2.dxe5 Bc5 3.Nf3 d6 4.exd6 Ne7 5.dxe7 Bxf2+ 6.Kxf2 Qxd1",
@@ -1903,8 +1903,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.e4 e5 2.Bc4 Nc6 3.Qf3 f5 4.Qxf5 d5 5.Bxd5 Bxf5",
     metadata:
         "6 Traps to use in games - Trap 3 - C23 - https://lichess.org/@/EkuPotter",
-    openingId: "bishops_opening",
     opening: "Bishop's opening",
+    openingId: "bishops_opening",
     trapName: "Trap 3",
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qf3 f5 4.Qxf5 d5 5.Bxd5 Bxf5",
     moves: [
@@ -1928,8 +1928,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.d4 exd4 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5",
     metadata:
         "6 Traps to use in games - Trap 4 - C44 - https://lichess.org/@/EkuPotter",
-    openingId: "italian_game",
     opening: "Italian Game",
+    openingId: "italian_game",
     trapName: "Trap 4",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.d4 exd4 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5",
@@ -1960,8 +1960,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 Nf6 5.Nc6+",
     metadata:
         "6 Traps to use in games - Trap 5 - C42 - https://lichess.org/@/EkuPotter",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Trap 5",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 Nf6 5.Nc6+",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "Nf6", "Nc6+"],
@@ -1974,8 +1974,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3 Nc6 7.Qxc6+",
     metadata:
         "6 Traps to use in games - Trap 6 - D20 - https://lichess.org/@/EkuPotter",
-    openingId: "queens_gambit_accepted",
     opening: "Queen's gambit accepted",
+    openingId: "queens_gambit_accepted",
     trapName: "Trap 6",
     commentedMoves:
         "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3 Nc6 7.Qxc6+",
@@ -2003,8 +2003,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
     metadata:
         "Beginners Trap - Stafford Gambit 1 - C42 - https://lichess.org/@/adha_legacy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Stafford Gambit 1",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
@@ -2035,8 +2035,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
     metadata:
         "Beginners Trap - Kostic Gambit 2 - C50 - https://lichess.org/@/adha_legacy",
-    openingId: "italian_game",
     opening: "Italian Game",
+    openingId: "italian_game",
     trapName: "Kostic Gambit 2",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
@@ -2065,8 +2065,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 e5 2.dxe5 f6 3.exf6 Nxf6 4.Nf3 Bc5 5.Bg5 Ne4 6.Bxd8 Bxf2#",
     metadata:
         "Beginners Trap - Englund Gambit 3 - A40 - https://lichess.org/@/adha_legacy",
-    openingId: "queens_pawn_a40",
     opening: "Queen's pawn",
+    openingId: "queens_pawn_a40",
     trapName: "Englund Gambit 3",
     commentedMoves:
         "1.d4 e5 2.dxe5 f6 3.exf6 Nxf6 4.Nf3 Bc5 5.Bg5 Ne4 6.Bxd8 Bxf2#",
@@ -2092,8 +2092,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.e4 e5 2.Bc4 b6 3.Qh5 g6 4.Qxe5+",
     metadata:
         "Beginners Trap - Bishop Opening 4 - C23 - https://lichess.org/@/adha_legacy",
-    openingId: "bishops_opening",
     opening: "Bishop's opening",
+    openingId: "bishops_opening",
     trapName: "Bishop Opening 4",
     commentedMoves: "1.e4 e5 2.Bc4 b6 3.Qh5 g6 4.Qxe5+",
     moves: ["e4", "e5", "Bc4", "b6", "Qh5", "g6", "Qxe5+"],
@@ -2105,8 +2105,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Qe2 Nbd7 6.Nd6#",
     metadata:
         "Check mate traps - Caro kann trap for white - B15 - https://lichess.org/@/Imron28",
-    openingId: "caro_kann_defence",
     opening: "Caro-Kann defence",
+    openingId: "caro_kann_defence",
     trapName: "Caro kann trap for white",
     commentedMoves: "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Qe2 Nbd7 6.Nd6#",
     moves: [
@@ -2131,8 +2131,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Kg8 8.Bxd5+ Qxd5 9.Qxd5+ Be6 10.Qxe6#",
     metadata:
         "Check mate traps - Fried Liver checkmate trap! - C57 - https://lichess.org/@/Imron28",
-    openingId: "two_knights_defence",
     opening: "Two knights defence",
+    openingId: "two_knights_defence",
     trapName: "Fried Liver checkmate trap!",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Kg8 8.Bxd5+ Qxd5 9.Qxd5+ Be6 10.Qxe6#",
@@ -2166,8 +2166,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 d6 4.Bc4 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     metadata:
         "Chess Opening Traps - Legal's Mate⚖️ - C46 - https://lichess.org/@/AM270413",
-    openingId: "three_knights_game",
     opening: "Three knights game",
+    openingId: "three_knights_game",
     trapName: "Legal's Mate⚖️",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 d6 4.Bc4 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
@@ -2197,8 +2197,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Rxg1 Qd4+",
     metadata:
         "Chess Opening Traps - Lasker Trap✌️ - D08 - https://lichess.org/@/AM270413",
-    openingId: "queens_gambit",
     opening: "Queen's Gambit",
+    openingId: "queens_gambit",
     trapName: "Lasker Trap✌️",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Rxg1 Qd4+",
@@ -2233,8 +2233,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7 Qxc7 15.Qxc7",
     metadata:
         "Chess Opening Traps - Rubenstien Trap😶‍🌫️ - D63 - https://lichess.org/@/AM270413",
-    openingId: "queens_pawn_game_d02",
     opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_d02",
     trapName: "Rubenstien Trap😶‍🌫️",
     commentedMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7 Qxc7 15.Qxc7",
@@ -2278,8 +2278,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 g6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     metadata:
         "Common Opening Traps - Legal's mate - C41 - https://lichess.org/@/SANCNA",
-    openingId: "philidors_defence",
     opening: "Philidor's defence",
+    openingId: "philidors_defence",
     trapName: "Legal's mate",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 g6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
@@ -2307,8 +2307,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Qh5 Nc6 3.Bc4 g6 4.Qf3 Nf6 5.g4 h6 6.Nh3 d6 7.g5 Bxh3 8.gxf6 Bd7 9.c3",
     metadata:
         "opening traps+ a little bonus - Shool mat-works on low rated players - C20 - https://lichess.org/@/MarinD2204",
-    openingId: "kings_pawn_game_c20",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c20",
     trapName: "Shool mat-works on low rated players",
     commentedMoves:
         "1.e4 e5 2.Qh5 Nc6 3.Bc4 g6 4.Qf3 Nf6 5.g4 h6 6.Nh3 d6 7.g5 Bxh3 8.gxf6 Bd7 9.c3",
@@ -2341,8 +2341,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Qe2 Nxe2",
     metadata:
         "opening traps+ a little bonus - Italian game, crush it!! - C50 - https://lichess.org/@/MarinD2204",
-    openingId: "italian_game",
     opening: "Italian Game",
+    openingId: "italian_game",
     trapName: "Italian game, crush it!!",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Qe2 Nxe2",
@@ -2371,8 +2371,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Nh2 Qh4 8.f3 g3 9.Re1 Qxh2+ 10.Kf1 Nd4 11.Bxd7+ Kxd7 12.Qe2 Qh1#",
     metadata:
         "opening traps+ a little bonus - Ruy lopez ,more like ruy looser - C65 - https://lichess.org/@/MarinD2204",
-    openingId: "ruy_lopez",
     opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
     trapName: "Ruy lopez ,more like ruy looser",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Nh2 Qh4 8.f3 g3 9.Re1 Qxh2+ 10.Kf1 Nd4 11.Bxd7+ Kxd7 12.Qe2 Qh1#",
@@ -2411,8 +2411,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     metadata:
         "Opening traps - Legal Mate - C50 - https://lichess.org/@/capybara_go",
-    openingId: "italian_game",
     opening: "Italian Game",
+    openingId: "italian_game",
     trapName: "Legal Mate",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
@@ -2442,8 +2442,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Kc3 Qf2 11.Na3 Qe3+ 12.Bd3 Qxe5+ 13.Kd2 Bf5 14.Qe1 O-O-O 15.Qxe5 Rxd3+ 16.Ke1 Nf3+ 17.gxf3 Nxe5",
     metadata:
         "Opening traps. - Albin counter gamit, Lakser trap⚔️ - D08 - https://lichess.org/@/Lock_day",
-    openingId: "queens_gambit",
     opening: "Queen's Gambit",
+    openingId: "queens_gambit",
     trapName: "Albin counter gamit, Lakser trap⚔️",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Kc3 Qf2 11.Na3 Qe3+ 12.Bd3 Qxe5+ 13.Kd2 Bf5 14.Qe1 O-O-O 15.Qxe5 Rxd3+ 16.Ke1 Nf3+ 17.gxf3 Nxe5",
@@ -2492,8 +2492,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
     metadata:
         "Opening traps. - Elephant trap.🐘 - D51 - https://lichess.org/@/Lock_day",
-    openingId: "qgd_4_bg5",
     opening: "Queen's Gambit Declined, 4.Bg5",
+    openingId: "qgd_4_bg5",
     trapName: "Elephant trap.🐘",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
@@ -2526,8 +2526,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7",
     metadata:
         "Opening traps. - Rubinstein trap.👾 - D63 - https://lichess.org/@/Lock_day",
-    openingId: "queens_pawn_game_d02",
     opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_d02",
     trapName: "Rubinstein trap.👾",
     commentedMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7",
@@ -2569,8 +2569,8 @@ const List<ChessTrap> chessTraps = [
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Nf3 d6 5.exd6 Bxd6 6.g3 Nxf2 7.Kxf2 Bxg3+ 8.hxg3 Qxd1",
     metadata:
         "Opening traps. - Fajarowicz Trap.🛸 - A51 - https://lichess.org/@/Lock_day",
-    openingId: "budapest_defence",
     opening: "Budapest defence",
+    openingId: "budapest_defence",
     trapName: "Fajarowicz Trap.🛸",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Nf3 d6 5.exd6 Bxd6 6.g3 Nxf2 7.Kxf2 Bxg3+ 8.hxg3 Qxd1",
@@ -2601,8 +2601,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.hxg4 hxg4 8.Nxe5 Qh4 9.f4 g3 10.Qh5 Rxh5 11.Rf2 Qh1#",
     metadata:
         "Opening traps. - Fishing Pole Trap - C69 - https://lichess.org/@/Lock_day",
-    openingId: "ruy_lopez",
     opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
     trapName: "Fishing Pole Trap",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.hxg4 hxg4 8.Nxe5 Qh4 9.f4 g3 10.Qh5 Rxh5 11.Rf2 Qh1#",
@@ -2638,8 +2638,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4",
     metadata:
         "Scotch Gambit - Crush your opponent! - Introduction 🥳 - C44 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "Introduction 🥳",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4",
     moves: ["e4", "e5", "Nf3", "Nc6", "d4", "exd4", "Bc4"],
@@ -2652,8 +2652,8 @@ const List<ChessTrap> chessTraps = [
         "1.Nf6 e5 2.d5 Bb5 3.Ne4 Nxd4 4.Bd7 Bxc6 5.Bxc6 Nxc6 6.bxc6 O-O 7.Qe7",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📚 Main variation Nf6 - Theory 💡 - C56 - https://lichess.org/@/BZ333",
-    openingId: "",
     opening: "Italian Game: Scotch Gambit, Max Lange Attack",
+    openingId: "",
     trapName: "📚 Main variation Nf6 - Theory 💡",
     commentedMoves:
         "1.Nf6 e5 2.d5 Bb5 3.Ne4 Nxd4 4.Bd7 Bxc6 5.Bxc6 Nxc6 6.bxc6 O-O 7.Qe7",
@@ -2681,8 +2681,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Nf6 5.e5 d5 6.Bb5 Ne4 7.Nxd4",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📚 Main variation Nf6 - Exercise 🔍 - C56 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "📚 Main variation Nf6 - Exercise 🔍",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Nf6 5.e5 d5 6.Bb5 Ne4 7.Nxd4",
@@ -2710,8 +2710,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O Nf6 7.e5 d5 8.exf6 dxc4 9.Qxd8+ Kxd8 10.fxg7 Rg8",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📕 London Defense [Bb4] - Theory 💡 - C44 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "📕 London Defense [Bb4] - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O Nf6 7.e5 d5 8.exf6 dxc4 9.Qxd8+ Kxd8 10.fxg7 Rg8",
@@ -2746,8 +2746,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O cxb2 7.Bxb2 Nf6 8.e5 Ng4 9.h3 Nh6",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📘 London Defense [Bb4] Secondary Variation cxb2? - Theory 💡 - C44 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "📘 London Defense [Bb4] Secondary Variation cxb2? - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O cxb2 7.Bxb2 Nf6 8.e5 Ng4 9.h3 Nh6",
@@ -2780,8 +2780,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 O-O 8.Nxc3 gxh6 9.O-O",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📙 Hungarian/Benima Defense [Be7] - Theory 💡 - C44 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "📙 Hungarian/Benima Defense [Be7] - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 O-O 8.Nxc3 gxh6 9.O-O",
@@ -2813,8 +2813,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5 d5 10.O-O",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📗 Haxo Gambit [Bc5] Secondary Variation - Theory 💡 - C44 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "📗 Haxo Gambit [Bc5] Secondary Variation - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5 d5 10.O-O",
@@ -2848,8 +2848,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📗 Haxo Gambit [Bc5] Secondary Variation - Exercise 🔍 - C44 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "📗 Haxo Gambit [Bc5] Secondary Variation - Exercise 🔍",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5",
@@ -2881,8 +2881,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 d6 5.Nxd4 Nf6 6.Nc3 Be7 7.O-O O-O",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📔 Secondary Variation [d6] - Theory 💡 - C44 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "📔 Secondary Variation [d6] - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 d6 5.Nxd4 Nf6 6.Nc3 Be7 7.O-O O-O",
@@ -2911,8 +2911,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5 cxb2 10.Bxb2 Nf6 11.Qc1",
     metadata:
         "Scotch Gambit - Crush your opponent! - 📓 Haxo Gambit [Bc5]  c3 - Theory 💡 - C44 - https://lichess.org/@/BZ333",
-    openingId: "kings_pawn_game_c44",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c44",
     trapName: "📓 Haxo Gambit [Bc5]  c3 - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5 cxb2 10.Bxb2 Nf6 11.Qc1",
@@ -2947,8 +2947,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Qe7 6.Nxh8",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- Intro ⏱️ -- - C57 - https://lichess.org/@/protonie",
-    openingId: "two_knights_defence",
     opening: "Two knights defence",
+    openingId: "two_knights_defence",
     trapName: "-- Intro ⏱️ --",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Qe7 6.Nxh8",
     moves: [
@@ -2972,8 +2972,8 @@ const List<ChessTrap> chessTraps = [
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- Stafford Gambit | The Exoskeleton 📒-- - C42 - https://lichess.org/@/protonie",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "-- Stafford Gambit | The Exoskeleton 📒--",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nc6", "Nxc6", "dxc6", "d3"],
@@ -2986,8 +2986,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.g3 Qxg3+ 10.Kh1 Qh2#",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- The Queen-Knight Corner Mate ↖️ -- - C42 - https://lichess.org/@/protonie",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "-- The Queen-Knight Corner Mate ↖️ --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.g3 Qxg3+ 10.Kh1 Qh2#",
@@ -3022,8 +3022,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1 9.Nc3",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- ICBM-Style Trap 🚀 -- - C42 - https://lichess.org/@/protonie",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "-- ICBM-Style Trap 🚀 --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1 9.Nc3",
@@ -3055,8 +3055,8 @@ const List<ChessTrap> chessTraps = [
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4 10.e5 Qxe5 11.Bf4 Qxf4 12.g3 Qxg3#",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- The Queen-Rook Mate ⬆️ -- - C42 - https://lichess.org/@/protonie",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "-- The Queen-Rook Mate ⬆️ --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4 10.e5 Qxe5 11.Bf4 Qxf4 12.g3 Qxg3#",
@@ -3091,24 +3091,11 @@ const List<ChessTrap> chessTraps = [
 
   ChessTrap(
     id: 90,
-    cleanMoves: "1.Bxf2+ Ke2 2.Bg4+ Kxf2",
-    metadata:
-        "Series of Traps: No. 1 - St. Petrov's Defense - -- Bonus Tip 🤓 -- - ? - https://lichess.org/@/protonie",
-    openingId: "",
-    opening: "?",
-    trapName: "-- Bonus Tip 🤓 --",
-    commentedMoves: "1.Bxf2+ Ke2 2.Bg4+ Kxf2",
-    moves: ["Bxf2+", "Ke2", "Bg4+", "Kxf2"],
-    fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-  ),
-
-  ChessTrap(
-    id: 91,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6",
     metadata:
         "Stafford Gambit Traps - Introduction - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Introduction",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nc6", "Nxc6", "dxc6"],
@@ -3116,13 +3103,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 92,
+    id: 91,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1",
     metadata:
         "Stafford Gambit Traps - Oh no my knight! - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Oh no my knight!",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1",
@@ -3148,13 +3135,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 93,
+    id: 92,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d4 Qh4 7.g3 Nxg3 8.fxg3 Qe4+",
     metadata:
         "Stafford Gambit Traps - Take my knight, but I'll take your rook... - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Take my knight, but I'll take your rook...",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d4 Qh4 7.g3 Nxg3 8.fxg3 Qe4+",
@@ -3180,13 +3167,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 94,
+    id: 93,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.d3 Ng4 7.Be3 Nxe3 8.fxe3 Bxe3",
     metadata:
         "Stafford Gambit Traps - Most common trap - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Most common trap",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.d3 Ng4 7.Be3 Nxe3 8.fxe3 Bxe3",
@@ -3212,13 +3199,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 95,
+    id: 94,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Bc4 Ng4 7.O-O Qh4 8.h3 Nxf2 9.Qf3 Nxh3+ 10.Kh1 Nf2+ 11.Kg1 Qh1#",
     metadata:
         "Stafford Gambit Traps - Punishing Natural Development - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Punishing Natural Development",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Bc4 Ng4 7.O-O Qh4 8.h3 Nxf2 9.Qf3 Nxh3+ 10.Kh1 Nf2+ 11.Kg1 Qh1#",
@@ -3250,13 +3237,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 96,
+    id: 95,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Be2 h5 7.h3 Qd4 8.O-O Ng4 9.hxg4 hxg4 10.g3 Qe5 11.Kg2 Bxf2 12.Kxf2 Rh2+ 13.Ke3 Qxg3+ 14.Kd4 Be6",
     metadata:
         "Stafford Gambit Traps - My Favorite Trap (Sometimes works against GMs!) - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "My Favorite Trap (Sometimes works against GMs!)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Be2 h5 7.h3 Qd4 8.O-O Ng4 9.hxg4 hxg4 10.g3 Qe5 11.Kg2 Bxf2 12.Kxf2 Rh2+ 13.Ke3 Qxg3+ 14.Kd4 Be6",
@@ -3294,13 +3281,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 97,
+    id: 96,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.h3 Bxf2+ 7.Kxf2 Nxe4+ 8.Ke3 O-O 9.Kxe4",
     metadata:
         "Stafford Gambit Traps - Drag white's king to e4 (before move 10!) - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Drag white's king to e4 (before move 10!)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.h3 Bxf2+ 7.Kxf2 Nxe4+ 8.Ke3 O-O 9.Kxe4",
@@ -3327,13 +3314,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 98,
+    id: 97,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4",
     metadata:
         "Stafford Gambit Traps - Everyone falls for this trap 😁 - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Everyone falls for this trap 😁",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4",
@@ -3361,13 +3348,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 99,
+    id: 98,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be3 Bxe3 7.fxe3 Ng4 8.Qf3 Qg5 9.Qf4 Qc5 10.Kd2",
     metadata:
         "Stafford Gambit Traps - Miscellaneous Lines - C42 - https://lichess.org/@/nhatduy",
-    openingId: "petrovs_defence",
     opening: "Petrov's defence",
+    openingId: "petrovs_defence",
     trapName: "Miscellaneous Lines",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be3 Bxe3 7.fxe3 Ng4 8.Qf3 Qg5 9.Qf4 Qc5 10.Kd2",
@@ -3396,13 +3383,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 100,
+    id: 99,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.Bb5+ Nxb5 10.Kxf2 Ng4+ 11.Ke1 Nd4 12.c3 Qf6 13.Rf1 Qh4+ 14.g3 Qxh2 15.cxd4 Qxg3+ 16.Ke2 Nf6 17.Qa4+ Bd7 18.Qc4 Bg4+ 19.Rf3 Bxf3+ 20.Ke3 Bxd5+ 21.Ke2 Bxc4+ 22.Kd1 Bd3 23.Nc3 Qg1#",
     metadata:
         "Trap for common knight fork - Roman_Onoprienko (1231?) - AARAVIYPE (1166) - C57 - https://lichess.org/@/AARAVIYPE",
-    openingId: "two_knights_defence",
     opening: "Two knights defence",
+    openingId: "two_knights_defence",
     trapName: "Roman_Onoprienko (1231?) - AARAVIYPE (1166)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.Bb5+ Nxb5 10.Kxf2 Ng4+ 11.Ke1 Nd4 12.c3 Qf6 13.Rf1 Qh4+ 14.g3 Qxh2 15.cxd4 Qxg3+ 16.Ke2 Nf6 17.Qa4+ Bd7 18.Qc4 Bg4+ 19.Rf3 Bxf3+ 20.Ke3 Bxd5+ 21.Ke2 Bxc4+ 22.Kd1 Bd3 23.Nc3 Qg1#",
@@ -3458,11 +3445,11 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 101,
+    id: 100,
     cleanMoves: "1.e4",
     metadata: "Traps 99% win - Hello! - B00 - https://lichess.org/@/MaxMalkov",
-    openingId: "kings_pawn_opening_b00",
     opening: "King's pawn opening",
+    openingId: "kings_pawn_opening_b00",
     trapName: "Hello!",
     commentedMoves: "1.e4",
     moves: ["e4"],
@@ -3470,13 +3457,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 102,
+    id: 101,
     cleanMoves:
         "1.d5 Nf3 2.dxe4 Ng5 3.Nf6 d3 4.exd3 Bxd3 5.h6 Nxf7 6.Kxf7 Bg6+ 7.Kxg6 Qxd8",
     metadata:
         "Traps 99% win - Tennison gambit - A06 - https://lichess.org/@/MaxMalkov",
-    openingId: "",
     opening: "Zukertort Opening: Tennison Gambit",
+    openingId: "",
     trapName: "Tennison gambit",
     commentedMoves:
         "1.d5 Nf3 2.dxe4 Ng5 3.Nf6 d3 4.exd3 Bxd3 5.h6 Nxf7 6.Kxf7 Bg6+ 7.Kxg6 Qxd8",
@@ -3500,13 +3487,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 103,
+    id: 102,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+ 9.Kf2 Qxd1",
     metadata:
         "Traps 99% win - Lasker trap - D08 - https://lichess.org/@/MaxMalkov",
-    openingId: "queens_gambit",
     opening: "Queen's Gambit",
+    openingId: "queens_gambit",
     trapName: "Lasker trap",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+ 9.Kf2 Qxd1",
@@ -3534,13 +3521,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 104,
+    id: 103,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Ng5 h6 6.Ne6 fxe6 7.Qh5+ g6 8.Qxg6#",
     metadata:
         "Traps 99% win - Karpov trap - B17 - https://lichess.org/@/MaxMalkov",
-    openingId: "caro_kann_defence",
     opening: "Caro-Kann defence",
+    openingId: "caro_kann_defence",
     trapName: "Karpov trap",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Ng5 h6 6.Ne6 fxe6 7.Qh5+ g6 8.Qxg6#",
@@ -3565,13 +3552,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 105,
+    id: 104,
     cleanMoves:
         "1.e4 e5 2.Nf3 f6 3.Nxe5 fxe5 4.Qh5+ Ke7 5.Qxe5+ Kf7 6.Bc4+ Kg6 7.Qf5+ Kh6 8.h4 d5 9.d3+ g5 10.Qf7 Bb4+ 11.c3 Bxc3+ 12.bxc3 Bh3 13.Rxh3 dxc4 14.hxg5#",
     metadata:
         "Traps 99% win - Damiano gambit - C40 - https://lichess.org/@/MaxMalkov",
-    openingId: "kings_knight_opening",
     opening: "King's knight opening",
+    openingId: "kings_knight_opening",
     trapName: "Damiano gambit",
     commentedMoves:
         "1.e4 e5 2.Nf3 f6 3.Nxe5 fxe5 4.Qh5+ Ke7 5.Qxe5+ Kf7 6.Bc4+ Kg6 7.Qf5+ Kh6 8.h4 d5 9.d3+ g5 10.Qf7 Bb4+ 11.c3 Bxc3+ 12.bxc3 Bh3 13.Rxh3 dxc4 14.hxg5#",
@@ -3608,13 +3595,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 106,
+    id: 105,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Bxf7+ Kxf7 9.Qd5+ Kg6 10.Qxe4+ Kf7 11.Nf3 d5 12.exd6 Qxd6 13.Ng5+ Kg8 14.Qc4+ Be6 15.Nxe6 b5 16.Qb3",
     metadata:
         "Traps 99% win - Danish gambit - C21 - https://lichess.org/@/MaxMalkov",
-    openingId: "centre_game",
     opening: "Centre game",
+    openingId: "centre_game",
     trapName: "Danish gambit",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Bxf7+ Kxf7 9.Qd5+ Kg6 10.Qxe4+ Kf7 11.Nf3 d5 12.exd6 Qxd6 13.Ng5+ Kg8 14.Qc4+ Be6 15.Nxe6 b5 16.Qb3",
@@ -3655,13 +3642,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 107,
+    id: 106,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f4 g3 9.Qh5 Rxh5 10.Nf3 Qh1#",
     metadata:
         "Traps - Fishing pole - Ruy Lopez and Sicilian (black) - C65 - https://lichess.org/@/Hoobus",
-    openingId: "ruy_lopez",
     opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
     trapName: "Fishing pole - Ruy Lopez and Sicilian (black)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f4 g3 9.Qh5 Rxh5 10.Nf3 Qh1#",
@@ -3691,13 +3678,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 108,
+    id: 107,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 Re8 9.Rc1 c6 10.O-O h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7 Qxc7 14.Rxc7",
     metadata:
         "Traps - Rubinstein Trap - QGD (white) - D60 - https://lichess.org/@/Hoobus",
-    openingId: "qgd_4_bg5",
     opening: "Queen's Gambit Declined, 4.Bg5",
+    openingId: "qgd_4_bg5",
     trapName: "Rubinstein Trap - QGD (white)",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 Re8 9.Rc1 c6 10.O-O h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7 Qxc7 14.Rxc7",
@@ -3734,13 +3721,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 109,
+    id: 108,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.fxe3 Qh4+ 7.g3 Qe4",
     metadata:
         "Traps - Lasker Trap - Albin Counter-Gambit to Queens Gambit (black) - D08 - https://lichess.org/@/Hoobus",
-    openingId: "queens_gambit",
     opening: "Queen's Gambit",
+    openingId: "queens_gambit",
     trapName: "Lasker Trap - Albin Counter-Gambit to Queens Gambit (black)",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.fxe3 Qh4+ 7.g3 Qe4",
@@ -3764,13 +3751,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 110,
+    id: 109,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.cxd5 exd5 5.Bg5 Nbd7 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
     metadata:
         "Traps - Elephant Trap - QGD (black) - D35 - https://lichess.org/@/Hoobus",
-    openingId: "queens_gambit_declined",
     opening: "Queen's gambit declined",
+    openingId: "queens_gambit_declined",
     trapName: "Elephant Trap - QGD (black)",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.cxd5 exd5 5.Bg5 Nbd7 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
@@ -3798,13 +3785,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 111,
+    id: 110,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 d6 7.Ba4 b5",
     metadata:
         "Traps - Mortimer Trap - Ruy Lopez (black) - C65 - https://lichess.org/@/Hoobus",
-    openingId: "ruy_lopez",
     opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
     trapName: "Mortimer Trap - Ruy Lopez (black)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 d6 7.Ba4 b5",
@@ -3828,13 +3815,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 112,
+    id: 111,
     cleanMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Nf3 Bf5 5.cxd5 cxd5 6.Qb3 Qb6 7.Nxd5 Qxb3 8.Nxf6+ exf6 9.axb3",
     metadata:
         "Traps - Reverse London - Slav Defense to Queens Gambit (white) - D15 - https://lichess.org/@/Hoobus",
-    openingId: "qgd_slav_defence",
     opening: "Queen's Gambit Declined Slav defence",
+    openingId: "qgd_slav_defence",
     trapName: "Reverse London - Slav Defense to Queens Gambit (white)",
     commentedMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Nf3 Bf5 5.cxd5 cxd5 6.Qb3 Qb6 7.Nxd5 Qxb3 8.Nxf6+ exf6 9.axb3",
@@ -3861,11 +3848,11 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 113,
+    id: 112,
     cleanMoves: "1.e4 f6 2.d4 g5 3.Qh5#",
     metadata: "Traps - Fool mate - B00 - https://lichess.org/@/MaxMalkov",
-    openingId: "kings_pawn_opening_b00",
     opening: "King's pawn opening",
+    openingId: "kings_pawn_opening_b00",
     trapName: "Fool mate",
     commentedMoves: "1.e4 f6 2.d4 g5 3.Qh5#",
     moves: ["e4", "f6", "d4", "g5", "Qh5#"],
@@ -3873,11 +3860,11 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 114,
+    id: 113,
     cleanMoves: "1.e4 e5 2.Qh5 Nc6 3.Bc4 Nf6 4.Qxf7#",
     metadata: "Traps - Scholar’s mate - C20 - https://lichess.org/@/MaxMalkov",
-    openingId: "kings_pawn_game_c20",
     opening: "King's pawn game",
+    openingId: "kings_pawn_game_c20",
     trapName: "Scholar’s mate",
     commentedMoves: "1.e4 e5 2.Qh5 Nc6 3.Bc4 Nf6 4.Qxf7#",
     moves: ["e4", "e5", "Qh5", "Nc6", "Bc4", "Nf6", "Qxf7#"],
@@ -3885,12 +3872,12 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 115,
+    id: 114,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 f6 5.Nxe5 Bxd1 6.Bf7+ Ke7 7.Nd5#",
     metadata: "Traps - Legal mate - C41 - https://lichess.org/@/MaxMalkov",
-    openingId: "philidors_defence",
     opening: "Philidor's defence",
+    openingId: "philidors_defence",
     trapName: "Legal mate",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 f6 5.Nxe5 Bxd1 6.Bf7+ Ke7 7.Nd5#",
@@ -3913,13 +3900,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 116,
+    id: 115,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ne7 9.O-O",
     metadata:
         "Traps - Fried liver attack - C57 - https://lichess.org/@/MaxMalkov",
-    openingId: "two_knights_defence",
     opening: "Two knights defence",
+    openingId: "two_knights_defence",
     trapName: "Fried liver attack",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ne7 9.O-O",
@@ -3946,13 +3933,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 117,
+    id: 116,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.d4 fxg2 7.Bxf7+ Kxf7 8.Qh5+ Ke7 9.Rxf4 Nf6 10.Rxf6 Kxf6 11.Bg5+ Kg7 12.Bxd8",
     metadata:
         "Traps - King gambit trap - C37 - https://lichess.org/@/MaxMalkov",
-    openingId: "kings_gambit",
     opening: "King's gambit",
+    openingId: "kings_gambit",
     trapName: "King gambit trap",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.d4 fxg2 7.Bxf7+ Kxf7 8.Qh5+ Ke7 9.Rxf4 Nf6 10.Rxf6 Kxf6 11.Bg5+ Kg7 12.Bxd8",
@@ -3985,13 +3972,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 118,
+    id: 117,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Na5 4.Bxf7+ Kxf7 5.Nxe5+ Ke8 6.Qh5+ g6 7.Nxg6 hxg6 8.Qxh8",
     metadata:
         "Traps - Bishop safari gambit - C50 - https://lichess.org/@/MaxMalkov",
-    openingId: "italian_game",
     opening: "Italian Game",
+    openingId: "italian_game",
     trapName: "Bishop safari gambit",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Na5 4.Bxf7+ Kxf7 5.Nxe5+ Ke8 6.Qh5+ g6 7.Nxg6 hxg6 8.Qxh8",
@@ -4016,13 +4003,13 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 119,
+    id: 118,
     cleanMoves:
         "1.e4 d5 2.Nf3 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
     metadata:
         "Traps - Ballistic missle gambit - A06 - https://lichess.org/@/MaxMalkov",
-    openingId: "scandinavian_defence",
     opening: "Scandinavian (centre counter) defence",
+    openingId: "scandinavian_defence",
     trapName: "Ballistic missle gambit",
     commentedMoves:
         "1.e4 d5 2.Nf3 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",

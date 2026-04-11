@@ -85,3 +85,80 @@ final class TrapGameFamily extends $Family
   @override
   String toString() => r'trapGameProvider';
 }
+
+@ProviderFor(trapPosition)
+final trapPositionProvider = TrapPositionFamily._();
+
+final class TrapPositionProvider
+    extends $FunctionalProvider<Position, Position, Position>
+    with $Provider<Position> {
+  TrapPositionProvider._({
+    required TrapPositionFamily super.from,
+    required (int, int) super.argument,
+  }) : super(
+         retry: null,
+         name: r'trapPositionProvider',
+         isAutoDispose: true,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$trapPositionHash();
+
+  @override
+  String toString() {
+    return r'trapPositionProvider'
+        ''
+        '$argument';
+  }
+
+  @$internal
+  @override
+  $ProviderElement<Position> $createElement($ProviderPointer pointer) =>
+      $ProviderElement(pointer);
+
+  @override
+  Position create(Ref ref) {
+    final argument = this.argument as (int, int);
+    return trapPosition(ref, argument.$1, argument.$2);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(Position value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<Position>(value),
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is TrapPositionProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$trapPositionHash() => r'2fa18d6801a3fe6771d06f67eab586c1b11c7831';
+
+final class TrapPositionFamily extends $Family
+    with $FunctionalFamilyOverride<Position, (int, int)> {
+  TrapPositionFamily._()
+    : super(
+        retry: null,
+        name: r'trapPositionProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: true,
+      );
+
+  TrapPositionProvider call(int index, int moveIndex) =>
+      TrapPositionProvider._(argument: (index, moveIndex), from: this);
+
+  @override
+  String toString() => r'trapPositionProvider';
+}

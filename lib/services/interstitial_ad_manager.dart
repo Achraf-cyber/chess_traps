@@ -10,7 +10,10 @@ class InterstitialAdManager {
 
   InterstitialAd? _interstitialAd;
   int _trapViewsCount = 0;
-  static const int _adFrequency = 4; // Show ad every 4 trap views
+  static const int _adFrequency = 10;
+  DateTime? _lastAdShownAt;
+  static const Duration _adCooldown = Duration(minutes: 3);
+  bool _isShowingAd = false;
 
   void loadAd() {
     InterstitialAd.load(
@@ -31,29 +34,38 @@ class InterstitialAdManager {
   void onTrapViewed() {
     _trapViewsCount++;
     if (_trapViewsCount >= _adFrequency) {
-      if (_interstitialAd != null) {
+      // Reset count anyway to avoid re-triggering every time if ad not ready
+      _trapViewsCount = 0;
+
+      final now = DateTime.now();
+      final canShow = _lastAdShownAt == null ||
+          now.difference(_lastAdShownAt!) >= _adCooldown;
+
+      if (canShow && _interstitialAd != null && !_isShowingAd) {
         showAd();
-        _trapViewsCount = 0;
+        _lastAdShownAt = now;
       } else {
-        // If not loaded, try loading one for next time
-        loadAd();
+        if (_interstitialAd == null) loadAd();
       }
     }
   }
 
   void showAd() {
-    if (_interstitialAd == null) return;
+    if (_interstitialAd == null || _isShowingAd) return;
 
+    _isShowingAd = true;
     _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
       onAdShowedFullScreenContent: (ad) {
-        // Ad showed
+        _isShowingAd = true;
       },
       onAdDismissedFullScreenContent: (ad) {
+        _isShowingAd = false;
         ad.dispose();
         _interstitialAd = null;
         loadAd();
       },
       onAdFailedToShowFullScreenContent: (ad, error) {
+        _isShowingAd = false;
         ad.dispose();
         _interstitialAd = null;
         loadAd();

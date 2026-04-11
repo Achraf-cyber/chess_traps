@@ -74,5 +74,7 @@
     "sequenceHistory": "Historique des séquences",
     "theory": "Théorie",
     "undo": "Annuler",
-    "flip": "Retourner"
+    "flip": "Retourner",
+    "privacyPolicy": "Politique de Confidentialité",
+    "termsOfUse": "Conditions d'Utilisation"
 }

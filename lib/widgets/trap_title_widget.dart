@@ -1,8 +1,10 @@
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/router.dart';
 import 'package:chessground/chessground.dart';
+import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 
+import '../services/interstitial_ad_manager.dart';
 import '../utils.dart';
 
 class TrapTitleWidget extends StatelessWidget {
@@ -18,6 +20,7 @@ class TrapTitleWidget extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
         onTap: () {
+          InterstitialAdManager().onTrapViewed();
           TrapDetailRoute(index: trap.id).push<void>(context);
         },
         child: Padding(
@@ -39,19 +42,31 @@ class TrapTitleWidget extends StatelessWidget {
                   const SizedBox(height: 4),
                   Flexible(
                     child: Center(
-                      child: Builder(builder: (context) {
-                        final boardSize = constraints.maxWidth.isFinite
-                            ? constraints.maxWidth
-                            : 120.0;
-                        return SizedBox.square(
-                          dimension: boardSize,
-                          child: StaticChessboard(
-                            size: boardSize,
-                            orientation: .white,
-                            fen: trap.fen,
-                          ),
-                        );
-                      }),
+                      child: Builder(
+                        builder: (context) {
+                          final boardSize =
+                              (constraints.maxWidth.isFinite
+                                      ? constraints.maxWidth
+                                      : 120.0) <
+                                  (constraints.maxHeight.isFinite
+                                      ? constraints.maxHeight
+                                      : 120.0)
+                              ? (constraints.maxWidth.isFinite
+                                    ? constraints.maxWidth
+                                    : 120.0)
+                              : (constraints.maxHeight.isFinite
+                                    ? constraints.maxHeight
+                                    : 120.0);
+                          return SizedBox.square(
+                            dimension: boardSize,
+                            child: StaticChessboard(
+                              size: boardSize,
+                              orientation: Side.white,
+                              fen: trap.fen,
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ),
                   const SizedBox(height: 4),

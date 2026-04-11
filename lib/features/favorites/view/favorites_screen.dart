@@ -1,6 +1,6 @@
 import 'package:chess_traps/providers/user_favorites_provider.dart';
 import 'package:chess_traps/utils.dart';
-import 'package:chess_traps/widgets/trap_grid_card.dart';
+import 'package:chess_traps/widgets/trap_favorite_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,10 +11,7 @@ class FavoritesScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final elements = ref
-        .watch(userFavoritesProvider)
-        .map(indexToChessTrap)
-        .toList();
+    final elements = ref.watch(userFavoritesProvider).map(indexToChessTrap).toList();
 
     return Scaffold(
       body: SafeArea(
@@ -88,19 +85,20 @@ class FavoritesScreen extends ConsumerWidget {
                 ),
               )
             else
-              SliverPadding(
-                padding: const EdgeInsets.all(16),
-                sliver: SliverGrid(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 16,
-                    crossAxisSpacing: 16,
-                    childAspectRatio: 0.85,
-                  ),
-                  delegate: SliverChildBuilderDelegate(
-                    (context, index) => TrapGridCard(trap: elements[index]),
-                    childCount: elements.length,
-                  ),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    final trap = elements[index];
+                    return TrapFavoriteTile(
+                      trap: trap,
+                      onRemove: () {
+                        ref
+                            .read(userFavoritesProvider.notifier)
+                            .toggleFavorite(trap.id);
+                      },
+                    );
+                  },
+                  childCount: elements.length,
                 ),
               ),
           ],

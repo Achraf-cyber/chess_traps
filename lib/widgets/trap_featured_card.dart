@@ -1,8 +1,10 @@
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/router.dart';
 import 'package:chessground/chessground.dart';
+import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 
+import '../services/interstitial_ad_manager.dart';
 import '../utils.dart';
 
 class TrapFeaturedCard extends StatelessWidget {
@@ -35,7 +37,10 @@ class TrapFeaturedCard extends StatelessWidget {
       ),
       child: InkWell(
         borderRadius: BorderRadius.circular(24),
-        onTap: () => TrapDetailRoute(index: trap.id).push<void>(context),
+        onTap: () {
+          InterstitialAdManager().onTrapViewed();
+          TrapDetailRoute(index: trap.id).push<void>(context);
+        },
         child: Row(
           children: [
             Expanded(
@@ -45,8 +50,10 @@ class TrapFeaturedCard extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 10,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
                       color: context.colors.primary.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(20),
@@ -105,6 +112,7 @@ class TrapFeaturedCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16),
                     boxShadow: [
                       BoxShadow(
+                        // ignore: deprecated_member_use
                         color: Colors.black.withValues(alpha: 0.15),
                         blurRadius: 15,
                         offset: const Offset(0, 5),
@@ -112,10 +120,20 @@ class TrapFeaturedCard extends StatelessWidget {
                     ],
                   ),
                   clipBehavior: Clip.antiAlias,
-                  child: StaticChessboard(
-                    size: 200, // Size is handled by AspectRatio
-                    orientation: .white,
-                    fen: trap.fen,
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      final size = constraints.maxWidth;
+                      return Center(
+                        child: SizedBox.square(
+                          dimension: size,
+                          child: StaticChessboard(
+                            size: size,
+                            orientation: Side.white,
+                            fen: trap.fen,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),

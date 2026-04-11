@@ -5,7 +5,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/data/chess_move_node.dart';
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 import 'package:chess_traps/generated/chess/prebuilt_move_trie.dart';
-import 'package:chess_traps/widgets/trap_grid_card.dart';
+import 'package:chess_traps/widgets/search_result_tile.dart';
 import 'package:chess_traps/utils.dart';
 import 'package:chessground/chessground.dart';
 import 'package:dartchess/dartchess.dart';
@@ -211,9 +211,9 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             _buildFloatingHeader(),
-            const SizedBox(height: 4),
-            Expanded(flex: 7, child: _buildBoardLayer()),
             const SizedBox(height: 8),
+            Expanded(flex: 7, child: _buildBoardLayer()),
+            const SizedBox(height: 12),
             Expanded(
               flex: 4,
               child: _SearchResultsSection(
@@ -233,53 +233,57 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
       builder: (context, constraints) {
         final totalHeight = constraints.maxHeight;
         final totalWidth = constraints.maxWidth;
-        final boardMaxHeight = totalHeight * 0.78;
+        final boardMaxHeight = totalHeight * 0.72;
         final boardSize = boardMaxHeight < totalWidth ? boardMaxHeight : totalWidth;
 
-        return Column(
-          children: [
-            const SizedBox(height: 8),
-            Center(
-              child: Container(
-                width: boardSize,
-                height: boardSize,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.15),
-                      blurRadius: 28,
-                      offset: const Offset(0, 12),
+        return SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(height: 4),
+              Center(
+                child: Container(
+                  width: boardSize,
+                  height: boardSize,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withValues(alpha: 0.15),
+                        blurRadius: 28,
+                        offset: const Offset(0, 12),
+                      ),
+                    ],
+                  ),
+                  clipBehavior: Clip.antiAlias,
+                  child: Chessboard(
+                    size: boardSize,
+                    orientation: orientation,
+                    fen: position.fen,
+                    lastMove: lastMove,
+                    game: GameData(
+                      playerSide: position.turn == .white ? .white : .black,
+                      sideToMove: position.turn,
+                      validMoves: position.legalMoves.asIMapSquareISet,
+                      promotionMove: promotionMove,
+                      onMove: onMove,
+                      isCheck: position.isCheck,
+                      onPromotionSelection: onPromotionSelection,
                     ),
-                  ],
-                ),
-                clipBehavior: Clip.antiAlias,
-                child: Chessboard(
-                  size: boardSize,
-                  orientation: orientation,
-                  fen: position.fen,
-                  lastMove: lastMove,
-                  game: GameData(
-                    playerSide: position.turn == .white ? .white : .black,
-                    sideToMove: position.turn,
-                    validMoves: position.legalMoves.asIMapSquareISet,
-                    promotionMove: promotionMove,
-                    onMove: onMove,
-                    isCheck: position.isCheck,
-                    onPromotionSelection: onPromotionSelection,
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 12),
+              const SizedBox(height: 12),
               _SearchControlsRow(
                 onUndo: _undo,
                 onFlip: _flip,
                 canUndo: history.isNotEmpty,
               ),
-            const SizedBox(height: 10),
+              const SizedBox(height: 12),
               _SearchMoveHistoryBar(history: history),
-          ],
+              const SizedBox(height: 4),
+            ],
+          ),
         );
       },
     );
@@ -317,21 +321,13 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
       );
     }
 
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-      child: GridView.builder(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          mainAxisSpacing: 16,
-          crossAxisSpacing: 16,
-          childAspectRatio: 0.85,
-        ),
-        itemCount: _currentTrapIds.length,
-        itemBuilder: (context, index) {
-          final trap = chessTraps[_currentTrapIds[index]];
-          return TrapGridCard(trap: trap, label: '${index + 1}');
-        },
-      ),
+    return ListView.builder(
+      padding: const EdgeInsets.only(top: 8, bottom: 16),
+      itemCount: _currentTrapIds.length,
+      itemBuilder: (context, index) {
+        final trap = chessTraps[_currentTrapIds[index]];
+        return SearchResultTile(trap: trap, index: index);
+      },
     );
   }
 

@@ -9,6 +9,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/providers/app_theme_provider.dart';
 import 'package:chess_traps/services/app_open_ad_manager.dart';
 import 'package:chess_traps/services/notification_service.dart';
+import 'package:chess_traps/services/consent_manager.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 
@@ -28,20 +29,28 @@ Future<void> runMainApp(String envFile) async {
   debugPrint('app started');
   WidgetsFlutterBinding.ensureInitialized();
   debugPrint('widget binding');
+
+  // Defer first frame to keep the native splash screen until SplashMaster.resume() is called.
+  SplashMaster.initialize();
+
   await dotenv.load(fileName: envFile);
   debugPrint('loading dotenv');
 
   await NotificationService().init();
 
   if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
-    // Run initialization
-    await MobileAds.instance.initialize().then(
-      (_) => debugPrint('initialize mobile ads'),
+    // Request privacy consent before initializing MobileAds
+    await ConsentManager().requestConsentUpdate();
+    
+    // Initialize MobileAds and AppOpenAd
+    MobileAds.instance.initialize().then(
+      (_) {
+        debugPrint('initialize mobile ads');
+        final appOpenAdManager = AppOpenAdManager()..loadAd();
+        AppLifecycleReactor(appOpenAdManager: appOpenAdManager)
+            .listenToAppStateChanges();
+      },
     );
-
-    final appOpenAdManager = AppOpenAdManager()..loadAd();
-    AppLifecycleReactor(appOpenAdManager: appOpenAdManager)
-        .listenToAppStateChanges();
   }
 
   LicenseRegistry.addLicense(() async* {

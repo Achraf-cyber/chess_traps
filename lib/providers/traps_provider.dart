@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../data/chess_trap.dart';
@@ -14,18 +12,13 @@ List<ChessTrap> traps(Ref ref) {
 
 @riverpod
 ChessTrap trapOfTheDay(Ref ref) {
-  final maxInd = chessTraps.length;
-  final date = DateTime.now();
-  final int seed = date.year * 10000 + date.month * 100 + date.day;
-  final id = seed % maxInd;
-  return chessTraps[id];
-}
+  final allTraps = ref.watch(trapsProvider);
+  if (allTraps.isEmpty) return chessTraps[0];
 
-@riverpod
-ChessTrap randomTrap(Ref ref) {
-  final maxInd = chessTraps.length;
-  final int id = Random().nextInt(maxInd);
-  return chessTraps[id];
+  final date = DateTime.now().toUtc();
+  final int seed = date.year * 10000 + date.month * 100 + date.day;
+  final index = seed % allTraps.length;
+  return allTraps[index];
 }
 
 ChessTrap indexToChessTrap(int index) {

@@ -2,14 +2,13 @@ import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/router.dart';
 import 'package:chess_traps/utils.dart';
 import 'package:chessground/chessground.dart';
+import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 
+import '../services/interstitial_ad_manager.dart';
+
 class TrapFavoriteTile extends StatelessWidget {
-  const TrapFavoriteTile({
-    super.key,
-    required this.trap,
-    this.onRemove,
-  });
+  const TrapFavoriteTile({super.key, required this.trap, this.onRemove});
 
   final ChessTrap trap;
   final VoidCallback? onRemove;
@@ -23,7 +22,10 @@ class TrapFavoriteTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         child: InkWell(
           borderRadius: BorderRadius.circular(20),
-          onTap: () => TrapDetailRoute(index: trap.id).push<void>(context),
+          onTap: () {
+            InterstitialAdManager().onTrapViewed();
+            TrapDetailRoute(index: trap.id).push<void>(context);
+          },
           child: Padding(
             padding: const EdgeInsets.all(12),
             child: Row(
@@ -34,7 +36,11 @@ class TrapFavoriteTile extends StatelessWidget {
                   height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: context.colors.outlineVariant.withValues(alpha: 0.4)),
+                    border: Border.all(
+                      color: context.colors.outlineVariant.withValues(
+                        alpha: 0.4,
+                      ),
+                    ),
                     boxShadow: [
                       BoxShadow(
                         color: Colors.black.withValues(alpha: 0.08),
@@ -44,10 +50,15 @@ class TrapFavoriteTile extends StatelessWidget {
                     ],
                   ),
                   clipBehavior: Clip.antiAlias,
-                  child: StaticChessboard(
-                    size: 80,
-                    orientation: .white,
-                    fen: trap.fen,
+                  child: Center(
+                    child: SizedBox.square(
+                      dimension: 80,
+                      child: StaticChessboard(
+                        size: 80,
+                        orientation: Side.white,
+                        fen: trap.fen,
+                      ),
+                    ),
                   ),
                 ),
                 const SizedBox(width: 14),
@@ -78,7 +89,10 @@ class TrapFavoriteTile extends StatelessWidget {
                       Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 2,
+                            ),
                             decoration: BoxDecoration(
                               color: context.colors.primaryContainer,
                               borderRadius: BorderRadius.circular(8),

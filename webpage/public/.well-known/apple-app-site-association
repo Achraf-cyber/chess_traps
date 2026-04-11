@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "TEAMID.chesstraps.achrafcyber.com",
+        "paths": ["/trap/*"]
+      }
+    ]
+  }
+}

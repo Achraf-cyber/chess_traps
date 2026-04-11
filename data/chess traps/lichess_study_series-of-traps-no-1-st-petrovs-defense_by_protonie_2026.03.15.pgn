@@ -1,0 +1,119 @@
+[Event "Series of Traps: No. 1 - St. Petrov's Defense: -- Intro ⏱️ --"]
+[Date "2026.03.15"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C57"]
+[Opening "Italian Game: Two Knights Defense, Traxler Counterattack, Knight Sacrifice Line"]
+[StudyName "Series of Traps: No. 1 - St. Petrov's Defense"]
+[ChapterName "-- Intro ⏱️ --"]
+[ChapterURL "https://lichess.org/study/k3gPpJ4B/j0ci5lWe"]
+[Annotator "https://lichess.org/@/protonie"]
+[UTCDate "2026.03.15"]
+[UTCTime "19:46:02"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 (3. Bb5 a6 4. Bxc6 dxc6 5. h3) 3... Nf6? { Hello y'all I'm protonie and we'll be looking into the traps in the St. Petrov's Defense also known as the Stafford! But wait, the Stafford is a trap itself! If you don't know the Stafford you can go to chapter 2 but if you know the first moves you can skip it. } 4. Ng5 Bc5?? 5. Nxf7 Qe7 6. Nxh8 *
+
+
+[Event "Series of Traps: No. 1 - St. Petrov's Defense: -- Stafford Gambit | The Exoskeleton 📒--"]
+[Date "2026.03.15"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Series of Traps: No. 1 - St. Petrov's Defense"]
+[ChapterName "-- Stafford Gambit | The Exoskeleton 📒--"]
+[ChapterURL "https://lichess.org/study/k3gPpJ4B/8psSPAIi"]
+[Annotator "https://lichess.org/@/protonie"]
+[UTCDate "2026.03.15"]
+[UTCTime "19:51:55"]
+[ChapterMode "gamebook"]
+
+1. e4 { [%eval 0.18] } { Do the most common reply! } 1... e5 { [%eval 0.22] } 2. Nf3 $40 { [%eval 0.18] } { Develop a knight! } 2... Nf6?! $36 { [%eval 0.34] } 3. Nxe5 { [%eval 0.29] } { Now develop the other knight! } 3... Nc6?! { [%eval 1.82] } { This is where the Stafford begins! } 4. Nxc6 { [%eval 1.87] } { Take back with the d! } 4... dxc6! $132 { [%eval 1.42] } { This is where the strategy and the traps are born! } (4... bxc6!? { This weakens the pawn structure in your kingside and limits bishop movement without moving the center pawn but you can still take andvantages } 5. d3 d5 6. exd5 cxd5) 5. d3 { [%eval 1.8] } *
+
+
+[Event "Series of Traps: No. 1 - St. Petrov's Defense: -- The 8-Move Mate 🟢 --"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Series of Traps: No. 1 - St. Petrov's Defense"]
+[ChapterName "-- The 8-Move Mate 🟢 --"]
+[ChapterURL "https://lichess.org/study/k3gPpJ4B/FQ7xA1Sl"]
+[Annotator "https://lichess.org/@/protonie"]
+[UTCDate "2026.03.16"]
+[UTCTime "05:47:53"]
+[ChapterMode "gamebook"]
+
+1. e4 { You know how to play the opening now! } 1... e5 2. Nf3 { Develop initiation! } 2... Nf6 3. Nxe5 { NOW! } 3... Nc6?! 4. Nxc6 dxc6 5. d3 { Develop the bishop in the f file. } 5... Bc5 { This move is CRUICAL! } 6. Bg5?? { Ignore the relative pin on the knight! } 6... Nxe4!! 7. Bxd8 $140 { They think it's free... It is! We just compensate with mating the opponent! } 7... Bxf2+ (7... Nxf2 { This one is also good but it doesn't lead to mate in two }) 8. Ke2 $7 { This is their only move! } 8... Bg4# *
+
+
+[Event "Series of Traps: No. 1 - St. Petrov's Defense: -- The Queen-Knight Corner Mate ↖️ --"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Series of Traps: No. 1 - St. Petrov's Defense"]
+[ChapterName "-- The Queen-Knight Corner Mate ↖️ --"]
+[ChapterURL "https://lichess.org/study/k3gPpJ4B/dhjOHknI"]
+[Annotator "https://lichess.org/@/protonie"]
+[UTCDate "2026.03.16"]
+[UTCTime "13:14:35"]
+[ChapterMode "gamebook"]
+
+1. e4 { Do the Stafford main exoskeleton! } 1... e5 2. Nf3 Nf6 3. Nxe5 Nc6?! 4. Nxc6 dxc6! 5. d3 { It's time for the CRUICAL! } 5... Bc5! { Still cruical, but what if they do this? } 6. Be2 { You need abseloute dominance in the kingside, how? } 6... h5 7. O-O? Ng4 8. h3 { This position might look hard for you, it kinda is but you will see the payoff! } 8... Qd6!! (8... Nxf2?? { You will abseloutely lose your dominance over the kingside (or even the entire board honestly). } 9. Rxf2 Bxf2+ 10. Kxf2) 9. g3?? { Don't be afraid! } 9... Qxg3+!! { The pawn can't take because it's pinned! } 10. Kh1 $7 { Now it's time to mate the king! } 10... Qh2#! (10... Qxh3+?! { You can mate after this position too but you don't need to delay the mate in one. } 11. Kg1 Qh2#) *
+
+
+[Event "Series of Traps: No. 1 - St. Petrov's Defense: -- ICBM-Style Trap 🚀 --"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Series of Traps: No. 1 - St. Petrov's Defense"]
+[ChapterName "-- ICBM-Style Trap 🚀 --"]
+[ChapterURL "https://lichess.org/study/k3gPpJ4B/denbL8kB"]
+[Annotator "https://lichess.org/@/protonie"]
+[UTCDate "2026.03.16"]
+[UTCTime "13:32:40"]
+[ChapterMode "gamebook"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6?! 4. Nxc6 dxc6! { This move is really cruical now! } 5. e5? { Be brave! } 5... Ne4 6. d3? { Let them take that horse! Make them use as meat! We'll compensate with a medium rare! } 6... Bc5!! { This time it's brilliant! I wonder why..? } 7. dxe4?? Bxf2+! { CHECK! (BUT SOON READY TO SERVE!) } 8. Kxf2 { ICBM TIME! } 8... Qxd1 { YES! } 9. Nc3 *
+
+
+[Event "Series of Traps: No. 1 - St. Petrov's Defense: -- The Queen-Rook Mate ⬆️ --"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Series of Traps: No. 1 - St. Petrov's Defense"]
+[ChapterName "-- The Queen-Rook Mate ⬆️ --"]
+[ChapterURL "https://lichess.org/study/k3gPpJ4B/Zmn2FfmU"]
+[Annotator "https://lichess.org/@/protonie"]
+[UTCDate "2026.03.16"]
+[UTCTime "13:45:27"]
+[ChapterMode "gamebook"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6?! 4. Nxc6 dxc6 5. d3 Bc5 6. Be2 h5 7. O-O? Ng4 8. h3 { Sac it! } 8... Qd6!! { You'll see! } 9. hxg4 hxg4 10. e5?? { The idea of delaying... Fortunately it is abseloutely a gre- jk its POINTLESS! } 10... Qxe5 11. Bf4?? { Also pointless } 11... Qxf4 12. g3?? { What do you think? } 12... Qxg3# (12... Qd6?? { Coward. I will count this as a blunder. }) *
+
+
+[Event "Series of Traps: No. 1 - St. Petrov's Defense: -- Outro 🔥 --"]
+[Date "2026.03.16"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Series of Traps: No. 1 - St. Petrov's Defense"]
+[ChapterName "-- Outro 🔥 --"]
+[ChapterURL "https://lichess.org/study/k3gPpJ4B/7RHYg3s7"]
+[Annotator "https://lichess.org/@/protonie"]
+[UTCDate "2026.03.16"]
+[UTCTime "14:07:56"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 { Goodbye and don't forget to serve the throne whenever these happen (the opponent following the script is once in a blue moon)
+Anyways bye but you can check these raw, unannonated (so stinky looking) moves
+For the third time, bye. } 5. d3 (5. e5 Ne4 6. d3 Bc5 7. dxe4 Bxf2+ 8. Kxf2 (8. Ke2 Bg4+ 9. Kxf2 Bxd1 10. Nc3 O-O 11. Nxd1 Qxd1) 8... Qxd1 9. Nc3 Qxc2+) 5... Bc5 6. Bg5 (6. Be2 h5 7. O-O Ng4 8. h3 Qd6 9. g3 (9. hxg4 hxg4 10. g3 Qxg3#) 9... Qxg3+ 10. Kh1 Qh2#) 6... Nxe4 7. Bxd8 Bxf2+ 8. Ke2 Bg4# *
+
+

@@ -102,13 +102,13 @@ abstract class AppLocalizations {
     Locale('fr'),
   ];
 
-  /// The name of the author of the application
+  /// No description provided for @authorName.
   ///
   /// In en, this message translates to:
   /// **'Simbre Achraf'**
   String get authorName;
 
-  /// The name of the application
+  /// No description provided for @appName.
   ///
   /// In en, this message translates to:
   /// **'Chess Traps'**
@@ -161,6 +161,354 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Recent Traps'**
   String get recentTraps;
+
+  /// No description provided for @exampleTrap.
+  ///
+  /// In en, this message translates to:
+  /// **'Fried Liver Attack'**
+  String get exampleTrap;
+
+  /// No description provided for @lastTimeChecked.
+  ///
+  /// In en, this message translates to:
+  /// **'Last time checked'**
+  String get lastTimeChecked;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @viewAllTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'View All Traps'**
+  String get viewAllTraps;
+
+  /// No description provided for @errorLoadingTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading traps'**
+  String get errorLoadingTraps;
+
+  /// No description provided for @noTrapsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No traps found'**
+  String get noTrapsFound;
+
+  /// No description provided for @theme.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme'**
+  String get theme;
+
+  /// No description provided for @system.
+  ///
+  /// In en, this message translates to:
+  /// **'System'**
+  String get system;
+
+  /// No description provided for @light.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get light;
+
+  /// No description provided for @dark.
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get dark;
+
+  /// No description provided for @appLanguage.
+  ///
+  /// In en, this message translates to:
+  /// **'App Language'**
+  String get appLanguage;
+
+  /// No description provided for @openSourceLicense.
+  ///
+  /// In en, this message translates to:
+  /// **'Open source license'**
+  String get openSourceLicense;
+
+  /// No description provided for @usedPackages.
+  ///
+  /// In en, this message translates to:
+  /// **'Packages that were used'**
+  String get usedPackages;
+
+  /// No description provided for @developer.
+  ///
+  /// In en, this message translates to:
+  /// **'Developer'**
+  String get developer;
+
+  /// No description provided for @editProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Profile'**
+  String get editProfile;
+
+  /// No description provided for @logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get logout;
+
+  /// No description provided for @masteredTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Mastered traps ({percentage}%)'**
+  String masteredTraps(Object count, Object percentage);
+
+  /// No description provided for @english.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get english;
+
+  /// No description provided for @randomTrap.
+  ///
+  /// In en, this message translates to:
+  /// **'Random Trap'**
+  String get randomTrap;
+
+  /// No description provided for @yourFavoriteChessTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'You favorite chess traps'**
+  String get yourFavoriteChessTraps;
+
+  /// No description provided for @wildGambit.
+  ///
+  /// In en, this message translates to:
+  /// **'Wild Gambit'**
+  String get wildGambit;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
+
+  /// No description provided for @playTheMoves.
+  ///
+  /// In en, this message translates to:
+  /// **'Play the moves'**
+  String get playTheMoves;
+
+  /// No description provided for @matchingTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'Matching traps'**
+  String get matchingTraps;
+
+  /// No description provided for @playMovesToNarrow.
+  ///
+  /// In en, this message translates to:
+  /// **'Play moves to narrow results'**
+  String get playMovesToNarrow;
+
+  /// No description provided for @resetBoard.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset board'**
+  String get resetBoard;
+
+  /// No description provided for @noTrapsFoundForSequence.
+  ///
+  /// In en, this message translates to:
+  /// **'No traps found for this sequence'**
+  String get noTrapsFoundForSequence;
+
+  /// No description provided for @appearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get appearance;
+
+  /// No description provided for @dataManagement.
+  ///
+  /// In en, this message translates to:
+  /// **'Data management'**
+  String get dataManagement;
+
+  /// No description provided for @about.
+  ///
+  /// In en, this message translates to:
+  /// **'About'**
+  String get about;
+
+  /// No description provided for @yourFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Your favorites'**
+  String get yourFavorites;
+
+  /// No description provided for @favoritesCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} traps saved'**
+  String favoritesCount(int count);
+
+  /// No description provided for @appVersion.
+  ///
+  /// In en, this message translates to:
+  /// **'App version'**
+  String get appVersion;
+
+  /// No description provided for @profileTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Chess player'**
+  String get profileTitle;
+
+  /// No description provided for @copyright.
+  ///
+  /// In en, this message translates to:
+  /// **'Chess Traps © 2026'**
+  String get copyright;
+
+  /// No description provided for @clearFavoritesTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear favorites'**
+  String get clearFavoritesTitle;
+
+  /// No description provided for @clearFavoritesHint.
+  ///
+  /// In en, this message translates to:
+  /// **'This cannot be undone'**
+  String get clearFavoritesHint;
+
+  /// No description provided for @clearFavoritesConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to remove all saved traps from your favorites?'**
+  String get clearFavoritesConfirm;
+
+  /// No description provided for @clearFavoritesCancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get clearFavoritesCancel;
+
+  /// No description provided for @clearFavoritesAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all'**
+  String get clearFavoritesAction;
+
+  /// No description provided for @searchByName.
+  ///
+  /// In en, this message translates to:
+  /// **'Search by name'**
+  String get searchByName;
+
+  /// No description provided for @yourPersonalCollectionOfTacticalBrilliance.
+  ///
+  /// In en, this message translates to:
+  /// **'Your personal collection of tactical brilliance.'**
+  String get yourPersonalCollectionOfTacticalBrilliance;
+
+  /// No description provided for @noFavoriteYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No favorites yet'**
+  String get noFavoriteYet;
+
+  /// No description provided for @taptheHeartIconAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap the heart icon on any trap detail screen to save it here for quick access.'**
+  String get taptheHeartIconAction;
+
+  /// No description provided for @elevateYourGame.
+  ///
+  /// In en, this message translates to:
+  /// **'Elevate Your Game'**
+  String get elevateYourGame;
+
+  /// No description provided for @discoverWinningSequencesByMasters.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover winning sequences used by masters.'**
+  String get discoverWinningSequencesByMasters;
+
+  /// No description provided for @highlight.
+  ///
+  /// In en, this message translates to:
+  /// **'Highlights'**
+  String get highlight;
+
+  /// No description provided for @exploreMore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore More'**
+  String get exploreMore;
+
+  /// No description provided for @testYourPatternRecog.
+  ///
+  /// In en, this message translates to:
+  /// **'Test your pattern recognition with a mystery trap.'**
+  String get testYourPatternRecog;
+
+  /// No description provided for @strategyGuide.
+  ///
+  /// In en, this message translates to:
+  /// **'Strategy Guide'**
+  String get strategyGuide;
+
+  /// No description provided for @comingSoonDeepDives.
+  ///
+  /// In en, this message translates to:
+  /// **'Coming soon: Deep dives into opening theory.'**
+  String get comingSoonDeepDives;
+
+  /// No description provided for @account.
+  ///
+  /// In en, this message translates to:
+  /// **'Account'**
+  String get account;
+
+  /// No description provided for @sequenceHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Sequence History'**
+  String get sequenceHistory;
+
+  /// No description provided for @theory.
+  ///
+  /// In en, this message translates to:
+  /// **'Theory'**
+  String get theory;
+
+  /// No description provided for @undo.
+  ///
+  /// In en, this message translates to:
+  /// **'Undo'**
+  String get undo;
+
+  /// No description provided for @flip.
+  ///
+  /// In en, this message translates to:
+  /// **'Flip'**
+  String get flip;
+
+  /// No description provided for @privacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// No description provided for @termsOfUse.
+  ///
+  /// In en, this message translates to:
+  /// **'Terms of Use'**
+  String get termsOfUse;
 }
 
 class _AppLocalizationsDelegate

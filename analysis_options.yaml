@@ -1,1 +1,52 @@
-include: package:flutter_lints/flutter.yaml
+include: package:lints/recommended.yaml
+
+analyzer:
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
+
+  errors:
+    missing_required_param: error
+    missing_return: error
+    dead_code: warning
+    unused_import: warning
+    unused_local_variable: warning
+
+linter:
+  rules:
+    # Style
+    - always_declare_return_types
+    - annotate_overrides
+    - avoid_print
+    - camel_case_types
+    - constant_identifier_names
+    - file_names
+    - library_private_types_in_public_api
+
+    # Code quality
+    - avoid_empty_else
+    - avoid_init_to_null
+    - avoid_redundant_argument_values
+    - avoid_slow_async_io
+    - avoid_types_as_parameter_names
+    - cancel_subscriptions
+    - close_sinks
+    - no_logic_in_create_state
+
+    # Safety
+    - avoid_dynamic_calls
+    - avoid_relative_lib_imports
+    - prefer_final_fields
+    - prefer_final_locals
+    - prefer_const_constructors
+    - prefer_const_literals_to_create_immutables
+    - prefer_typing_uninitialized_variables
+
+    # Readability
+    - sort_child_properties_last
+    - sort_constructors_first
+
+    # Performance
+    - avoid_unnecessary_containers
+    - sized_box_for_whitespace

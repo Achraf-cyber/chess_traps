@@ -1,0 +1,132 @@
+[Event "Traps: Fishing pole - Ruy Lopez and Sicilian (black)"]
+[Date "2026.03.07"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C65"]
+[Opening "Ruy Lopez: Berlin Defense, Fishing Pole Variation"]
+[StudyName "Traps"]
+[ChapterName "Fishing pole - Ruy Lopez and Sicilian (black)"]
+[ChapterURL "https://lichess.org/study/seN6BX7J/gyYGrR48"]
+[Annotator "https://lichess.org/@/Hoobus"]
+[UTCDate "2026.03.07"]
+[UTCTime "15:12:46"]
+
+{ Chess Traps #4: Fishing Pole - Ruy Lopez & Sicilian Defense - by ChessNetwork.
+https://lichess.org/video/k1tc7wwhLNY .
+https://www.youtube.com/watch?v=k1tc7wwhLNY .
+Fishing pole trap. Need hook, bait and fish that bites. }
+1. e4 e5 (1... c5 { Sicilian } 2. Nf3 e6 3. d4 cxd4 4. Nxd4 a6 5. Nc3 Qc7 6. Be2 Nf6 7. O-O h5 8. Be3 (8. Bg5) 8... Ng4 9. Bxg4 hxg4 10. Qxg4 (10. g3 b5 11. Qxg4 Bb7) 10... Qxh2#) 2. Nf3 Nc6 3. Bb5 Nf6 { Berlin defence } 4. O-O Ng4 { N is bait } (4... Nxe4 { main line, only a temporary pawn win. }) 5. h3 (5. Re1 Bc5 6. d4 Nxd4 7. Nxd4 (7. Be3) 7... Qh4 8. Nf3 Qxf2+ 9. Kh1 Qg1+ 10. Rxg1 Nf2#) 5... h5 { h5 is hook } 6. hxg4 { hxg4 bites } 6... hxg4 7. Ne1 Qh4 8. f4 g3 9. Qh5 Rxh5 10. Nf3 Qh1# *
+
+
+[Event "Traps: Rubinstein Trap - QGD (white)"]
+[Date "2026.03.08"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D60"]
+[Opening "Queen's Gambit Declined: Orthodox Defense"]
+[StudyName "Traps"]
+[ChapterName "Rubinstein Trap - QGD (white)"]
+[ChapterURL "https://lichess.org/study/seN6BX7J/Ihg09YQn"]
+[Annotator "https://lichess.org/@/Hoobus"]
+[UTCDate "2026.03.08"]
+[UTCTime "02:16:12"]
+
+{ Chess Traps #2: Rubinstein Trap - Queen's Gambit Declined - by ChessNetwork
+https://lichess.org/video/RCn1i2iZKqo
+https://www.youtube.com/watch?v=RCn1i2iZKqo }
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 Nbd7 7. cxd5 exd5 8. Bd3 Re8 9. Rc1 c6 10. O-O h6 11. Bf4 Nh5 { Black going after the B pair, trying to trade N for B //and mess up my p structure// } 12. Nxd5 cxd5 (12... Nxf4 13. Nxf4 { White is up a central p. }) 13. Bc7 Qxc7 14. Rxc7 *
+
+
+[Event "Traps: Lasker Trap - Albin Counter-Gambit to Queens Gambit (black)"]
+[Date "2026.03.08"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D08"]
+[Opening "Queen's Gambit Declined: Albin Countergambit, Lasker Trap"]
+[StudyName "Traps"]
+[ChapterName "Lasker Trap - Albin Counter-Gambit to Queens Gambit (black)"]
+[ChapterURL "https://lichess.org/study/seN6BX7J/dpdXdWMk"]
+[Annotator "https://lichess.org/@/Hoobus"]
+[UTCDate "2026.03.08"]
+[UTCTime "02:37:49"]
+
+{ Chess Traps #3: Lasker Trap - Albin Counter Gambit - by ChessNetwork
+https://lichess.org/video/s_ED8vrQQlM
+https://www.youtube.com/watch?v=s_ED8vrQQlM }
+1. d4 d5 2. c4 e5 { Albin counter-gambit } 3. dxe5 d4 4. e3 Bb4+ 5. Bd2 dxe3 6. fxe3 { fxe3 is best move for white here. } (6. Qa4+ Nc6 7. Bxb4 exf2+ 8. Kxf2 Qh4+ 9. g3 Qd4+ { one R will fall } 10. Kg2 (10. Ke2 Qxb2+ 11. Nd2 Qxa1) (10. Ke1 Qe4+ 11. Kf2 Qxh1) (10. Kf3 Bg4+ 11. Kg2 Qe4+ 12. Kf2 Qxh1) 10... Qxb2+ 11. Be2 Qxa1) (6. Bxb4 exf2+ 7. Ke2 (7. Kxf2 Qxd1) 7... fxg1=N+ 8. Rxg1 (8. Ke1 Qh4+ 9. g3 (9. Kd2 Nc6 { [%cal Gc6b4,Gc8g4,Gg4d1,Ge8c8,Ga8d8,Gd8d2] }) 9... Qe4+ { capture R }) 8... Bg4+) 6... Qh4+ 7. g3 Qe4 { Q attacking R, e5 and e3 (white B pinned) } *
+
+
+[Event "Traps: Elephant Trap - QGD (black)"]
+[Date "2026.03.08"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D35"]
+[Opening "Queen's Gambit Declined: Exchange Variation, Positional Variation"]
+[StudyName "Traps"]
+[ChapterName "Elephant Trap - QGD (black)"]
+[ChapterURL "https://lichess.org/study/seN6BX7J/qPHczRvl"]
+[Annotator "https://lichess.org/@/Hoobus"]
+[UTCDate "2026.03.08"]
+[UTCTime "13:45:30"]
+
+{ 5 Queen's Gambit Traps Every Chess Player Should Know - by Eric Rosen
+https://lichess.org/video/6r_VKSdpRH8
+https://www.youtube.com/watch?v=6r_VKSdpRH8 }
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. cxd5 (4. Bg5 Nbd7 5. cxd5 exd5 { arriving at the same position }) 4... exd5 5. Bg5 Nbd7 { oh no my p } 6. Nxd5 Nxd5 { oh no my Q } 7. Bxd8 Bb4+ 8. Qd2 Bxd2+ 9. Kxd2 Kxd8 *
+
+
+[Event "Traps: Noah's Ark Trap - Ruy Lopez (black)"]
+[Date "2026.03.08"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C71"]
+[Opening "Ruy Lopez: Noah's Ark Trap"]
+[StudyName "Traps"]
+[ChapterName "Noah's Ark Trap - Ruy Lopez (black)"]
+[ChapterURL "https://lichess.org/study/seN6BX7J/sYWmZzYd"]
+[Annotator "https://lichess.org/@/Hoobus"]
+[UTCDate "2026.03.08"]
+[UTCTime "15:30:15"]
+
+{ Chess Traps #1: Noah's Ark Trap - Ruy Lopez - by ChessNetwork
+https://www.youtube.com/watch?v=KskXvXxlkCM }
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 d6 { Modern Steinitz Defence } 5. d4 b5 6. Bb3 Nxd4 7. Nxd4 exd4 8. Qxd4 (8. Bd5 Rb8) 8... c5 9. Qd5 Be6 10. Qc6+ Bd7 11. Qd5 c4 *
+
+
+[Event "Traps: Mortimer Trap - Ruy Lopez (black)"]
+[Date "2026.03.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C65"]
+[Opening "Ruy Lopez: Berlin Defense, Anti-Berlin Variation, Mortimer Trap"]
+[StudyName "Traps"]
+[ChapterName "Mortimer Trap - Ruy Lopez (black)"]
+[ChapterURL "https://lichess.org/study/seN6BX7J/hHcWfspR"]
+[Annotator "https://lichess.org/@/Hoobus"]
+[UTCDate "2026.03.12"]
+[UTCTime "11:56:53"]
+
+{ Chess Traps- Mortimer Trap by thechesswebsite https://www.youtube.com/watch?v=oZtlwxgGKv8 }
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 { Berlin defence } 4. d3 Ne7 5. Nxe5 c6 6. Nc4 (6. Bc4 Qa5+ { forking K and N }) (6. Ba4 Qa5+ { forking K and N }) 6... d6 (6... cxb5 7. Nd6#) 7. Ba4 b5 *
+
+
+[Event "Traps: Reverse London - Slav Defense to Queens Gambit (white)"]
+[Date "2026.03.12"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D15"]
+[Opening "Slav Defense: Three Knights Variation"]
+[StudyName "Traps"]
+[ChapterName "Reverse London - Slav Defense to Queens Gambit (white)"]
+[ChapterURL "https://lichess.org/study/seN6BX7J/F4JGOEaT"]
+[Annotator "https://lichess.org/@/Hoobus"]
+[UTCDate "2026.03.12"]
+[UTCTime "12:50:36"]
+
+{ 5 Queen's Gambit Traps Every Chess Player Should Know - by Eric Rosen
+https://lichess.org/video/6r_VKSdpRH8
+https://www.youtube.com/watch?v=6r_VKSdpRH8 }
+1. d4 d5 2. c4 c6 { Slav defense } 3. Nc3 Nf6 4. Nf3 Bf5 { This position could be arrived at through different move orders.
+When playing as black against queens gambit, need to be careful of developing light square B early because Qb3 can be threatening. } 5. cxd5 cxd5 6. Qb3 { [%cal Gb3b7,Gb3d5] } 6... Qb6 (6... Bc8 { best move for black }) (6... b6 7. Bg5 { Eric's move } (7. e4 { top engine move }) 7... e6 8. e4 dxe4 9. Bb5+ Nbd7 10. Ne5 Be7 11. Bxf6 gxf6 12. Nxd7) 7. Nxd5 { white is up a p. } 7... Qxb3 8. Nxf6+ exf6 9. axb3 { white is up a p and has two centre p's vs 0 centre p's } *
+
+

@@ -12,29 +12,214 @@ class AppLocalizationsEs extends AppLocalizations {
   String get authorName => 'Simbre Achraf';
 
   @override
-  String get appName => 'chess_traps';
+  String get appName => 'Celadas de Ajedrez';
 
   @override
-  String get chessTraps => 'Chess Traps';
+  String get chessTraps => 'Celadas de Ajedrez';
 
   @override
-  String get home => 'Home';
+  String get home => 'Inicio';
 
   @override
-  String get traps => 'Traps';
+  String get traps => 'Celadas';
 
   @override
-  String get favorite => 'Favorite';
+  String get favorite => 'Favorito';
 
   @override
-  String get training => 'Training';
+  String get training => 'Entrenamiento';
 
   @override
-  String get profile => 'Profile';
+  String get profile => 'Perfil';
 
   @override
-  String get trapOfTheDay => 'Trap of the day';
+  String get trapOfTheDay => 'Celada del día';
 
   @override
-  String get recentTraps => 'Recent Traps';
+  String get recentTraps => 'Celadas recientes';
+
+  @override
+  String get exampleTrap => 'Ataque Fried Liver';
+
+  @override
+  String get lastTimeChecked => 'Última vez verificado';
+
+  @override
+  String get explore => 'Explorar';
+
+  @override
+  String get viewAllTraps => 'Ver todas las celadas';
+
+  @override
+  String get errorLoadingTraps => 'Error al cargar las celadas';
+
+  @override
+  String get noTrapsFound => 'No se encontraron celadas';
+
+  @override
+  String get theme => 'Tema';
+
+  @override
+  String get system => 'Sistema';
+
+  @override
+  String get light => 'Claro';
+
+  @override
+  String get dark => 'Oscuro';
+
+  @override
+  String get appLanguage => 'Idioma de la aplicación';
+
+  @override
+  String get openSourceLicense => 'Licencia de código abierto';
+
+  @override
+  String get usedPackages => 'Paquetes que se utilizaron';
+
+  @override
+  String get developer => 'Desarrollador';
+
+  @override
+  String get editProfile => 'Editar perfil';
+
+  @override
+  String get logout => 'Cerrar sesión';
+
+  @override
+  String masteredTraps(Object count, Object percentage) {
+    return '$count Celadas dominadas ($percentage%)';
+  }
+
+  @override
+  String get english => 'Inglés';
+
+  @override
+  String get randomTrap => 'Celada aleatoria';
+
+  @override
+  String get yourFavoriteChessTraps => 'Tus celadas de ajedrez favoritas';
+
+  @override
+  String get wildGambit => 'Gambito salvaje';
+
+  @override
+  String get search => 'Buscar';
+
+  @override
+  String get playTheMoves => 'Juega las jugadas';
+
+  @override
+  String get matchingTraps => 'Celadas coincidentes';
+
+  @override
+  String get playMovesToNarrow => 'Juega movimientos para acotar resultados';
+
+  @override
+  String get resetBoard => 'Reiniciar tablero';
+
+  @override
+  String get noTrapsFoundForSequence =>
+      'No se encontraron celadas para esta secuencia';
+
+  @override
+  String get appearance => 'Apariencia';
+
+  @override
+  String get dataManagement => 'Gestión de datos';
+
+  @override
+  String get about => 'Acerca de';
+
+  @override
+  String get yourFavorites => 'Tus favoritos';
+
+  @override
+  String favoritesCount(int count) {
+    return '$count celadas guardadas';
+  }
+
+  @override
+  String get appVersion => 'Versión de la app';
+
+  @override
+  String get profileTitle => 'Jugador de ajedrez';
+
+  @override
+  String get copyright => 'Celadas de Ajedrez © 2026';
+
+  @override
+  String get clearFavoritesTitle => 'Borrar favoritos';
+
+  @override
+  String get clearFavoritesHint => 'Esto no se puede deshacer';
+
+  @override
+  String get clearFavoritesConfirm =>
+      '¿Seguro que deseas eliminar todas las celadas guardadas de favoritos?';
+
+  @override
+  String get clearFavoritesCancel => 'Cancelar';
+
+  @override
+  String get clearFavoritesAction => 'Borrar todo';
+
+  @override
+  String get searchByName => 'Buscar por nombre';
+
+  @override
+  String get yourPersonalCollectionOfTacticalBrilliance =>
+      'Tu colección personal de brillantez táctica.';
+
+  @override
+  String get noFavoriteYet => 'Aún no hay favoritos';
+
+  @override
+  String get taptheHeartIconAction =>
+      'Toca el ícono del corazón en cualquier pantalla de detalle de celada para guardarla aquí para un acceso rápido.';
+
+  @override
+  String get elevateYourGame => 'Eleva tu juego';
+
+  @override
+  String get discoverWinningSequencesByMasters =>
+      'Descubre secuencias ganadoras utilizadas por maestros.';
+
+  @override
+  String get highlight => 'Destacados';
+
+  @override
+  String get exploreMore => 'Explorar más';
+
+  @override
+  String get testYourPatternRecog =>
+      'Prueba tu reconocimiento de patrones con una celada misteriosa.';
+
+  @override
+  String get strategyGuide => 'Guía de estrategia';
+
+  @override
+  String get comingSoonDeepDives =>
+      'Próximamente: Inmersiones profundas en la teoría de aperturas.';
+
+  @override
+  String get account => 'Cuenta';
+
+  @override
+  String get sequenceHistory => 'Historial de secuencias';
+
+  @override
+  String get theory => 'Teoría';
+
+  @override
+  String get undo => 'Deshacer';
+
+  @override
+  String get flip => 'Girar';
+
+  @override
+  String get privacyPolicy => 'Política de privacidad';
+
+  @override
+  String get termsOfUse => 'Términos de uso';
 }

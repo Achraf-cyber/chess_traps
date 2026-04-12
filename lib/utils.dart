@@ -91,8 +91,10 @@ Map<Side, List<Role>> getCapturedPieces(Board board) {
 
   for (final piece in board.pieces.map((item) => item.$2)) {
     if (piece.role != Role.king) {
-      currentCounts[piece.color]![piece.role] =
-          (currentCounts[piece.color]![piece.role] ?? 0) + 1;
+      final sideCounts = currentCounts[piece.color];
+      if (sideCounts != null) {
+        sideCounts[piece.role] = (sideCounts[piece.role] ?? 0) + 1;
+      }
     }
   }
   List<Role> getMissing(Side opponentColor) {
@@ -104,8 +106,9 @@ Map<Side, List<Role>> getCapturedPieces(Board board) {
       Role.knight,
       Role.pawn,
     ]) {
-      final count = currentCounts[opponentColor]![role] ?? 0;
-      final diff = standardCounts[role]! - count;
+      final sideCounts = currentCounts[opponentColor];
+      final count = (sideCounts != null) ? (sideCounts[role] ?? 0) : 0;
+      final diff = (standardCounts[role] ?? 0) - count;
       for (var i = 0; i < diff; i++) {
         missing.add(role);
       }

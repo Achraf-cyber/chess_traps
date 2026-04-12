@@ -17,7 +17,7 @@ class InterstitialAdManager {
 
   void loadAd() {
     InterstitialAd.load(
-      adUnitId: AdHelper.intersticialAdUnitId,
+      adUnitId: AdHelper.interstitialAdUnitId,
       request: const AdRequest(),
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (ad) {
@@ -38,8 +38,9 @@ class InterstitialAdManager {
       _trapViewsCount = 0;
 
       final now = DateTime.now();
-      final canShow = _lastAdShownAt == null ||
-          now.difference(_lastAdShownAt!) >= _adCooldown;
+      final lastShown = _lastAdShownAt;
+      final canShow = lastShown == null ||
+          now.difference(lastShown) >= _adCooldown;
 
       if (canShow && _interstitialAd != null && !_isShowingAd) {
         showAd();
@@ -51,10 +52,11 @@ class InterstitialAdManager {
   }
 
   void showAd() {
-    if (_interstitialAd == null || _isShowingAd) return;
+    final ad = _interstitialAd;
+    if (ad == null || _isShowingAd) return;
 
     _isShowingAd = true;
-    _interstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
+    ad.fullScreenContentCallback = FullScreenContentCallback(
       onAdShowedFullScreenContent: (ad) {
         _isShowingAd = true;
       },
@@ -72,7 +74,7 @@ class InterstitialAdManager {
       },
     );
 
-    _interstitialAd!.show();
+    ad.show();
     _interstitialAd = null;
   }
 }

@@ -10,5 +10,6 @@ class AdsStateNotifier extends _$AdsStateNotifier {
 
   static String get bannerAdUnitId => AdHelper.bannerAdUnitId;
 
-  static String get rewardedAdUnitId => AdHelper.rewardedIntersticialAdUnitId;
+  static String get rewardedAdUnitId => AdHelper.rewardedInterstitialAdUnitId;
+
 }

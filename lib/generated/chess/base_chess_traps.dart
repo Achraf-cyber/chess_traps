@@ -1,6 +1,6 @@
 // GENERATED FILE DO NOT EDIT
 // ignore_for_file: prefer_single_quotes
-import '../../data/chess_trap.dart';
+import 'package:chess_traps/data/chess_trap.dart';
 
 const List<ChessTrap> chessTraps = [
   ChessTrap(

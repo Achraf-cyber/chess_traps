@@ -1,3 +1,4 @@
+import 'package:chess_traps/services/interstitial_ad_manager.dart';
 import 'package:chess_traps/widgets/ad_banner_widget.dart';
 import 'package:chess_traps/providers/ads_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -26,7 +27,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   List<Move> history = [];
   ChessMoveNode? _currentNode = moveTrie;
   List<int> _currentTrapIds = [];
-  
+
   // Rewarded Ad logic
   RewardedAd? _rewardedAd;
   int _bonusMoves = 0;
@@ -36,6 +37,9 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
     super.initState();
     _updateTraps();
     _loadRewardedAd();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      InterstitialAdManager().onTrapViewed();
+    });
   }
 
   void _loadRewardedAd() {
@@ -69,14 +73,16 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
       },
     );
 
-    _rewardedAd!.show(onUserEarnedReward: (ad, reward) {
-      setState(() {
-        _bonusMoves += 5;
-      });
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Unlocked 5 extra moves!")),
-      );
-    });
+    _rewardedAd!.show(
+      onUserEarnedReward: (ad, reward) {
+        setState(() {
+          _bonusMoves += 5;
+        });
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Unlocked 5 extra moves!")),
+        );
+      },
+    );
     _rewardedAd = null;
   }
 
@@ -99,13 +105,17 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
 
   void onMove(Move move, {bool? viaDragAndDrop}) {
     final freeLimit = 6 + _bonusMoves;
-    
+
     if (history.length >= freeLimit) {
       if (_rewardedAd != null) {
         _showAdOptionDialog();
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Move limit reached. Ad not ready yet, please wait or reset.")),
+          const SnackBar(
+            content: Text(
+              "Move limit reached. Ad not ready yet, please wait or reset.",
+            ),
+          ),
         );
       }
       return;
@@ -234,7 +244,9 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
         final totalHeight = constraints.maxHeight;
         final totalWidth = constraints.maxWidth;
         final boardMaxHeight = totalHeight * 0.72;
-        final boardSize = boardMaxHeight < totalWidth ? boardMaxHeight : totalWidth;
+        final boardSize = boardMaxHeight < totalWidth
+            ? boardMaxHeight
+            : totalWidth;
 
         return SingleChildScrollView(
           child: Column(

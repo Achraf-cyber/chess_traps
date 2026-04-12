@@ -31,14 +31,22 @@ class AppLinkService {
     debugPrint('Received App Link: $uri');
     
     // Check if the link belongs to our domain
-    if (uri.host == _host || (kDebugMode && uri.host.isEmpty)) {
-      if (uri.pathSegments.isNotEmpty && uri.pathSegments.first == 'trap') {
+    // In release mode, uri.host must match _host exactly.
+    final hostMatches = uri.host == _host || (kDebugMode && uri.host.isEmpty);
+    
+    if (hostMatches) {
+      final segments = uri.pathSegments;
+      if (segments.isNotEmpty && segments.first == 'trap') {
         try {
-          final idString = uri.pathSegments.elementAtOrNull(1);
+          final idString = segments.length > 1 ? segments[1] : null;
           if (idString != null) {
-            final id = int.parse(idString);
-            // Navigate via GoRouter
-            router.push('/trap/$id');
+            final id = int.tryParse(idString);
+            if (id != null) {
+              // Use push replacement or push depending on history needs
+              router.push('/trap/$id');
+            } else {
+              debugPrint('Invalid trap ID format: $idString');
+            }
           }
         } catch (e) {
           debugPrint('Error parsing trap ID from App Link: $e');

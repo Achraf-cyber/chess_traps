@@ -1,1 +1,0 @@
-Now, add a feature so that a trap can be shared by copying a link, add a share button that allow sending the link to another person, if that person did not install the app the link will open the playstore to install the app then continue. M

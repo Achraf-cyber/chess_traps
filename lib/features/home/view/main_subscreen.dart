@@ -7,9 +7,9 @@ import 'package:chess_traps/widgets/quick_action_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../services/interstitial_ad_manager.dart';
-import '../../../utils.dart';
-import '../../../providers/traps_provider.dart';
+import 'package:chess_traps/services/interstitial_ad_manager.dart';
+import 'package:chess_traps/utils.dart';
+import 'package:chess_traps/providers/traps_provider.dart';
 
 class MainSubscreen extends ConsumerWidget {
   const MainSubscreen({super.key});

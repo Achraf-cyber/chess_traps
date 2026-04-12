@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:chess_traps/providers/user_favorites_provider.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:dartchess/dartchess.dart';
@@ -35,6 +36,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   bool isAutoPlaying = false;
   bool isPracticeMode = false;
   NormalMove? promotionMove;
+  bool? _isLastMoveCorrect;
+  Timer? _feedbackTimer;
 
   @override
   void initState() {
@@ -94,19 +97,22 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     if (trap == null) return;
     if (currentMoveIndex >= trap.moves.length) return;
 
-    final position = ref.read(trapPositionProvider(widget.trapIndex, currentMoveIndex));
+    final position = ref.read(
+      trapPositionProvider(widget.trapIndex, currentMoveIndex),
+    );
     final (_, san) = position.makeSan(move);
     final expectedSan = trap.moves[currentMoveIndex];
 
     if (san == expectedSan) {
       HapticFeedback.heavyImpact();
+      _showFeedback(true);
       _updateMoveIndex(currentMoveIndex + 1, trap.moves.length);
 
       if (currentMoveIndex < trap.moves.length) {
         Future.delayed(const Duration(milliseconds: 600), () {
           if (!mounted || !isPracticeMode) return;
           _updateMoveIndex(currentMoveIndex + 1, trap.moves.length);
-          
+
           if (currentMoveIndex >= trap.moves.length) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(content: Text("Trap completed! Well done!")),
@@ -122,14 +128,31 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       }
     } else {
       HapticFeedback.vibrate();
+      _showFeedback(false);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: const Text("Incorrect move. Try again!"),
           behavior: SnackBarBehavior.floating,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
         ),
       );
     }
+  }
+
+  void _showFeedback(bool correct) {
+    _feedbackTimer?.cancel();
+    setState(() {
+      _isLastMoveCorrect = correct;
+    });
+    _feedbackTimer = Timer(const Duration(milliseconds: 1000), () {
+      if (mounted) {
+        setState(() {
+          _isLastMoveCorrect = null;
+        });
+      }
+    });
   }
 
   void _onPromotionSelection(Role? role) {
@@ -149,6 +172,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   @override
   void dispose() {
     _autoPlayTimer?.cancel();
+    _feedbackTimer?.cancel();
     _scrollController.dispose();
     super.dispose();
   }
@@ -164,9 +188,16 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.error_outline_rounded, size: 64, color: Colors.grey),
+              const Icon(
+                Icons.error_outline_rounded,
+                size: 64,
+                color: Colors.grey,
+              ),
               const SizedBox(height: 16),
-              const Text("Trap not found", style: TextStyle(fontWeight: FontWeight.bold)),
+              const Text(
+                "Trap not found",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
               TextButton(
                 onPressed: () => context.pop(),
                 child: const Text("Go Back"),
@@ -233,24 +264,44 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           IconButton(
             onPressed: () async {
               final link = AppLinkService.buildTrapLink(widget.trapIndex);
-              await Share.share("Can you survive this trap? Check out ${trap.trapName}!\n$link");
+              await Share.share(
+                "Can you survive this trap? Check out ${trap.trapName}!\n$link",
+              );
             },
             icon: const Icon(Icons.share_rounded),
             tooltip: "Share Trap",
           ),
           IconButton(
-
             onPressed: () {
+              final maxMoves = trap.moves.length;
               setState(() {
                 isPracticeMode = !isPracticeMode;
-                if (isPracticeMode && isAutoPlaying) {
-                  _toggleAutoPlay(maxMoves);
+                if (isPracticeMode) {
+                  currentMoveIndex = 0; // Reset to start
+                  if (isAutoPlaying) {
+                    _toggleAutoPlay(maxMoves);
+                  }
+
+                  // If it's the computer's turn to move first, trigger it
+                  final firstPosition = ref.read(
+                    trapPositionProvider(widget.trapIndex, 0),
+                  );
+                  if (firstPosition.turn != orientation) {
+                    Future.delayed(const Duration(milliseconds: 600), () {
+                      if (!mounted || !isPracticeMode) return;
+                      _updateMoveIndex(1, maxMoves);
+                    });
+                  }
                 }
               });
               if (isPracticeMode) {
-                 ScaffoldMessenger.of(context).showSnackBar(
-                   const SnackBar(content: Text("Practice mode active. Play the correct moves!"))
-                 );
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      "Practice mode active. Play the correct moves!",
+                    ),
+                  ),
+                );
               }
             },
             icon: Icon(
@@ -321,8 +372,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                             : availableWidth;
 
                         final captured = getCapturedPieces(position.board);
-                        final whiteCaptured = captured[Side.white]!;
-                        final blackCaptured = captured[Side.black]!;
+                        final whiteCaptured = captured[Side.white] ?? [];
+                        final blackCaptured = captured[Side.black] ?? [];
                         final materialScore = calculateMaterialScore(
                           position.board,
                         );
@@ -340,7 +391,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                   width: size,
                                   height: barHeight,
                                   child: EvaluationBar(
-                                    score: engineState.displayScore.toDouble(),
+                                    score: (engineState.displayScore ?? 0.0)
+                                        .toDouble(),
                                     isWhiteOrientation:
                                         orientation == Side.white,
                                     orientation: Axis.horizontal,
@@ -383,33 +435,84 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                 ],
                               ),
                               clipBehavior: Clip.antiAlias,
-                              child: isPracticeMode && position.turn == orientation
-                                  ? cg.Chessboard(
-                                      size: size,
-                                      orientation: orientation,
-                                      fen: position.fen,
-                                      settings: cg.ChessboardSettings(
-                                        colorScheme: settings.boardTheme.colorScheme,
-                                      ),
-                                      game: cg.GameData(
-                                        playerSide: position.turn == Side.white ? cg.PlayerSide.white : cg.PlayerSide.black,
-                                        sideToMove: position.turn,
-                                        validMoves: position.legalMoves.asIMapSquareISet,
-                                        promotionMove: promotionMove,
-                                        onMove: _onPracticeMove,
-                                        isCheck: position.isCheck,
-                                        onPromotionSelection: _onPromotionSelection,
-                                      ),
-                                    )
-                                  : cg.Chessboard.fixed(
-                                      size: size,
-                                      orientation: orientation,
-                                      fen: position.fen,
-                                      settings: cg.ChessboardSettings(
-                                        colorScheme: settings.boardTheme.colorScheme,
-                                      ),
-                                      shapes: isPracticeMode ? ISet() : arrows,
+                              child: Stack(
+                                children: [
+                                  isPracticeMode && position.turn == orientation
+                                      ? cg.Chessboard(
+                                          size: size,
+                                          orientation: orientation,
+                                          fen: position.fen,
+                                          settings: cg.ChessboardSettings(
+                                            colorScheme:
+                                                settings.boardTheme.colorScheme,
+                                          ),
+                                          game: cg.GameData(
+                                            playerSide:
+                                                position.turn == Side.white
+                                                ? cg.PlayerSide.white
+                                                : cg.PlayerSide.black,
+                                            sideToMove: position.turn,
+                                            validMoves: position
+                                                .legalMoves
+                                                .asIMapSquareISet,
+                                            promotionMove: promotionMove,
+                                            onMove: _onPracticeMove,
+                                            isCheck: position.isCheck,
+                                            onPromotionSelection:
+                                                _onPromotionSelection,
+                                          ),
+                                        )
+                                      : cg.Chessboard.fixed(
+                                          size: size,
+                                          orientation: orientation,
+                                          fen: position.fen,
+                                          settings: cg.ChessboardSettings(
+                                            colorScheme:
+                                                settings.boardTheme.colorScheme,
+                                          ),
+                                          shapes: isPracticeMode
+                                              ? ISet()
+                                              : arrows,
+                                        ),
+                                  if (_isLastMoveCorrect != null)
+                                    Positioned.fill(
+                                      child:
+                                          Container(
+                                                color:
+                                                    (_isLastMoveCorrect!
+                                                            ? Colors.green
+                                                            : Colors.red)
+                                                        .withValues(
+                                                          alpha: 0.15,
+                                                        ),
+                                                child: Center(
+                                                  child: Icon(
+                                                    _isLastMoveCorrect!
+                                                        ? Icons
+                                                              .check_circle_rounded
+                                                        : Icons.cancel_rounded,
+                                                    color:
+                                                        (_isLastMoveCorrect!
+                                                                ? Colors.green
+                                                                : Colors.red)
+                                                            .withValues(
+                                                              alpha: 0.9,
+                                                            ),
+                                                    size: size * 0.6,
+                                                  ),
+                                                ),
+                                              )
+                                              .animate()
+                                              .scale(
+                                                duration: 300.ms,
+                                                curve: Curves.easeOutBack,
+                                              )
+                                              .fadeIn()
+                                              .then(delay: 600.ms)
+                                              .fadeOut(duration: 300.ms),
                                     ),
+                                ],
+                              ),
                             ),
                             const SizedBox(height: 4),
                             CapturedPiecesRow(
@@ -433,85 +536,88 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   ),
                 ),
                 const SizedBox(height: 12),
-                _buildMoveNavigation(maxMoves),
-                const SizedBox(height: 12),
+                if (!isPracticeMode) ...[
+                  _buildMoveNavigation(maxMoves),
+                  const SizedBox(height: 12),
+                ],
               ],
             ),
           ),
-          Expanded(
-            flex: 5,
-            child: Container(
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: context.colors.surfaceContainerLow,
-                borderRadius: const BorderRadius.vertical(
-                  top: Radius.circular(32),
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.05),
-                    blurRadius: 10,
-                    offset: const Offset(0, -5),
+          if (!isPracticeMode)
+            Expanded(
+              flex: 5,
+              child: Container(
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: context.colors.surfaceContainerLow,
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(32),
                   ),
-                ],
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(24, 24, 24, 12),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          trap.trapName,
-                          style: context.textTheme.headlineSmall?.copyWith(
-                            fontWeight: FontWeight.w900,
-                            color: context.colors.primary,
-                            height: 1.1,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Row(
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 8,
-                                vertical: 2,
-                              ),
-                              decoration: BoxDecoration(
-                                color: context.colors.tertiaryContainer,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Text(
-                                context.phrase.theory,
-                                style: context.textTheme.labelSmall?.copyWith(
-                                  color: context.colors.onTertiaryContainer,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            const Spacer(),
-                            if (engineState.depth > 0)
-                              Text(
-                                "Depth: ${engineState.depth}",
-                                style: context.textTheme.labelSmall?.copyWith(
-                                  color: context.colors.outline,
-                                ),
-                              ),
-                          ],
-                        ),
-                      ],
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.05),
+                      blurRadius: 10,
+                      offset: const Offset(0, -5),
                     ),
-                  ),
-                  const Divider(height: 1),
-                  Expanded(
-                    child: _buildVerticalMoveHistory(trap.moves, engineState),
-                  ),
-                ],
+                  ],
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(24, 24, 24, 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            trap.trapName,
+                            style: context.textTheme.headlineSmall?.copyWith(
+                              fontWeight: FontWeight.w900,
+                              color: context.colors.primary,
+                              height: 1.1,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Row(
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 2,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: context.colors.tertiaryContainer,
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Text(
+                                  context.phrase.theory,
+                                  style: context.textTheme.labelSmall?.copyWith(
+                                    color: context.colors.onTertiaryContainer,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              const Spacer(),
+                              if (engineState.depth > 0)
+                                Text(
+                                  "Depth: ${engineState.depth}",
+                                  style: context.textTheme.labelSmall?.copyWith(
+                                    color: context.colors.outline,
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                    const Divider(height: 1),
+                    Expanded(
+                      child: _buildVerticalMoveHistory(trap.moves, engineState),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
           const AdBannerWidget(),
         ],
       ),

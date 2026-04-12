@@ -4,7 +4,7 @@ import 'package:chess_traps/widgets/trap_favorite_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../providers/traps_provider.dart';
+import 'package:chess_traps/providers/traps_provider.dart';
 
 class FavoritesScreen extends ConsumerWidget {
   const FavoritesScreen({super.key});

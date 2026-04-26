@@ -6,11 +6,12 @@ import 'package:chess_traps/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/providers/app_theme_provider.dart';
 import 'package:chess_traps/services/app_open_ad_manager.dart';
+import 'package:chess_traps/services/remote_config_service.dart';
 import 'package:chess_traps/services/notification_service.dart';
 import 'package:chess_traps/services/consent_manager.dart';
 // ignore: depend_on_referenced_packages
@@ -19,8 +20,9 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:splash_master/splash_master.dart';
 
-import 'generated/assets.dart';
+
 import 'l10n/app_localizations.dart';
+import 'licenses.dart';
 import 'router.dart';
 import 'theme/theme.dart';
 import 'theme/theme_utils.dart';
@@ -28,9 +30,12 @@ import 'theme/theme_utils.dart';
 import 'services/app_link_service.dart';
 
 Future<void> runMainApp(String envFile) async {
+  var selectedEnvFile = envFile;
   if (kIsWeb) {
     usePathUrlStrategy();
   }
+
+
   debugPrint('app started');
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -39,7 +44,7 @@ Future<void> runMainApp(String envFile) async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    // Initialize Native Deep Linking via app_links (replacing Firebase Dynamic Links)
+    // Initialize Native Deep Linking via app_links
     if (!kIsWeb) {
       await AppLinkService.init(router);
     }
@@ -50,7 +55,8 @@ Future<void> runMainApp(String envFile) async {
   if (!kIsWeb) {
     try {
       // Pass all uncaught "fatal" errors from the framework to Crashlytics
-      FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
+      FlutterError.onError =
+          FirebaseCrashlytics.instance.recordFlutterFatalError;
       // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
       PlatformDispatcher.instance.onError = (error, stack) {
         FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
@@ -63,46 +69,55 @@ Future<void> runMainApp(String envFile) async {
 
   debugPrint('widget binding');
 
+  await RemoteConfigService().initialize();
+
+  // Determine which .env file to load based on remote config
+  if (RemoteConfigService().showLiveAds) {
+    selectedEnvFile = '.env.prod';
+  } else {
+    selectedEnvFile = '.env.dev';
+  }
+
   // Defer first frame to keep the native splash screen until SplashMaster.resume() is called.
   SplashMaster.initialize();
 
   try {
-    await dotenv.load(fileName: envFile);
-    debugPrint('loading dotenv');
+    await dotenv.load(fileName: selectedEnvFile);
+    debugPrint('loading dotenv: $selectedEnvFile');
   } catch (e) {
     debugPrint('Dotenv loading failed: $e');
   }
 
   await NotificationService().init();
 
-  if (!kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+  if (RemoteConfigService().adsEnabled && !kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
     try {
       // Request privacy consent before initializing MobileAds
       await ConsentManager().requestConsentUpdate();
-      
+
       // Initialize MobileAds and AppOpenAd
-      MobileAds.instance.initialize().then(
-        (_) {
-          debugPrint('initialize mobile ads');
-          final appOpenAdManager = AppOpenAdManager()..loadAd();
-          AppLifecycleReactor(appOpenAdManager: appOpenAdManager)
-              .listenToAppStateChanges();
-        },
-      );
+      MobileAds.instance.initialize().then((_) {
+        debugPrint('initialize mobile ads');
+        final appOpenAdManager = AppOpenAdManager()..loadAd();
+        AppLifecycleReactor(
+          appOpenAdManager: appOpenAdManager,
+        ).listenToAppStateChanges();
+      });
     } catch (e) {
       debugPrint('Consent/AdMob initialization failed: $e');
     }
   }
 
   LicenseRegistry.addLicense(() async* {
-    final String license = await rootBundle.loadString(
-      AppAssets.googleFontsQuicksandOflTxt,
-    );
-    yield LicenseEntryWithLineBreaks(<String>['google_fonts'], license);
-  });
-  LicenseRegistry.addLicense(() async* {
-    const license = 'Creative Commons BY, https://rive.app/@Ayushb58/';
-    yield const LicenseEntryWithLineBreaks(<String>['Ayushb58'], license);
+    yield const LicenseEntryWithLineBreaks(<String>[
+      'google_fonts',
+    ], quicksandLicense);
+    yield const LicenseEntryWithLineBreaks(<String>[
+      'stockfish',
+    ], stockfishLicense);
+    yield const LicenseEntryWithLineBreaks(<String>[
+      'lichess_data',
+    ], lichessAttributions);
   });
 
   if (kDebugMode && (kIsWeb || Platform.isWindows)) {

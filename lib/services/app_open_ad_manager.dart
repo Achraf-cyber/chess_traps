@@ -1,6 +1,7 @@
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:flutter/material.dart';
 import 'package:chess_traps/services/ad_helper.dart';
+import 'package:chess_traps/services/remote_config_service.dart';
 
 class AppOpenAdManager {
   factory AppOpenAdManager() => _instance;
@@ -12,6 +13,7 @@ class AppOpenAdManager {
   DateTime? _appOpenLoadTime;
 
   void loadAd() {
+    if (!RemoteConfigService().adsEnabled) return;
     AppOpenAd.load(
       adUnitId: AdHelper.openingAdUnitId,
       request: const AdRequest(),
@@ -34,6 +36,7 @@ class AppOpenAdManager {
   }
 
   void showAdIfAvailable() {
+    if (!RemoteConfigService().adsEnabled) return;
     if (!isAdAvailable) {
       loadAd();
       return;

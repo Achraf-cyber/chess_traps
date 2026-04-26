@@ -5,6 +5,9 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   app_links
   firebase_core
+  firebase_remote_config
+  flutter_timezone
+  permission_handler_windows
   rive_common
   share_plus
   url_launcher_windows

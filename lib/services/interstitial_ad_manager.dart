@@ -2,6 +2,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:flutter/material.dart';
 import 'package:chess_traps/services/ad_helper.dart';
 
+import 'package:chess_traps/services/remote_config_service.dart';
+
 class InterstitialAdManager {
   factory InterstitialAdManager() => _instance;
   InterstitialAdManager._internal();
@@ -16,6 +18,7 @@ class InterstitialAdManager {
   bool _isShowingAd = false;
 
   void loadAd() {
+    if (!RemoteConfigService().adsEnabled) return;
     InterstitialAd.load(
       adUnitId: AdHelper.interstitialAdUnitId,
       request: const AdRequest(),
@@ -32,6 +35,7 @@ class InterstitialAdManager {
   }
 
   void onTrapViewed() {
+    if (!RemoteConfigService().adsEnabled) return;
     _trapViewsCount++;
     if (_trapViewsCount >= _adFrequency) {
       // Reset count anyway to avoid re-triggering every time if ad not ready

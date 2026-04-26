@@ -1,10 +1,1679 @@
 // GENERATED FILE DO NOT EDIT
 // ignore_for_file: prefer_single_quotes
-import 'package:chess_traps/data/chess_trap.dart';
+import '../../data/chess_trap.dart';
 
 const List<ChessTrap> chessTraps = [
   ChessTrap(
     id: 0,
+    cleanMoves: "1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#",
+    metadata: "",
+    opening: "Bishop's opening",
+    openingId: "bishops_opening",
+    trapName: "1. Scholar's Mate Trap",
+    commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#",
+    moves: ["e4", "e5", "Bc4", "Nc6", "Qh5", "Nf6", "Qxf7#"],
+    fen: "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+  ),
+
+  ChessTrap(
+    id: 1,
+    cleanMoves: "1.f3 e5 2.g4 Qh4#",
+    metadata: "",
+    opening: "",
+    openingId: "",
+    trapName: "2. Fool's Mate Trap",
+    commentedMoves: "1.f3 e5 2.g4 Qh4#",
+    moves: ["f3", "e5", "g4", "Qh4#"],
+    fen: "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+  ),
+
+  ChessTrap(
+    id: 2,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 h6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
+    metadata: "",
+    opening: "Philidor's defence",
+    openingId: "philidors_defence",
+    trapName: "3. Legal's Mate Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 h6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "d6",
+      "Bc4",
+      "Bg4",
+      "Nc3",
+      "h6",
+      "Nxe5",
+      "Bxd1",
+      "Bxf7+",
+      "Ke7",
+      "Nd5#",
+    ],
+    fen: "rn1q1bnr/ppp1kBp1/3p3p/3NN3/4P3/8/PPPP1PPP/R1BbK2R b KQ - 2 7",
+  ),
+
+  ChessTrap(
+    id: 3,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
+    metadata: "",
+    opening: "Italian Game",
+    openingId: "italian_game",
+    trapName: "4. Blackburne Shilling Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nd4",
+      "Nxe5",
+      "Qg5",
+      "Nxf7",
+      "Qxg2",
+      "Rf1",
+      "Qxe4+",
+      "Be2",
+      "Nf3#",
+    ],
+    fen: "r1b1kbnr/pppp1Npp/8/8/4q3/5n2/PPPPBP1P/RNBQKR2 w Qkq - 2 8",
+  ),
+
+  ChessTrap(
+    id: 4,
+    cleanMoves:
+        "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
+    metadata: "",
+    opening: "Reti opening",
+    openingId: "reti_opening",
+    trapName: "5. Tennison Gambit (ICBM) Trap",
+    commentedMoves:
+        "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
+    moves: [
+      "Nf3",
+      "d5",
+      "e4",
+      "dxe4",
+      "Ng5",
+      "Nf6",
+      "d3",
+      "exd3",
+      "Bxd3",
+      "h6",
+      "Nxf7",
+      "Kxf7",
+      "Bg6+",
+      "Kxg6",
+      "Qxd8",
+    ],
+    fen: "rnbQ1b1r/ppp1p1p1/5nkp/8/8/8/PPP2PPP/RNB1K2R b KQ - 0 8",
+  ),
+
+  ChessTrap(
+    id: 5,
+    cleanMoves:
+        "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3 Bb4 7.Qd2 Bxc3 8.Qxc3 Qc1#",
+    metadata: "",
+    opening: "Queen's pawn",
+    openingId: "queens_pawn_a40",
+    trapName: "6. Englund Gambit Trap",
+    commentedMoves:
+        "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3 Bb4 7.Qd2 Bxc3 8.Qxc3 Qc1#",
+    moves: [
+      "d4",
+      "e5",
+      "dxe5",
+      "Nc6",
+      "Nf3",
+      "Qe7",
+      "Bf4",
+      "Qb4+",
+      "Bd2",
+      "Qxb2",
+      "Bc3",
+      "Bb4",
+      "Qd2",
+      "Bxc3",
+      "Qxc3",
+      "Qc1#",
+    ],
+    fen: "r1b1k1nr/pppp1ppp/2n5/4P3/8/2Q2N2/P1P1PPPP/RNq1KB1R w KQkq - 1 9",
+  ),
+
+  ChessTrap(
+    id: 6,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f3 g3 9.d4 Qh1#",
+    metadata: "",
+    opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
+    trapName: "7. Fishing Pole Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f3 g3 9.d4 Qh1#",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "Nf6",
+      "O-O",
+      "Ng4",
+      "h3",
+      "h5",
+      "hxg4",
+      "hxg4",
+      "Ne1",
+      "Qh4",
+      "f3",
+      "g3",
+      "d4",
+      "Qh1#",
+    ],
+    fen: "r1b1kb1r/pppp1pp1/2n5/1B2p3/3PP3/5Pp1/PPP3P1/RNBQNRKq w kq - 1 10",
+  ),
+
+  ChessTrap(
+    id: 7,
+    cleanMoves:
+        "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
+    metadata: "",
+    opening: "Queen's Gambit Declined, 4.Bg5",
+    openingId: "qgd_4_bg5",
+    trapName: "8. Elephant Trap",
+    commentedMoves:
+        "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
+    moves: [
+      "d4",
+      "d5",
+      "c4",
+      "e6",
+      "Nc3",
+      "Nf6",
+      "Bg5",
+      "Nbd7",
+      "cxd5",
+      "exd5",
+      "Nxd5",
+      "Nxd5",
+      "Bxd8",
+      "Bb4+",
+      "Qd2",
+      "Bxd2+",
+      "Kxd2",
+      "Kxd8",
+    ],
+    fen: "r1bk3r/pppn1ppp/8/3n4/3P4/8/PP1KPPPP/R4BNR w - - 0 10",
+  ),
+
+  ChessTrap(
+    id: 8,
+    cleanMoves:
+        "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+",
+    metadata: "",
+    opening: "Queen's Gambit",
+    openingId: "queens_gambit",
+    trapName: "9. Lasker Trap",
+    commentedMoves:
+        "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+",
+    moves: [
+      "d4",
+      "d5",
+      "c4",
+      "e5",
+      "dxe5",
+      "d4",
+      "e3",
+      "Bb4+",
+      "Bd2",
+      "dxe3",
+      "Bxb4",
+      "exf2+",
+      "Ke2",
+      "fxg1=N+",
+      "Rxg1",
+      "Bg4+",
+    ],
+    fen: "rn1qk1nr/ppp2ppp/8/4P3/1BP3b1/8/PP2K1PP/RN1Q1BR1 w kq - 1 9",
+  ),
+
+  ChessTrap(
+    id: 9,
+    cleanMoves:
+        "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 c6 9.O-O Re8 10.Rc1 h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7",
+    metadata: "",
+    opening: "Queen's Gambit Declined, 4.Bg5",
+    openingId: "qgd_4_bg5",
+    trapName: "10. Rubinstein Trap",
+    commentedMoves:
+        "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 c6 9.O-O Re8 10.Rc1 h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7",
+    moves: [
+      "d4",
+      "d5",
+      "c4",
+      "e6",
+      "Nc3",
+      "Nf6",
+      "Bg5",
+      "Be7",
+      "e3",
+      "O-O",
+      "Nf3",
+      "Nbd7",
+      "cxd5",
+      "exd5",
+      "Bd3",
+      "c6",
+      "O-O",
+      "Re8",
+      "Rc1",
+      "h6",
+      "Bf4",
+      "Nh5",
+      "Nxd5",
+      "cxd5",
+      "Bc7",
+    ],
+    fen: "r1bqr1k1/ppBnbpp1/7p/3p3n/3P4/3BPN2/PP3PPP/2RQ1RK1 b - - 1 13",
+  ),
+
+  ChessTrap(
+    id: 10,
+    cleanMoves:
+        "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Qc7 7.O-O Nf6 8.Qe2 Ng4 9.h3 Nd4 10.Nxd4 Qh2#",
+    metadata: "",
+    opening: "Sicilian defence",
+    openingId: "sicilian_defence",
+    trapName: "11. Siberian Trap",
+    commentedMoves:
+        "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Qc7 7.O-O Nf6 8.Qe2 Ng4 9.h3 Nd4 10.Nxd4 Qh2#",
+    moves: [
+      "e4",
+      "c5",
+      "d4",
+      "cxd4",
+      "c3",
+      "dxc3",
+      "Nxc3",
+      "Nc6",
+      "Nf3",
+      "e6",
+      "Bc4",
+      "Qc7",
+      "O-O",
+      "Nf6",
+      "Qe2",
+      "Ng4",
+      "h3",
+      "Nd4",
+      "Nxd4",
+      "Qh2#",
+    ],
+    fen: "r1b1kb1r/pp1p1ppp/4p3/8/2BNP1n1/2N4P/PP2QPPq/R1B2RK1 w kq - 1 11",
+  ),
+
+  ChessTrap(
+    id: 11,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 cxb5 7.Nd6#",
+    metadata: "",
+    opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
+    trapName: "12. Mortimer Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 cxb5 7.Nd6#",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "Nf6",
+      "d3",
+      "Ne7",
+      "Nxe5",
+      "c6",
+      "Nc4",
+      "cxb5",
+      "Nd6#",
+    ],
+    fen: "r1bqkb1r/pp1pnppp/3N1n2/1p6/4P3/3P4/PPP2PPP/RNBQK2R b KQkq - 1 7",
+  ),
+
+  ChessTrap(
+    id: 12,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4",
+    metadata: "",
+    opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
+    trapName: "13. Noah's Ark Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "a6",
+      "Ba4",
+      "d6",
+      "d4",
+      "b5",
+      "Bb3",
+      "Nxd4",
+      "Nxd4",
+      "exd4",
+      "Qxd4",
+      "c5",
+      "Qd5",
+      "Be6",
+      "Qc6+",
+      "Bd7",
+      "Qd5",
+      "c4",
+    ],
+    fen: "r2qkbnr/3b1ppp/p2p4/1p1Q4/2p1P3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 12",
+  ),
+
+  ChessTrap(
+    id: 13,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.d4 b5 7.Bb3 d5 8.dxe5 Be6 9.c3 Be7 10.Re1 O-O 11.Nd4 Qd7 12.Nxe6 fxe6 13.Rxe4",
+    metadata: "",
+    opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
+    trapName: "14. Tarrasch Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.d4 b5 7.Bb3 d5 8.dxe5 Be6 9.c3 Be7 10.Re1 O-O 11.Nd4 Qd7 12.Nxe6 fxe6 13.Rxe4",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "a6",
+      "Ba4",
+      "Nf6",
+      "O-O",
+      "Nxe4",
+      "d4",
+      "b5",
+      "Bb3",
+      "d5",
+      "dxe5",
+      "Be6",
+      "c3",
+      "Be7",
+      "Re1",
+      "O-O",
+      "Nd4",
+      "Qd7",
+      "Nxe6",
+      "fxe6",
+      "Rxe4",
+    ],
+    fen: "r4rk1/2pqb1pp/p1n1p3/1p1pP3/4R3/1BP5/PP3PPP/RNBQ2K1 b - - 0 13",
+  ),
+
+  ChessTrap(
+    id: 14,
+    cleanMoves:
+        "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 Bg4 6.h3 Bh5 7.g4 Bg6 8.Ne5 e6 9.Qf3 c6 10.g5 Nd5 11.Bd3 Nxc3 12.Bxg6",
+    metadata: "",
+    opening: "Queen's pawn game",
+    openingId: "queens_pawn_game_d00",
+    trapName: "15. Halosar Trap",
+    commentedMoves:
+        "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 Bg4 6.h3 Bh5 7.g4 Bg6 8.Ne5 e6 9.Qf3 c6 10.g5 Nd5 11.Bd3 Nxc3 12.Bxg6",
+    moves: [
+      "d4",
+      "d5",
+      "e4",
+      "dxe4",
+      "Nc3",
+      "Nf6",
+      "f3",
+      "exf3",
+      "Nxf3",
+      "Bg4",
+      "h3",
+      "Bh5",
+      "g4",
+      "Bg6",
+      "Ne5",
+      "e6",
+      "Qf3",
+      "c6",
+      "g5",
+      "Nd5",
+      "Bd3",
+      "Nxc3",
+      "Bxg6",
+    ],
+    fen: "rn1qkb1r/pp3ppp/2p1p1B1/4N1P1/3P4/2n2Q1P/PPP5/R1B1K2R b KQkq - 0 12",
+  ),
+
+  ChessTrap(
+    id: 15,
+    cleanMoves:
+        "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+ 6.Nbd2 Qe7 7.a3 Ngxe5 8.axb4 Nd3#",
+    metadata: "",
+    opening: "Budapest defence",
+    openingId: "budapest_defence",
+    trapName: "16. Kieninger Trap",
+    commentedMoves:
+        "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+ 6.Nbd2 Qe7 7.a3 Ngxe5 8.axb4 Nd3#",
+    moves: [
+      "d4",
+      "Nf6",
+      "c4",
+      "e5",
+      "dxe5",
+      "Ng4",
+      "Bf4",
+      "Nc6",
+      "Nf3",
+      "Bb4+",
+      "Nbd2",
+      "Qe7",
+      "a3",
+      "Ngxe5",
+      "axb4",
+      "Nd3#",
+    ],
+    fen: "r1b1k2r/ppppqppp/2n5/8/1PP2B2/3n1N2/1P1NPPPP/R2QKB1R w KQkq - 1 9",
+  ),
+
+  ChessTrap(
+    id: 16,
+    cleanMoves:
+        "1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+ 4.Bd2 Bxd2+ 5.Qxd2 b6 6.g3 Bb7 7.Bg2 O-O 8.Nc3 Ne4 9.Qc2 Nxc3 10.Ng5",
+    metadata: "",
+    opening: "Bogo-Indian defence",
+    openingId: "bogo_indian_defence",
+    trapName: "17. Monticelli Trap",
+    commentedMoves:
+        "1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+ 4.Bd2 Bxd2+ 5.Qxd2 b6 6.g3 Bb7 7.Bg2 O-O 8.Nc3 Ne4 9.Qc2 Nxc3 10.Ng5",
+    moves: [
+      "d4",
+      "Nf6",
+      "c4",
+      "e6",
+      "Nf3",
+      "Bb4+",
+      "Bd2",
+      "Bxd2+",
+      "Qxd2",
+      "b6",
+      "g3",
+      "Bb7",
+      "Bg2",
+      "O-O",
+      "Nc3",
+      "Ne4",
+      "Qc2",
+      "Nxc3",
+      "Ng5",
+    ],
+    fen: "rn1q1rk1/pbpp1ppp/1p2p3/6N1/2PP4/2n3P1/PPQ1PPBP/R3K2R b KQ - 1 10",
+  ),
+
+  ChessTrap(
+    id: 17,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
+    metadata: "",
+    opening: "Petrov's defence",
+    openingId: "petrovs_defence",
+    trapName: "18. Stafford Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nf6",
+      "Nxe5",
+      "Nc6",
+      "Nxc6",
+      "dxc6",
+      "d3",
+      "Bc5",
+      "Bg5",
+      "Nxe4",
+      "Bxd8",
+      "Bxf2+",
+      "Ke2",
+      "Bg4#",
+    ],
+    fen: "r2Bk2r/ppp2ppp/2p5/8/4n1b1/3P4/PPP1KbPP/RN1Q1B1R w kq - 2 9",
+  ),
+
+  ChessTrap(
+    id: 18,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb4+ 7.Nc3 Nxe4 8.O-O Nxc3 9.bxc3 Bxc3 10.Qb3 Bxa1 11.Bxf7+ Kf8 12.Bg5 Ne7 13.Re1",
+    metadata: "",
+    opening: "Giuoco Piano",
+    openingId: "giuoco_piano",
+    trapName: "19. Giuoco Piano Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb4+ 7.Nc3 Nxe4 8.O-O Nxc3 9.bxc3 Bxc3 10.Qb3 Bxa1 11.Bxf7+ Kf8 12.Bg5 Ne7 13.Re1",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d4",
+      "exd4",
+      "cxd4",
+      "Bb4+",
+      "Nc3",
+      "Nxe4",
+      "O-O",
+      "Nxc3",
+      "bxc3",
+      "Bxc3",
+      "Qb3",
+      "Bxa1",
+      "Bxf7+",
+      "Kf8",
+      "Bg5",
+      "Ne7",
+      "Re1",
+    ],
+    fen: "r1bq1k1r/ppppnBpp/8/6B1/3P4/1Q3N2/P4PPP/b3R1K1 b - - 4 13",
+  ),
+
+  ChessTrap(
+    id: 19,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 f5 4.d3 Nf6 5.Nc3 Bc5 6.Bg5 d6 7.Nd5 fxe4 8.dxe4 Bxf2+ 9.Kxf2 Nxe4+ 10.Kg1 Nxg5",
+    metadata: "",
+    opening: "Italian Game",
+    openingId: "italian_game",
+    trapName: "20. Rousseau Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 f5 4.d3 Nf6 5.Nc3 Bc5 6.Bg5 d6 7.Nd5 fxe4 8.dxe4 Bxf2+ 9.Kxf2 Nxe4+ 10.Kg1 Nxg5",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "f5",
+      "d3",
+      "Nf6",
+      "Nc3",
+      "Bc5",
+      "Bg5",
+      "d6",
+      "Nd5",
+      "fxe4",
+      "dxe4",
+      "Bxf2+",
+      "Kxf2",
+      "Nxe4+",
+      "Kg1",
+      "Nxg5",
+    ],
+    fen: "r1bqk2r/ppp3pp/2np4/3Np1n1/2B5/5N2/PPP3PP/R2Q2KR w kq - 0 11",
+  ),
+
+  ChessTrap(
+    id: 20,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.Bxf7+ Kxf7 5.Nxe5+ Nxe5 6.Qh5+ Kf8 7.Qxe5 d6 8.Qf4+ Qf6",
+    metadata: "",
+    opening: "Italian Game",
+    openingId: "italian_game",
+    trapName: "21. Jerome Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.Bxf7+ Kxf7 5.Nxe5+ Nxe5 6.Qh5+ Kf8 7.Qxe5 d6 8.Qf4+ Qf6",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "Bxf7+",
+      "Kxf7",
+      "Nxe5+",
+      "Nxe5",
+      "Qh5+",
+      "Kf8",
+      "Qxe5",
+      "d6",
+      "Qf4+",
+      "Qf6",
+    ],
+    fen: "r1b2knr/ppp3pp/3p1q2/2b5/4PQ2/8/PPPP1PPP/RNB1K2R w KQ - 2 9",
+  ),
+
+  ChessTrap(
+    id: 21,
+    cleanMoves:
+        "1.e4 e5 2.Bc4 Nf6 3.d4 exd4 4.Nf3 Nc6 5.O-O Nxe4 6.Nc3 dxc3 7.Bxf7+ Kxf7 8.Qd5+ Ke8 9.Re1 Be7 10.Rxe4 d6 11.Bg5",
+    metadata: "",
+    opening: "Bishop's opening",
+    openingId: "bishops_opening",
+    trapName: "22. Nakhmanson Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.Bc4 Nf6 3.d4 exd4 4.Nf3 Nc6 5.O-O Nxe4 6.Nc3 dxc3 7.Bxf7+ Kxf7 8.Qd5+ Ke8 9.Re1 Be7 10.Rxe4 d6 11.Bg5",
+    moves: [
+      "e4",
+      "e5",
+      "Bc4",
+      "Nf6",
+      "d4",
+      "exd4",
+      "Nf3",
+      "Nc6",
+      "O-O",
+      "Nxe4",
+      "Nc3",
+      "dxc3",
+      "Bxf7+",
+      "Kxf7",
+      "Qd5+",
+      "Ke8",
+      "Re1",
+      "Be7",
+      "Rxe4",
+      "d6",
+      "Bg5",
+    ],
+    fen: "r1bqk2r/ppp1b1pp/2np4/3Q2B1/4R3/2p2N2/PPP2PPP/R5K1 b - - 1 11",
+  ),
+
+  ChessTrap(
+    id: 22,
+    cleanMoves:
+        "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Qd5",
+    metadata: "",
+    opening: "Centre game",
+    openingId: "centre_game",
+    trapName: "23. Danish Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Qd5",
+    moves: [
+      "e4",
+      "e5",
+      "d4",
+      "exd4",
+      "c3",
+      "dxc3",
+      "Bc4",
+      "cxb2",
+      "Bxb2",
+      "Bb4+",
+      "Kf1",
+      "Nf6",
+      "e5",
+      "Ne4",
+      "Qd5",
+    ],
+    fen: "rnbqk2r/pppp1ppp/8/3QP3/1bB1n3/8/PB3PPP/RN3KNR b kq - 2 8",
+  ),
+
+  ChessTrap(
+    id: 23,
+    cleanMoves:
+        "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Nf3 Bb4 7.Bd3 d5 8.exd5 e4",
+    metadata: "",
+    opening: "Sicilian defence",
+    openingId: "sicilian_defence",
+    trapName: "24. O'Kelly Trap",
+    commentedMoves:
+        "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Nf3 Bb4 7.Bd3 d5 8.exd5 e4",
+    moves: [
+      "e4",
+      "c5",
+      "Nf3",
+      "a6",
+      "d4",
+      "cxd4",
+      "Nxd4",
+      "Nf6",
+      "Nc3",
+      "e5",
+      "Nf3",
+      "Bb4",
+      "Bd3",
+      "d5",
+      "exd5",
+      "e4",
+    ],
+    fen: "rnbqk2r/1p3ppp/p4n2/3P4/1b2p3/2NB1N2/PPP2PPP/R1BQK2R w KQkq - 0 9",
+  ),
+
+  ChessTrap(
+    id: 24,
+    cleanMoves:
+        "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6 6.Bc4 g6 7.Nxc6 bxc6 8.e5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
+    metadata: "",
+    opening: "Sicilian defence",
+    openingId: "sicilian_defence",
+    trapName: "25. Magnus Smith Trap",
+    commentedMoves:
+        "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6 6.Bc4 g6 7.Nxc6 bxc6 8.e5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
+    moves: [
+      "e4",
+      "c5",
+      "Nf3",
+      "d6",
+      "d4",
+      "cxd4",
+      "Nxd4",
+      "Nf6",
+      "Nc3",
+      "Nc6",
+      "Bc4",
+      "g6",
+      "Nxc6",
+      "bxc6",
+      "e5",
+      "dxe5",
+      "Bxf7+",
+      "Kxf7",
+      "Qxd8",
+    ],
+    fen: "r1bQ1b1r/p3pk1p/2p2np1/4p3/8/2N5/PPP2PPP/R1B1K2R b KQ - 0 10",
+  ),
+
+  ChessTrap(
+    id: 25,
+    cleanMoves: "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
+    metadata: "",
+    opening: "Caro-Kann defence",
+    openingId: "caro_kann_defence",
+    trapName: "26. Caro-Kann Smyslov Trap",
+    commentedMoves: "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
+    moves: [
+      "e4",
+      "c6",
+      "Nc3",
+      "d5",
+      "Nf3",
+      "dxe4",
+      "Nxe4",
+      "Nd7",
+      "Qe2",
+      "Ngf6",
+      "Nd6#",
+    ],
+    fen: "r1bqkb1r/pp1npppp/2pN1n2/8/8/5N2/PPPPQPPP/R1B1KB1R b KQkq - 4 6",
+  ),
+
+  ChessTrap(
+    id: 26,
+    cleanMoves:
+        "1.e4 c6 2.d4 d5 3.e5 Bf5 4.h4 h6 5.g4 Bh7 6.e6 fxe6 7.Bd3 Bxd3 8.Qxd3",
+    metadata: "",
+    opening: "Caro-Kann defence",
+    openingId: "caro_kann_defence",
+    trapName: "27. Caro-Kann Advance Trap",
+    commentedMoves:
+        "1.e4 c6 2.d4 d5 3.e5 Bf5 4.h4 h6 5.g4 Bh7 6.e6 fxe6 7.Bd3 Bxd3 8.Qxd3",
+    moves: [
+      "e4",
+      "c6",
+      "d4",
+      "d5",
+      "e5",
+      "Bf5",
+      "h4",
+      "h6",
+      "g4",
+      "Bh7",
+      "e6",
+      "fxe6",
+      "Bd3",
+      "Bxd3",
+      "Qxd3",
+    ],
+    fen: "rn1qkbnr/pp2p1p1/2p1p2p/3p4/3P2PP/3Q4/PPP2P2/RNB1K1NR b KQkq - 0 8",
+  ),
+
+  ChessTrap(
+    id: 27,
+    cleanMoves:
+        "1.e4 e6 2.d4 d5 3.e5 c5 4.c3 Nc6 5.Nf3 Qb6 6.Bd3 cxd4 7.cxd4 Bd7 8.O-O Nxd4 9.Nxd4 Qxd4 10.Nc3 Qxe5 11.Re1 Qb8 12.Nxd5",
+    metadata: "",
+    opening: "French defence",
+    openingId: "french_defence",
+    trapName: "28. French Milner-Barry Trap",
+    commentedMoves:
+        "1.e4 e6 2.d4 d5 3.e5 c5 4.c3 Nc6 5.Nf3 Qb6 6.Bd3 cxd4 7.cxd4 Bd7 8.O-O Nxd4 9.Nxd4 Qxd4 10.Nc3 Qxe5 11.Re1 Qb8 12.Nxd5",
+    moves: [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4",
+      "Bd7",
+      "O-O",
+      "Nxd4",
+      "Nxd4",
+      "Qxd4",
+      "Nc3",
+      "Qxe5",
+      "Re1",
+      "Qb8",
+      "Nxd5",
+    ],
+    fen: "rq2kbnr/pp1b1ppp/4p3/3N4/8/3B4/PP3PPP/R1BQR1K1 b kq - 0 12",
+  ),
+
+  ChessTrap(
+    id: 28,
+    cleanMoves:
+        "1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.f4 Bg7 5.Nf3 O-O 6.e5 Nfd7 7.h4 c5 8.h5 cxd4 9.hxg6 dxc3 10.gxf7+ Rxf7 11.Bc4 e6 12.Ng5",
+    metadata: "",
+    opening: "Pirc defence",
+    openingId: "pirc_defence",
+    trapName: "29. Pirc Austrian Attack Trap",
+    commentedMoves:
+        "1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.f4 Bg7 5.Nf3 O-O 6.e5 Nfd7 7.h4 c5 8.h5 cxd4 9.hxg6 dxc3 10.gxf7+ Rxf7 11.Bc4 e6 12.Ng5",
+    moves: [
+      "e4",
+      "d6",
+      "d4",
+      "Nf6",
+      "Nc3",
+      "g6",
+      "f4",
+      "Bg7",
+      "Nf3",
+      "O-O",
+      "e5",
+      "Nfd7",
+      "h4",
+      "c5",
+      "h5",
+      "cxd4",
+      "hxg6",
+      "dxc3",
+      "gxf7+",
+      "Rxf7",
+      "Bc4",
+      "e6",
+      "Ng5",
+    ],
+    fen: "rnbq2k1/pp1n1rbp/3pp3/4P1N1/2B2P2/2p5/PPP3P1/R1BQK2R b KQ - 1 12",
+  ),
+
+  ChessTrap(
+    id: 29,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 Be7 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Qh5 g6 8.Qxe5 Nf6 9.Bh6",
+    metadata: "",
+    opening: "Philidor's defence",
+    openingId: "philidors_defence",
+    trapName: "30. Philidor Hanham Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 Be7 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Qh5 g6 8.Qxe5 Nf6 9.Bh6",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "d6",
+      "d4",
+      "Nd7",
+      "Bc4",
+      "Be7",
+      "dxe5",
+      "Nxe5",
+      "Nxe5",
+      "dxe5",
+      "Qh5",
+      "g6",
+      "Qxe5",
+      "Nf6",
+      "Bh6",
+    ],
+    fen: "r1bqk2r/ppp1bp1p/5npB/4Q3/2B1P3/8/PPP2PPP/RN2K2R b KQkq - 2 9",
+  ),
+
+  ChessTrap(
+    id: 30,
+    cleanMoves:
+        "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.Qxf3 Bh6 7.d4 d6 8.Bxf4 Bxf4 9.Qxf4 f6 10.Nc3",
+    metadata: "",
+    opening: "King's gambit",
+    openingId: "kings_gambit",
+    trapName: "31. Muzio Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.Qxf3 Bh6 7.d4 d6 8.Bxf4 Bxf4 9.Qxf4 f6 10.Nc3",
+    moves: [
+      "e4",
+      "e5",
+      "f4",
+      "exf4",
+      "Nf3",
+      "g5",
+      "Bc4",
+      "g4",
+      "O-O",
+      "gxf3",
+      "Qxf3",
+      "Bh6",
+      "d4",
+      "d6",
+      "Bxf4",
+      "Bxf4",
+      "Qxf4",
+      "f6",
+      "Nc3",
+    ],
+    fen: "rnbqk1nr/ppp4p/3p1p2/8/2BPPQ2/2N5/PPP3PP/R4RK1 b kq - 1 10",
+  ),
+
+  ChessTrap(
+    id: 31,
+    cleanMoves:
+        "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.h4 g4 5.Ne5 h5 6.Bc4 Rh7 7.d4 d6 8.Nxf7 Rxf7 9.Bxf7+ Kxf7 10.Bxf4",
+    metadata: "",
+    opening: "King's gambit",
+    openingId: "kings_gambit",
+    trapName: "32. Kieseritzky Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.h4 g4 5.Ne5 h5 6.Bc4 Rh7 7.d4 d6 8.Nxf7 Rxf7 9.Bxf7+ Kxf7 10.Bxf4",
+    moves: [
+      "e4",
+      "e5",
+      "f4",
+      "exf4",
+      "Nf3",
+      "g5",
+      "h4",
+      "g4",
+      "Ne5",
+      "h5",
+      "Bc4",
+      "Rh7",
+      "d4",
+      "d6",
+      "Nxf7",
+      "Rxf7",
+      "Bxf7+",
+      "Kxf7",
+      "Bxf4",
+    ],
+    fen: "rnbq1bn1/ppp2k2/3p4/7p/3PPBpP/8/PPP3P1/RN1QK2R b KQ - 0 10",
+  ),
+
+  ChessTrap(
+    id: 32,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Ba5 6.d4 exd4 7.O-O dxc3 8.Qb3 Qe7 9.Nxc3 Nf6 10.Nd5 Nxd5 11.exd5 Ne5 12.Nxe5 Qxe5 13.Bb2 Qg5 14.Rae1+ Kd8 15.d6",
+    metadata: "",
+    opening: "Evans gambit",
+    openingId: "evans_gambit",
+    trapName: "33. Evans Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Ba5 6.d4 exd4 7.O-O dxc3 8.Qb3 Qe7 9.Nxc3 Nf6 10.Nd5 Nxd5 11.exd5 Ne5 12.Nxe5 Qxe5 13.Bb2 Qg5 14.Rae1+ Kd8 15.d6",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "b4",
+      "Bxb4",
+      "c3",
+      "Ba5",
+      "d4",
+      "exd4",
+      "O-O",
+      "dxc3",
+      "Qb3",
+      "Qe7",
+      "Nxc3",
+      "Nf6",
+      "Nd5",
+      "Nxd5",
+      "exd5",
+      "Ne5",
+      "Nxe5",
+      "Qxe5",
+      "Bb2",
+      "Qg5",
+      "Rae1+",
+      "Kd8",
+      "d6",
+    ],
+    fen: "r1bk3r/pppp1ppp/3P4/b5q1/2B5/1Q6/PB3PPP/4RRK1 b - - 0 15",
+  ),
+
+  ChessTrap(
+    id: 33,
+    cleanMoves:
+        "1.d4 c5 2.d5 e6 3.c4 exd5 4.cxd5 d6 5.Nc3 g6 6.e4 Bg7 7.Nf3 Nf6 8.Bb5+ Nfd7 9.O-O a6 10.Bg5 Qc7 11.e5 axb5 12.Nxb5 Qb6 13.Nxd6+ Kf8 14.Nxc8",
+    metadata: "",
+    opening: "Old Benoni defence",
+    openingId: "old_benoni_defence",
+    trapName: "34. Benoni Trap",
+    commentedMoves:
+        "1.d4 c5 2.d5 e6 3.c4 exd5 4.cxd5 d6 5.Nc3 g6 6.e4 Bg7 7.Nf3 Nf6 8.Bb5+ Nfd7 9.O-O a6 10.Bg5 Qc7 11.e5 axb5 12.Nxb5 Qb6 13.Nxd6+ Kf8 14.Nxc8",
+    moves: [
+      "d4",
+      "c5",
+      "d5",
+      "e6",
+      "c4",
+      "exd5",
+      "cxd5",
+      "d6",
+      "Nc3",
+      "g6",
+      "e4",
+      "Bg7",
+      "Nf3",
+      "Nf6",
+      "Bb5+",
+      "Nfd7",
+      "O-O",
+      "a6",
+      "Bg5",
+      "Qc7",
+      "e5",
+      "axb5",
+      "Nxb5",
+      "Qb6",
+      "Nxd6+",
+      "Kf8",
+      "Nxc8",
+    ],
+    fen: "rnN2k1r/1p1n1pbp/1q4p1/2pPP1B1/8/5N2/PP3PPP/R2Q1RK1 b - - 0 14",
+  ),
+
+  ChessTrap(
+    id: 34,
+    cleanMoves:
+        "1.d4 f5 2.h3 Nf6 3.g4 fxg4 4.hxg4 Nxg4 5.Qd3 Nf6 6.Rxh7 Rxh7 7.Qg6#",
+    metadata: "",
+    opening: "Dutch",
+    openingId: "dutch",
+    trapName: "35. Kortchnoi Trap (Dutch Defense)",
+    commentedMoves:
+        "1.d4 f5 2.h3 Nf6 3.g4 fxg4 4.hxg4 Nxg4 5.Qd3 Nf6 6.Rxh7 Rxh7 7.Qg6#",
+    moves: [
+      "d4",
+      "f5",
+      "h3",
+      "Nf6",
+      "g4",
+      "fxg4",
+      "hxg4",
+      "Nxg4",
+      "Qd3",
+      "Nf6",
+      "Rxh7",
+      "Rxh7",
+      "Qg6#",
+    ],
+    fen: "rnbqkb2/ppppp1pr/5nQ1/8/3P4/8/PPP1PP2/RNB1KBN1 b Qq - 1 7",
+  ),
+
+  ChessTrap(
+    id: 35,
+    cleanMoves:
+        "1.Nf3 d5 2.c4 d4 3.b4 f6 4.e3 e5 5.exd4 e4 6.Qe2 Qe7 7.Ng1 Nc6 8.Bb2 Nxb4",
+    metadata: "",
+    opening: "Reti opening",
+    openingId: "reti_opening",
+    trapName: "36. Reti Opening Trap",
+    commentedMoves:
+        "1.Nf3 d5 2.c4 d4 3.b4 f6 4.e3 e5 5.exd4 e4 6.Qe2 Qe7 7.Ng1 Nc6 8.Bb2 Nxb4",
+    moves: [
+      "Nf3",
+      "d5",
+      "c4",
+      "d4",
+      "b4",
+      "f6",
+      "e3",
+      "e5",
+      "exd4",
+      "e4",
+      "Qe2",
+      "Qe7",
+      "Ng1",
+      "Nc6",
+      "Bb2",
+      "Nxb4",
+    ],
+    fen: "r1b1kbnr/ppp1q1pp/5p2/8/1nPPp3/8/PB1PQPPP/RN2KBNR w KQkq - 0 9",
+  ),
+
+  ChessTrap(
+    id: 36,
+    cleanMoves: "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.h3 Bg3#",
+    metadata: "",
+    opening: "Bird's opening",
+    openingId: "birds_opening",
+    trapName: "37. From's Gambit Trap",
+    commentedMoves: "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.h3 Bg3#",
+    moves: [
+      "f4",
+      "e5",
+      "fxe5",
+      "d6",
+      "exd6",
+      "Bxd6",
+      "Nf3",
+      "g5",
+      "h3",
+      "Bg3#",
+    ],
+    fen: "rnbqk1nr/ppp2p1p/8/6p1/8/5NbP/PPPPP1P1/RNBQKB1R w KQkq - 1 6",
+  ),
+
+  ChessTrap(
+    id: 37,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ncb4 9.a3 Nxc2+ 10.Kd1 Nxa1 11.Nxd5",
+    metadata: "",
+    opening: "Two knights defence",
+    openingId: "two_knights_defence",
+    trapName: "38. Fried Liver Attack Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ncb4 9.a3 Nxc2+ 10.Kd1 Nxa1 11.Nxd5",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7",
+      "Kxf7",
+      "Qf3+",
+      "Ke6",
+      "Nc3",
+      "Ncb4",
+      "a3",
+      "Nxc2+",
+      "Kd1",
+      "Nxa1",
+      "Nxd5",
+    ],
+    fen: "r1bq1b1r/ppp3pp/4k3/3Np3/2B5/P4Q2/1P1P1PPP/n1BK3R b - - 0 11",
+  ),
+
+  ChessTrap(
+    id: 38,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.c3 Bg4 10.Qa4+ Nd7 11.Kxf2 Qf6+ 12.Ke1 Qh4+ 13.Kf1 O-O-O",
+    metadata: "",
+    opening: "Two knights defence",
+    openingId: "two_knights_defence",
+    trapName: "39. Traxler Counterattack Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.c3 Bg4 10.Qa4+ Nd7 11.Kxf2 Qf6+ 12.Ke1 Qh4+ 13.Kf1 O-O-O",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "Bc5",
+      "Nxf7",
+      "Bxf2+",
+      "Kf1",
+      "Qe7",
+      "Nxh8",
+      "d5",
+      "exd5",
+      "Nd4",
+      "c3",
+      "Bg4",
+      "Qa4+",
+      "Nd7",
+      "Kxf2",
+      "Qf6+",
+      "Ke1",
+      "Qh4+",
+      "Kf1",
+      "O-O-O",
+    ],
+    fen: "2kr3N/pppn2pp/8/3Pp3/Q1Bn2bq/2P5/PP1P2PP/RNB2K1R w - - 5 14",
+  ),
+
+  ChessTrap(
+    id: 39,
+    cleanMoves:
+        "1.e4 b6 2.d4 Bb7 3.Bd3 f5 4.exf5 Bxg2 5.Qh5+ g6 6.fxg6 Nf6 7.gxh7+ Nxh5 8.Bg6#",
+    metadata: "",
+    opening: "King's pawn opening",
+    openingId: "kings_pawn_opening_b00",
+    trapName: "40. Owen's Defense Trap",
+    commentedMoves:
+        "1.e4 b6 2.d4 Bb7 3.Bd3 f5 4.exf5 Bxg2 5.Qh5+ g6 6.fxg6 Nf6 7.gxh7+ Nxh5 8.Bg6#",
+    moves: [
+      "e4",
+      "b6",
+      "d4",
+      "Bb7",
+      "Bd3",
+      "f5",
+      "exf5",
+      "Bxg2",
+      "Qh5+",
+      "g6",
+      "fxg6",
+      "Nf6",
+      "gxh7+",
+      "Nxh5",
+      "Bg6#",
+    ],
+    fen: "rn1qkb1r/p1ppp2P/1p4B1/7n/3P4/8/PPP2PbP/RNB1K1NR b KQkq - 1 8",
+  ),
+
+  ChessTrap(
+    id: 40,
+    cleanMoves: "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3",
+    metadata: "",
+    opening: "Queen's gambit accepted",
+    openingId: "queens_gambit_accepted",
+    trapName: "41. Queen's Gambit Accepted Trap",
+    commentedMoves: "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3",
+    moves: [
+      "d4",
+      "d5",
+      "c4",
+      "dxc4",
+      "e3",
+      "b5",
+      "a4",
+      "c6",
+      "axb5",
+      "cxb5",
+      "Qf3",
+    ],
+    fen: "rnbqkbnr/p3pppp/8/1p6/2pP4/4PQ2/1P3PPP/RNB1KBNR b KQkq - 1 6",
+  ),
+
+  ChessTrap(
+    id: 41,
+    cleanMoves:
+        "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Qh5 Nd6 5.Bb3 Nc6 6.Nb5 g6 7.Qf3 f5 8.Qd5 Qe7 9.Nxc7+ Kd8 10.Nxa8 b6 11.d3 Bb7 12.h4 f4",
+    metadata: "",
+    opening: "Vienna game",
+    openingId: "vienna_game",
+    trapName: "42. Frankenstein-Dracula Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Qh5 Nd6 5.Bb3 Nc6 6.Nb5 g6 7.Qf3 f5 8.Qd5 Qe7 9.Nxc7+ Kd8 10.Nxa8 b6 11.d3 Bb7 12.h4 f4",
+    moves: [
+      "e4",
+      "e5",
+      "Nc3",
+      "Nf6",
+      "Bc4",
+      "Nxe4",
+      "Qh5",
+      "Nd6",
+      "Bb3",
+      "Nc6",
+      "Nb5",
+      "g6",
+      "Qf3",
+      "f5",
+      "Qd5",
+      "Qe7",
+      "Nxc7+",
+      "Kd8",
+      "Nxa8",
+      "b6",
+      "d3",
+      "Bb7",
+      "h4",
+      "f4",
+    ],
+    fen: "N2k1b1r/pb1pq2p/1pnn2p1/3Qp3/5p1P/1B1P4/PPP2PP1/R1B1K1NR w KQ - 0 13",
+  ),
+
+  ChessTrap(
+    id: 42,
+    cleanMoves:
+        "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.a3 d6 5.exd6 Bxd6 6.Nd2 Nxf2 7.Kxf2 Qh4+ 8.g3 Bxg3+ 9.hxg3 Qxh1",
+    metadata: "",
+    opening: "Budapest defence",
+    openingId: "budapest_defence",
+    trapName: "43. Fajarowicz Trap (Budapest Gambit)",
+    commentedMoves:
+        "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.a3 d6 5.exd6 Bxd6 6.Nd2 Nxf2 7.Kxf2 Qh4+ 8.g3 Bxg3+ 9.hxg3 Qxh1",
+    moves: [
+      "d4",
+      "Nf6",
+      "c4",
+      "e5",
+      "dxe5",
+      "Ne4",
+      "a3",
+      "d6",
+      "exd6",
+      "Bxd6",
+      "Nd2",
+      "Nxf2",
+      "Kxf2",
+      "Qh4+",
+      "g3",
+      "Bxg3+",
+      "hxg3",
+      "Qxh1",
+    ],
+    fen: "rnb1k2r/ppp2ppp/8/8/2P5/P5P1/1P1NPK2/R1BQ1BNq w kq - 0 10",
+  ),
+
+  ChessTrap(
+    id: 43,
+    cleanMoves:
+        "1.d4 e5 2.dxe5 Bc5 3.Nf3 d6 4.exd6 Ne7 5.dxe7 Bxf2+ 6.Kxf2 Qxd1",
+    metadata: "",
+    opening: "Queen's pawn",
+    openingId: "queens_pawn_a40",
+    trapName: "44. Englund Gambit Complex Trap",
+    commentedMoves:
+        "1.d4 e5 2.dxe5 Bc5 3.Nf3 d6 4.exd6 Ne7 5.dxe7 Bxf2+ 6.Kxf2 Qxd1",
+    moves: [
+      "d4",
+      "e5",
+      "dxe5",
+      "Bc5",
+      "Nf3",
+      "d6",
+      "exd6",
+      "Ne7",
+      "dxe7",
+      "Bxf2+",
+      "Kxf2",
+      "Qxd1",
+    ],
+    fen: "rnb1k2r/ppp1Pppp/8/8/8/5N2/PPP1PKPP/RNBq1B1R w kq - 0 7",
+  ),
+
+  ChessTrap(
+    id: 44,
+    cleanMoves:
+        "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.fxe5 Nxe4 5.d3 Qh4+ 6.g3 Nxg3 7.Nf3 Qh5 8.Nxd5 Bg4 9.Nf4 Bxf3 10.Nxh5 Bxd1 11.hxg3 Bxc2 12.b3",
+    metadata: "",
+    opening: "Vienna game",
+    openingId: "vienna_game",
+    trapName: "45. Würzburger Trap (Vienna Game)",
+    commentedMoves:
+        "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.fxe5 Nxe4 5.d3 Qh4+ 6.g3 Nxg3 7.Nf3 Qh5 8.Nxd5 Bg4 9.Nf4 Bxf3 10.Nxh5 Bxd1 11.hxg3 Bxc2 12.b3",
+    moves: [
+      "e4",
+      "e5",
+      "Nc3",
+      "Nf6",
+      "f4",
+      "d5",
+      "fxe5",
+      "Nxe4",
+      "d3",
+      "Qh4+",
+      "g3",
+      "Nxg3",
+      "Nf3",
+      "Qh5",
+      "Nxd5",
+      "Bg4",
+      "Nf4",
+      "Bxf3",
+      "Nxh5",
+      "Bxd1",
+      "hxg3",
+      "Bxc2",
+      "b3",
+    ],
+    fen: "rn2kb1r/ppp2ppp/8/4P2N/8/1P1P2P1/P1b5/R1B1KB1R b KQkq - 0 12",
+  ),
+
+  ChessTrap(
+    id: 45,
+    cleanMoves:
+        "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.e3 Nc6 6.a3 a5 7.b3 Ngxe5 8.Nxe5 Nxe5 9.Bb2 Qe7 10.Nc3 c6 11.Ne4 Bb6 12.Nd6+ Kd8 13.Bxe5 Qxe5 14.Nxf7+",
+    metadata: "",
+    opening: "Budapest defence",
+    openingId: "budapest_defence",
+    trapName: "46. Budapest Gambit Adler Trap",
+    commentedMoves:
+        "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.e3 Nc6 6.a3 a5 7.b3 Ngxe5 8.Nxe5 Nxe5 9.Bb2 Qe7 10.Nc3 c6 11.Ne4 Bb6 12.Nd6+ Kd8 13.Bxe5 Qxe5 14.Nxf7+",
+    moves: [
+      "d4",
+      "Nf6",
+      "c4",
+      "e5",
+      "dxe5",
+      "Ng4",
+      "Nf3",
+      "Bc5",
+      "e3",
+      "Nc6",
+      "a3",
+      "a5",
+      "b3",
+      "Ngxe5",
+      "Nxe5",
+      "Nxe5",
+      "Bb2",
+      "Qe7",
+      "Nc3",
+      "c6",
+      "Ne4",
+      "Bb6",
+      "Nd6+",
+      "Kd8",
+      "Bxe5",
+      "Qxe5",
+      "Nxf7+",
+    ],
+    fen: "r1bk3r/1p1p1Npp/1bp5/p3q3/2P5/PP2P3/5PPP/R2QKB1R b KQ - 0 14",
+  ),
+
+  ChessTrap(
+    id: 46,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 d5 6.Bd3 Bd6 7.O-O O-O 8.c4 c6 9.cxd5 cxd5 10.Nc3 Nxc3 11.bxc3 Bg4 12.h3 Bh5 13.Rb1 b6 14.Rb5 Bc7 15.Rxd5 Qxd5 16.Bxh7+ Kxh7 17.Ng5+ Qxg5 18.Bxg5 Bxd1",
+    metadata: "",
+    opening: "Petrov's defence",
+    openingId: "petrovs_defence",
+    trapName: "47. Marshall Trap (Petrov's Defense)",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 d5 6.Bd3 Bd6 7.O-O O-O 8.c4 c6 9.cxd5 cxd5 10.Nc3 Nxc3 11.bxc3 Bg4 12.h3 Bh5 13.Rb1 b6 14.Rb5 Bc7 15.Rxd5 Qxd5 16.Bxh7+ Kxh7 17.Ng5+ Qxg5 18.Bxg5 Bxd1",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nf6",
+      "Nxe5",
+      "d6",
+      "Nf3",
+      "Nxe4",
+      "d4",
+      "d5",
+      "Bd3",
+      "Bd6",
+      "O-O",
+      "O-O",
+      "c4",
+      "c6",
+      "cxd5",
+      "cxd5",
+      "Nc3",
+      "Nxc3",
+      "bxc3",
+      "Bg4",
+      "h3",
+      "Bh5",
+      "Rb1",
+      "b6",
+      "Rb5",
+      "Bc7",
+      "Rxd5",
+      "Qxd5",
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+",
+      "Qxg5",
+      "Bxg5",
+      "Bxd1",
+    ],
+    fen: "rn3r2/p1b2ppk/1p6/6B1/3P4/2P4P/P4PP1/3b1RK1 w - - 0 19",
+  ),
+
+  ChessTrap(
+    id: 47,
+    cleanMoves:
+        "1.e4 c5 2.c3 Nf6 3.e5 Nd5 4.d4 cxd4 5.Nf3 Nc6 6.Bc4 Nb6 7.Bb3 d5 8.exd6 Qxd6 9.O-O Be6 10.Na3 dxc3 11.Qe2 Bxb3 12.Nb5 Qd7 13.axb3 a6 14.Rd1 Qc8 15.Nd6+",
+    metadata: "",
+    opening: "Sicilian defence",
+    openingId: "sicilian_defence",
+    trapName: "48. Alapin Sicilian Trap",
+    commentedMoves:
+        "1.e4 c5 2.c3 Nf6 3.e5 Nd5 4.d4 cxd4 5.Nf3 Nc6 6.Bc4 Nb6 7.Bb3 d5 8.exd6 Qxd6 9.O-O Be6 10.Na3 dxc3 11.Qe2 Bxb3 12.Nb5 Qd7 13.axb3 a6 14.Rd1 Qc8 15.Nd6+",
+    moves: [
+      "e4",
+      "c5",
+      "c3",
+      "Nf6",
+      "e5",
+      "Nd5",
+      "d4",
+      "cxd4",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nb6",
+      "Bb3",
+      "d5",
+      "exd6",
+      "Qxd6",
+      "O-O",
+      "Be6",
+      "Na3",
+      "dxc3",
+      "Qe2",
+      "Bxb3",
+      "Nb5",
+      "Qd7",
+      "axb3",
+      "a6",
+      "Rd1",
+      "Qc8",
+      "Nd6+",
+    ],
+    fen: "r1q1kb1r/1p2pppp/pnnN4/8/8/1Pp2N2/1P2QPPP/R1BR2K1 b kq - 3 15",
+  ),
+
+  ChessTrap(
+    id: 48,
+    cleanMoves:
+        "1.d4 f5 2.g4 fxg4 3.h3 gxh3 4.Nxh3 Nf6 5.Ng5 d5 6.Qd3 Nc6 7.Rxh7 Rxh7 8.Qg6+ Kd7 9.Nxh7 Nxh7 10.Bh3+ e6 11.Qxe6#",
+    metadata: "",
+    opening: "Dutch",
+    openingId: "dutch",
+    trapName: "49. Krejcik Trap (Dutch Defense)",
+    commentedMoves:
+        "1.d4 f5 2.g4 fxg4 3.h3 gxh3 4.Nxh3 Nf6 5.Ng5 d5 6.Qd3 Nc6 7.Rxh7 Rxh7 8.Qg6+ Kd7 9.Nxh7 Nxh7 10.Bh3+ e6 11.Qxe6#",
+    moves: [
+      "d4",
+      "f5",
+      "g4",
+      "fxg4",
+      "h3",
+      "gxh3",
+      "Nxh3",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "Qd3",
+      "Nc6",
+      "Rxh7",
+      "Rxh7",
+      "Qg6+",
+      "Kd7",
+      "Nxh7",
+      "Nxh7",
+      "Bh3+",
+      "e6",
+      "Qxe6#",
+    ],
+    fen: "r1bq1b2/pppk2pn/2n1Q3/3p4/3P4/7B/PPP1PP2/RNB1K3 b Q - 0 11",
+  ),
+
+  ChessTrap(
+    id: 49,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d4 exd4 5.Ng5 d5 6.exd5 Nxd5 7.O-O Be7 8.Nxf7 Kxf7 9.Qf3+ Ke6 10.Re1+ Ne5 11.Bf4 Bf6 12.Bxe5 Bxe5 13.Nd2",
+    metadata: "",
+    opening: "Two knights defence",
+    openingId: "two_knights_defence",
+    trapName: "50. Two Knights Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d4 exd4 5.Ng5 d5 6.exd5 Nxd5 7.O-O Be7 8.Nxf7 Kxf7 9.Qf3+ Ke6 10.Re1+ Ne5 11.Bf4 Bf6 12.Bxe5 Bxe5 13.Nd2",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "d4",
+      "exd4",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "O-O",
+      "Be7",
+      "Nxf7",
+      "Kxf7",
+      "Qf3+",
+      "Ke6",
+      "Re1+",
+      "Ne5",
+      "Bf4",
+      "Bf6",
+      "Bxe5",
+      "Bxe5",
+      "Nd2",
+    ],
+    fen: "r1bq3r/ppp3pp/4k3/3nb3/2Bp4/5Q2/PPPN1PPP/R3R1K1 b - - 1 13",
+  ),
+
+  ChessTrap(
+    id: 50,
     cleanMoves:
         "1.e4 e5 2.Ne2 Bc5 3.f4 Qf6 4.c3 Nc6 5.g3 Nh6 6.Bg2 Ng4 7.Rf1 Nxh2 8.fxe5 Qxf1+ 9.Bxf1 Nf3#",
     metadata: "C20",
@@ -37,7 +1706,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 1,
+    id: 51,
     cleanMoves: "1.e4 e5 2.Ne2 d5 3.exd5 Qxd5 4.Nbc3 Qc6 5.Ng3 g6 6.Bb5",
     metadata: "C20",
     opening: "King's pawn game",
@@ -61,7 +1730,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 2,
+    id: 52,
     cleanMoves:
         "1.e4 e5 2.Ne2 d5 3.exd5 Qxd5 4.Nbc3 Qa5 5.d4 Nc6 6.d5 Nb4 7.Bd2 Bf5 8.Rc1 Bxc2 9.Rxc2 Nd3#",
     metadata: "C20",
@@ -94,7 +1763,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 3,
+    id: 53,
     cleanMoves:
         "1.e4 e5 2.Ne2 Nf6 3.f4 exf4 4.Nxf4 Nxe4 5.Qe2 Qe7 6.Nd5 Qe5 7.Nbc3 c6 8.d4 Qf5 9.Nxe4",
     metadata: "C20",
@@ -126,7 +1795,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 4,
+    id: 54,
     cleanMoves:
         "1.e4 e5 2.Ne2 Nf6 3.f4 Nxe4 4.d3 Nc5 5.fxe5 Nc6 6.d4 Qh4+ 7.g3 Qe4 8.Rg1 Nxd4 9.Qxd4 Qxc2 10.Nf4 Qxc1+ 11.Ke2 Nb3 12.axb3 Bc5",
     metadata: "C20",
@@ -165,7 +1834,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 5,
+    id: 55,
     cleanMoves:
         "1.e4 Nf6 2.Nc3 d6 3.Bc4 Nxe4 4.Bxf7+ Kxf7 5.Nxe4 e5 6.Qf3+ Kg8 7.Ng5 Qf6 8.Qb3+",
     metadata: "B02",
@@ -195,7 +1864,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 6,
+    id: 56,
     cleanMoves: "1.e4 Nf6 2.Nc3 d5 3.e5 d4 4.Nb1 Ne4 5.c3 c5 6.d3",
     metadata: "B02",
     opening: "Alekhine's defence",
@@ -219,7 +1888,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 7,
+    id: 57,
     cleanMoves:
         "1.e4 Nf6 2.Nc3 d5 3.e5 Nfd7 4.e6 fxe6 5.d4 c5 6.Nf3 Nc6 7.dxc5 Nxc5 8.Bb5 g6 9.Qd4",
     metadata: "B02",
@@ -251,7 +1920,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 8,
+    id: 58,
     cleanMoves:
         "1.e4 Nf6 2.Nc3 d5 3.exd5 Nxd5 4.Bc4 Nb6 5.Bb3 Nc6 6.Nf3 Bg4 7.Bxf7+ Kd7 8.Qe2 e6 9.h3 Bxf3 10.Qxe6#",
     metadata: "B02",
@@ -285,7 +1954,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 9,
+    id: 59,
     cleanMoves:
         "1.e4 Nf6 2.Nc3 d5 3.exd5 Nxd5 4.Bc4 Be6 5.Qf3 c6 6.Nge2 g6 7.Nd4 Nxc3 8.Nxe6 fxe6 9.Qxc3 Rg8 10.Qb3",
     metadata: "B02",
@@ -319,7 +1988,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 10,
+    id: 60,
     cleanMoves: "1.e4 Nf6 2.e5 Ne4 3.d3 Nc5 4.d4 Ne4 5.Bd3",
     metadata: "B02",
     opening: "Alekhine's defence",
@@ -331,7 +2000,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 11,
+    id: 61,
     cleanMoves: "1.e4 Nf6 2.e5 Nd5 3.Bc4 Nf4 4.Qf3 Ng6 5.Bxf7#",
     metadata: "B02",
     opening: "Alekhine's defence",
@@ -343,7 +2012,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 12,
+    id: 62,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.Bc4 Nb6 4.Bxf7+ Kxf7 5.e6+ dxe6 6.Nf3 N8d7 7.Ng5+ Kf6 8.Qf3+ Ke5 9.Nf7+",
     metadata: "B02",
@@ -375,7 +2044,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 13,
+    id: 63,
     cleanMoves: "1.e4 Nf6 2.e5 Nd5 3.c4 Nb6 4.c5 Nd5 5.Bc4 Nb4 6.Qb3 e6 7.Qxb4",
     metadata: "B02",
     opening: "Alekhine's defence",
@@ -402,7 +2071,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 14,
+    id: 64,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.c4 Nb6 4.c5 Nd5 5.Nc3 Nxc3 6.dxc3 d6 7.Bg5 dxe5 8.Qb3 Nd7 9.Bc4",
     metadata: "B02",
@@ -434,7 +2103,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 15,
+    id: 65,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.c4 Nb6 4.d4 Nc6 5.d5 Nxe5 6.c5 Nbc4 7.f4 Ng6 8.Bxc4",
     metadata: "B02",
@@ -464,7 +2133,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 16,
+    id: 66,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.c4 Nb6 4.d4 d6 5.Bd3 dxe5 6.dxe5 N8d7 7.e6 Nf6 8.exf7+ Kxf7 9.Bg6+ hxg6 10.Qxd8",
     metadata: "B02",
@@ -498,7 +2167,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 17,
+    id: 67,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.Nf3 d6 4.Bc4 Be6 5.Nc3 Nb6 6.Bxe6 fxe6 7.Ng5 h6 8.Nxe6 Qd7 9.Qh5+ g6 10.Qxg6#",
     metadata: "B02",
@@ -532,7 +2201,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 18,
+    id: 68,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.Nf3 d6 4.Bc4 Nb6 5.Bxf7+ Kxf7 6.Ng5+ Kg8 7.Qf3 Qe8 8.e6 h6 9.Qf7+ Qxf7 10.exf7#",
     metadata: "B02",
@@ -566,7 +2235,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 19,
+    id: 69,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.d4 Nc6 4.Nf3 f6 5.exf6 gxf6 6.c4 Nb6 7.d5 Ne5 8.Nxe5",
     metadata: "B03",
@@ -596,7 +2265,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 20,
+    id: 70,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.d4 d6 4.Nf3 e6 5.Qd3 dxe5 6.Nxe5 Qf6 7.Qg3 Nd7 8.Bg5 Qf5 9.Bd3",
     metadata: "B04",
@@ -628,7 +2297,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 21,
+    id: 71,
     cleanMoves:
         "1.e4 Nf6 2.e5 Nd5 3.d4 d6 4.c4 Nb6 5.Nf3 Nc6 6.e6 fxe6 7.Ng5 Qd7 8.Bd3 e5 9.Qh5+ g6 10.Bxg6+ hxg6 11.Qxg6+ Kd8 12.Nf7+ Ke8 13.Nxh8+",
     metadata: "B03",
@@ -668,7 +2337,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 22,
+    id: 72,
     cleanMoves: "1.e4 g5 2.Nc3 f5 3.Qh5#",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -680,7 +2349,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 23,
+    id: 73,
     cleanMoves:
         "1.e4 g5 2.Bc4 Bg7 3.Qh5 e6 4.Nf3 h6 5.d3 Nf6 6.Bxg5 Nxh5 7.Bxd8 Bxb2",
     metadata: "B00",
@@ -709,7 +2378,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 24,
+    id: 74,
     cleanMoves:
         "1.e4 g5 2.d3 h6 3.Ne2 d6 4.Ng3 Nf6 5.Bd2 Bg7 6.Bc3 h5 7.Be2 g4 8.Nd2 Nc6 9.d4 d5 10.e5 Ng8 11.Bb5 f5 12.f4 Qd7 13.Nb3 b6 14.Nxf5 Bf8 15.Qe2 a6 16.e6",
     metadata: "B00",
@@ -756,7 +2425,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 25,
+    id: 75,
     cleanMoves: "1.e4 g5 2.d4 f6 3.Qh5#",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -768,7 +2437,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 26,
+    id: 76,
     cleanMoves:
         "1.e4 g5 2.d4 Bg7 3.Bc4 h6 4.Nc3 c6 5.e5 d5 6.Bd3 c5 7.Bb5+ Nc6 8.dxc5 Bxe5 9.Qxd5 Bxc3+ 10.bxc3 Qxd5",
     metadata: "B00",
@@ -803,7 +2472,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 27,
+    id: 77,
     cleanMoves:
         "1.e4 g5 2.d4 h6 3.Nc3 Bg7 4.h4 gxh4 5.Nf3 d6 6.Nxh4 Nf6 7.Bf4 c6 8.Qd2 Ng4 9.O-O-O Qa5 10.Bc4 b5 11.Nxb5 Qxd2+ 12.Rxd2 cxb5 13.Bd5",
     metadata: "B00",
@@ -843,7 +2512,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 28,
+    id: 78,
     cleanMoves:
         "1.e4 g5 2.d4 h6 3.Bd3 Bg7 4.h4 gxh4 5.Nf3 d5 6.e5 c5 7.c3 Bg4 8.Rxh4 h5 9.dxc5 Nc6 10.e6 Bxe6 11.Ng5 Bg4 12.Qb3 Qc7 13.Qxd5 Nh6 14.Na3 Rd8 15.Nb5 Qb8 16.Qc4 Ne5",
     metadata: "B00",
@@ -890,7 +2559,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 29,
+    id: 79,
     cleanMoves: "1.e4 g5 2.Nf3 f6 3.d4 c6 4.Ne5 fxe5 5.Qh5#",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -902,7 +2571,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 30,
+    id: 80,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Na3 b4 5.Nc2 d6 6.e3 e6 7.Bd3 exd5 8.Qf3 Bg4 9.Qf4 dxc4 10.Bxc4 d5 11.Qe5+ Be6 12.Bb5+ Nbd7 13.Bc6 Rc8 14.Bxd7+ Qxd7 15.Nf3 h6 16.O-O Bd6",
     metadata: "A57",
@@ -949,7 +2618,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 31,
+    id: 81,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.b3 bxc4 5.bxc4 d6 6.Nc3 g6 7.e4 Bg7 8.Nf3 Nxe4 9.Nxe4 Bxa1",
     metadata: "A57",
@@ -982,7 +2651,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 32,
+    id: 82,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Nd2 Qa5 5.e4 Nxe4 6.b4 Qxb4 7.Rb1 Qc3 8.Rxb5 Qd4 9.Nxe4 Qxe4+ 10.Be3 g6 11.Nf3 Bg7 12.Bd3 Qg4 13.h3 Qxg2 14.Rh2",
     metadata: "A57",
@@ -1024,7 +2693,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 33,
+    id: 83,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Nf3 g6 5.g3 Bg7 6.Bg2 d6 7.cxb5 a6 8.bxa6 Qa5+ 9.Nc3 Ne4 10.Qc2 Nxc3 11.Bd2 Qa4 12.b3 Qe4",
     metadata: "A57",
@@ -1063,7 +2732,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 34,
+    id: 84,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Nf3 bxc4 5.Nc3 g6 6.e4 d6 7.Bxc4 Bg7 8.e5 dxe5 9.Nxe5 O-O 10.O-O Nbd7 11.Nc6 Qe8 12.Re1",
     metadata: "A57",
@@ -1101,7 +2770,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 35,
+    id: 85,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Bg5 Ne4 5.Bf4 Qa5+ 6.Nd2 bxc4 7.Qc2 Nf6 8.e4 d6 9.Bxc4 g6 10.e5 Nh5 11.Be3 dxe5 12.d6 Bb7 13.Bxf7+ Kd7 14.Qb3 Bc8 15.Qd5",
     metadata: "A57",
@@ -1145,7 +2814,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 36,
+    id: 86,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.Nc3 axb5 6.Nxb5 Ba6 7.e3 Bxb5 8.Bxb5 Qa5+",
     metadata: "A57",
@@ -1176,7 +2845,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 37,
+    id: 87,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.Nc3 axb5 6.e4 b4 7.Nb5 Nxe4 8.Qe2 Nf6 9.Nd6#",
     metadata: "A57",
@@ -1208,7 +2877,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 38,
+    id: 88,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.Nc3 d6 6.e4 axb5 7.Bf4 b4 8.Nb5 Nxe4 9.Qe2 Nf6 10.Nxd6+",
     metadata: "A57",
@@ -1242,7 +2911,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 39,
+    id: 89,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.e3 axb5 6.Bxb5 Qa5+ 7.Nc3 Bb7 8.Bd2 Qb6 9.Bc4 e6 10.Bc1 Qb4 11.Qb3 exd5",
     metadata: "A57",
@@ -1279,7 +2948,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 40,
+    id: 90,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.Nf3 g6 7.Bf4 b6 8.e4 Bg7 9.Bb5+ Bd7 10.Bxd6 Bxb5 11.Nxb5 Nxe4 12.Nc7+ Kd7 13.Bf4 g5 14.Nxg5",
     metadata: "A61",
@@ -1321,7 +2990,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 41,
+    id: 91,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 Bd6 6.e4 Bc7 7.d6 Ba5 8.e5 Ne4 9.Qg4 Nxc3 10.Qxg7 Ne4+ 11.Ke2 Rf8 12.Bh6",
     metadata: "A60",
@@ -1359,7 +3028,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 42,
+    id: 92,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.e4 g6 7.Nf3 Bg4 8.Be2 Qe7 9.O-O Nxe4 10.Qa4+ Nd7 11.Qxe4",
     metadata: "A70",
@@ -1395,7 +3064,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 43,
+    id: 93,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 Bd6 6.g3 Bc7 7.d6 Ba5 8.Bg2 O-O 9.Nh3 Nc6 10.O-O Re8 11.Nd5 Re6 12.Ng5 Re5 13.f4 Re8 14.Qd3 g6 15.f5 c4 16.Qxc4 Ne5 17.Qh4 Nh5 18.g4",
     metadata: "A60",
@@ -1445,7 +3114,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 44,
+    id: 94,
     cleanMoves:
         "1.d4 c5 2.d5 Na6 3.Nf3 d6 4.e4 Bg4 5.Ne5 Qa5+ 6.Bd2 dxe5 7.Bxa5 Bxd1 8.Bb5#",
     metadata: "A43",
@@ -1475,7 +3144,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 45,
+    id: 95,
     cleanMoves: "1.d4 c5 2.d5 e5 3.dxe6 fxe6 4.e4 e5 5.Qh5+ g6 6.Qxe5+",
     metadata: "A44",
     opening: "Old Benoni defence",
@@ -1499,7 +3168,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 46,
+    id: 96,
     cleanMoves:
         "1.d4 c5 2.d5 e6 3.e4 exd5 4.exd5 Bd6 5.Nf3 b6 6.Bd3 Qe7+ 7.Be3 Nf6 8.O-O Nxd5 9.Re1 O-O 10.Bxh7+ Kxh7 11.Qxd5",
     metadata: "A43",
@@ -1535,7 +3204,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 47,
+    id: 97,
     cleanMoves:
         "1.d4 c5 2.d5 d6 3.e4 g6 4.Nc3 Bg7 5.Nf3 Na6 6.Be2 Nc7 7.O-O Nf6 8.Bf4 O-O 9.h3 b5 10.e5 dxe5 11.Nxe5 b4 12.Nc6 Qd7 13.Nb5 Ncxd5 14.Ne5 Qd8 15.Nc6 Qb6 16.Bf3 Bb7",
     metadata: "A43",
@@ -1582,7 +3251,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 48,
+    id: 98,
     cleanMoves:
         "1.d4 c5 2.d5 d6 3.e4 g6 4.Nc3 Bg7 5.Nf3 Na6 6.Bc4 Bd7 7.a4 Nc7 8.O-O Rb8 9.Bf4 f6 10.Qe2 Nh6 11.e5 fxe5 12.Nxe5 dxe5 13.Bxe5 Bxe5 14.Qxe5 Nf7 15.Qg7 Bf5 16.d6 e6 17.dxc7 Qxc7 18.Rfe1 Qe7 19.Bb5+ Kd8 20.Rad1+ Kc8 21.Rd7",
     metadata: "A43",
@@ -1638,7 +3307,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 49,
+    id: 99,
     cleanMoves: "1.f4 d5 2.b3 Nf6 3.e3 c5 4.Bb5+ Nc6 5.d4 Qa5+",
     metadata: "A03",
     opening: "Bird's opening",
@@ -1651,7 +3320,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 50,
+    id: 100,
     cleanMoves:
         "1.f4 d5 2.Nf3 Nc6 3.e3 e6 4.Bb5 Bd7 5.O-O a6 6.Be2 Bc5 7.d4 Bd6 8.c4 Nge7 9.c5",
     metadata: "A03",
@@ -1683,7 +3352,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 51,
+    id: 101,
     cleanMoves:
         "1.f4 d5 2.Nf3 Nf6 3.Nc3 Nc6 4.e3 d4 5.exd4 Nxd4 6.Bc4 Bg4 7.Ne5 Bxd1 8.Bxf7#",
     metadata: "A03",
@@ -1713,7 +3382,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 52,
+    id: 102,
     cleanMoves:
         "1.f4 d5 2.Nf3 Nf6 3.e3 g6 4.d3 Bg7 5.Nbd2 O-O 6.h3 c5 7.b3 Ng4 8.Ne5 Nxe3",
     metadata: "A03",
@@ -1744,7 +3413,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 53,
+    id: 103,
     cleanMoves: "1.f4 d5 2.Nf3 h5 3.g3 h4 4.Nxh4 e5 5.fxe5 Rxh4 6.gxh4 Qxh4#",
     metadata: "A03",
     opening: "Bird's opening",
@@ -1770,7 +3439,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 54,
+    id: 104,
     cleanMoves:
         "1.f4 d5 2.e4 dxe4 3.Nc3 Nf6 4.Qe2 Bf5 5.Qb5+ Bd7 6.Qxb7 Bc6 7.Bb5 Qd7 8.Bxc6 Qxc6 9.Qc8#",
     metadata: "A03",
@@ -1802,7 +3471,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 55,
+    id: 105,
     cleanMoves: "1.f4 d5 2.h3 e5 3.g4 Qh4#",
     metadata: "A03",
     opening: "Bird's opening",
@@ -1814,7 +3483,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 56,
+    id: 106,
     cleanMoves:
         "1.f4 Nf6 2.c4 d5 3.cxd5 Nxd5 4.d3 e5 5.fxe5 Bb4+ 6.Bd2 Ne3 7.Qa4+ b5 8.Qxb5+ Bd7 9.Qb7 Bc6 10.Qxb4 Nc2+",
     metadata: "A02",
@@ -1849,7 +3518,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 57,
+    id: 107,
     cleanMoves:
         "1.f4 Nf6 2.e3 d5 3.Nf3 Nc6 4.c4 Bf5 5.Na3 e6 6.b3 Bc5 7.d4 Bb4+ 8.Nd2 Ne4 9.Nab1 Qh4+ 10.Ke2 Qf2+ 11.Kd3 Nc5#",
     metadata: "A02",
@@ -1887,7 +3556,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 58,
+    id: 108,
     cleanMoves:
         "1.f4 e5 2.Nf3 e4 3.Ng5 d5 4.e3 h6 5.Nxf7 Kxf7 6.Qh5+ g6 7.Qe5 Bg7",
     metadata: "A02",
@@ -1916,7 +3585,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 59,
+    id: 109,
     cleanMoves:
         "1.f4 e5 2.d3 exf4 3.Bxf4 Nc6 4.Nf3 Bc5 5.c3 d6 6.Nbd2 Nf6 7.Bg5 Ng4 8.Bh4 Qxh4+ 9.Nxh4 Bf2#",
     metadata: "A02",
@@ -1949,7 +3618,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 60,
+    id: 110,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.b3 Qh4+ 5.g3 Qxg3+ 6.hxg3 Bxg3#",
     metadata: "A02",
@@ -1976,7 +3645,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 61,
+    id: 111,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.d4 Qh4+ 5.Kd2 Qxd4+ 6.Ke1 Qh4+ 7.Kd2 Nf6 8.Nf3 Ne4+ 9.Ke3 Qf4+ 10.Kd3 Nf2+ 11.Kc3 Qb4#",
     metadata: "A02",
@@ -2013,7 +3682,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 62,
+    id: 112,
     cleanMoves: "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nc6 5.h3 Bg3#",
     metadata: "A02",
     opening: "Bird's opening",
@@ -2036,7 +3705,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 63,
+    id: 113,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nc6 5.e4 g5 6.d4 g4 7.Ng5 Nxd4 8.Qxd4 Bg3+ 9.hxg3 Qxd4",
     metadata: "A02",
@@ -2069,7 +3738,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 64,
+    id: 114,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nf6 5.Nc3 O-O 6.e4 Re8 7.d3 Ng4 8.Be2 Nxh2 9.Nxh2 Bg3+ 10.Kf1 Qd4",
     metadata: "A02",
@@ -2104,7 +3773,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 65,
+    id: 115,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nf6 5.d4 Ne4 6.c4 O-O 7.e3 Re8 8.Qc2 Bg4 9.h3 Qh4+ 10.Nxh4 Bg3+ 11.Qf2 Bxf2#",
     metadata: "A02",
@@ -2141,7 +3810,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 66,
+    id: 116,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nf6 5.d4 Ng4 6.Nc3 Bxh2 7.Bg5 Bg3+ 8.Kd2 f6 9.Bh4 Nf2 10.Qc1 Nxh1",
     metadata: "A02",
@@ -2176,7 +3845,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 67,
+    id: 117,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Bg4 5.e3 Qf6 6.Nc3 Ne7 7.Ne4 Bxf3 8.Nxf6+ gxf6 9.Qxf3",
     metadata: "A02",
@@ -2208,7 +3877,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 68,
+    id: 118,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.c3 g4 6.Qa4+ Nc6 7.Nd4 Qh4+ 8.Kd1 g3 9.b4 Qxh2 10.Rxh2 gxh2",
     metadata: "A02",
@@ -2243,7 +3912,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 69,
+    id: 119,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.c3 g4 6.Qa4+ Nc6 7.Nd4 Qh4+ 8.Kd1 g3 9.b3 Qxh2 10.Rxh2 gxh2",
     metadata: "A02",
@@ -2278,7 +3947,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 70,
+    id: 120,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.d4 g4 6.Ng5 c5 7.h3 Bg3+ 8.Kd2 Qxd4#",
     metadata: "A02",
@@ -2309,7 +3978,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 71,
+    id: 121,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.e4 g4 6.Nd4 Qh4+ 7.Ke2 g3 8.d3 Qxh2 9.Rxh2 gxh2",
     metadata: "A02",
@@ -2342,7 +4011,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 72,
+    id: 122,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.e4 g4 6.Ng1 Qh4+ 7.Ke2 g3 8.Nc3 Qxh2 9.Rxh2 gxh2",
     metadata: "A02",
@@ -2375,30 +4044,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 73,
-    cleanMoves: "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.h3 Bg3#",
-    metadata: "A02",
-    opening: "Bird's opening",
-    openingId: "birds_opening",
-    trapName: "Paris",
-    commentedMoves: "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.h3 Bg3#",
-    moves: [
-      "f4",
-      "e5",
-      "fxe5",
-      "d6",
-      "exd6",
-      "Bxd6",
-      "Nf3",
-      "g5",
-      "h3",
-      "Bg3#",
-    ],
-    fen: "rnbqk1nr/ppp2p1p/8/6p1/8/5NbP/PPPPP1P1/RNBQKB1R w KQkq - 1 6",
-  ),
-
-  ChessTrap(
-    id: 74,
+    id: 123,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 h5 5.g3 h4 6.Nxh4 Rxh4 7.gxh4 Qxh4#",
     metadata: "A02",
@@ -2427,7 +4073,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 75,
+    id: 124,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nh6 5.e4 Ng4 6.Qe2 O-O 7.Nc3 f5 8.d3 fxe4 9.dxe4 Nxh2 10.Nxh2 Bg3+",
     metadata: "A02",
@@ -2462,7 +4108,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 76,
+    id: 125,
     cleanMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.g3 Qg5 5.Nf3 Qxg3+ 6.hxg3 Bxg3#",
     metadata: "A02",
@@ -2489,7 +4135,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 77,
+    id: 126,
     cleanMoves:
         "1.f4 e5 2.fxe5 Qh4+ 3.g3 Qe4 4.Nf3 Nc6 5.Nc3 Qf5 6.e4 Qe6 7.d4 Qe7 8.Bg5 Qb4 9.a3 Qxb2 10.Na4",
     metadata: "A02",
@@ -2523,7 +4169,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 78,
+    id: 127,
     cleanMoves:
         "1.e4 e5 2.Bc4 Bc5 3.c3 Nf6 4.d4 exd4 5.e5 d5 6.exf6 dxc4 7.Qh5 Bf8 8.Qe5+ Be6 9.fxg7",
     metadata: "C23",
@@ -2555,7 +4201,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 79,
+    id: 128,
     cleanMoves:
         "1.e4 e5 2.Bc4 Bc5 3.b4 Bb6 4.Nc3 Nf6 5.Nf3 Nxe4 6.Bxf7+ Kxf7 7.Nxe5+ Ke6 8.Nxe4 Kxe5 9.Bb2+ Kxe4 10.Qf3#",
     metadata: "C23",
@@ -2589,7 +4235,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 80,
+    id: 129,
     cleanMoves: "1.e4 e5 2.Bc4 Bc5 3.d3 Nc6 4.Nh3 Qh4 5.Bg5",
     metadata: "C23",
     opening: "Bishop's opening",
@@ -2602,7 +4248,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 81,
+    id: 130,
     cleanMoves: "1.e4 e5 2.Bc4 Bc5 3.Qh5 g6 4.Qxe5+",
     metadata: "C23",
     opening: "Bishop's opening",
@@ -2614,7 +4260,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 82,
+    id: 131,
     cleanMoves:
         "1.e4 e5 2.Bc4 Bc5 3.Qh5 Qe7 4.Nc3 c6 5.Nf3 Nf6 6.Qxe5 Bxf2+ 7.Kxf2 Ng4+",
     metadata: "C23",
@@ -2643,7 +4289,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 83,
+    id: 132,
     cleanMoves: "1.e4 e5 2.Bc4 Nc6 3.d3 Na5 4.Bxf7+ Kxf7 5.Qh5+ g6 6.Qxe5",
     metadata: "C23",
     opening: "Bishop's opening",
@@ -2667,7 +4313,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 84,
+    id: 133,
     cleanMoves:
         "1.e4 e5 2.Bc4 Nc6 3.d3 Na5 4.Bxf7+ Kxf7 5.Qh5+ Ke6 6.Qf5+ Kd6 7.d4 Qf6 8.dxe5+ Qxe5 9.Bf4",
     metadata: "C23",
@@ -2699,7 +4345,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 85,
+    id: 134,
     cleanMoves:
         "1.e4 e5 2.Bc4 Nc6 3.Qf3 Nf6 4.Bd5 Nd4 5.Qc3 c6 6.Bc4 Nxe4 7.Qd3 d5 8.f3 Qh4+ 9.g3 Nxg3",
     metadata: "C23",
@@ -2732,7 +4378,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 86,
+    id: 135,
     cleanMoves: "1.e4 e5 2.Bc4 Nc6 3.Qg4 d5",
     metadata: "C23",
     opening: "Bishop's opening",
@@ -2744,7 +4390,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 87,
+    id: 136,
     cleanMoves: "1.e4 e5 2.Bc4 Nc6 3.Qh5 d6 4.Qxf7#",
     metadata: "C23",
     opening: "Bishop's opening",
@@ -2756,7 +4402,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 88,
+    id: 137,
     cleanMoves:
         "1.e4 e5 2.Bc4 c6 3.Nf3 d5 4.exd5 Bg4 5.Qe2 Bxf3 6.Qxf3 b5 7.dxc6 bxc4 8.c7 e4 9.Qxe4+ Qe7 10.c8=Q#",
     metadata: "C23",
@@ -2790,7 +4436,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 89,
+    id: 138,
     cleanMoves: "1.e4 e5 2.Bc4 Nf6 3.d3 c6 4.Nf3 d5 5.Bb3 dxe4 6.Nxe5 Qa5+",
     metadata: "C24",
     opening: "Bishop's opening",
@@ -2815,7 +4461,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 90,
+    id: 139,
     cleanMoves:
         "1.e4 e5 2.Bc4 Nf6 3.d3 d5 4.exd5 Nxd5 5.Nf3 Nc6 6.O-O Be7 7.Re1 Bf6 8.Bb5 Bg4 9.Nxe5 Bxd1 10.Nxc6+ Kf8 11.Nxd8",
     metadata: "C24",
@@ -2851,7 +4497,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 91,
+    id: 140,
     cleanMoves: "1.e4 e5 2.Bc4 Nf6 3.d4 exd4 4.e5 d5 5.exd6 Bxd6 6.Qxd4 Bb4+",
     metadata: "C24",
     opening: "Bishop's opening",
@@ -2877,7 +4523,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 92,
+    id: 141,
     cleanMoves:
         "1.e4 e5 2.Bc4 Nf6 3.d4 Nxe4 4.dxe5 d6 5.Qd5 Be6 6.Qxb7 Bxc4 7.Qxa8 dxe5 8.Qxe4",
     metadata: "C24",
@@ -2907,7 +4553,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 93,
+    id: 142,
     cleanMoves: "1.d4 d5 2.e4 Nf6 3.e5 Ne4 4.f3",
     metadata: "D00",
     opening: "Queen's pawn game",
@@ -2919,7 +4565,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 94,
+    id: 143,
     cleanMoves: "1.d4 d5 2.e4 dxe4 3.Nc3 c5 4.Bc4 Qxd4 5.Nd5 Qxc4 6.Nc7#",
     metadata: "D00",
     opening: "Queen's pawn game",
@@ -2943,7 +4589,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 95,
+    id: 144,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nc6 4.d5 Ne5 5.Qd4 Ng6 6.Bb5+ c6 7.dxc6 Qxd4 8.cxb7+ Kd8 9.bxa8=Q",
     metadata: "D00",
@@ -2975,7 +4621,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 96,
+    id: 145,
     cleanMoves: "1.d4 d5 2.e4 dxe4 3.Nc3 e5 4.Qe2 Qxd4 5.Qxe4 Bb4 6.Bd2 Bxc3",
     metadata: "D00",
     opening: "Queen's pawn game",
@@ -3001,7 +4647,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 97,
+    id: 146,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 f5 4.f3 Nc6 5.Bb5 exf3 6.Nxf3 Nh6 7.Bxh6 gxh6 8.Ne5 a6 9.Qh5#",
     metadata: "D00",
@@ -3033,7 +4679,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 98,
+    id: 147,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 c5 5.Bf4 cxd4 6.Nb5 Nd5 7.Bxb8 Ne3 8.Nc7+ Qxc7 9.Bxc7 Nxd1 10.Rxd1",
     metadata: "D00",
@@ -3067,7 +4713,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 99,
+    id: 148,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 c6 6.Bc4 Nbd7 7.Ng5 Nd5 8.Nxd5 cxd5 9.Nxf7 Kxf7 10.Qh5+ g6 11.Qxd5+ e6 12.Qxe6+ Kg7 13.Qf7#",
     metadata: "D00",
@@ -3107,7 +4753,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 100,
+    id: 149,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 Bf5 6.Ne5 h5 7.Qf3 Qc8 8.Bc4 e6 9.Bg5 Ng4 10.Qxf5 exf5 11.Bxf7#",
     metadata: "D00",
@@ -3143,7 +4789,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 101,
+    id: 150,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 Bg4 6.Bf4 Bxf3 7.Qxf3 Qxd4 8.Qxb7 Qxf4 9.Qc8#",
     metadata: "D00",
@@ -3175,7 +4821,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 102,
+    id: 151,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 g6 6.Bc4 Bg7 7.h4 Nbd7 8.Bxf7+ Kxf7 9.Ng5+ Ke8 10.Ne6",
     metadata: "D00",
@@ -3209,7 +4855,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 103,
+    id: 152,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Nc6 6.Bb5 Qxd4 7.Bxc6+ bxc6 8.Qxc6+",
     metadata: "D00",
@@ -3239,7 +4885,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 104,
+    id: 153,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O e5 8.Nb5 Na6 9.a3 Qe4 10.Qf2 Ng4 11.Bg5 f6",
     metadata: "D00",
@@ -3276,7 +4922,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 105,
+    id: 154,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O e5 8.Nb5 Na6 9.Bg5 e4 10.Bxf6 exf3 11.Rd8#",
     metadata: "D00",
@@ -3312,7 +4958,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 106,
+    id: 155,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O Bg4 8.Nb5 Qa5 9.Qxb7 Bxd1 10.Qc8#",
     metadata: "D00",
@@ -3346,7 +4992,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 107,
+    id: 156,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O Bg4 8.Nb5 Na6 9.Qxb7 Rc8 10.Nxc7+",
     metadata: "D00",
@@ -3380,7 +5026,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 108,
+    id: 157,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O Bg4 8.Nb5 Nfd7 9.Qxb7",
     metadata: "D00",
@@ -3412,7 +5058,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 109,
+    id: 158,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O Bg4 8.Nb5 e5 9.Nxc7+ Ke7 10.Qxb7 Qxb7 11.Bc5#",
     metadata: "D00",
@@ -3448,7 +5094,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 110,
+    id: 159,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qe5 7.O-O-O Bg4 8.Qxb7 Qxe3+ 9.Kb1 Bxd1 10.Qc8#",
     metadata: "D00",
@@ -3482,7 +5128,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 111,
+    id: 160,
     cleanMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qg4 7.Qf2 Qb4 8.O-O-O Nc6 9.Nb5 Qa5 10.Qe1",
     metadata: "D00",
@@ -3516,7 +5162,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 112,
+    id: 161,
     cleanMoves: "1.d4 Nf6 2.c4 e5 3.d5 Bb4+ 4.Nc3 d6 5.Qa4+",
     metadata: "A51",
     opening: "Budapest defence",
@@ -3528,7 +5174,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 113,
+    id: 162,
     cleanMoves: "1.d4 Nf6 2.c4 e5 3.d5 Bc5 4.Bg5 Ne4 5.Bxd8 Bxf2#",
     metadata: "A51",
     opening: "Budapest defence",
@@ -3551,7 +5197,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 114,
+    id: 163,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.d5 Bc5 4.Bg5 Ne4 5.Be3 Bxe3 6.fxe3 Qh4+ 7.g3 Nxg3 8.Nf3 Qh6",
     metadata: "A51",
@@ -3582,7 +5228,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 115,
+    id: 164,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.a3 d6 5.exd6 Bxd6 6.g3 Nxf2 7.Kxf2 Bxg3+",
     metadata: "A51",
@@ -3611,7 +5257,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 116,
+    id: 165,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Qc2 Bb4+ 5.Nd2 d5 6.exd6 Bf5 7.Qa4+ Nc6 8.a3 Nc5 9.dxc7 Qe7 10.Qd1 Nd3#",
     metadata: "A51",
@@ -3646,7 +5292,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 117,
+    id: 166,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Qc2 d5 5.cxd5 Qxd5 6.Qxc7 Bb4+ 7.Nd2 Nxd2 8.Qxc8+ Ke7 9.Qc7+ Ke6",
     metadata: "A51",
@@ -3679,7 +5325,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 118,
+    id: 167,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.f3 Bb4+ 5.Bd2 Qh4+ 6.g3 Nxg3 7.Bxb4 Ne4#",
     metadata: "A51",
@@ -3708,7 +5354,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 119,
+    id: 168,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nc3 d6 5.exd6 Bxd6 6.h3 Nxf2 7.Kxf2 Qh4+ 8.Kf3 Qg3+ 9.Ke4 Bf5+ 10.Kxf5 Qg6#",
     metadata: "A52",
@@ -3743,7 +5389,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 120,
+    id: 169,
     cleanMoves: "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Qd4 d6 5.exd6 Bxd6 6.Qxg7 Be5",
     metadata: "A52",
     opening: "Budapest defence",
@@ -3769,7 +5415,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 121,
+    id: 170,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Qd4 d6 5.exd6 Bxd6 6.c5 Nc6 7.Qd1 Nxf2 8.Kxf2 Bg3+ 9.hxg3 Qxd1",
     metadata: "A52",
@@ -3802,7 +5448,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 122,
+    id: 171,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.e4 Nc6 6.Bg5 Bxf2+ 7.Ke2 Nd4+ 8.Qxd4 Bxd4 9.Bxd8 Bxb2",
     metadata: "A52",
@@ -3835,7 +5481,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 123,
+    id: 172,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Nc6 5.Bf4 Bb4+ 6.Nc3 Qe7 7.g3 Ncxe5 8.Ng5 h6 9.Nge4 f5 10.Nd2 Nd3#",
     metadata: "A52",
@@ -3871,7 +5517,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 124,
+    id: 173,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Nc6 5.Bf4 Bb4+ 6.Nbd2 Qe7 7.a3 Ngxe5 8.axb4 Nd3#",
     metadata: "A52",
@@ -3902,7 +5548,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 125,
+    id: 174,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 d6 5.exd6 Bxd6 6.h3 Nxf2 7.Kxf2 Bg3+ 8.Kxg3 Qxd1",
     metadata: "A52",
@@ -3933,7 +5579,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 126,
+    id: 175,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+ 6.Nbd2 Qe7 7.a3 Ncxe5 8.axb4 Nd3#",
     metadata: "A52",
@@ -3964,7 +5610,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 127,
+    id: 176,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+ 6.Nbd2 Qe7 7.h3 Ngxe5 8.Nxe5 Nxe5 9.a3 Nd3#",
     metadata: "A52",
@@ -3997,7 +5643,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 128,
+    id: 177,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 g5 5.Bd2 Nxe5 6.e3 d6 7.Be2 Be6 8.Bc3 Nbc6 9.f4 gxf4 10.exf4",
     metadata: "A52",
@@ -4031,7 +5677,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 129,
+    id: 178,
     cleanMoves: "1.e4 c6 2.Nc3 d5 3.f3 d4 4.Na4 e6 5.Ne2 b5",
     metadata: "B10",
     opening: "Caro-Kann defence",
@@ -4043,7 +5689,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 130,
+    id: 179,
     cleanMoves:
         "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nd7 5.Bc4 Ngf6 6.Neg5 e6 7.Qe2 Nb6 8.Ne5 Qd4 9.Nexf7 Rg8 10.Bxe6",
     metadata: "B10",
@@ -4077,31 +5723,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 131,
-    cleanMoves: "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
-    metadata: "B10",
-    opening: "Caro-Kann defence",
-    openingId: "caro_kann_defence",
-    trapName: "Palma de Mallorca",
-    commentedMoves: "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
-    moves: [
-      "e4",
-      "c6",
-      "Nc3",
-      "d5",
-      "Nf3",
-      "dxe4",
-      "Nxe4",
-      "Nd7",
-      "Qe2",
-      "Ngf6",
-      "Nd6#",
-    ],
-    fen: "r1bqkb1r/pp1npppp/2pN1n2/8/8/5N2/PPPPQPPP/R1B1KB1R b KQkq - 4 6",
-  ),
-
-  ChessTrap(
-    id: 132,
+    id: 180,
     cleanMoves: "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nf6 5.Qe2 Nbd7 6.Nd6#",
     metadata: "B10",
     opening: "Caro-Kann defence",
@@ -4125,7 +5747,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 133,
+    id: 181,
     cleanMoves:
         "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nf6 5.Qe2 Bg4 6.g3 Nbd7 7.Nd6#",
     metadata: "B10",
@@ -4153,7 +5775,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 134,
+    id: 182,
     cleanMoves:
         "1.e4 c6 2.Nc3 d5 3.Nf3 Bg4 4.h3 Bh5 5.Be2 Na6 6.exd5 cxd5 7.Bb5+",
     metadata: "B11",
@@ -4181,7 +5803,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 135,
+    id: 183,
     cleanMoves:
         "1.e4 c6 2.Nc3 d5 3.Qf3 d4 4.Bc4 Nf6 5.e5 dxc3 6.exf6 g6 7.dxc3 Nd7 8.Bxf7+ Kxf7 9.fxe7+ Kxe7 10.Bg5+",
     metadata: "B10",
@@ -4215,7 +5837,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 136,
+    id: 184,
     cleanMoves:
         "1.e4 c6 2.Nc3 d5 3.Qf3 dxe4 4.Nxe4 e5 5.Bc4 Nf6 6.Ng5 Bg4 7.Qb3",
     metadata: "B10",
@@ -4243,7 +5865,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 137,
+    id: 185,
     cleanMoves: "1.e4 c6 2.c4 d5 3.cxd5 cxd5 4.exd5 Nf6 5.Qa4+ Qd7 6.Bb5",
     metadata: "B10",
     opening: "Caro-Kann defence",
@@ -4267,7 +5889,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 138,
+    id: 186,
     cleanMoves:
         "1.e4 c6 2.c4 d5 3.cxd5 cxd5 4.exd5 Nf6 5.Bb5+ Bd7 6.Bc4 Qc7 7.Qb3 b5 8.d6 Qxc4",
     metadata: "B10",
@@ -4298,7 +5920,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 139,
+    id: 187,
     cleanMoves: "1.e4 c6 2.d3 d5 3.Nd2 g6 4.f4 Nh6 5.Ngf3 Ng4 6.Be2 Ne3",
     metadata: "B10",
     opening: "Caro-Kann defence",
@@ -4323,7 +5945,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 140,
+    id: 188,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Bc4 Bf5 5.f3 exf3 6.Nxf3 e6 7.O-O Nf6 8.Ne5 h6 9.Rxf5 exf5 10.Nxf7",
     metadata: "B15",
@@ -4357,7 +5979,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 141,
+    id: 189,
     cleanMoves: "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bf5 5.Qe2 Nd7 6.Nd6#",
     metadata: "B18",
     opening: "Caro-Kann defence",
@@ -4381,7 +6003,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 142,
+    id: 190,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Bd3 Nf6 4.e5 Nfd7 5.e6 fxe6 6.Qh5+ g6 7.Qxg6+ hxg6 8.Bxg6#",
     metadata: "B12",
@@ -4411,7 +6033,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 143,
+    id: 191,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Nf3 Ngf6 6.Qe2 b5 7.Nd6#",
     metadata: "B17",
@@ -4439,7 +6061,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 144,
+    id: 192,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Ng5 h6 6.Ne6 Qa5+ 7.Bd2 Qb6 8.Bd3 fxe6 9.Qh5+ Kd8 10.Ba5",
     metadata: "B17",
@@ -4473,7 +6095,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 145,
+    id: 193,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6+ exf6 6.Bc4 Qe7+ 7.Ne2 Qb4+",
     metadata: "B15",
@@ -4502,7 +6124,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 146,
+    id: 194,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6+ exf6 6.Bc4 Qe7+ 7.Qe2 Be6 8.Be3 Qb4+",
     metadata: "B15",
@@ -4533,7 +6155,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 147,
+    id: 195,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Qd3 e5 6.dxe5 Qa5+ 7.Bd2 Qxe5 8.O-O-O Nxe4 9.Qd8+ Kxd8 10.Bg5+ Kc7 11.Bd8#",
     metadata: "B15",
@@ -4569,7 +6191,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 148,
+    id: 196,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.exd5 cxd5 4.c4 Nf6 5.Nc3 Nc6 6.Bg5 dxc4 7.Bxc4 Qxd4 8.Qxd4 Nxd4 9.O-O-O Nc6 10.Nb5",
     metadata: "B13",
@@ -4603,7 +6225,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 149,
+    id: 197,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.exd5 cxd5 4.Bd3 Nf6 5.Bf4 Qb6 6.Nc3 e6 7.Nb5 Nc6 8.Bc7 Qa6 9.Nd6+ Bxd6 10.Bxa6",
     metadata: "B13",
@@ -4637,7 +6259,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 150,
+    id: 198,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.Nf3 Bg4 5.h3 Bxf3 6.Qxf3 Nc6 7.Bb5 Qb6 8.Nd5 Qa5 9.b4 Qxb5 10.Nxc7+",
     metadata: "B01",
@@ -4671,7 +6293,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 151,
+    id: 199,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 Nf6 5.Bd2 Nc6 6.Bb5 Bd7 7.Nd5 Nb4 8.Bxb4",
     metadata: "B01",
@@ -4701,7 +6323,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 152,
+    id: 200,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd6 4.d4 a6 5.Nge2 b5 6.Bf4 Qb6 7.Nd5",
     metadata: "B01",
@@ -4729,7 +6351,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 153,
+    id: 201,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8 4.Bc4 e5 5.Qh5 g6 6.Qxe5+ Ne7 7.Qxh8",
     metadata: "B01",
@@ -4757,7 +6379,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 154,
+    id: 202,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8 4.Bc4 Nf6 5.Nf3 Bg4 6.Ne5 Bh5 7.Qxh5 Nxh5 8.Bxf7#",
     metadata: "B01",
@@ -4787,7 +6409,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 155,
+    id: 203,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8 4.d4 Nc6 5.Nf3 Bg4 6.d5 Ne5 7.Nxe5 Bxd1 8.Bb5+",
     metadata: "B01",
@@ -4817,7 +6439,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 156,
+    id: 204,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qe5+ 4.Be2 Bf5 5.Nf3 Qc5 6.d4 Qb6 7.O-O Nc6 8.Nd5 Qb5 9.Nxc7+",
     metadata: "B01",
@@ -4849,7 +6471,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 157,
+    id: 205,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qe5+ 4.Be2 Bg4 5.f3 Bh5 6.Nb5 e6 7.d4",
     metadata: "B01",
@@ -4877,7 +6499,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 158,
+    id: 206,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qe6+ 4.Be2 Nf6 5.Nb5 Nd5 6.c4 Qg6 7.cxd5 Qxg2 8.Bf3 Qg6 9.Nxc7+",
     metadata: "B01",
@@ -4909,7 +6531,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 159,
+    id: 207,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nf3 Bg4 4.Be2 Nc6 5.Nc3 Qa5 6.d4 e5 7.Nxe5 Bxe2 8.Nxc6 Qxc3+ 9.bxc3 Bxd1",
     metadata: "B01",
@@ -4942,7 +6564,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 160,
+    id: 208,
     cleanMoves:
         "1.e4 d5 2.exd5 e6 3.dxe6 Bxe6 4.d4 Nf6 5.Nc3 Bd6 6.d5 Nxd5 7.Nxd5 Bxd5 8.Qxd5 Bb4+",
     metadata: "B01",
@@ -4973,7 +6595,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 161,
+    id: 209,
     cleanMoves:
         "1.e4 d5 2.exd5 Nf6 3.Bb5+ Bd7 4.Bxd7+ Qxd7 5.Nc3 Nxd5 6.Nxd5 Qxd5 7.Qf3 Qc4 8.Qxb7 Qc6 9.Qc8#",
     metadata: "B01",
@@ -5005,7 +6627,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 162,
+    id: 210,
     cleanMoves:
         "1.e4 d5 2.exd5 Nf6 3.Nc3 Nxd5 4.Bc4 Nxc3 5.Qf3 e6 6.Qxc3 Nc6 7.Nf3 h6 8.Bb5",
     metadata: "B01",
@@ -5035,7 +6657,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 163,
+    id: 211,
     cleanMoves:
         "1.e4 d5 2.exd5 Nf6 3.Nc3 e6 4.dxe6 Bxe6 5.d4 Bb4 6.Nf3 O-O 7.Bd2 Re8 8.Ng5 Bxc3 9.Bxc3 Bg4+ 10.Be2 Rxe2+",
     metadata: "B01",
@@ -5070,7 +6692,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 164,
+    id: 212,
     cleanMoves:
         "1.e4 d5 2.exd5 Nf6 3.d4 Nxd5 4.c4 Nb4 5.Qa4+ N8c6 6.a3 Na6 7.d5 Nc5 8.Qb5 e6 9.dxc6 b6 10.Ke2 a5",
     metadata: "B01",
@@ -5105,7 +6727,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 165,
+    id: 213,
     cleanMoves:
         "1.e4 d5 2.exd5 Nf6 3.d4 Bg4 4.Be2 Qxd5 5.Bxg4 Qe4+ 6.Be2 Qxg2 7.Bf3",
     metadata: "B01",
@@ -5133,7 +6755,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 166,
+    id: 214,
     cleanMoves: "1.e4 d5 2.Nf3 dxe4 3.Ng5 Qd5 4.d3 exd3 5.Bxd3 Qxg2 6.Be4",
     metadata: "A06",
     opening: "Scandinavian (centre counter) defence",
@@ -5157,7 +6779,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 167,
+    id: 215,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Nxc3 Nf6 5.Bc4 Nxe4 6.Bf4 Qe7 7.Nd5 Qd8 8.Nxc7+ Ke7 9.Qd5",
     metadata: "C21",
@@ -5189,7 +6811,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 168,
+    id: 216,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 d6 6.Nf3 Nf6 7.O-O Nbd7 8.e5 Nxe5 9.Nxe5 dxe5 10.Bxf7+ Ke7 11.Ba3+ Kxf7 12.Qxd8",
     metadata: "C21",
@@ -5227,7 +6849,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 169,
+    id: 217,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Qg5 6.Nf3 Qxg2 7.Bxf7+ Kxf7 8.Rg1 Qh3 9.Ng5+",
     metadata: "C21",
@@ -5259,7 +6881,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 170,
+    id: 218,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.c3 d5 4.Qxd4 Nf6 5.Bg5 Be6 6.e5 h6 7.exf6 hxg5 8.fxg7",
     metadata: "C21",
@@ -5289,7 +6911,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 171,
+    id: 219,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.c3 d5 4.exd5 Qxd5 5.Nf3 Nc6 6.Nxd4 Nxd4 7.cxd4 Nf6 8.Nc3 Bb4 9.Qa4+",
     metadata: "C21",
@@ -5321,7 +6943,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 172,
+    id: 220,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.Bc4 Nf6 4.Qe2 Qe7 5.e5 d5 6.exf6 Qxe2+ 7.Bxe2",
     metadata: "C21",
@@ -5349,7 +6971,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 173,
+    id: 221,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.Bc4 Nf6 4.e5 d5 5.Bb3 Ne4 6.Ne2 Bc5 7.f3 Qh4+ 8.g3 d3 9.gxh4 Bf2+ 10.Kf1 Bh3#",
     metadata: "C21",
@@ -5384,7 +7006,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 174,
+    id: 222,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qa4 Qe7 5.Nc3 Nf6 6.Bg5 d5 7.O-O-O dxe4 8.Nxe4 Qxe4 9.Rd8+ Kxd8 10.Qxe4",
     metadata: "C22",
@@ -5418,7 +7040,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 175,
+    id: 223,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qa4 Nf6 5.Nc3 d5 6.Bg5 dxe4 7.Nxe4 Qe7 8.O-O-O Qxe4 9.Rd8+ Kxd8 10.Qxe4",
     metadata: "C22",
@@ -5452,7 +7074,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 176,
+    id: 224,
     cleanMoves: "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qc3 Bb4",
     metadata: "C22",
     opening: "Centre game",
@@ -5464,7 +7086,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 177,
+    id: 225,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qe3 Nf6 5.Bc4 Ne5 6.Bb3 Bb4+ 7.c3 Bc5 8.Qg3 Bxf2+ 9.Kxf2 Nxe4+",
     metadata: "C22",
@@ -5497,7 +7119,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 178,
+    id: 226,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.Qxd4 Qf6 4.Qe3 Nh6 5.Nc3 Ng4 6.Nd5 Qc6 7.Qf4 d6 8.Bb5 Qxb5 9.Nxc7+",
     metadata: "C21",
@@ -5529,7 +7151,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 179,
+    id: 227,
     cleanMoves:
         "1.e4 e5 2.d4 d5 3.Nc3 exd4 4.Qxd4 dxe4 5.Nd5 c6 6.Qe5+ Kd7 7.Qf5+ Kd6 8.Bf4+ Kc5 9.b4+ Kd4 10.c3#",
     metadata: "C20",
@@ -5563,7 +7185,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 180,
+    id: 228,
     cleanMoves:
         "1.e4 e5 2.d4 d6 3.c3 Bd7 4.Bc4 Nf6 5.Qb3 Qe7 6.Qxb7 Bc6 7.Qc8+ Qd8 8.Bxf7+ Ke7 9.Qe6#",
     metadata: "C20",
@@ -5595,7 +7217,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 181,
+    id: 229,
     cleanMoves: "1.e4 e5 2.d4 f6 3.dxe5 fxe5 4.Qh5+ g6 5.Qxe5+ Ne7 6.Qxh8",
     metadata: "C20",
     opening: "King's pawn game",
@@ -5619,7 +7241,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 182,
+    id: 230,
     cleanMoves:
         "1.Nc3 d5 2.e4 d4 3.Nd5 f5 4.Bc4 fxe4 5.Qh5+ g6 6.Qe5 c6 7.Nc7+ Kd7 8.Be6#",
     metadata: "A00",
@@ -5649,7 +7271,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 183,
+    id: 231,
     cleanMoves:
         "1.Nc3 d5 2.e4 d4 3.Nce2 c5 4.Ng3 e5 5.Nf3 Bg4 6.Bc4 f6 7.Nxe5 Bxd1 8.Bf7+ Ke7 9.Nf5#",
     metadata: "A00",
@@ -5681,7 +7303,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 184,
+    id: 232,
     cleanMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Bc4 Nf6 4.f3 Bf5 5.g4 Bg6 6.g5 exf3 7.Qxf3 Qd4 8.Qxb7 Ng4 9.Qxa8 Qf2+ 10.Kd1 Ne3+ 11.dxe3 Bxc2#",
     metadata: "A00",
@@ -5718,7 +7340,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 185,
+    id: 233,
     cleanMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Nxe4 Nd7 4.Bc4 Ngf6 5.Ng5 e6 6.Qe2 Be7 7.Nxf7 Kxf7 8.Qxe6+",
     metadata: "A00",
@@ -5748,7 +7370,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 186,
+    id: 234,
     cleanMoves: "1.Nc3 d5 2.e4 dxe4 3.Nxe4 e5 4.Bc4 Be7 5.Qh5 Nh6 6.d3",
     metadata: "A00",
     opening: "",
@@ -5772,7 +7394,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 187,
+    id: 235,
     cleanMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Nxe4 e5 4.Bc4 Bf5 5.Qf3 Qd7 6.Ng5 Nc6 7.Bxf7+ Kd8 8.Be6 Bxe6 9.Qxf8+ Qe8 10.Nxe6+",
     metadata: "A00",
@@ -5806,7 +7428,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 188,
+    id: 236,
     cleanMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Nxe4 e5 4.Nf3 Bg4 5.h3 Bxf3 6.Qxf3 Be7 7.Bc4 Nh6 8.d3 g5 9.Qh5 Ng8 10.Qxf7+ Kd7 11.Nc5+",
     metadata: "A00",
@@ -5842,7 +7464,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 189,
+    id: 237,
     cleanMoves:
         "1.d4 f5 2.Nc3 Nf6 3.Nf3 e6 4.e3 Bb4 5.Bb5 c6 6.Ba4 Ne4 7.Qe2 Nxc3 8.bxc3 Bxc3+",
     metadata: "A80",
@@ -5873,7 +7495,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 190,
+    id: 238,
     cleanMoves:
         "1.d4 f5 2.Nc3 Nf6 3.Bg5 d5 4.Bxf6 exf6 5.e3 c6 6.Bd3 Qb6 7.a3 Qxb2 8.Na4",
     metadata: "A80",
@@ -5903,7 +7525,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 191,
+    id: 239,
     cleanMoves:
         "1.d4 f5 2.Nc3 Nf6 3.Bg5 h6 4.Bxf6 exf6 5.e4 Bb4 6.Qh5+ Kf8 7.Bc4 Qe7 8.Nge2 fxe4 9.O-O-O c6 10.Nf4",
     metadata: "A80",
@@ -5937,7 +7559,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 192,
+    id: 240,
     cleanMoves:
         "1.d4 f5 2.c4 Nf6 3.Nc3 g6 4.h4 Bg7 5.h5 Nxh5 6.e4 e6 7.exf5 exf5 8.Rxh5 gxh5 9.Qxh5+ Kf8 10.Nd5 h6 11.Qxf5+ Kg8 12.Qe4 Kf7 13.Be2 Rf8 14.Bxh6 Bxh6 15.Qh7+",
     metadata: "A85",
@@ -5981,7 +7603,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 193,
+    id: 241,
     cleanMoves:
         "1.d4 f5 2.Be3 Nf6 3.Qd3 e6 4.Bg5 c5 5.dxc5 Bxc5 6.g3 Qb6 7.Be3 Qxb2 8.Qc3 Bb4",
     metadata: "A80",
@@ -6012,7 +7634,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 194,
+    id: 242,
     cleanMoves: "1.d4 f5 2.e4 d6 3.c4 Nf6 4.Nc3 b6 5.exf5 Bxf5 6.Qf3 c6 7.Qxf5",
     metadata: "A82",
     opening: "Dutch",
@@ -6039,7 +7661,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 195,
+    id: 243,
     cleanMoves: "1.d4 f5 2.e4 fxe4 3.Nc3 e5 4.Qh5+ g6 5.Qxe5+ Qe7 6.Qxh8",
     metadata: "A82",
     opening: "Dutch",
@@ -6063,7 +7685,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 196,
+    id: 244,
     cleanMoves:
         "1.d4 f5 2.e4 fxe4 3.Nc3 Nf6 4.g4 h6 5.f4 d5 6.Be2 a6 7.g5 Nfd7 8.Bh5+ g6 9.Bxg6#",
     metadata: "A82",
@@ -6095,7 +7717,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 197,
+    id: 245,
     cleanMoves:
         "1.d4 f5 2.e4 fxe4 3.Nc3 Nf6 4.Bg5 h6 5.Bxf6 exf6 6.Qh5+ Ke7 7.Bc4 Nc6 8.Qf7+ Kd6 9.Nxe4#",
     metadata: "A83",
@@ -6127,7 +7749,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 198,
+    id: 246,
     cleanMoves: "1.d4 f5 2.e4 g6 3.exf5 gxf5 4.Qh5#",
     metadata: "A82",
     opening: "Dutch",
@@ -6139,7 +7761,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 199,
+    id: 247,
     cleanMoves: "1.d4 f5 2.g4 fxg4 3.h3 Nf6 4.hxg4 Nxg4 5.Qd3 Nf6 6.Rxh7",
     metadata: "A80",
     opening: "Dutch",
@@ -6163,7 +7785,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 200,
+    id: 248,
     cleanMoves:
         "1.d4 f5 2.Bg5 c6 3.Nc3 d5 4.e4 dxe4 5.Bc4 g6 6.f3 Bg7 7.fxe4 Bxd4 8.Qd2 Bf6 9.Bf7+ Kxf7 10.Qxd8",
     metadata: "A80",
@@ -6197,7 +7819,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 201,
+    id: 249,
     cleanMoves:
         "1.d4 f5 2.Bg5 g6 3.Nc3 Nh6 4.e4 Nf7 5.h4 Nxg5 6.hxg5 d6 7.exf5 Bxf5 8.g4 Bd7 9.Bd3 Bg7 10.Rxh7",
     metadata: "A80",
@@ -6231,7 +7853,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 202,
+    id: 250,
     cleanMoves:
         "1.d4 f5 2.Bg5 h6 3.Bh4 g5 4.Bg3 f4 5.e3 h5 6.Bd3 Rh6 7.Qxh5+ Rxh5 8.Bg6#",
     metadata: "A80",
@@ -6261,7 +7883,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 203,
+    id: 251,
     cleanMoves: "1.c4 c5 2.Nc3 e5 3.e3 Ne7 4.Nb5 d5 5.Qa4 Bd7 6.Nd6#",
     metadata: "A34",
     opening: "English opening",
@@ -6285,7 +7907,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 204,
+    id: 252,
     cleanMoves: "1.c4 c5 2.Nc3 e6 3.Nf3 Ne7 4.Ne4 f5 5.Nd6#",
     metadata: "A34",
     opening: "English opening",
@@ -6297,7 +7919,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 205,
+    id: 253,
     cleanMoves: "1.c4 c5 2.d4 cxd4 3.Nf3 e5 4.Nxe5 Qa5+",
     metadata: "A30",
     opening: "English opening",
@@ -6309,7 +7931,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 206,
+    id: 254,
     cleanMoves:
         "1.c4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 g6 5.b3 Bg7 6.Bb2 Nxd4 7.Bxd4 Qa5+ 8.Nc3 Qxc3+ 9.Bxc3 Bxc3+ 10.Qd2 Bxd2+",
     metadata: "A30",
@@ -6344,7 +7966,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 207,
+    id: 255,
     cleanMoves: "1.c4 d5 2.cxd5 Nf6 3.e4 Nxe4 4.Qa4+",
     metadata: "A10",
     opening: "English opening",
@@ -6356,7 +7978,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 208,
+    id: 256,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nc6 3.Nf3 f5 4.d4 e4 5.Bg5 Nf6 6.d5 exf3 7.dxc6 fxg2 8.cxd7+ Nxd7 9.Bxd8 gxh1=Q",
     metadata: "A27",
@@ -6389,7 +8011,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 209,
+    id: 257,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nc6 3.Nf3 g6 4.d4 exd4 5.Nd5 h6 6.Nxd4 Bg7 7.Bf4 d6 8.Nb5 Bxb2 9.Nbxc7+",
     metadata: "A27",
@@ -6421,7 +8043,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 210,
+    id: 258,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nc6 3.g3 Nf6 4.Bg2 Bb4 5.Nd5 Nxd5 6.cxd5 Nd4 7.e3 Nf5 8.Qg4",
     metadata: "A25",
@@ -6451,7 +8073,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 211,
+    id: 259,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nf6 3.d3 b6 4.b3 Bb7 5.Bb2 Bc5 6.Nd5 Nxd5 7.cxd5 Bxd5 8.Bxe5 Bb4+",
     metadata: "A22",
@@ -6482,7 +8104,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 212,
+    id: 260,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nf6 3.Nf3 Nc6 4.d4 exd4 5.Nxd4 Bb4 6.Bg5 h6 7.Bh4 Ne4 8.Bxd8 Nxc3 9.Nxc6 Nxd1+ 10.Nxb4",
     metadata: "A28",
@@ -6516,7 +8138,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 213,
+    id: 261,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nf6 3.Nf3 Nc6 4.g3 Bb4 5.Nd5 Nxd5 6.cxd5 e4 7.dxc6 exf3 8.Qb3",
     metadata: "A29",
@@ -6546,7 +8168,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 214,
+    id: 262,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nf6 3.Nf3 e4 4.Ng5 Be7 5.Ngxe4 d5 6.Nxf6+ Bxf6 7.Nxd5 O-O 8.e3 b5 9.Qf3 Bb7 10.Nxf6+",
     metadata: "A22",
@@ -6580,7 +8202,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 215,
+    id: 263,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nf6 3.g3 c6 4.d3 d5 5.Bg5 d4 6.Ne4 Nxe4 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kd1 Kxd8",
     metadata: "A23",
@@ -6613,7 +8235,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 216,
+    id: 264,
     cleanMoves:
         "1.c4 e5 2.Nc3 Nf6 3.g3 Bc5 4.Bg2 d6 5.e3 Nc6 6.Nge2 Be6 7.Nd5 Nb4 8.Nxb4 Bxb4 9.Qa4+",
     metadata: "A22",
@@ -6645,7 +8267,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 217,
+    id: 265,
     cleanMoves: "1.c4 d6 2.Nf3 Bg4 3.Qb3 Qc8 4.h3 Bh5 5.Qb5+",
     metadata: "A10",
     opening: "English opening",
@@ -6657,7 +8279,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 218,
+    id: 266,
     cleanMoves: "1.c4 Nf6 2.Nc3 d5 3.d4 Bf5 4.Qb3 Nc6 5.cxd5 Nxd4 6.Qa4+",
     metadata: "A16",
     opening: "English opening",
@@ -6681,7 +8303,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 219,
+    id: 267,
     cleanMoves:
         "1.c4 Nf6 2.Nc3 d5 3.cxd5 Nxd5 4.g3 Nxc3 5.bxc3 e6 6.Bg2 Be7 7.Rb1 O-O 8.Bxb7 Bxb7 9.Rxb7 Qd5",
     metadata: "A16",
@@ -6714,7 +8336,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 220,
+    id: 268,
     cleanMoves: "1.c4 Nf6 2.Nc3 e6 3.e4 Nc6 4.Nge2 b6 5.g3 Ne5 6.d4 Nf3#",
     metadata: "A18",
     opening: "English opening",
@@ -6740,7 +8362,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 221,
+    id: 269,
     cleanMoves:
         "1.c4 Nf6 2.f4 e6 3.d3 Bc5 4.Nf3 O-O 5.b3 Ng4 6.h3 Bf2+ 7.Kd2 Ne3",
     metadata: "A15",
@@ -6769,7 +8391,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 222,
+    id: 270,
     cleanMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 d5 4.exd6 Bxd6 5.Nc3 Nf6 6.Bg5 Bf5 7.Nd5 Bb4+ 8.Nxb4 Nxb4 9.Nd4 Qxd4 10.Qxd4 Nxc2+",
     metadata: "A40",
@@ -6804,7 +8426,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 223,
+    id: 271,
     cleanMoves: "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.c3 Nxe5 5.Bd2 Nd3#",
     metadata: "A40",
     opening: "Queen's pawn",
@@ -6827,7 +8449,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 224,
+    id: 272,
     cleanMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Nc3 Nxe5 5.Nxe5 Qxe5 6.Nd5 Qd6 7.Bf4",
     metadata: "A40",
@@ -6855,7 +8477,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 225,
+    id: 273,
     cleanMoves: "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Nbd2 Nxe5 5.c3 Nd3#",
     metadata: "A40",
     opening: "Queen's pawn",
@@ -6878,7 +8500,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 226,
+    id: 274,
     cleanMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Qd5 h6 5.Nc3 g5 6.Nb5 Qd8 7.Bd2 Nge7 8.Qd6 Bg7 9.Nxc7+ Kf8 10.Nxa8",
     metadata: "A40",
@@ -6912,7 +8534,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 227,
+    id: 275,
     cleanMoves: "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Qd2 Qxb2 6.Qc3 Bb4",
     metadata: "A40",
     opening: "Queen's pawn",
@@ -6938,38 +8560,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 228,
-    cleanMoves:
-        "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3 Bb4 7.Qd2 Bxc3 8.Qxc3 Qc1#",
-    metadata: "A40",
-    opening: "Queen's pawn",
-    openingId: "queens_pawn_a40",
-    trapName: "Czernowitz",
-    commentedMoves:
-        "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3 Bb4 7.Qd2 Bxc3 8.Qxc3 Qc1#",
-    moves: [
-      "d4",
-      "e5",
-      "dxe5",
-      "Nc6",
-      "Nf3",
-      "Qe7",
-      "Bf4",
-      "Qb4+",
-      "Bd2",
-      "Qxb2",
-      "Bc3",
-      "Bb4",
-      "Qd2",
-      "Bxc3",
-      "Qxc3",
-      "Qc1#",
-    ],
-    fen: "r1b1k1nr/pppp1ppp/2n5/4P3/8/2Q2N2/P1P1PPPP/RNq1KB1R w KQkq - 1 9",
-  ),
-
-  ChessTrap(
-    id: 229,
+    id: 276,
     cleanMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 f6 4.Bf4 fxe5 5.Nxe5 Qf6 6.Nxc6 dxc6 7.Bc1 Bg4 8.h3 Rd8 9.Nd2 Bc5 10.f3 Qh4+ 11.g3 Qxg3#",
     metadata: "A40",
@@ -7006,7 +8597,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 230,
+    id: 277,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Bc5 6.d4 exd4 7.cxd4 Bb6 8.d5 Qf6 9.e5 Nxe5 10.Nxe5 Qxf2#",
     metadata: "C51",
@@ -7041,7 +8632,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 231,
+    id: 278,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Bc5 6.O-O Nf6 7.d4 Bb6 8.dxe5 Nxe4 9.Qd5",
     metadata: "C51",
@@ -7073,7 +8664,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 232,
+    id: 279,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Bc5 6.O-O Nf6 7.d4 exd4 8.cxd4 Be7 9.e5 Na5 10.exf6 Bxf6 11.Qe1+",
     metadata: "C51",
@@ -7109,7 +8700,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 233,
+    id: 280,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Be7 6.d4 Na5 7.Be2 Nf6 8.dxe5 Nxe4 9.Qa4",
     metadata: "C51",
@@ -7141,7 +8732,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 234,
+    id: 281,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Be7 6.d4 d6 7.Qb3 Kf8 8.Bxf7 g6 9.Bxg8 Rxg8 10.Bh6+",
     metadata: "C51",
@@ -7175,7 +8766,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 235,
+    id: 282,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Be7 6.d4 d6 7.Qb3 Nh6 8.Bxh6 gxh6 9.Bxf7+ Kf8 10.Bh5",
     metadata: "C51",
@@ -7209,7 +8800,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 236,
+    id: 283,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.Bb5 Nd4 5.Bc4 Nxe4 6.Bxf7+ Kxf7 7.Nxe4 Nxf3+ 8.Qxf3+ Kg8 9.Ng5 Qf6 10.Qd5+",
     metadata: "C48",
@@ -7243,7 +8834,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 237,
+    id: 284,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.Bb5 Nd4 5.Nxe5 Qe7 6.f4 Nxb5 7.Nxb5 d6 8.Nd3 Bg4",
     metadata: "C48",
@@ -7274,7 +8865,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 238,
+    id: 285,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 Bb4 5.d5 Ne7 6.Nxe5 Nxe4 7.Qd4 Bxc3+ 8.bxc3 Nf6 9.Bg5 Ng6 10.Ng4",
     metadata: "C47",
@@ -7308,7 +8899,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 239,
+    id: 286,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nxd4 Bc5 6.Be3 Nxd4 7.Bxd4 Qe7 8.Be2 O-O 9.e5 Ne8 10.Nd5",
     metadata: "C47",
@@ -7342,7 +8933,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 240,
+    id: 287,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nxd4 d5 6.Bb5 Qd6 7.exd5 Nxd5 8.Nxd5 Qxd5 9.Nxc6",
     metadata: "C47",
@@ -7374,7 +8965,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 241,
+    id: 288,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nxd4 d5 6.Bb5 Qd6 7.exd5 Nxd5 8.Nxc6 bxc6 9.Qxd5",
     metadata: "C47",
@@ -7406,7 +8997,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 242,
+    id: 289,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nd5 Nxd5 6.exd5 Nb4 7.Bc4 Qe7+ 8.Kd2 g6 9.Re1 Bh6+",
     metadata: "C47",
@@ -7439,7 +9030,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 243,
+    id: 290,
     cleanMoves:
         "1.e4 e6 2.d3 d5 3.Nd2 Nc6 4.Ne2 e5 5.exd5 Qxd5 6.c4 Nb4 7.cxd5 Nxd3#",
     metadata: "A08",
@@ -7468,7 +9059,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 244,
+    id: 291,
     cleanMoves:
         "1.e4 e6 2.d3 d5 3.Nd2 Nf6 4.g3 dxe4 5.dxe4 Bc5 6.Ngf3 Ng4 7.Qe2 Bxf2+ 8.Kd1 Ne3+",
     metadata: "A08",
@@ -7499,7 +9090,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 245,
+    id: 292,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bd6 5.Bd3 Ne7 6.Bg5 O-O 7.Nf6+ gxf6 8.Bxf6 Qd7 9.Bxh7+ Kxh7 10.Qh5+ Kg8 11.Qh8#",
     metadata: "C10",
@@ -7535,7 +9126,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 246,
+    id: 293,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bd7 5.Nf3 Bc6 6.Bd3 Nf6 7.Nxf6+ Qxf6 8.Bg5 Bxf3 9.Qd2 Qxd4 10.Bb5+",
     metadata: "C10",
@@ -7569,7 +9160,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 247,
+    id: 294,
     cleanMoves: "1.e4 e6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Ne7 5.Bd3 g6 6.Nf6#",
     metadata: "C10",
     opening: "French defence",
@@ -7593,7 +9184,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 248,
+    id: 295,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.Bd2 dxe4 5.Nxe4 Qxd4 6.Bd3 Bxd2+ 7.Qxd2 Nf6 8.Bb5+",
     metadata: "C15",
@@ -7623,7 +9214,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 249,
+    id: 296,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.Bd3 c5 5.exd5 Qxd5 6.Nf3 cxd4 7.a3 Qa5 8.axb4 Qxa1 9.Nxd4",
     metadata: "C15",
@@ -7655,7 +9246,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 250,
+    id: 297,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.exd5 Qxd5 5.Qg4 Ne7 6.Qxg7 Qe4+ 7.Kd1",
     metadata: "C15",
@@ -7683,7 +9274,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 251,
+    id: 298,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.Nge2 dxe4 5.a3 Bxc3+ 6.Nxc3 Nc6 7.Qg4 Nxd4 8.Qxg7 Nxc2+ 9.Ke2 Qd3#",
     metadata: "C15",
@@ -7716,7 +9307,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 252,
+    id: 299,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.e5 c5 5.dxc5 Bxc3+ 6.bxc3 Nc6 7.Qg4 Nxe5 8.Qxg7 Qf6 9.Bh6",
     metadata: "C17",
@@ -7748,7 +9339,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 253,
+    id: 300,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.e5 Qd7 5.Nf3 b6 6.Bb5 Bxc3+ 7.bxc3 Qxb5",
     metadata: "C16",
@@ -7777,7 +9368,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 254,
+    id: 301,
     cleanMoves: "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.f3 dxe4 5.fxe4 Qh4+ 6.g3 Qxe4+",
     metadata: "C15",
     opening: "French defence",
@@ -7803,7 +9394,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 255,
+    id: 302,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Nf6 4.Bg5 Be7 5.e5 Nfd7 6.h4 c5 7.Bxe7 Kxe7 8.dxc5 Qa5 9.Qd2 h6 10.Nxd5+ exd5 11.Qxa5",
     metadata: "C13",
@@ -7839,7 +9430,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 256,
+    id: 303,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.c4 dxe4 4.Nc3 Bb4 5.Bd2 Qxd4 6.Qa4+ Nc6 7.O-O-O Bxc3 8.Bg5 Bxb2+ 9.Kb1 Qb6 10.Rd8#",
     metadata: "C00",
@@ -7873,7 +9464,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 257,
+    id: 304,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Nc6 5.Nf3 b6 6.Bb5 Qd5 7.Qe2 Nf6 8.c4 Bb4+ 9.Kf1 Qd7 10.Ne5",
     metadata: "C03",
@@ -7907,7 +9498,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 258,
+    id: 305,
     cleanMoves: "1.e4 e6 2.d4 d5 3.exd5 exd5 4.Nf3 Bd6 5.c4 Ne7 6.c5",
     metadata: "C00",
     opening: "French defence",
@@ -7931,7 +9522,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 259,
+    id: 306,
     cleanMoves: "1.e4 e6 2.d4 d5 3.exd5 exd5 4.Nf3 Bd6 5.Bd3 Bg4 6.Bg5 Bxf3",
     metadata: "C00",
     opening: "French defence",
@@ -7957,7 +9548,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 260,
+    id: 307,
     cleanMoves: "1.e4 e6 2.d4 Nf6 3.Bd3 h6 4.Nf3 Na6 5.e5 Nh5 6.g4",
     metadata: "C00",
     opening: "French defence",
@@ -7982,7 +9573,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 261,
+    id: 308,
     cleanMoves:
         "1.e4 e6 2.d4 Nf6 3.Bg5 Be7 4.Bd3 O-O 5.Nc3 Nxe4 6.Bxe7 Nxc3 7.Bxh7+ Kh8 8.Qh5",
     metadata: "C00",
@@ -8012,7 +9603,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 262,
+    id: 309,
     cleanMoves:
         "1.e4 e6 2.Qf3 d5 3.exd5 exd5 4.d4 Nf6 5.Nc3 c6 6.Be3 Bd6 7.Nh3 Bg4",
     metadata: "C00",
@@ -8041,7 +9632,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 263,
+    id: 310,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 d6 5.d4 Bb6 6.dxe5 Nxe5 7.Nxe5 dxe5 8.Bxf7+ Kxf7 9.Qxd8",
     metadata: "C53",
@@ -8073,7 +9664,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 264,
+    id: 311,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 d6 5.d4 exd4 6.cxd4 Bb6 7.d5 Na5 8.Bd3 c6 9.b4",
     metadata: "C53",
@@ -8105,7 +9696,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 265,
+    id: 312,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Qe7 5.O-O d6 6.d4 Bb6 7.Bg5 f6 8.Bh4 g5 9.Nxg5 fxg5 10.Qh5+ Kd7 11.Bxg5 Qg7 12.Be6+ Kxe6 13.Qe8+",
     metadata: "C53",
@@ -8145,7 +9736,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 266,
+    id: 313,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 Bb6 6.dxe5 Nxe4 7.Qd5 Bxf2+ 8.Ke2",
     metadata: "C54",
@@ -8175,7 +9766,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 267,
+    id: 314,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb6 7.e5 Ng4 8.h3 Nh6 9.d5 Ne7 10.d6 Ng6 11.Bg5 f6 12.exf6 gxf6 13.Qe2+ Kf8 14.Bxh6#",
     metadata: "C54",
@@ -8217,7 +9808,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 268,
+    id: 315,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb6 7.Ng5 O-O 8.e5 Ne8 9.Qh5 h6 10.Nxf7",
     metadata: "C54",
@@ -8251,7 +9842,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 269,
+    id: 316,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.e5 Ng4 7.Bd5 Nxf2 8.Bxf7+ Kxf7 9.Ng5+ Kg8 10.Qb3+ d5 11.exd6+ Be6 12.Qxe6+ Kf8 13.Qf7#",
     metadata: "C54",
@@ -8291,7 +9882,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 270,
+    id: 317,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.Ng5 O-O 6.d3 h6 7.h4 hxg5 8.hxg5 Nh7 9.Qh5",
     metadata: "C54",
@@ -8323,7 +9914,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 271,
+    id: 318,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.d3 Nge7 5.Be3 Bb6 6.Nc3 d6 7.Ng5 Qd7 8.Bxf7+ Kf8 9.Be6",
     metadata: "C50",
@@ -8355,7 +9946,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 272,
+    id: 319,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O d6 5.Nc3 Bg4 6.d3 Nd4 7.Be3 Nxf3+ 8.gxf3 Bh3 9.Re1 Bxe3 10.fxe3 Qg5+",
     metadata: "C50",
@@ -8390,7 +9981,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 273,
+    id: 320,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O d6 5.d3 Bg4 6.Nc3 Nd4 7.Be3 Nxf3+ 8.gxf3 Bh3 9.Re1 Bxe3 10.fxe3 Qg5+ 11.Kf2 Qg2#",
     metadata: "C50",
@@ -8427,7 +10018,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 274,
+    id: 321,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O f5 5.d4 exd4 6.e5 d6 7.exd6 Qxd6 8.Re1+ Nge7 9.Ng5 Ne5 10.Bf4 N7g6 11.Bxe5 Nxe5 12.Nf7",
     metadata: "C50",
@@ -8465,7 +10056,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 275,
+    id: 322,
     cleanMoves: "1.g4 d5 2.e3 e5 3.f4 Qh4+ 4.Ke2 Bxg4+ 5.Nf3 Bxf3+ 6.Kxf3 Qh5+",
     metadata: "A00",
     opening: "",
@@ -8491,7 +10082,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 276,
+    id: 323,
     cleanMoves: "1.g4 d5 2.Bg2 Bxg4 3.c4 c6 4.Qb3 Qc7 5.cxd5 cxd5 6.Bxd5 Qxc1+",
     metadata: "A00",
     opening: "",
@@ -8517,7 +10108,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 277,
+    id: 324,
     cleanMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 c6 4.Qb3 Qc8 5.cxd5 cxd5 6.Nc3 e6 7.Nxd5 exd5 8.Bxd5 Be6 9.Qxb7 Bxd5 10.Qxc8+",
     metadata: "A00",
@@ -8551,7 +10142,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 278,
+    id: 325,
     cleanMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 c6 4.cxd5 Nf6 5.Qb3 Qb6 6.dxc6 Qxb3 7.cxb7 Qxb7 8.Bxb7",
     metadata: "A00",
@@ -8581,7 +10172,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 279,
+    id: 326,
     cleanMoves: "1.g4 d5 2.Bg2 Bxg4 3.c4 c6 4.cxd5 cxd5 5.Qb3 e6 6.Qa4+",
     metadata: "A00",
     opening: "",
@@ -8605,7 +10196,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 280,
+    id: 327,
     cleanMoves: "1.g4 d5 2.Bg2 Bxg4 3.c4 e6 4.Qb3 c6 5.cxd5 cxd5 6.Qa4+",
     metadata: "A00",
     opening: "",
@@ -8629,7 +10220,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 281,
+    id: 328,
     cleanMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 e6 4.Qb3 Nc6 5.cxd5 exd5 6.Bxd5 Bd6 7.Bxf7+ Kf8 8.Bxg8 Rxg8 9.Qxb7 Ne5 10.d4 Ng6 11.Nc3 Kf7 12.h3 Bh5 13.Qd5+",
     metadata: "A00",
@@ -8669,7 +10260,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 282,
+    id: 329,
     cleanMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 e6 4.cxd5 exd5 5.Qb3 Nf6 6.Qxb7 Ne4 7.Qxa8 Bc5 8.Bxe4 dxe4 9.Qxe4+",
     metadata: "A00",
@@ -8701,7 +10292,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 283,
+    id: 330,
     cleanMoves: "1.g4 d5 2.Bg2 Bxg4 3.c4 Nf6 4.cxd5 Nxd5 5.Qb3 e6 6.Qa4+",
     metadata: "A00",
     opening: "",
@@ -8725,7 +10316,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 284,
+    id: 331,
     cleanMoves:
         "1.g4 d5 2.Bg2 g6 3.h4 Bxg4 4.c4 c6 5.cxd5 cxd5 6.Qb3 e6 7.Qa4+",
     metadata: "A00",
@@ -8753,7 +10344,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 285,
+    id: 332,
     cleanMoves: "1.g4 d5 2.g5 e5 3.c4 dxc4 4.Na3 Bxa3 5.bxa3 Qd4 6.Rb1 Qe4",
     metadata: "A00",
     opening: "",
@@ -8778,7 +10369,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 286,
+    id: 333,
     cleanMoves:
         "1.g4 d5 2.Bg2 e5 3.c4 Be6 4.Nc3 d4 5.Bxb7 dxc3 6.Bxa8 Bc5 7.Qa4+ Bd7 8.Qa5",
     metadata: "A00",
@@ -8808,7 +10399,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 287,
+    id: 334,
     cleanMoves:
         "1.g4 e5 2.Bg2 Bc5 3.h3 Qh4 4.e3 Nf6 5.d4 exd4 6.exd4 Bd6 7.Nf3",
     metadata: "A00",
@@ -8836,7 +10427,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 288,
+    id: 335,
     cleanMoves: "1.g4 e5 2.Bg2 d6 3.c4 Bxg4 4.Bxb7",
     metadata: "A00",
     opening: "",
@@ -8848,7 +10439,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 289,
+    id: 336,
     cleanMoves: "1.g4 e5 2.Bg2 d6 3.h3 f5 4.gxf5 Bxf5 5.Bxb7",
     metadata: "A00",
     opening: "",
@@ -8860,7 +10451,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 290,
+    id: 337,
     cleanMoves:
         "1.g4 e5 2.Bg2 h5 3.gxh5 d5 4.d4 e4 5.Bf4 Bd6 6.Bg3 Nf6 7.Qd2 Na6 8.Nc3 c6 9.Qg5 Rxh5 10.Qxg7 Bf8",
     metadata: "A00",
@@ -8895,7 +10486,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 291,
+    id: 338,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Qb3 dxc4 5.Qxc4 Be6 6.Qb5+ Nc6 7.Nf3 Nd5 8.e4 a6 9.Qb3 Ne3 10.Nd5 Nxd5 11.exd5 Qxd5 12.Qxb7 Qe4+ 13.Be3 Ra7",
     metadata: "D81",
@@ -8936,7 +10527,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 292,
+    id: 339,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nf3 Bg7 4.Nc3 d5 5.cxd5 Nxd5 6.e4 Nxc3 7.bxc3 c5 8.Be3 Qa5 9.Qd2 Nc6 10.Rb1 cxd4 11.cxd4 O-O 12.d5 Bc3",
     metadata: "D85",
@@ -8975,7 +10566,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 293,
+    id: 340,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3 Bg7 7.Nf3 c5 8.Rb1 Qa5 9.Rb5 Qxc3+ 10.Bd2 Qa3 11.Qc2 Nc6 12.Rb3 Qa4 13.Bb5",
     metadata: "D85",
@@ -9015,7 +10606,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 294,
+    id: 341,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Bg5 Ne4 6.Nxd5 Nxg5 7.Nxg5 e6",
     metadata: "D91",
@@ -9044,7 +10635,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 295,
+    id: 342,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.g4 Bg7 5.g5 Ne4 6.Nxd5 c6 7.Nc3 Qa5 8.Bd2 Qf5 9.f4 Bxd4 10.Bh3 Qxh3 11.Nxh3 Bxh3 12.Nxe4 Bg2",
     metadata: "D80",
@@ -9083,7 +10674,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 296,
+    id: 343,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Bg5 Ne4 5.cxd5 Nxg5 6.h4 Ne4 7.Nxe4 Qxd5 8.Nc5 e5 9.Nf3 exd4 10.Qa4+ Nc6 11.Nb3 b5",
     metadata: "D80",
@@ -9121,7 +10712,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 297,
+    id: 344,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Bg5 Ne4 5.Nxe4 dxe4 6.g3 Bg7 7.e3 c5 8.Bg2 cxd4 9.Bxe4 Qa5+ 10.Qd2 Qxg5",
     metadata: "D80",
@@ -9156,7 +10747,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 298,
+    id: 345,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 exd4 5.c3 dxc3 6.Qd5 d6 7.Qxf7+ Kd7 8.Be6#",
     metadata: "C44",
@@ -9186,7 +10777,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 299,
+    id: 346,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 exd4 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 O-O 8.Bc1 Nb4 9.Qh5 Nc2+",
     metadata: "C44",
@@ -9219,7 +10810,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 300,
+    id: 347,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 exd4 5.c3 Nf6 6.e5 Ne4 7.Bd5 Ng5 8.Nxg5 Bxg5 9.Qh5",
     metadata: "C50",
@@ -9251,7 +10842,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 301,
+    id: 348,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 exd4 5.Nxd4 Nxd4 6.Qxd4 Nf6 7.e5 c5 8.Qf4",
     metadata: "C44",
@@ -9281,7 +10872,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 302,
+    id: 349,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 d6 5.c3 Nf6 6.d5 Nb8 7.Be2 Nxe4 8.Qa4+",
     metadata: "C50",
@@ -9311,7 +10902,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 303,
+    id: 350,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 d6 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Qh5 g6 8.Qxe5",
     metadata: "C50",
@@ -9341,7 +10932,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 304,
+    id: 351,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Bc4 d5 4.exd5 Qh4+ 5.Kf1 f3 6.Qe1+ Qxe1+ 7.Kxe1 fxg2",
     metadata: "C33",
@@ -9370,7 +10961,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 305,
+    id: 352,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Bc4 d5 4.Bxd5 Nf6 5.Nc3 Bb4 6.d3 Nxd5 7.exd5 O-O 8.Qf3 Re8+ 9.Nge2 Bxc3+ 10.bxc3 Qh4+ 11.g3 Bg4",
     metadata: "C33",
@@ -9407,7 +10998,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 306,
+    id: 353,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Bc4 Nf6 4.d3 d5 5.exd5 Nxd5 6.Qh5 c6 7.Bxf4 Qe7+ 8.Qe5 Nxf4",
     metadata: "C33",
@@ -9438,7 +11029,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 307,
+    id: 354,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Bc4 Qh4+ 4.Kf1 Nf6 5.Nf3 Qh5 6.Qe1 b5 7.e5 Ng4 8.Qe4 c6 9.Bxb5 d5 10.exd6+",
     metadata: "C33",
@@ -9472,7 +11063,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 308,
+    id: 355,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 d5 4.Nc3 dxe4 5.Nxe4 Bg4 6.Qe2 Bxf3 7.Nf6#",
     metadata: "C36",
@@ -9500,7 +11091,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 309,
+    id: 356,
     cleanMoves: "1.e4 e5 2.f4 exf4 3.Nf3 d5 4.exd5 Qxd5 5.Nc3 Qc6 6.Bb5",
     metadata: "C36",
     opening: "King's gambit",
@@ -9524,7 +11115,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 310,
+    id: 357,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 d6 4.Bc4 Be6 5.Bxe6 fxe6 6.d4 Qf6 7.Nc3 Ne7 8.Qe2 c6 9.e5 dxe5 10.Ne4 Qh6 11.Nd6+",
     metadata: "C34",
@@ -9560,7 +11151,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 311,
+    id: 358,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 d6 4.Bc4 Nh6 5.O-O Be7 6.d4 g5 7.Nc3 Bd7 8.h4 f6 9.Nh2 Nc6 10.Qh5+ Kf8 11.Qxh6+ Ke8 12.Qh5+ Kf8 13.Qf7#",
     metadata: "C34",
@@ -9600,7 +11191,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 312,
+    id: 359,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 Be7 4.Bc4 Nf6 5.Nc3 Nxe4 6.Bxf7+ Kxf7 7.Ne5+ Ke6 8.Qg4+ Kxe5 9.d4+ Kxd4 10.Be3+ Ke5 11.Bxf4+ Kf6 12.Bxc7 Qxc7 13.Nd5+",
     metadata: "C35",
@@ -9640,7 +11231,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 313,
+    id: 360,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 Nf6 4.Nc3 d5 5.exd5 Nxd5 6.Nxd5 Qxd5 7.d4 Be7 8.Bxf4 Qe4+",
     metadata: "C34",
@@ -9671,7 +11262,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 314,
+    id: 361,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Nc3 g4 5.Nd4 Qh4+ 6.Ke2 Bc5 7.Nf5 Qf2+ 8.Kd3 Nc6 9.Qe2 Ne5#",
     metadata: "C37",
@@ -9704,7 +11295,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 315,
+    id: 362,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 f6 5.Nxg5 fxg5 6.Qh5+ Ke7 7.Qxg5+ Ke8 8.Qh5+ Ke7 9.Qe5#",
     metadata: "C37",
@@ -9736,7 +11327,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 316,
+    id: 363,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.Ne5 Nh6 6.Nxg4 Qh4+ 7.Nf2 d5 8.Bxd5 Bg4",
     metadata: "C37",
@@ -9767,7 +11358,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 317,
+    id: 364,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.Qxf3 Qe7 7.Qc3 Bg7 8.Qxg7 Qc5+ 9.Kh1 Qxc4 10.Rxf4 Qxc2 11.Qxf7+ Kd8 12.Qf8#",
     metadata: "C37",
@@ -9805,7 +11396,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 318,
+    id: 365,
     cleanMoves: "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.d4 Bg7 5.Nc3 g4 6.Nd2 Qh4+",
     metadata: "C37",
     opening: "King's gambit",
@@ -9830,7 +11421,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 319,
+    id: 366,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.d4 h6 5.h4 Bg7 6.hxg5 hxg5 7.Rxh8 Bxh8 8.g3 d5 9.Nc3 dxe4 10.Nxe4 g4 11.Ne5 f5",
     metadata: "C37",
@@ -9867,7 +11458,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 320,
+    id: 367,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.h4 g4 5.Ng5 h6 6.Nxf7 Kxf7 7.Bc4+ Ke8 8.Qxg4 d6 9.Qg6+ Ke7 10.Qf7#",
     metadata: "C39",
@@ -9901,7 +11492,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 321,
+    id: 368,
     cleanMoves: "1.e4 e5 2.f4 Bc5 3.fxe5 Qh4+ 4.Ke2 Qxe4#",
     metadata: "C30",
     opening: "King's gambit",
@@ -9913,7 +11504,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 322,
+    id: 369,
     cleanMoves: "1.e4 e5 2.f4 Bc5 3.Nf3 Nf6 4.fxe5 Nxe4 5.d4 Bb6 6.Bd3",
     metadata: "C30",
     opening: "King's gambit",
@@ -9937,7 +11528,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 323,
+    id: 370,
     cleanMoves:
         "1.e4 e5 2.f4 Bc5 3.Nf3 d6 4.c3 Nf6 5.fxe5 dxe5 6.Nxe5 Nxe4 7.Qa4+ c6 8.Qxe4",
     metadata: "C30",
@@ -9967,7 +11558,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 324,
+    id: 371,
     cleanMoves: "1.e4 e5 2.f4 Nc6 3.fxe5 Qh4+ 4.g3 Qxe4+ 5.Qe2 Qxh1",
     metadata: "C30",
     opening: "King's gambit",
@@ -9990,7 +11581,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 325,
+    id: 372,
     cleanMoves: "1.e4 e5 2.f4 Nc6 3.f5 Qh4+",
     metadata: "C30",
     opening: "King's gambit",
@@ -10002,7 +11593,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 326,
+    id: 373,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.Nc3 dxe4 4.Nxe4 exf4 5.Bc4 Qh4+ 6.g3 fxg3 7.Qe2 g2+ 8.Kd1 gxh1=Q 9.Nf6+ Kd8 10.Qe8#",
     metadata: "C31",
@@ -10036,7 +11627,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 327,
+    id: 374,
     cleanMoves: "1.e4 e5 2.f4 d5 3.exd5 c6 4.Qe2 cxd5 5.Qxe5+ Be7 6.Qxg7 Bf6",
     metadata: "C31",
     opening: "King's gambit",
@@ -10062,7 +11653,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 328,
+    id: 375,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 Qxd5 4.Nc3 Qd8 5.Qe2 c6 6.Qxe5+ Be7 7.Qxg7 Bf6 8.Qg3 Bh4",
     metadata: "C31",
@@ -10093,7 +11684,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 329,
+    id: 376,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 Qxd5 4.Nc3 Qe6 5.Nf3 exf4+ 6.Kf2 Bd6 7.Bb5+",
     metadata: "C31",
@@ -10121,7 +11712,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 330,
+    id: 377,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.Nc3 Nf6 5.d3 Bb4 6.Bd2 O-O 7.dxe4 Re8 8.Bd3 Bxc3 9.Bxc3 Nxe4 10.Bxe4 Rxe4+ 11.Ne2 Bg4",
     metadata: "C31",
@@ -10158,7 +11749,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 331,
+    id: 378,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.Nc3 Nf6 5.Qe2 Bf5 6.Nxe4 Nxe4 7.d3 Qh4+ 8.g3 Qe7 9.dxe4 Bxe4",
     metadata: "C31",
@@ -10191,7 +11782,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 332,
+    id: 379,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.Nd2 exd3 6.Bxd3 Nxd5 7.Ne2 Ne3",
     metadata: "C32",
@@ -10220,7 +11811,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 333,
+    id: 380,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.Qe2 Bf5 6.dxe4 Bxe4 7.Nc3 Bb4 8.Qb5+",
     metadata: "C32",
@@ -10250,7 +11841,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 334,
+    id: 381,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.dxe4 Nxe4 6.Nc3 Qh4+ 7.g3 Nxg3 8.Nf3 Qe7+ 9.Kf2 Nxh1+",
     metadata: "C32",
@@ -10283,7 +11874,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 335,
+    id: 382,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.dxe4 Nxe4 6.Nf3 Bb4+ 7.c3 Bc5 8.Qa4+",
     metadata: "C32",
@@ -10313,7 +11904,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 336,
+    id: 383,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.dxe4 Nxe4 6.Nf3 Bc5 7.Bd3 f5 8.Ne5 Qh4+ 9.g3 Nxg3 10.d6 Ne4+ 11.Kf1 Qf2#",
     metadata: "C32",
@@ -10350,7 +11941,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 337,
+    id: 384,
     cleanMoves: "1.e4 e5 2.f4 d5 3.fxe5 Qh4+ 4.g3 Qxe4+ 5.Kf2 Bc5+",
     metadata: "C31",
     opening: "King's gambit",
@@ -10373,7 +11964,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 338,
+    id: 385,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.Nf3 Bc5 4.Nc3 Nf6 5.Nxe5 dxe4 6.Qe2 Nc6 7.Nxf7 Qe7 8.Nxh8 Nd4 9.Qd1 Nf3+ 10.Ke2 Bg4 11.h3 Nd5",
     metadata: "C31",
@@ -10410,7 +12001,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 339,
+    id: 386,
     cleanMoves:
         "1.e4 e5 2.f4 d5 3.Nf3 dxe4 4.Nxe5 Nf6 5.Bc4 Nd5 6.Nxf7 Kxf7 7.Qh5+",
     metadata: "C31",
@@ -10438,7 +12029,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 340,
+    id: 387,
     cleanMoves:
         "1.e4 e5 2.f4 d6 3.Nf3 Nc6 4.Bc4 Qf6 5.Nc3 Qxf4 6.O-O Nge7 7.d4 Qg4 8.Bxf7+ Kxf7 9.Nxe5+ Kg8 10.Nxg4",
     metadata: "C30",
@@ -10472,7 +12063,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 341,
+    id: 388,
     cleanMoves:
         "1.e4 e5 2.f4 f6 3.fxe5 Nc6 4.d4 Be7 5.exf6 gxf6 6.Qh5+ Kf8 7.Bc4 Qe8 8.Bh6+",
     metadata: "C30",
@@ -10502,7 +12093,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 342,
+    id: 389,
     cleanMoves: "1.e4 e5 2.f4 f6 3.fxe5 fxe5 4.Qh5+ g6 5.Qxe5+",
     metadata: "C30",
     opening: "King's gambit",
@@ -10514,7 +12105,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 343,
+    id: 390,
     cleanMoves:
         "1.e4 e5 2.f4 f5 3.exf5 e4 4.Qh5+ g6 5.fxg6 Nf6 6.Qe5+ Be7 7.d3 Nc6 8.Qg5 h6 9.g7 Rg8 10.Qg6#",
     metadata: "C30",
@@ -10548,7 +12139,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 344,
+    id: 391,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Nf3 O-O 6.Bd3 Bg4 7.h3 Bxf3 8.Qxf3 Nc6 9.Be3 Nd7 10.Ne2 Nde5 11.dxe5 Nxe5",
     metadata: "E90",
@@ -10585,7 +12176,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 345,
+    id: 392,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Nf3 O-O 6.h3 b6 7.Bd3 c5 8.e5 dxe5 9.dxe5 Nfd7 10.Be4",
     metadata: "E90",
@@ -10619,7 +12210,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 346,
+    id: 393,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.f3 O-O 6.Be3 e5 7.Qd2 c6 8.O-O-O a6 9.dxe5 Ne8 10.exd6",
     metadata: "E85",
@@ -10653,7 +12244,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 347,
+    id: 394,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.f4 O-O 6.Nf3 Re8 7.Be2 Nbd7 8.e5 Ng4 9.e6 Ndf6 10.exf7+ Kxf7 11.h3 Nh6 12.g4 Nd7 13.Ng5+",
     metadata: "E76",
@@ -10693,7 +12284,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 348,
+    id: 395,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Bg5 O-O 6.Qd2 c5 7.dxc5 dxc5 8.Qxd8 Rxd8 9.Bxf6 Bxf6 10.Nd5 Nc6 11.Nxf6+ exf6 12.Ne2 Nb4 13.Rc1 Nd3+",
     metadata: "E70",
@@ -10734,7 +12325,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 349,
+    id: 396,
     cleanMoves:
         "1.b3 b6 2.Bb2 Bb7 3.f4 e6 4.Nf3 Nf6 5.c4 Bd6 6.Ne5 Bxe5 7.Bxe5 Ng4 8.Bb2 Bxg2 9.Bxg2 Qh4+ 10.Kf1 Qf2#",
     metadata: "A01",
@@ -10769,7 +12360,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 350,
+    id: 397,
     cleanMoves:
         "1.b3 d5 2.Bb2 e6 3.c4 Nf6 4.Nf3 Bd6 5.e3 O-O 6.Be2 c6 7.O-O b6 8.Qc2 Bb7 9.Ng5 h6 10.Bxf6",
     metadata: "A01",
@@ -10803,7 +12394,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 351,
+    id: 398,
     cleanMoves:
         "1.b3 d5 2.Bb2 Nf6 3.e3 e6 4.f4 g6 5.g4 Bg7 6.Be2 Nxg4 7.Bxg4 Bxb2",
     metadata: "A01",
@@ -10832,7 +12423,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 352,
+    id: 399,
     cleanMoves:
         "1.b3 d5 2.Bb2 Nf6 3.Nf3 c5 4.e3 Nc6 5.Be2 e6 6.c4 Bd6 7.d4 cxd4 8.cxd5 Qa5+ 9.Qd2 Bb4",
     metadata: "A01",
@@ -10866,7 +12457,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 353,
+    id: 400,
     cleanMoves:
         "1.b3 c5 2.Bb2 f6 3.e4 e5 4.Bxe5 fxe5 5.Qh5+ g6 6.Qxe5+ Qe7 7.Qxh8 Qxe4+ 8.Be2 Qxg2 9.Bf3",
     metadata: "A01",
@@ -10898,7 +12489,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 354,
+    id: 401,
     cleanMoves:
         "1.b3 Nf6 2.Bb2 d6 3.f4 e5 4.fxe5 dxe5 5.Bxe5 Ng4 6.Bg3 h5 7.h3 Bd6 8.Bxd6 Qh4+ 9.Bg3 Qxg3#",
     metadata: "A01",
@@ -10931,7 +12522,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 355,
+    id: 402,
     cleanMoves:
         "1.b3 Nf6 2.Bb2 d5 3.e3 e6 4.f4 g6 5.g4 Bg7 6.Be2 Nxg4 7.Bxg7 Qh4+ 8.Kf1 Qf2#",
     metadata: "A01",
@@ -10962,7 +12553,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 356,
+    id: 403,
     cleanMoves:
         "1.e4 e5 2.Nf3 f5 3.Nc3 d6 4.d4 Nf6 5.dxe5 Nxe4 6.Nxe4 fxe4 7.Ng5 Bf5 8.Qd5 Qd7 9.Qxb7",
     metadata: "C41",
@@ -10994,7 +12585,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 357,
+    id: 404,
     cleanMoves:
         "1.e4 e5 2.Nf3 f5 3.Bc4 Nc6 4.d4 Qe7 5.O-O fxe4 6.Ng5 Nf6 7.Bf7+ Kd8 8.dxe5 Nxe5 9.Ne6+",
     metadata: "C50",
@@ -11026,7 +12617,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 358,
+    id: 405,
     cleanMoves:
         "1.e4 e5 2.Nf3 f5 3.Bc4 d5 4.Bxd5 Nf6 5.Bb3 Nxe4 6.Nxe5 Nxf2 7.Qh5+ g6 8.Bf7+ Ke7 9.Qg5+ Kd6 10.Qxd8+",
     metadata: "C40",
@@ -11060,7 +12651,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 359,
+    id: 406,
     cleanMoves:
         "1.e4 e5 2.Nf3 f5 3.d3 Nc6 4.Nc3 Nf6 5.Bg5 h6 6.Bxf6 Qxf6 7.Nd5 Qd8 8.Nd4 Ne7 9.Nxf5 c6 10.Nd6#",
     metadata: "C40",
@@ -11094,7 +12685,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 360,
+    id: 407,
     cleanMoves: "1.e4 e5 2.Nf3 f5 3.d4 fxe4 4.Nxe5 d6 5.Qh5+ Ke7 6.Qf7#",
     metadata: "C40",
     opening: "King's knight opening",
@@ -11118,7 +12709,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 361,
+    id: 408,
     cleanMoves:
         "1.e4 e5 2.Nf3 f5 3.Nxe5 Qe7 4.Qh5+ g6 5.Nxg6 Qxe4+ 6.Kd1 Nf6 7.Qh3 hxg6 8.Qxh8 Ng4 9.Qh4 Ne3+",
     metadata: "C40",
@@ -11151,7 +12742,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 362,
+    id: 409,
     cleanMoves:
         "1.e4 e5 2.Nf3 f5 3.Nxe5 Qe7 4.Qh5+ g6 5.Nxg6 Qxe4+ 6.Be2 Nf6 7.Qf3 hxg6",
     metadata: "C40",
@@ -11180,7 +12771,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 363,
+    id: 410,
     cleanMoves:
         "1.e4 e5 2.Nf3 f5 3.Nxe5 Qf6 4.d4 d6 5.Nf3 fxe4 6.Bg5 Qg6 7.Qe2 Be7 8.Bxe7 exf3 9.Qxf3 Nxe7",
     metadata: "C40",
@@ -11213,7 +12804,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 364,
+    id: 411,
     cleanMoves: "1.e4 Nc6 2.d4 b6 3.c3 Bb7 4.Nf3 Nf6 5.e5 Nh5 6.g4",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -11237,7 +12828,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 365,
+    id: 412,
     cleanMoves:
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nc3 Qxd4 5.Qe2 Bg4 6.f3 Bh5 7.Be3 Qb4 8.O-O-O a6 9.Nd5 Qa5 10.Bb6",
     metadata: "B00",
@@ -11271,7 +12862,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 366,
+    id: 413,
     cleanMoves:
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nf3 Bg4 5.Be2 Bxf3 6.Bxf3 Qxd4 7.Bxc6+ bxc6 8.Qxd4",
     metadata: "B00",
@@ -11301,7 +12892,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 367,
+    id: 414,
     cleanMoves: "1.e4 Nc6 2.d4 e5 3.d5 Nd4 4.c3",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -11313,7 +12904,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 368,
+    id: 415,
     cleanMoves:
         "1.e4 Nc6 2.d4 e5 3.d5 Nce7 4.c4 Ng6 5.Nf3 Bc5 6.Nc3 d6 7.Na4 Bb6 8.b4 Nf6 9.Bg5 Bxf2+ 10.Ke2 Nxe4 11.Bxd8 Nf4#",
     metadata: "B00",
@@ -11350,7 +12941,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 369,
+    id: 416,
     cleanMoves:
         "1.e4 Nc6 2.d4 e5 3.dxe5 Nxe5 4.Nf3 Qf6 5.Nxe5 Qxe5 6.Bd3 Bc5 7.O-O Nf6 8.Nc3 d6 9.h3 Bxh3 10.Nd5 Qg3 11.Nxf6+ gxf6 12.Qf3 Qxf3 13.gxf3 Rg8+",
     metadata: "B00",
@@ -11391,7 +12982,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 370,
+    id: 417,
     cleanMoves:
         "1.e4 Nc6 2.Nf3 d5 3.exd5 Qxd5 4.Nc3 Qa5 5.d4 Bf5 6.Bb5 e6 7.Ne5 Bb4 8.Bd2 Nge7 9.Nc4",
     metadata: "B00",
@@ -11423,7 +13014,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 371,
+    id: 418,
     cleanMoves:
         "1.e4 Nc6 2.Nf3 d6 3.d4 Bg4 4.d5 Ne5 5.Nxe5 Bxd1 6.Bb5+ Qd7 7.Bxd7+ Kd8 8.Nxf7+ Kxd7 9.Kxd1",
     metadata: "B00",
@@ -11455,7 +13046,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 372,
+    id: 419,
     cleanMoves: "1.d4 Nf6 2.c4 e6 3.Nc3 b6 4.e4 Bb4 5.Bd3 d6 6.Qa4+",
     metadata: "E00",
     opening: "Queen's pawn game",
@@ -11479,7 +13070,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 373,
+    id: 420,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qb3 c5 5.dxc5 Nc6 6.Nf3 Ne4 7.Bd2 Nxd2 8.Nxd2 Qa5 9.O-O-O Nd4 10.Qa4 Bxc3",
     metadata: "E23",
@@ -11514,7 +13105,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 374,
+    id: 421,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qb3 Qe7 5.a3 Bxc3+ 6.Qxc3 Ne4 7.Qc2 d5 8.b3 c5 9.dxc5 Qf6",
     metadata: "E22",
@@ -11547,7 +13138,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 375,
+    id: 422,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qc2 Nc6 5.Nf3 d6 6.Bg5 e5 7.d5 Ne7 8.Qa4+",
     metadata: "E33",
@@ -11577,7 +13168,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 376,
+    id: 423,
     cleanMoves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 b6 5.Nge2 Ba6 6.Ng3 d5 7.Qa4+",
     metadata: "E45",
     opening: "Nimzo-Indian defence",
@@ -11605,7 +13196,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 377,
+    id: 424,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.g3 c5 5.Nf3 cxd4 6.Nxd4 Ne4 7.Qc2 Qa5 8.Nb3 Qf5",
     metadata: "E20",
@@ -11637,7 +13228,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 378,
+    id: 425,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Bg5 c5 5.e3 Qa5 6.Rc1 Ne4 7.Nf3 Nxg5 8.Nxg5 cxd4",
     metadata: "E30",
@@ -11668,7 +13259,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 379,
+    id: 426,
     cleanMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 Nbd7 4.e4 g6 5.f4 c5 6.d5 Qa5 7.Bd2 Nb6 8.Nb5",
     metadata: "A53",
@@ -11699,7 +13290,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 380,
+    id: 427,
     cleanMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 e5 4.dxe5 dxe5 5.Bg5 Nbd7 6.Nf3 c6 7.Ne4 Nxe4 8.Bxd8 Bb4+ 9.Nd2 Bxd2+ 10.Qxd2 Nxd2 11.Kxd2 Kxd8",
     metadata: "A53",
@@ -11736,7 +13327,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 381,
+    id: 428,
     cleanMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 e5 4.e4 exd4 5.Qxd4 g6 6.Bg5 Bg7 7.e5 dxe5 8.Qxd8+ Kxd8 9.Nd5 Nbd7 10.Rd1",
     metadata: "A53",
@@ -11770,7 +13361,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 382,
+    id: 429,
     cleanMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 Bf5 4.f3 e5 5.dxe5 dxe5 6.Qxd8+ Kxd8 7.Bg5 c6 8.O-O-O+ Kc7 9.g3 Be6 10.b3 Bc5 11.Bh3 Bxg1 12.Rhxg1 Bxh3 13.g4 h5 14.Rg3 hxg4 15.fxg4 Nbd7",
     metadata: "A53",
@@ -11815,7 +13406,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 383,
+    id: 430,
     cleanMoves: "1.d4 Nf6 2.c4 d6 3.Nf3 Nc6 4.Nc3 Bg4 5.d5 Ne5 6.Nd2 Nd3+",
     metadata: "A53",
     opening: "Old Indian defence",
@@ -11840,7 +13431,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 384,
+    id: 431,
     cleanMoves:
         "1.e4 b6 2.c4 Bb7 3.Nc3 Nf6 4.e5 Ne4 5.Qf3 Nxc3 6.Qxb7 Nc6 7.Qa6 Nb4",
     metadata: "B00",
@@ -11869,7 +13460,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 385,
+    id: 432,
     cleanMoves:
         "1.e4 b6 2.Bc4 Bb7 3.Qf3 e6 4.d4 Nc6 5.d5 Nd4 6.Qc3 Bb4 7.Qxb4 Nxc2+",
     metadata: "B00",
@@ -11898,7 +13489,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 386,
+    id: 433,
     cleanMoves: "1.e4 b6 2.Bc4 Bb7 3.Nf3 Bxe4 4.Ng5 Bg6 5.h4 f6 6.h5",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -11922,7 +13513,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 387,
+    id: 434,
     cleanMoves:
         "1.e4 b6 2.d3 Bb7 3.Nc3 c5 4.Bf4 Nc6 5.Nf3 d6 6.d4 Nxd4 7.Nxd4 cxd4 8.Bb5+",
     metadata: "B00",
@@ -11952,7 +13543,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 388,
+    id: 435,
     cleanMoves:
         "1.e4 b6 2.d4 Bb7 3.Nc3 e6 4.Bd3 Nf6 5.Nge2 d5 6.e5 Nfd7 7.Nf4 c5 8.Nxe6 Qe7 9.Nxd5 Bxd5 10.Nc7+ Kd8 11.Nxd5",
     metadata: "B00",
@@ -11988,7 +13579,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 389,
+    id: 436,
     cleanMoves:
         "1.e4 b6 2.d4 Bb7 3.Bd3 f5 4.exf5 Bxg2 5.Qh5+ g6 6.Nf3 Bxh1 7.fxg6 Nf6 8.gxh7+ Nxh5 9.Bg6#",
     metadata: "B00",
@@ -12020,7 +13611,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 390,
+    id: 437,
     cleanMoves: "1.e4 b6 2.d4 Nf6 3.e5 Ne4 4.Bd3 Bb7 5.f3",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -12032,7 +13623,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 391,
+    id: 438,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Bb5 c6 4.Bc4 Nxe4 5.d3 Nf6 6.Nxe5 Qa5+",
     metadata: "C42",
     opening: "Petrov's defence",
@@ -12058,7 +13649,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 392,
+    id: 439,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nc3 d5 4.exd5 Bg4 5.Be2 Bd6 6.d4 exd4 7.Qxd4 O-O 8.Bg5 h6 9.Bxf6 Qxf6 10.Qxg4",
     metadata: "C42",
@@ -12092,7 +13683,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 393,
+    id: 440,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Bc4 Nxe4 4.Nc3 Nxc3 5.dxc3 d5 6.Bxd5 c6 7.Bxf7+",
     metadata: "C27",
@@ -12120,7 +13711,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 394,
+    id: 441,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Bc4 Nxe4 4.Bxf7+ Kxf7 5.Nxe5+ Kg8 6.O-O d6 7.Qf3 dxe5 8.Qb3+",
     metadata: "C42",
@@ -12150,7 +13741,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 395,
+    id: 442,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Bc4 Nxe4 4.Bxf7+ Kxf7 5.Nxe5+ Kg8 6.O-O d6 7.Qe2 dxe5 8.Qc4+",
     metadata: "C42",
@@ -12180,7 +13771,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 396,
+    id: 443,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Bc4 Be7 4.Nxe5 d6 5.Nxf7 Qd7 6.Nxh8",
     metadata: "C42",
     opening: "Petrov's defence",
@@ -12204,7 +13795,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 397,
+    id: 444,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 exd4 4.Nxd4 Qe7 5.Nb5 Nxe4 6.Nxc7+ Kd8 7.Nxa8 Nc3+",
     metadata: "C43",
@@ -12233,7 +13824,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 398,
+    id: 445,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 exd4 4.e5 Ne4 5.Qe2 Bb4+ 6.Kd1 Nc5 7.Bg5 d3 8.cxd3 f6 9.exf6+ Kf7 10.Ne5+ Ke6 11.Nc6+",
     metadata: "C43",
@@ -12269,7 +13860,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 399,
+    id: 446,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 exd4 4.e5 Qe7 5.Be2 Ne4 6.O-O Nc6 7.Re1 b6 8.Bc4 Nc5 9.Bg5",
     metadata: "C43",
@@ -12301,7 +13892,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 400,
+    id: 447,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 Nxe4 4.Nxe5 d5 5.Bd3 Bd6 6.f3 Qh4+ 7.g3 Nxg3",
     metadata: "C43",
@@ -12330,7 +13921,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 401,
+    id: 448,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 Nxe4 4.Nxe5 d5 5.Qf3 Be6 6.Bd3 Bd6 7.Bxe4 dxe4 8.Qxe4 Bxe5 9.Qxb7 Bxd4 10.Qxa8 Bd5",
     metadata: "C43",
@@ -12365,7 +13956,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 402,
+    id: 449,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+",
     metadata: "C42",
@@ -12394,7 +13985,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 403,
+    id: 450,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.Nc3 Bf5 6.Qe2",
     metadata: "C42",
     opening: "Petrov's defence",
@@ -12418,7 +14009,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 404,
+    id: 451,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 Qe7 6.Be2 Bg4 7.O-O Nd7 8.Re1 O-O-O 9.Nfd2 f5 10.Bxg4 fxg4 11.Nxe4",
     metadata: "C42",
@@ -12454,7 +14045,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 405,
+    id: 452,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Bg4 5.Nc3 Qe7 6.d3 g6 7.Bg5 Bxf3 8.Qxf3 Bg7 9.Nd5",
     metadata: "C42",
@@ -12486,7 +14077,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 406,
+    id: 453,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nxf7 Kxf7 5.d4 Nxe4 6.Qh5+ Ke7 7.Qe2 d5 8.Bg5+",
     metadata: "C42",
@@ -12516,7 +14107,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 407,
+    id: 454,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nxf7 Kxf7 5.d4 Nxe4 6.Qh5+ Kg8 7.Qd5+ Be6 8.Qxe6#",
     metadata: "C42",
@@ -12546,7 +14137,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 408,
+    id: 455,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 d5 5.Nc6",
     metadata: "C42",
     opening: "Petrov's defence",
@@ -12558,7 +14149,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 409,
+    id: 456,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 d6 5.Nxf7 Kxf7 6.Qxe4 c6 7.Qf3+ Kg8 8.d4 c5 9.Qd5+ Be6 10.Qxe6#",
     metadata: "C42",
@@ -12592,7 +14183,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 410,
+    id: 457,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Nxf7 Kxf7 5.Qh5+ Kf6 6.Qf3+ Ke5 7.d4+ Kxd4 8.Qf5 Qg5 9.c3+ Nxc3 10.bxc3#",
     metadata: "C42",
@@ -12626,7 +14217,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 411,
+    id: 458,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Qe7 4.d4 d6 5.Nf3 Qxe4+ 6.Be2 Nc6 7.Nc3 Qg6 8.Nh4",
     metadata: "C42",
@@ -12656,7 +14247,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 412,
+    id: 459,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Nc3 Be6 4.d4 exd4 5.Nxd4 g6 6.Nxe6 fxe6 7.Bc4 e5 8.Qd5",
     metadata: "C41",
@@ -12686,7 +14277,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 413,
+    id: 460,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Nc3 Bg4 4.Be2 Nf6 5.O-O d5 6.Nxe5 Bxe2 7.Qxe2 dxe4 8.Nxe4 Nc6 9.Nxc6 bxc6 10.Nxf6#",
     metadata: "C41",
@@ -12720,7 +14311,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 414,
+    id: 461,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Nc6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     metadata: "C41",
@@ -12750,7 +14341,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 415,
+    id: 462,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Nf6 4.Nc3 Nbd7 5.Ng5 Qe7 6.Bxf7+ Kd8 7.Bb3 Ke8 8.Nf7",
     metadata: "C41",
@@ -12780,7 +14371,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 416,
+    id: 463,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 g6 4.d4 Nc6 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Bxf7+",
     metadata: "C41",
@@ -12808,7 +14399,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 417,
+    id: 464,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 a6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     metadata: "C41",
@@ -12836,7 +14427,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 418,
+    id: 465,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 Nf6 5.O-O Nxe4 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     metadata: "C41",
@@ -12866,7 +14457,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 419,
+    id: 466,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 g6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     metadata: "C41",
@@ -12894,7 +14485,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 420,
+    id: 467,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.O-O Nc6 5.Nc3 Nd4 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     metadata: "C41",
@@ -12924,7 +14515,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 421,
+    id: 468,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 c6 5.c3 Be7 6.Qb3 Nh6 7.Bxh6 gxh6 8.Bxf7+",
     metadata: "C41",
@@ -12954,7 +14545,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 422,
+    id: 469,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 c6 5.O-O Be7 6.dxe5 dxe5 7.Qe2 Ngf6 8.Rd1 Qc7 9.Ng5 O-O 10.Bxf7+ Rxf7 11.Qc4",
     metadata: "C41",
@@ -12990,7 +14581,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 423,
+    id: 470,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 Be7 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Qh5 g6 8.Qxe5",
     metadata: "C41",
@@ -13020,7 +14611,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 424,
+    id: 471,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 f5 4.dxe5 fxe4 5.Ng5 d5 6.Nc3 Ne7 7.e6 Ng6 8.Nf7 Qf6 9.Nxh8",
     metadata: "C41",
@@ -13052,7 +14643,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 425,
+    id: 472,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 f6 4.Bc4 Bd7 5.dxe5 dxe5 6.Nxe5 fxe5 7.Qh5+ g6 8.Qxe5+ Ne7 9.Qxh8",
     metadata: "C41",
@@ -13084,7 +14675,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 426,
+    id: 473,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Bg4 4.dxe5 dxe5 5.Qxd8+ Kxd8 6.Nxe5 Nh6 7.Bxh6",
     metadata: "C41",
@@ -13112,7 +14703,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 427,
+    id: 474,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Bg4 4.dxe5 Bxf3 5.Qxf3 dxe5 6.Bc4 Bb4+ 7.c3",
     metadata: "C41",
@@ -13140,7 +14731,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 428,
+    id: 475,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Bg4 4.dxe5 Bxf3 5.Qxf3 dxe5 6.Bc4 f6 7.Qb3 b6 8.Bf7+ Kd7 9.Qe6#",
     metadata: "C41",
@@ -13172,7 +14763,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 429,
+    id: 476,
     cleanMoves: "1.e4 e5 2.Nf3 d6 3.d4 g6 4.dxe5 dxe5 5.Qxd8+ Kxd8 6.Nxe5",
     metadata: "C41",
     opening: "Philidor's defence",
@@ -13196,7 +14787,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 430,
+    id: 477,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nf6 4.dxe5 Nxe4 5.exd6 Bxd6 6.Qd4 Nf6 7.Bg5 Nc6 8.Bb5 O-O 9.Bxf6 Nxd4 10.Bxd8 Nxc2+",
     metadata: "C41",
@@ -13231,7 +14822,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 431,
+    id: 478,
     cleanMoves: "1.e4 e5 2.Nf3 d6 3.h3 Nf6 4.c3 Nxe4 5.Qa4+ c6 6.Qxe4",
     metadata: "C41",
     opening: "Philidor's defence",
@@ -13255,7 +14846,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 432,
+    id: 479,
     cleanMoves: "1.e4 d6 2.Bc4 Nd7 3.Nf3 g6 4.Ng5 Nh6 5.Bxf7+ Nxf7 6.Ne6",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -13279,7 +14870,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 433,
+    id: 480,
     cleanMoves:
         "1.e4 d6 2.d4 Nd7 3.Bc4 g6 4.Nf3 Bg7 5.Bxf7+ Kxf7 6.Ng5+ Kf6 7.Qf3#",
     metadata: "B00",
@@ -13307,7 +14898,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 434,
+    id: 481,
     cleanMoves:
         "1.e4 d6 2.d4 Nd7 3.Nf3 e5 4.Bc4 Be7 5.dxe5 dxe5 6.Qd5 Nh6 7.Bxh6",
     metadata: "C41",
@@ -13335,7 +14926,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 435,
+    id: 482,
     cleanMoves: "1.e4 d6 2.d4 Be6 3.c3 Qd7 4.Bd3 Bg4 5.f3 Be6 6.d5",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -13359,7 +14950,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 436,
+    id: 483,
     cleanMoves:
         "1.e4 d6 2.d4 g6 3.Nf3 Bg7 4.Nc3 Nd7 5.Bc4 e5 6.Bxf7+ Kxf7 7.Ng5+ Ke8 8.Ne6 Qe7 9.Nxc7+",
     metadata: "B06",
@@ -13391,7 +14982,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 437,
+    id: 484,
     cleanMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.f4 c5 5.dxc5 Qa5 6.cxd6 Nxe4 7.Qd5 Nc5 8.Bb5+ Bd7 9.Qxc5",
     metadata: "B09",
@@ -13423,7 +15014,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 438,
+    id: 485,
     cleanMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 Nc6 4.Bc4 e6 5.Nf3 Qe7 6.O-O g6 7.Bg5 e5 8.Nd5",
     metadata: "B07",
@@ -13454,7 +15045,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 439,
+    id: 486,
     cleanMoves: "1.e4 d6 2.d4 g6 3.Nc3 Bg7 4.Bc4 c6 5.Nf3 b5 6.Nxb5 cxb5 7.Bd5",
     metadata: "B06",
     opening: "King's pawn opening",
@@ -13481,7 +15072,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 440,
+    id: 487,
     cleanMoves:
         "1.e4 d6 2.d4 g6 3.Nc3 Bg7 4.f4 Nh6 5.Nf3 O-O 6.Bd3 c5 7.f5 e6 8.f6 Qxf6 9.Bg5",
     metadata: "B06",
@@ -13513,7 +15104,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 441,
+    id: 488,
     cleanMoves:
         "1.e4 d6 2.d4 g6 3.Nf3 Bg7 4.Bc4 Nd7 5.Bxf7+ Kxf7 6.Ng5+ Kf6 7.Qf3#",
     metadata: "B00",
@@ -13541,7 +15132,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 442,
+    id: 489,
     cleanMoves:
         "1.e4 d6 2.d4 g6 3.Nf3 Bg7 4.Bc4 Bg4 5.Bxf7+ Kf8 6.Bb3 Bf6 7.h3 Bd7 8.e5 Bg7 9.Ng5",
     metadata: "B00",
@@ -13573,7 +15164,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 443,
+    id: 490,
     cleanMoves:
         "1.e4 d6 2.Nf3 Nd7 3.Nc3 g6 4.Bc4 Bg7 5.d4 a5 6.Ng5 Nh6 7.Bxf7+ Nxf7 8.Ne6",
     metadata: "B00",
@@ -13603,7 +15194,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 444,
+    id: 491,
     cleanMoves: "1.e4 d6 2.Nf3 Nf6 3.c3 Nxe4 4.Qa4+",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -13615,7 +15206,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 445,
+    id: 492,
     cleanMoves: "1.e4 d6 2.Nf3 g6 3.Bc4 Nd7 4.Bxf7+ Kxf7 5.Ng5+",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -13627,7 +15218,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 446,
+    id: 493,
     cleanMoves:
         "1.e4 d6 2.Nf3 g6 3.Bc4 Bg4 4.Bxf7+ Kxf7 5.Ng5+ Ke8 6.Qxg4 Nf6 7.Qe6 Qd7 8.Qf7+ Kd8 9.Ne6+ Kc8 10.Nxf8",
     metadata: "B00",
@@ -13661,7 +15252,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 447,
+    id: 494,
     cleanMoves:
         "1.e4 g6 2.d4 Bg7 3.Nc3 c6 4.f4 d6 5.Be2 Qb6 6.Nf3 Bg4 7.Na4 Qa5+ 8.c3 b5",
     metadata: "B06",
@@ -13692,7 +15283,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 448,
+    id: 495,
     cleanMoves:
         "1.e4 g6 2.d4 Bg7 3.Nc3 d6 4.Bc4 Nd7 5.Nf3 Ngf6 6.e5 dxe5 7.dxe5 Ng4 8.Bxf7+ Kxf7 9.Ng5+ Kg8 10.Qd5+",
     metadata: "B06",
@@ -13726,7 +15317,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 449,
+    id: 496,
     cleanMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.c4 Bg4 5.Be2 Nc6 6.Be3 e5 7.Nxe5 dxe5 8.Bxg4 exd4 9.Bf4 h5 10.Be2 d3",
     metadata: "A41",
@@ -13761,7 +15352,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 450,
+    id: 497,
     cleanMoves: "1.e4 g6 2.d4 f5 3.exf5 gxf5 4.Qh5#",
     metadata: "B06",
     opening: "Robatsch (modern) defence",
@@ -13773,7 +15364,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 451,
+    id: 498,
     cleanMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.Nc3 Nd7 5.Bc4 Ngf6 6.e5 dxe5 7.dxe5 Nh5 8.Bxf7+ Kxf7 9.Ng5+ Kg8 10.Qd5+ Kf8 11.Qf7#",
     metadata: "B06",
@@ -13809,7 +15400,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 452,
+    id: 499,
     cleanMoves: "1.b4 c6 2.Bb2 Qb6 3.a3 a5 4.c4 e6 5.c5 Bxc5 6.Bxg7 Bxf2#",
     metadata: "A00",
     opening: "Polish (Sokolsky) opening",
@@ -13834,7 +15425,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 453,
+    id: 500,
     cleanMoves:
         "1.b4 e5 2.a4 d5 3.c4 dxc4 4.Qc2 Nc6 5.Qxc4 Be6 6.Qc2 Nd4 7.Qd1 Bb3",
     metadata: "A00",
@@ -13863,7 +15454,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 454,
+    id: 501,
     cleanMoves: "1.b4 e5 2.Bb2 Bxb4 3.f4 d6 4.e4 Nc6 5.f5 Qh4+ 6.g3 Qxe4+",
     metadata: "A00",
     opening: "Polish (Sokolsky) opening",
@@ -13888,7 +15479,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 455,
+    id: 502,
     cleanMoves:
         "1.b4 e5 2.Bb2 Bxb4 3.f4 d6 4.e4 Nf6 5.Qe2 O-O 6.f5 d5 7.Bxe5 Re8 8.Bxf6 Qxf6 9.c3 Rxe4",
     metadata: "A00",
@@ -13921,7 +15512,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 456,
+    id: 503,
     cleanMoves:
         "1.b4 e5 2.Bb2 d6 3.c4 Nc6 4.a3 f6 5.Nf3 g5 6.e3 h5 7.Be2 e4 8.Nxg5 fxg5 9.Bxh8",
     metadata: "A00",
@@ -13953,7 +15544,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 457,
+    id: 504,
     cleanMoves:
         "1.b4 e5 2.Bb2 e4 3.c4 Nf6 4.b5 d5 5.cxd5 Nxd5 6.f3 e3 7.Qa4 Bb4 8.a3 exd2+ 9.Nxd2 Qh4+ 10.g3 Bxd2+ 11.Kxd2 Qxa4",
     metadata: "A00",
@@ -13990,7 +15581,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 458,
+    id: 505,
     cleanMoves: "1.b4 e5 2.Bb2 e4 3.e3 d5 4.Ne2 Bxb4 5.Bxg7",
     metadata: "A00",
     opening: "Polish (Sokolsky) opening",
@@ -14002,7 +15593,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 459,
+    id: 506,
     cleanMoves:
         "1.b4 e5 2.Bb2 f6 3.b5 a6 4.bxa6 bxa6 5.e3 Bc5 6.Bc4 d5 7.Bb3 d4 8.exd4 exd4 9.Qh5+ g6 10.Qxc5",
     metadata: "A00",
@@ -14036,7 +15627,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 460,
+    id: 507,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 Bc5 4.d3 d6 5.b4 Bb6 6.b5 Nce7 7.c4 Bg4 8.Qe2 Bxf3 9.Qxf3 Bd4",
     metadata: "C44",
@@ -14069,7 +15660,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 461,
+    id: 508,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 d5 4.Qa4 Qd6 5.exd5 Qxd5 6.Bc4 Qe4+ 7.Kd1 Bd7 8.Bxf7+ Kxf7 9.Qxe4",
     metadata: "C44",
@@ -14101,7 +15692,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 462,
+    id: 509,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 d5 4.Qa4 dxe4 5.Nxe5 Qd5 6.Nxc6 Qxc6 7.Bb5",
     metadata: "C44",
@@ -14129,7 +15720,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 463,
+    id: 510,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 Nf6 4.d4 exd4 5.e5 Ne4 6.Qe2 d5 7.exd6 Bf5 8.Nbd2 Bxd6 9.Nxe4 Bxe4 10.Qxe4+",
     metadata: "C44",
@@ -14163,7 +15754,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 464,
+    id: 511,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 Nf6 4.d4 Nxe4 5.d5 Nb8 6.Nxe5 Bc5 7.Nd3 Bb6 8.Be2 d6 9.Qa4+",
     metadata: "C44",
@@ -14195,7 +15786,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 465,
+    id: 512,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 Nf6 4.d4 Nxe4 5.d5 Nb8 6.Nxe5 Qe7 7.Qd4 d6 8.Qxe4 f5 9.Bb5+ Kd8 10.Bg5",
     metadata: "C44",
@@ -14229,7 +15820,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 466,
+    id: 513,
     cleanMoves:
         "1.d4 d5 2.c4 dxc4 3.Nc3 c5 4.e3 cxd4 5.Bxc4 dxc3 6.Bxf7+ Kxf7 7.Qxd8",
     metadata: "D20",
@@ -14257,31 +15848,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 467,
-    cleanMoves: "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3",
-    metadata: "D20",
-    opening: "Queen's gambit accepted",
-    openingId: "queens_gambit_accepted",
-    trapName: "Italy",
-    commentedMoves: "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3",
-    moves: [
-      "d4",
-      "d5",
-      "c4",
-      "dxc4",
-      "e3",
-      "b5",
-      "a4",
-      "c6",
-      "axb5",
-      "cxb5",
-      "Qf3",
-    ],
-    fen: "rnbqkbnr/p3pppp/8/1p6/2pP4/4PQ2/1P3PPP/RNB1KBNR b KQkq - 1 6",
-  ),
-
-  ChessTrap(
-    id: 468,
+    id: 514,
     cleanMoves:
         "1.d4 d5 2.c4 dxc4 3.e4 b5 4.Nc3 c6 5.b4 a5 6.Ba3 e6 7.Rb1 Na6 8.Nce2 Nxb4 9.Nf3 Nd3+ 10.Kd2 Bxa3",
     metadata: "D20",
@@ -14316,7 +15883,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 469,
+    id: 515,
     cleanMoves:
         "1.d4 d5 2.c4 dxc4 3.e4 e5 4.Nf3 Bg4 5.Bxc4 exd4 6.Qb3 Be7 7.Bxf7+ Kf8 8.Ne5 Bc8 9.Bxg8",
     metadata: "D20",
@@ -14348,7 +15915,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 470,
+    id: 516,
     cleanMoves:
         "1.d4 d5 2.c4 dxc4 3.Nf3 b5 4.a4 c6 5.e3 Bd7 6.Ne5 a6 7.axb5 cxb5 8.Qf3",
     metadata: "D21",
@@ -14378,7 +15945,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 471,
+    id: 517,
     cleanMoves:
         "1.d4 d5 2.c4 dxc4 3.Nf3 c5 4.e3 Bg4 5.Bxc4 e6 6.Qa4+ Nd7 7.Ne5 Bf5 8.Nxd7 Qxd7 9.Bb5",
     metadata: "D21",
@@ -14410,7 +15977,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 472,
+    id: 518,
     cleanMoves: "1.d4 d5 2.c4 dxc4 3.Nf3 c6 4.e3 Be6 5.Ng5 Qa5+",
     metadata: "D21",
     opening: "Queen's gambit accepted",
@@ -14422,7 +15989,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 473,
+    id: 519,
     cleanMoves:
         "1.d4 d5 2.c4 dxc4 3.Nf3 Nf6 4.Qa4+ Nbd7 5.Nc3 e6 6.e4 c5 7.d5 exd5 8.e5 d4 9.Bxc4 dxc3 10.Ng5 Qe7 11.Bxf7+ Kd8 12.Ne6+",
     metadata: "D23",
@@ -14460,7 +16027,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 474,
+    id: 520,
     cleanMoves:
         "1.d4 d5 2.c4 c5 3.dxc5 Nf6 4.Nf3 Nc6 5.Bg5 Ne4 6.Bf4 Qa5+ 7.Nbd2 Qxc5 8.Rc1 Qxf2#",
     metadata: "D06",
@@ -14491,7 +16058,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 475,
+    id: 521,
     cleanMoves:
         "1.d4 d5 2.c4 c5 3.e3 cxd4 4.cxd5 Qa5+ 5.Qd2 Qxd5 6.exd4 Nc6 7.Nf3 Bf5 8.Nc3 Qa5 9.Bb5 e6 10.O-O Rd8 11.Ne5 Nge7 12.Nd5",
     metadata: "D06",
@@ -14529,7 +16096,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 476,
+    id: 522,
     cleanMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 e5 4.dxe5 d4 5.Ne4 Bb4+ 6.Bd2 Bxd2+ 7.Qxd2 Bf5 8.Nd6+ Kf8 9.Nxf5",
     metadata: "D10",
@@ -14561,7 +16128,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 477,
+    id: 523,
     cleanMoves: "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Bg5 Ne4 5.Nxe4 dxe4 6.e3 Qa5+",
     metadata: "D10",
     opening: "Queen's Gambit Declined Slav defence",
@@ -14586,7 +16153,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 478,
+    id: 524,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.e3 exd4 4.exd4 Nf6 5.Bg5 Be6 6.cxd5 Bxd5 7.Nc3 Nc6 8.Nxd5 Qxd5 9.Bxf6 Bb4+ 10.Ke2 Qe4#",
     metadata: "D08",
@@ -14621,7 +16188,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 479,
+    id: 525,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 dxc4 4.Qxd8+ Kxd8 5.Nc3 Bb4 6.Bd2 Nc6 7.O-O-O Nxe5 8.Bg5+ Ke8 9.Rd8#",
     metadata: "D08",
@@ -14653,7 +16220,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 480,
+    id: 526,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e4 Nc6 5.Ne2 Bc5 6.Nd2 Nxe5 7.Nb3 Bb4+ 8.Bd2 Nd3#",
     metadata: "D08",
@@ -14684,7 +16251,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 481,
+    id: 527,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e4 Nc6 5.f4 Nxe5 6.fxe5 Qh4+ 7.Kd2 Qxe4 8.a3 Bf5 9.Nf3 Qe3#",
     metadata: "D08",
@@ -14717,7 +16284,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 482,
+    id: 528,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 c5 4.cxd5 cxd4 5.dxe6 dxc3 6.exf7+ Ke7 7.fxg8=N+ Rxg8 8.Bg5+",
     metadata: "D32",
@@ -14747,7 +16314,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 483,
+    id: 529,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 c5 4.cxd5 exd5 5.Nf3 Nc6 6.g3 c4 7.e4 dxe4 8.Ng5 Qxd4 9.Bf4 Bb4 10.Ngxe4 Qxe4+",
     metadata: "D33",
@@ -14782,7 +16349,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 484,
+    id: 530,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 h6 5.Bh4 g5 6.Bg3 Be7 7.Nb5 O-O 8.Nxc7 Bb4+",
     metadata: "D50",
@@ -14813,7 +16380,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 485,
+    id: 531,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Bf4 c5 4.Nc3 cxd4 5.Bxb8 dxc3 6.Be5 cxb2 7.Bxb2 Bb4+",
     metadata: "D30",
@@ -14842,7 +16409,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 486,
+    id: 532,
     cleanMoves:
         "1.d4 d5 2.c4 Bf5 3.Nc3 e6 4.Qb3 Nc6 5.cxd5 exd5 6.Nxd5 Be4 7.Nc3 Nxd4 8.Qa4+ b5 9.Nxb5 Nc2+",
     metadata: "D06",
@@ -14875,7 +16442,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 487,
+    id: 533,
     cleanMoves:
         "1.d4 d5 2.c4 Nf6 3.Nc3 e5 4.dxe5 Ng4 5.Nf3 Bb4 6.Bd2 Qe7 7.Nxd5 Bxd2+ 8.Qxd2 Qc5 9.e3 O-O 10.b4",
     metadata: "D06",
@@ -14909,7 +16476,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 488,
+    id: 534,
     cleanMoves: "1.d4 d5 2.c4 Nf6 3.cxd5 Nxd5 4.e4 Nf6 5.Bd3 Qxd4 6.Bb5+",
     metadata: "D06",
     opening: "Queen's Gambit",
@@ -14933,7 +16500,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 489,
+    id: 535,
     cleanMoves:
         "1.d4 d5 2.c4 Nf6 3.cxd5 Qxd5 4.Nc3 Qd8 5.e4 e5 6.Qa4+ Bd7 7.Qb3 exd4 8.Qxb7 dxc3 9.Qxa8 cxb2 10.Bxb2 Bb4+ 11.Ke2 Bg4+ 12.Nf3 Qd2#",
     metadata: "D06",
@@ -14972,7 +16539,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 490,
+    id: 536,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.a3 Bb7 5.Nc3 Ne4 6.Qc2 Nxc3 7.Qxc3 Be7 8.Bf4 Bf6 9.Qd2 d6 10.e3 Nd7 11.Be2 g5 12.Bg3 g4 13.Ng1 Bxg2",
     metadata: "E12",
@@ -15014,7 +16581,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 491,
+    id: 537,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.Nc3 Bb4 5.Qc2 Bb7 6.Bg5 h6 7.Bh4 d6 8.Qa4+ Nc6 9.d5",
     metadata: "E12",
@@ -15046,7 +16613,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 492,
+    id: 538,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.Nc3 Bb4 5.Bg5 Bb7 6.e3 h6 7.Bh4 d6 8.Qa4+ Nc6 9.d5",
     metadata: "E12",
@@ -15078,7 +16645,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 493,
+    id: 539,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.Nc3 Bb7 5.g3 d5 6.cxd5 exd5 7.Bg2 c5 8.O-O cxd4 9.Nxd4 Be7 10.Nf5 O-O 11.Nxd5 Nxd5 12.Bxd5 Qd7 13.Bxb7 Qxb7 14.Qd5 Qc7 15.Qxa8 Nc6 16.Qxc6 Qxc6 17.Nxe7+ Kh8 18.Nxc6",
     metadata: "E12",
@@ -15128,7 +16695,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 494,
+    id: 540,
     cleanMoves: "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.g3 Ba6 5.Nbd2 Bb4 6.Qc2 d5 7.Qa4+",
     metadata: "E15",
     opening: "Queen's Indian defence",
@@ -15155,7 +16722,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 495,
+    id: 541,
     cleanMoves: "1.e4 e5 2.Nf3 d5 3.Nc3 d4 4.Nd5 c6",
     metadata: "C40",
     opening: "King's knight opening",
@@ -15167,7 +16734,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 496,
+    id: 542,
     cleanMoves:
         "1.e4 e5 2.Nf3 d5 3.exd5 Qxd5 4.Nc3 Qa5 5.Qe2 Nc6 6.d3 Bg4 7.Bd2 Nd4 8.Qxe5+ Qxe5+ 9.Nxe5 Nxc2#",
     metadata: "C40",
@@ -15200,7 +16767,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 497,
+    id: 543,
     cleanMoves:
         "1.e4 e5 2.Nf3 d5 3.exd5 Bd6 4.Nc3 Nf6 5.d4 e4 6.Ne5 h6 7.Nb5 Bxe5 8.dxe5 Nxd5 9.Qxd5",
     metadata: "C40",
@@ -15232,7 +16799,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 498,
+    id: 544,
     cleanMoves:
         "1.e4 e5 2.Nf3 d5 3.exd5 e4 4.Qe2 Qe7 5.Nd4 Nf6 6.Qb5+ Nbd7 7.Nc3 Qe5 8.Qc4 Nb6",
     metadata: "C40",
@@ -15264,7 +16831,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 499,
+    id: 545,
     cleanMoves: "1.e4 e5 2.Nf3 d5 3.Nxe5 Bd6 4.d4 f6 5.Qh5+ Kf8 6.Qf7#",
     metadata: "C40",
     opening: "King's knight opening",
@@ -15288,7 +16855,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 500,
+    id: 546,
     cleanMoves:
         "1.d4 d5 2.Nc3 Nf6 3.Bf4 Bf5 4.e3 e6 5.Qe2 Nbd7 6.Qb5 Bxc2 7.Nf3 Qc8 8.Be2 a6 9.Qa5 b6",
     metadata: "D00",
@@ -15322,7 +16889,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 501,
+    id: 547,
     cleanMoves:
         "1.d4 d5 2.Nc3 Nf6 3.Bg5 c6 4.Bxf6 gxf6 5.e3 e5 6.Qh5 e4 7.f3 f5 8.fxe4 fxe4 9.Qe5+",
     metadata: "D01",
@@ -15354,7 +16921,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 502,
+    id: 548,
     cleanMoves: "1.d4 d5 2.e3 e5 3.Qf3 e4 4.Qf4 Bd6",
     metadata: "D00",
     opening: "Queen's pawn game",
@@ -15366,7 +16933,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 503,
+    id: 549,
     cleanMoves:
         "1.d4 d5 2.e3 e6 3.Nc3 Nf6 4.Bb5+ c6 5.Ba4 a5 6.Nf3 b5 7.Bb3 a4",
     metadata: "D00",
@@ -15395,7 +16962,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 504,
+    id: 550,
     cleanMoves:
         "1.d4 d5 2.e3 Nf6 3.Bd3 Bg4 4.f3 Bh5 5.c3 Nc6 6.Qb3 b6 7.Qa4 Qd7 8.Bb5",
     metadata: "D00",
@@ -15426,7 +16993,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 505,
+    id: 551,
     cleanMoves:
         "1.d4 d5 2.Nf3 Nc6 3.g3 Bg4 4.Bg2 e6 5.O-O Be7 6.c3 h5 7.Ne5 Nxe5 8.dxe5 h4 9.Qa4+",
     metadata: "D02",
@@ -15458,7 +17025,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 506,
+    id: 552,
     cleanMoves:
         "1.d4 d5 2.Nf3 Bg4 3.c4 e6 4.Qb3 b6 5.Ne5 Nf6 6.e3 Bd6 7.cxd5 Bxe5 8.dxe5 Nxd5 9.Qa4+",
     metadata: "D02",
@@ -15490,7 +17057,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 507,
+    id: 553,
     cleanMoves:
         "1.d4 d5 2.Nf3 Bg4 3.c4 e6 4.Ne5 Bf5 5.cxd5 exd5 6.Qb3 b6 7.e4 Bxe4 8.Bb5+ Ke7 9.Bc6",
     metadata: "D02",
@@ -15522,7 +17089,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 508,
+    id: 554,
     cleanMoves:
         "1.d4 Nf6 2.Nc3 c5 3.Nf3 cxd4 4.Nxd4 d5 5.Bg5 e5 6.Ndb5 a6 7.Nxd5 axb5 8.Nxf6+ gxf6 9.Qxd8+ Kxd8 10.Bxf6+",
     metadata: "A45",
@@ -15556,7 +17123,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 509,
+    id: 555,
     cleanMoves:
         "1.d4 Nf6 2.Nc3 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.Ne4 Bb4+ 6.c3 Ba5 7.h3 Nh6 8.Bg5 f6 9.exf6",
     metadata: "A45",
@@ -15588,7 +17155,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 510,
+    id: 556,
     cleanMoves:
         "1.d4 Nf6 2.Nd2 e5 3.dxe5 Ng4 4.Ngf3 Be7 5.h3 Ne3 6.fxe3 Bh4+ 7.Nxh4 Qxh4+ 8.g3 Qxg3#",
     metadata: "A45",
@@ -15619,7 +17186,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 511,
+    id: 557,
     cleanMoves: "1.d4 Nf6 2.Nd2 e5 3.dxe5 Ng4 4.h3 Ne3 5.fxe3 Qh4+ 6.g3 Qxg3#",
     metadata: "A45",
     opening: "Queen's pawn game",
@@ -15645,7 +17212,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 512,
+    id: 558,
     cleanMoves: "1.d4 Nf6 2.Nf3 b5 3.Bg5 Bb7 4.e3 Ne4 5.Bxb5 c6",
     metadata: "A46",
     opening: "Queen's pawn game",
@@ -15657,7 +17224,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 513,
+    id: 559,
     cleanMoves: "1.d4 Nf6 2.Nf3 c5 3.Bf4 cxd4 4.Nxd4 e5 5.Bxe5 Qa5+",
     metadata: "A46",
     opening: "Queen's pawn game",
@@ -15680,7 +17247,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 514,
+    id: 560,
     cleanMoves: "1.d4 Nf6 2.Bf4 c5 3.Nf3 cxd4 4.Nxd4 e5 5.Bxe5 Qa5+ 6.c3 Qxe5",
     metadata: "A45",
     opening: "Queen's pawn game",
@@ -15706,7 +17273,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 515,
+    id: 561,
     cleanMoves:
         "1.d4 Nf6 2.Bf4 d5 3.Nf3 c5 4.dxc5 e6 5.Na3 Bxc5 6.Nb5 Qa5+ 7.c3 Qxb5",
     metadata: "D02",
@@ -15735,7 +17302,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 516,
+    id: 562,
     cleanMoves: "1.d4 Nf6 2.Bg5 c6 3.e3 Qa5+",
     metadata: "A45",
     opening: "Queen's pawn game",
@@ -15747,7 +17314,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 517,
+    id: 563,
     cleanMoves: "1.d4 Nf6 2.Bg5 c5 3.d5 Qb6 4.b3 Ne4 5.Be3 Qb4+ 6.Bd2 Qd4",
     metadata: "A45",
     opening: "Queen's pawn game",
@@ -15772,7 +17339,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 518,
+    id: 564,
     cleanMoves:
         "1.d4 Nf6 2.Bg5 Nd5 3.e4 h6 4.Bh4 Nf6 5.e5 Nd5 6.Qf3 c6 7.Bc4 Qb6 8.b3 Qxd4 9.c3 Qxh4",
     metadata: "A45",
@@ -15805,7 +17372,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 519,
+    id: 565,
     cleanMoves: "1.d4 Nf6 2.Bg5 d5 3.e3 e6 4.c4 c6 5.Bd3 dxc4 6.Bxc4 Qa5+",
     metadata: "A45",
     opening: "Queen's pawn game",
@@ -15830,7 +17397,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 520,
+    id: 566,
     cleanMoves:
         "1.d4 Nf6 2.Bg5 Ne4 3.Bf4 c5 4.d5 Qb6 5.Nd2 Qxb2 6.Ngf3 Nc3 7.Nc4 Nxd1 8.Nxb2 Nxb2",
     metadata: "A45",
@@ -15861,7 +17428,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 521,
+    id: 567,
     cleanMoves: "1.d4 Nf6 2.Bg5 Ne4 3.h4 d5 4.Nd2 Qd6 5.c3 Ng3",
     metadata: "A45",
     opening: "Queen's pawn game",
@@ -15873,7 +17440,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 522,
+    id: 568,
     cleanMoves: "1.Nf3 Nc6 2.g3 e5 3.Bg2 e4 4.Nh4 d5 5.c4 g5",
     metadata: "A04",
     opening: "Reti opening",
@@ -15885,7 +17452,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 523,
+    id: 569,
     cleanMoves: "1.Nf3 d5 2.c4 dxc4 3.e3 Nf6 4.Bxc4 Bg4 5.Ne5 Bh5 6.Qxh5",
     metadata: "A09",
     opening: "Reti opening",
@@ -15909,7 +17476,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 524,
+    id: 570,
     cleanMoves: "1.Nf3 d5 2.c4 Nf6 3.g3 Bf5 4.cxd5 Nxd5 5.e4 Bxe4 6.Qa4+",
     metadata: "A09",
     opening: "Reti opening",
@@ -15933,7 +17500,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 525,
+    id: 571,
     cleanMoves:
         "1.Nf3 d5 2.d3 d4 3.c3 dxc3 4.Nxc3 f5 5.e3 g6 6.d4 Bg7 7.Bc4 Nh6 8.Qb3 e6 9.Bxe6 Bxe6 10.Qxe6+ Qe7 11.Qc8+ Kf7 12.Qxb7 Nd7 13.Qd5+ Kf6 14.Qxa8 Rxa8 15.Nd5+",
     metadata: "A06",
@@ -15977,7 +17544,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 526,
+    id: 572,
     cleanMoves: "1.Nf3 d5 2.e4 dxe4 3.Bb5+ c6",
     metadata: "A06",
     opening: "Reti opening",
@@ -15989,7 +17556,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 527,
+    id: 573,
     cleanMoves:
         "1.Nf3 d5 2.e4 dxe4 3.Ng5 Bf5 4.Nc3 Nf6 5.Qe2 Nc6 6.Ngxe4 Nd4 7.Nxf6+ gxf6 8.Qd1 Nxc2+",
     metadata: "A06",
@@ -16020,7 +17587,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 528,
+    id: 574,
     cleanMoves:
         "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.Nc3 Bf5 5.Qe2 c6 6.Ngxe4 Nbd7 7.Nd6#",
     metadata: "A06",
@@ -16048,7 +17615,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 529,
+    id: 575,
     cleanMoves:
         "1.Nf3 Nf6 2.g3 d5 3.Bg2 c6 4.c4 dxc4 5.Na3 e5 6.Nxe5 Bxa3 7.bxa3 Qd4 8.Rb1 Qxe5",
     metadata: "A05",
@@ -16079,7 +17646,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 530,
+    id: 576,
     cleanMoves:
         "1.Nf3 Nf6 2.g3 g6 3.Bg2 Bg7 4.O-O O-O 5.c4 d6 6.Nc3 e5 7.d3 Nh5 8.b4 e4",
     metadata: "A05",
@@ -16110,7 +17677,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 531,
+    id: 577,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 a5 6.a4 b4 7.d4 Bd6 8.dxe5 Nxe5 9.Nxe5 Bxe5 10.Qd5",
     metadata: "C70",
@@ -16144,7 +17711,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 532,
+    id: 578,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 Nd4 6.Bxf7+ Kxf7 7.Nxe5+ Ke6 8.Qg4+ Kxe5 9.f4+ Kxe4 10.Nc3#",
     metadata: "C70",
@@ -16178,7 +17745,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 533,
+    id: 579,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 Nf6 6.Nc3 a5 7.Ng5 b4 8.Nxf7 Qe7 9.Nb5",
     metadata: "C70",
@@ -16210,7 +17777,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 534,
+    id: 580,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 Nf6 6.O-O Nxe4 7.Nxe5 Nxe5 8.Qh5 Bd6 9.d4 Nc6 10.Qxf7#",
     metadata: "C70",
@@ -16244,7 +17811,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 535,
+    id: 581,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nge7 5.O-O b5 6.Bb3 Na5 7.Nxe5 d6 8.Bxf7#",
     metadata: "C70",
@@ -16274,7 +17841,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 536,
+    id: 582,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.e5 Ng8 9.Qf3",
     metadata: "C77",
@@ -16306,7 +17873,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 537,
+    id: 583,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.d4 exd4 6.O-O Be7 7.Re1 b5 8.Bb3 d6 9.Nxd4 Nxd4 10.Qxd4 c5",
     metadata: "C90",
@@ -16341,7 +17908,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 538,
+    id: 584,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.d4 Nxe4 6.d5 Ne7 7.Nxe5 b5 8.Bb3 Bb7 9.d6 Nxd6 10.Qxd6",
     metadata: "C77",
@@ -16375,7 +17942,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 539,
+    id: 585,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.d4 b5 7.Bb3 exd4 8.Nxd4 Nc5 9.Nxc6 dxc6 10.Bxf7+",
     metadata: "C80",
@@ -16409,7 +17976,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 540,
+    id: 586,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5",
     metadata: "C71",
@@ -16440,7 +18007,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 541,
+    id: 587,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Nf6 6.Nxe5 Bd6 7.Nc4 Nxe4 8.Qe2 Qe7 9.Re1 Nf6 10.Nxd6+ cxd6 11.Qxe7#",
     metadata: "C68",
@@ -16476,7 +18043,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 542,
+    id: 588,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Nf6 6.Nxe5 Nxe4 7.Re1 Qd4 8.d3 Qxf2+ 9.Kh1 Nf6 10.Ng4+",
     metadata: "C68",
@@ -16510,7 +18077,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 543,
+    id: 589,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bd6 6.d4 Bg4 7.dxe5 Bxe5 8.Qxd8+ Kxd8 9.Nxe5",
     metadata: "C68",
@@ -16542,7 +18109,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 544,
+    id: 590,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bd6 6.d4 Qf6 7.Bg5 Qe6 8.dxe5 h6 9.exd6 Qxd6 10.Bh4",
     metadata: "C68",
@@ -16576,7 +18143,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 545,
+    id: 591,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Qd6 6.d4 Bg4 7.Bg5 f6 8.Be3 O-O-O 9.h3 h5 10.hxg4 hxg4 11.Nh2 exd4 12.Bd2 Qxh2#",
     metadata: "C68",
@@ -16615,7 +18182,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 546,
+    id: 592,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 Bh5 7.g4 Bg6 8.Nxe5 Bxe4 9.Re1 Qd5 10.Nc3 Qxe5 11.Rxe4",
     metadata: "C68",
@@ -16651,7 +18218,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 547,
+    id: 593,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.hxg4 hxg4 8.Ne1 Qh4 9.f3 g3",
     metadata: "C68",
@@ -16684,7 +18251,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 548,
+    id: 594,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.d3 Qf6 8.Nbd2 Ne7 9.Re1 Ng6 10.Qe2 Bc5 11.hxg4 Nf4 12.Qd1 hxg4 13.Nb3 Qh6",
     metadata: "C68",
@@ -16725,7 +18292,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 549,
+    id: 595,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.d3 Qf6 8.Be3 Ne7 9.Nbd2 Ng6 10.hxg4 hxg4 11.Ng5 Nf4 12.Qxg4 Qxg5 13.Qf3 Qxg2+ 14.Qxg2 Ne2#",
     metadata: "C68",
@@ -16768,7 +18335,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 550,
+    id: 596,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O f6 6.d4 exd4 7.Nxd4 Bc5 8.Qh5+ g6 9.Qxc5",
     metadata: "C68",
@@ -16800,7 +18367,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 551,
+    id: 597,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O f6 6.d4 exd4 7.Nxd4 c5 8.Nb3 Qxd1 9.Rxd1 Bd6 10.Na5 Bg4 11.f3 O-O-O 12.e5",
     metadata: "C68",
@@ -16838,7 +18405,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 552,
+    id: 598,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O f6 6.d4 exd4 7.Nxd4 c5 8.Nb3 Qxd1 9.Rxd1 Bd7 10.Bf4 O-O-O 11.Nc3 c6 12.Na4 b5 13.Nb6+ Kb7 14.Nxd7",
     metadata: "C68",
@@ -16880,7 +18447,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 553,
+    id: 599,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Bc5 4.c3 d6 5.d4 exd4 6.cxd4 Bb4+ 7.Kf1 Bd7 8.Qa4 Qe7 9.d5 Qxe4 10.Nc3 Qg4 11.h3",
     metadata: "C64",
@@ -16916,7 +18483,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 554,
+    id: 600,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nd4 4.Bc4 b5 5.Bxf7+ Kxf7 6.Nxd4 exd4 7.Qh5+ g6 8.Qd5+",
     metadata: "C61",
@@ -16946,7 +18513,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 555,
+    id: 601,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nge7 4.c3 a6 5.Bc4 h6 6.d4 d6 7.Qb3 Na5 8.Bxf7+ Kd7 9.Nxe5+ dxe5 10.Qe6#",
     metadata: "C60",
@@ -16980,7 +18547,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 556,
+    id: 602,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Bc5 5.Bxc6 dxc6 6.Nxe5 Qd4",
     metadata: "C65",
     opening: "Ruy Lopez (Spanish opening)",
@@ -17006,7 +18573,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 557,
+    id: 603,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.Bxc6 dxc6 5.d3 Bd6 6.Bg5 O-O 7.d4 Bg4 8.dxe5 Bxe5 9.Qxd8 Raxd8 10.Nxe5 Rd1#",
     metadata: "C65",
@@ -17041,7 +18608,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 558,
+    id: 604,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Nxe4 5.Re1 f5 6.d3 Nd6 7.Bxc6 dxc6 8.Rxe5+ Kf7 9.Bg5 Qd7 10.Re7+ Bxe7 11.Ne5+",
     metadata: "C67",
@@ -17077,7 +18644,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 559,
+    id: 605,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O a6 5.Bxc6 bxc6 6.Nxe5 Nxe4 7.Re1 d5 8.d3 Nxf2 9.Qf3",
     metadata: "C65",
@@ -17109,7 +18676,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 560,
+    id: 606,
     cleanMoves: "1.e4 a6 2.d4 b5 3.c4 bxc4 4.Bxc4 Bb7 5.Qb3",
     metadata: "B00",
     opening: "King's pawn opening",
@@ -17121,7 +18688,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 561,
+    id: 607,
     cleanMoves:
         "1.e4 a6 2.d4 b5 3.e5 e6 4.Qf3 Nc6 5.c3 Bb7 6.Nh3 Nxd4 7.Qxb7 Nc2+",
     metadata: "B00",
@@ -17150,7 +18717,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 562,
+    id: 608,
     cleanMoves:
         "1.e4 a6 2.d4 b5 3.Nf3 Bb7 4.Bd3 c5 5.dxc5 e6 6.O-O Bxc5 7.c4 b4 8.Bg5 f6 9.Be3 Qc7 10.Nh4 Ne7 11.Qh5+ g6 12.Qxc5",
     metadata: "B00",
@@ -17188,7 +18755,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 563,
+    id: 609,
     cleanMoves:
         "1.e4 a6 2.d4 b5 3.Nf3 Bb7 4.Bd3 e6 5.O-O c5 6.c3 Nf6 7.Re1 d5 8.e5 Nfd7 9.Ng5 cxd4 10.Nxe6 Qc8 11.Nxd4",
     metadata: "B00",
@@ -17224,7 +18791,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 564,
+    id: 610,
     cleanMoves:
         "1.e4 a6 2.d4 b5 3.Nf3 Bb7 4.Bd3 Nf6 5.e5 Nd5 6.a4 b4 7.Ng5 g6 8.Qf3 f5 9.Bxf5 Qc8 10.Be4 c6 11.Nxh7",
     metadata: "B00",
@@ -17261,7 +18828,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 565,
+    id: 611,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.c3 dxc3 5.Bc4 Be7 6.Qd5",
     metadata: "C44",
     opening: "King's pawn game",
@@ -17285,7 +18852,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 566,
+    id: 612,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.c3 dxc3 5.Bc4 Nf6 6.Nxc3 Bb4 7.e5 Ng4 8.Bxf7+ Kxf7 9.Ng5+ Kg8 10.Qd5+ Kf8 11.Qf7#",
     metadata: "C44",
@@ -17321,7 +18888,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 567,
+    id: 613,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.Qd5 d6 7.Qxf7#",
     metadata: "C44",
@@ -17349,7 +18916,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 568,
+    id: 614,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.c3 Nf6 6.b4 Bb6 7.e5 Ne4 8.b5 dxc3 9.Qd5 Bxf2+ 10.Ke2",
     metadata: "C44",
@@ -17383,7 +18950,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 569,
+    id: 615,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 d6 5.c3 dxc3 6.Nxc3 Bg4 7.O-O Ne5 8.Nxe5 Bxd1 9.Bxf7+ Ke7 10.Nd5#",
     metadata: "C44",
@@ -17417,7 +18984,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 570,
+    id: 616,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 gxh6 8.Qxf7#",
     metadata: "C44",
@@ -17447,7 +19014,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 571,
+    id: 617,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 d6 7.Qxf7+ Kd7 8.Be6#",
     metadata: "C44",
@@ -17477,7 +19044,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 572,
+    id: 618,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Bc5 5.Nxc6 Qh4 6.Nd4",
     metadata: "C45",
     opening: "Scotch game",
@@ -17501,7 +19068,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 573,
+    id: 619,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nxd4 5.Qxd4 Nf6 6.Bc4 Be7 7.e5 c5 8.Qf4",
     metadata: "C45",
@@ -17531,7 +19098,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 574,
+    id: 620,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nge7 5.Nc3 g6 6.Bg5 Bg7 7.Nd5 Bxd4 8.Qxd4 Nxd4 9.Nf6+ Kf8 10.Bh6#",
     metadata: "C45",
@@ -17565,7 +19132,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 575,
+    id: 621,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Qh4 5.Nc3 Nf6 6.Nf5 Qh5 7.Be2 Qg6 8.Nh4",
     metadata: "C45",
@@ -17595,7 +19162,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 576,
+    id: 622,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Bd3 Nxd4",
     metadata: "C45",
     opening: "Scotch game",
@@ -17618,7 +19185,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 577,
+    id: 623,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Bg5 Be7 6.Nf5 d5 7.exd5 Ne5 8.Nxe7 Qxe7 9.Bxf6 Nf3#",
     metadata: "C45",
@@ -17651,7 +19218,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 578,
+    id: 624,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 f5 4.exf5 e4 5.Ne5 Nxe5 6.dxe5 d6 7.Qh5+ Ke7 8.Bg5+ Nf6 9.exf6+",
     metadata: "C44",
@@ -17683,7 +19250,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 579,
+    id: 625,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 f6 4.Bc4 Bb4+ 5.c3 Ba5 6.dxe5 fxe5 7.Nxe5 Nxe5 8.Qh5+ Nf7 9.Qxf7#",
     metadata: "C44",
@@ -17715,7 +19282,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 580,
+    id: 626,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 Nf6 4.d5 Ne7 5.Nxe5 d6 6.Bb5+ c6 7.dxc6 Qa5+ 8.Nc3",
     metadata: "C44",
@@ -17745,7 +19312,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 581,
+    id: 627,
     cleanMoves: "1.e4 c5 2.b4 cxb4 3.a3 d5 4.exd5 Qxd5 5.axb4 Qe5+",
     metadata: "B20",
     opening: "Sicilian defence",
@@ -17768,7 +19335,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 582,
+    id: 628,
     cleanMoves: "1.e4 c5 2.c3 d6 3.d4 Nf6 4.dxc5 Nxe4 5.Qa4+",
     metadata: "B22",
     opening: "Sicilian defence",
@@ -17780,7 +19347,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 583,
+    id: 629,
     cleanMoves:
         "1.e4 c5 2.c3 d5 3.exd5 Qxd5 4.Nf3 e6 5.d4 Nf6 6.Bd3 c4 7.Qa4+ b5",
     metadata: "B22",
@@ -17809,7 +19376,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 584,
+    id: 630,
     cleanMoves: "1.e4 c5 2.c3 Nf6 3.e5 Nd5 4.Bc4 Nf4 5.Qf3 Ng6 6.Qxf7#",
     metadata: "B22",
     opening: "Sicilian defence",
@@ -17833,7 +19400,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 585,
+    id: 631,
     cleanMoves: "1.e4 c5 2.Nc3 Nc6 3.Nge2 g6 4.d3 Bg7 5.Be3 Nd4 6.g3 Nf3#",
     metadata: "B23",
     opening: "Sicilian defence",
@@ -17858,7 +19425,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 586,
+    id: 632,
     cleanMoves:
         "1.e4 c5 2.Nc3 Nc6 3.f4 g6 4.Nf3 Bg7 5.Bb5 Nd4 6.Nxd4 cxd4 7.Ne2 e6 8.d3 Qa5+",
     metadata: "B23",
@@ -17889,7 +19456,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 587,
+    id: 633,
     cleanMoves: "1.e4 c5 2.c4 Nc6 3.Ne2 Nf6 4.Nbc3 Nb4 5.g3 Nd3#",
     metadata: "B20",
     opening: "Sicilian defence",
@@ -17902,7 +19469,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 588,
+    id: 634,
     cleanMoves: "1.e4 c5 2.d4 Na6 3.Bxa6 bxa6 4.dxc5 Nf6 5.e5 Ne4 6.Qd5",
     metadata: "B21",
     opening: "Sicilian defence",
@@ -17926,7 +19493,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 589,
+    id: 635,
     cleanMoves: "1.e4 c5 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     metadata: "B21",
     opening: "Sicilian defence",
@@ -17950,7 +19517,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 590,
+    id: 636,
     cleanMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 d6 5.Bc4 g6 6.e5 dxe5 7.Bxf7+ Kxf7 8.Qxd8",
     metadata: "B21",
@@ -17980,7 +19547,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 591,
+    id: 637,
     cleanMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 d6 5.Bc4 Nf6 6.e5 dxe5 7.Bxf7+ Kxf7 8.Qxd8",
     metadata: "B21",
@@ -18010,7 +19577,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 592,
+    id: 638,
     cleanMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 d6 5.Nf3 Nf6 6.Bc4 Nc6 7.e5 Nxe5 8.Nxe5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
     metadata: "B21",
@@ -18044,7 +19611,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 593,
+    id: 639,
     cleanMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 g6 6.Bc4 Na5 7.Bxf7+ Kxf7 8.Qd4 Bg7 9.Ng5+ Kf8 10.Ne6+",
     metadata: "B21",
@@ -18078,7 +19645,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 594,
+    id: 640,
     cleanMoves: "1.e4 c5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 c4",
     metadata: "B30",
     opening: "Sicilian defence",
@@ -18090,7 +19657,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 595,
+    id: 641,
     cleanMoves:
         "1.e4 c5 2.Nf3 Nc6 3.Bb5 Qb6 4.Nc3 Nd4 5.Nxd4 cxd4 6.Nd5 Qd8 7.Qh5 a6 8.Qe5 f6 9.Nc7+ Kf7 10.Qd5+ e6 11.Nxe6 dxe6 12.Qxd8",
     metadata: "B30",
@@ -18128,7 +19695,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 596,
+    id: 642,
     cleanMoves:
         "1.e4 c5 2.Nf3 Nc6 3.Bc4 d6 4.O-O Nf6 5.d3 Bg4 6.h3 Bh5 7.g4 Nxg4 8.hxg4 Bxg4 9.Bxf7+ Kd7 10.Bd5 Ne5 11.Nxe5+ dxe5 12.Qxg4+",
     metadata: "B30",
@@ -18166,7 +19733,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 597,
+    id: 643,
     cleanMoves: "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e5 5.Nf5 Nge7 6.Nd6#",
     metadata: "B32",
     opening: "Sicilian defence",
@@ -18190,7 +19757,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 598,
+    id: 644,
     cleanMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 d6 6.Bc4 g6 7.Nxc6 bxc6 8.e5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
     metadata: "B57",
@@ -18224,7 +19791,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 599,
+    id: 645,
     cleanMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 d6 6.Bg5 Bd7 7.Be2 e5 8.Ndb5 Bc8 9.Nd5 Be6 10.Nbc7+",
     metadata: "B60",
@@ -18258,7 +19825,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 600,
+    id: 646,
     cleanMoves: "1.e4 c5 2.Nf3 d6 3.c3 Nf6 4.Be2 Nxe4 5.Qa4+",
     metadata: "B50",
     opening: "Sicilian defence",
@@ -18270,7 +19837,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 601,
+    id: 647,
     cleanMoves: "1.e4 c5 2.Nf3 d6 3.c3 Nf6 4.h3 Nxe4 5.Qa4+ Nc6 6.Qxe4",
     metadata: "B50",
     opening: "Sicilian defence",
@@ -18294,7 +19861,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 602,
+    id: 648,
     cleanMoves:
         "1.e4 c5 2.Nf3 d6 3.Bc4 Nc6 4.O-O e6 5.c3 Nf6 6.d4 Nxe4 7.d5 Ne7 8.dxe6 Bxe6 9.Bxe6 fxe6 10.Qa4+",
     metadata: "B50",
@@ -18328,7 +19895,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 603,
+    id: 649,
     cleanMoves: "1.e4 c5 2.Nf3 d6 3.d4 b6 4.dxc5 bxc5 5.Qd5",
     metadata: "B50",
     opening: "Sicilian defence",
@@ -18340,7 +19907,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 604,
+    id: 650,
     cleanMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 Nc6 4.d5 Nb8 5.Ng5 h6 6.Bb5+ Nd7 7.Ne6 fxe6 8.Qh5+ g6 9.Qxg6#",
     metadata: "B50",
@@ -18372,7 +19939,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 605,
+    id: 651,
     cleanMoves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Qxd4 a6 5.Be3 b5 6.Qd5",
     metadata: "B53",
     opening: "Sicilian defence",
@@ -18396,7 +19963,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 606,
+    id: 652,
     cleanMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Qxd4 a6 5.Be3 Nf6 6.Nc3 Nc6 7.Qd2 e6 8.O-O-O Qc7 9.Bf4 Ne5 10.Nxe5 dxe5 11.Bxe5 Qxe5 12.Qd8#",
     metadata: "B53",
@@ -18434,7 +20001,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 607,
+    id: 653,
     cleanMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Bg5 Qb6 7.Nb3 Qb4 8.Bd3 h6 9.Be3 d5 10.Bc5",
     metadata: "B94",
@@ -18468,7 +20035,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 608,
+    id: 654,
     cleanMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 g6 6.Be3 Ng4 7.Bb5+ Bd7 8.Qxg4",
     metadata: "B72",
@@ -18498,7 +20065,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 609,
+    id: 655,
     cleanMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 g6 6.f4 Bg7 7.e5 dxe5 8.Bb5+ Kf8 9.Ne6+",
     metadata: "B71",
@@ -18530,41 +20097,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 610,
-    cleanMoves:
-        "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6 6.Bc4 g6 7.Nxc6 bxc6 8.e5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
-    metadata: "B57",
-    opening: "Sicilian defence",
-    openingId: "sicilian_defence",
-    trapName: "Germany",
-    commentedMoves:
-        "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6 6.Bc4 g6 7.Nxc6 bxc6 8.e5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
-    moves: [
-      "e4",
-      "c5",
-      "Nf3",
-      "d6",
-      "d4",
-      "cxd4",
-      "Nxd4",
-      "Nf6",
-      "Nc3",
-      "Nc6",
-      "Bc4",
-      "g6",
-      "Nxc6",
-      "bxc6",
-      "e5",
-      "dxe5",
-      "Bxf7+",
-      "Kxf7",
-      "Qxd8",
-    ],
-    fen: "r1bQ1b1r/p3pk1p/2p2np1/4p3/8/2N5/PPP2PPP/R1B1K2R b KQ - 0 10",
-  ),
-
-  ChessTrap(
-    id: 611,
+    id: 656,
     cleanMoves: "1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 a6 5.Bf4 e5 6.Bxe5 Qa5+",
     metadata: "B41",
     opening: "Sicilian defence",
@@ -18589,7 +20122,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 612,
+    id: 657,
     cleanMoves:
         "1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 a6 5.Nc3 g6 6.Be3 Bg7 7.Nb3 Ne7 8.Na4 Nbc6 9.Bb6",
     metadata: "B43",
@@ -18621,7 +20154,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 613,
+    id: 658,
     cleanMoves: "1.e4 c5 2.Nf3 f6 3.d4 cxd4 4.Nxd4 e5 5.Nf5 Ne7 6.Nd6#",
     metadata: "B27",
     opening: "Sicilian defence",
@@ -18645,7 +20178,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 614,
+    id: 659,
     cleanMoves:
         "1.e4 c5 2.f4 e5 3.Nf3 d5 4.Nxe5 dxe4 5.Bc4 Nh6 6.Qe2 Bd6 7.Bb5+ Kf8 8.Qxe4 Qc7 9.Ng6+",
     metadata: "C30",
@@ -18677,7 +20210,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 615,
+    id: 660,
     cleanMoves:
         "1.e4 c5 2.f4 g6 3.Nf3 Bg7 4.Nc3 d6 5.Bc4 Bg4 6.Bxf7+ Kxf7 7.Ng5+ Ke8 8.Qxg4 Nh6 9.Qg3 Qa5 10.Nxh7 Rxh7 11.Qxg6+",
     metadata: "B21",
@@ -18713,7 +20246,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 616,
+    id: 661,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Bc5 4.Nxe5 Nxe5 5.d4 Bxd4 6.Qxd4 Qf6 7.Nb5 Kd8 8.Qc5 Nc6 9.Qf8#",
     metadata: "C46",
@@ -18745,7 +20278,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 617,
+    id: 662,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Bc5 4.Nxe5 Bxf2+ 5.Kxf2 Nxe5 6.d4 Qf6+ 7.Kg1 Nc6 8.e5 Nxe5 9.dxe5 Qb6+",
     metadata: "C46",
@@ -18778,7 +20311,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 618,
+    id: 663,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Bc5 4.Nxe5 Bxf2+ 5.Kxf2 Qf6+ 6.Nf3 d6 7.Nd5 Qd8 8.d4 Be6 9.Ne3",
     metadata: "C46",
@@ -18810,7 +20343,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 619,
+    id: 664,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 d6 4.d4 exd4 5.Nxd4 g6 6.Nd5 Bg7 7.Nb5 Rb8 8.Ndxc7+ Kd7 9.Qxd6#",
     metadata: "C46",
@@ -18842,7 +20375,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 620,
+    id: 665,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 f5 4.Bc4 fxe4 5.Nxe4 d5 6.Bb5 dxe4 7.Bxc6+ bxc6 8.Nxe5 Qg5 9.Nxc6 Qxg2 10.Rf1 Bg4",
     metadata: "C46",
@@ -18877,7 +20410,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 621,
+    id: 666,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 f5 4.d4 fxe4 5.Nxe5 Nf6 6.Bc4 d5 7.Nxd5 Nxd5 8.Qh5+ g6 9.Nxg6 Nf6 10.Bf7+ Kd7 11.Qf5+ Kd6 12.Bf4+ Ne5 13.Qxe5+",
     metadata: "C46",
@@ -18917,7 +20450,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 622,
+    id: 667,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 f6 4.Nh4 g5 5.Qh5+ Ke7 6.Nf5#",
     metadata: "C50",
     opening: "Italian Game",
@@ -18941,7 +20474,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 623,
+    id: 668,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nb4 6.d6 Nbd5 7.dxc7 Qxc7 8.Bxd5 Nxd5 9.Qf3 Be7 10.Qxf7+",
     metadata: "C57",
@@ -18975,7 +20508,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 624,
+    id: 669,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nd4 6.c3 b5 7.Bf1 Nxd5 8.cxd4 Qxg5 9.Bxb5+ Kd8 10.Qf3 Bb7 11.O-O exd4 12.Qxf7 Nf6",
     metadata: "C57",
@@ -19014,7 +20547,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 625,
+    id: 670,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Qf6 8.Bxd5+ Be6 9.Bxc6 Qxf3 10.Bxf3",
     metadata: "C57",
@@ -19048,7 +20581,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 626,
+    id: 671,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.d4 f6 7.dxe5 Nxe5 8.Bxd5 fxg5 9.O-O Bd7 10.Re1 Qf6 11.Qh5+ Qg6 12.Rxe5+",
     metadata: "C57",
@@ -19086,7 +20619,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 627,
+    id: 672,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Nd5 5.Nxf7 Kxf7 6.Bxd5+ Ke8 7.O-O Bc5 8.Nc3 Nd4 9.Qh5+ g6 10.Qxe5+",
     metadata: "C57",
@@ -19120,7 +20653,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 628,
+    id: 673,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Nxe4 5.Nxf7 Qf6 6.Nxh8 Qxf2#",
     metadata: "C57",
@@ -19147,7 +20680,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 629,
+    id: 674,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nh6 4.d4 Bd6 5.Bg5 f6 6.Bxh6 gxh6 7.Nxe5 fxe5 8.Qh5+ Kf8 9.Qf7#",
     metadata: "C50",
@@ -19179,7 +20712,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 630,
+    id: 675,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d3 d5 5.exd5 Nxd5 6.O-O Bg4 7.Re1 f6 8.Nxe5 Bxd1 9.Nxc6+",
     metadata: "C55",
@@ -19211,7 +20744,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 631,
+    id: 676,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d4 Nxe4 5.dxe5 Bc5 6.Qd5",
     metadata: "C55",
     opening: "Two knights defence",
@@ -19235,7 +20768,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 632,
+    id: 677,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Nxe4 5.Bxf7+ Ke7 6.Nxe4 Kxf7 7.Qf3+ Kg8 8.Ng5 Qe8 9.Qd5+ Qf7 10.Qxf7#",
     metadata: "C57",
@@ -19269,36 +20802,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 633,
-    cleanMoves:
-        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
-    metadata: "C50",
-    opening: "Italian Game",
-    openingId: "italian_game",
-    trapName: "Cologne",
-    commentedMoves:
-        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
-    moves: [
-      "e4",
-      "e5",
-      "Nf3",
-      "Nc6",
-      "Bc4",
-      "Nd4",
-      "Nxe5",
-      "Qg5",
-      "Nxf7",
-      "Qxg2",
-      "Rf1",
-      "Qxe4+",
-      "Be2",
-      "Nf3#",
-    ],
-    fen: "r1b1kbnr/pppp1Npp/8/8/4q3/5n2/PPPPBP1P/RNBQKR2 w Qkq - 2 8",
-  ),
-
-  ChessTrap(
-    id: 634,
+    id: 678,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kxf2 Nxe4+ 7.Kg1 Qh4 8.Nxh8 Qf2#",
     metadata: "C57",
@@ -19329,7 +20833,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 635,
+    id: 679,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kxf2 Nxe4+ 7.Ke1 Qh4+ 8.g3 Nxg3 9.Rf1 Nh1+ 10.Ke2 Qe4#",
     metadata: "C57",
@@ -19364,7 +20868,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 636,
+    id: 680,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kxf2 Nxe4+ 7.Ke3 Qh4 8.Qf3 Nf6 9.Ke2 Qxc4+ 10.Kd1 Nd4",
     metadata: "C57",
@@ -19399,7 +20903,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 637,
+    id: 681,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.Bxd5 Bg4",
     metadata: "C57",
@@ -19430,7 +20934,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 638,
+    id: 682,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Bxf7+ Ke7 6.Bc4 Rf8 7.Be2 Bxf2+ 8.Kxf2 Nxe4+ 9.Ke1 Nf2 10.Nxh7 Nxd1 11.Nxf8 Qxf8",
     metadata: "C57",
@@ -19467,7 +20971,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 639,
+    id: 683,
     cleanMoves:
         "1.e4 e5 2.Nc3 Bc5 3.Na4 Bxf2+ 4.Kxf2 Qh4+ 5.Ke3 Qf4+ 6.Kd3 d5 7.Qf3 dxe4+ 8.Qxe4 Bf5",
     metadata: "C25",
@@ -19498,7 +21002,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 640,
+    id: 684,
     cleanMoves:
         "1.e4 e5 2.Nc3 Bc5 3.Bc4 Ne7 4.d3 Nbc6 5.Qh5 O-O 6.Bg5 Qe8 7.Nd5 Bb6 8.Nf6+ gxf6 9.Bxf6",
     metadata: "C25",
@@ -19530,7 +21034,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 641,
+    id: 685,
     cleanMoves:
         "1.e4 e5 2.Nc3 Bc5 3.f4 Bxg1 4.Rxg1 d6 5.Bc4 Qh4+ 6.g3 Qxh2 7.Kf1 Bh3+",
     metadata: "C25",
@@ -19559,7 +21063,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 642,
+    id: 686,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bb5 Nd4 4.Nf3 Nf6 5.d3 Bb4 6.O-O Bxc3 7.bxc3 Nxb5",
     metadata: "C48",
@@ -19588,7 +21092,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 643,
+    id: 687,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Na5 4.Bxf7+ Ke7 5.Bxg8 Rxg8 6.Nd5+ Kd6 7.d4 exd4 8.Bf4+",
     metadata: "C25",
@@ -19618,7 +21122,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 644,
+    id: 688,
     cleanMoves: "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Nd5 Nf6 5.Nxf6+ Qxf6 6.d3 Qxf2#",
     metadata: "C25",
     opening: "Vienna game",
@@ -19644,7 +21148,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 645,
+    id: 689,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Qg4 Qf6 5.Nd5 Qxf2+ 6.Kd1 Na5 7.Nh3",
     metadata: "C25",
@@ -19672,7 +21176,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 646,
+    id: 690,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Qg4 Qf6 5.Nd5 Qxf2+ 6.Kd1 Kd8 7.Nh3 d6 8.Nxf2 Bxg4+ 9.Nxg4",
     metadata: "C25",
@@ -19704,7 +21208,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 647,
+    id: 691,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Qg4 Qf6 5.Nd5 Qxf2+ 6.Kd1 Kf8 7.Nh3 Qd4 8.d3 Bb6 9.Rf1 f6 10.Nxf6 Nxf6 11.Bh6 gxh6 12.Rxf6+ Ke8 13.Qg7",
     metadata: "C25",
@@ -19744,7 +21248,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 648,
+    id: 692,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Qg4 Qf6 5.Nd5 Qxf2+ 6.Kd1 Kf8 7.Nh3 Qd4 8.d3 Nf6 9.Qf3 Nxd5 10.c3",
     metadata: "C25",
@@ -19778,7 +21282,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 649,
+    id: 693,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 d6 4.f4 exf4 5.Nf3 Bg4 6.O-O Ne5 7.Nxe5 Bxd1 8.Bxf7+ Ke7 9.Nd5#",
     metadata: "C25",
@@ -19810,7 +21314,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 650,
+    id: 694,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.f4 d6 4.Nf3 a6 5.Bc4 Bg4 6.fxe5 Nxe5 7.Nxe5 Bxd1 8.Bxf7+ Ke7 9.Nd5#",
     metadata: "C25",
@@ -19842,7 +21346,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 651,
+    id: 695,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.f4 exf4 4.Bc4 Qh4+ 5.Kf1 Bc5 6.g3 fxg3 7.Nf3 g2+ 8.Kxg2 Qf2+ 9.Kh3 d5#",
     metadata: "C25",
@@ -19875,7 +21379,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 652,
+    id: 696,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.f4 exf4 4.d4 Qh4+ 5.Ke2 d6 6.Nf3 Bg4 7.Bxf4 f5 8.Kd3 Qe7 9.Qd2 fxe4+ 10.Nxe4 Bf5 11.Re1 Nf6",
     metadata: "C25",
@@ -19912,7 +21416,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 653,
+    id: 697,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nc6 3.g3 Bc5 4.Bg2 h5 5.Nf3 h4 6.Nxe5 Nxe5 7.d4 h3 8.Bxh3 Bxd4 9.Bg2 Bxc3+ 10.bxc3 d6",
     metadata: "C25",
@@ -19947,7 +21451,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 654,
+    id: 698,
     cleanMoves: "1.e4 e5 2.Nc3 Ne7 3.Nd5 Rg8 4.Bc4 g6 5.Nf6#",
     metadata: "C25",
     opening: "Vienna game",
@@ -19959,7 +21463,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 655,
+    id: 699,
     cleanMoves: "1.e4 e5 2.Nc3 f5 3.Bc4 fxe4 4.Qh5+ g6 5.Qxe5+ Qe7 6.Qxh8",
     metadata: "C25",
     opening: "Vienna game",
@@ -19983,7 +21487,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 656,
+    id: 700,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Nxe4 d5 5.Bb3 dxe4 6.Qh5 Qe7 7.Ne2 g6",
     metadata: "C27",
@@ -20012,7 +21516,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 657,
+    id: 701,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Nxe4 d5 5.Bxd5 Qxd5 6.d3 Bf5 7.Qf3 Bg6 8.Nf6+ gxf6 9.Qxd5",
     metadata: "C27",
@@ -20044,7 +21548,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 658,
+    id: 702,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Bxf7+ Kxf7 5.Nxe4 Nc6 6.Qf3+ Kg8 7.Ng5 Qe7 8.Qd5+",
     metadata: "C27",
@@ -20074,7 +21578,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 659,
+    id: 703,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Qh5 Nd6 5.Bb3 Nc6 6.d4 exd4 7.Nd5 g6 8.Qe2+ Be7 9.Nf6+ Kf8 10.Bh6#",
     metadata: "C27",
@@ -20108,7 +21612,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 660,
+    id: 704,
     cleanMoves: "1.e4 e5 2.Nc3 Nf6 3.f3 Nh5 4.d4 Qh4+ 5.g3 Nxg3 6.hxg3 Qxh1",
     metadata: "C26",
     opening: "Vienna game",
@@ -20134,7 +21638,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 661,
+    id: 705,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.d4 Bb4 5.fxe5 Nxe4 6.Bd2 Qh4+ 7.Ke2 Qf2+ 8.Kd3 Bf5",
     metadata: "C29",
@@ -20165,7 +21669,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 662,
+    id: 706,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.fxe5 Nxe4 5.Nf3 Bg4 6.Qe2 Nc6 7.Nxe4 Nd4 8.Qd3 Bxf3 9.Ng3",
     metadata: "C29",
@@ -20197,7 +21701,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 663,
+    id: 707,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.fxe5 Nxe4 5.Qf3 Nc6 6.Nxe4 Nd4 7.Qd3 dxe4 8.Qc3 Bb4 9.Qc4 Be6",
     metadata: "C29",
@@ -20230,7 +21734,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 664,
+    id: 708,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d6 4.Nf3 Nbd7 5.Bc4 Be7 6.Bxf7+ Kxf7 7.Ng5+ Kg6 8.f5+ Kxg5 9.d3+ Kh4 10.Qf3",
     metadata: "C29",
@@ -20264,7 +21768,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 665,
+    id: 709,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 exf4 4.e5 Qe7 5.Qe2 Ng8 6.Nf3 Nc6 7.d4 d6 8.Nd5 Qd8 9.Nxc7+ Qxc7 10.exd6+",
     metadata: "C29",
@@ -20298,7 +21802,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 666,
+    id: 710,
     cleanMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 exf4 4.e5 Qe7 5.Qe2 Ng8 6.Nf3 d6 7.Nd5 Qd7 8.exd6+ Kd8 9.dxc7+",
     metadata: "C29",
@@ -20330,7 +21834,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 667,
+    id: 711,
     cleanMoves: "1.e4 e5 2.Nc3 g6 3.Nd5 Ne7 4.Nf6#",
     metadata: "C25",
     opening: "Vienna game",
@@ -20342,7 +21846,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 668,
+    id: 712,
     cleanMoves: "1.d4 d5 2.Nc3 c5 3.e4 dxe4 4.Bf4 Qxd4 5.Nd5 Qxd1+ 6.Rxd1",
     metadata: "D00",
     opening: "Queen's pawn game",
@@ -20366,7 +21870,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 669,
+    id: 713,
     cleanMoves:
         "1.e4 e5 2.Nf3 f5 3.exf5 Bc5 4.Nxe5 d5 5.Qh5+ Ke7 6.Qg5+ Ke8 7.Qxd8+ Kxd8 8.Nf7+ Ke7 9.Nxh8",
     metadata: "C40",
@@ -20398,7 +21902,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 670,
+    id: 714,
     cleanMoves: "1.e4 c5 2.c4 Nc6 3.Ne2 Ne5 4.d4 Qa5+ 5.Bd2 Nd3#",
     metadata: "B20",
     opening: "Sicilian defence",
@@ -20410,7 +21914,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 671,
+    id: 715,
     cleanMoves: "1.e4 e5 2.Bc4 Nf6 3.Nf3 Nxe4 4.Nxe5 d5 5.Bb3 Qg5",
     metadata: "C42",
     opening: "Bishop's opening",
@@ -20433,7 +21937,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 672,
+    id: 716,
     cleanMoves:
         "1.e4 e6 2.d4 c5 3.d5 Nf6 4.Nc3 exd5 5.e5 d4 6.exf6 dxc3 7.Qe2+ Be7 8.fxe7 Qxe7 9.Qxe7+ Kxe7 10.Bc4",
     metadata: "A43",
@@ -20467,7 +21971,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 673,
+    id: 717,
     cleanMoves: "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 Be7 5.dxe5 dxe5 6.Qd5",
     metadata: "C41",
     opening: "Philidor's defence",
@@ -20491,7 +21995,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 674,
+    id: 718,
     cleanMoves: "1.e4 Nf6 2.Nc3 d5 3.e5 Ne4 4.Nce2 d4 5.c3 dxc3 6.Qa4+",
     metadata: "B02",
     opening: "Alekhine's defence",
@@ -20515,7 +22019,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 675,
+    id: 719,
     cleanMoves: "1.d4 Nc6 2.c4 Nf6 3.Nf3 d6 4.Nc3 Bg4 5.d5 Ne5 6.Nd2 Nd3+",
     metadata: "A45",
     opening: "Queen's pawn",
@@ -20540,7 +22044,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 676,
+    id: 720,
     cleanMoves: "1.d4 f5 2.Bg5 h6 3.Bh4 c5 4.e3 Qb6 5.b3 Nf6 6.dxc5 Qb4+",
     metadata: "A80",
     opening: "Dutch",
@@ -20566,7 +22070,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 677,
+    id: 721,
     cleanMoves: "1.f4 Nc6 2.b3 e5 3.e4 exf4 4.Bc4 Qh4+ 5.Kf1 Bc5 6.Nf3 Qf2#",
     metadata: "A02",
     opening: "Bird's opening",
@@ -20592,7 +22096,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 678,
+    id: 722,
     cleanMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Nxe4 e5 4.Bc4 Bf5 5.Qf3 Bg6 6.Ng5 Nf6 7.Qb3",
     metadata: "A00",
@@ -20620,7 +22124,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 679,
+    id: 723,
     cleanMoves:
         "1.Nc3 e5 2.Nf3 d6 3.e4 Bg4 4.Bc4 Bh5 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     metadata: "A00",
@@ -20648,7 +22152,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 680,
+    id: 724,
     cleanMoves:
         "1.d4 d5 2.Bf4 Nf6 3.e3 c5 4.c3 Qb6 5.Qc2 Bf5 6.Qxf5 Qxb2 7.Qc8#",
     metadata: "D00",
@@ -20676,7 +22180,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 681,
+    id: 725,
     cleanMoves: "1.e4 c5 2.Nf3 Nc6 3.Nc3 e5 4.Bc4 d6 5.d3 Bg4 6.h3 Bh5 7.Nxe5",
     metadata: "B30",
     opening: "Sicilian defence",
@@ -20703,7 +22207,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 682,
+    id: 726,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Bf5 5.Bd3 Bg6 6.Qe2 Nd7 7.Nd6#",
     metadata: "B18",
@@ -20731,7 +22235,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 683,
+    id: 727,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 c6 5.Bd3 Nf6 6.Nge2 Bf5 7.b4",
     metadata: "B01",
@@ -20759,7 +22263,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 684,
+    id: 728,
     cleanMoves: "1.e4 e5 2.Nf3 f5 3.Nxe5 Qf6 4.d4 fxe4 5.Nc3 d6 6.Nd5 Qf5 7.g4",
     metadata: "C40",
     opening: "King's knight opening",
@@ -20786,7 +22290,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 685,
+    id: 729,
     cleanMoves: "1.Nf3 Nf6 2.g3 b5 3.Na3 b4 4.Nc4 e6 5.Bg2 d5 6.Nce5 Bb7 7.Ng5",
     metadata: "A05",
     opening: "Reti opening",
@@ -20813,7 +22317,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 686,
+    id: 730,
     cleanMoves:
         "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Bd3 e5 6.Nf3 d5 7.c3 dxe4",
     metadata: "B28",
@@ -20842,7 +22346,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 687,
+    id: 731,
     cleanMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Nf3 a6 5.Qc2 b5 6.cxd5 cxd5 7.Bf4 Nbd7 8.Nxb5",
     metadata: "D15",
@@ -20872,7 +22376,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 688,
+    id: 732,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 Nbd7 6.Bxf6 Nxf6 7.Bd3 Bb4 8.Qa4+",
     metadata: "D53",
@@ -20902,7 +22406,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 689,
+    id: 733,
     cleanMoves:
         "1.d4 Nf6 2.Nf3 g6 3.c4 Bg7 4.Nc3 d5 5.cxd5 Nxd5 6.Bg5 c5 7.Rc1 cxd4 8.Nxd5",
     metadata: "D90",
@@ -20932,7 +22436,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 690,
+    id: 734,
     cleanMoves:
         "1.e4 e5 2.f4 d6 3.Nf3 Nc6 4.Bc4 Bg4 5.Nc3 Nd4 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     metadata: "C30",
@@ -20962,7 +22466,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 691,
+    id: 735,
     cleanMoves:
         "1.e4 e6 2.c4 c5 3.Nc3 Nc6 4.f4 Nge7 5.Nf3 g6 6.e5 d6 7.Ne4 dxe5 8.Nf6#",
     metadata: "C00",
@@ -20993,7 +22497,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 692,
+    id: 736,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.d4 Bg4 5.c3 f5 6.Qb3 Nge7 7.Bf7+ Kd7 8.Qe6#",
     metadata: "C50",
@@ -21023,7 +22527,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 693,
+    id: 737,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O h6 7.a3 Be7 8.Qd5",
     metadata: "C44",
@@ -21053,7 +22557,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 694,
+    id: 738,
     cleanMoves:
         "1.d4 d5 2.Nf3 Nf6 3.g3 g6 4.b3 Bg7 5.Bb2 c5 6.dxc5 Qa5+ 7.Nbd2 Qxc5 8.c4 Ng4",
     metadata: "D02",
@@ -21084,7 +22588,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 695,
+    id: 739,
     cleanMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Qd2 Qxb2 6.Qc3 Bb4 7.Bd2 Bxc3 8.Bxc3 Qc1#",
     metadata: "A40",
@@ -21115,7 +22619,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 696,
+    id: 740,
     cleanMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e6 5.Nc3 a6 6.Be2 Qc7 7.O-O Nf6 8.f4 Nxd4 9.Qxd4 Bc5",
     metadata: "B46",
@@ -21148,7 +22652,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 697,
+    id: 741,
     cleanMoves: "1.e4 c6 2.Nf3 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     metadata:
         "50 Opening Traps,Part 1 - oh no, smothered mate! - B10 - https://lichess.org/@/CHESSLUCAFD",
@@ -21173,7 +22677,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 698,
+    id: 742,
     cleanMoves:
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nf3 Bg4 5.Nc3 Bxf3 6.Nxd5 Bxd1 7.Nxc7+ Kd8 8.Nxa8 Bxc2 9.Bf4 Nxd4 10.Nc7 e5 11.Bxe5 Bb4#",
     metadata:
@@ -21211,7 +22715,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 699,
+    id: 743,
     cleanMoves:
         "1.e4 Nf6 2.Nc3 d5 3.exd5 Nxd5 4.Nge2 Nc6 5.g3 Bg4 6.Bg2 Nd4 7.Bxd5 Qxd5 8.Nxd5 Nf3+ 9.Kf1 Bh3#",
     metadata:
@@ -21245,7 +22749,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 700,
+    id: 744,
     cleanMoves:
         "1.e4 c6 2.Nf3 d5 3.Nc3 Bg4 4.h3 Bxf3 5.Qxf3 Nf6 6.d4 dxe4 7.Qe3 Nd5 8.Qxe4 Nxc3 9.bxc3 e6 10.Rb1 Qc8 11.Bd3 Nd7 12.Bg5 h6 13.Qxe6+ fxe6 14.Bg6#",
     metadata:
@@ -21288,7 +22792,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 701,
+    id: 745,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Nc3 Bb4 6.Nxc6 bxc6 7.Qf3 h6 8.a3 Bxc3+ 9.Qxc3 O-O 10.Bd3 Re8 11.f3 d5 12.Qxc6 dxe4 13.fxe4 Nxe4 14.O-O Qd4+ 15.Kh1 Bd7 16.Qc4 Nf2+ 17.Kg1 Nh3+ 18.Kh1 Qg1+ 19.Rxg1 Nf2#",
     metadata:
@@ -21342,7 +22846,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 702,
+    id: 746,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d3 h6 5.Bb3 Bc5 6.c3 Bb6 7.Nbd2 d6 8.Nf1 Bg4 9.h3 Bh5 10.Ng3 Bxf3 11.Qxf3 O-O 12.Nf5 Ne7 13.Nxh6+ gxh6 14.Qxf6",
     metadata:
@@ -21385,7 +22889,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 703,
+    id: 747,
     cleanMoves:
         "1.d4 Nf6 2.Bg5 e6 3.Nf3 Be7 4.Nbd2 d5 5.e3 c5 6.c3 Nbd7 7.Bd3 b6 8.Qa4 O-O 9.Ne5 Nxe5 10.dxe5 Nd7 11.Qh4",
     metadata:
@@ -21422,7 +22926,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 704,
+    id: 748,
     cleanMoves:
         "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Bd3 e5 6.Nf3 Nc6 7.O-O Bc5 8.h3 O-O 9.Nc3 d5 10.exd5 Nxd5 11.Nxd5 Qxd5 12.Bxh7+ Kxh7 13.Qxd5",
     metadata:
@@ -21463,7 +22967,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 705,
+    id: 749,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 c6 4.d4 Nd7 5.c3 Be7 6.Qb3 d5 7.exd5 b5 8.Bd3 exd4 9.cxd4 c5 10.Bxb5 Nf6 11.Bc6",
     metadata:
@@ -21500,7 +23004,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 706,
+    id: 750,
     cleanMoves:
         "1.Nf3 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.O-O a6 6.Na3 c5 7.Nxc4 b5 8.Nce5 Bb7 9.Nxf7 Kxf7 10.Ng5+ Ke8 11.Bxb7",
     metadata:
@@ -21537,7 +23041,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 707,
+    id: 751,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.f3 dxe4 4.fxe4 e5 5.Nf3 Bg4 6.Bc4 Nf6 7.Bxf7+ Kxf7 8.Nxe5+ Ke8 9.Nxg4 Nxg4 10.Qxg4 Qxd4 11.Nc3",
     metadata:
@@ -21574,7 +23078,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 708,
+    id: 752,
     cleanMoves: "1.d4 Nf6 2.c4 e5 3.d5 Bc5 4.Bg5 Bxf2+ 5.Kxf2 Ng4+ 6.Ke1 Qxg5",
     metadata:
         "50 Opening Traps,Part 1 - Catastrophe on f2 - A51 - https://lichess.org/@/CHESSLUCAFD",
@@ -21601,7 +23105,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 709,
+    id: 753,
     cleanMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.Bc4 Nf6 5.d4 c6 6.Nf3 Bg4 7.Bxf7+ Kxf7 8.Ne5+ Qxe5+ 9.dxe5 Bxd1",
     metadata:
@@ -21635,7 +23139,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 710,
+    id: 754,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 d6 5.Nc3 g6 6.Nd5 Bg7 7.Nb5",
     metadata:
@@ -21664,7 +23168,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 711,
+    id: 755,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nd4 6.d6 Qxd6 7.Nxf7 Qc6 8.Nxh8 Qxg2 9.Rf1 Qe4+ 10.Be2 Nf3#",
     metadata:
@@ -21700,7 +23204,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 712,
+    id: 756,
     cleanMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.Bc4 Nd7 5.Bxf7+ Kxf7 6.Ng5+ Ke8 7.Ne6",
     metadata:
@@ -21729,7 +23233,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 713,
+    id: 757,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Bc5 4.O-O Nge7 5.c3 f5 6.d4 Bb6 7.d5 fxe4 8.Ng5 Nb8 9.Ne6",
     metadata:
@@ -21762,45 +23266,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 714,
-    cleanMoves:
-        "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4",
-    metadata:
-        "50 Opening Traps,Part 1 - Win the Bishop on b3 - C71 - https://lichess.org/@/CHESSLUCAFD",
-    opening: "Ruy Lopez (Spanish opening)",
-    openingId: "ruy_lopez",
-    trapName: "Win the Bishop on b3",
-    commentedMoves:
-        "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4",
-    moves: [
-      "e4",
-      "e5",
-      "Nf3",
-      "Nc6",
-      "Bb5",
-      "a6",
-      "Ba4",
-      "d6",
-      "d4",
-      "b5",
-      "Bb3",
-      "Nxd4",
-      "Nxd4",
-      "exd4",
-      "Qxd4",
-      "c5",
-      "Qd5",
-      "Be6",
-      "Qc6+",
-      "Bd7",
-      "Qd5",
-      "c4",
-    ],
-    fen: "r2qkbnr/3b1ppp/p2p4/1p1Q4/2p1P3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 12",
-  ),
-
-  ChessTrap(
-    id: 715,
+    id: 758,
     cleanMoves:
         "1.Nf3 d5 2.b3 Bf5 3.Bb2 e6 4.g3 Nf6 5.Bg2 Nbd7 6.O-O Bd6 7.d3 O-O 8.Nbd2 h6 9.Re1 c6 10.e4 Bg4 11.e5",
     metadata:
@@ -21838,7 +23304,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 716,
+    id: 759,
     cleanMoves: "1.d4 Nf6 2.Bf4 c5 3.Nf3 cxd4 4.Nxd4 e5 5.Bxe5 Qa5+",
     metadata:
         "50 Opening Traps,Part 1 - Sacrifice  pawn, win Bishop - A45 - https://lichess.org/@/CHESSLUCAFD",
@@ -21862,7 +23328,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 717,
+    id: 760,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 d5 4.Bg5 c5 5.Nf3 cxd4 6.Nxd4 e5 7.Ndb5 a6 8.Nxd5 axb5 9.Nxf6+ Qxf6 10.Bxf6 Bb4+",
     metadata:
@@ -21898,7 +23364,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 718,
+    id: 761,
     cleanMoves: "1.d4 Nf6 2.Bg5 Ne4 3.Bh4 c5 4.Qd3 Qb6 5.b3 Qh6 6.Qxe4 Qc1#",
     metadata:
         "50 Opening Traps,Part 1 - Brother of the Englud Trap - A45 - https://lichess.org/@/CHESSLUCAFD",
@@ -21925,7 +23391,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 719,
+    id: 762,
     cleanMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 c5 5.Ne2 d5 6.Bd2 Qa5 7.a3 Nc6 8.axb4 Nxb4 9.Rxa5 Nd3#",
     metadata:
@@ -21959,43 +23425,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 720,
-    cleanMoves:
-        "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Qc7 7.O-O Nf6 8.Qe2 Ng4 9.h3 Nd4 10.Nxd4 Qh2#",
-    metadata:
-        "50 Opening Traps,Part 1 - Sacrifice the Knight 2.0 - B21 - https://lichess.org/@/CHESSLUCAFD",
-    opening: "Sicilian defence",
-    openingId: "sicilian_defence",
-    trapName: "Sacrifice the Knight 2.0",
-    commentedMoves:
-        "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Qc7 7.O-O Nf6 8.Qe2 Ng4 9.h3 Nd4 10.Nxd4 Qh2#",
-    moves: [
-      "e4",
-      "c5",
-      "d4",
-      "cxd4",
-      "c3",
-      "dxc3",
-      "Nxc3",
-      "Nc6",
-      "Nf3",
-      "e6",
-      "Bc4",
-      "Qc7",
-      "O-O",
-      "Nf6",
-      "Qe2",
-      "Ng4",
-      "h3",
-      "Nd4",
-      "Nxd4",
-      "Qh2#",
-    ],
-    fen: "r1b1kb1r/pp1p1ppp/4p3/8/2BNP1n1/2N4P/PP2QPPq/R1B2RK1 w kq - 1 11",
-  ),
-
-  ChessTrap(
-    id: 721,
+    id: 763,
     cleanMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.g3 Bb4+ 5.Bd2 Be7 6.Qb3 O-O 7.Bg2 c6 8.Bb4 dxc4 9.Qxc4 Qd5 10.Qc3 Ne4 11.Qa3 Qc4",
     metadata:
@@ -22033,7 +23463,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 722,
+    id: 764,
     cleanMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e6 5.Nc3 a6 6.a3 Qc7 7.Be2 d6 8.O-O Nge7 9.Ndb5 axb5 10.Nxb5 Qd8 11.Nxd6+ Kd7 12.Nxf7+",
     metadata:
@@ -22072,7 +23502,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 723,
+    id: 765,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 c6 4.e4 Bb4 5.Bd3 e5 6.dxe5 dxe4 7.Bxe4 Bxc3+ 8.bxc3 Qxd1+ 9.Kxd1 Be6 10.Rb1 Na6 11.Rxb7 O-O-O+",
     metadata:
@@ -22110,7 +23540,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 724,
+    id: 766,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.e3 c6 6.Nf3 Qa5 7.Nd2 Bb4 8.Qc2 O-O 9.Bd3 dxc4 10.Bxc4 Qxg5",
     metadata:
@@ -22146,7 +23576,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 725,
+    id: 767,
     cleanMoves:
         "1.g3 g6 2.Bg2 Bg7 3.e4 c5 4.d3 Nc6 5.c3 d6 6.Be3 Qb6 7.Qd2 Ne5 8.Na3 Qxb2 9.Qxb2 Nxd3+ 10.Kd2 Nxb2",
     metadata:
@@ -22182,7 +23612,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 726,
+    id: 768,
     cleanMoves: "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 b6 5.Ne2 Ba6 6.Ng3 d5 7.Qa4+",
     metadata:
         "50 Opening Traps,Part 1 - The rare Bishop on a6 - E45 - https://lichess.org/@/CHESSLUCAFD",
@@ -22211,7 +23641,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 727,
+    id: 769,
     cleanMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.bxa6 g6 6.g3 Bg7 7.Bg2 d6 8.Nc3 O-O 9.Nf3 Bxa6 10.O-O Nbd7 11.Re1 Ng4 12.Qc2 Rb8 13.Qa4",
     metadata:
@@ -22252,7 +23682,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 728,
+    id: 770,
     cleanMoves:
         "1.g3 d5 2.Nf3 c5 3.Bg2 Nc6 4.O-O e5 5.d3 f5 6.c4 d4 7.e3 Nf6 8.exd4 cxd4 9.Nxe5 Nxe5 10.Re1 Ng4 11.f4 Bb4 12.Re2",
     metadata:
@@ -22291,7 +23721,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 729,
+    id: 771,
     cleanMoves:
         "1.Nf3 d5 2.c4 Nf6 3.cxd5 Nxd5 4.e4 Nf6 5.Nc3 Nc6 6.d4 Bg4 7.d5 Ne5 8.Nxe5 Bxd1 9.Bb5+ c6 10.dxc6 a6 11.c7+ axb5 12.cxd8=Q+ Rxd8 13.Nxd1",
     metadata:
@@ -22332,7 +23762,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 730,
+    id: 772,
     cleanMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 Be6 9.Nc4 Rc8 10.Ne3 Be7 11.Bd3 Nxe4 12.Bxe7 Nxc3 13.Bxd8 Nxd1",
     metadata:
@@ -22374,7 +23804,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 731,
+    id: 773,
     cleanMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 e5 4.Nf3 exd4 5.Qxd4 a6 6.Bg5 Be7 7.h3 Nc6 8.Qd2 Be6 9.Nd4 Nxd4 10.Qxd4 O-O 11.Be2 Re8 12.O-O Nxe4 13.Qxe4 Bxg5 14.Qxb7 Rb8 15.Qxa6 Rxb2",
     metadata:
@@ -22420,7 +23850,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 732,
+    id: 774,
     cleanMoves:
         "1.d4 Nf6 2.Bg5 Ne4 3.Bf4 c5 4.f3 Nf6 5.dxc5 Na6 6.e4 Nxc5 7.Nc3 d6 8.Qd2 Bd7 9.O-O-O Qa5 10.Kb1 Rd8 11.Nd5 Qxd2 12.Nc7#",
     metadata:
@@ -22459,7 +23889,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 733,
+    id: 775,
     cleanMoves:
         "1.c4 c5 2.Nc3 b6 3.g3 Bb7 4.e4 e6 5.Bg2 Nf6 6.Nge2 Be7 7.O-O d6 8.e5 Bxg2 9.exf6 Bxf1 10.fxe7 Qxe7 11.Qxf1",
     metadata:
@@ -22496,7 +23926,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 734,
+    id: 776,
     cleanMoves:
         "1.d4 e6 2.Nf3 f5 3.g3 b6 4.d5 Be7 5.Bg2 Bb7 6.Ne5 d6 7.Nf7 Kxf7 8.dxe6+",
     metadata:
@@ -22527,7 +23957,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 735,
+    id: 777,
     cleanMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Qb3 dxc4 6.Qxc4 O-O 7.e4 a6 8.a4 b5 9.axb5 axb5 10.Qxb5 Rxa1",
     metadata:
@@ -22563,7 +23993,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 736,
+    id: 778,
     cleanMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.c3 Nf6 5.Bd3 O-O 6.O-O c5 7.h3 Nc6 8.d5 Na5 9.Re1 e5 10.b4",
     metadata:
@@ -22599,7 +24029,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 737,
+    id: 779,
     cleanMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 c6 4.f4 Qa5 5.Bd3 e5 6.Nf3 Bg4 7.Be3 exf4 8.Bxf4 Qb6 9.Na4 Qa5+ 10.Nc3 Qb4 11.a3 Qxb2 12.Na4 Bxf3 13.gxf3 Qxd4 14.c3",
     metadata:
@@ -22642,7 +24072,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 738,
+    id: 780,
     cleanMoves:
         "1.e4 c5 2.Nf3 Nc6 3.Bb5 g6 4.O-O Bg7 5.c3 Nf6 6.e5 Nd5 7.d4 cxd4 8.cxd4 O-O 9.Bg5 Qb6 10.Bc4 Qxb2 11.Bxd5 Qxa1 12.Qd2",
     metadata:
@@ -22681,7 +24111,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 739,
+    id: 781,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O Nf6 5.d4 exd4 6.e5 d5 7.exf6 dxc4 8.Re1+ Be6 9.fxg7 Rg8 10.Bg5 Qd5 11.Nc3 Qf5 12.Ne4 Rxg7 13.Nh4",
     metadata:
@@ -22722,7 +24152,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 740,
+    id: 782,
     cleanMoves:
         "1.e4 e6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Bd7 5.Nf3 Bc6 6.Bd3 Nf6 7.Nxf6+ Qxf6 8.Bg5 Bxf3 9.Qd2 Qxd4 10.Bb5+",
     metadata:
@@ -22757,7 +24187,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 741,
+    id: 783,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.Nf3 O-O 6.e3 h6 7.Bh4 Ne4 8.Bxe7 Qxe7 9.cxd5 Nxc3 10.bxc3 exd5 11.Bd3 Bg4 12.Rb1 Nd7 13.Rxb7 Nb6 14.Qb3 Bc8 15.Rxb6 axb6 16.Qxd5 Be6 17.Qe4 f5 18.Qe5 Ra5",
     metadata:
@@ -22809,7 +24239,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 742,
+    id: 784,
     cleanMoves:
         "1.c4 Nf6 2.Nc3 d5 3.cxd5 Nxd5 4.g3 g6 5.Bg2 Nxc3 6.bxc3 Bg7 7.Rb1 O-O 8.Rxb7 Bxb7 9.Bxb7 Nd7 10.Bxa8 Qxa8 11.Nf3",
     metadata:
@@ -22846,7 +24276,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 743,
+    id: 785,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3 Nb8 10.d4 Nbd7 11.Nbd2 Re8 12.Bxf7+ Kxf7 13.Ng5+ Kg8 14.Ne6",
     metadata:
@@ -22889,7 +24319,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 744,
+    id: 786,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Be7 4.d4 exd4 5.Nxd4 Nd7 6.Bxf7+ Kxf7 7.Ne6 Qe8 8.Nxc7 Qf8 9.Qh5+ g6 10.Qd5+ Kf6 11.Bg5+ Kg7 12.Ne6+",
     metadata:
@@ -22928,7 +24358,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 745,
+    id: 787,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.Re1 Nc5 7.Nc3 Nxa4 8.Nxe5 Nxe5 9.Rxe5+ Be7 10.Nd5 O-O 11.Nxe7+ Kh8 12.Qh5 d6 13.Qxh7+ Kxh7 14.Rh5#",
     metadata:
@@ -22971,66 +24401,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 746,
-    cleanMoves:
-        "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
-    metadata:
-        "6 Traps to use in games - Trap 1 - A06 - https://lichess.org/@/EkuPotter",
-    opening: "Reti opening",
-    openingId: "reti_opening",
-    trapName: "Trap 1",
-    commentedMoves:
-        "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
-    moves: [
-      "Nf3",
-      "d5",
-      "e4",
-      "dxe4",
-      "Ng5",
-      "Nf6",
-      "d3",
-      "exd3",
-      "Bxd3",
-      "h6",
-      "Nxf7",
-      "Kxf7",
-      "Bg6+",
-      "Kxg6",
-      "Qxd8",
-    ],
-    fen: "rnbQ1b1r/ppp1p1p1/5nkp/8/8/8/PPP2PPP/RNB1K2R b KQ - 0 8",
-  ),
-
-  ChessTrap(
-    id: 747,
-    cleanMoves:
-        "1.d4 e5 2.dxe5 Bc5 3.Nf3 d6 4.exd6 Ne7 5.dxe7 Bxf2+ 6.Kxf2 Qxd1",
-    metadata:
-        "6 Traps to use in games - Trap 2 - A40 - https://lichess.org/@/EkuPotter",
-    opening: "Queen's pawn",
-    openingId: "queens_pawn_a40",
-    trapName: "Trap 2",
-    commentedMoves:
-        "1.d4 e5 2.dxe5 Bc5 3.Nf3 d6 4.exd6 Ne7 5.dxe7 Bxf2+ 6.Kxf2 Qxd1",
-    moves: [
-      "d4",
-      "e5",
-      "dxe5",
-      "Bc5",
-      "Nf3",
-      "d6",
-      "exd6",
-      "Ne7",
-      "dxe7",
-      "Bxf2+",
-      "Kxf2",
-      "Qxd1",
-    ],
-    fen: "rnb1k2r/ppp1Pppp/8/8/8/5N2/PPP1PKPP/RNBq1B1R w kq - 0 7",
-  ),
-
-  ChessTrap(
-    id: 748,
+    id: 788,
     cleanMoves: "1.e4 e5 2.Bc4 Nc6 3.Qf3 f5 4.Qxf5 d5 5.Bxd5 Bxf5",
     metadata:
         "6 Traps to use in games - Trap 3 - C23 - https://lichess.org/@/EkuPotter",
@@ -23054,7 +24425,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 749,
+    id: 789,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.d4 exd4 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5",
     metadata:
@@ -23087,7 +24458,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 750,
+    id: 790,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 Nf6 5.Nc6+",
     metadata:
         "6 Traps to use in games - Trap 5 - C42 - https://lichess.org/@/EkuPotter",
@@ -23100,7 +24471,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 751,
+    id: 791,
     cleanMoves:
         "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3 Nc6 7.Qxc6+",
     metadata:
@@ -23129,39 +24500,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 752,
-    cleanMoves:
-        "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
-    metadata:
-        "Beginners Trap - Stafford Gambit 1 - C42 - https://lichess.org/@/adha_legacy",
-    opening: "Petrov's defence",
-    openingId: "petrovs_defence",
-    trapName: "Stafford Gambit 1",
-    commentedMoves:
-        "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
-    moves: [
-      "e4",
-      "e5",
-      "Nf3",
-      "Nf6",
-      "Nxe5",
-      "Nc6",
-      "Nxc6",
-      "dxc6",
-      "d3",
-      "Bc5",
-      "Bg5",
-      "Nxe4",
-      "Bxd8",
-      "Bxf2+",
-      "Ke2",
-      "Bg4#",
-    ],
-    fen: "r2Bk2r/ppp2ppp/2p5/8/4n1b1/3P4/PPP1KbPP/RN1Q1B1R w kq - 2 9",
-  ),
-
-  ChessTrap(
-    id: 753,
+    id: 792,
     cleanMoves:
         "1.d4 e5 2.dxe5 f6 3.exf6 Nxf6 4.Nf3 Bc5 5.Bg5 Ne4 6.Bxd8 Bxf2#",
     metadata:
@@ -23189,7 +24528,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 754,
+    id: 793,
     cleanMoves: "1.e4 e5 2.Bc4 b6 3.Qh5 g6 4.Qxe5+",
     metadata:
         "Beginners Trap - Bishop Opening 4 - C23 - https://lichess.org/@/adha_legacy",
@@ -23202,7 +24541,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 755,
+    id: 794,
     cleanMoves: "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Qe2 Nbd7 6.Nd6#",
     metadata:
         "Check mate traps - Caro kann trap for white - B15 - https://lichess.org/@/Imron28",
@@ -23227,7 +24566,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 756,
+    id: 795,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Kg8 8.Bxd5+ Qxd5 9.Qxd5+ Be6 10.Qxe6#",
     metadata:
@@ -23262,7 +24601,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 757,
+    id: 796,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 d6 4.Bc4 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     metadata:
@@ -23293,7 +24632,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 758,
+    id: 797,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Rxg1 Qd4+",
     metadata:
@@ -23329,7 +24668,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 759,
+    id: 798,
     cleanMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7 Qxc7 15.Qxc7",
     metadata:
@@ -23374,7 +24713,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 760,
+    id: 799,
     cleanMoves:
         "1.e4 e5 2.Qh5 Nc6 3.Bc4 g6 4.Qf3 Nf6 5.g4 h6 6.Nh3 d6 7.g5 Bxh3 8.gxf6 Bd7 9.c3",
     metadata:
@@ -23408,7 +24747,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 761,
+    id: 800,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Qe2 Nxe2",
     metadata:
@@ -23438,7 +24777,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 762,
+    id: 801,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Nh2 Qh4 8.f3 g3 9.Re1 Qxh2+ 10.Kf1 Nd4 11.Bxd7+ Kxd7 12.Qe2 Qh1#",
     metadata:
@@ -23478,7 +24817,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 763,
+    id: 802,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     metadata:
@@ -23509,7 +24848,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 764,
+    id: 803,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Kc3 Qf2 11.Na3 Qe3+ 12.Bd3 Qxe5+ 13.Kd2 Bf5 14.Qe1 O-O-O 15.Qxe5 Rxd3+ 16.Ke1 Nf3+ 17.gxf3 Nxe5",
     metadata:
@@ -23559,41 +24898,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 765,
-    cleanMoves:
-        "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
-    metadata:
-        "Opening traps. - Elephant trap.🐘 - D51 - https://lichess.org/@/Lock_day",
-    opening: "Queen's Gambit Declined, 4.Bg5",
-    openingId: "qgd_4_bg5",
-    trapName: "Elephant trap.🐘",
-    commentedMoves:
-        "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
-    moves: [
-      "d4",
-      "d5",
-      "c4",
-      "e6",
-      "Nc3",
-      "Nf6",
-      "Bg5",
-      "Nbd7",
-      "cxd5",
-      "exd5",
-      "Nxd5",
-      "Nxd5",
-      "Bxd8",
-      "Bb4+",
-      "Qd2",
-      "Bxd2+",
-      "Kxd2",
-      "Kxd8",
-    ],
-    fen: "r1bk3r/pppn1ppp/8/3n4/3P4/8/PP1KPPPP/R4BNR w - - 0 10",
-  ),
-
-  ChessTrap(
-    id: 766,
+    id: 804,
     cleanMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7",
     metadata:
@@ -23636,7 +24941,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 767,
+    id: 805,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Nf3 d6 5.exd6 Bxd6 6.g3 Nxf2 7.Kxf2 Bxg3+ 8.hxg3 Qxd1",
     metadata:
@@ -23668,7 +24973,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 768,
+    id: 806,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.hxg4 hxg4 8.Nxe5 Qh4 9.f4 g3 10.Qh5 Rxh5 11.Rf2 Qh1#",
     metadata:
@@ -23706,7 +25011,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 769,
+    id: 807,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4",
     metadata:
         "Scotch Gambit - Crush your opponent! - Introduction 🥳 - C44 - https://lichess.org/@/BZ333",
@@ -23719,7 +25024,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 770,
+    id: 808,
     cleanMoves:
         "1.Nf6 e5 2.d5 Bb5 3.Ne4 Nxd4 4.Bd7 Bxc6 5.Bxc6 Nxc6 6.bxc6 O-O 7.Qe7",
     metadata:
@@ -23748,7 +25053,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 771,
+    id: 809,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Nf6 5.e5 d5 6.Bb5 Ne4 7.Nxd4",
     metadata:
@@ -23777,7 +25082,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 772,
+    id: 810,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O Nf6 7.e5 d5 8.exf6 dxc4 9.Qxd8+ Kxd8 10.fxg7 Rg8",
     metadata:
@@ -23813,7 +25118,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 773,
+    id: 811,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O cxb2 7.Bxb2 Nf6 8.e5 Ng4 9.h3 Nh6",
     metadata:
@@ -23847,7 +25152,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 774,
+    id: 812,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 O-O 8.Nxc3 gxh6 9.O-O",
     metadata:
@@ -23880,7 +25185,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 775,
+    id: 813,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5 d5 10.O-O",
     metadata:
@@ -23915,7 +25220,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 776,
+    id: 814,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5",
     metadata:
@@ -23948,7 +25253,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 777,
+    id: 815,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 d6 5.Nxd4 Nf6 6.Nc3 Be7 7.O-O O-O",
     metadata:
@@ -23978,7 +25283,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 778,
+    id: 816,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5 cxb2 10.Bxb2 Nf6 11.Qc1",
     metadata:
@@ -24015,7 +25320,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 779,
+    id: 817,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Qe7 6.Nxh8",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- Intro ⏱️ -- - C57 - https://lichess.org/@/protonie",
@@ -24040,7 +25345,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 780,
+    id: 818,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- Stafford Gambit | The Exoskeleton 📒-- - C42 - https://lichess.org/@/protonie",
@@ -24053,7 +25358,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 781,
+    id: 819,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.g3 Qxg3+ 10.Kh1 Qh2#",
     metadata:
@@ -24089,7 +25394,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 782,
+    id: 820,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1 9.Nc3",
     metadata:
@@ -24122,7 +25427,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 783,
+    id: 821,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4 10.e5 Qxe5 11.Bf4 Qxf4 12.g3 Qxg3#",
     metadata:
@@ -24162,7 +25467,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 784,
+    id: 822,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6",
     metadata:
         "Stafford Gambit Traps - Introduction - C42 - https://lichess.org/@/nhatduy",
@@ -24175,7 +25480,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 785,
+    id: 823,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1",
     metadata:
@@ -24207,7 +25512,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 786,
+    id: 824,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d4 Qh4 7.g3 Nxg3 8.fxg3 Qe4+",
     metadata:
@@ -24239,7 +25544,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 787,
+    id: 825,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.d3 Ng4 7.Be3 Nxe3 8.fxe3 Bxe3",
     metadata:
@@ -24271,7 +25576,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 788,
+    id: 826,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Bc4 Ng4 7.O-O Qh4 8.h3 Nxf2 9.Qf3 Nxh3+ 10.Kh1 Nf2+ 11.Kg1 Qh1#",
     metadata:
@@ -24309,7 +25614,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 789,
+    id: 827,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Be2 h5 7.h3 Qd4 8.O-O Ng4 9.hxg4 hxg4 10.g3 Qe5 11.Kg2 Bxf2 12.Kxf2 Rh2+ 13.Ke3 Qxg3+ 14.Kd4 Be6",
     metadata:
@@ -24353,7 +25658,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 790,
+    id: 828,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.h3 Bxf2+ 7.Kxf2 Nxe4+ 8.Ke3 O-O 9.Kxe4",
     metadata:
@@ -24386,7 +25691,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 791,
+    id: 829,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4",
     metadata:
@@ -24420,7 +25725,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 792,
+    id: 830,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be3 Bxe3 7.fxe3 Ng4 8.Qf3 Qg5 9.Qf4 Qc5 10.Kd2",
     metadata:
@@ -24455,7 +25760,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 793,
+    id: 831,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.Bb5+ Nxb5 10.Kxf2 Ng4+ 11.Ke1 Nd4 12.c3 Qf6 13.Rf1 Qh4+ 14.g3 Qxh2 15.cxd4 Qxg3+ 16.Ke2 Nf6 17.Qa4+ Bd7 18.Qc4 Bg4+ 19.Rf3 Bxf3+ 20.Ke3 Bxd5+ 21.Ke2 Bxc4+ 22.Kd1 Bd3 23.Nc3 Qg1#",
     metadata:
@@ -24517,7 +25822,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 794,
+    id: 832,
     cleanMoves: "1.e4",
     metadata: "Traps 99% win - Hello! - B00 - https://lichess.org/@/MaxMalkov",
     opening: "King's pawn opening",
@@ -24529,7 +25834,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 795,
+    id: 833,
     cleanMoves:
         "1.d5 Nf3 2.dxe4 Ng5 3.Nf6 d3 4.exd3 Bxd3 5.h6 Nxf7 6.Kxf7 Bg6+ 7.Kxg6 Qxd8",
     metadata:
@@ -24559,7 +25864,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 796,
+    id: 834,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+ 9.Kf2 Qxd1",
     metadata:
@@ -24593,7 +25898,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 797,
+    id: 835,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Ng5 h6 6.Ne6 fxe6 7.Qh5+ g6 8.Qxg6#",
     metadata:
@@ -24624,7 +25929,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 798,
+    id: 836,
     cleanMoves:
         "1.e4 e5 2.Nf3 f6 3.Nxe5 fxe5 4.Qh5+ Ke7 5.Qxe5+ Kf7 6.Bc4+ Kg6 7.Qf5+ Kh6 8.h4 d5 9.d3+ g5 10.Qf7 Bb4+ 11.c3 Bxc3+ 12.bxc3 Bh3 13.Rxh3 dxc4 14.hxg5#",
     metadata:
@@ -24667,7 +25972,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 799,
+    id: 837,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Bxf7+ Kxf7 9.Qd5+ Kg6 10.Qxe4+ Kf7 11.Nf3 d5 12.exd6 Qxd6 13.Ng5+ Kg8 14.Qc4+ Be6 15.Nxe6 b5 16.Qb3",
     metadata:
@@ -24714,7 +26019,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 800,
+    id: 838,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f4 g3 9.Qh5 Rxh5 10.Nf3 Qh1#",
     metadata:
@@ -24750,7 +26055,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 801,
+    id: 839,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 Re8 9.Rc1 c6 10.O-O h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7 Qxc7 14.Rxc7",
     metadata:
@@ -24793,7 +26098,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 802,
+    id: 840,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.fxe3 Qh4+ 7.g3 Qe4",
     metadata:
@@ -24823,7 +26128,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 803,
+    id: 841,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.cxd5 exd5 5.Bg5 Nbd7 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
     metadata:
@@ -24857,7 +26162,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 804,
+    id: 842,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 d6 7.Ba4 b5",
     metadata:
@@ -24887,7 +26192,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 805,
+    id: 843,
     cleanMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Nf3 Bf5 5.cxd5 cxd5 6.Qb3 Qb6 7.Nxd5 Qxb3 8.Nxf6+ exf6 9.axb3",
     metadata:
@@ -24920,7 +26225,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 806,
+    id: 844,
     cleanMoves: "1.e4 f6 2.d4 g5 3.Qh5#",
     metadata: "Traps - Fool mate - B00 - https://lichess.org/@/MaxMalkov",
     opening: "King's pawn opening",
@@ -24932,7 +26237,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 807,
+    id: 845,
     cleanMoves: "1.e4 e5 2.Qh5 Nc6 3.Bc4 Nf6 4.Qxf7#",
     metadata: "Traps - Scholar’s mate - C20 - https://lichess.org/@/MaxMalkov",
     opening: "King's pawn game",
@@ -24944,7 +26249,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 808,
+    id: 846,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 f6 5.Nxe5 Bxd1 6.Bf7+ Ke7 7.Nd5#",
     metadata: "Traps - Legal mate - C41 - https://lichess.org/@/MaxMalkov",
@@ -24972,7 +26277,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 809,
+    id: 847,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ne7 9.O-O",
     metadata:
@@ -25005,7 +26310,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 810,
+    id: 848,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.d4 fxg2 7.Bxf7+ Kxf7 8.Qh5+ Ke7 9.Rxf4 Nf6 10.Rxf6 Kxf6 11.Bg5+ Kg7 12.Bxd8",
     metadata:
@@ -25044,7 +26349,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 811,
+    id: 849,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Na5 4.Bxf7+ Kxf7 5.Nxe5+ Ke8 6.Qh5+ g6 7.Nxg6 hxg6 8.Qxh8",
     metadata:
@@ -25075,7 +26380,7 @@ const List<ChessTrap> chessTraps = [
   ),
 
   ChessTrap(
-    id: 812,
+    id: 850,
     cleanMoves:
         "1.e4 d5 2.Nf3 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
     metadata:

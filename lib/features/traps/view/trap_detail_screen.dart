@@ -43,7 +43,11 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      InterstitialAdManager().onTrapViewed();
+      if (!mounted) return;
+      Future.delayed(const Duration(seconds: 3), () {
+        if (!mounted) return;
+        InterstitialAdManager().onTrapViewed();
+      });
     });
   }
 
@@ -264,8 +268,11 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           IconButton(
             onPressed: () async {
               final link = AppLinkService.buildTrapLink(widget.trapIndex);
-              await Share.share(
-                "Can you survive this trap? Check out ${trap.trapName}!\n$link",
+              await SharePlus.instance.share(
+                ShareParams(
+                  text:
+                      "Can you survive this trap? Check out ${trap.trapName}!\n$link",
+                ),
               );
             },
             icon: const Icon(Icons.share_rounded),
@@ -382,7 +389,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             // Horizontal Evaluation Bar
-                            if (engineState.depth >= 0)
+                            if (engineState.engineAvailable)
                               Padding(
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 4,
@@ -391,8 +398,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                   width: size,
                                   height: barHeight,
                                   child: EvaluationBar(
-                                    score: (engineState.displayScore ?? 0.0)
-                                        .toDouble(),
+                                    score: engineState.displayScore.toDouble(),
                                     isWhiteOrientation:
                                         orientation == Side.white,
                                     orientation: Axis.horizontal,
@@ -404,6 +410,32 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                               (engineState.scoreInCentipawns /
                                                       100.0)
                                                   .toStringAsFixed(1),
+                                  ),
+                                ),
+                              ),
+                            if (!engineState.engineAvailable)
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 4,
+                                ),
+                                child: SizedBox(
+                                  width: size,
+                                  height: barHeight,
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      color: context.colors.surfaceContainerHigh,
+                                      borderRadius: BorderRadius.circular(999),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'Engine starting...',
+                                        style: context.textTheme.labelMedium
+                                            ?.copyWith(
+                                              color: context.colors.outline,
+                                              fontWeight: FontWeight.w600,
+                                            ),
+                                      ),
+                                    ),
                                   ),
                                 ),
                               ),
@@ -598,7 +630,15 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                 ),
                               ),
                               const Spacer(),
-                              if (engineState.depth > 0)
+                              if (!engineState.engineAvailable)
+                                Text(
+                                  'Engine unavailable',
+                                  style: context.textTheme.labelSmall?.copyWith(
+                                    color: context.colors.error,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )
+                              else if (engineState.depth > 0)
                                 Text(
                                   "Depth: ${engineState.depth}",
                                   style: context.textTheme.labelSmall?.copyWith(

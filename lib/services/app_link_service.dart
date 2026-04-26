@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 
 class AppLinkService {
   static final _appLinks = AppLinks();
-  
+
   // Update this to your deployed Vercel/Website domain
   static const String _host = 'chess-traps.vercel.app';
 
@@ -20,20 +20,22 @@ class AppLinkService {
     }
 
     // 2. Listen for incoming links while app is running
-    _appLinks.uriLinkStream.listen((uri) {
-      _handleUri(uri, router);
-    }).onError((err) {
-      debugPrint('App Link Error: $err');
-    });
+    _appLinks.uriLinkStream
+        .listen((uri) {
+          _handleUri(uri, router);
+        })
+        .onError((Object err) {
+          debugPrint('App Link Error: $err');
+        });
   }
 
   static void _handleUri(Uri uri, GoRouter router) {
     debugPrint('Received App Link: $uri');
-    
+
     // Check if the link belongs to our domain
     // In release mode, uri.host must match _host exactly.
     final hostMatches = uri.host == _host || (kDebugMode && uri.host.isEmpty);
-    
+
     if (hostMatches) {
       final segments = uri.pathSegments;
       if (segments.isNotEmpty && segments.first == 'trap') {

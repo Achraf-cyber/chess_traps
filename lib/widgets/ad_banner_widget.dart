@@ -1,3 +1,4 @@
+import 'package:chess_traps/services/remote_config_service.dart';
 import 'package:chess_traps/providers/ads_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,7 +21,9 @@ class _AdBannerWidgetState extends ConsumerState<AdBannerWidget> {
     _loadAd();
   }
 
-  void _loadAd() {    _bannerAd = BannerAd(
+  void _loadAd() {
+    if (!RemoteConfigService().adsEnabled) return;
+    _bannerAd = BannerAd(
       adUnitId: AdsStateNotifier.bannerAdUnitId,
       request: const AdRequest(),
       size: AdSize.banner,
@@ -45,7 +48,7 @@ class _AdBannerWidgetState extends ConsumerState<AdBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (!_isLoaded || _bannerAd == null) {
+    if (!RemoteConfigService().adsEnabled || !_isLoaded || _bannerAd == null) {
       return const SizedBox.shrink();
     }
 

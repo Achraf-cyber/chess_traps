@@ -1,3 +1,4 @@
+import 'package:chess_traps/services/remote_config_service.dart';
 import 'package:chess_traps/services/interstitial_ad_manager.dart';
 import 'package:chess_traps/widgets/ad_banner_widget.dart';
 import 'package:chess_traps/providers/ads_provider.dart';
@@ -43,6 +44,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   }
 
   void _loadRewardedAd() {
+    if (!RemoteConfigService().adsEnabled) return;
     RewardedAd.load(
       adUnitId: AdsStateNotifier.rewardedAdUnitId,
       request: const AdRequest(),
@@ -104,9 +106,10 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   }
 
   void onMove(Move move, {bool? viaDragAndDrop}) {
+    final adsEnabled = RemoteConfigService().adsEnabled;
     final freeLimit = 6 + _bonusMoves;
 
-    if (history.length >= freeLimit) {
+    if (adsEnabled && history.length >= freeLimit) {
       if (_rewardedAd != null) {
         _showAdOptionDialog();
       } else {

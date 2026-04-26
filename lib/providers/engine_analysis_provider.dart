@@ -12,12 +12,15 @@ class EngineAnalysisState {
     this.mateIn,
     this.multiPv = const {},
     this.depth = 0,
+    this.engineAvailable = true,
   });
+
   final String fen;
   final double scoreInCentipawns;
   final int? mateIn;
   final Map<int, List<String>> multiPv;
   final int depth;
+  final bool engineAvailable;
 
   EngineAnalysisState copyWith({
     String? fen,
@@ -26,6 +29,7 @@ class EngineAnalysisState {
     bool clearMate = false,
     Map<int, List<String>>? multiPv,
     int? depth,
+    bool? engineAvailable,
   }) {
     return EngineAnalysisState(
       fen: fen ?? this.fen,
@@ -33,13 +37,12 @@ class EngineAnalysisState {
       mateIn: clearMate ? null : (mateIn ?? this.mateIn),
       multiPv: multiPv ?? this.multiPv,
       depth: depth ?? this.depth,
+      engineAvailable: engineAvailable ?? this.engineAvailable,
     );
   }
 
   double get displayScore {
-    if (mateIn != null) {
-      return mateIn! > 0 ? 10.0 : -10.0;
-    }
+    if (mateIn != null) return mateIn! > 0 ? 10.0 : -10.0;
     return (scoreInCentipawns / 100.0).clamp(-10.0, 10.0);
   }
 }
@@ -47,7 +50,9 @@ class EngineAnalysisState {
 @Riverpod(keepAlive: true)
 ChessEngineService chessEngineService(Ref ref) {
   final service = ChessEngineService();
-  service.init();
+  service.init().catchError((Object e) {
+    debugPrint('Engine init failed: $e');
+  });
   ref.onDispose(() => service.dispose());
   return service;
 }
@@ -57,22 +62,40 @@ class EngineAnalysis extends _$EngineAnalysis {
   StreamSubscription<String>? _sub;
   Timer? _throttleTimer;
   EngineAnalysisState? _pendingState;
+  Timer? _analysisDebounceTimer;
 
   @override
   EngineAnalysisState build(String fen) {
     final service = ref.watch(chessEngineServiceProvider);
+    final isReady = _watchValueListenable(service.engineAvailableNotifier);
+
+    if (!isReady) {
+      return EngineAnalysisState(fen: fen, engineAvailable: false);
+    }
+
     _sub?.cancel();
     _throttleTimer?.cancel();
+    _analysisDebounceTimer?.cancel();
     _sub = service.engineOutput.listen(_onLine);
 
     ref.onDispose(() {
       _sub?.cancel();
       _throttleTimer?.cancel();
+      _analysisDebounceTimer?.cancel();
     });
 
-    Future.microtask(() => service.startAnalysis(fen));
+    _analysisDebounceTimer = Timer(const Duration(milliseconds: 300), () {
+      service.startAnalysis(fen);
+    });
 
     return EngineAnalysisState(fen: fen);
+  }
+
+  T _watchValueListenable<T>(ValueListenable<T> listenable) {
+    void listener() => ref.invalidateSelf();
+    listenable.addListener(listener);
+    ref.onDispose(() => listenable.removeListener(listener));
+    return listenable.value;
   }
 
   void _onLine(String line) {
@@ -92,8 +115,7 @@ class EngineAnalysis extends _$EngineAnalysis {
       final parts = line.split(' ');
       for (int i = 0; i < parts.length; i++) {
         final part = parts[i];
-        if (i + 1 >= parts.length) continue; // Safety check
-
+        if (i + 1 >= parts.length) continue;
         switch (part) {
           case 'depth':
             depth = int.tryParse(parts[i + 1]);

@@ -1,0 +1,374 @@
+[Event "1. Scholar's Mate Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. Bc4 Nc6 3. Qh5 Nf6 4. Qxf7# { White delivers checkmate } 1-0
+
+[Event "2. Fool's Mate Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "0-1"]
+
+1. f3 e5 2. g4 Qh4# { Black delivers checkmate } 0-1
+
+[Event "3. Legal's Mate Trap"]
+[Site "Chess Board"][Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 d6 3. Bc4 Bg4 4. Nc3 h6 5. Nxe5 Bxd1 6. Bxf7+ Ke7 7. Nd5# { White delivers checkmate } 1-0
+
+[Event "4. Blackburne Shilling Gambit Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 4. Nxe5 Qg5 5. Nxf7 Qxg2 6. Rf1 Qxe4+ 7. Be2 Nf3# { Black delivers a smothered checkmate } 0-1[Event "5. Tennison Gambit (ICBM) Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"][Black "Black"]
+[Result "1-0"]
+
+1. Nf3 d5 2. e4 dxe4 3. Ng5 Nf6 4. d3 exd3 5. Bxd3 h6 6. Nxf7 Kxf7 7. Bg6+ Kxg6 8. Qxd8 { White wins the Queen } 1-0
+
+[Event "6. Englund Gambit Trap"]
+[Site "Chess Board"][Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. d4 e5 2. dxe5 Nc6 3. Nf3 Qe7 4. Bf4 Qb4+ 5. Bd2 Qxb2 6. Bc3 Bb4 7. Qd2 Bxc3 8. Qxc3 Qc1# { Black delivers checkmate } 0-1[Event "7. Fishing Pole Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Ng4 5. h3 h5 6. hxg4 hxg4 7. Ne1 Qh4 8. f3 g3 9. d4 Qh1# { Black delivers checkmate } 0-1
+
+[Event "8. Elephant Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "0-1"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. cxd5 exd5 6. Nxd5 Nxd5 7. Bxd8 Bb4+ 8. Qd2 Bxd2+ 9. Kxd2 Kxd8 { Black wins a piece } 0-1
+
+[Event "9. Lasker Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. d4 d5 2. c4 e5 3. dxe5 d4 4. e3 Bb4+ 5. Bd2 dxe3 6. Bxb4 exf2+ 7. Ke2 fxg1=N+ 8. Rxg1 Bg4+ { Black wins the Queen } 0-1
+
+[Event "10. Rubinstein Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. e3 O-O 6. Nf3 Nbd7 7. cxd5 exd5 8. Bd3 c6 9. O-O Re8 10. Rc1 h6 11. Bf4 Nh5 12. Nxd5 cxd5 13. Bc7 { White wins the Queen } 1-0
+
+[Event "11. Siberian Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 e6 6. Bc4 Qc7 7. O-O Nf6 8. Qe2 Ng4 9. h3 Nd4 10. Nxd4 Qh2# { Black delivers checkmate } 0-1
+
+[Event "12. Mortimer Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Ne7 5. Nxe5 c6 6. Nc4 cxb5 7. Nd6# { White delivers a smothered checkmate } 1-0
+
+[Event "13. Noah's Ark Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 d6 5. d4 b5 6. Bb3 Nxd4 7. Nxd4 exd4 8. Qxd4 c5 9. Qd5 Be6 10. Qc6+ Bd7 11. Qd5 c4 { White's Bishop is trapped } 0-1[Event "14. Tarrasch Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4 6. d4 b5 7. Bb3 d5 8. dxe5 Be6 9. c3 Be7 10. Re1 O-O 11. Nd4 Qd7 12. Nxe6 fxe6 13. Rxe4 { White wins a piece } 1-0
+
+[Event "15. Halosar Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Nxf3 Bg4 6. h3 Bh5 7. g4 Bg6 8. Ne5 e6 9. Qf3 c6 10. g5 Nd5 11. Bd3 Nxc3 12. Bxg6 { White is completely winning } 1-0
+
+[Event "16. Kieninger Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. d4 Nf6 2. c4 e5 3. dxe5 Ng4 4. Bf4 Nc6 5. Nf3 Bb4+ 6. Nbd2 Qe7 7. a3 Ngxe5 8. axb4 Nd3# { Black delivers a smothered checkmate } 0-1
+
+[Event "17. Monticelli Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. d4 Nf6 2. c4 e6 3. Nf3 Bb4+ 4. Bd2 Bxd2+ 5. Qxd2 b6 6. g3 Bb7 7. Bg2 O-O 8. Nc3 Ne4 9. Qc2 Nxc3 10. Ng5 { White threatens mate and attacks the Bishop on b7 } 1-0[Event "18. Stafford Gambit Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Bg5 Nxe4 7. Bxd8 Bxf2+ 8. Ke2 Bg4# { Black delivers checkmate } 0-1
+
+[Event "19. Giuoco Piano Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. c3 Nf6 5. d4 exd4 6. cxd4 Bb4+ 7. Nc3 Nxe4 8. O-O Nxc3 9. bxc3 Bxc3 10. Qb3 Bxa1 11. Bxf7+ Kf8 12. Bg5 Ne7 13. Re1 { White has a crushing and winning attack } 1-0
+
+[Event "20. Rousseau Gambit Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 f5 4. d3 Nf6 5. Nc3 Bc5 6. Bg5 d6 7. Nd5 fxe4 8. dxe4 Bxf2+ 9. Kxf2 Nxe4+ 10. Kg1 Nxg5 { Black wins a pawn and seizes the initiative } 0-1
+
+[Event "21. Jerome Gambit Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. Bxf7+ Kxf7 5. Nxe5+ Nxe5 6. Qh5+ Kf8 7. Qxe5 d6 8. Qf4+ Qf6 { Black successfully consolidates the extra piece } 0-1
+
+[Event "22. Nakhmanson Gambit Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. Bc4 Nf6 3. d4 exd4 4. Nf3 Nc6 5. O-O Nxe4 6. Nc3 dxc3 7. Bxf7+ Kxf7 8. Qd5+ Ke8 9. Re1 Be7 10. Rxe4 d6 11. Bg5 { White has massive compensation and a winning attack } 1-0
+
+[Event "23. Danish Gambit Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. e4 e5 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 Bb4+ 6. Kf1 Nf6 7. e5 Ne4 8. Qd5 { White threatens mate on f7 and the knight on e4 } 1-0
+
+[Event "24. O'Kelly Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. e4 c5 2. Nf3 a6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Nf3 Bb4 7. Bd3 d5 8. exd5 e4 { Black forks the bishop and knight } 0-1
+
+[Event "25. Magnus Smith Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 Nc6 6. Bc4 g6 7. Nxc6 bxc6 8. e5 dxe5 9. Bxf7+ Kxf7 10. Qxd8 { White wins the Queen } 1-0[Event "26. Caro-Kann Smyslov Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 c6 2. Nc3 d5 3. Nf3 dxe4 4. Nxe4 Nd7 5. Qe2 Ngf6 6. Nd6# { White delivers a smothered checkmate } 1-0[Event "27. Caro-Kann Advance Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 c6 2. d4 d5 3. e5 Bf5 4. h4 h6 5. g4 Bh7 6. e6 fxe6 7. Bd3 Bxd3 8. Qxd3 { White creates huge weaknesses and dominates the light squares } 1-0
+
+[Event "28. French Milner-Barry Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3 Qb6 6. Bd3 cxd4 7. cxd4 Bd7 8. O-O Nxd4 9. Nxd4 Qxd4 10. Nc3 Qxe5 11. Re1 Qb8 12. Nxd5 { White has an overwhelming attack for the pawn } 1-0
+
+[Event "29. Pirc Austrian Attack Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 d6 2. d4 Nf6 3. Nc3 g6 4. f4 Bg7 5. Nf3 O-O 6. e5 Nfd7 7. h4 c5 8. h5 cxd4 9. hxg6 dxc3 10. gxf7+ Rxf7 11. Bc4 e6 12. Ng5 { White has a lethal kingside attack } 1-0[Event "30. Philidor Hanham Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 d6 3. d4 Nd7 4. Bc4 Be7 5. dxe5 Nxe5 6. Nxe5 dxe5 7. Qh5 g6 8. Qxe5 Nf6 9. Bh6 { White prevents castling and controls the board } 1-0
+
+[Event "31. Muzio Gambit Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. f4 exf4 3. Nf3 g5 4. Bc4 g4 5. O-O gxf3 6. Qxf3 Bh6 7. d4 d6 8. Bxf4 Bxf4 9. Qxf4 f6 10. Nc3 { White has a crushing position } 1-0
+
+[Event "32. Kieseritzky Gambit Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. e4 e5 2. f4 exf4 3. Nf3 g5 4. h4 g4 5. Ne5 h5 6. Bc4 Rh7 7. d4 d6 8. Nxf7 Rxf7 9. Bxf7+ Kxf7 10. Bxf4 { White has massive compensation } 1-0
+
+[Event "33. Evans Gambit Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 7. O-O dxc3 8. Qb3 Qe7 9. Nxc3 Nf6 10. Nd5 Nxd5 11. exd5 Ne5 12. Nxe5 Qxe5 13. Bb2 Qg5 14. Rae1+ Kd8 15. d6 { White launches a lethal attack } 1-0
+
+[Event "34. Benoni Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. d4 c5 2. d5 e6 3. c4 exd5 4. cxd5 d6 5. Nc3 g6 6. e4 Bg7 7. Nf3 Nf6 8. Bb5+ Nfd7 9. O-O a6 10. Bg5 Qc7 11. e5 axb5 12. Nxb5 Qb6 13. Nxd6+ Kf8 14. Nxc8 { White wins } 1-0
+
+[Event "35. Kortchnoi Trap (Dutch Defense)"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. d4 f5 2. h3 Nf6 3. g4 fxg4 4. hxg4 Nxg4 5. Qd3 Nf6 6. Rxh7 Rxh7 7. Qg6# { White delivers checkmate } 1-0[Event "36. Reti Opening Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. Nf3 d5 2. c4 d4 3. b4 f6 4. e3 e5 5. exd4 e4 6. Qe2 Qe7 7. Ng1 Nc6 8. Bb2 Nxb4 { Black threatens both Nd3+ and Nc2+, winning material } 0-1
+
+[Event "37. From's Gambit Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "0-1"]
+
+1. f4 e5 2. fxe5 d6 3. exd6 Bxd6 4. Nf3 g5 5. h3 Bg3# { Black delivers checkmate } 0-1
+
+[Event "38. Fried Liver Attack Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Nxd5 6. Nxf7 Kxf7 7. Qf3+ Ke6 8. Nc3 Ncb4 9. a3 Nxc2+ 10. Kd1 Nxa1 11. Nxd5 { White has an overwhelming attack } 1-0[Event "39. Traxler Counterattack Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"][Black "Black"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 Bc5 5. Nxf7 Bxf2+ 6. Kf1 Qe7 7. Nxh8 d5 8. exd5 Nd4 9. c3 Bg4 10. Qa4+ Nd7 11. Kxf2 Qf6+ 12. Ke1 Qh4+ 13. Kf1 O-O-O { Black has a crushing attack despite the material deficit } 0-1
+
+[Event "40. Owen's Defense Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. e4 b6 2. d4 Bb7 3. Bd3 f5 4. exf5 Bxg2 5. Qh5+ g6 6. fxg6 Nf6 7. gxh7+ Nxh5 8. Bg6# { White delivers checkmate } 1-0[Event "41. Queen's Gambit Accepted Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. d4 d5 2. c4 dxc4 3. e3 b5 4. a4 c6 5. axb5 cxb5 6. Qf3 { White traps the Rook on a8 } 1-0[Event "42. Frankenstein-Dracula Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. e4 e5 2. Nc3 Nf6 3. Bc4 Nxe4 4. Qh5 Nd6 5. Bb3 Nc6 6. Nb5 g6 7. Qf3 f5 8. Qd5 Qe7 9. Nxc7+ Kd8 10. Nxa8 b6 11. d3 Bb7 12. h4 f4 { White's knight is trapped and Black has a huge attack } 0-1
+
+[Event "43. Fajarowicz Trap (Budapest Gambit)"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "0-1"]
+
+1. d4 Nf6 2. c4 e5 3. dxe5 Ne4 4. a3 d6 5. exd6 Bxd6 6. Nd2 Nxf2 7. Kxf2 Qh4+ 8. g3 Bxg3+ 9. hxg3 Qxh1 { Black wins the exchange } 0-1
+
+[Event "44. Englund Gambit Complex Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. d4 e5 2. dxe5 Bc5 3. Nf3 d6 4. exd6 Ne7 5. dxe7 Bxf2+ 6. Kxf2 Qxd1 { Black wins the Queen } 0-1
+
+[Event "45. Würzburger Trap (Vienna Game)"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. e4 e5 2. Nc3 Nf6 3. f4 d5 4. fxe5 Nxe4 5. d3 Qh4+ 6. g3 Nxg3 7. Nf3 Qh5 8. Nxd5 Bg4 9. Nf4 Bxf3 10. Nxh5 Bxd1 11. hxg3 Bxc2 12. b3 { Black's bishop on c2 is completely trapped } 1-0
+
+[Event "46. Budapest Gambit Adler Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. d4 Nf6 2. c4 e5 3. dxe5 Ng4 4. Nf3 Bc5 5. e3 Nc6 6. a3 a5 7. b3 Ngxe5 8. Nxe5 Nxe5 9. Bb2 Qe7 10. Nc3 c6 11. Ne4 Bb6 12. Nd6+ Kd8 13. Bxe5 Qxe5 14. Nxf7+ { White forks the King and Queen } 1-0[Event "47. Marshall Trap (Petrov's Defense)"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 d6 4. Nf3 Nxe4 5. d4 d5 6. Bd3 Bd6 7. O-O O-O 8. c4 c6 9. cxd5 cxd5 10. Nc3 Nxc3 11. bxc3 Bg4 12. h3 Bh5 13. Rb1 b6 14. Rb5 Bc7 15. Rxd5 Qxd5 16. Bxh7+ Kxh7 17. Ng5+ Qxg5 18. Bxg5 Bxd1 { Black emerges up a piece } 0-1[Event "48. Alapin Sicilian Trap"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. e4 c5 2. c3 Nf6 3. e5 Nd5 4. d4 cxd4 5. Nf3 Nc6 6. Bc4 Nb6 7. Bb3 d5 8. exd6 Qxd6 9. O-O Be6 10. Na3 dxc3 11. Qe2 Bxb3 12. Nb5 Qd7 13. axb3 a6 14. Rd1 Qc8 15. Nd6+ { White forks and wins the Queen } 1-0[Event "49. Krejcik Trap (Dutch Defense)"]
+[Site "Chess Board"]
+[Date "????.??.??"][White "White"]
+[Black "Black"]
+[Result "1-0"]
+
+1. d4 f5 2. g4 fxg4 3. h3 gxh3 4. Nxh3 Nf6 5. Ng5 d5 6. Qd3 Nc6 7. Rxh7 Rxh7 8. Qg6+ Kd7 9. Nxh7 Nxh7 10. Bh3+ e6 11. Qxe6# { White delivers checkmate } 1-0
+
+[Event "50. Two Knights Trap"][Site "Chess Board"]
+[Date "????.??.??"]
+[White "White"]
+[Black "Black"][Result "1-0"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d4 exd4 5. Ng5 d5 6. exd5 Nxd5 7. O-O Be7 8. Nxf7 Kxf7 9. Qf3+ Ke6 10. Re1+ Ne5 11. Bf4 Bf6 12. Bxe5 Bxe5 13. Nd2 { White's pin and attacking pressure is completely winning } 1-0

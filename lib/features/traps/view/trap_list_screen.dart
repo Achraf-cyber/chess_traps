@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/providers/traps_group_provider.dart';
 import 'package:chess_traps/widgets/ad_banner_widget.dart';
@@ -285,80 +287,127 @@ class _TrapOfTheDayCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 12),
-          Container(
-            height: 180,
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  context.colors.primaryContainer.withValues(alpha: 0.5),
-                  context.colors.surface,
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-              borderRadius: BorderRadius.circular(32),
-              border: Border.all(
-                color: context.colors.primary.withValues(alpha: 0.1),
-              ),
-            ),
-            padding: const EdgeInsets.all(4),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 3,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          trap.trapName,
-                          style: context.textTheme.titleMedium?.copyWith(
-                            fontWeight: FontWeight.w900,
-                            letterSpacing: -0.5,
-                          ),
-                          maxLines: 2,
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          trap.opening,
-                          style: context.textTheme.labelSmall?.copyWith(
-                            color: context.colors.onSurfaceVariant,
-                          ),
-                          maxLines: 1,
-                        ),
-                        const SizedBox(height: 12),
-                        FilledButton.tonal(
-                          onPressed: () => TrapDetailRoute(index: trap.id).push<void>(context),
-                          style: FilledButton.styleFrom(
-                            visualDensity: VisualDensity.compact,
-                            padding: const EdgeInsets.symmetric(horizontal: 12),
-                          ),
-                          child: const Text("Master Now"),
-                        ),
-                      ],
-                    ),
+          LayoutBuilder(
+            builder: (context, constraints) {
+              final isCompact = constraints.maxWidth < 360;
+              final cardHeight = isCompact ? 320.0 : 180.0;
+              final boardSize = isCompact
+                  ? math.min(constraints.maxWidth - 48, 220).toDouble()
+                  : math.min((constraints.maxWidth * 0.38), 150).toDouble();
+
+              return Container(
+                height: cardHeight,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      context.colors.primaryContainer.withValues(alpha: 0.5),
+                      context.colors.surface,
+                    ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                  borderRadius: BorderRadius.circular(32),
+                  border: Border.all(
+                    color: context.colors.primary.withValues(alpha: 0.1),
                   ),
                 ),
-                Expanded(
-                  flex: 2,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(28),
-                    child: IgnorePointer(
-                      child: StaticChessboard(
-                        size: 150,
-                        orientation: Side.white,
-                        fen: trap.fen,
+                padding: const EdgeInsets.all(8),
+                child: isCompact
+                    ? Column(
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: _TrapOfDayTextContent(trap: trap),
+                            ),
+                          ),
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: IgnorePointer(
+                              child: StaticChessboard(
+                                size: boardSize,
+                                orientation: Side.white,
+                                fen: trap.fen,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                        ],
+                      )
+                    : Row(
+                        children: [
+                          Expanded(
+                            flex: 3,
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: _TrapOfDayTextContent(trap: trap),
+                            ),
+                          ),
+                          Expanded(
+                            flex: 2,
+                            child: Center(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(28),
+                                child: IgnorePointer(
+                                  child: StaticChessboard(
+                                    size: boardSize,
+                                    orientation: Side.white,
+                                    fen: trap.fen,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              );
+            },
           ),
         ],
       ),
+    );
+  }
+}
+
+class _TrapOfDayTextContent extends StatelessWidget {
+  const _TrapOfDayTextContent({required this.trap});
+
+  final ChessTrap trap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          trap.trapName,
+          style: context.textTheme.titleMedium?.copyWith(
+            fontWeight: FontWeight.w900,
+            letterSpacing: -0.5,
+          ),
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+        ),
+        const SizedBox(height: 4),
+        Text(
+          trap.opening,
+          style: context.textTheme.labelSmall?.copyWith(
+            color: context.colors.onSurfaceVariant,
+          ),
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+        ),
+        const SizedBox(height: 12),
+        FilledButton.tonal(
+          onPressed: () => TrapDetailRoute(index: trap.id).push<void>(context),
+          style: FilledButton.styleFrom(
+            visualDensity: VisualDensity.compact,
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+          ),
+          child: const Text("Master Now"),
+        ),
+      ],
     );
   }
 }

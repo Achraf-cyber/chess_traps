@@ -1,5 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.USE_EXACT_ALARM"/>
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
     <application
         android:label="Chess Traps"
         android:name="${applicationName}"
@@ -44,6 +48,17 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
+            <receiver
+    android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+    android:exported="false"/>
+<receiver
+    android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+    android:exported="false">
+    <intent-filter>
+        <action android:name="android.intent.action.BOOT_COMPLETED"/>
+        <action android:name="android.intent.action.MY_PACKAGE_REPLACED"/>
+    </intent-filter>
+</receiver>
 
     </application>
     <!-- Required to query activities that can process text, see:
@@ -65,4 +80,4 @@
             <data android:scheme="https" />
         </intent>
     </queries>
-</manifest>
+</manifest>

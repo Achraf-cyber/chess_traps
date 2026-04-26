@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/router.dart';
 import 'package:chess_traps/utils.dart';
@@ -11,6 +13,8 @@ class GroupTrapCard extends StatelessWidget {
   });
 
   final ChessTrap trap;
+  static const _defaultFen =
+      'rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1';
 
   @override
   Widget build(BuildContext context) {
@@ -90,11 +94,14 @@ class GroupTrapCard extends StatelessWidget {
                       child: Center(
                         child: LayoutBuilder(
                           builder: (context, constraints) {
-                            final size = constraints.maxHeight * 0.9;
+                            final size = math.min(
+                              constraints.maxWidth,
+                              constraints.maxHeight,
+                            ) * 0.9;
                             return StaticChessboard(
                               size: size,
                               orientation: .white,
-                              fen: trap.fen,
+                              fen: _isLikelyFen(trap.fen) ? trap.fen : _defaultFen,
                             );
                           },
                         ),
@@ -120,5 +127,10 @@ class GroupTrapCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  bool _isLikelyFen(String fen) {
+    final parts = fen.trim().split(RegExp(r'\s+'));
+    return parts.length >= 2 && parts.first.contains('/');
   }
 }

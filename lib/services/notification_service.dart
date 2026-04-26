@@ -1,10 +1,12 @@
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 import 'package:chess_traps/router.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
 
 class NotificationService {
@@ -21,22 +23,22 @@ class NotificationService {
 
   Future<void> init() async {
     tz.initializeTimeZones();
+    try {
+      await _configureLocalTimezone();
+    } catch (e) {
+      debugPrint('Failed to configure local timezone: $e');
+    }
 
     const AndroidInitializationSettings initializationSettingsAndroid =
         AndroidInitializationSettings('@mipmap/ic_launcher');
 
-    final DarwinInitializationSettings initializationSettingsDarwin =
-        const DarwinInitializationSettings(
-          requestAlertPermission: false,
-          requestBadgePermission: false,
-          requestSoundPermission: false,
-        );
+    const DarwinInitializationSettings initializationSettingsDarwin =
+        DarwinInitializationSettings();
 
-    final InitializationSettings initializationSettings =
-        InitializationSettings(
-          android: initializationSettingsAndroid,
-          iOS: initializationSettingsDarwin,
-        );
+    const InitializationSettings initializationSettings = InitializationSettings(
+      android: initializationSettingsAndroid,
+      iOS: initializationSettingsDarwin,
+    );
 
     await flutterLocalNotificationsPlugin.initialize(
       settings: initializationSettings,
@@ -49,6 +51,13 @@ class NotificationService {
         router.push(TrapDetailRoute(index: index).location);
       },
     );
+
+    // Request Android 13+ notification permission proactively at startup.
+    await flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >()
+        ?.requestNotificationsPermission();
 
     // Default: Enabled, 9:00 AM
     final prefs = await SharedPreferences.getInstance();
@@ -82,6 +91,48 @@ class NotificationService {
     }
   }
 
+  Future<bool> canScheduleExactAlarms() async {
+    if (!Platform.isAndroid) return true;
+    final android = flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
+    final canSchedule = await android?.canScheduleExactNotifications();
+    return canSchedule ?? false;
+  }
+
+  Future<void> requestExactAlarmsPermission() async {
+    if (Platform.isAndroid) {
+      final android = flutterLocalNotificationsPlugin
+          .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin
+          >();
+      await android?.requestExactAlarmsPermission();
+    }
+  }
+
+  Future<bool> isIgnoringBatteryOptimizations() async {
+    if (!Platform.isAndroid) return true;
+    return await Permission.ignoreBatteryOptimizations.isGranted;
+  }
+
+  Future<void> requestIgnoreBatteryOptimizations() async {
+    if (Platform.isAndroid) {
+      await Permission.ignoreBatteryOptimizations.request();
+    }
+  }
+
+  Future<void> _configureLocalTimezone() async {
+    try {
+      final String? deviceTimeZone = await FlutterTimezone.getLocalTimezone();
+      if (deviceTimeZone == null) return;
+      final location = tz.getLocation(deviceTimeZone);
+      tz.setLocalLocation(location);
+    } catch (_) {
+      // Keep default location if timezone lookup fails.
+    }
+  }
+
   Future<void> scheduleDailyNotification(TimeOfDay time) async {
     await requestPermission();
     await flutterLocalNotificationsPlugin.cancelAll();
@@ -91,24 +142,40 @@ class NotificationService {
     await prefs.setInt(_prefTimeMinute, time.minute);
     await prefs.setBool(_prefEnabled, true);
 
-    await flutterLocalNotificationsPlugin.zonedSchedule(
-      id: 0,
-      title: '✨ Trap of the Day is Ready!',
-      body: 'Jump in to learn a new opening trap and boost your rating ♟️',
-      scheduledDate: _nextInstanceOfTime(time),
-      notificationDetails: const NotificationDetails(
-        android: AndroidNotificationDetails(
-          'daily_trap_channel',
-          'Daily Trap Notifications',
-          channelDescription: 'Reminds you to check the trap of the day',
-          importance: Importance.high,
-          priority: Priority.high,
-        ),
-        iOS: DarwinNotificationDetails(),
+    final details = const NotificationDetails(
+      android: AndroidNotificationDetails(
+        'daily_trap_channel',
+        'Daily Trap Notifications',
+        channelDescription: 'Reminds you to check the trap of the day',
+        importance: Importance.high,
+        priority: Priority.high,
       ),
-      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-      matchDateTimeComponents: DateTimeComponents.time,
+      iOS: DarwinNotificationDetails(),
     );
+
+    final scheduledDate = _nextInstanceOfTime(time);
+    try {
+      await flutterLocalNotificationsPlugin.zonedSchedule(
+        id: 0,
+        title: '✨ Trap of the Day is Ready!',
+        body: 'Jump in to learn a new opening trap and boost your rating ♟️',
+        scheduledDate: scheduledDate,
+        notificationDetails: details,
+        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
+        matchDateTimeComponents: DateTimeComponents.time,
+      );
+    } catch (_) {
+      // Fallback when exact alarms are unavailable on some Android setups.
+      await flutterLocalNotificationsPlugin.zonedSchedule(
+        id: 0,
+        title: '✨ Trap of the Day is Ready!',
+        body: 'Jump in to learn a new opening trap and boost your rating ♟️',
+        scheduledDate: scheduledDate,
+        notificationDetails: details,
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        matchDateTimeComponents: DateTimeComponents.time,
+      );
+    }
   }
 
   Future<void> cancelNotifications() async {

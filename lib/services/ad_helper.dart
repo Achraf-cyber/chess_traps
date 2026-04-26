@@ -1,16 +1,30 @@
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:chess_traps/services/remote_config_service.dart';
 
 class AdHelper {
-  static String get bannerAdUnitId =>
-      dotenv.env['ADMOB_BANNER'] ?? 'ca-app-pub-3940256099942544/6300978111';
+  // Test IDs from: https://developers.google.com/admob/android/test-ads
+  static const String _testBannerId = 'ca-app-pub-3940256099942544/6300978111';
+  static const String _testInterstitialId = 'ca-app-pub-3940256099942544/1033173712';
+  static const String _testRewardedId = 'ca-app-pub-3940256099942544/5224354917';
+  static const String _testOpeningId = 'ca-app-pub-3940256099942544/9257395921';
 
-  static String get interstitialAdUnitId =>
-      dotenv.env['ADMOB_INTERSTITIAL'] ??
-      'ca-app-pub-3940256099942544/1033173712';
+  static String get bannerAdUnitId {
+    if (!RemoteConfigService().showLiveAds) return _testBannerId;
+    return dotenv.env['ADMOB_BANNER'] ?? _testBannerId;
+  }
 
-  static String get rewardedInterstitialAdUnitId =>
-      dotenv.env['ADMOB_REWARDED'] ?? 'ca-app-pub-3940256099942544/5224354917';
+  static String get interstitialAdUnitId {
+    if (!RemoteConfigService().showLiveAds) return _testInterstitialId;
+    return dotenv.env['ADMOB_INTERSTITIAL'] ?? _testInterstitialId;
+  }
 
-  static String get openingAdUnitId =>
-      dotenv.env['ADMOB_OPENING'] ?? 'ca-app-pub-3940256099942544/3419835294';
+  static String get rewardedInterstitialAdUnitId {
+    if (!RemoteConfigService().showLiveAds) return _testRewardedId;
+    return dotenv.env['ADMOB_REWARDED'] ?? _testRewardedId;
+  }
+
+  static String get openingAdUnitId {
+    if (!RemoteConfigService().showLiveAds) return _testOpeningId;
+    return dotenv.env['ADMOB_OPENING'] ?? _testOpeningId;
+  }
 }

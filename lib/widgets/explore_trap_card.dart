@@ -6,11 +6,7 @@ import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 
 class ExploreTrapCard extends StatelessWidget {
-  const ExploreTrapCard({
-    super.key,
-    required this.trap,
-    this.showBadge = true,
-  });
+  const ExploreTrapCard({super.key, required this.trap, this.showBadge = true});
 
   final ChessTrap trap;
   final bool showBadge;
@@ -21,8 +17,8 @@ class ExploreTrapCard extends StatelessWidget {
     final String difficulty = trap.moves.length > 10
         ? "Advanced"
         : trap.moves.length > 6
-            ? "Intermediate"
-            : "Beginner";
+        ? "Intermediate"
+        : "Beginner";
 
     return Container(
       decoration: BoxDecoration(
@@ -51,10 +47,14 @@ class ExploreTrapCard extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   IgnorePointer(
-                    child: StaticChessboard(
-                      size: 200, // LayoutBuilder will handle actual size
-                      orientation: Side.white,
-                      fen: trap.fen,
+                    child: SizedBox(
+                      width: 200,
+                      height: 200,
+                      child: StaticChessboard(
+                        size: 200,
+                        orientation: Side.white,
+                        fen: trap.fen,
+                      ),
                     ),
                   ),
                   if (showBadge)
@@ -72,7 +72,9 @@ class ExploreTrapCard extends StatelessWidget {
                           ),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                            color: context.colors.primary.withValues(alpha: 0.1),
+                            color: context.colors.primary.withValues(
+                              alpha: 0.1,
+                            ),
                           ),
                         ),
                         child: Text(

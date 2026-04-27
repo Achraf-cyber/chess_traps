@@ -4,7 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 part 'settings_provider.g.dart';
 
-/// Board theme options (mapped from chessground color schemes).
 enum AppBoardTheme {
   brown('Brown'),
   blue('Blue'),
@@ -21,15 +20,24 @@ enum AppBoardTheme {
 
   cg.ChessboardColorScheme get colorScheme {
     switch (this) {
-      case AppBoardTheme.brown:  return cg.ChessboardColorScheme.brown;
-      case AppBoardTheme.blue:   return cg.ChessboardColorScheme.blue;
-      case AppBoardTheme.green:  return cg.ChessboardColorScheme.green;
-      case AppBoardTheme.wood:   return cg.ChessboardColorScheme.wood;
-      case AppBoardTheme.wood2:  return cg.ChessboardColorScheme.wood2;
-      case AppBoardTheme.metal:  return cg.ChessboardColorScheme.metal;
-      case AppBoardTheme.marble: return cg.ChessboardColorScheme.marble;
-      case AppBoardTheme.horsey: return cg.ChessboardColorScheme.horsey;
-      case AppBoardTheme.purple: return cg.ChessboardColorScheme.purple;
+      case AppBoardTheme.brown:
+        return cg.ChessboardColorScheme.brown;
+      case AppBoardTheme.blue:
+        return cg.ChessboardColorScheme.blue;
+      case AppBoardTheme.green:
+        return cg.ChessboardColorScheme.green;
+      case AppBoardTheme.wood:
+        return cg.ChessboardColorScheme.wood;
+      case AppBoardTheme.wood2:
+        return cg.ChessboardColorScheme.wood2;
+      case AppBoardTheme.metal:
+        return cg.ChessboardColorScheme.metal;
+      case AppBoardTheme.marble:
+        return cg.ChessboardColorScheme.marble;
+      case AppBoardTheme.horsey:
+        return cg.ChessboardColorScheme.horsey;
+      case AppBoardTheme.purple:
+        return cg.ChessboardColorScheme.purple;
     }
   }
 }
@@ -49,12 +57,11 @@ class ChessSettings {
     int? arrowCount,
     AppBoardTheme? boardTheme,
     String? localeCode,
-  }) =>
-      ChessSettings(
-        arrowCount: arrowCount ?? this.arrowCount,
-        boardTheme: boardTheme ?? this.boardTheme,
-        localeCode: localeCode ?? this.localeCode,
-      );
+  }) => ChessSettings(
+    arrowCount: arrowCount ?? this.arrowCount,
+    boardTheme: boardTheme ?? this.boardTheme,
+    localeCode: localeCode ?? this.localeCode,
+  );
 }
 
 @Riverpod(keepAlive: true)

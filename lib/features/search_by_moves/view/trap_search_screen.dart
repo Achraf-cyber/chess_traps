@@ -80,6 +80,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
         setState(() {
           _bonusMoves += 5;
         });
+        if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text("Unlocked 5 extra moves!")),
         );
@@ -113,13 +114,15 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
       if (_rewardedAd != null) {
         _showAdOptionDialog();
       } else {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text(
-              "Move limit reached. Ad not ready yet, please wait or reset.",
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                "Move limit reached. Ad not ready yet, please wait or reset.",
+              ),
             ),
-          ),
-        );
+          );
+        }
       }
       return;
     }

@@ -70,6 +70,9 @@ void main() async {
 
     final trapName =
         game.headers['ChapterName'] ?? game.headers['Event'] ?? opening;
+    final trapNameFr = game.headers['Event_fr'] ?? '';
+    final trapNameEs = game.headers['Event_es'] ?? '';
+    final trapNameAr = game.headers['Event_ar'] ?? '';
     final metadata = _buildMetadata(game.headers);
 
     final moveList = sanMoves.map(_encode).join(',');
@@ -81,6 +84,9 @@ void main() async {
     content.writeln('  opening: ${_encode(opening)},');
     content.writeln('  openingId: ${_encode(openingId)},');
     content.writeln('  trapName: ${_encode(trapName)},');
+    if (trapNameFr.isNotEmpty) content.writeln('  trapNameFr: ${_encode(trapNameFr)},');
+    if (trapNameEs.isNotEmpty) content.writeln('  trapNameEs: ${_encode(trapNameEs)},');
+    if (trapNameAr.isNotEmpty) content.writeln('  trapNameAr: ${_encode(trapNameAr)},');
 
     // NOTE: commentedMoves not needed yet -> keep as plain cleaned moves.
     content.writeln('  commentedMoves: ${_encode(cleanMoves)},');

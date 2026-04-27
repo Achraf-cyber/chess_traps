@@ -54,10 +54,15 @@ void main() async {
   // --- Build name index ---
   final Map<String, List<int>> nameIndex = {};
   for (final trap in chessTraps) {
-    for (final key in [
+    final keys = <String>{
       normalizeName(trap.opening),
       normalizeName(trap.trapName),
-    ]) {
+      if (trap.trapNameFr.isNotEmpty) normalizeName(trap.trapNameFr),
+      if (trap.trapNameEs.isNotEmpty) normalizeName(trap.trapNameEs),
+      if (trap.trapNameAr.isNotEmpty) normalizeName(trap.trapNameAr),
+    };
+    for (final key in keys) {
+      if (key.trim().isEmpty) continue;
       nameIndex.putIfAbsent(key, () => <int>[]).add(trap.id);
     }
   }

@@ -55,7 +55,7 @@ final class ChessEngineServiceProvider
 }
 
 String _$chessEngineServiceHash() =>
-    r'd796b2c7f5f88439b7566f3cca2dbe6335241487';
+    r'60eee4712ea8233613de5321143e00fd1a07963b';
 
 @ProviderFor(EngineAnalysis)
 final engineAnalysisProvider = EngineAnalysisFamily._();
@@ -106,7 +106,7 @@ final class EngineAnalysisProvider
   }
 }
 
-String _$engineAnalysisHash() => r'b9f77d307f859188a2f7e896b269ca9f5d4d938b';
+String _$engineAnalysisHash() => r'533eb7c40cbba7b28c41b5926ed5124b3fe003ea';
 
 final class EngineAnalysisFamily extends $Family
     with

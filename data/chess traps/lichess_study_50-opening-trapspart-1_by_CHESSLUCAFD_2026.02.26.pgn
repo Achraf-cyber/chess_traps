@@ -1,4 +1,7 @@
 [Event "50 Opening Traps,Part 1: oh no, smothered mate!"]
+[Event_fr "oh no, smothered mate!"]
+[Event_es "oh no, smothered mate!"]
+[Event_ar "oh no, smothered mate!"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. e4 c6 2. Nf3 d5 3. Nc3 dxe4 4. Nxe4 Nd7 5. Qe2 Ngf6?? 6. Nd6#! *
 
-
 [Event "50 Opening Traps,Part 1: what, checkmate?"]
+[Event_fr "what, checkmate?"]
+[Event_es "what, checkmate?"]
+[Event_ar "what, checkmate?"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -29,8 +34,10 @@
 
 1. e4 Nc6 2. d4 d5 3. exd5 Qxd5 4. Nf3 Bg4 5. Nc3 Bxf3?! 6. Nxd5 Bxd1 7. Nxc7+ Kd8 8. Nxa8 Bxc2 9. Bf4? Nxd4 10. Nc7?? e5!! 11. Bxe5?? Bb4#! *
 
-
 [Event "50 Opening Traps,Part 1: Knight and Bishop Mate"]
+[Event_fr "Knight and Bishop Mat"]
+[Event_es "Knight and Bishop Mate"]
+[Event_ar "Knight and Bishop كش ملك"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -45,8 +52,10 @@
 
 1. e4 Nf6 2. Nc3 d5 3. exd5 Nxd5 4. Nge2?! Nc6! 5. g3? Bg4! 6. Bg2 Nd4!! 7. Bxd5?? Qxd5!! 8. Nxd5 Nf3+ 9. Kf1 Bh3#! *
 
-
 [Event "50 Opening Traps,Part 1: Bishop Brother's Mate"]
+[Event_fr "Bishop Brother's Mat"]
+[Event_es "Bishop Brother's Mate"]
+[Event_ar "Bishop Brother's كش ملك"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -61,8 +70,10 @@
 
 1. e4 c6 2. Nf3 d5 3. Nc3 Bg4 4. h3 Bxf3 5. Qxf3 Nf6 6. d4 dxe4 7. Qe3 Nd5 8. Qxe4 Nxc3 9. bxc3 e6 10. Rb1 Qc8 11. Bd3 Nd7 12. Bg5!? h6?? 13. Qxe6+!! fxe6 14. Bg6#! *
 
-
 [Event "50 Opening Traps,Part 1: Smothered Mate in the corner"]
+[Event_fr "Étouffé Mat in the corner"]
+[Event_es "Ahogado Mate in the corner"]
+[Event_ar "مخنوق كش ملك in the corner"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -77,8 +88,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 Nf6 5. Nc3 Bb4 6. Nxc6 bxc6 7. Qf3 h6 8. a3 Bxc3+ 9. Qxc3 O-O 10. Bd3 Re8 11. f3 d5 12. Qxc6? dxe4! 13. fxe4 Nxe4!! 14. O-O Qd4+ 15. Kh1 Bd7!! 16. Qc4 Nf2+ 17. Kg1 Nh3+ 18. Kh1 Qg1+!! 19. Rxg1 Nf2#! *
 
-
 [Event "50 Opening Traps,Part 1: Sacrifice the Knight!"]
+[Event_fr "Sacrifice the Knight!"]
+[Event_es "Sacrifice the Knight!"]
+[Event_ar "Sacrifice the Knight!"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -93,8 +106,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. d3 h6 5. Bb3 Bc5 6. c3 Bb6 7. Nbd2 d6 8. Nf1 Bg4 9. h3 Bh5?! 10. Ng3 Bxf3?! 11. Qxf3 O-O? 12. Nf5! Ne7? 13. Nxh6+! gxh6 14. Qxf6 $18 *
 
-
 [Event "50 Opening Traps,Part 1: Double Attack with the Queen"]
+[Event_fr "Double Attaque with the Queen"]
+[Event_es "Double Ataque with the Queen"]
+[Event_ar "Double هجوم with the Queen"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -109,8 +124,10 @@
 
 1. d4 Nf6 2. Bg5 e6 3. Nf3 Be7 4. Nbd2 d5 5. e3 c5 6. c3 Nbd7 7. Bd3 b6 8. Qa4!? O-O 9. Ne5 Nxe5?? 10. dxe5 Nd7? 11. Qh4! $18 *
 
-
 [Event "50 Opening Traps,Part 1: Win the Queen with Bxh7+"]
+[Event_fr "Win the Queen with Bxh7+"]
+[Event_es "Win the Queen with Bxh7+"]
+[Event_ar "Win the Queen with Bxh7+"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -125,8 +142,10 @@
 
 1. e4 c5 2. Nf3 a6 3. d4 cxd4 4. Nxd4 Nf6 5. Bd3 e5 6. Nf3 Nc6 7. O-O Bc5 8. h3 O-O 9. Nc3 d5?? 10. exd5 Nxd5? 11. Nxd5 Qxd5?? 12. Bxh7+! Kxh7 13. Qxd5 $18 *
 
-
 [Event "50 Opening Traps,Part 1: Attack on f7"]
+[Event_fr "Attaque on f7"]
+[Event_es "Ataque on f7"]
+[Event_ar "هجوم on f7"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -141,8 +160,10 @@
 
 1. e4 e5 2. Nf3 d6 3. Bc4 c6 4. d4 Nd7 5. c3!? Be7?? 6. Qb3! d5 7. exd5 b5 8. Bd3 exd4 9. cxd4 c5 10. Bxb5 Nf6 11. Bc6 $18 *
 
-
 [Event "50 Opening Traps,Part 1: Sacrifice on F7"]
+[Event_fr "Sacrifice on F7"]
+[Event_es "Sacrifice on F7"]
+[Event_ar "Sacrifice on F7"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -157,8 +178,10 @@
 
 1. Nf3 Nf6 2. c4 e6 3. g3 d5 4. Bg2 dxc4 5. O-O a6 6. Na3 c5?! 7. Nxc4 b5 8. Nce5 Bb7?? 9. Nxf7!! Kxf7 10. Ng5+ Ke8 11. Bxb7 $18 *
 
-
 [Event "50 Opening Traps,Part 1: Brilliant unpin"]
+[Event_fr "Brilliant unpin"]
+[Event_es "Brilliant unpin"]
+[Event_ar "Brilliant unpin"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -173,8 +196,10 @@
 
 1. e4 c6 2. d4 d5 3. f3 dxe4 4. fxe4 e5 5. Nf3 Bg4 6. Bc4 Nf6?? 7. Bxf7+!! Kxf7 8. Nxe5+ Ke8 9. Nxg4 Nxg4 10. Qxg4 Qxd4 11. Nc3 $16 $40 *
 
-
 [Event "50 Opening Traps,Part 1: Catastrophe on f2"]
+[Event_fr "Catastrophe on f2"]
+[Event_es "Catastrophe on f2"]
+[Event_ar "Catastrophe on f2"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -189,8 +214,10 @@
 
 1. d4 Nf6 2. c4 e5!? 3. d5?! Bc5 4. Bg5?? Bxf2+!! (4... Ne4!! 5. Be3 Bxe3 6. fxe3 Qh4+ $19) 5. Kxf2 Ng4+! (5... Ne4+?? 6. Ke3 Nxg5 7. h4!) 6. Ke1 Qxg5 $19 *
 
-
 [Event "50 Opening Traps,Part 1: Blunder unpin"]
+[Event_fr "Blunder unpin"]
+[Event_es "Blunder unpin"]
+[Event_ar "Blunder unpin"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -205,8 +232,10 @@
 
 1. e4 d5 2. exd5 Qxd5 3. Nc3 Qa5 4. Bc4 Nf6 5. d4 c6 6. Nf3 Bg4 7. Bxf7+?? Kxf7 8. Ne5+ Qxe5+! 9. dxe5 Bxd1 $19 *
 
-
 [Event "50 Opening Traps,Part 1: Just Attack c7"]
+[Event_fr "Just Attaque c7"]
+[Event_es "Just Ataque c7"]
+[Event_ar "Just هجوم c7"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -221,8 +250,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 d6?! 5. Nc3 g6?! 6. Nd5! Bg7?? 7. Nb5! $18 *
 
-
 [Event "50 Opening Traps,Part 1: OMG Trap"]
+[Event_fr "OMG Piège"]
+[Event_es "OMG Trampa"]
+[Event_ar "OMG فخ"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -237,8 +268,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Nd4!? 6. d6 Qxd6 7. Nxf7?? Qc6! 8. Nxh8? Qxg2 9. Rf1? Qe4+ 10. Be2 Nf3#! *
 
-
 [Event "50 Opening Traps,Part 1: Win the Queen with Bxf7+"]
+[Event_fr "Win the Queen with Bxf7+"]
+[Event_es "Win the Queen with Bxf7+"]
+[Event_ar "Win the Queen with Bxf7+"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -253,8 +286,10 @@
 
 1. e4 g6 2. d4 Bg7 3. Nf3 d6 4. Bc4 Nd7?? 5. Bxf7+!! Kxf7 6. Ng5+ Ke8 (6... Kf6 7. Qf3#!) 7. Ne6 $18 *
 
-
 [Event "50 Opening Traps,Part 1: The Bishop helps to win the Queen"]
+[Event_fr "The Bishop helps to win the Queen"]
+[Event_es "The Bishop helps to win the Queen"]
+[Event_ar "The Bishop helps to win the Queen"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -269,8 +304,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bb5 Bc5 4. O-O Nge7 5. c3! f5?! 6. d4 Bb6?? 7. d5 fxe4 8. Ng5! Nb8? 9. Ne6!! $18 *
 
-
 [Event "50 Opening Traps,Part 1: Win the Bishop on b3"]
+[Event_fr "Win the Bishop on b3"]
+[Event_es "Win the Bishop on b3"]
+[Event_ar "Win the Bishop on b3"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -285,8 +322,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 d6 5. d4 b5 6. Bb3 Nxd4 7. Nxd4 exd4 8. Qxd4?? c5! 9. Qd5 Be6 10. Qc6+ Bd7 11. Qd5 c4! $19 *
 
-
 [Event "50 Opening Traps,Part 1: Pawn Fork"]
+[Event_fr "Pawn Fork"]
+[Event_es "Pawn Fork"]
+[Event_ar "Pawn Fork"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -301,8 +340,10 @@
 
 1. Nf3 d5 2. b3 Bf5 3. Bb2 e6 4. g3 Nf6 5. Bg2 Nbd7 6. O-O Bd6 7. d3 O-O 8. Nbd2 h6 9. Re1 c6?? 10. e4! Bg4 11. e5 $18 *
 
-
 [Event "50 Opening Traps,Part 1: Sacrifice  pawn, win Bishop"]
+[Event_fr "Sacrifice  pawn, win Bishop"]
+[Event_es "Sacrifice  pawn, win Bishop"]
+[Event_ar "Sacrifice  pawn, win Bishop"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -317,8 +358,10 @@
 
 1. d4 Nf6 2. Bf4 c5 3. Nf3?! cxd4 4. Nxd4?? e5! 5. Bxe5 Qa5+ $19 *
 
-
 [Event "50 Opening Traps,Part 1: Sacrifice the Queen!!"]
+[Event_fr "Sacrifice the Queen!!"]
+[Event_es "Sacrifice the Queen!!"]
+[Event_ar "Sacrifice the Queen!!"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -333,8 +376,10 @@
 
 1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. Bg5 c5 5. Nf3 cxd4 6. Nxd4 e5 7. Ndb5 a6! 8. Nxd5?? axb5! 9. Nxf6+ Qxf6!! 10. Bxf6 Bb4+! $19 *
 
-
 [Event "50 Opening Traps,Part 1: Brother of the Englud Trap"]
+[Event_fr "Brother of the Englud Piège"]
+[Event_es "Brother of the Englud Trampa"]
+[Event_ar "Brother of the Englud فخ"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -349,8 +394,10 @@
 
 1. d4 Nf6 2. Bg5 Ne4 3. Bh4 c5 4. Qd3? Qb6! 5. b3 Qh6! 6. Qxe4?? Qc1#! *
 
-
 [Event "50 Opening Traps,Part 1: Smothered Mate 2.0"]
+[Event_fr "Étouffé Mat 2.0"]
+[Event_es "Ahogado Mate 2.0"]
+[Event_ar "مخنوق كش ملك 2.0"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -365,8 +412,10 @@
 
 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 c5 5. Ne2 d5 6. Bd2 Qa5?! 7. a3 Nc6 8. axb4? Nxb4!! 9. Rxa5? Nd3#! *
 
-
 [Event "50 Opening Traps,Part 1: Sacrifice the Knight 2.0"]
+[Event_fr "Sacrifice the Knight 2.0"]
+[Event_es "Sacrifice the Knight 2.0"]
+[Event_ar "Sacrifice the Knight 2.0"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -381,8 +430,10 @@
 
 1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 e6 6. Bc4 Qc7 7. O-O Nf6 8. Qe2 Ng4! 9. h3?? Nd4!! 10. Nxd4? Qh2#! *
 
-
 [Event "50 Opening Traps,Part 1: Double Attack"]
+[Event_fr "Double Attaque"]
+[Event_es "Double Ataque"]
+[Event_ar "Double هجوم"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -397,8 +448,10 @@
 
 1. d4 d5 2. Nf3 Nf6 3. c4 e6 4. g3 Bb4+ 5. Bd2 Be7 6. Qb3 O-O 7. Bg2 c6 8. Bb4? dxc4! 9. Qxc4?? Qd5! 10. Qc3 Ne4! 11. Qa3? Qc4! $19 *
 
-
 [Event "50 Opening Traps,Part 1: The Knight opens the door for his brother"]
+[Event_fr "The Knight opens the door for his brother"]
+[Event_es "The Knight opens the door for his brother"]
+[Event_ar "The Knight opens the door for his brother"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -413,8 +466,10 @@
 
 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 e6 5. Nc3 a6 6. a3 Qc7 7. Be2 d6 8. O-O Nge7?? 9. Ndb5!! axb5 10. Nxb5 Qd8 11. Nxd6+ Kd7 12. Nxf7+! $18 *
 
-
 [Event "50 Opening Traps,Part 1: Castle Queenside with check"]
+[Event_fr "Castle Queenside with check"]
+[Event_es "Castle Queenside with check"]
+[Event_ar "Castle Queenside with check"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -429,8 +484,10 @@
 
 1. d4 d5 2. c4 e6 3. Nc3 c6 4. e4 Bb4 5. Bd3 e5 6. dxe5 dxe4 7. Bxe4 Bxc3+ 8. bxc3 Qxd1+ 9. Kxd1 Be6 10. Rb1 Na6! 11. Rxb7?? O-O-O+!! *
 
-
 [Event "50 Opening Traps,Part 1: Cambridge springs Trap"]
+[Event_fr "Cambridge springs Piège"]
+[Event_es "Cambridge springs Trampa"]
+[Event_ar "Cambridge springs فخ"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -445,8 +502,10 @@
 
 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. e3 c6 6. Nf3 Qa5 7. Nd2 Bb4 8. Qc2 O-O 9. Bd3?? dxc4! 10. Bxc4 Qxg5 $19 *
 
-
 [Event "50 Opening Traps,Part 1: Queen Sacrifice for a Knight fork"]
+[Event_fr "Queen Sacrifice for a Knight fork"]
+[Event_es "Queen Sacrifice for a Knight fork"]
+[Event_ar "Queen Sacrifice for a Knight fork"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -461,8 +520,10 @@
 
 1. g3 g6 2. Bg2 Bg7 3. e4 c5 4. d3 Nc6 5. c3 d6 6. Be3 Qb6!? 7. Qd2?! Ne5! 8. Na3?? Qxb2!! 9. Qxb2 Nxd3+ 10. Kd2 Nxb2 $19 *
 
-
 [Event "50 Opening Traps,Part 1: The Bishop on e6 is not bad"]
+[Event_fr "The Bishop on e6 is not bad"]
+[Event_es "The Bishop on e6 is not bad"]
+[Event_ar "The Bishop on e6 is not bad"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -477,8 +538,10 @@
 
 1. d4 d5 2. c4 dxc4 3. Nf3 c6 4. e3 Be6!? 5. Ng5?? Qa5+! $19 *
 
-
 [Event "50 Opening Traps,Part 1: The rare Bishop on a6"]
+[Event_fr "The rare Bishop on a6"]
+[Event_es "The rare Bishop on a6"]
+[Event_ar "The rare Bishop on a6"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -493,8 +556,10 @@
 
 1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e3 b6 5. Ne2 Ba6!? 6. Ng3 d5?? 7. Qa4+! $18 *
 
-
 [Event "50 Opening Traps,Part 1: Queen Fork 2.0"]
+[Event_fr "Queen Fork 2.0"]
+[Event_es "Queen Fork 2.0"]
+[Event_ar "Queen Fork 2.0"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -509,8 +574,10 @@
 
 1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 g6 6. g3 Bg7 7. Bg2 d6 8. Nc3 O-O 9. Nf3 Bxa6 10. O-O Nbd7 11. Re1 Ng4 12. Qc2 Rb8?? 13. Qa4! *
 
-
 [Event "50 Opening Traps,Part 1: Pin on the e-File"]
+[Event_fr "Pin on the e-File"]
+[Event_es "Pin on the e-File"]
+[Event_ar "Pin on the e-File"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -525,8 +592,10 @@
 
 1. g3 d5 2. Nf3 c5 3. Bg2 Nc6 4. O-O e5 5. d3 f5?! 6. c4 d4 7. e3 Nf6 8. exd4 cxd4? 9. Nxe5!! Nxe5 10. Re1 Ng4 11. f4 Bb4 12. Re2 $16 *
 
-
 [Event "50 Opening Traps,Part 1: Sacrifice the Queen!! 2.0"]
+[Event_fr "Sacrifice the Queen!! 2.0"]
+[Event_es "Sacrifice the Queen!! 2.0"]
+[Event_ar "Sacrifice the Queen!! 2.0"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -541,8 +610,10 @@
 
 1. Nf3 d5 2. c4 Nf6?! 3. cxd5 Nxd5 4. e4 Nf6 5. Nc3 Nc6?! 6. d4 Bg4? 7. d5! Ne5?? 8. Nxe5!! Bxd1 9. Bb5+ c6 10. dxc6! a6 11. c7+! axb5 12. cxd8=Q+ Rxd8 13. Nxd1 $18 *
 
-
 [Event "50 Opening Traps,Part 1: Sicilian Unpin"]
+[Event_fr "Sicilian Unpin"]
+[Event_es "Sicilian Unpin"]
+[Event_ar "Sicilian Unpin"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -557,8 +628,10 @@
 
 1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Bg5 a6 8. Na3 Be6 9. Nc4 Rc8 10. Ne3 Be7 11. Bd3? Nxe4!! 12. Bxe7 Nxc3 13. Bxd8 Nxd1 $17 *
 
-
 [Event "50 Opening Traps,Part 1: The Brother of the Sicilian unpin"]
+[Event_fr "The Brother of the Sicilian unpin"]
+[Event_es "The Brother of the Sicilian unpin"]
+[Event_ar "The Brother of the Sicilian unpin"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -573,8 +646,10 @@
 
 1. e4 d6 2. d4 Nf6 3. Nc3 e5 4. Nf3 exd4 5. Qxd4 a6 6. Bg5 Be7 7. h3 Nc6 8. Qd2 Be6 9. Nd4 Nxd4 10. Qxd4 O-O 11. Be2 Re8 12. O-O? Nxe4!! 13. Qxe4 Bxg5 14. Qxb7 Rb8 15. Qxa6 Rxb2 $17 *
 
-
 [Event "50 Opening Traps,Part 1: Queen vs. Queen"]
+[Event_fr "Queen vs. Queen"]
+[Event_es "Queen vs. Queen"]
+[Event_ar "Queen vs. Queen"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -589,8 +664,10 @@
 
 1. d4 Nf6 2. Bg5 Ne4 3. Bf4 c5 4. f3 Nf6 5. dxc5 Na6 6. e4 Nxc5 7. Nc3 d6 8. Qd2 Bd7 9. O-O-O Qa5 10. Kb1!? Rd8?? 11. Nd5! $18 Qxd2? 12. Nc7#! *
 
-
 [Event "50 Opening Traps,Part 1: Pawn Running"]
+[Event_fr "Pawn Running"]
+[Event_es "Pawn Running"]
+[Event_ar "Pawn Running"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -605,8 +682,10 @@
 
 1. c4 c5 2. Nc3 b6 3. g3 Bb7 4. e4 e6 5. Bg2 Nf6 6. Nge2 Be7 7. O-O d6? 8. e5! Bxg2 9. exf6! Bxf1 10. fxe7! Qxe7 11. Qxf1 $16 *
 
-
 [Event "50 Opening Traps,Part 1: Sacrifice the Knight on f7"]
+[Event_fr "Sacrifice the Knight on f7"]
+[Event_es "Sacrifice the Knight on f7"]
+[Event_ar "Sacrifice the Knight on f7"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -621,8 +700,10 @@
 
 1. d4 e6 2. Nf3 f5 3. g3 b6 4. d5!? Be7 5. Bg2 Bb7 6. Ne5! d6?? 7. Nf7!! Kxf7 8. dxe6+! $18 *
 
-
 [Event "50 Opening Traps,Part 1: Anton the Pawn Attacks the Queen"]
+[Event_fr "Anton the Pawn Attaques the Queen"]
+[Event_es "Anton the Pawn Ataques the Queen"]
+[Event_ar "Anton the Pawn هجومs the Queen"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -637,8 +718,10 @@
 
 1. d4 Nf6 2. c4 g6 3. Nc3 d5 4. Nf3 Bg7 5. Qb3 dxc4 6. Qxc4 O-O 7. e4 a6! 8. a4? b5!! 9. axb5 axb5! 10. Qxb5 Rxa1 $19 *
 
-
 [Event "50 Opening Traps,Part 1: The Pawn wins the Knight"]
+[Event_fr "The Pawn wins the Knight"]
+[Event_es "The Pawn wins the Knight"]
+[Event_ar "The Pawn wins the Knight"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -653,8 +736,10 @@
 
 1. e4 g6 2. d4 Bg7 3. Nf3 d6 4. c3 Nf6 5. Bd3 O-O 6. O-O c5 7. h3 Nc6 8. d5 Na5?! 9. Re1 (9. b4? cxb4 10. cxb4 Nd7!) 9... e5?? 10. b4! $18 *
 
-
 [Event "50 Opening Traps,Part 1: B2:Pawn with Poison"]
+[Event_fr "B2:Pawn with Poison"]
+[Event_es "B2:Pawn with Poison"]
+[Event_ar "B2:Pawn with Poison"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -669,8 +754,10 @@
 
 1. e4 d6 2. d4 Nf6 3. Nc3 c6 4. f4 Qa5 5. Bd3 e5 6. Nf3 Bg4 7. Be3 exf4 8. Bxf4 Qb6 9. Na4 Qa5+ 10. Nc3 Qb4? 11. a3! Qxb2?? 12. Na4! Bxf3 13. gxf3 Qxd4 14. c3! $18 *
 
-
 [Event "50 Opening Traps,Part 1: Win the Queen"]
+[Event_fr "Win the Queen"]
+[Event_es "Win the Queen"]
+[Event_ar "Win the Queen"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -685,8 +772,10 @@
 
 1. e4 c5 2. Nf3 Nc6 3. Bb5 g6 4. O-O Bg7 5. c3 Nf6 6. e5 Nd5 7. d4 cxd4 8. cxd4 O-O 9. Bg5 Qb6?! 10. Bc4! Qxb2?? 11. Bxd5!! Qxa1 12. Qd2! *
 
-
 [Event "50 Opening Traps,Part 1: Win the Queen in the middle of the board"]
+[Event_fr "Win the Queen in the middle of the board"]
+[Event_es "Win the Queen in the middle of the board"]
+[Event_ar "Win the Queen in the middle of the board"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -701,8 +790,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. O-O Nf6 5. d4 exd4 6. e5 d5 7. exf6 dxc4 8. Re1+ Be6 9. fxg7 Rg8 10. Bg5 Qd5? 11. Nc3! Qf5?? 12. Ne4! Rxg7 13. Nh4! $18 *
 
-
 [Event "50 Opening Traps,Part 1: Win the Queen like a GM"]
+[Event_fr "Win the Queen like a GM"]
+[Event_es "Win the Queen like a GM"]
+[Event_ar "Win the Queen like a GM"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -717,8 +808,10 @@
 
 1. e4 e6 2. d4 d5 3. Nd2 dxe4 4. Nxe4 Bd7 5. Nf3 Bc6 6. Bd3 Nf6 7. Nxf6+ Qxf6?? 8. Bg5! Bxf3 9. Qd2!! Qxd4 10. Bb5+! $18 *
 
-
 [Event "50 Opening Traps,Part 1: A  mousetrap for rooks"]
+[Event_fr "A  mousetrap for rooks"]
+[Event_es "A  mousetrap for rooks"]
+[Event_ar "A  mousetrap for rooks"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -733,8 +826,10 @@
 
 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Be7 5. Nf3 O-O 6. e3 h6 7. Bh4 Ne4 8. Bxe7 Qxe7 9. cxd5 Nxc3 10. bxc3 exd5 11. Bd3 Bg4 12. Rb1 Nd7! 13. Rxb7? Nb6! 14. Qb3 Bc8 15. Rxb6 axb6! 16. Qxd5 Be6 17. Qe4 f5 18. Qe5 Ra5! $19 *
 
-
 [Event "50 Opening Traps,Part 1: Steal the cheese"]
+[Event_fr "Steal the cheese"]
+[Event_es "Steal the cheese"]
+[Event_ar "Steal the cheese"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -749,8 +844,10 @@
 
 1. c4 Nf6 2. Nc3 d5 3. cxd5 Nxd5 4. g3 g6 5. Bg2 Nxc3 6. bxc3 Bg7 7. Rb1 O-O? 8. Rxb7!! Bxb7 9. Bxb7 Nd7 10. Bxa8 Qxa8 11. Nf3 $16 *
 
-
 [Event "50 Opening Traps,Part 1: win the Queen with Bxf7+ 2.0"]
+[Event_fr "win the Queen with Bxf7+ 2.0"]
+[Event_es "win the Queen with Bxf7+ 2.0"]
+[Event_ar "win the Queen with Bxf7+ 2.0"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -765,8 +862,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Be7 6. Re1 b5 7. Bb3 d6 8. c3 O-O 9. h3 Nb8 10. d4 Nbd7 11. Nbd2 Re8?? 12. Bxf7+! Kxf7 13. Ng5+ Kg8 14. Ne6 $18 *
 
-
 [Event "50 Opening Traps,Part 1: Fischer trap"]
+[Event_fr "Fischer trap"]
+[Event_es "Fischer trap"]
+[Event_ar "Fischer trap"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -781,8 +880,10 @@
 
 1. e4 e5 2. Nf3 d6 3. Bc4 Be7 4. d4 exd4 5. Nxd4 Nd7?? 6. Bxf7+! Kxf7 7. Ne6!! Qe8 8. Nxc7 Qf8 9. Qh5+ g6 10. Qd5+ Kf6 11. Bg5+ Kg7 12. Ne6+ $18 *
 
-
 [Event "50 Opening Traps,Part 1: Anastasia's Mate"]
+[Event_fr "Anastasia's Mat"]
+[Event_es "Anastasia's Mate"]
+[Event_ar "Anastasia's كش ملك"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -797,8 +898,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4 6. Re1 Nc5 7. Nc3 Nxa4 8. Nxe5 Nxe5?? 9. Rxe5+ Be7 10. Nd5 O-O 11. Nxe7+ Kh8 12. Qh5! d6? 13. Qxh7+!! Kxh7 14. Rh5#! *
 
-
 [Event "50 Opening Traps,Part 1: Conclusion"]
+[Event_fr "Conclusion"]
+[Event_es "Conclusion"]
+[Event_ar "Conclusion"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -817,8 +920,10 @@
 ChesslucaFD }
  *
 
-
 [Event "50 Opening Traps,Part 1: Kapitel 1"]
+[Event_fr "Kapitel 1"]
+[Event_es "Kapitel 1"]
+[Event_ar "Kapitel 1"]
 [Date "2026.02.26"]
 [Result "*"]
 [Variant "Standard"]
@@ -833,5 +938,3 @@ ChesslucaFD }
 [ChapterMode "gamebook"]
 
  *
-
-

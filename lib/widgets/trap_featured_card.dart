@@ -69,7 +69,7 @@ class TrapFeaturedCard extends StatelessWidget {
                   ),
                   const SizedBox(height: 12),
                   Text(
-                    trap.trapName,
+                    trap.getLocalizedName(context),
                     style: context.textTheme.headlineSmall?.copyWith(
                       fontWeight: FontWeight.w800,
                       height: 1.1,

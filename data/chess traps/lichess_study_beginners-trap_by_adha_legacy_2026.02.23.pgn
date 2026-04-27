@@ -1,4 +1,7 @@
 [Event "Beginners Trap: Stafford Gambit 1"]
+[Event_fr "Stafford Gambit 1"]
+[Event_es "Stafford Gambito 1"]
+[Event_ar "Stafford غامبيت 1"]
 [Date "2026.02.23"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Bg5 Nxe4 7. Bxd8 Bxf2+ 8. Ke2 Bg4# *
 
-
 [Event "Beginners Trap: Kostic Gambit 2"]
+[Event_fr "Kostic Gambit 2"]
+[Event_es "Kostic Gambito 2"]
+[Event_ar "Kostic غامبيت 2"]
 [Date "2026.02.23"]
 [Result "*"]
 [Variant "Standard"]
@@ -29,8 +34,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 4. Nxe5 Qg5 5. Nxf7 Qxg2 6. Rf1 Qxe4+ 7. Be2 Nf3# *
 
-
 [Event "Beginners Trap: Englund Gambit 3"]
+[Event_fr "Englund Gambit 3"]
+[Event_es "Englund Gambito 3"]
+[Event_ar "Englund غامبيت 3"]
 [Date "2026.02.23"]
 [Result "*"]
 [Variant "Standard"]
@@ -45,8 +52,10 @@
 
 1. d4 e5 2. dxe5 f6 3. exf6 Nxf6 4. Nf3 Bc5 5. Bg5 Ne4 6. Bxd8 Bxf2# *
 
-
 [Event "Beginners Trap: Bishop Opening 4"]
+[Event_fr "Bishop Ouverture 4"]
+[Event_es "Bishop Apertura 4"]
+[Event_ar "Bishop افتتاحية 4"]
 [Date "2026.02.23"]
 [Result "*"]
 [Variant "Standard"]
@@ -60,5 +69,3 @@
 [UTCTime "11:15:19"]
 
 1. e4 e5 2. Bc4 b6 3. Qh5 g6 4. Qxe5+ *
-
-

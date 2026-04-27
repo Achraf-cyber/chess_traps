@@ -1,4 +1,7 @@
 [Event "6 Traps to use in games: Trap 1"]
+[Event_fr "Piège 1"]
+[Event_es "Trampa 1"]
+[Event_ar "فخ 1"]
 [Date "2026.03.16"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. Nf3 d5 2. e4 dxe4 3. Ng5 Nf6 4. d3 exd3 5. Bxd3 h6 6. Nxf7 Kxf7 7. Bg6+ Kxg6 8. Qxd8 *
 
-
 [Event "6 Traps to use in games: Trap 2"]
+[Event_fr "Piège 2"]
+[Event_es "Trampa 2"]
+[Event_ar "فخ 2"]
 [Date "2026.03.16"]
 [Result "*"]
 [Variant "Standard"]
@@ -29,8 +34,10 @@
 
 1. d4 e5 2. dxe5 Bc5 3. Nf3 d6 4. exd6 Ne7 5. dxe7 Bxf2+ 6. Kxf2 Qxd1 *
 
-
 [Event "6 Traps to use in games: Trap 3"]
+[Event_fr "Piège 3"]
+[Event_es "Trampa 3"]
+[Event_ar "فخ 3"]
 [Date "2026.03.16"]
 [Result "*"]
 [Variant "Standard"]
@@ -45,8 +52,10 @@
 
 1. e4 e5 2. Bc4 Nc6 3. Qf3 f5 4. Qxf5 d5 5. Bxd5 Bxf5 *
 
-
 [Event "6 Traps to use in games: Trap 4"]
+[Event_fr "Piège 4"]
+[Event_es "Trampa 4"]
+[Event_ar "فخ 4"]
 [Date "2026.03.16"]
 [Result "*"]
 [Variant "Standard"]
@@ -61,8 +70,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d4 exd4 5. c3 dxc3 6. Bxf7+ Kxf7 7. Qd5+ Ke8 8. Qh5+ g6 9. Qxc5 *
 
-
 [Event "6 Traps to use in games: Trap 5"]
+[Event_fr "Piège 5"]
+[Event_es "Trampa 5"]
+[Event_ar "فخ 5"]
 [Date "2026.03.16"]
 [Result "*"]
 [Variant "Standard"]
@@ -77,8 +88,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nxe4 4. Qe2 Nf6 5. Nc6+ *
 
-
 [Event "6 Traps to use in games: Trap 6"]
+[Event_fr "Piège 6"]
+[Event_es "Trampa 6"]
+[Event_ar "فخ 6"]
 [Date "2026.03.16"]
 [Result "*"]
 [Variant "Standard"]
@@ -92,5 +105,3 @@
 [UTCTime "00:55:16"]
 
 1. d4 d5 2. c4 dxc4 3. e3 b5 4. a4 c6 (4... a6 5. axb5 axb5 6. Rxa8) 5. axb5 cxb5 6. Qf3 Nc6 7. Qxc6+ *
-
-

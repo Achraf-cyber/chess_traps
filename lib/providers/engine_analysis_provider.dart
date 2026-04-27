@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:chess_traps/providers/settings_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../services/chess_engine_service.dart';
@@ -68,6 +69,10 @@ class EngineAnalysis extends _$EngineAnalysis {
   EngineAnalysisState build(String fen) {
     final service = ref.watch(chessEngineServiceProvider);
     final isReady = _watchValueListenable(service.engineAvailableNotifier);
+
+    // Sync MultiPV with settings
+    final settings = ref.watch(chessSettingsProvider);
+    service.updateOptions(multiPv: settings.arrowCount);
 
     if (!isReady) {
       return EngineAnalysisState(fen: fen, engineAvailable: false);

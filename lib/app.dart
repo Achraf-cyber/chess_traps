@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/providers/app_theme_provider.dart';
+import 'package:chess_traps/providers/settings_provider.dart';
 import 'package:chess_traps/services/app_open_ad_manager.dart';
 import 'package:chess_traps/services/remote_config_service.dart';
 import 'package:chess_traps/services/notification_service.dart';
@@ -19,7 +20,6 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:splash_master/splash_master.dart';
-
 
 import 'l10n/app_localizations.dart';
 import 'licenses.dart';
@@ -34,7 +34,6 @@ Future<void> runMainApp(String envFile) async {
   if (kIsWeb) {
     usePathUrlStrategy();
   }
-
 
   debugPrint('app started');
   WidgetsFlutterBinding.ensureInitialized();
@@ -90,7 +89,9 @@ Future<void> runMainApp(String envFile) async {
 
   await NotificationService().init();
 
-  if (RemoteConfigService().adsEnabled && !kIsWeb && (Platform.isAndroid || Platform.isIOS)) {
+  if (RemoteConfigService().adsEnabled &&
+      !kIsWeb &&
+      (Platform.isAndroid || Platform.isIOS)) {
     try {
       // Request privacy consent before initializing MobileAds
       await ConsentManager().requestConsentUpdate();
@@ -145,6 +146,10 @@ class MainApp extends ConsumerWidget {
     final TextTheme textTheme = createTextTheme(context, quicksand, quicksand);
 
     final theme = MaterialTheme(textTheme);
+    final settings = ref.watch(chessSettingsProvider);
+    final locale = settings.localeCode != null
+        ? Locale(settings.localeCode!)
+        : null;
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
@@ -152,9 +157,11 @@ class MainApp extends ConsumerWidget {
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appName,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      locale: kDebugMode && (kIsWeb || Platform.isWindows)
-          ? DevicePreview.locale(context)
-          : null,
+      locale:
+          locale ??
+          (kDebugMode && (kIsWeb || Platform.isWindows)
+              ? DevicePreview.locale(context)
+              : null),
       builder: kDebugMode && (kIsWeb || Platform.isWindows)
           ? DevicePreview.appBuilder
           : null,

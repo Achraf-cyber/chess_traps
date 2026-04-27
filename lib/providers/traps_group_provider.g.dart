@@ -54,7 +54,7 @@ final class TrapsGroupSourceProvider
   }
 }
 
-String _$trapsGroupSourceHash() => r'f056212c5ce3b9b042fc24df337432fd3d280d0c';
+String _$trapsGroupSourceHash() => r'5973faaf230e67b798178cff5ccb43fc49f163b8';
 
 @ProviderFor(trapsSearchByName)
 final trapsSearchByNameProvider = TrapsSearchByNameFamily._();
@@ -192,7 +192,7 @@ final class TrapsOfGroupProvider
   }
 }
 
-String _$trapsOfGroupHash() => r'71d472f9dbffae1c0201d810a576e299fa41eb5e';
+String _$trapsOfGroupHash() => r'ca8d95d6eb33ae3afb6f2a4b3947004235a551e1';
 
 final class TrapsOfGroupFamily extends $Family
     with $FunctionalFamilyOverride<List<ChessTrap>, String> {

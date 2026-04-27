@@ -13,7 +13,7 @@ class ChessEngineService {
   final ValueNotifier<bool> engineAvailableNotifier = ValueNotifier(false);
 
   bool get engineAvailable => engineAvailableNotifier.value;
-  final int _multiPv = 2;
+  int _multiPv = 4;
   void Function()? _pendingCommand;
 
   Future<void> init() async {
@@ -41,6 +41,7 @@ class ChessEngineService {
   void _setEngineReady() {
     if (!engineAvailableNotifier.value) {
       _safeWrite('setoption name MultiPV value $_multiPv');
+      _safeWrite('isready');
       engineAvailableNotifier.value = true;
       debugPrint('Stockfish: Native bridge is fully READY');
     }
@@ -72,6 +73,16 @@ class ChessEngineService {
       }
     } catch (e) {
       debugPrint('Stockfish FFI Write Error: $e');
+    }
+  }
+
+  void updateOptions({int? multiPv}) {
+    if (multiPv != null && multiPv != _multiPv) {
+      _multiPv = multiPv;
+      _sendWhenReady(() {
+        _safeWrite('setoption name MultiPV value $_multiPv');
+        _safeWrite('isready');
+      });
     }
   }
 

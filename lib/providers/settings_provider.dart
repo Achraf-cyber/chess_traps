@@ -38,15 +38,22 @@ class ChessSettings {
   const ChessSettings({
     this.arrowCount = 2,
     this.boardTheme = AppBoardTheme.brown,
+    this.localeCode,
   });
 
   final int arrowCount;
   final AppBoardTheme boardTheme;
+  final String? localeCode;
 
-  ChessSettings copyWith({int? arrowCount, AppBoardTheme? boardTheme}) =>
+  ChessSettings copyWith({
+    int? arrowCount,
+    AppBoardTheme? boardTheme,
+    String? localeCode,
+  }) =>
       ChessSettings(
         arrowCount: arrowCount ?? this.arrowCount,
         boardTheme: boardTheme ?? this.boardTheme,
+        localeCode: localeCode ?? this.localeCode,
       );
 }
 
@@ -54,6 +61,7 @@ class ChessSettings {
 class ChessSettingsNotifier extends _$ChessSettingsNotifier {
   static const _arrowCountKey = 'arrowCount';
   static const _boardThemeKey = 'boardTheme';
+  static const _localeKey = 'appLocale';
 
   @override
   ChessSettings build() {
@@ -64,6 +72,7 @@ class ChessSettingsNotifier extends _$ChessSettingsNotifier {
   Future<void> _loadPrefs() async {
     final prefs = await SharedPreferences.getInstance();
     final arrowCount = prefs.getInt(_arrowCountKey) ?? 2;
+    final localeCode = prefs.getString(_localeKey);
     final themeStr = prefs.getString(_boardThemeKey);
     final theme = themeStr != null
         ? AppBoardTheme.values.firstWhere(
@@ -72,7 +81,11 @@ class ChessSettingsNotifier extends _$ChessSettingsNotifier {
           )
         : AppBoardTheme.brown;
 
-    state = ChessSettings(arrowCount: arrowCount, boardTheme: theme);
+    state = ChessSettings(
+      arrowCount: arrowCount,
+      boardTheme: theme,
+      localeCode: localeCode,
+    );
   }
 
   Future<void> updateArrowCount(int count) async {
@@ -85,5 +98,15 @@ class ChessSettingsNotifier extends _$ChessSettingsNotifier {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_boardThemeKey, theme.name);
     state = state.copyWith(boardTheme: theme);
+  }
+
+  Future<void> updateLocale(String? code) async {
+    final prefs = await SharedPreferences.getInstance();
+    if (code == null) {
+      await prefs.remove(_localeKey);
+    } else {
+      await prefs.setString(_localeKey, code);
+    }
+    state = state.copyWith(localeCode: code);
   }
 }

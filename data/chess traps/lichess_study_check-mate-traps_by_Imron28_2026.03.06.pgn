@@ -1,4 +1,7 @@
 [Event "Check mate traps: Caro kann trap for white"]
+[Event_fr "Caro kann trap for white"]
+[Event_es "Caro kann trap for white"]
+[Event_ar "Caro kann trap for white"]
 [Date "2026.03.06"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4! Nf6 5. Qe2? Nbd7?? 6. Nd6# { Guys please follow me and support me☺️🤝 } *
 
-
 [Event "Check mate traps: Fried Liver checkmate trap!"]
+[Event_fr "Fried Liver checkmate trap!"]
+[Event_es "Fried Liver checkmate trap!"]
+[Event_ar "Fried Liver checkmate trap!"]
 [Date "2026.03.06"]
 [Result "*"]
 [Variant "Standard"]
@@ -29,8 +34,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5! d5 5. exd5 Nxd5? 6. Nxf7!! Kxf7 7. Qf3+! Kg8?? { Guys please follow me and support me☺️🤝 } 8. Bxd5+ Qxd5 9. Qxd5+ Be6 10. Qxe6# *
 
-
 [Event "Check mate traps: Crazy sacs for black"]
+[Event_fr "Crazy sacs for black"]
+[Event_es "Crazy sacs for black"]
+[Event_ar "Crazy sacs for black"]
 [Date "2026.03.06"]
 [Result "*"]
 [Variant "Standard"]
@@ -44,5 +51,3 @@
 [UTCTime "14:33:43"]
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4?! 4. Nxe5 Qg5!! 5. Nxf7?? Qxg2! 6. Rf1 Qxe4+ 7. Be2? Nf3#! { Guys please follow me and support me☺️🤝 } *
-
-

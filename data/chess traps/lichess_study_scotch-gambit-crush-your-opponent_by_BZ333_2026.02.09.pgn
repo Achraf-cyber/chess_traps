@@ -1,4 +1,7 @@
 [Event "Scotch Gambit - Crush your opponent!: Introduction 🥳"]
+[Event_fr "Introduction 🥳"]
+[Event_es "Introduction 🥳"]
+[Event_ar "Introduction 🥳"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -14,8 +17,10 @@
 { Welcome to this Study! Enjoy it, learn the Scotch Gambit and like it! }
 1. e4 e5 2. Nf3 Nc6 3. d4 { Scotch game } 3... exd4 4. Bc4 { This gambit is very aggressive. You develop your pieces quickly, build up pressure, gain control of the center, and in most variations you win back the pawn. } *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📚 Main variation Nf6 - Theory 💡"]
+[Event_fr "📚 Main variation Nf6 - Theory 💡"]
+[Event_es "📚 Main variation Nf6 - Theory 💡"]
+[Event_ar "📚 Main variation Nf6 - Theory 💡"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -32,8 +37,10 @@
 
 4... Nf6 5. e5 { Attacking the knight. } 5... d5 { Counterattack on the Bishop. } 6. Bb5 Ne4 7. Nxd4 { Finally win back the Pawn. } 7... Bd7 8. Bxc6 Bxc6 9. Nxc6 bxc6 10. O-O Qe7 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📚 Main variation Nf6 - Exercise 🔍"]
+[Event_fr "📚 Main variation Nf6 - Exercise 🔍"]
+[Event_es "📚 Main variation Nf6 - Exercise 🔍"]
+[Event_ar "📚 Main variation Nf6 - Exercise 🔍"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -49,8 +56,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 (4. Nxd4 { That's fine too. But not the gambit. }) 4... Nf6 { Attacking the knight! } 5. e5 d5 { The counterattack!! } 6. Bb5 Ne4 7. Nxd4 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📕 London Defense [Bb4] - Theory 💡"]
+[Event_fr "📕 London Défense [Bb4] - Theory 💡"]
+[Event_es "📕 London Defensa [Bb4] - Theory 💡"]
+[Event_ar "📕 London دفاع [Bb4] - Theory 💡"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -65,8 +74,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bb4+ { According to the engine, the best move. } 5. c3 { Blocks check. } 5... dxc3 6. O-O { Castling sacrifices a pawn for a strong attack. More on that later. } 6... Nf6 7. e5 d5 8. exf6 dxc4 9. Qxd8+ Kxd8 10. fxg7 Rg8 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📕 London Defense [Bb4] - Exercise 🔍"]
+[Event_fr "📕 London Défense [Bb4] - Exercise 🔍"]
+[Event_es "📕 London Defensa [Bb4] - Exercise 🔍"]
+[Event_ar "📕 London دفاع [Bb4] - Exercise 🔍"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -82,8 +93,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 (4. Nxd4 { Remember the GAMBIT }) 4... Bb4+ 5. c3 dxc3 6. O-O (6. bxc3 { Also good, but not as aggressive and exciting. }) 6... Nf6 7. e5 d5 8. exf6 dxc4 9. Qxd8+ Kxd8 10. fxg7 Rg8 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📘 London Defense [Bb4] Secondary Variation cxb2? - Theory 💡"]
+[Event_fr "📘 London Défense [Bb4] Secondary Variante cxb2? - Theory 💡"]
+[Event_es "📘 London Defensa [Bb4] Secondary Variante cxb2? - Theory 💡"]
+[Event_ar "📘 London دفاع [Bb4] Secondary تنويعة cxb2? - Theory 💡"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -98,8 +111,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bb4+ 5. c3 dxc3 6. O-O cxb2?! 7. Bxb2 { Your bishops control strong diagonals and attack on g7. } 7... Nf6 8. e5 Ng4 $16 { Your position is better. (+1.3) } 9. h3 { ATTACK! } 9... Nh6 $14 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📘 London Defense [Bb4] Secondary Variation cxb2? - Exercise 🔍"]
+[Event_fr "📘 London Défense [Bb4] Secondary Variante cxb2? - Exercise 🔍"]
+[Event_es "📘 London Defensa [Bb4] Secondary Variante cxb2? - Exercise 🔍"]
+[Event_ar "📘 London دفاع [Bb4] Secondary تنويعة cxb2? - Exercise 🔍"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -117,8 +132,10 @@
 Nun jetzt hat Weiß mehr als 60% Siegesquote.
 😎 } 9. h3 Nh6 $14 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📙 Hungarian/Benima Defense [Be7] - Theory 💡"]
+[Event_fr "📙 Hungarian/Benima Défense [Be7] - Theory 💡"]
+[Event_es "📙 Hungarian/Benima Defensa [Be7] - Theory 💡"]
+[Event_ar "📙 Hungarian/Benima دفاع [Be7] - Theory 💡"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -133,8 +150,10 @@ Nun jetzt hat Weiß mehr als 60% Siegesquote.
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Be7 { The Benima Defense is very rare. Just play c3. } 5. c3 dxc3 6. Qd5 { Play Qd5! What a move! } 6... Nh6 { Only move } 7. Bxh6 { They have to castle. } 7... O-O 8. Nxc3!! { Sacrifise the bishop! } 8... gxh6 (8... Nb4 { You have to play Qh5 and sacrifise the fork on c2 !! } 9. Qh5!! Nc2+ 10. Kf1 $7 Nxa1 11. h4 $7 d5 12. Nxd5 $7 c6 13. Qe5 $7 gxh6?? 14. Nxe7+!) 9. O-O $40 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📙 Hungarian/Benima Defense [Be7] - Exercise 🔍"]
+[Event_fr "📙 Hungarian/Benima Défense [Be7] - Exercise 🔍"]
+[Event_es "📙 Hungarian/Benima Defensa [Be7] - Exercise 🔍"]
+[Event_ar "📙 Hungarian/Benima دفاع [Be7] - Exercise 🔍"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -150,8 +169,10 @@ Nun jetzt hat Weiß mehr als 60% Siegesquote.
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Be7 5. c3 dxc3 6. Qd5 Nh6 7. Bxh6 O-O 8. Nxc3 gxh6 9. O-O { Right! } *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📗 Haxo Gambit [Bc5] Secondary Variation - Theory 💡"]
+[Event_fr "📗 Haxo Gambit [Bc5] Secondary Variante - Theory 💡"]
+[Event_es "📗 Haxo Gambito [Bc5] Secondary Variante - Theory 💡"]
+[Event_ar "📗 Haxo غامبيت [Bc5] Secondary تنويعة - Theory 💡"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -166,8 +187,10 @@ Nun jetzt hat Weiß mehr als 60% Siegesquote.
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. Ng5 { Applying pressure on f7 is the call here. } (5. c3 dxc3) 5... Nh6 (5... Ne5 6. Nxf7 Nxf7) 6. Bxf7+! (6. Nxf7 Nxf7 7. Bxf7+ Kxf7 8. Qh5+ g6 9. Qxc5 Re8) 6... Nxf7 7. Nxf7 Kxf7 8. Qh5+! g6 9. Qxc5 d5 10. O-O *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📗 Haxo Gambit [Bc5] Secondary Variation - Exercise 🔍"]
+[Event_fr "📗 Haxo Gambit [Bc5] Secondary Variante - Exercise 🔍"]
+[Event_es "📗 Haxo Gambito [Bc5] Secondary Variante - Exercise 🔍"]
+[Event_ar "📗 Haxo غامبيت [Bc5] Secondary تنويعة - Exercise 🔍"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -183,8 +206,10 @@ Nun jetzt hat Weiß mehr als 60% Siegesquote.
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. Ng5 Nh6 { The Brilliant is coming now } 6. Bxf7+ (6. Nxf7 { However, neither of the two alternatives can be considered correct. Take with the bishop. }) 6... Nxf7 7. Nxf7 Kxf7 { You sacrificed. Get the piece back. } 8. Qh5+ g6 9. Qxc5 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📔 Secondary Variation [d6] - Theory 💡"]
+[Event_fr "📔 Secondary Variante [d6] - Theory 💡"]
+[Event_es "📔 Secondary Variante [d6] - Theory 💡"]
+[Event_ar "📔 Secondary تنويعة [d6] - Theory 💡"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -199,8 +224,10 @@ Nun jetzt hat Weiß mehr als 60% Siegesquote.
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 d6 { Just take back and checkmate in 1287665. } 5. Nxd4 Nf6 6. Nc3 Be7 7. O-O O-O $14 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📔 Secondary Variation [d6] - Exercise 🔍"]
+[Event_fr "📔 Secondary Variante [d6] - Exercise 🔍"]
+[Event_es "📔 Secondary Variante [d6] - Exercise 🔍"]
+[Event_ar "📔 Secondary تنويعة [d6] - Exercise 🔍"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -216,8 +243,10 @@ Nun jetzt hat Weiß mehr als 60% Siegesquote.
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 d6 5. Nxd4 Nf6 6. Nc3 Be7 7. O-O O-O *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📓 Haxo Gambit [Bc5]  c3 - Theory 💡"]
+[Event_fr "📓 Haxo Gambit [Bc5]  c3 - Theory 💡"]
+[Event_es "📓 Haxo Gambito [Bc5]  c3 - Theory 💡"]
+[Event_ar "📓 Haxo غامبيت [Bc5]  c3 - Theory 💡"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -232,8 +261,10 @@ Nun jetzt hat Weiß mehr als 60% Siegesquote.
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 { Haxo Gambit } 5. c3 { An Aggressive Move } 5... dxc3?! { Inaccuracy. Nf6 was best. } { Almost everyone takes here. But that's not good. } (5... Nf6 6. e5 d5 7. Bb5 Ne4 8. cxd4 Bb6 9. h3 Bd7 10. Nc3) 6. Bxf7+ Kxf7 7. Qd5+ Ke8 8. Qh5+ g6?! { Inaccuracy. Kf8 was best. } (8... Kf8 9. Qxc5+) 9. Qxc5 cxb2 10. Bxb2 Nf6 11. Qc1 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: 📓 Haxo Gambit [Bc5]  c3 - Exercise 🔍"]
+[Event_fr "📓 Haxo Gambit [Bc5]  c3 - Exercise 🔍"]
+[Event_es "📓 Haxo Gambito [Bc5]  c3 - Exercise 🔍"]
+[Event_ar "📓 Haxo غامبيت [Bc5]  c3 - Exercise 🔍"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -249,8 +280,10 @@ Nun jetzt hat Weiß mehr als 60% Siegesquote.
 
 1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Bc4 Bc5 5. c3 dxc3?! { Inaccuracy. Nf6 was best. } (5... Nf6 6. e5 d5 7. Bb5 Ne4 8. cxd4 Bb6 9. h3 Bd7 10. Nc3) 6. Bxf7+ { BRILLIANT! } 6... Kxf7 7. Qd5+ Ke8 8. Qh5+ g6?! { Inaccuracy. Kf8 was best. } (8... Kf8) 9. Qxc5 cxb2 10. Bxb2 Nf6 11. Qc1 *
 
-
 [Event "Scotch Gambit - Crush your opponent!: Outro 👋 (➡️❤️)"]
+[Event_fr "Outro 👋 (➡️❤️)"]
+[Event_es "Outro 👋 (➡️❤️)"]
+[Event_ar "Outro 👋 (➡️❤️)"]
 [Date "2026.02.09"]
 [Result "*"]
 [Variant "Standard"]
@@ -270,8 +303,10 @@ Please comment if you like the format with 1. theory and 2. practice.
 If you have an idea for an opening, write it in the chat or send me a message. }
  *
 
-
 [Event "Scotch Gambit - Crush your opponent!: Milestones"]
+[Event_fr "Milestones"]
+[Event_es "Milestones"]
+[Event_ar "Milestones"]
 [Date "2026.02.21"]
 [Result "*"]
 [Variant "Standard"]
@@ -296,5 +331,3 @@ https://lichess.org/study/dc9uuRVU
 -1000❤️❌️ = Study about mate patterns.
 More will follow if we achieve the milestones. }
  *
-
-

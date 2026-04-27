@@ -1,4 +1,7 @@
 [Event "Opening traps: ♥ Intro♥"]
+[Event_fr "♥ Intro♥"]
+[Event_es "♥ Intro♥"]
+[Event_ar "♥ Intro♥"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -18,8 +21,10 @@
 Please hit the heart button because l worked very hard on this study. ♥ Thanks }
  *
 
-
 [Event "Opening traps: Legal Mate"]
+[Event_fr "Legal Mat"]
+[Event_es "Legal Mate"]
+[Event_ar "Legal كش ملك"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -33,5 +38,3 @@ Please hit the heart button because l worked very hard on this study. ♥ Thanks
 [UTCTime "01:34:59"]
 
 1. e4 e5 2. Nf3 Nc6 (2... d6 3. Bc4 Bg4 4. Nc3 g6? 5. Nxe5!! Bxd1?? 6. Bxf7+ Ke7 7. Nd5#) 3. Bc4 d6?! (3... Nf6 4. Nc3 Nxe4 5. Nxe4 d5 6. Bd3 dxe4 7. Bxe4 $14) 4. Nc3 Bg4 5. h3 Bh5? (5... Bxf3 6. Qxf3 $14 { This doesn't lead to checkmate but white is slightly better. } 6... Nf6 7. O-O Nd4 8. Qd3) 6. Nxe5!! Bxd1?? 7. Bxf7+ Ke7 $7 8. Nd5# { This is a beautiful checkmate called legal mate } *
-
-

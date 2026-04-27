@@ -1,4 +1,7 @@
 [Event "Traps: Fool mate"]
+[Event_fr "Fool mate"]
+[Event_es "Fool mate"]
+[Event_ar "Fool mate"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. e4 f6? 2. d4 g5?? 3. Qh5#! { Working only with fools, bruh don’t really works } *
 
-
 [Event "Traps: Scholar’s mate"]
+[Event_fr "Scholar’s mate"]
+[Event_es "Scholar’s mate"]
+[Event_ar "Scholar’s mate"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -29,8 +34,10 @@
 
 1. e4 e5 2. Qh5?! Nc6 3. Bc4 Nf6?? 4. Qxf7#! { Hahahaha, works on 100-400 elo } *
 
-
 [Event "Traps: Legal mate"]
+[Event_fr "Legal mate"]
+[Event_es "Legal mate"]
+[Event_ar "Legal mate"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -45,8 +52,10 @@
 
 1. e4 e5 2. Nf3 d6 3. Bc4 Bg4 4. Nc3 f6? 5. Nxe5!! Bxd1?? (5... dxe5!) 6. Bf7+ Ke7 7. Nd5#! { W speed, works on 100-900 elo! } *
 
-
 [Event "Traps: Fried liver attack"]
+[Event_fr "Fried liver attack"]
+[Event_es "Fried liver attack"]
+[Event_ar "Fried liver attack"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -61,8 +70,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5! { Best for new players. f7 pawn is looking bad } 4... d5! 5. exd5 Nxd5? (5... Na5! { Na5 the best }) 6. Nxf7!! { Tactical brilliant } 6... Kxf7 7. Qf3+! Ke6 8. Nc3 Ne7 9. O-O $16 { You gonna crush black king, works on 100-1000 elo! } *
 
-
 [Event "Traps: King gambit trap"]
+[Event_fr "King gambit trap"]
+[Event_es "King gambit trap"]
+[Event_ar "King gambit trap"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -77,8 +88,10 @@
 
 1. e4 e5 2. f4! { Players gonna play agressive, we opened f file, and get the centre, it also fun! } 2... exf4 3. Nf3 g5 { Protecting the pawn } 4. Bc4 g4 { Best move } 5. O-O!? { This is very aggressive muzio gambit. } 5... gxf3 6. d4! { Sacrifice another pawn } 6... fxg2? { Ooops... } 7. Bxf7+!! { Bro got depressed } 7... Kxf7 8. Qh5+! Ke7 9. Rxf4 Nf6 $7 { Protecting from checkmate } 10. Rxf6!! { Did I blundered??? } 10... Kxf6 11. Bg5+! { Seems like no, we get free queen } 11... Kg7 12. Bxd8 $16 { Works on 100-1200 elo! } *
 
-
 [Event "Traps: Blackburn-shilling gambit"]
+[Event_fr "Blackburn-shilling gambit"]
+[Event_es "Blackburn-shilling gambit"]
+[Event_ar "Blackburn-shilling gambit"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -93,8 +106,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4!? { Man who create this opening named Joseph Blackburn, he played it in simultaneous exhibition. } 4. Nxe5? { Nxd4 the best } (4. Nxd4! exd4 5. d3 $16) 4... Qg5!! 5. Nxf7?! Qxg2! 6. Rf1 Qxe4+ 7. Be2? { Queen give up was best } 7... Nf3#! { Checkmate! Works on 100-700 elo } *
 
-
 [Event "Traps: Bishop safari gambit"]
+[Event_fr "Bishop safari gambit"]
+[Event_es "Bishop safari gambit"]
+[Event_ar "Bishop safari gambit"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -110,8 +125,10 @@
 { Lol just safari }
 1. e4 e5 2. Nf3 Nc6 3. Bc4 { Start is very cool } 3... Na5? { Some cringe } 4. Bxf7+!! { Ahahahahah, black wants safari and he did it } 4... Kxf7 5. Nxe5+! Ke8? 6. Qh5+! g6! 7. Nxg6!! hxg6 8. Qxh8 { Just free rook, works on 100-200 elo bruh } (8. Qxg6+ Ke7) *
 
-
 [Event "Traps: Ballistic missle gambit"]
+[Event_fr "Ballistic missle gambit"]
+[Event_es "Ballistic missle gambit"]
+[Event_ar "Ballistic missle gambit"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -126,8 +143,10 @@
 
 1. e4 d5 2. Nf3!? { Good tennison gambit } 2... dxe4 3. Ng5 Nf6 4. d3 exd3?! 5. Bxd3 h6?? 6. Nxf7!! { There is bomb attack lol. } 6... Kxf7 7. Bg6+! Kxg6 8. Qxd8 $16 { Works on 500-1200 elo, why not from 100 elo? Its because some players thinking badly or doesn’t thinking 😁. } *
 
-
 [Event "Traps: Lasker trap"]
+[Event_fr "Lasker trap"]
+[Event_es "Lasker trap"]
+[Event_ar "Lasker trap"]
 [Date "2026.03.18"]
 [Result "*"]
 [Variant "Standard"]
@@ -142,5 +161,3 @@
 
 { Lasker trap also better }
 1. d4 d5 2. c4 e5!? { This counter gambit is popular. } 3. dxe5 d4! 4. e3?! Bb4+! 5. Bd2 dxe3!! { Beautiful sacrifice } 6. Bxb4?? (6. fxe3! { Fxe3 best }) 6... exf2+! 7. Ke2 fxg1=N+!! 8. Rxg1? Bg4+! 9. Kf2 Qxd1 $17 { This beatiful combination don’t seems like 100 elo, works on 500-1400 elo! } *
-
-

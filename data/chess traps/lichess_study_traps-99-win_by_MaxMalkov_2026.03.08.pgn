@@ -1,4 +1,7 @@
 [Event "Traps 99% win: Hello!"]
+[Event_fr "Hello!"]
+[Event_es "Hello!"]
+[Event_ar "Hello!"]
 [Date "2026.03.08"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. e4!! { That my third course about traps with 99% win } *
 
-
 [Event "Traps 99% win: Tennison gambit"]
+[Event_fr "Tennison gambit"]
+[Event_es "Tennison gambit"]
+[Event_ar "Tennison gambit"]
 [Date "2026.03.08"]
 [Result "*"]
 [Variant "Standard"]
@@ -31,8 +36,10 @@
 
 1... d5 2. Nf3!? dxe4 3. Ng5! Nf6 4. d3 exd3?! 5. Bxd3! h6?? 6. Nxf7!! Kxf7 7. Bg6+!! Kxg6 8. Qxd8 $16 *
 
-
 [Event "Traps 99% win: Lasker trap"]
+[Event_fr "Lasker trap"]
+[Event_es "Lasker trap"]
+[Event_ar "Lasker trap"]
 [Date "2026.03.08"]
 [Result "*"]
 [Variant "Standard"]
@@ -47,8 +54,10 @@
 
 1. d4 d5 2. c4 e5!? 3. dxe5! d4 4. e3 Bb4+?! 5. Bd2 dxe3!! 6. Bxb4?? (6. fxe3!) 6... exf2+! 7. Ke2 fxg1=N+!! 8. Rxg1 Bg4+! 9. Kf2 Qxd1 $17 *
 
-
 [Event "Traps 99% win: Karpov trap"]
+[Event_fr "Karpov trap"]
+[Event_es "Karpov trap"]
+[Event_ar "Karpov trap"]
 [Date "2026.03.08"]
 [Result "*"]
 [Variant "Standard"]
@@ -63,8 +72,10 @@
 
 1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. Nxe4 Nd7!? { Idea kg8f6 } 5. Ng5?! h6 6. Ne6!! (6. Nxf7?!) 6... fxe6?? (6... Qb6!) 7. Qh5+! g6 8. Qxg6#!! *
 
-
 [Event "Traps 99% win: Blackburn-shilling gambit"]
+[Event_fr "Blackburn-shilling gambit"]
+[Event_es "Blackburn-shilling gambit"]
+[Event_ar "Blackburn-shilling gambit"]
 [Date "2026.03.08"]
 [Result "*"]
 [Variant "Standard"]
@@ -79,8 +90,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4!? 4. Nxe5?? (4. Nxd4! exd4 5. O-O $32) 4... Qg5!! 5. Nxf7? Qxg2! 6. Rf1? Qxe4+! 7. Be2?! Nf3#!! { Super checkmate! } *
 
-
 [Event "Traps 99% win: Damiano gambit"]
+[Event_fr "Damiano gambit"]
+[Event_es "Damiano gambit"]
+[Event_ar "Damiano gambit"]
 [Date "2026.03.08"]
 [Result "*"]
 [Variant "Standard"]
@@ -95,8 +108,10 @@
 
 1. e4 e5 2. Nf3 f6? { Its damiano gambit } 3. Nxe5!! { The fastest sacrifice on board } 3... fxe5?? (3... Qe7! 4. Nd3 Qxe4+ 5. Qe2 Qxe2+ 6. Bxe2 Nc6 $10) 4. Qh5+! Ke7?? 5. Qxe5+! Kf7 6. Bc4+! Kg6? 7. Qf5+ Kh6 $7 8. h4! d5 9. d3+! g5 10. Qf7! Bb4+ $18 11. c3 Bxc3+ 12. bxc3 Bh3 13. Rxh3 dxc4 14. hxg5#!! *
 
-
 [Event "Traps 99% win: Danish gambit"]
+[Event_fr "Danish gambit"]
+[Event_es "Danish gambit"]
+[Event_ar "Danish gambit"]
 [Date "2026.03.08"]
 [Result "*"]
 [Variant "Standard"]
@@ -110,5 +125,3 @@
 [UTCTime "06:33:18"]
 
 1. e4 e5 2. d4 exd4 3. c3! dxc3 4. Bc4 cxb2?! 5. Bxb2! Bb4+ 6. Kf1!? Nf6 7. e5! Ne4? 8. Bxf7+!! Kxf7 9. Qd5+! Kg6? 10. Qxe4+! Kf7 11. Nf3 d5 12. exd6 Qxd6?! 13. Ng5+ Kg8! 14. Qc4+! Be6 15. Nxe6 b5!? 16. Qb3!! { Protecting from checkmate and winning! } *
-
-

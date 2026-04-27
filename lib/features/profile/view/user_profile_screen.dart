@@ -9,6 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../utils.dart';
 import '../../../services/notification_service.dart';
+import '../../../providers/settings_provider.dart';
 
 class UserProfileScreen extends ConsumerWidget {
   const UserProfileScreen({super.key});
@@ -35,6 +36,10 @@ class UserProfileScreen extends ConsumerWidget {
                     currentMode: themeMode,
                     notifier: themeNotifier,
                   ),
+                  const SizedBox(height: 32),
+                  _ProfileSectionTitle(title: context.phrase.localeName),
+                  const SizedBox(height: 16),
+                  const _ProfileLanguageSelector(),
                   const SizedBox(height: 32),
                   const _ProfileSectionTitle(title: "Notifications"),
                   const SizedBox(height: 16),
@@ -508,7 +513,9 @@ class _ProfileNotificationSettingsState
                 ),
               ),
             ),
-          if (_enabled && Platform.isAndroid && (!_canScheduleExactAlarms || !_ignoringBatteryOptimizations))
+          if (_enabled &&
+              Platform.isAndroid &&
+              (!_canScheduleExactAlarms || !_ignoringBatteryOptimizations))
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               child: Column(
@@ -516,22 +523,27 @@ class _ProfileNotificationSettingsState
                   if (!_canScheduleExactAlarms)
                     _NotificationWarning(
                       icon: Icons.timer_outlined,
-                      message: "Exact alarm permission is off. Daily reminders may arrive up to ~15 minutes late.",
+                      message:
+                          "Exact alarm permission is off. Daily reminders may arrive up to ~15 minutes late.",
                       buttonLabel: "ENABLE",
                       onPressed: () async {
-                        await NotificationService().requestExactAlarmsPermission();
+                        await NotificationService()
+                            .requestExactAlarmsPermission();
                         await _loadSettings();
                       },
                     ),
-                  if (!_canScheduleExactAlarms && !_ignoringBatteryOptimizations)
+                  if (!_canScheduleExactAlarms &&
+                      !_ignoringBatteryOptimizations)
                     const SizedBox(height: 8),
                   if (!_ignoringBatteryOptimizations)
                     _NotificationWarning(
                       icon: Icons.battery_saver_outlined,
-                      message: "Battery optimization is on. The system may prevent notifications when the app is closed.",
+                      message:
+                          "Battery optimization is on. The system may prevent notifications when the app is closed.",
                       buttonLabel: "FIX NOW",
                       onPressed: () async {
-                        await NotificationService().requestIgnoreBatteryOptimizations();
+                        await NotificationService()
+                            .requestIgnoreBatteryOptimizations();
                         await _loadSettings();
                       },
                     ),
@@ -568,11 +580,7 @@ class _NotificationWarning extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(
-            icon,
-            size: 18,
-            color: context.colors.error,
-          ),
+          Icon(icon, size: 18, color: context.colors.error),
           const SizedBox(width: 8),
           Expanded(
             child: Column(
@@ -599,6 +607,90 @@ class _NotificationWarning extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _ProfileLanguageSelector extends ConsumerWidget {
+  const _ProfileLanguageSelector();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final settings = ref.watch(chessSettingsProvider);
+    final notifier = ref.read(chessSettingsProvider.notifier);
+
+    final languages = [
+      {'code': null, 'label': context.phrase.system, 'flag': '🌐'},
+      {'code': 'en', 'label': 'English', 'flag': '🇺🇸'},
+      {'code': 'fr', 'label': 'Français', 'flag': '🇫🇷'},
+      {'code': 'es', 'label': 'Español', 'flag': '🇪🇸'},
+      {'code': 'ar', 'label': 'العربية', 'flag': '🇲🇦'},
+    ];
+
+    return Container(
+      decoration: BoxDecoration(
+        color: context.colors.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: context.colors.outlineVariant.withValues(alpha: 0.3),
+        ),
+      ),
+      child: Column(
+        children: languages.map((lang) {
+          final isSelected = settings.localeCode == lang['code'];
+          final isLast = languages.last == lang;
+
+          return InkWell(
+            onTap: () => notifier.updateLocale(lang['code'] as String?),
+            borderRadius: isLast
+                ? const BorderRadius.vertical(bottom: Radius.circular(20))
+                : (lang == languages.first
+                      ? const BorderRadius.vertical(top: Radius.circular(20))
+                      : BorderRadius.zero),
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+              decoration: BoxDecoration(
+                border: isLast
+                    ? null
+                    : Border(
+                        bottom: BorderSide(
+                          color: context.colors.outlineVariant.withValues(
+                            alpha: 0.1,
+                          ),
+                        ),
+                      ),
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    lang['flag'] as String,
+                    style: const TextStyle(fontSize: 20),
+                  ),
+                  const SizedBox(width: 16),
+                  Text(
+                    lang['label'] as String,
+                    style: context.textTheme.bodyLarge?.copyWith(
+                      fontWeight: isSelected
+                          ? FontWeight.bold
+                          : FontWeight.normal,
+                      color: isSelected
+                          ? context.colors.primary
+                          : context.colors.onSurface,
+                    ),
+                  ),
+                  const Spacer(),
+                  if (isSelected)
+                    Icon(
+                      Icons.check_circle_rounded,
+                      color: context.colors.primary,
+                      size: 20,
+                    ),
+                ],
+              ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }

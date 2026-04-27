@@ -1,4 +1,7 @@
 [Event "Stafford Gambit Traps: Introduction"]
+[Event_fr "Introduction"]
+[Event_es "Introduction"]
+[Event_ar "Introduction"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 { The Stafford Gambit: An objectively dubious, but HIGHLY VENOMOUS opening. } 4. Nxc6 dxc6 { From this position, there are so many traps unsuspecting players can stumble into from the white side. Every chapter features a different trap with annotations. I explain the many traps in this video: https://youtu.be/nH_fiqlLp2U } *
 
-
 [Event "Stafford Gambit Traps: Oh no my queen!"]
+[Event_fr "Oh no my queen!"]
+[Event_es "Oh no my queen!"]
+[Event_ar "Oh no my queen!"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -29,8 +34,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Bg5? Nxe4!! { Oh no! My queen! } 7. Bxd8 (7. dxe4 Bxf2+! { [%cal Gd8d1,Re1d1] } 8. Kxf2 (8. Ke2 Bg4+ $19) 8... Qxd1 $19) (7. Qe2 Qxg5 8. Qxe4+ Kd8! 9. Be2 Qc1+ { Yuuki_is_here - IM EricRosen, 0-1, -, https://lichess.org/f2yOCAVe }) 7... Bxf2+ 8. Ke2 Bg4# *
 
-
 [Event "Stafford Gambit Traps: Oh no my knight!"]
+[Event_fr "Oh no my knight!"]
+[Event_es "Oh no my knight!"]
+[Event_ar "Oh no my knight!"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -45,8 +52,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. e5 Ne4 6. d3? { Natural move, but a huge mistake! } { [%csl Gd3][%cal Gd2d3] } (6. d4 { [%csl Gd4] } 6... Qh4 7. g3 Nxg3 8. fxg3 Qe4+ $19 { [%cal Ge4h1,Ge4e1] }) 6... Bc5!! $19 { [%csl Rf2] } 7. dxe4 { oh no my knight! } (7. Be3 Bxe3 8. fxe3 Qh4+ 9. g3 (9. Ke2 Qf2#) 9... Nxg3 10. hxg3 Qxh1 $19) 7... Bxf2+ 8. Kxf2 (8. Ke2 Bg4+ $19) 8... Qxd1 $19 { Oh no! White's queen 😋 } *
 
-
 [Event "Stafford Gambit Traps: Take my knight, but I'll take your rook..."]
+[Event_fr "Take my knight, but I'll take your rook..."]
+[Event_es "Take my knight, but I'll take your rook..."]
+[Event_ar "Take my knight, but I'll take your rook..."]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -61,8 +70,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. e5 Ne4 6. d4 Qh4 7. g3? Nxg3 { [%cal Gh4h1] } 8. fxg3 Qe4+ $19 { [%cal Ge4h1,Ge4e1] } *
 
-
 [Event "Stafford Gambit Traps: Most common trap"]
+[Event_fr "Most common trap"]
+[Event_es "Most common trap"]
+[Event_ar "Most common trap"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -77,8 +88,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. Nc3 (5. d3 Bc5 6. Nc3? { transposes }) 5... Bc5 6. d3? Ng4! { Winning back material and guaranteeing black a better position } 7. Be3 Nxe3 8. fxe3 Bxe3 $17 { with the only dark-squared bishop on the board piercing through white's position (and preventing castling), black has a very comfortable advantage } { [%cal Ge3g1,Ge3c1] } *
 
-
 [Event "Stafford Gambit Traps: Punishing Natural Development"]
+[Event_fr "Punishing Natural Development"]
+[Event_es "Punishing Natural Development"]
+[Event_ar "Punishing Natural Development"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -93,8 +106,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. Nc3 Bc5 6. Bc4? { Yet again, a natural developing move from white is a costly blunder! } 6... Ng4! 7. O-O (7. Qf3 { [%cal Gf3f7] } 7... Ne5! { multipurpose! } { [%cal Ge5f3,Ge5c4,Ge5f7] } 8. Qe2 Qh4 $17 { [%csl Rf2][%cal Gc8g4,Gh4e1] } 9. d3 (9. g3 Qh3 $19 { [%csl Rf3,Re2,Rc4][%cal Gc8g4,Ge5f3,Ge5c4,Gh3g2] }) 9... Bg4 10. Qf1 Nxc4 11. dxc4 O-O-O $19) 7... Qh4 8. h3 Nxf2 9. Qf3 Nxh3+ { At this point you should retrieve some tissues to wipe away white's tears } { [%cal Gh3g1,Gc5g1] } 10. Kh1 Nf2+ 11. Kg1 Qh1# *
 
-
 [Event "Stafford Gambit Traps: My Favorite Trap (Sometimes works against GMs!)"]
+[Event_fr "My Favorite Piège (Sometimes works against GMs!)"]
+[Event_es "My Favorite Trampa (Sometimes works against GMs!)"]
+[Event_ar "My Favorite فخ (Sometimes works against GMs!)"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -109,8 +124,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. Nc3 Bc5 6. Be2 h5 7. h3 { After a couple safe moves from white (Be2 and h3) it looks like white will complete the opening without any harm... right? } 7... Qd4!! { WRONG. From this moment on, white is in big danger... } 8. O-O Ng4!! 9. hxg4 hxg4 { black is already threatening forced checkmate } { [%cal Gd4e5,Ge5h2] } 10. g3 { the only attempt at survival } (10. d3 { gets mated by force } 10... Qe5 11. g3 Qxg3#) (10. Bxg4 Qe5 11. Bh3 Bxh3 $19) 10... Qe5 11. Kg2 Bxf2!! { The crushing blow. If not for this move, white would survive } 12. Kxf2 (12. Rxf2 Qh5 { [%cal Gh5h3] } 13. Rf4 Qh2+ 14. Kf1 Qxg3 $19 { [%cal Gh8h1] }) 12... Rh2+ 13. Ke3 Qxg3+ 14. Kd4 Be6 $19 { With this simple developing move, black prepares to 0-0-0 continuing initiative. Feel free to analyze further with the engine, but white is totally busted } { [%csl Gc8,Gd8][%cal Gg3c3,Gh2e2,Rg1d4,Ge8c8,Ga8d8,Gd8d4] } *
 
-
 [Event "Stafford Gambit Traps: Drag white's king to e4 (before move 10!)"]
+[Event_fr "Drag white's king to e4 (before move 10!)"]
+[Event_es "Drag white's king to e4 (before move 10!)"]
+[Event_ar "Drag white's king to e4 (before move 10!)"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -125,8 +142,10 @@
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. h3 Bxf2+ 7. Kxf2 Nxe4+ 8. Ke3 (8. Kg1 Qd4+ { Forcing a draw by repetition } 9. Kh2 Qe5+ 10. Kg1 Qd4+) 8... O-O 9. Kxe4 { Stockfish evaluates this hilarious position at 0.00, despite black being down 2 minor pieces. More analysis required! } *
 
-
 [Event "Stafford Gambit Traps: Everyone falls for this trap 😁"]
+[Event_fr "Everyone falls for this trap 😁"]
+[Event_es "Everyone falls for this trap 😁"]
+[Event_ar "Everyone falls for this trap 😁"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -142,8 +161,10 @@
 { https://www.youtube.com/watch?v=16Q6Po-s6Gs }
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Be2 h5 7. O-O Ng4 8. h3 Qd6 9. hxg4 (9. g3 Qxg3+ { [%cal Gc5g1] } 10. Kh1 Qh2#) (9. e5! { The only move that keeps white alive } 9... Nxe5 { The position is approximately balanced, but arguably preferable for black with more active development }) (9. Bxg4 hxg4 $19 { White's in trouble because there are so many arrows } { [%cal Gg4h3,Gc5g1,Gd6h2,Gc8h3,Gh8h1] }) 9... hxg4 $19 { White can't stop mate. If you don't be believe me, just ask Lord Stockfish } { [%cal Gd6h2] } *
 
-
 [Event "Stafford Gambit Traps: Miscellaneous Lines"]
+[Event_fr "Miscellaneous Lines"]
+[Event_es "Miscellaneous Lines"]
+[Event_ar "Miscellaneous Lines"]
 [Date "2026.03.04"]
 [Result "*"]
 [Variant "Standard"]
@@ -157,5 +178,3 @@
 [UTCTime "14:22:01"]
 
 1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Be3 Bxe3 7. fxe3 Ng4 8. Qf3 Qg5 { [%csl Gd2,Gf4][%cal Ge1d2,Gf3f4] } 9. Qf4 Qc5 10. Kd2 *
-
-

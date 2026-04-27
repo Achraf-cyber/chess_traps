@@ -42,7 +42,7 @@ final class ChessSettingsNotifierProvider
 }
 
 String _$chessSettingsNotifierHash() =>
-    r'c610a73a73722261e35d2cbc759bcfcdea1ea163';
+    r'865222959f7326815e1e9b8081105fa767eec76b';
 
 abstract class _$ChessSettingsNotifier extends $Notifier<ChessSettings> {
   ChessSettings build();

@@ -71,7 +71,7 @@ class TrapTitleWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    trap.trapName,
+                    trap.getLocalizedName(context),
                     textAlign: TextAlign.center,
                     style: context.textTheme.bodySmall?.copyWith(
                       fontSize: 10,

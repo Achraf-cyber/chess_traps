@@ -10,6 +10,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "1. Scholar's Mate Trap",
+    trapNameFr: "1. Piège du Mat du Berger",
+    trapNameEs: "1. Trampa del Mate del Pastor",
+    trapNameAr: "1. فخ مات الراعي",
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#",
     moves: ["e4", "e5", "Bc4", "Nc6", "Qh5", "Nf6", "Qxf7#"],
     fen: "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
@@ -22,6 +25,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "2. Fool's Mate Trap",
+    trapNameFr: "2. Piège du Mat de l'Idiot",
+    trapNameEs: "2. Trampa del Mate del Loco",
+    trapNameAr: "2. فخ مات الأحمق",
     commentedMoves: "1.f3 e5 2.g4 Qh4#",
     moves: ["f3", "e5", "g4", "Qh4#"],
     fen: "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
@@ -35,6 +41,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "3. Legal's Mate Trap",
+    trapNameFr: "3. Piège du Mat de Légal",
+    trapNameEs: "3. Trampa del Mate de Légal",
+    trapNameAr: "3. فخ مات ليجال",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 h6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     moves: [
@@ -63,6 +72,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "4. Blackburne Shilling Gambit Trap",
+    trapNameFr: "4. Piège du Gambit Blackburne-Shilling",
+    trapNameEs: "4. Trampa del Gambito Blackburne-Shilling",
+    trapNameAr: "4. فخ غامبيت بلاكبيرن شيلنغ",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
     moves: [
@@ -92,6 +104,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "5. Tennison Gambit (ICBM) Trap",
+    trapNameFr: "5. Piège du Gambit Tennison (ICBM)",
+    trapNameEs: "5. Trampa del Gambito Tennison (ICBM)",
+    trapNameAr: "5. فخ غامبيت تينيسون",
     commentedMoves:
         "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
     moves: [
@@ -122,6 +137,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "6. Englund Gambit Trap",
+    trapNameFr: "6. Piège du Gambit Englund",
+    trapNameEs: "6. Trampa del Gambito Englund",
+    trapNameAr: "6. فخ غامبيت إنجلوند",
     commentedMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3 Bb4 7.Qd2 Bxc3 8.Qxc3 Qc1#",
     moves: [
@@ -153,6 +171,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "7. Fishing Pole Trap",
+    trapNameFr: "7. Piège de la Canne à Pêche",
+    trapNameEs: "7. Trampa de la Caña de Pescar",
+    trapNameAr: "7. فخ صنارة الصيد",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f3 g3 9.d4 Qh1#",
     moves: [
@@ -186,6 +207,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
     trapName: "8. Elephant Trap",
+    trapNameFr: "8. Piège de l'Éléphant",
+    trapNameEs: "8. Trampa del Elefante",
+    trapNameAr: "8. فخ الفيل",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
     moves: [
@@ -219,6 +243,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "9. Lasker Trap",
+    trapNameFr: "9. Piège de Lasker",
+    trapNameEs: "9. Trampa de Lasker",
+    trapNameAr: "9. فخ لاسكر",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+",
     moves: [
@@ -250,6 +277,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
     trapName: "10. Rubinstein Trap",
+    trapNameFr: "10. Piège de Rubinstein",
+    trapNameEs: "10. Trampa de Rubinstein",
+    trapNameAr: "10. فخ روبنشتاين",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 c6 9.O-O Re8 10.Rc1 h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7",
     moves: [
@@ -290,6 +320,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "11. Siberian Trap",
+    trapNameFr: "11. Piège Sibérien",
+    trapNameEs: "11. Trampa Siberiana",
+    trapNameAr: "11. الفخ السيبيري",
     commentedMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Qc7 7.O-O Nf6 8.Qe2 Ng4 9.h3 Nd4 10.Nxd4 Qh2#",
     moves: [
@@ -325,6 +358,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "12. Mortimer Trap",
+    trapNameFr: "12. Piège de Mortimer",
+    trapNameEs: "12. Trampa de Mortimer",
+    trapNameAr: "12. فخ مورتيمر",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 cxb5 7.Nd6#",
     moves: [
@@ -353,6 +389,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "13. Noah's Ark Trap",
+    trapNameFr: "13. Piège de l'Arche de Noé",
+    trapNameEs: "13. Trampa del Arca de Noé",
+    trapNameAr: "13. فخ سفينة نوح",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4",
     moves: [
@@ -390,6 +429,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "14. Tarrasch Trap",
+    trapNameFr: "14. Piège de Tarrasch",
+    trapNameEs: "14. Trampa de Tarrasch",
+    trapNameAr: "14. فخ تاراش",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.d4 b5 7.Bb3 d5 8.dxe5 Be6 9.c3 Be7 10.Re1 O-O 11.Nd4 Qd7 12.Nxe6 fxe6 13.Rxe4",
     moves: [
@@ -430,6 +472,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "15. Halosar Trap",
+    trapNameFr: "15. Piège Halosar",
+    trapNameEs: "15. Trampa Halosar",
+    trapNameAr: "15. فخ هالوسار",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 Bg4 6.h3 Bh5 7.g4 Bg6 8.Ne5 e6 9.Qf3 c6 10.g5 Nd5 11.Bd3 Nxc3 12.Bxg6",
     moves: [
@@ -468,6 +513,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "16. Kieninger Trap",
+    trapNameFr: "16. Piège de Kieninger",
+    trapNameEs: "16. Trampa de Kieninger",
+    trapNameAr: "16. فخ كينينغر",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+ 6.Nbd2 Qe7 7.a3 Ngxe5 8.axb4 Nd3#",
     moves: [
@@ -499,6 +547,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bogo-Indian defence",
     openingId: "bogo_indian_defence",
     trapName: "17. Monticelli Trap",
+    trapNameFr: "17. Piège de Monticelli",
+    trapNameEs: "17. Trampa de Monticelli",
+    trapNameAr: "17. فخ مونتيتشيلي",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+ 4.Bd2 Bxd2+ 5.Qxd2 b6 6.g3 Bb7 7.Bg2 O-O 8.Nc3 Ne4 9.Qc2 Nxc3 10.Ng5",
     moves: [
@@ -533,6 +584,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "18. Stafford Gambit Trap",
+    trapNameFr: "18. Piège du Gambit Stafford",
+    trapNameEs: "18. Trampa del Gambito Stafford",
+    trapNameAr: "18. فخ غامبيت ستافورد",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
     moves: [
@@ -564,6 +618,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
     trapName: "19. Giuoco Piano Trap",
+    trapNameFr: "19. Piège du Giuoco Piano",
+    trapNameEs: "19. Trampa del Giuoco Piano",
+    trapNameAr: "19. فخ جيوكو بيانو",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb4+ 7.Nc3 Nxe4 8.O-O Nxc3 9.bxc3 Bxc3 10.Qb3 Bxa1 11.Bxf7+ Kf8 12.Bg5 Ne7 13.Re1",
     moves: [
@@ -604,6 +661,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "20. Rousseau Gambit Trap",
+    trapNameFr: "20. Piège du Gambit Rousseau",
+    trapNameEs: "20. Trampa del Gambito Rousseau",
+    trapNameAr: "20. فخ غامبيت روسو",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 f5 4.d3 Nf6 5.Nc3 Bc5 6.Bg5 d6 7.Nd5 fxe4 8.dxe4 Bxf2+ 9.Kxf2 Nxe4+ 10.Kg1 Nxg5",
     moves: [
@@ -639,6 +699,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "21. Jerome Gambit Trap",
+    trapNameFr: "21. Piège du Gambit Jerome",
+    trapNameEs: "21. Trampa del Gambito Jerome",
+    trapNameAr: "21. فخ غامبيت جيروم",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.Bxf7+ Kxf7 5.Nxe5+ Nxe5 6.Qh5+ Kf8 7.Qxe5 d6 8.Qf4+ Qf6",
     moves: [
@@ -670,6 +733,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "22. Nakhmanson Gambit Trap",
+    trapNameFr: "22. Piège du Gambit Nakhmanson",
+    trapNameEs: "22. Trampa del Gambito Nakhmanson",
+    trapNameAr: "22. فخ غامبيت ناخمانسون",
     commentedMoves:
         "1.e4 e5 2.Bc4 Nf6 3.d4 exd4 4.Nf3 Nc6 5.O-O Nxe4 6.Nc3 dxc3 7.Bxf7+ Kxf7 8.Qd5+ Ke8 9.Re1 Be7 10.Rxe4 d6 11.Bg5",
     moves: [
@@ -706,6 +772,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "23. Danish Gambit Trap",
+    trapNameFr: "23. Piège du Gambit Danois",
+    trapNameEs: "23. Trampa del Gambito Danés",
+    trapNameAr: "23. فخ الغامبيت الدنماركي",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Qd5",
     moves: [
@@ -736,6 +805,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "24. O'Kelly Trap",
+    trapNameFr: "24. Piège d'O'Kelly",
+    trapNameEs: "24. Trampa de O'Kelly",
+    trapNameAr: "24. فخ أوكيلي",
     commentedMoves:
         "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Nf3 Bb4 7.Bd3 d5 8.exd5 e4",
     moves: [
@@ -767,6 +839,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "25. Magnus Smith Trap",
+    trapNameFr: "25. Piège de Magnus Smith",
+    trapNameEs: "25. Trampa de Magnus Smith",
+    trapNameAr: "25. فخ ماغنوس سميث",
     commentedMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6 6.Bc4 g6 7.Nxc6 bxc6 8.e5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
     moves: [
@@ -800,6 +875,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "26. Caro-Kann Smyslov Trap",
+    trapNameFr: "26. Piège Caro-Kann Smyslov",
+    trapNameEs: "26. Trampa Caro-Kann Smyslov",
+    trapNameAr: "26. فخ كارو كان سميسلوف",
     commentedMoves: "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     moves: [
       "e4",
@@ -825,6 +903,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "27. Caro-Kann Advance Trap",
+    trapNameFr: "27. Piège Caro-Kann Avance",
+    trapNameEs: "27. Trampa Caro-Kann Avance",
+    trapNameAr: "27. فخ كارو كان المتقدم",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.e5 Bf5 4.h4 h6 5.g4 Bh7 6.e6 fxe6 7.Bd3 Bxd3 8.Qxd3",
     moves: [
@@ -855,6 +936,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "28. French Milner-Barry Trap",
+    trapNameFr: "28. Piège Française Milner-Barry",
+    trapNameEs: "28. Trampa Francesa Milner-Barry",
+    trapNameAr: "28. فخ الفرنسية ميلنر باري",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.e5 c5 4.c3 Nc6 5.Nf3 Qb6 6.Bd3 cxd4 7.cxd4 Bd7 8.O-O Nxd4 9.Nxd4 Qxd4 10.Nc3 Qxe5 11.Re1 Qb8 12.Nxd5",
     moves: [
@@ -893,6 +977,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Pirc defence",
     openingId: "pirc_defence",
     trapName: "29. Pirc Austrian Attack Trap",
+    trapNameFr: "29. Piège de l'Attaque Autrichienne Pirc",
+    trapNameEs: "29. Trampa del Ataque Austriaco Pirc",
+    trapNameAr: "29. فخ الهجوم النمساوي بيرك",
     commentedMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.f4 Bg7 5.Nf3 O-O 6.e5 Nfd7 7.h4 c5 8.h5 cxd4 9.hxg6 dxc3 10.gxf7+ Rxf7 11.Bc4 e6 12.Ng5",
     moves: [
@@ -931,6 +1018,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "30. Philidor Hanham Trap",
+    trapNameFr: "30. Piège Philidor Hanham",
+    trapNameEs: "30. Trampa Philidor Hanham",
+    trapNameAr: "30. فخ فيليدور هانهام",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 Be7 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Qh5 g6 8.Qxe5 Nf6 9.Bh6",
     moves: [
@@ -963,6 +1053,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "31. Muzio Gambit Trap",
+    trapNameFr: "31. Piège du Gambit Muzio",
+    trapNameEs: "31. Trampa del Gambito Muzio",
+    trapNameAr: "31. فخ غامبيت موزيو",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.Qxf3 Bh6 7.d4 d6 8.Bxf4 Bxf4 9.Qxf4 f6 10.Nc3",
     moves: [
@@ -997,6 +1090,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "32. Kieseritzky Gambit Trap",
+    trapNameFr: "32. Piège du Gambit Kieseritzky",
+    trapNameEs: "32. Trampa del Gambito Kieseritzky",
+    trapNameAr: "32. فخ غامبيت كيزيريتسكي",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.h4 g4 5.Ne5 h5 6.Bc4 Rh7 7.d4 d6 8.Nxf7 Rxf7 9.Bxf7+ Kxf7 10.Bxf4",
     moves: [
@@ -1031,6 +1127,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Evans gambit",
     openingId: "evans_gambit",
     trapName: "33. Evans Gambit Trap",
+    trapNameFr: "33. Piège du Gambit Evans",
+    trapNameEs: "33. Trampa del Gambito Evans",
+    trapNameAr: "33. فخ غامبيت إيفانز",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Ba5 6.d4 exd4 7.O-O dxc3 8.Qb3 Qe7 9.Nxc3 Nf6 10.Nd5 Nxd5 11.exd5 Ne5 12.Nxe5 Qxe5 13.Bb2 Qg5 14.Rae1+ Kd8 15.d6",
     moves: [
@@ -1075,6 +1174,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Old Benoni defence",
     openingId: "old_benoni_defence",
     trapName: "34. Benoni Trap",
+    trapNameFr: "34. Piège Benoni",
+    trapNameEs: "34. Trampa Benoni",
+    trapNameAr: "34. فخ بنوني",
     commentedMoves:
         "1.d4 c5 2.d5 e6 3.c4 exd5 4.cxd5 d6 5.Nc3 g6 6.e4 Bg7 7.Nf3 Nf6 8.Bb5+ Nfd7 9.O-O a6 10.Bg5 Qc7 11.e5 axb5 12.Nxb5 Qb6 13.Nxd6+ Kf8 14.Nxc8",
     moves: [
@@ -1117,6 +1219,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "35. Kortchnoi Trap (Dutch Defense)",
+    trapNameFr: "35. Piège de Kortchnoï (Défense Hollandaise)",
+    trapNameEs: "35. Trampa de Korchnoi (Defensa Holandesa)",
+    trapNameAr: "35. فخ كورتشنوي (الدفاع الهولندي)",
     commentedMoves:
         "1.d4 f5 2.h3 Nf6 3.g4 fxg4 4.hxg4 Nxg4 5.Qd3 Nf6 6.Rxh7 Rxh7 7.Qg6#",
     moves: [
@@ -1145,6 +1250,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "36. Reti Opening Trap",
+    trapNameFr: "36. Piège de l'Ouverture Réti",
+    trapNameEs: "36. Trampa de la Apertura Réti",
+    trapNameAr: "36. فخ افتتاحية ريتي",
     commentedMoves:
         "1.Nf3 d5 2.c4 d4 3.b4 f6 4.e3 e5 5.exd4 e4 6.Qe2 Qe7 7.Ng1 Nc6 8.Bb2 Nxb4",
     moves: [
@@ -1175,6 +1283,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "37. From's Gambit Trap",
+    trapNameFr: "37. Piège du Gambit From",
+    trapNameEs: "37. Trampa del Gambito From",
+    trapNameAr: "37. فخ غامبيت فروم",
     commentedMoves: "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.h3 Bg3#",
     moves: [
       "f4",
@@ -1199,6 +1310,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "38. Fried Liver Attack Trap",
+    trapNameFr: "38. Piège de l'Attaque du Foie Frit",
+    trapNameEs: "38. Trampa del Ataque del Hígado Frito",
+    trapNameAr: "38. فخ هجوم الكبد المقلي",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ncb4 9.a3 Nxc2+ 10.Kd1 Nxa1 11.Nxd5",
     moves: [
@@ -1235,6 +1349,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "39. Traxler Counterattack Trap",
+    trapNameFr: "39. Piège de la Contre-attaque Traxler",
+    trapNameEs: "39. Trampa del Contraataque Traxler",
+    trapNameAr: "39. فخ الهجوم المضاد تراكسلر",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.c3 Bg4 10.Qa4+ Nd7 11.Kxf2 Qf6+ 12.Ke1 Qh4+ 13.Kf1 O-O-O",
     moves: [
@@ -1276,6 +1393,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "40. Owen's Defense Trap",
+    trapNameFr: "40. Piège de la Défense Owen",
+    trapNameEs: "40. Trampa de la Defensa Owen",
+    trapNameAr: "40. فخ دفاع أوين",
     commentedMoves:
         "1.e4 b6 2.d4 Bb7 3.Bd3 f5 4.exf5 Bxg2 5.Qh5+ g6 6.fxg6 Nf6 7.gxh7+ Nxh5 8.Bg6#",
     moves: [
@@ -1305,6 +1425,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
     trapName: "41. Queen's Gambit Accepted Trap",
+    trapNameFr: "41. Piège du Gambit Dame Accepté",
+    trapNameEs: "41. Trampa del Gambito de Dama Aceptado",
+    trapNameAr: "41. فخ غامبيت الملكة المقبول",
     commentedMoves: "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3",
     moves: [
       "d4",
@@ -1330,6 +1453,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "42. Frankenstein-Dracula Trap",
+    trapNameFr: "42. Piège Frankenstein-Dracula",
+    trapNameEs: "42. Trampa Frankenstein-Drácula",
+    trapNameAr: "42. فخ فرانكنشتاين دراكولا",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Qh5 Nd6 5.Bb3 Nc6 6.Nb5 g6 7.Qf3 f5 8.Qd5 Qe7 9.Nxc7+ Kd8 10.Nxa8 b6 11.d3 Bb7 12.h4 f4",
     moves: [
@@ -1369,6 +1495,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "43. Fajarowicz Trap (Budapest Gambit)",
+    trapNameFr: "43. Piège de Fajarowicz (Gambit Budapest)",
+    trapNameEs: "43. Trampa de Fajarowicz (Gambito Budapest)",
+    trapNameAr: "43. فخ فاياروفيتش (غامبيت بودابست)",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.a3 d6 5.exd6 Bxd6 6.Nd2 Nxf2 7.Kxf2 Qh4+ 8.g3 Bxg3+ 9.hxg3 Qxh1",
     moves: [
@@ -1402,6 +1531,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "44. Englund Gambit Complex Trap",
+    trapNameFr: "44. Piège du Gambit Englund Complexe",
+    trapNameEs: "44. Trampa del Gambito Englund Complejo",
+    trapNameAr: "44. فخ غامبيت إنجلوند المعقد",
     commentedMoves:
         "1.d4 e5 2.dxe5 Bc5 3.Nf3 d6 4.exd6 Ne7 5.dxe7 Bxf2+ 6.Kxf2 Qxd1",
     moves: [
@@ -1429,6 +1561,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "45. Würzburger Trap (Vienna Game)",
+    trapNameFr: "45. Piège de Würzburg (Partie Viennoise)",
+    trapNameEs: "45. Trampa de Würzburg (Partida Vienesa)",
+    trapNameAr: "45. فخ فورتسبورغ (لعبة فيينا)",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.fxe5 Nxe4 5.d3 Qh4+ 6.g3 Nxg3 7.Nf3 Qh5 8.Nxd5 Bg4 9.Nf4 Bxf3 10.Nxh5 Bxd1 11.hxg3 Bxc2 12.b3",
     moves: [
@@ -1467,6 +1602,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "46. Budapest Gambit Adler Trap",
+    trapNameFr: "46. Piège Adler du Gambit Budapest",
+    trapNameEs: "46. Trampa Adler del Gambito Budapest",
+    trapNameAr: "46. فخ أدلر غامبيت بودابست",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.e3 Nc6 6.a3 a5 7.b3 Ngxe5 8.Nxe5 Nxe5 9.Bb2 Qe7 10.Nc3 c6 11.Ne4 Bb6 12.Nd6+ Kd8 13.Bxe5 Qxe5 14.Nxf7+",
     moves: [
@@ -1509,6 +1647,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "47. Marshall Trap (Petrov's Defense)",
+    trapNameFr: "47. Piège de Marshall (Défense Petroff)",
+    trapNameEs: "47. Trampa de Marshall (Defensa Petrov)",
+    trapNameAr: "47. فخ مارشال (دفاع بتروف)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 d5 6.Bd3 Bd6 7.O-O O-O 8.c4 c6 9.cxd5 cxd5 10.Nc3 Nxc3 11.bxc3 Bg4 12.h3 Bh5 13.Rb1 b6 14.Rb5 Bc7 15.Rxd5 Qxd5 16.Bxh7+ Kxh7 17.Ng5+ Qxg5 18.Bxg5 Bxd1",
     moves: [
@@ -1560,6 +1701,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "48. Alapin Sicilian Trap",
+    trapNameFr: "48. Piège Sicilienne Alapine",
+    trapNameEs: "48. Trampa Siciliana Alapin",
+    trapNameAr: "48. فخ الصقلية ألابين",
     commentedMoves:
         "1.e4 c5 2.c3 Nf6 3.e5 Nd5 4.d4 cxd4 5.Nf3 Nc6 6.Bc4 Nb6 7.Bb3 d5 8.exd6 Qxd6 9.O-O Be6 10.Na3 dxc3 11.Qe2 Bxb3 12.Nb5 Qd7 13.axb3 a6 14.Rd1 Qc8 15.Nd6+",
     moves: [
@@ -1604,6 +1748,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "49. Krejcik Trap (Dutch Defense)",
+    trapNameFr: "49. Piège de Krejcik (Défense Hollandaise)",
+    trapNameEs: "49. Trampa de Krejcik (Defensa Holandesa)",
+    trapNameAr: "49. فخ كريتشيك (الدفاع الهولندي)",
     commentedMoves:
         "1.d4 f5 2.g4 fxg4 3.h3 gxh3 4.Nxh3 Nf6 5.Ng5 d5 6.Qd3 Nc6 7.Rxh7 Rxh7 8.Qg6+ Kd7 9.Nxh7 Nxh7 10.Bh3+ e6 11.Qxe6#",
     moves: [
@@ -1640,6 +1787,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "50. Two Knights Trap",
+    trapNameFr: "50. Piège des Deux Cavaliers",
+    trapNameEs: "50. Trampa de los Dos Caballos",
+    trapNameAr: "50. فخ الحصانين",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d4 exd4 5.Ng5 d5 6.exd5 Nxd5 7.O-O Be7 8.Nxf7 Kxf7 9.Qf3+ Ke6 10.Re1+ Ne5 11.Bf4 Bf6 12.Bxe5 Bxe5 13.Nd2",
     moves: [
@@ -1679,7 +1829,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C20",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
-    trapName: "Corr.",
+    trapName: "Manko vs Jankowitz",
+    trapNameFr: "Manko contre Jankowitz",
+    trapNameEs: "Manko contra Jankowitz",
+    trapNameAr: "Manko ضد Jankowitz",
     commentedMoves:
         "1.e4 e5 2.Ne2 Bc5 3.f4 Qf6 4.c3 Nc6 5.g3 Nh6 6.Bg2 Ng4 7.Rf1 Nxh2 8.fxe5 Qxf1+ 9.Bxf1 Nf3#",
     moves: [
@@ -1711,7 +1864,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C20",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Nimoy",
+    trapNameFr: "Wall, Bill contre Nimoy",
+    trapNameEs: "Wall, Bill contra Nimoy",
+    trapNameAr: "Wall, Bill ضد Nimoy",
     commentedMoves: "1.e4 e5 2.Ne2 d5 3.exd5 Qxd5 4.Nbc3 Qc6 5.Ng3 g6 6.Bb5",
     moves: [
       "e4",
@@ -1736,7 +1892,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C20",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
-    trapName: "Europe",
+    trapName: "NN vs Canal",
+    trapNameFr: "NN contre Canal",
+    trapNameEs: "NN contra Canal",
+    trapNameAr: "NN ضد Canal",
     commentedMoves:
         "1.e4 e5 2.Ne2 d5 3.exd5 Qxd5 4.Nbc3 Qa5 5.d4 Nc6 6.d5 Nb4 7.Bd2 Bf5 8.Rc1 Bxc2 9.Rxc2 Nd3#",
     moves: [
@@ -1769,7 +1928,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C20",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
-    trapName: "St. Petersburg",
+    trapName: "Seibot vs Luetz",
+    trapNameFr: "Seibot contre Luetz",
+    trapNameEs: "Seibot contra Luetz",
+    trapNameAr: "Seibot ضد Luetz",
     commentedMoves:
         "1.e4 e5 2.Ne2 Nf6 3.f4 exf4 4.Nxf4 Nxe4 5.Qe2 Qe7 6.Nd5 Qe5 7.Nbc3 c6 8.d4 Qf5 9.Nxe4",
     moves: [
@@ -1801,7 +1963,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C20",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
-    trapName: "Corr.",
+    trapName: "Mouillaux vs Matisson",
+    trapNameFr: "Mouillaux contre Matisson",
+    trapNameEs: "Mouillaux contra Matisson",
+    trapNameAr: "Mouillaux ضد Matisson",
     commentedMoves:
         "1.e4 e5 2.Ne2 Nf6 3.f4 Nxe4 4.d3 Nc5 5.fxe5 Nc6 6.d4 Qh4+ 7.g3 Qe4 8.Rg1 Nxd4 9.Qxd4 Qxc2 10.Nf4 Qxc1+ 11.Ke2 Nb3 12.axb3 Bc5",
     moves: [
@@ -1840,7 +2005,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B02",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Germany",
+    trapName: "Krejcik vs Gottlieb",
+    trapNameFr: "Krejcik contre Gottlieb",
+    trapNameEs: "Krejcik contra Gottlieb",
+    trapNameAr: "Krejcik ضد Gottlieb",
     commentedMoves:
         "1.e4 Nf6 2.Nc3 d6 3.Bc4 Nxe4 4.Bxf7+ Kxf7 5.Nxe4 e5 6.Qf3+ Kg8 7.Ng5 Qf6 8.Qb3+",
     moves: [
@@ -1869,7 +2037,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B02",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Copenhagen",
+    trapName: "Iskov vs Woge_Nielsem",
+    trapNameFr: "Iskov contre Woge_Nielsem",
+    trapNameEs: "Iskov contra Woge_Nielsem",
+    trapNameAr: "Iskov ضد Woge_Nielsem",
     commentedMoves: "1.e4 Nf6 2.Nc3 d5 3.e5 d4 4.Nb1 Ne4 5.c3 c5 6.d3",
     moves: [
       "e4",
@@ -1894,7 +2065,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B02",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Corr.",
+    trapName: "Russ vs Zeh",
+    trapNameFr: "Russ contre Zeh",
+    trapNameEs: "Russ contra Zeh",
+    trapNameAr: "Russ ضد Zeh",
     commentedMoves:
         "1.e4 Nf6 2.Nc3 d5 3.e5 Nfd7 4.e6 fxe6 5.d4 c5 6.Nf3 Nc6 7.dxc5 Nxc5 8.Bb5 g6 9.Qd4",
     moves: [
@@ -1926,7 +2100,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B02",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Europe",
+    trapName: "Quinteros vs Goossens",
+    trapNameFr: "Quinteros contre Goossens",
+    trapNameEs: "Quinteros contra Goossens",
+    trapNameAr: "Quinteros ضد Goossens",
     commentedMoves:
         "1.e4 Nf6 2.Nc3 d5 3.exd5 Nxd5 4.Bc4 Nb6 5.Bb3 Nc6 6.Nf3 Bg4 7.Bxf7+ Kd7 8.Qe2 e6 9.h3 Bxf3 10.Qxe6#",
     moves: [
@@ -1960,7 +2137,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B02",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Germany",
+    trapName: "Stock vs Rades",
+    trapNameFr: "Stock contre Rades",
+    trapNameEs: "Stock contra Rades",
+    trapNameAr: "Stock ضد Rades",
     commentedMoves:
         "1.e4 Nf6 2.Nc3 d5 3.exd5 Nxd5 4.Bc4 Be6 5.Qf3 c6 6.Nge2 g6 7.Nd4 Nxc3 8.Nxe6 fxe6 9.Qxc3 Rg8 10.Qb3",
     moves: [
@@ -1993,7 +2173,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B02",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Gaspar",
+    trapNameFr: "Wall, Bill contre Gaspar",
+    trapNameEs: "Wall, Bill contra Gaspar",
+    trapNameAr: "Wall, Bill ضد Gaspar",
     commentedMoves: "1.e4 Nf6 2.e5 Ne4 3.d3 Nc5 4.d4 Ne4 5.Bd3",
     moves: ["e4", "Nf6", "e5", "Ne4", "d3", "Nc5", "d4", "Ne4", "Bd3"],
     fen: "rnbqkb1r/pppppppp/8/4P3/3Pn3/3B4/PPP2PPP/RNBQK1NR b KQkq - 2 5",
@@ -2005,7 +2188,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B02",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Challee",
+    trapNameFr: "Wall, Bill contre Challee",
+    trapNameEs: "Wall, Bill contra Challee",
+    trapNameAr: "Wall, Bill ضد Challee",
     commentedMoves: "1.e4 Nf6 2.e5 Nd5 3.Bc4 Nf4 4.Qf3 Ng6 5.Bxf7#",
     moves: ["e4", "Nf6", "e5", "Nd5", "Bc4", "Nf4", "Qf3", "Ng6", "Bxf7#"],
     fen: "rnbqkb1r/pppppBpp/6n1/4P3/8/5Q2/PPPP1PPP/RNB1K1NR b KQkq - 0 5",
@@ -2019,6 +2205,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.Bc4 Nb6 4.Bxf7+ Kxf7 5.e6+ dxe6 6.Nf3 N8d7 7.Ng5+ Kf6 8.Qf3+ Ke5 9.Nf7+",
     moves: [
@@ -2050,6 +2239,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Iowa",
+    trapNameFr: "Iowa",
+    trapNameEs: "Iowa",
+    trapNameAr: "Iowa",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.c4 Nb6 4.c5 Nd5 5.Bc4 Nb4 6.Qb3 e6 7.Qxb4",
     moves: [
@@ -2078,6 +2270,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Tula",
+    trapNameFr: "Tula",
+    trapNameEs: "Tula",
+    trapNameAr: "Tula",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.c4 Nb6 4.c5 Nd5 5.Nc3 Nxc3 6.dxc3 d6 7.Bg5 dxe5 8.Qb3 Nd7 9.Bc4",
     moves: [
@@ -2110,6 +2305,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Pasadena",
+    trapNameFr: "Pasadena",
+    trapNameEs: "Pasadena",
+    trapNameAr: "Pasadena",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.c4 Nb6 4.d4 Nc6 5.d5 Nxe5 6.c5 Nbc4 7.f4 Ng6 8.Bxc4",
     moves: [
@@ -2140,6 +2338,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Halifax",
+    trapNameFr: "Halifax",
+    trapNameEs: "Halifax",
+    trapNameAr: "Halifax",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.c4 Nb6 4.d4 d6 5.Bd3 dxe5 6.dxe5 N8d7 7.e6 Nf6 8.exf7+ Kxf7 9.Bg6+ hxg6 10.Qxd8",
     moves: [
@@ -2174,6 +2375,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Boston",
+    trapNameFr: "Boston",
+    trapNameEs: "Boston",
+    trapNameAr: "Boston",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.Nf3 d6 4.Bc4 Be6 5.Nc3 Nb6 6.Bxe6 fxe6 7.Ng5 h6 8.Nxe6 Qd7 9.Qh5+ g6 10.Qxg6#",
     moves: [
@@ -2208,6 +2412,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Milwaukee",
+    trapNameFr: "Milwaukee",
+    trapNameEs: "Milwaukee",
+    trapNameAr: "Milwaukee",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.Nf3 d6 4.Bc4 Nb6 5.Bxf7+ Kxf7 6.Ng5+ Kg8 7.Qf3 Qe8 8.e6 h6 9.Qf7+ Qxf7 10.exf7#",
     moves: [
@@ -2241,7 +2448,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B03",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Internet",
+    trapName: "Wawryk vs Martel",
+    trapNameFr: "Wawryk contre Martel",
+    trapNameEs: "Wawryk contra Martel",
+    trapNameAr: "Wawryk ضد Martel",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.d4 Nc6 4.Nf3 f6 5.exf6 gxf6 6.c4 Nb6 7.d5 Ne5 8.Nxe5",
     moves: [
@@ -2272,6 +2482,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Tacoma",
+    trapNameFr: "Tacoma",
+    trapNameEs: "Tacoma",
+    trapNameAr: "Tacoma",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.d4 d6 4.Nf3 e6 5.Qd3 dxe5 6.Nxe5 Qf6 7.Qg3 Nd7 8.Bg5 Qf5 9.Bd3",
     moves: [
@@ -2303,7 +2516,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B03",
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
-    trapName: "Berlin",
+    trapName: "Richter vs Jurgschat",
+    trapNameFr: "Richter contre Jurgschat",
+    trapNameEs: "Richter contra Jurgschat",
+    trapNameAr: "Richter ضد Jurgschat",
     commentedMoves:
         "1.e4 Nf6 2.e5 Nd5 3.d4 d6 4.c4 Nb6 5.Nf3 Nc6 6.e6 fxe6 7.Ng5 Qd7 8.Bd3 e5 9.Qh5+ g6 10.Bxg6+ hxg6 11.Qxg6+ Kd8 12.Nf7+ Ke8 13.Nxh8+",
     moves: [
@@ -2343,6 +2559,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Omaha",
+    trapNameFr: "Omaha",
+    trapNameEs: "Omaha",
+    trapNameAr: "Omaha",
     commentedMoves: "1.e4 g5 2.Nc3 f5 3.Qh5#",
     moves: ["e4", "g5", "Nc3", "f5", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/8/5ppQ/4P3/2N5/PPPP1PPP/R1B1KBNR b KQkq - 1 3",
@@ -2355,7 +2574,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Internet",
+    trapName: "Aaron vs Wall, Bill",
+    trapNameFr: "Aaron contre Wall, Bill",
+    trapNameEs: "Aaron contra Wall, Bill",
+    trapNameAr: "Aaron ضد Wall, Bill",
     commentedMoves:
         "1.e4 g5 2.Bc4 Bg7 3.Qh5 e6 4.Nf3 h6 5.d3 Nf6 6.Bxg5 Nxh5 7.Bxd8 Bxb2",
     moves: [
@@ -2385,6 +2607,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Tampere",
+    trapNameFr: "Tampere",
+    trapNameEs: "Tampere",
+    trapNameAr: "Tampere",
     commentedMoves:
         "1.e4 g5 2.d3 h6 3.Ne2 d6 4.Ng3 Nf6 5.Bd2 Bg7 6.Bc3 h5 7.Be2 g4 8.Nd2 Nc6 9.d4 d5 10.e5 Ng8 11.Bb5 f5 12.f4 Qd7 13.Nb3 b6 14.Nxf5 Bf8 15.Qe2 a6 16.e6",
     moves: [
@@ -2431,6 +2656,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Dieren",
+    trapNameFr: "Dieren",
+    trapNameEs: "Dieren",
+    trapNameAr: "Dieren",
     commentedMoves: "1.e4 g5 2.d4 f6 3.Qh5#",
     moves: ["e4", "g5", "d4", "f6", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/5p2/6pQ/3PP3/8/PPP2PPP/RNB1KBNR b KQkq - 1 3",
@@ -2444,6 +2672,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Finland",
+    trapNameFr: "Finland",
+    trapNameEs: "Finland",
+    trapNameAr: "Finland",
     commentedMoves:
         "1.e4 g5 2.d4 Bg7 3.Bc4 h6 4.Nc3 c6 5.e5 d5 6.Bd3 c5 7.Bb5+ Nc6 8.dxc5 Bxe5 9.Qxd5 Bxc3+ 10.bxc3 Qxd5",
     moves: [
@@ -2478,7 +2709,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "England",
+    trapName: "Wallwork vs Thornton",
+    trapNameFr: "Wallwork contre Thornton",
+    trapNameEs: "Wallwork contra Thornton",
+    trapNameAr: "Wallwork ضد Thornton",
     commentedMoves:
         "1.e4 g5 2.d4 h6 3.Nc3 Bg7 4.h4 gxh4 5.Nf3 d6 6.Nxh4 Nf6 7.Bf4 c6 8.Qd2 Ng4 9.O-O-O Qa5 10.Bc4 b5 11.Nxb5 Qxd2+ 12.Rxd2 cxb5 13.Bd5",
     moves: [
@@ -2518,7 +2752,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "England",
+    trapName: "MacDonald, D. vs Basman, M.",
+    trapNameFr: "MacDonald, D. contre Basman, M.",
+    trapNameEs: "MacDonald, D. contra Basman, M.",
+    trapNameAr: "MacDonald, D. ضد Basman, M.",
     commentedMoves:
         "1.e4 g5 2.d4 h6 3.Bd3 Bg7 4.h4 gxh4 5.Nf3 d5 6.e5 c5 7.c3 Bg4 8.Rxh4 h5 9.dxc5 Nc6 10.e6 Bxe6 11.Ng5 Bg4 12.Qb3 Qc7 13.Qxd5 Nh6 14.Na3 Rd8 15.Nb5 Qb8 16.Qc4 Ne5",
     moves: [
@@ -2564,7 +2801,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Internet",
+    trapName: "Morin vs Forscutt",
+    trapNameFr: "Morin contre Forscutt",
+    trapNameEs: "Morin contra Forscutt",
+    trapNameAr: "Morin ضد Forscutt",
     commentedMoves: "1.e4 g5 2.Nf3 f6 3.d4 c6 4.Ne5 fxe5 5.Qh5#",
     moves: ["e4", "g5", "Nf3", "f6", "d4", "c6", "Ne5", "fxe5", "Qh5#"],
     fen: "rnbqkbnr/pp1pp2p/2p5/4p1pQ/3PP3/8/PPP2PPP/RNB1KB1R b KQkq - 1 5",
@@ -2578,6 +2818,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Na3 b4 5.Nc2 d6 6.e3 e6 7.Bd3 exd5 8.Qf3 Bg4 9.Qf4 dxc4 10.Bxc4 d5 11.Qe5+ Be6 12.Bb5+ Nbd7 13.Bc6 Rc8 14.Bxd7+ Qxd7 15.Nf3 h6 16.O-O Bd6",
     moves: [
@@ -2624,7 +2867,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A57",
     opening: "Benko gambit",
     openingId: "benko_gambit",
-    trapName: "Internet",
+    trapName: "Puffy vs Wall, Bill",
+    trapNameFr: "Puffy contre Wall, Bill",
+    trapNameEs: "Puffy contra Wall, Bill",
+    trapNameAr: "Puffy ضد Wall, Bill",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.b3 bxc4 5.bxc4 d6 6.Nc3 g6 7.e4 Bg7 8.Nf3 Nxe4 9.Nxe4 Bxa1",
     moves: [
@@ -2658,6 +2904,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "Goch",
+    trapNameFr: "Goch",
+    trapNameEs: "Goch",
+    trapNameAr: "Goch",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Nd2 Qa5 5.e4 Nxe4 6.b4 Qxb4 7.Rb1 Qc3 8.Rxb5 Qd4 9.Nxe4 Qxe4+ 10.Be3 g6 11.Nf3 Bg7 12.Bd3 Qg4 13.h3 Qxg2 14.Rh2",
     moves: [
@@ -2700,6 +2949,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "Sochi",
+    trapNameFr: "Sochi",
+    trapNameEs: "Sochi",
+    trapNameAr: "Sochi",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Nf3 g6 5.g3 Bg7 6.Bg2 d6 7.cxb5 a6 8.bxa6 Qa5+ 9.Nc3 Ne4 10.Qc2 Nxc3 11.Bd2 Qa4 12.b3 Qe4",
     moves: [
@@ -2739,6 +2991,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "Linares",
+    trapNameFr: "Linares",
+    trapNameEs: "Linares",
+    trapNameAr: "Linares",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Nf3 bxc4 5.Nc3 g6 6.e4 d6 7.Bxc4 Bg7 8.e5 dxe5 9.Nxe5 O-O 10.O-O Nbd7 11.Nc6 Qe8 12.Re1",
     moves: [
@@ -2777,6 +3032,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "Varna",
+    trapNameFr: "Varna",
+    trapNameEs: "Varna",
+    trapNameAr: "Varna",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.Bg5 Ne4 5.Bf4 Qa5+ 6.Nd2 bxc4 7.Qc2 Nf6 8.e4 d6 9.Bxc4 g6 10.e5 Nh5 11.Be3 dxe5 12.d6 Bb7 13.Bxf7+ Kd7 14.Qb3 Bc8 15.Qd5",
     moves: [
@@ -2821,6 +3079,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "Dortmund",
+    trapNameFr: "Dortmund",
+    trapNameEs: "Dortmund",
+    trapNameAr: "Dortmund",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.Nc3 axb5 6.Nxb5 Ba6 7.e3 Bxb5 8.Bxb5 Qa5+",
     moves: [
@@ -2852,6 +3113,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "Sweden",
+    trapNameFr: "Sweden",
+    trapNameEs: "Sweden",
+    trapNameAr: "Sweden",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.Nc3 axb5 6.e4 b4 7.Nb5 Nxe4 8.Qe2 Nf6 9.Nd6#",
     moves: [
@@ -2883,7 +3147,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A57",
     opening: "Benko gambit",
     openingId: "benko_gambit",
-    trapName: "Europe",
+    trapName: "Buggler vs Guarisco",
+    trapNameFr: "Buggler contre Guarisco",
+    trapNameEs: "Buggler contra Guarisco",
+    trapNameAr: "Buggler ضد Guarisco",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.Nc3 d6 6.e4 axb5 7.Bf4 b4 8.Nb5 Nxe4 9.Qe2 Nf6 10.Nxd6+",
     moves: [
@@ -2918,6 +3185,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "Giessem",
+    trapNameFr: "Giessem",
+    trapNameEs: "Giessem",
+    trapNameAr: "Giessem",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.e3 axb5 6.Bxb5 Qa5+ 7.Nc3 Bb7 8.Bd2 Qb6 9.Bc4 e6 10.Bc1 Qb4 11.Qb3 exd5",
     moves: [
@@ -2955,6 +3225,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benoni defence",
     openingId: "benoni_defence_a60",
     trapName: "Tel Aviv",
+    trapNameFr: "Tel Aviv",
+    trapNameEs: "Tel Aviv",
+    trapNameAr: "Tel Aviv",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.Nf3 g6 7.Bf4 b6 8.e4 Bg7 9.Bb5+ Bd7 10.Bxd6 Bxb5 11.Nxb5 Nxe4 12.Nc7+ Kd7 13.Bf4 g5 14.Nxg5",
     moves: [
@@ -2997,6 +3270,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benoni defence",
     openingId: "benoni_defence_a60",
     trapName: "Cappelle",
+    trapNameFr: "Cappelle",
+    trapNameEs: "Cappelle",
+    trapNameAr: "Cappelle",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 Bd6 6.e4 Bc7 7.d6 Ba5 8.e5 Ne4 9.Qg4 Nxc3 10.Qxg7 Ne4+ 11.Ke2 Rf8 12.Bh6",
     moves: [
@@ -3035,6 +3311,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benoni defence",
     openingId: "benoni_defence_a60",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 d6 6.e4 g6 7.Nf3 Bg4 8.Be2 Qe7 9.O-O Nxe4 10.Qa4+ Nd7 11.Qxe4",
     moves: [
@@ -3071,6 +3350,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benoni defence",
     openingId: "benoni_defence_a60",
     trapName: "Kecskemet",
+    trapNameFr: "Kecskemet",
+    trapNameEs: "Kecskemet",
+    trapNameAr: "Kecskemet",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 e6 4.Nc3 exd5 5.cxd5 Bd6 6.g3 Bc7 7.d6 Ba5 8.Bg2 O-O 9.Nh3 Nc6 10.O-O Re8 11.Nd5 Re6 12.Ng5 Re5 13.f4 Re8 14.Qd3 g6 15.f5 c4 16.Qxc4 Ne5 17.Qh4 Nh5 18.g4",
     moves: [
@@ -3120,7 +3402,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A43",
     opening: "Old Benoni defence",
     openingId: "old_benoni_defence",
-    trapName: "New York",
+    trapName: "Charosh vs Jaffe",
+    trapNameFr: "Charosh contre Jaffe",
+    trapNameEs: "Charosh contra Jaffe",
+    trapNameAr: "Charosh ضد Jaffe",
     commentedMoves:
         "1.d4 c5 2.d5 Na6 3.Nf3 d6 4.e4 Bg4 5.Ne5 Qa5+ 6.Bd2 dxe5 7.Bxa5 Bxd1 8.Bb5#",
     moves: [
@@ -3149,7 +3434,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A44",
     opening: "Old Benoni defence",
     openingId: "old_benoni_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Zxcmi",
+    trapNameFr: "Wall, Bill contre Zxcmi",
+    trapNameEs: "Wall, Bill contra Zxcmi",
+    trapNameAr: "Wall, Bill ضد Zxcmi",
     commentedMoves: "1.d4 c5 2.d5 e5 3.dxe6 fxe6 4.e4 e5 5.Qh5+ g6 6.Qxe5+",
     moves: [
       "d4",
@@ -3174,7 +3462,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A43",
     opening: "Old Benoni defence",
     openingId: "old_benoni_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Greg",
+    trapNameFr: "Wall, Bill contre Greg",
+    trapNameEs: "Wall, Bill contra Greg",
+    trapNameAr: "Wall, Bill ضد Greg",
     commentedMoves:
         "1.d4 c5 2.d5 e6 3.e4 exd5 4.exd5 Bd6 5.Nf3 b6 6.Bd3 Qe7+ 7.Be3 Nf6 8.O-O Nxd5 9.Re1 O-O 10.Bxh7+ Kxh7 11.Qxd5",
     moves: [
@@ -3210,7 +3501,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A43",
     opening: "Old Benoni defence",
     openingId: "old_benoni_defence",
-    trapName: "USA",
+    trapName: "Gurevich, D. vs Gnusurf",
+    trapNameFr: "Gurevich, D. contre Gnusurf",
+    trapNameEs: "Gurevich, D. contra Gnusurf",
+    trapNameAr: "Gurevich, D. ضد Gnusurf",
     commentedMoves:
         "1.d4 c5 2.d5 d6 3.e4 g6 4.Nc3 Bg7 5.Nf3 Na6 6.Be2 Nc7 7.O-O Nf6 8.Bf4 O-O 9.h3 b5 10.e5 dxe5 11.Nxe5 b4 12.Nc6 Qd7 13.Nb5 Ncxd5 14.Ne5 Qd8 15.Nc6 Qb6 16.Bf3 Bb7",
     moves: [
@@ -3257,7 +3551,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A43",
     opening: "Old Benoni defence",
     openingId: "old_benoni_defence",
-    trapName: "Germany",
+    trapName: "Vogel vs Suhl",
+    trapNameFr: "Vogel contre Suhl",
+    trapNameEs: "Vogel contra Suhl",
+    trapNameAr: "Vogel ضد Suhl",
     commentedMoves:
         "1.d4 c5 2.d5 d6 3.e4 g6 4.Nc3 Bg7 5.Nf3 Na6 6.Bc4 Bd7 7.a4 Nc7 8.O-O Rb8 9.Bf4 f6 10.Qe2 Nh6 11.e5 fxe5 12.Nxe5 dxe5 13.Bxe5 Bxe5 14.Qxe5 Nf7 15.Qg7 Bf5 16.d6 e6 17.dxc7 Qxc7 18.Rfe1 Qe7 19.Bb5+ Kd8 20.Rad1+ Kc8 21.Rd7",
     moves: [
@@ -3313,6 +3610,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Arosa",
+    trapNameFr: "Arosa",
+    trapNameEs: "Arosa",
+    trapNameAr: "Arosa",
     commentedMoves: "1.f4 d5 2.b3 Nf6 3.e3 c5 4.Bb5+ Nc6 5.d4 Qa5+",
     moves: ["f4", "d5", "b3", "Nf6", "e3", "c5", "Bb5+", "Nc6", "d4", "Qa5+"],
     fen:
@@ -3326,7 +3626,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A03",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Oz",
+    trapNameFr: "Wall, Bill contre Oz",
+    trapNameEs: "Wall, Bill contra Oz",
+    trapNameAr: "Wall, Bill ضد Oz",
     commentedMoves:
         "1.f4 d5 2.Nf3 Nc6 3.e3 e6 4.Bb5 Bd7 5.O-O a6 6.Be2 Bc5 7.d4 Bd6 8.c4 Nge7 9.c5",
     moves: [
@@ -3358,7 +3661,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A03",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Velas",
+    trapNameFr: "Wall, Bill contre Velas",
+    trapNameEs: "Wall, Bill contra Velas",
+    trapNameAr: "Wall, Bill ضد Velas",
     commentedMoves:
         "1.f4 d5 2.Nf3 Nf6 3.Nc3 Nc6 4.e3 d4 5.exd4 Nxd4 6.Bc4 Bg4 7.Ne5 Bxd1 8.Bxf7#",
     moves: [
@@ -3389,6 +3695,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Thailand",
+    trapNameFr: "Thailand",
+    trapNameEs: "Thailand",
+    trapNameAr: "Thailand",
     commentedMoves:
         "1.f4 d5 2.Nf3 Nf6 3.e3 g6 4.d3 Bg7 5.Nbd2 O-O 6.h3 c5 7.b3 Ng4 8.Ne5 Nxe3",
     moves: [
@@ -3419,6 +3728,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Athens",
+    trapNameFr: "Athens",
+    trapNameEs: "Athens",
+    trapNameAr: "Athens",
     commentedMoves:
         "1.f4 d5 2.Nf3 h5 3.g3 h4 4.Nxh4 e5 5.fxe5 Rxh4 6.gxh4 Qxh4#",
     moves: [
@@ -3446,6 +3758,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Iowa",
+    trapNameFr: "Iowa",
+    trapNameEs: "Iowa",
+    trapNameAr: "Iowa",
     commentedMoves:
         "1.f4 d5 2.e4 dxe4 3.Nc3 Nf6 4.Qe2 Bf5 5.Qb5+ Bd7 6.Qxb7 Bc6 7.Bb5 Qd7 8.Bxc6 Qxc6 9.Qc8#",
     moves: [
@@ -3476,7 +3791,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A03",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "Europe",
+    trapName: "Van Kessel vs Rensen",
+    trapNameFr: "Van Kessel contre Rensen",
+    trapNameEs: "Van Kessel contra Rensen",
+    trapNameAr: "Van Kessel ضد Rensen",
     commentedMoves: "1.f4 d5 2.h3 e5 3.g4 Qh4#",
     moves: ["f4", "d5", "h3", "e5", "g4", "Qh4#"],
     fen: "rnb1kbnr/ppp2ppp/8/3pp3/5PPq/7P/PPPPP3/RNBQKBNR w KQkq - 1 4",
@@ -3490,6 +3808,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Frankfurt",
+    trapNameFr: "Frankfurt",
+    trapNameEs: "Frankfurt",
+    trapNameAr: "Frankfurt",
     commentedMoves:
         "1.f4 Nf6 2.c4 d5 3.cxd5 Nxd5 4.d3 e5 5.fxe5 Bb4+ 6.Bd2 Ne3 7.Qa4+ b5 8.Qxb5+ Bd7 9.Qb7 Bc6 10.Qxb4 Nc2+",
     moves: [
@@ -3525,6 +3846,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Iowa",
+    trapNameFr: "Iowa",
+    trapNameEs: "Iowa",
+    trapNameAr: "Iowa",
     commentedMoves:
         "1.f4 Nf6 2.e3 d5 3.Nf3 Nc6 4.c4 Bf5 5.Na3 e6 6.b3 Bc5 7.d4 Bb4+ 8.Nd2 Ne4 9.Nab1 Qh4+ 10.Ke2 Qf2+ 11.Kd3 Nc5#",
     moves: [
@@ -3563,6 +3887,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Balatonbereny",
+    trapNameFr: "Balatonbereny",
+    trapNameEs: "Balatonbereny",
+    trapNameAr: "Balatonbereny",
     commentedMoves:
         "1.f4 e5 2.Nf3 e4 3.Ng5 d5 4.e3 h6 5.Nxf7 Kxf7 6.Qh5+ g6 7.Qe5 Bg7",
     moves: [
@@ -3592,6 +3919,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.f4 e5 2.d3 exf4 3.Bxf4 Nc6 4.Nf3 Bc5 5.c3 d6 6.Nbd2 Nf6 7.Bg5 Ng4 8.Bh4 Qxh4+ 9.Nxh4 Bf2#",
     moves: [
@@ -3625,6 +3955,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "St. Louis",
+    trapNameFr: "St. Louis",
+    trapNameEs: "St. Louis",
+    trapNameAr: "St. Louis",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.b3 Qh4+ 5.g3 Qxg3+ 6.hxg3 Bxg3#",
     moves: [
@@ -3652,6 +3985,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Nijmegen",
+    trapNameFr: "Nijmegen",
+    trapNameEs: "Nijmegen",
+    trapNameAr: "Nijmegen",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.d4 Qh4+ 5.Kd2 Qxd4+ 6.Ke1 Qh4+ 7.Kd2 Nf6 8.Nf3 Ne4+ 9.Ke3 Qf4+ 10.Kd3 Nf2+ 11.Kc3 Qb4#",
     moves: [
@@ -3688,6 +4024,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Iceland",
+    trapNameFr: "Iceland",
+    trapNameEs: "Iceland",
+    trapNameAr: "Iceland",
     commentedMoves: "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nc6 5.h3 Bg3#",
     moves: [
       "f4",
@@ -3712,6 +4051,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Okinawa",
+    trapNameFr: "Okinawa",
+    trapNameEs: "Okinawa",
+    trapNameAr: "Okinawa",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nc6 5.e4 g5 6.d4 g4 7.Ng5 Nxd4 8.Qxd4 Bg3+ 9.hxg3 Qxd4",
     moves: [
@@ -3745,6 +4087,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Philadelphia",
+    trapNameFr: "Philadelphia",
+    trapNameEs: "Philadelphia",
+    trapNameAr: "Philadelphia",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nf6 5.Nc3 O-O 6.e4 Re8 7.d3 Ng4 8.Be2 Nxh2 9.Nxh2 Bg3+ 10.Kf1 Qd4",
     moves: [
@@ -3779,7 +4124,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A02",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "Internet",
+    trapName: "Evans, K. vs Nagley",
+    trapNameFr: "Evans, K. contre Nagley",
+    trapNameEs: "Evans, K. contra Nagley",
+    trapNameAr: "Evans, K. ضد Nagley",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nf6 5.d4 Ne4 6.c4 O-O 7.e3 Re8 8.Qc2 Bg4 9.h3 Qh4+ 10.Nxh4 Bg3+ 11.Qf2 Bxf2#",
     moves: [
@@ -3816,7 +4164,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A02",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "Paris",
+    trapName: "Guischard vs Gedult",
+    trapNameFr: "Guischard contre Gedult",
+    trapNameEs: "Guischard contra Gedult",
+    trapNameAr: "Guischard ضد Gedult",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nf6 5.d4 Ng4 6.Nc3 Bxh2 7.Bg5 Bg3+ 8.Kd2 f6 9.Bh4 Nf2 10.Qc1 Nxh1",
     moves: [
@@ -3852,6 +4203,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Hungary",
+    trapNameFr: "Hungary",
+    trapNameEs: "Hungary",
+    trapNameAr: "Hungary",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Bg4 5.e3 Qf6 6.Nc3 Ne7 7.Ne4 Bxf3 8.Nxf6+ gxf6 9.Qxf3",
     moves: [
@@ -3883,7 +4237,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A02",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "Germany",
+    trapName: "Linder vs Joppen",
+    trapNameFr: "Linder contre Joppen",
+    trapNameEs: "Linder contra Joppen",
+    trapNameAr: "Linder ضد Joppen",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.c3 g4 6.Qa4+ Nc6 7.Nd4 Qh4+ 8.Kd1 g3 9.b4 Qxh2 10.Rxh2 gxh2",
     moves: [
@@ -3918,7 +4275,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A02",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "Hastings",
+    trapName: "Bird vs Gunsberg",
+    trapNameFr: "Bird contre Gunsberg",
+    trapNameEs: "Bird contra Gunsberg",
+    trapNameAr: "Bird ضد Gunsberg",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.c3 g4 6.Qa4+ Nc6 7.Nd4 Qh4+ 8.Kd1 g3 9.b3 Qxh2 10.Rxh2 gxh2",
     moves: [
@@ -3954,6 +4314,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Scotland",
+    trapNameFr: "Scotland",
+    trapNameEs: "Scotland",
+    trapNameAr: "Scotland",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.d4 g4 6.Ng5 c5 7.h3 Bg3+ 8.Kd2 Qxd4#",
     moves: [
@@ -3985,6 +4348,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Ohio",
+    trapNameFr: "Ohio",
+    trapNameEs: "Ohio",
+    trapNameAr: "Ohio",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.e4 g4 6.Nd4 Qh4+ 7.Ke2 g3 8.d3 Qxh2 9.Rxh2 gxh2",
     moves: [
@@ -4018,6 +4384,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "USSR",
+    trapNameFr: "USSR",
+    trapNameEs: "USSR",
+    trapNameAr: "USSR",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.e4 g4 6.Ng1 Qh4+ 7.Ke2 g3 8.Nc3 Qxh2 9.Rxh2 gxh2",
     moves: [
@@ -4051,6 +4420,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "North Carlina",
+    trapNameFr: "North Carlina",
+    trapNameEs: "North Carlina",
+    trapNameAr: "North Carlina",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 h5 5.g3 h4 6.Nxh4 Rxh4 7.gxh4 Qxh4#",
     moves: [
@@ -4080,6 +4452,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Lvov",
+    trapNameFr: "Lvov",
+    trapNameEs: "Lvov",
+    trapNameAr: "Lvov",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 Nh6 5.e4 Ng4 6.Qe2 O-O 7.Nc3 f5 8.d3 fxe4 9.dxe4 Nxh2 10.Nxh2 Bg3+",
     moves: [
@@ -4114,7 +4489,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A02",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "France",
+    trapName: "NN vs Du Mont",
+    trapNameFr: "NN contre Du Mont",
+    trapNameEs: "NN contra Du Mont",
+    trapNameAr: "NN ضد Du Mont",
     commentedMoves:
         "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.g3 Qg5 5.Nf3 Qxg3+ 6.hxg3 Bxg3#",
     moves: [
@@ -4142,6 +4520,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves:
         "1.f4 e5 2.fxe5 Qh4+ 3.g3 Qe4 4.Nf3 Nc6 5.Nc3 Qf5 6.e4 Qe6 7.d4 Qe7 8.Bg5 Qb4 9.a3 Qxb2 10.Na4",
     moves: [
@@ -4176,6 +4557,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Southsea",
+    trapNameFr: "Southsea",
+    trapNameEs: "Southsea",
+    trapNameAr: "Southsea",
     commentedMoves:
         "1.e4 e5 2.Bc4 Bc5 3.c3 Nf6 4.d4 exd4 5.e5 d5 6.exf6 dxc4 7.Qh5 Bf8 8.Qe5+ Be6 9.fxg7",
     moves: [
@@ -4208,6 +4592,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Rotterdam",
+    trapNameFr: "Rotterdam",
+    trapNameEs: "Rotterdam",
+    trapNameAr: "Rotterdam",
     commentedMoves:
         "1.e4 e5 2.Bc4 Bc5 3.b4 Bb6 4.Nc3 Nf6 5.Nf3 Nxe4 6.Bxf7+ Kxf7 7.Nxe5+ Ke6 8.Nxe4 Kxe5 9.Bb2+ Kxe4 10.Qf3#",
     moves: [
@@ -4241,6 +4628,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves: "1.e4 e5 2.Bc4 Bc5 3.d3 Nc6 4.Nh3 Qh4 5.Bg5",
     moves: ["e4", "e5", "Bc4", "Bc5", "d3", "Nc6", "Nh3", "Qh4", "Bg5"],
     fen:
@@ -4254,6 +4644,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Los Angeles",
+    trapNameFr: "Los Angeles",
+    trapNameEs: "Los Angeles",
+    trapNameAr: "Los Angeles",
     commentedMoves: "1.e4 e5 2.Bc4 Bc5 3.Qh5 g6 4.Qxe5+",
     moves: ["e4", "e5", "Bc4", "Bc5", "Qh5", "g6", "Qxe5+"],
     fen: "rnbqk1nr/pppp1p1p/6p1/2b1Q3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
@@ -4267,6 +4660,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves:
         "1.e4 e5 2.Bc4 Bc5 3.Qh5 Qe7 4.Nc3 c6 5.Nf3 Nf6 6.Qxe5 Bxf2+ 7.Kxf2 Ng4+",
     moves: [
@@ -4295,6 +4691,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.d3 Na5 4.Bxf7+ Kxf7 5.Qh5+ g6 6.Qxe5",
     moves: [
       "e4",
@@ -4319,7 +4718,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C23",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "Europe",
+    trapName: "Boros vs Saller",
+    trapNameFr: "Boros contre Saller",
+    trapNameEs: "Boros contra Saller",
+    trapNameAr: "Boros ضد Saller",
     commentedMoves:
         "1.e4 e5 2.Bc4 Nc6 3.d3 Na5 4.Bxf7+ Kxf7 5.Qh5+ Ke6 6.Qf5+ Kd6 7.d4 Qf6 8.dxe5+ Qxe5 9.Bf4",
     moves: [
@@ -4351,7 +4753,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C23",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "Internet",
+    trapName: "Yarray vs Wall",
+    trapNameFr: "Yarray contre Wall",
+    trapNameEs: "Yarray contra Wall",
+    trapNameAr: "Yarray ضد Wall",
     commentedMoves:
         "1.e4 e5 2.Bc4 Nc6 3.Qf3 Nf6 4.Bd5 Nd4 5.Qc3 c6 6.Bc4 Nxe4 7.Qd3 d5 8.f3 Qh4+ 9.g3 Nxg3",
     moves: [
@@ -4383,7 +4788,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C23",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "Internet",
+    trapName: "AsphaltBoy vs Wall",
+    trapNameFr: "AsphaltBoy contre Wall",
+    trapNameEs: "AsphaltBoy contra Wall",
+    trapNameAr: "AsphaltBoy ضد Wall",
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qg4 d5",
     moves: ["e4", "e5", "Bc4", "Nc6", "Qg4", "d5"],
     fen: "r1bqkbnr/ppp2ppp/2n5/3pp3/2B1P1Q1/8/PPPP1PPP/RNB1K1NR w KQkq - 0 4",
@@ -4395,7 +4803,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C23",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "USA",
+    trapName: "Brady vs NN",
+    trapNameFr: "Brady contre NN",
+    trapNameEs: "Brady contra NN",
+    trapNameAr: "Brady ضد NN",
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qh5 d6 4.Qxf7#",
     moves: ["e4", "e5", "Bc4", "Nc6", "Qh5", "d6", "Qxf7#"],
     fen: "r1bqkbnr/ppp2Qpp/2np4/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
@@ -4408,7 +4819,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C23",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Webcrawler",
+    trapNameFr: "Wall, Bill contre Webcrawler",
+    trapNameEs: "Wall, Bill contra Webcrawler",
+    trapNameAr: "Wall, Bill ضد Webcrawler",
     commentedMoves:
         "1.e4 e5 2.Bc4 c6 3.Nf3 d5 4.exd5 Bg4 5.Qe2 Bxf3 6.Qxf3 b5 7.dxc6 bxc4 8.c7 e4 9.Qxe4+ Qe7 10.c8=Q#",
     moves: [
@@ -4441,7 +4855,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C24",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "Europe",
+    trapName: "Tammela vs Kiltti",
+    trapNameFr: "Tammela contre Kiltti",
+    trapNameEs: "Tammela contra Kiltti",
+    trapNameAr: "Tammela ضد Kiltti",
     commentedMoves: "1.e4 e5 2.Bc4 Nf6 3.d3 c6 4.Nf3 d5 5.Bb3 dxe4 6.Nxe5 Qa5+",
     moves: [
       "e4",
@@ -4467,7 +4884,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C24",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "Internet",
+    trapName: "Malaschitz vs Aouriri",
+    trapNameFr: "Malaschitz contre Aouriri",
+    trapNameEs: "Malaschitz contra Aouriri",
+    trapNameAr: "Malaschitz ضد Aouriri",
     commentedMoves:
         "1.e4 e5 2.Bc4 Nf6 3.d3 d5 4.exd5 Nxd5 5.Nf3 Nc6 6.O-O Be7 7.Re1 Bf6 8.Bb5 Bg4 9.Nxe5 Bxd1 10.Nxc6+ Kf8 11.Nxd8",
     moves: [
@@ -4503,6 +4923,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Czechoslovakia",
+    trapNameFr: "Czechoslovakia",
+    trapNameEs: "Czechoslovakia",
+    trapNameAr: "Czechoslovakia",
     commentedMoves:
         "1.e4 e5 2.Bc4 Nf6 3.d4 exd4 4.e5 d5 5.exd6 Bxd6 6.Qxd4 Bb4+",
     moves: [
@@ -4529,7 +4952,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C24",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "Germany",
+    trapName: "Linke vs Huber",
+    trapNameFr: "Linke contre Huber",
+    trapNameEs: "Linke contra Huber",
+    trapNameAr: "Linke ضد Huber",
     commentedMoves:
         "1.e4 e5 2.Bc4 Nf6 3.d4 Nxe4 4.dxe5 d6 5.Qd5 Be6 6.Qxb7 Bxc4 7.Qxa8 dxe5 8.Qxe4",
     moves: [
@@ -4558,7 +4984,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Snitch",
+    trapNameFr: "Wall, Bill contre Snitch",
+    trapNameEs: "Wall, Bill contra Snitch",
+    trapNameAr: "Wall, Bill ضد Snitch",
     commentedMoves: "1.d4 d5 2.e4 Nf6 3.e5 Ne4 4.f3",
     moves: ["d4", "d5", "e4", "Nf6", "e5", "Ne4", "f3"],
     fen: "rnbqkb1r/ppp1pppp/8/3pP3/3Pn3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 4",
@@ -4570,7 +4999,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "France",
+    trapName: "Gedult vs Deverrier",
+    trapNameFr: "Gedult contre Deverrier",
+    trapNameEs: "Gedult contra Deverrier",
+    trapNameAr: "Gedult ضد Deverrier",
     commentedMoves: "1.d4 d5 2.e4 dxe4 3.Nc3 c5 4.Bc4 Qxd4 5.Nd5 Qxc4 6.Nc7#",
     moves: [
       "d4",
@@ -4596,6 +5028,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Los Angeles",
+    trapNameFr: "Los Angeles",
+    trapNameEs: "Los Angeles",
+    trapNameAr: "Los Angeles",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nc6 4.d5 Ne5 5.Qd4 Ng6 6.Bb5+ c6 7.dxc6 Qxd4 8.cxb7+ Kd8 9.bxa8=Q",
     moves: [
@@ -4626,7 +5061,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Corr.",
+    trapName: "Plath vs Pohl",
+    trapNameFr: "Plath contre Pohl",
+    trapNameEs: "Plath contra Pohl",
+    trapNameAr: "Plath ضد Pohl",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 e5 4.Qe2 Qxd4 5.Qxe4 Bb4 6.Bd2 Bxc3",
     moves: [
@@ -4653,7 +5091,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs DieHappy",
+    trapNameFr: "Wall, Bill contre DieHappy",
+    trapNameEs: "Wall, Bill contra DieHappy",
+    trapNameAr: "Wall, Bill ضد DieHappy",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 f5 4.f3 Nc6 5.Bb5 exf3 6.Nxf3 Nh6 7.Bxh6 gxh6 8.Ne5 a6 9.Qh5#",
     moves: [
@@ -4685,7 +5126,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Paris",
+    trapName: "Gedult vs Zweigberg",
+    trapNameFr: "Gedult contre Zweigberg",
+    trapNameEs: "Gedult contra Zweigberg",
+    trapNameAr: "Gedult ضد Zweigberg",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 c5 5.Bf4 cxd4 6.Nb5 Nd5 7.Bxb8 Ne3 8.Nc7+ Qxc7 9.Bxc7 Nxd1 10.Rxd1",
     moves: [
@@ -4720,6 +5164,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Postal",
+    trapNameFr: "Postal",
+    trapNameEs: "Postal",
+    trapNameAr: "Postal",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 c6 6.Bc4 Nbd7 7.Ng5 Nd5 8.Nxd5 cxd5 9.Nxf7 Kxf7 10.Qh5+ g6 11.Qxd5+ e6 12.Qxe6+ Kg7 13.Qf7#",
     moves: [
@@ -4759,7 +5206,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Corr.",
+    trapName: "Leisebein vs Burk, V.",
+    trapNameFr: "Leisebein contre Burk, V.",
+    trapNameEs: "Leisebein contra Burk, V.",
+    trapNameAr: "Leisebein ضد Burk, V.",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 Bf5 6.Ne5 h5 7.Qf3 Qc8 8.Bc4 e6 9.Bg5 Ng4 10.Qxf5 exf5 11.Bxf7#",
     moves: [
@@ -4795,7 +5245,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Scal",
+    trapNameFr: "Wall, Bill contre Scal",
+    trapNameEs: "Wall, Bill contra Scal",
+    trapNameAr: "Wall, Bill ضد Scal",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 Bg4 6.Bf4 Bxf3 7.Qxf3 Qxd4 8.Qxb7 Qxf4 9.Qc8#",
     moves: [
@@ -4827,7 +5280,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Corr.",
+    trapName: "Purser, T. vs Weinberg",
+    trapNameFr: "Purser, T. contre Weinberg",
+    trapNameEs: "Purser, T. contra Weinberg",
+    trapNameAr: "Purser, T. ضد Weinberg",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 g6 6.Bc4 Bg7 7.h4 Nbd7 8.Bxf7+ Kxf7 9.Ng5+ Ke8 10.Ne6",
     moves: [
@@ -4861,7 +5317,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Corr.",
+    trapName: "De Vore vs Silman",
+    trapNameFr: "De Vore contre Silman",
+    trapNameEs: "De Vore contra Silman",
+    trapNameAr: "De Vore ضد Silman",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Nc6 6.Bb5 Qxd4 7.Bxc6+ bxc6 8.Qxc6+",
     moves: [
@@ -4891,7 +5350,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Internet",
+    trapName: "Van Eijk vs Carvalho",
+    trapNameFr: "Van Eijk contre Carvalho",
+    trapNameEs: "Van Eijk contra Carvalho",
+    trapNameAr: "Van Eijk ضد Carvalho",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O e5 8.Nb5 Na6 9.a3 Qe4 10.Qf2 Ng4 11.Bg5 f6",
     moves: [
@@ -4929,6 +5391,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Mountain View, CA",
+    trapNameFr: "Mountain View, CA",
+    trapNameEs: "Mountain View, CA",
+    trapNameAr: "Mountain View, CA",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O e5 8.Nb5 Na6 9.Bg5 e4 10.Bxf6 exf3 11.Rd8#",
     moves: [
@@ -4965,6 +5430,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Frankfurt",
+    trapNameFr: "Frankfurt",
+    trapNameEs: "Frankfurt",
+    trapNameAr: "Frankfurt",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O Bg4 8.Nb5 Qa5 9.Qxb7 Bxd1 10.Qc8#",
     moves: [
@@ -4999,6 +5467,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Thailand",
+    trapNameFr: "Thailand",
+    trapNameEs: "Thailand",
+    trapNameAr: "Thailand",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O Bg4 8.Nb5 Na6 9.Qxb7 Rc8 10.Nxc7+",
     moves: [
@@ -5033,6 +5504,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "New Jersey",
+    trapNameFr: "New Jersey",
+    trapNameEs: "New Jersey",
+    trapNameAr: "New Jersey",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O Bg4 8.Nb5 Nfd7 9.Qxb7",
     moves: [
@@ -5064,7 +5538,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Germany",
+    trapName: "Bartsch vs Jennen",
+    trapNameFr: "Bartsch contre Jennen",
+    trapNameEs: "Bartsch contra Jennen",
+    trapNameAr: "Bartsch ضد Jennen",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qb4 7.O-O-O Bg4 8.Nb5 e5 9.Nxc7+ Ke7 10.Qxb7 Qxb7 11.Bc5#",
     moves: [
@@ -5101,6 +5578,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Baden",
+    trapNameFr: "Baden",
+    trapNameEs: "Baden",
+    trapNameAr: "Baden",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qe5 7.O-O-O Bg4 8.Qxb7 Qxe3+ 9.Kb1 Bxd1 10.Qc8#",
     moves: [
@@ -5135,6 +5615,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Eindhoven",
+    trapNameFr: "Eindhoven",
+    trapNameEs: "Eindhoven",
+    trapNameAr: "Eindhoven",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Qxf3 Qxd4 6.Be3 Qg4 7.Qf2 Qb4 8.O-O-O Nc6 9.Nb5 Qa5 10.Qe1",
     moves: [
@@ -5168,6 +5651,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "Sharjah",
+    trapNameFr: "Sharjah",
+    trapNameEs: "Sharjah",
+    trapNameAr: "Sharjah",
     commentedMoves: "1.d4 Nf6 2.c4 e5 3.d5 Bb4+ 4.Nc3 d6 5.Qa4+",
     moves: ["d4", "Nf6", "c4", "e5", "d5", "Bb4+", "Nc3", "d6", "Qa4+"],
     fen: "rnbqk2r/ppp2ppp/3p1n2/3Pp3/QbP5/2N5/PP2PPPP/R1B1KBNR b KQkq - 1 5",
@@ -5180,6 +5666,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "Philadelphia",
+    trapNameFr: "Philadelphia",
+    trapNameEs: "Philadelphia",
+    trapNameAr: "Philadelphia",
     commentedMoves: "1.d4 Nf6 2.c4 e5 3.d5 Bc5 4.Bg5 Ne4 5.Bxd8 Bxf2#",
     moves: [
       "d4",
@@ -5203,7 +5692,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A51",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "Germany",
+    trapName: "Wacker vs Klein",
+    trapNameFr: "Wacker contre Klein",
+    trapNameEs: "Wacker contra Klein",
+    trapNameAr: "Wacker ضد Klein",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.d5 Bc5 4.Bg5 Ne4 5.Be3 Bxe3 6.fxe3 Qh4+ 7.g3 Nxg3 8.Nf3 Qh6",
     moves: [
@@ -5234,7 +5726,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A51",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "Corr.",
+    trapName: "Warren vs Selman",
+    trapNameFr: "Warren contre Selman",
+    trapNameEs: "Warren contra Selman",
+    trapNameAr: "Warren ضد Selman",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.a3 d6 5.exd6 Bxd6 6.g3 Nxf2 7.Kxf2 Bxg3+",
     moves: [
@@ -5264,6 +5759,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "Leipzig",
+    trapNameFr: "Leipzig",
+    trapNameEs: "Leipzig",
+    trapNameAr: "Leipzig",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Qc2 Bb4+ 5.Nd2 d5 6.exd6 Bf5 7.Qa4+ Nc6 8.a3 Nc5 9.dxc7 Qe7 10.Qd1 Nd3#",
     moves: [
@@ -5298,7 +5796,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A51",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "Paris",
+    trapName: "Bloemen vs Gedult",
+    trapNameFr: "Bloemen contre Gedult",
+    trapNameEs: "Bloemen contra Gedult",
+    trapNameAr: "Bloemen ضد Gedult",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Qc2 d5 5.cxd5 Qxd5 6.Qxc7 Bb4+ 7.Nd2 Nxd2 8.Qxc8+ Ke7 9.Qc7+ Ke6",
     moves: [
@@ -5331,7 +5832,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A51",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "Internet",
+    trapName: "Rabott vs Wall, Bill",
+    trapNameFr: "Rabott contre Wall, Bill",
+    trapNameEs: "Rabott contra Wall, Bill",
+    trapNameAr: "Rabott ضد Wall, Bill",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.f3 Bb4+ 5.Bd2 Qh4+ 6.g3 Nxg3 7.Bxb4 Ne4#",
     moves: [
@@ -5361,6 +5865,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "USSR",
+    trapNameFr: "USSR",
+    trapNameEs: "USSR",
+    trapNameAr: "USSR",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nc3 d6 5.exd6 Bxd6 6.h3 Nxf2 7.Kxf2 Qh4+ 8.Kf3 Qg3+ 9.Ke4 Bf5+ 10.Kxf5 Qg6#",
     moves: [
@@ -5394,7 +5901,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A52",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "Vienna",
+    trapName: "Takasz vs Krejcik",
+    trapNameFr: "Takasz contre Krejcik",
+    trapNameEs: "Takasz contra Krejcik",
+    trapNameAr: "Takasz ضد Krejcik",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Qd4 d6 5.exd6 Bxd6 6.Qxg7 Be5",
     moves: [
@@ -5421,7 +5931,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A52",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "Internet",
+    trapName: "Rajacajn vs Wall, Bill",
+    trapNameFr: "Rajacajn contre Wall, Bill",
+    trapNameEs: "Rajacajn contra Wall, Bill",
+    trapNameAr: "Rajacajn ضد Wall, Bill",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Qd4 d6 5.exd6 Bxd6 6.c5 Nc6 7.Qd1 Nxf2 8.Kxf2 Bg3+ 9.hxg3 Qxd1",
     moves: [
@@ -5454,7 +5967,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A52",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "London",
+    trapName: "Zak vs Mieses",
+    trapNameFr: "Zak contre Mieses",
+    trapNameEs: "Zak contra Mieses",
+    trapNameAr: "Zak ضد Mieses",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.e4 Nc6 6.Bg5 Bxf2+ 7.Ke2 Nd4+ 8.Qxd4 Bxd4 9.Bxd8 Bxb2",
     moves: [
@@ -5488,6 +6004,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "Fremont, CA",
+    trapNameFr: "Fremont, CA",
+    trapNameEs: "Fremont, CA",
+    trapNameAr: "Fremont, CA",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Nc6 5.Bf4 Bb4+ 6.Nc3 Qe7 7.g3 Ncxe5 8.Ng5 h6 9.Nge4 f5 10.Nd2 Nd3#",
     moves: [
@@ -5524,6 +6043,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "Condord, CA",
+    trapNameFr: "Condord, CA",
+    trapNameEs: "Condord, CA",
+    trapNameAr: "Condord, CA",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Nc6 5.Bf4 Bb4+ 6.Nbd2 Qe7 7.a3 Ngxe5 8.axb4 Nd3#",
     moves: [
@@ -5555,6 +6077,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "Thailand",
+    trapNameFr: "Thailand",
+    trapNameEs: "Thailand",
+    trapNameAr: "Thailand",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 d6 5.exd6 Bxd6 6.h3 Nxf2 7.Kxf2 Bg3+ 8.Kxg3 Qxd1",
     moves: [
@@ -5586,6 +6111,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "India",
+    trapNameFr: "India",
+    trapNameEs: "India",
+    trapNameAr: "India",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+ 6.Nbd2 Qe7 7.a3 Ncxe5 8.axb4 Nd3#",
     moves: [
@@ -5616,7 +6144,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A52",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "Paris",
+    trapName: "Flament vs Gedult",
+    trapNameFr: "Flament contre Gedult",
+    trapNameEs: "Flament contra Gedult",
+    trapNameAr: "Flament ضد Gedult",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+ 6.Nbd2 Qe7 7.h3 Ngxe5 8.Nxe5 Nxe5 9.a3 Nd3#",
     moves: [
@@ -5649,7 +6180,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A52",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "Germany",
+    trapName: "Hertneck vs Wunderer",
+    trapNameFr: "Hertneck contre Wunderer",
+    trapNameEs: "Hertneck contra Wunderer",
+    trapNameAr: "Hertneck ضد Wunderer",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 g5 5.Bd2 Nxe5 6.e3 d6 7.Be2 Be6 8.Bc3 Nbc6 9.f4 gxf4 10.exf4",
     moves: [
@@ -5682,7 +6216,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B10",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "Internet",
+    trapName: "Hardrock vs Wall, Bill",
+    trapNameFr: "Hardrock contre Wall, Bill",
+    trapNameEs: "Hardrock contra Wall, Bill",
+    trapNameAr: "Hardrock ضد Wall, Bill",
     commentedMoves: "1.e4 c6 2.Nc3 d5 3.f3 d4 4.Na4 e6 5.Ne2 b5",
     moves: ["e4", "c6", "Nc3", "d5", "f3", "d4", "Na4", "e6", "Ne2", "b5"],
     fen: "rnbqkbnr/p4ppp/2p1p3/1p6/N2pP3/5P2/PPPPN1PP/R1BQKB1R w KQkq - 0 6",
@@ -5695,7 +6232,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B10",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "Corr.",
+    trapName: "Wisniewski vs Halasiewwicz",
+    trapNameFr: "Wisniewski contre Halasiewwicz",
+    trapNameEs: "Wisniewski contra Halasiewwicz",
+    trapNameAr: "Wisniewski ضد Halasiewwicz",
     commentedMoves:
         "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nd7 5.Bc4 Ngf6 6.Neg5 e6 7.Qe2 Nb6 8.Ne5 Qd4 9.Nexf7 Rg8 10.Bxe6",
     moves: [
@@ -5729,6 +6269,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Lucerne",
+    trapNameFr: "Lucerne",
+    trapNameEs: "Lucerne",
+    trapNameAr: "Lucerne",
     commentedMoves: "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nf6 5.Qe2 Nbd7 6.Nd6#",
     moves: [
       "e4",
@@ -5754,6 +6297,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Canada",
+    trapNameFr: "Canada",
+    trapNameEs: "Canada",
+    trapNameAr: "Canada",
     commentedMoves:
         "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nf6 5.Qe2 Bg4 6.g3 Nbd7 7.Nd6#",
     moves: [
@@ -5782,6 +6328,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Bled",
+    trapNameFr: "Bled",
+    trapNameEs: "Bled",
+    trapNameAr: "Bled",
     commentedMoves:
         "1.e4 c6 2.Nc3 d5 3.Nf3 Bg4 4.h3 Bh5 5.Be2 Na6 6.exd5 cxd5 7.Bb5+",
     moves: [
@@ -5810,6 +6359,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Siauliai",
+    trapNameFr: "Siauliai",
+    trapNameEs: "Siauliai",
+    trapNameAr: "Siauliai",
     commentedMoves:
         "1.e4 c6 2.Nc3 d5 3.Qf3 d4 4.Bc4 Nf6 5.e5 dxc3 6.exf6 g6 7.dxc3 Nd7 8.Bxf7+ Kxf7 9.fxe7+ Kxe7 10.Bg5+",
     moves: [
@@ -5843,7 +6395,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B10",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "Corr.",
+    trapName: "Taylor vs Angermann",
+    trapNameFr: "Taylor contre Angermann",
+    trapNameEs: "Taylor contra Angermann",
+    trapNameAr: "Taylor ضد Angermann",
     commentedMoves:
         "1.e4 c6 2.Nc3 d5 3.Qf3 dxe4 4.Nxe4 e5 5.Bc4 Nf6 6.Ng5 Bg4 7.Qb3",
     moves: [
@@ -5870,7 +6425,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B10",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "Paris",
+    trapName: "Dubois vs Coudray",
+    trapNameFr: "Dubois contre Coudray",
+    trapNameEs: "Dubois contra Coudray",
+    trapNameAr: "Dubois ضد Coudray",
     commentedMoves: "1.e4 c6 2.c4 d5 3.cxd5 cxd5 4.exd5 Nf6 5.Qa4+ Qd7 6.Bb5",
     moves: [
       "e4",
@@ -5896,6 +6454,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Dortmund",
+    trapNameFr: "Dortmund",
+    trapNameEs: "Dortmund",
+    trapNameAr: "Dortmund",
     commentedMoves:
         "1.e4 c6 2.c4 d5 3.cxd5 cxd5 4.exd5 Nf6 5.Bb5+ Bd7 6.Bc4 Qc7 7.Qb3 b5 8.d6 Qxc4",
     moves: [
@@ -5925,7 +6486,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B10",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "USA",
+    trapName: "Metzger vs Brandon",
+    trapNameFr: "Metzger contre Brandon",
+    trapNameEs: "Metzger contra Brandon",
+    trapNameAr: "Metzger ضد Brandon",
     commentedMoves: "1.e4 c6 2.d3 d5 3.Nd2 g6 4.f4 Nh6 5.Ngf3 Ng4 6.Be2 Ne3",
     moves: [
       "e4",
@@ -5952,6 +6516,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "San Bernadino",
+    trapNameFr: "San Bernadino",
+    trapNameEs: "San Bernadino",
+    trapNameAr: "San Bernadino",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Bc4 Bf5 5.f3 exf3 6.Nxf3 e6 7.O-O Nf6 8.Ne5 h6 9.Rxf5 exf5 10.Nxf7",
     moves: [
@@ -5985,6 +6552,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves: "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bf5 5.Qe2 Nd7 6.Nd6#",
     moves: [
       "e4",
@@ -6009,7 +6579,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B12",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "London",
+    trapName: "Damant vs NN",
+    trapNameFr: "Damant contre NN",
+    trapNameEs: "Damant contra NN",
+    trapNameAr: "Damant ضد NN",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Bd3 Nf6 4.e5 Nfd7 5.e6 fxe6 6.Qh5+ g6 7.Qxg6+ hxg6 8.Bxg6#",
     moves: [
@@ -6040,6 +6613,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "South Carolina",
+    trapNameFr: "South Carolina",
+    trapNameEs: "South Carolina",
+    trapNameAr: "South Carolina",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Nf3 Ngf6 6.Qe2 b5 7.Nd6#",
     moves: [
@@ -6068,6 +6644,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Linares",
+    trapNameFr: "Linares",
+    trapNameEs: "Linares",
+    trapNameAr: "Linares",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Ng5 h6 6.Ne6 Qa5+ 7.Bd2 Qb6 8.Bd3 fxe6 9.Qh5+ Kd8 10.Ba5",
     moves: [
@@ -6102,6 +6681,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Russia",
+    trapNameFr: "Russia",
+    trapNameEs: "Russia",
+    trapNameAr: "Russia",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6+ exf6 6.Bc4 Qe7+ 7.Ne2 Qb4+",
     moves: [
@@ -6131,6 +6713,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Eppingen",
+    trapNameFr: "Eppingen",
+    trapNameEs: "Eppingen",
+    trapNameAr: "Eppingen",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Nxf6+ exf6 6.Bc4 Qe7+ 7.Qe2 Be6 8.Be3 Qb4+",
     moves: [
@@ -6161,7 +6746,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B15",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "Vienna",
+    trapName: "Reti vs Tartakower",
+    trapNameFr: "Reti contre Tartakower",
+    trapNameEs: "Reti contra Tartakower",
+    trapNameAr: "Reti ضد Tartakower",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Qd3 e5 6.dxe5 Qa5+ 7.Bd2 Qxe5 8.O-O-O Nxe4 9.Qd8+ Kxd8 10.Bg5+ Kc7 11.Bd8#",
     moves: [
@@ -6198,6 +6786,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Disentis",
+    trapNameFr: "Disentis",
+    trapNameEs: "Disentis",
+    trapNameAr: "Disentis",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.exd5 cxd5 4.c4 Nf6 5.Nc3 Nc6 6.Bg5 dxc4 7.Bxc4 Qxd4 8.Qxd4 Nxd4 9.O-O-O Nc6 10.Nb5",
     moves: [
@@ -6232,6 +6823,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Las Vegas",
+    trapNameFr: "Las Vegas",
+    trapNameEs: "Las Vegas",
+    trapNameAr: "Las Vegas",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.exd5 cxd5 4.Bd3 Nf6 5.Bf4 Qb6 6.Nc3 e6 7.Nb5 Nc6 8.Bc7 Qa6 9.Nd6+ Bxd6 10.Bxa6",
     moves: [
@@ -6265,7 +6859,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Corr.",
+    trapName: "Wiesel vs Weigel",
+    trapNameFr: "Wiesel contre Weigel",
+    trapNameEs: "Wiesel contra Weigel",
+    trapNameAr: "Wiesel ضد Weigel",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.Nf3 Bg4 5.h3 Bxf3 6.Qxf3 Nc6 7.Bb5 Qb6 8.Nd5 Qa5 9.b4 Qxb5 10.Nxc7+",
     moves: [
@@ -6300,6 +6897,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
     trapName: "Oxford",
+    trapNameFr: "Oxford",
+    trapNameEs: "Oxford",
+    trapNameAr: "Oxford",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 Nf6 5.Bd2 Nc6 6.Bb5 Bd7 7.Nd5 Nb4 8.Bxb4",
     moves: [
@@ -6329,7 +6929,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Europe",
+    trapName: "Korneev vs Hettler",
+    trapNameFr: "Korneev contre Hettler",
+    trapNameEs: "Korneev contra Hettler",
+    trapNameAr: "Korneev ضد Hettler",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd6 4.d4 a6 5.Nge2 b5 6.Bf4 Qb6 7.Nd5",
     moves: [
@@ -6357,7 +6960,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Puke",
+    trapNameFr: "Wall, Bill contre Puke",
+    trapNameEs: "Wall, Bill contra Puke",
+    trapNameAr: "Wall, Bill ضد Puke",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8 4.Bc4 e5 5.Qh5 g6 6.Qxe5+ Ne7 7.Qxh8",
     moves: [
@@ -6386,6 +6992,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
     trapName: "Riga",
+    trapNameFr: "Riga",
+    trapNameEs: "Riga",
+    trapNameAr: "Riga",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8 4.Bc4 Nf6 5.Nf3 Bg4 6.Ne5 Bh5 7.Qxh5 Nxh5 8.Bxf7#",
     moves: [
@@ -6415,7 +7024,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Europe",
+    trapName: "Mieses vs Akvist",
+    trapNameFr: "Mieses contre Akvist",
+    trapNameEs: "Mieses contra Akvist",
+    trapNameAr: "Mieses ضد Akvist",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qd8 4.d4 Nc6 5.Nf3 Bg4 6.d5 Ne5 7.Nxe5 Bxd1 8.Bb5+",
     moves: [
@@ -6445,7 +7057,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs LonelyMonkey",
+    trapNameFr: "Wall, Bill contre LonelyMonkey",
+    trapNameEs: "Wall, Bill contra LonelyMonkey",
+    trapNameAr: "Wall, Bill ضد LonelyMonkey",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qe5+ 4.Be2 Bf5 5.Nf3 Qc5 6.d4 Qb6 7.O-O Nc6 8.Nd5 Qb5 9.Nxc7+",
     moves: [
@@ -6478,6 +7093,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qe5+ 4.Be2 Bg4 5.f3 Bh5 6.Nb5 e6 7.d4",
     moves: [
@@ -6506,6 +7124,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qe6+ 4.Be2 Nf6 5.Nb5 Nd5 6.c4 Qg6 7.cxd5 Qxg2 8.Bf3 Qg6 9.Nxc7+",
     moves: [
@@ -6537,7 +7158,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Budapest",
+    trapName: "Zabrzeski vs Angelov",
+    trapNameFr: "Zabrzeski contre Angelov",
+    trapNameEs: "Zabrzeski contra Angelov",
+    trapNameAr: "Zabrzeski ضد Angelov",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nf3 Bg4 4.Be2 Nc6 5.Nc3 Qa5 6.d4 e5 7.Nxe5 Bxe2 8.Nxc6 Qxc3+ 9.bxc3 Bxd1",
     moves: [
@@ -6571,6 +7195,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves:
         "1.e4 d5 2.exd5 e6 3.dxe6 Bxe6 4.d4 Nf6 5.Nc3 Bd6 6.d5 Nxd5 7.Nxd5 Bxd5 8.Qxd5 Bb4+",
     moves: [
@@ -6602,6 +7229,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
     trapName: "Plymouth",
+    trapNameFr: "Plymouth",
+    trapNameEs: "Plymouth",
+    trapNameAr: "Plymouth",
     commentedMoves:
         "1.e4 d5 2.exd5 Nf6 3.Bb5+ Bd7 4.Bxd7+ Qxd7 5.Nc3 Nxd5 6.Nxd5 Qxd5 7.Qf3 Qc4 8.Qxb7 Qc6 9.Qc8#",
     moves: [
@@ -6633,7 +7263,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Paris",
+    trapName: "Ourmet vs Cierniak",
+    trapNameFr: "Ourmet contre Cierniak",
+    trapNameEs: "Ourmet contra Cierniak",
+    trapNameAr: "Ourmet ضد Cierniak",
     commentedMoves:
         "1.e4 d5 2.exd5 Nf6 3.Nc3 Nxd5 4.Bc4 Nxc3 5.Qf3 e6 6.Qxc3 Nc6 7.Nf3 h6 8.Bb5",
     moves: [
@@ -6663,7 +7296,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Internet",
+    trapName: "XFile vs Wall, Bill",
+    trapNameFr: "XFile contre Wall, Bill",
+    trapNameEs: "XFile contra Wall, Bill",
+    trapNameAr: "XFile ضد Wall, Bill",
     commentedMoves:
         "1.e4 d5 2.exd5 Nf6 3.Nc3 e6 4.dxe6 Bxe6 5.d4 Bb4 6.Nf3 O-O 7.Bd2 Re8 8.Ng5 Bxc3 9.Bxc3 Bg4+ 10.Be2 Rxe2+",
     moves: [
@@ -6698,7 +7334,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Corr.",
+    trapName: "Kelics vs Simic",
+    trapNameFr: "Kelics contre Simic",
+    trapNameEs: "Kelics contra Simic",
+    trapNameAr: "Kelics ضد Simic",
     commentedMoves:
         "1.e4 d5 2.exd5 Nf6 3.d4 Nxd5 4.c4 Nb4 5.Qa4+ N8c6 6.a3 Na6 7.d5 Nc5 8.Qb5 e6 9.dxc6 b6 10.Ke2 a5",
     moves: [
@@ -6733,7 +7372,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "New York",
+    trapName: "Lapshun vs Gouret",
+    trapNameFr: "Lapshun contre Gouret",
+    trapNameEs: "Lapshun contra Gouret",
+    trapNameAr: "Lapshun ضد Gouret",
     commentedMoves:
         "1.e4 d5 2.exd5 Nf6 3.d4 Bg4 4.Be2 Qxd5 5.Bxg4 Qe4+ 6.Be2 Qxg2 7.Bf3",
     moves: [
@@ -6760,7 +7402,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A06",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Vienna",
+    trapName: "Krejcik vs Takacs",
+    trapNameFr: "Krejcik contre Takacs",
+    trapNameEs: "Krejcik contra Takacs",
+    trapNameAr: "Krejcik ضد Takacs",
     commentedMoves: "1.e4 d5 2.Nf3 dxe4 3.Ng5 Qd5 4.d3 exd3 5.Bxd3 Qxg2 6.Be4",
     moves: [
       "e4",
@@ -6785,7 +7430,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C21",
     opening: "Centre game",
     openingId: "centre_game",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Duke",
+    trapNameFr: "Wall, Bill contre Duke",
+    trapNameEs: "Wall, Bill contra Duke",
+    trapNameAr: "Wall, Bill ضد Duke",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Nxc3 Nf6 5.Bc4 Nxe4 6.Bf4 Qe7 7.Nd5 Qd8 8.Nxc7+ Ke7 9.Qd5",
     moves: [
@@ -6817,7 +7465,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C21",
     opening: "Centre game",
     openingId: "centre_game",
-    trapName: "England",
+    trapName: "Gibbs vs Davie",
+    trapNameFr: "Gibbs contre Davie",
+    trapNameEs: "Gibbs contra Davie",
+    trapNameAr: "Gibbs ضد Davie",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 d6 6.Nf3 Nf6 7.O-O Nbd7 8.e5 Nxe5 9.Nxe5 dxe5 10.Bxf7+ Ke7 11.Ba3+ Kxf7 12.Qxd8",
     moves: [
@@ -6856,6 +7507,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Guam",
+    trapNameFr: "Guam",
+    trapNameEs: "Guam",
+    trapNameAr: "Guam",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Qg5 6.Nf3 Qxg2 7.Bxf7+ Kxf7 8.Rg1 Qh3 9.Ng5+",
     moves: [
@@ -6888,6 +7542,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Sunnyvale",
+    trapNameFr: "Sunnyvale",
+    trapNameEs: "Sunnyvale",
+    trapNameAr: "Sunnyvale",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 d5 4.Qxd4 Nf6 5.Bg5 Be6 6.e5 h6 7.exf6 hxg5 8.fxg7",
     moves: [
@@ -6918,6 +7575,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Hanover",
+    trapNameFr: "Hanover",
+    trapNameEs: "Hanover",
+    trapNameAr: "Hanover",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 d5 4.exd5 Qxd5 5.Nf3 Nc6 6.Nxd4 Nxd4 7.cxd4 Nf6 8.Nc3 Bb4 9.Qa4+",
     moves: [
@@ -6950,6 +7610,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Sunnyvale",
+    trapNameFr: "Sunnyvale",
+    trapNameEs: "Sunnyvale",
+    trapNameAr: "Sunnyvale",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.Bc4 Nf6 4.Qe2 Qe7 5.e5 d5 6.exf6 Qxe2+ 7.Bxe2",
     moves: [
@@ -6978,6 +7641,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Nottingham",
+    trapNameFr: "Nottingham",
+    trapNameEs: "Nottingham",
+    trapNameAr: "Nottingham",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.Bc4 Nf6 4.e5 d5 5.Bb3 Ne4 6.Ne2 Bc5 7.f3 Qh4+ 8.g3 d3 9.gxh4 Bf2+ 10.Kf1 Bh3#",
     moves: [
@@ -7013,6 +7679,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Hickory",
+    trapNameFr: "Hickory",
+    trapNameEs: "Hickory",
+    trapNameAr: "Hickory",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qa4 Qe7 5.Nc3 Nf6 6.Bg5 d5 7.O-O-O dxe4 8.Nxe4 Qxe4 9.Rd8+ Kxd8 10.Qxe4",
     moves: [
@@ -7047,6 +7716,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Sochi",
+    trapNameFr: "Sochi",
+    trapNameEs: "Sochi",
+    trapNameAr: "Sochi",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qa4 Nf6 5.Nc3 d5 6.Bg5 dxe4 7.Nxe4 Qe7 8.O-O-O Qxe4 9.Rd8+ Kxd8 10.Qxe4",
     moves: [
@@ -7079,7 +7751,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C22",
     opening: "Centre game",
     openingId: "centre_game",
-    trapName: "Internet",
+    trapName: "Memo vs Wall, Bill",
+    trapNameFr: "Memo contre Wall, Bill",
+    trapNameEs: "Memo contra Wall, Bill",
+    trapNameAr: "Memo ضد Wall, Bill",
     commentedMoves: "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qc3 Bb4",
     moves: ["e4", "e5", "d4", "exd4", "Qxd4", "Nc6", "Qc3", "Bb4"],
     fen: "r1bqk1nr/pppp1ppp/2n5/8/1b2P3/2Q5/PPP2PPP/RNB1KBNR w KQkq - 3 5",
@@ -7093,6 +7768,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Leipzig",
+    trapNameFr: "Leipzig",
+    trapNameEs: "Leipzig",
+    trapNameAr: "Leipzig",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qe3 Nf6 5.Bc4 Ne5 6.Bb3 Bb4+ 7.c3 Bc5 8.Qg3 Bxf2+ 9.Kxf2 Nxe4+",
     moves: [
@@ -7125,7 +7803,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C21",
     opening: "Centre game",
     openingId: "centre_game",
-    trapName: "Corr.",
+    trapName: "Barnett vs Eastwood",
+    trapNameFr: "Barnett contre Eastwood",
+    trapNameEs: "Barnett contra Eastwood",
+    trapNameAr: "Barnett ضد Eastwood",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.Qxd4 Qf6 4.Qe3 Nh6 5.Nc3 Ng4 6.Nd5 Qc6 7.Qf4 d6 8.Bb5 Qxb5 9.Nxc7+",
     moves: [
@@ -7158,6 +7839,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
     trapName: "Sambor",
+    trapNameFr: "Sambor",
+    trapNameEs: "Sambor",
+    trapNameAr: "Sambor",
     commentedMoves:
         "1.e4 e5 2.d4 d5 3.Nc3 exd4 4.Qxd4 dxe4 5.Nd5 c6 6.Qe5+ Kd7 7.Qf5+ Kd6 8.Bf4+ Kc5 9.b4+ Kd4 10.c3#",
     moves: [
@@ -7191,7 +7875,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C20",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
-    trapName: "New York",
+    trapName: "Steinitz vs NN",
+    trapNameFr: "Steinitz contre NN",
+    trapNameEs: "Steinitz contra NN",
+    trapNameAr: "Steinitz ضد NN",
     commentedMoves:
         "1.e4 e5 2.d4 d6 3.c3 Bd7 4.Bc4 Nf6 5.Qb3 Qe7 6.Qxb7 Bc6 7.Qc8+ Qd8 8.Bxf7+ Ke7 9.Qe6#",
     moves: [
@@ -7222,7 +7909,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C20",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Kay",
+    trapNameFr: "Wall, Bill contre Kay",
+    trapNameEs: "Wall, Bill contra Kay",
+    trapNameAr: "Wall, Bill ضد Kay",
     commentedMoves: "1.e4 e5 2.d4 f6 3.dxe5 fxe5 4.Qh5+ g6 5.Qxe5+ Ne7 6.Qxh8",
     moves: [
       "e4",
@@ -7247,7 +7937,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "London",
+    trapName: "Harding vs NN",
+    trapNameFr: "Harding contre NN",
+    trapNameEs: "Harding contra NN",
+    trapNameAr: "Harding ضد NN",
     commentedMoves:
         "1.Nc3 d5 2.e4 d4 3.Nd5 f5 4.Bc4 fxe4 5.Qh5+ g6 6.Qe5 c6 7.Nc7+ Kd7 8.Be6#",
     moves: [
@@ -7277,7 +7970,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "Corr.",
+    trapName: "Moody vs Bender",
+    trapNameFr: "Moody contre Bender",
+    trapNameEs: "Moody contra Bender",
+    trapNameAr: "Moody ضد Bender",
     commentedMoves:
         "1.Nc3 d5 2.e4 d4 3.Nce2 c5 4.Ng3 e5 5.Nf3 Bg4 6.Bc4 f6 7.Nxe5 Bxd1 8.Bf7+ Ke7 9.Nf5#",
     moves: [
@@ -7309,7 +8005,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "Germany",
+    trapName: "Aasum vs Frenzel",
+    trapNameFr: "Aasum contre Frenzel",
+    trapNameEs: "Aasum contra Frenzel",
+    trapNameAr: "Aasum ضد Frenzel",
     commentedMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Bc4 Nf6 4.f3 Bf5 5.g4 Bg6 6.g5 exf3 7.Qxf3 Qd4 8.Qxb7 Ng4 9.Qxa8 Qf2+ 10.Kd1 Ne3+ 11.dxe3 Bxc2#",
     moves: [
@@ -7346,7 +8045,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "New York",
+    trapName: "Myers vs Savon",
+    trapNameFr: "Myers contre Savon",
+    trapNameEs: "Myers contra Savon",
+    trapNameAr: "Myers ضد Savon",
     commentedMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Nxe4 Nd7 4.Bc4 Ngf6 5.Ng5 e6 6.Qe2 Be7 7.Nxf7 Kxf7 8.Qxe6+",
     moves: [
@@ -7375,7 +8077,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "Corr.",
+    trapName: "Van Geet vs Sande",
+    trapNameFr: "Van Geet contre Sande",
+    trapNameEs: "Van Geet contra Sande",
+    trapNameAr: "Van Geet ضد Sande",
     commentedMoves: "1.Nc3 d5 2.e4 dxe4 3.Nxe4 e5 4.Bc4 Be7 5.Qh5 Nh6 6.d3",
     moves: [
       "Nc3",
@@ -7401,6 +8106,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "South Africa",
+    trapNameFr: "South Africa",
+    trapNameEs: "South Africa",
+    trapNameAr: "South Africa",
     commentedMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Nxe4 e5 4.Bc4 Bf5 5.Qf3 Qd7 6.Ng5 Nc6 7.Bxf7+ Kd8 8.Be6 Bxe6 9.Qxf8+ Qe8 10.Nxe6+",
     moves: [
@@ -7435,6 +8143,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Racine",
+    trapNameFr: "Racine",
+    trapNameEs: "Racine",
+    trapNameAr: "Racine",
     commentedMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Nxe4 e5 4.Nf3 Bg4 5.h3 Bxf3 6.Qxf3 Be7 7.Bc4 Nh6 8.d3 g5 9.Qh5 Ng8 10.Qxf7+ Kd7 11.Nc5+",
     moves: [
@@ -7470,7 +8181,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A80",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "Internet",
+    trapName: "MacKid vs Wall, Bill",
+    trapNameFr: "MacKid contre Wall, Bill",
+    trapNameEs: "MacKid contra Wall, Bill",
+    trapNameAr: "MacKid ضد Wall, Bill",
     commentedMoves:
         "1.d4 f5 2.Nc3 Nf6 3.Nf3 e6 4.e3 Bb4 5.Bb5 c6 6.Ba4 Ne4 7.Qe2 Nxc3 8.bxc3 Bxc3+",
     moves: [
@@ -7502,6 +8216,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "Mendrisio",
+    trapNameFr: "Mendrisio",
+    trapNameEs: "Mendrisio",
+    trapNameAr: "Mendrisio",
     commentedMoves:
         "1.d4 f5 2.Nc3 Nf6 3.Bg5 d5 4.Bxf6 exf6 5.e3 c6 6.Bd3 Qb6 7.a3 Qxb2 8.Na4",
     moves: [
@@ -7532,6 +8249,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "Palo Alto",
+    trapNameFr: "Palo Alto",
+    trapNameEs: "Palo Alto",
+    trapNameAr: "Palo Alto",
     commentedMoves:
         "1.d4 f5 2.Nc3 Nf6 3.Bg5 h6 4.Bxf6 exf6 5.e4 Bb4 6.Qh5+ Kf8 7.Bc4 Qe7 8.Nge2 fxe4 9.O-O-O c6 10.Nf4",
     moves: [
@@ -7566,6 +8286,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves:
         "1.d4 f5 2.c4 Nf6 3.Nc3 g6 4.h4 Bg7 5.h5 Nxh5 6.e4 e6 7.exf5 exf5 8.Rxh5 gxh5 9.Qxh5+ Kf8 10.Nd5 h6 11.Qxf5+ Kg8 12.Qe4 Kf7 13.Be2 Rf8 14.Bxh6 Bxh6 15.Qh7+",
     moves: [
@@ -7609,7 +8332,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A80",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "Internet",
+    trapName: "Hamlet vs Wall, Bill",
+    trapNameFr: "Hamlet contre Wall, Bill",
+    trapNameEs: "Hamlet contra Wall, Bill",
+    trapNameAr: "Hamlet ضد Wall, Bill",
     commentedMoves:
         "1.d4 f5 2.Be3 Nf6 3.Qd3 e6 4.Bg5 c5 5.dxc5 Bxc5 6.g3 Qb6 7.Be3 Qxb2 8.Qc3 Bb4",
     moves: [
@@ -7640,6 +8366,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "Denmark",
+    trapNameFr: "Denmark",
+    trapNameEs: "Denmark",
+    trapNameAr: "Denmark",
     commentedMoves:
         "1.d4 f5 2.e4 d6 3.c4 Nf6 4.Nc3 b6 5.exf5 Bxf5 6.Qf3 c6 7.Qxf5",
     moves: [
@@ -7667,6 +8396,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "Palo Alto",
+    trapNameFr: "Palo Alto",
+    trapNameEs: "Palo Alto",
+    trapNameAr: "Palo Alto",
     commentedMoves: "1.d4 f5 2.e4 fxe4 3.Nc3 e5 4.Qh5+ g6 5.Qxe5+ Qe7 6.Qxh8",
     moves: [
       "d4",
@@ -7691,7 +8423,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A82",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Macho",
+    trapNameFr: "Wall, Bill contre Macho",
+    trapNameEs: "Wall, Bill contra Macho",
+    trapNameAr: "Wall, Bill ضد Macho",
     commentedMoves:
         "1.d4 f5 2.e4 fxe4 3.Nc3 Nf6 4.g4 h6 5.f4 d5 6.Be2 a6 7.g5 Nfd7 8.Bh5+ g6 9.Bxg6#",
     moves: [
@@ -7723,7 +8458,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A83",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "Corr.",
+    trapName: "Krongraf vs Monsehr",
+    trapNameFr: "Krongraf contre Monsehr",
+    trapNameEs: "Krongraf contra Monsehr",
+    trapNameAr: "Krongraf ضد Monsehr",
     commentedMoves:
         "1.d4 f5 2.e4 fxe4 3.Nc3 Nf6 4.Bg5 h6 5.Bxf6 exf6 6.Qh5+ Ke7 7.Bc4 Nc6 8.Qf7+ Kd6 9.Nxe4#",
     moves: [
@@ -7755,6 +8493,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves: "1.d4 f5 2.e4 g6 3.exf5 gxf5 4.Qh5#",
     moves: ["d4", "f5", "e4", "g6", "exf5", "gxf5", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/8/5p1Q/3P4/8/PPP2PPP/RNB1KBNR b KQkq - 1 4",
@@ -7766,7 +8507,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A80",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "New York",
+    trapName: "Zilbermints vs Ash",
+    trapNameFr: "Zilbermints contre Ash",
+    trapNameEs: "Zilbermints contra Ash",
+    trapNameAr: "Zilbermints ضد Ash",
     commentedMoves: "1.d4 f5 2.g4 fxg4 3.h3 Nf6 4.hxg4 Nxg4 5.Qd3 Nf6 6.Rxh7",
     moves: [
       "d4",
@@ -7791,7 +8535,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A80",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "England",
+    trapName: "Carlson vs Jones",
+    trapNameFr: "Carlson contre Jones",
+    trapNameEs: "Carlson contra Jones",
+    trapNameAr: "Carlson ضد Jones",
     commentedMoves:
         "1.d4 f5 2.Bg5 c6 3.Nc3 d5 4.e4 dxe4 5.Bc4 g6 6.f3 Bg7 7.fxe4 Bxd4 8.Qd2 Bf6 9.Bf7+ Kxf7 10.Qxd8",
     moves: [
@@ -7826,6 +8573,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Dutch",
     openingId: "dutch",
     trapName: "Ljubljana",
+    trapNameFr: "Ljubljana",
+    trapNameEs: "Ljubljana",
+    trapNameAr: "Ljubljana",
     commentedMoves:
         "1.d4 f5 2.Bg5 g6 3.Nc3 Nh6 4.e4 Nf7 5.h4 Nxg5 6.hxg5 d6 7.exf5 Bxf5 8.g4 Bd7 9.Bd3 Bg7 10.Rxh7",
     moves: [
@@ -7859,7 +8609,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A80",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "New York",
+    trapName: "Teed vs Delmar",
+    trapNameFr: "Teed contre Delmar",
+    trapNameEs: "Teed contra Delmar",
+    trapNameAr: "Teed ضد Delmar",
     commentedMoves:
         "1.d4 f5 2.Bg5 h6 3.Bh4 g5 4.Bg3 f4 5.e3 h5 6.Bd3 Rh6 7.Qxh5+ Rxh5 8.Bg6#",
     moves: [
@@ -7889,6 +8642,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Denmark",
+    trapNameFr: "Denmark",
+    trapNameEs: "Denmark",
+    trapNameAr: "Denmark",
     commentedMoves: "1.c4 c5 2.Nc3 e5 3.e3 Ne7 4.Nb5 d5 5.Qa4 Bd7 6.Nd6#",
     moves: [
       "c4",
@@ -7913,6 +8669,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Helsinki",
+    trapNameFr: "Helsinki",
+    trapNameEs: "Helsinki",
+    trapNameAr: "Helsinki",
     commentedMoves: "1.c4 c5 2.Nc3 e6 3.Nf3 Ne7 4.Ne4 f5 5.Nd6#",
     moves: ["c4", "c5", "Nc3", "e6", "Nf3", "Ne7", "Ne4", "f5", "Nd6#"],
     fen: "rnbqkb1r/pp1pn1pp/3Np3/2p2p2/2P5/5N2/PP1PPPPP/R1BQKB1R b KQkq - 1 5",
@@ -7925,6 +8684,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Folkestone",
+    trapNameFr: "Folkestone",
+    trapNameEs: "Folkestone",
+    trapNameAr: "Folkestone",
     commentedMoves: "1.c4 c5 2.d4 cxd4 3.Nf3 e5 4.Nxe5 Qa5+",
     moves: ["c4", "c5", "d4", "cxd4", "Nf3", "e5", "Nxe5", "Qa5+"],
     fen: "rnb1kbnr/pp1p1ppp/8/q3N3/2Pp4/8/PP2PPPP/RNBQKB1R w KQkq - 1 5",
@@ -7937,7 +8699,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A30",
     opening: "English opening",
     openingId: "english_opening",
-    trapName: "Europe",
+    trapName: "Panzalovic vs Dancevski",
+    trapNameFr: "Panzalovic contre Dancevski",
+    trapNameEs: "Panzalovic contra Dancevski",
+    trapNameAr: "Panzalovic ضد Dancevski",
     commentedMoves:
         "1.c4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 g6 5.b3 Bg7 6.Bb2 Nxd4 7.Bxd4 Qa5+ 8.Nc3 Qxc3+ 9.Bxc3 Bxc3+ 10.Qd2 Bxd2+",
     moves: [
@@ -7971,7 +8736,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A10",
     opening: "English opening",
     openingId: "english_opening",
-    trapName: "Berlin",
+    trapName: "Lehmann vs Schulz",
+    trapNameFr: "Lehmann contre Schulz",
+    trapNameEs: "Lehmann contra Schulz",
+    trapNameAr: "Lehmann ضد Schulz",
     commentedMoves: "1.c4 d5 2.cxd5 Nf6 3.e4 Nxe4 4.Qa4+",
     moves: ["c4", "d5", "cxd5", "Nf6", "e4", "Nxe4", "Qa4+"],
     fen: "rnbqkb1r/ppp1pppp/8/3P4/Q3n3/8/PP1P1PPP/RNB1KBNR b KQkq - 1 4",
@@ -7985,6 +8753,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Riga",
+    trapNameFr: "Riga",
+    trapNameEs: "Riga",
+    trapNameAr: "Riga",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nc6 3.Nf3 f5 4.d4 e4 5.Bg5 Nf6 6.d5 exf3 7.dxc6 fxg2 8.cxd7+ Nxd7 9.Bxd8 gxh1=Q",
     moves: [
@@ -8018,6 +8789,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Czechoslovakia",
+    trapNameFr: "Czechoslovakia",
+    trapNameEs: "Czechoslovakia",
+    trapNameAr: "Czechoslovakia",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nc6 3.Nf3 g6 4.d4 exd4 5.Nd5 h6 6.Nxd4 Bg7 7.Bf4 d6 8.Nb5 Bxb2 9.Nbxc7+",
     moves: [
@@ -8049,7 +8823,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A25",
     opening: "English opening",
     openingId: "english_opening",
-    trapName: "Corr.",
+    trapName: "Kaprinay vs Hubner, H.",
+    trapNameFr: "Kaprinay contre Hubner, H.",
+    trapNameEs: "Kaprinay contra Hubner, H.",
+    trapNameAr: "Kaprinay ضد Hubner, H.",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nc6 3.g3 Nf6 4.Bg2 Bb4 5.Nd5 Nxd5 6.cxd5 Nd4 7.e3 Nf5 8.Qg4",
     moves: [
@@ -8080,6 +8857,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Palo Alto",
+    trapNameFr: "Palo Alto",
+    trapNameEs: "Palo Alto",
+    trapNameAr: "Palo Alto",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nf6 3.d3 b6 4.b3 Bb7 5.Bb2 Bc5 6.Nd5 Nxd5 7.cxd5 Bxd5 8.Bxe5 Bb4+",
     moves: [
@@ -8111,6 +8891,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "The Hague",
+    trapNameFr: "The Hague",
+    trapNameEs: "The Hague",
+    trapNameAr: "The Hague",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nf6 3.Nf3 Nc6 4.d4 exd4 5.Nxd4 Bb4 6.Bg5 h6 7.Bh4 Ne4 8.Bxd8 Nxc3 9.Nxc6 Nxd1+ 10.Nxb4",
     moves: [
@@ -8145,6 +8928,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Wijk aan Zee",
+    trapNameFr: "Wijk aan Zee",
+    trapNameEs: "Wijk aan Zee",
+    trapNameAr: "Wijk aan Zee",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nf6 3.Nf3 Nc6 4.g3 Bb4 5.Nd5 Nxd5 6.cxd5 e4 7.dxc6 exf3 8.Qb3",
     moves: [
@@ -8174,7 +8960,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A22",
     opening: "English opening",
     openingId: "english_opening",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs XFile",
+    trapNameFr: "Wall, Bill contre XFile",
+    trapNameEs: "Wall, Bill contra XFile",
+    trapNameAr: "Wall, Bill ضد XFile",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nf6 3.Nf3 e4 4.Ng5 Be7 5.Ngxe4 d5 6.Nxf6+ Bxf6 7.Nxd5 O-O 8.e3 b5 9.Qf3 Bb7 10.Nxf6+",
     moves: [
@@ -8209,6 +8998,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Stockholm",
+    trapNameFr: "Stockholm",
+    trapNameEs: "Stockholm",
+    trapNameAr: "Stockholm",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nf6 3.g3 c6 4.d3 d5 5.Bg5 d4 6.Ne4 Nxe4 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kd1 Kxd8",
     moves: [
@@ -8241,7 +9033,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A22",
     opening: "English opening",
     openingId: "english_opening",
-    trapName: "Corr.",
+    trapName: "Kaprinay vs Hubner",
+    trapNameFr: "Kaprinay contre Hubner",
+    trapNameEs: "Kaprinay contra Hubner",
+    trapNameAr: "Kaprinay ضد Hubner",
     commentedMoves:
         "1.c4 e5 2.Nc3 Nf6 3.g3 Bc5 4.Bg2 d6 5.e3 Nc6 6.Nge2 Be6 7.Nd5 Nb4 8.Nxb4 Bxb4 9.Qa4+",
     moves: [
@@ -8273,6 +9068,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Altenssteig",
+    trapNameFr: "Altenssteig",
+    trapNameEs: "Altenssteig",
+    trapNameAr: "Altenssteig",
     commentedMoves: "1.c4 d6 2.Nf3 Bg4 3.Qb3 Qc8 4.h3 Bh5 5.Qb5+",
     moves: ["c4", "d6", "Nf3", "Bg4", "Qb3", "Qc8", "h3", "Bh5", "Qb5+"],
     fen: "rnq1kbnr/ppp1pppp/3p4/1Q5b/2P5/5N1P/PP1PPPP1/RNB1KB1R b KQkq - 2 5",
@@ -8284,7 +9082,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A16",
     opening: "English opening",
     openingId: "english_opening",
-    trapName: "Europe",
+    trapName: "Knopp vs Koebele",
+    trapNameFr: "Knopp contre Koebele",
+    trapNameEs: "Knopp contra Koebele",
+    trapNameAr: "Knopp ضد Koebele",
     commentedMoves: "1.c4 Nf6 2.Nc3 d5 3.d4 Bf5 4.Qb3 Nc6 5.cxd5 Nxd4 6.Qa4+",
     moves: [
       "c4",
@@ -8310,6 +9111,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Thailand",
+    trapNameFr: "Thailand",
+    trapNameEs: "Thailand",
+    trapNameAr: "Thailand",
     commentedMoves:
         "1.c4 Nf6 2.Nc3 d5 3.cxd5 Nxd5 4.g3 Nxc3 5.bxc3 e6 6.Bg2 Be7 7.Rb1 O-O 8.Bxb7 Bxb7 9.Rxb7 Qd5",
     moves: [
@@ -8342,6 +9146,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves: "1.c4 Nf6 2.Nc3 e6 3.e4 Nc6 4.Nge2 b6 5.g3 Ne5 6.d4 Nf3#",
     moves: [
       "c4",
@@ -8368,7 +9175,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A15",
     opening: "English opening",
     openingId: "english_opening",
-    trapName: "Internet",
+    trapName: "Rodman vs Wall, Bill",
+    trapNameFr: "Rodman contre Wall, Bill",
+    trapNameEs: "Rodman contra Wall, Bill",
+    trapNameAr: "Rodman ضد Wall, Bill",
     commentedMoves:
         "1.c4 Nf6 2.f4 e6 3.d3 Bc5 4.Nf3 O-O 5.b3 Ng4 6.h3 Bf2+ 7.Kd2 Ne3",
     moves: [
@@ -8397,7 +9207,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A40",
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
-    trapName: "Corr.",
+    trapName: "Buntin, L. vs Bloodgood, C.",
+    trapNameFr: "Buntin, L. contre Bloodgood, C.",
+    trapNameEs: "Buntin, L. contra Bloodgood, C.",
+    trapNameAr: "Buntin, L. ضد Bloodgood, C.",
     commentedMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 d5 4.exd6 Bxd6 5.Nc3 Nf6 6.Bg5 Bf5 7.Nd5 Bb4+ 8.Nxb4 Nxb4 9.Nd4 Qxd4 10.Qxd4 Nxc2+",
     moves: [
@@ -8432,6 +9245,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "Bagneux",
+    trapNameFr: "Bagneux",
+    trapNameEs: "Bagneux",
+    trapNameAr: "Bagneux",
     commentedMoves: "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.c3 Nxe5 5.Bd2 Nd3#",
     moves: [
       "d4",
@@ -8455,7 +9271,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A40",
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
-    trapName: "Corr.",
+    trapName: "Kirste vs Plath",
+    trapNameFr: "Kirste contre Plath",
+    trapNameEs: "Kirste contra Plath",
+    trapNameAr: "Kirste ضد Plath",
     commentedMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Nc3 Nxe5 5.Nxe5 Qxe5 6.Nd5 Qd6 7.Bf4",
     moves: [
@@ -8483,6 +9302,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "Sweden",
+    trapNameFr: "Sweden",
+    trapNameEs: "Sweden",
+    trapNameAr: "Sweden",
     commentedMoves: "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Nbd2 Nxe5 5.c3 Nd3#",
     moves: [
       "d4",
@@ -8506,7 +9328,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A40",
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
-    trapName: "France",
+    trapName: "Bouttier vs Charrier",
+    trapNameFr: "Bouttier contre Charrier",
+    trapNameEs: "Bouttier contra Charrier",
+    trapNameAr: "Bouttier ضد Charrier",
     commentedMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Qd5 h6 5.Nc3 g5 6.Nb5 Qd8 7.Bd2 Nge7 8.Qd6 Bg7 9.Nxc7+ Kf8 10.Nxa8",
     moves: [
@@ -8540,6 +9365,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "New Jersey",
+    trapNameFr: "New Jersey",
+    trapNameEs: "New Jersey",
+    trapNameAr: "New Jersey",
     commentedMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Qd2 Qxb2 6.Qc3 Bb4",
     moves: [
@@ -8566,7 +9394,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A40",
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
-    trapName: "France",
+    trapName: "Roughman vs Gedult",
+    trapNameFr: "Roughman contre Gedult",
+    trapNameEs: "Roughman contra Gedult",
+    trapNameAr: "Roughman ضد Gedult",
     commentedMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 f6 4.Bf4 fxe5 5.Nxe5 Qf6 6.Nxc6 dxc6 7.Bc1 Bg4 8.h3 Rd8 9.Nd2 Bc5 10.f3 Qh4+ 11.g3 Qxg3#",
     moves: [
@@ -8603,7 +9434,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C51",
     opening: "Evans gambit",
     openingId: "evans_gambit",
-    trapName: "Internet",
+    trapName: "Marshall vs Marvin",
+    trapNameFr: "Marshall contre Marvin",
+    trapNameEs: "Marshall contra Marvin",
+    trapNameAr: "Marshall ضد Marvin",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Bc5 6.d4 exd4 7.cxd4 Bb6 8.d5 Qf6 9.e5 Nxe5 10.Nxe5 Qxf2#",
     moves: [
@@ -8639,6 +9473,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Evans gambit",
     openingId: "evans_gambit",
     trapName: "Mountain View, CA",
+    trapNameFr: "Mountain View, CA",
+    trapNameEs: "Mountain View, CA",
+    trapNameAr: "Mountain View, CA",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Bc5 6.O-O Nf6 7.d4 Bb6 8.dxe5 Nxe4 9.Qd5",
     moves: [
@@ -8670,7 +9507,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C51",
     opening: "Evans gambit",
     openingId: "evans_gambit",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs TrickyKnight",
+    trapNameFr: "Wall, Bill contre TrickyKnight",
+    trapNameEs: "Wall, Bill contra TrickyKnight",
+    trapNameAr: "Wall, Bill ضد TrickyKnight",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Bc5 6.O-O Nf6 7.d4 exd4 8.cxd4 Be7 9.e5 Na5 10.exf6 Bxf6 11.Qe1+",
     moves: [
@@ -8707,6 +9547,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Evans gambit",
     openingId: "evans_gambit",
     trapName: "Helsinki",
+    trapNameFr: "Helsinki",
+    trapNameEs: "Helsinki",
+    trapNameAr: "Helsinki",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Be7 6.d4 Na5 7.Be2 Nf6 8.dxe5 Nxe4 9.Qa4",
     moves: [
@@ -8739,6 +9582,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Evans gambit",
     openingId: "evans_gambit",
     trapName: "Cattolica",
+    trapNameFr: "Cattolica",
+    trapNameEs: "Cattolica",
+    trapNameAr: "Cattolica",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Be7 6.d4 d6 7.Qb3 Kf8 8.Bxf7 g6 9.Bxg8 Rxg8 10.Bh6+",
     moves: [
@@ -8773,6 +9619,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Evans gambit",
     openingId: "evans_gambit",
     trapName: "Houston",
+    trapNameFr: "Houston",
+    trapNameEs: "Houston",
+    trapNameAr: "Houston",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Be7 6.d4 d6 7.Qb3 Nh6 8.Bxh6 gxh6 9.Bxf7+ Kf8 10.Bh5",
     moves: [
@@ -8806,7 +9655,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C48",
     opening: "Three knights game",
     openingId: "three_knights_game",
-    trapName: "London",
+    trapName: "Jowett vs McDonald",
+    trapNameFr: "Jowett contre McDonald",
+    trapNameEs: "Jowett contra McDonald",
+    trapNameAr: "Jowett ضد McDonald",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.Bb5 Nd4 5.Bc4 Nxe4 6.Bxf7+ Kxf7 7.Nxe4 Nxf3+ 8.Qxf3+ Kg8 9.Ng5 Qf6 10.Qd5+",
     moves: [
@@ -8841,6 +9693,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Three knights game",
     openingId: "three_knights_game",
     trapName: "Eindhoven",
+    trapNameFr: "Eindhoven",
+    trapNameEs: "Eindhoven",
+    trapNameAr: "Eindhoven",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.Bb5 Nd4 5.Nxe5 Qe7 6.f4 Nxb5 7.Nxb5 d6 8.Nd3 Bg4",
     moves: [
@@ -8871,7 +9726,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C47",
     opening: "Four knights, Scotch variation",
     openingId: "four_knights_scotch_variation",
-    trapName: "Berlin",
+    trapName: "Tarrasch vs Simonson",
+    trapNameFr: "Tarrasch contre Simonson",
+    trapNameEs: "Tarrasch contra Simonson",
+    trapNameAr: "Tarrasch ضد Simonson",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 Bb4 5.d5 Ne7 6.Nxe5 Nxe4 7.Qd4 Bxc3+ 8.bxc3 Nf6 9.Bg5 Ng6 10.Ng4",
     moves: [
@@ -8906,6 +9764,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Four knights, Scotch variation",
     openingId: "four_knights_scotch_variation",
     trapName: "Illinois",
+    trapNameFr: "Illinois",
+    trapNameEs: "Illinois",
+    trapNameAr: "Illinois",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nxd4 Bc5 6.Be3 Nxd4 7.Bxd4 Qe7 8.Be2 O-O 9.e5 Ne8 10.Nd5",
     moves: [
@@ -8939,7 +9800,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C47",
     opening: "Four knights, Scotch variation",
     openingId: "four_knights_scotch_variation",
-    trapName: "Germany",
+    trapName: "Openheim vs NN",
+    trapNameFr: "Openheim contre NN",
+    trapNameEs: "Openheim contra NN",
+    trapNameAr: "Openheim ضد NN",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nxd4 d5 6.Bb5 Qd6 7.exd5 Nxd5 8.Nxd5 Qxd5 9.Nxc6",
     moves: [
@@ -8972,6 +9836,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Four knights, Scotch variation",
     openingId: "four_knights_scotch_variation",
     trapName: "Czechoslovakia",
+    trapNameFr: "Czechoslovakia",
+    trapNameEs: "Czechoslovakia",
+    trapNameAr: "Czechoslovakia",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nxd4 d5 6.Bb5 Qd6 7.exd5 Nxd5 8.Nxc6 bxc6 9.Qxd5",
     moves: [
@@ -9003,7 +9870,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C47",
     opening: "Four knights, Scotch variation",
     openingId: "four_knights_scotch_variation",
-    trapName: "Corr.",
+    trapName: "Cavallo vs Barreras",
+    trapNameFr: "Cavallo contre Barreras",
+    trapNameEs: "Cavallo contra Barreras",
+    trapNameAr: "Cavallo ضد Barreras",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Nf6 4.d4 exd4 5.Nd5 Nxd5 6.exd5 Nb4 7.Bc4 Qe7+ 8.Kd2 g6 9.Re1 Bh6+",
     moves: [
@@ -9037,6 +9907,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "East Germany",
+    trapNameFr: "East Germany",
+    trapNameEs: "East Germany",
+    trapNameAr: "East Germany",
     commentedMoves:
         "1.e4 e6 2.d3 d5 3.Nd2 Nc6 4.Ne2 e5 5.exd5 Qxd5 6.c4 Nb4 7.cxd5 Nxd3#",
     moves: [
@@ -9066,6 +9939,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Chicago",
+    trapNameFr: "Chicago",
+    trapNameEs: "Chicago",
+    trapNameAr: "Chicago",
     commentedMoves:
         "1.e4 e6 2.d3 d5 3.Nd2 Nf6 4.g3 dxe4 5.dxe4 Bc5 6.Ngf3 Ng4 7.Qe2 Bxf2+ 8.Kd1 Ne3+",
     moves: [
@@ -9096,7 +9972,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C10",
     opening: "French defence",
     openingId: "french_defence",
-    trapName: "Copenhagen",
+    trapName: "Blom vs Jensen",
+    trapNameFr: "Blom contre Jensen",
+    trapNameEs: "Blom contra Jensen",
+    trapNameAr: "Blom ضد Jensen",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bd6 5.Bd3 Ne7 6.Bg5 O-O 7.Nf6+ gxf6 8.Bxf6 Qd7 9.Bxh7+ Kxh7 10.Qh5+ Kg8 11.Qh8#",
     moves: [
@@ -9133,6 +10012,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "USSR",
+    trapNameFr: "USSR",
+    trapNameEs: "USSR",
+    trapNameAr: "USSR",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Bd7 5.Nf3 Bc6 6.Bd3 Nf6 7.Nxf6+ Qxf6 8.Bg5 Bxf3 9.Qd2 Qxd4 10.Bb5+",
     moves: [
@@ -9165,7 +10047,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C10",
     opening: "French defence",
     openingId: "french_defence",
-    trapName: "Moscow",
+    trapName: "Ivanov, V. vs Martinov",
+    trapNameFr: "Ivanov, V. contre Martinov",
+    trapNameEs: "Ivanov, V. contra Martinov",
+    trapNameAr: "Ivanov, V. ضد Martinov",
     commentedMoves: "1.e4 e6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Ne7 5.Bd3 g6 6.Nf6#",
     moves: [
       "e4",
@@ -9191,6 +10076,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Val Maubuee",
+    trapNameFr: "Val Maubuee",
+    trapNameEs: "Val Maubuee",
+    trapNameAr: "Val Maubuee",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.Bd2 dxe4 5.Nxe4 Qxd4 6.Bd3 Bxd2+ 7.Qxd2 Nf6 8.Bb5+",
     moves: [
@@ -9220,7 +10108,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C15",
     opening: "French defence",
     openingId: "french_defence",
-    trapName: "Budapest",
+    trapName: "Szily vs Vloch",
+    trapNameFr: "Szily contre Vloch",
+    trapNameEs: "Szily contra Vloch",
+    trapNameAr: "Szily ضد Vloch",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.Bd3 c5 5.exd5 Qxd5 6.Nf3 cxd4 7.a3 Qa5 8.axb4 Qxa1 9.Nxd4",
     moves: [
@@ -9252,7 +10143,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C15",
     opening: "French defence",
     openingId: "french_defence",
-    trapName: "Hastings",
+    trapName: "Van Steenis vs Wechsler",
+    trapNameFr: "Van Steenis contre Wechsler",
+    trapNameEs: "Van Steenis contra Wechsler",
+    trapNameAr: "Van Steenis ضد Wechsler",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.exd5 Qxd5 5.Qg4 Ne7 6.Qxg7 Qe4+ 7.Kd1",
     moves: [
@@ -9281,6 +10175,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Baltimore",
+    trapNameFr: "Baltimore",
+    trapNameEs: "Baltimore",
+    trapNameAr: "Baltimore",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.Nge2 dxe4 5.a3 Bxc3+ 6.Nxc3 Nc6 7.Qg4 Nxd4 8.Qxg7 Nxc2+ 9.Ke2 Qd3#",
     moves: [
@@ -9314,6 +10211,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Minsk",
+    trapNameFr: "Minsk",
+    trapNameEs: "Minsk",
+    trapNameAr: "Minsk",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.e5 c5 5.dxc5 Bxc3+ 6.bxc3 Nc6 7.Qg4 Nxe5 8.Qxg7 Qf6 9.Bh6",
     moves: [
@@ -9346,6 +10246,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Australia",
+    trapNameFr: "Australia",
+    trapNameEs: "Australia",
+    trapNameAr: "Australia",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.e5 Qd7 5.Nf3 b6 6.Bb5 Bxc3+ 7.bxc3 Qxb5",
     moves: [
@@ -9374,6 +10277,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Bb4 4.f3 dxe4 5.fxe4 Qh4+ 6.g3 Qxe4+",
     moves: [
@@ -9401,6 +10307,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Pozarevac",
+    trapNameFr: "Pozarevac",
+    trapNameEs: "Pozarevac",
+    trapNameAr: "Pozarevac",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nc3 Nf6 4.Bg5 Be7 5.e5 Nfd7 6.h4 c5 7.Bxe7 Kxe7 8.dxc5 Qa5 9.Qd2 h6 10.Nxd5+ exd5 11.Qxa5",
     moves: [
@@ -9436,7 +10345,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C00",
     opening: "French defence",
     openingId: "french_defence",
-    trapName: "Germany",
+    trapName: "Diemer vs Buerger",
+    trapNameFr: "Diemer contre Buerger",
+    trapNameEs: "Diemer contra Buerger",
+    trapNameAr: "Diemer ضد Buerger",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.c4 dxe4 4.Nc3 Bb4 5.Bd2 Qxd4 6.Qa4+ Nc6 7.O-O-O Bxc3 8.Bg5 Bxb2+ 9.Kb1 Qb6 10.Rd8#",
     moves: [
@@ -9471,6 +10383,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Baden Baden",
+    trapNameFr: "Baden Baden",
+    trapNameEs: "Baden Baden",
+    trapNameAr: "Baden Baden",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Nc6 5.Nf3 b6 6.Bb5 Qd5 7.Qe2 Nf6 8.c4 Bb4+ 9.Kf1 Qd7 10.Ne5",
     moves: [
@@ -9504,6 +10419,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "West Germany",
+    trapNameFr: "West Germany",
+    trapNameEs: "West Germany",
+    trapNameAr: "West Germany",
     commentedMoves: "1.e4 e6 2.d4 d5 3.exd5 exd5 4.Nf3 Bd6 5.c4 Ne7 6.c5",
     moves: [
       "e4",
@@ -9527,7 +10445,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C00",
     opening: "French defence",
     openingId: "french_defence",
-    trapName: "Germany",
+    trapName: "Muellen vs Wagner",
+    trapNameFr: "Muellen contre Wagner",
+    trapNameEs: "Muellen contra Wagner",
+    trapNameAr: "Muellen ضد Wagner",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.exd5 exd5 4.Nf3 Bd6 5.Bd3 Bg4 6.Bg5 Bxf3",
     moves: [
@@ -9553,7 +10474,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C00",
     opening: "French defence",
     openingId: "french_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Arau",
+    trapNameFr: "Wall, Bill contre Arau",
+    trapNameEs: "Wall, Bill contra Arau",
+    trapNameAr: "Wall, Bill ضد Arau",
     commentedMoves: "1.e4 e6 2.d4 Nf6 3.Bd3 h6 4.Nf3 Na6 5.e5 Nh5 6.g4",
     moves: [
       "e4",
@@ -9580,6 +10504,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Lisbon",
+    trapNameFr: "Lisbon",
+    trapNameEs: "Lisbon",
+    trapNameAr: "Lisbon",
     commentedMoves:
         "1.e4 e6 2.d4 Nf6 3.Bg5 Be7 4.Bd3 O-O 5.Nc3 Nxe4 6.Bxe7 Nxc3 7.Bxh7+ Kh8 8.Qh5",
     moves: [
@@ -9610,6 +10537,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Indianapolis",
+    trapNameFr: "Indianapolis",
+    trapNameEs: "Indianapolis",
+    trapNameAr: "Indianapolis",
     commentedMoves:
         "1.e4 e6 2.Qf3 d5 3.exd5 exd5 4.d4 Nf6 5.Nc3 c6 6.Be3 Bd6 7.Nh3 Bg4",
     moves: [
@@ -9638,7 +10568,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C53",
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs SmartAttack",
+    trapNameFr: "Wall, Bill contre SmartAttack",
+    trapNameEs: "Wall, Bill contra SmartAttack",
+    trapNameAr: "Wall, Bill ضد SmartAttack",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 d6 5.d4 Bb6 6.dxe5 Nxe5 7.Nxe5 dxe5 8.Bxf7+ Kxf7 9.Qxd8",
     moves: [
@@ -9671,6 +10604,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 d6 5.d4 exd4 6.cxd4 Bb6 7.d5 Na5 8.Bd3 c6 9.b4",
     moves: [
@@ -9703,6 +10639,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
     trapName: "Rome",
+    trapNameFr: "Rome",
+    trapNameEs: "Rome",
+    trapNameAr: "Rome",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Qe7 5.O-O d6 6.d4 Bb6 7.Bg5 f6 8.Bh4 g5 9.Nxg5 fxg5 10.Qh5+ Kd7 11.Bxg5 Qg7 12.Be6+ Kxe6 13.Qe8+",
     moves: [
@@ -9742,7 +10681,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C54",
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
-    trapName: "Moscow",
+    trapName: "Stoklizki vs Maximov",
+    trapNameFr: "Stoklizki contre Maximov",
+    trapNameEs: "Stoklizki contra Maximov",
+    trapNameAr: "Stoklizki ضد Maximov",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 Bb6 6.dxe5 Nxe4 7.Qd5 Bxf2+ 8.Ke2",
     moves: [
@@ -9772,7 +10714,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C54",
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
-    trapName: "Moscow",
+    trapName: "Boleslavsky vs Scitov",
+    trapNameFr: "Boleslavsky contre Scitov",
+    trapNameEs: "Boleslavsky contra Scitov",
+    trapNameAr: "Boleslavsky ضد Scitov",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb6 7.e5 Ng4 8.h3 Nh6 9.d5 Ne7 10.d6 Ng6 11.Bg5 f6 12.exf6 gxf6 13.Qe2+ Kf8 14.Bxh6#",
     moves: [
@@ -9815,6 +10760,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb6 7.Ng5 O-O 8.e5 Ne8 9.Qh5 h6 10.Nxf7",
     moves: [
@@ -9848,7 +10796,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C54",
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
-    trapName: "London",
+    trapName: "Cochrane vs NN",
+    trapNameFr: "Cochrane contre NN",
+    trapNameEs: "Cochrane contra NN",
+    trapNameAr: "Cochrane ضد NN",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.e5 Ng4 7.Bd5 Nxf2 8.Bxf7+ Kxf7 9.Ng5+ Kg8 10.Qb3+ d5 11.exd6+ Be6 12.Qxe6+ Kf8 13.Qf7#",
     moves: [
@@ -9889,6 +10840,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.Ng5 O-O 6.d3 h6 7.h4 hxg5 8.hxg5 Nh7 9.Qh5",
     moves: [
@@ -9921,6 +10875,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Czech Republic",
+    trapNameFr: "Czech Republic",
+    trapNameEs: "Czech Republic",
+    trapNameAr: "Czech Republic",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.d3 Nge7 5.Be3 Bb6 6.Nc3 d6 7.Ng5 Qd7 8.Bxf7+ Kf8 9.Be6",
     moves: [
@@ -9953,6 +10910,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Okinawa",
+    trapNameFr: "Okinawa",
+    trapNameEs: "Okinawa",
+    trapNameAr: "Okinawa",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O d6 5.Nc3 Bg4 6.d3 Nd4 7.Be3 Nxf3+ 8.gxf3 Bh3 9.Re1 Bxe3 10.fxe3 Qg5+",
     moves: [
@@ -9987,7 +10947,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C50",
     opening: "Italian Game",
     openingId: "italian_game",
-    trapName: "England",
+    trapName: "NN vs Poole",
+    trapNameFr: "NN contre Poole",
+    trapNameEs: "NN contra Poole",
+    trapNameAr: "NN ضد Poole",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O d6 5.d3 Bg4 6.Nc3 Nd4 7.Be3 Nxf3+ 8.gxf3 Bh3 9.Re1 Bxe3 10.fxe3 Qg5+ 11.Kf2 Qg2#",
     moves: [
@@ -10025,6 +10988,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "New Orleans",
+    trapNameFr: "New Orleans",
+    trapNameEs: "New Orleans",
+    trapNameAr: "New Orleans",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O f5 5.d4 exd4 6.e5 d6 7.exd6 Qxd6 8.Re1+ Nge7 9.Ng5 Ne5 10.Bf4 N7g6 11.Bxe5 Nxe5 12.Nf7",
     moves: [
@@ -10061,7 +11027,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "Europe",
+    trapName: "NN vs Gaeta",
+    trapNameFr: "NN contre Gaeta",
+    trapNameEs: "NN contra Gaeta",
+    trapNameAr: "NN ضد Gaeta",
     commentedMoves:
         "1.g4 d5 2.e3 e5 3.f4 Qh4+ 4.Ke2 Bxg4+ 5.Nf3 Bxf3+ 6.Kxf3 Qh5+",
     moves: [
@@ -10087,7 +11056,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "Europe",
+    trapName: "Lippens vs Smit",
+    trapNameFr: "Lippens contre Smit",
+    trapNameEs: "Lippens contra Smit",
+    trapNameAr: "Lippens ضد Smit",
     commentedMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 c6 4.Qb3 Qc7 5.cxd5 cxd5 6.Bxd5 Qxc1+",
     moves: [
@@ -10115,6 +11087,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Fremont, CA",
+    trapNameFr: "Fremont, CA",
+    trapNameEs: "Fremont, CA",
+    trapNameAr: "Fremont, CA",
     commentedMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 c6 4.Qb3 Qc8 5.cxd5 cxd5 6.Nc3 e6 7.Nxd5 exd5 8.Bxd5 Be6 9.Qxb7 Bxd5 10.Qxc8+",
     moves: [
@@ -10149,6 +11124,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Thailand",
+    trapNameFr: "Thailand",
+    trapNameEs: "Thailand",
+    trapNameAr: "Thailand",
     commentedMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 c6 4.cxd5 Nf6 5.Qb3 Qb6 6.dxc6 Qxb3 7.cxb7 Qxb7 8.Bxb7",
     moves: [
@@ -10178,6 +11156,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Virginia",
+    trapNameFr: "Virginia",
+    trapNameEs: "Virginia",
+    trapNameAr: "Virginia",
     commentedMoves: "1.g4 d5 2.Bg2 Bxg4 3.c4 c6 4.cxd5 cxd5 5.Qb3 e6 6.Qa4+",
     moves: [
       "g4",
@@ -10202,6 +11183,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves: "1.g4 d5 2.Bg2 Bxg4 3.c4 e6 4.Qb3 c6 5.cxd5 cxd5 6.Qa4+",
     moves: [
       "g4",
@@ -10226,7 +11210,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Ukralex",
+    trapNameFr: "Wall, Bill contre Ukralex",
+    trapNameEs: "Wall, Bill contra Ukralex",
+    trapNameAr: "Wall, Bill ضد Ukralex",
     commentedMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 e6 4.Qb3 Nc6 5.cxd5 exd5 6.Bxd5 Bd6 7.Bxf7+ Kf8 8.Bxg8 Rxg8 9.Qxb7 Ne5 10.d4 Ng6 11.Nc3 Kf7 12.h3 Bh5 13.Qd5+",
     moves: [
@@ -10266,7 +11253,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "",
     openingId: "",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Puke",
+    trapNameFr: "Wall, Bill contre Puke",
+    trapNameEs: "Wall, Bill contra Puke",
+    trapNameAr: "Wall, Bill ضد Puke",
     commentedMoves:
         "1.g4 d5 2.Bg2 Bxg4 3.c4 e6 4.cxd5 exd5 5.Qb3 Nf6 6.Qxb7 Ne4 7.Qxa8 Bc5 8.Bxe4 dxe4 9.Qxe4+",
     moves: [
@@ -10298,6 +11288,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Schnectady",
+    trapNameFr: "Schnectady",
+    trapNameEs: "Schnectady",
+    trapNameAr: "Schnectady",
     commentedMoves: "1.g4 d5 2.Bg2 Bxg4 3.c4 Nf6 4.cxd5 Nxd5 5.Qb3 e6 6.Qa4+",
     moves: [
       "g4",
@@ -10323,6 +11316,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Eindhoven",
+    trapNameFr: "Eindhoven",
+    trapNameEs: "Eindhoven",
+    trapNameAr: "Eindhoven",
     commentedMoves:
         "1.g4 d5 2.Bg2 g6 3.h4 Bxg4 4.c4 c6 5.cxd5 cxd5 6.Qb3 e6 7.Qa4+",
     moves: [
@@ -10350,6 +11346,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Yugoslavia",
+    trapNameFr: "Yugoslavia",
+    trapNameEs: "Yugoslavia",
+    trapNameAr: "Yugoslavia",
     commentedMoves: "1.g4 d5 2.g5 e5 3.c4 dxc4 4.Na3 Bxa3 5.bxa3 Qd4 6.Rb1 Qe4",
     moves: [
       "g4",
@@ -10376,6 +11375,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Nuremberg",
+    trapNameFr: "Nuremberg",
+    trapNameEs: "Nuremberg",
+    trapNameAr: "Nuremberg",
     commentedMoves:
         "1.g4 d5 2.Bg2 e5 3.c4 Be6 4.Nc3 d4 5.Bxb7 dxc3 6.Bxa8 Bc5 7.Qa4+ Bd7 8.Qa5",
     moves: [
@@ -10406,6 +11408,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Virginia",
+    trapNameFr: "Virginia",
+    trapNameEs: "Virginia",
+    trapNameAr: "Virginia",
     commentedMoves:
         "1.g4 e5 2.Bg2 Bc5 3.h3 Qh4 4.e3 Nf6 5.d4 exd4 6.exd4 Bd6 7.Nf3",
     moves: [
@@ -10433,6 +11438,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Pittsburg",
+    trapNameFr: "Pittsburg",
+    trapNameEs: "Pittsburg",
+    trapNameAr: "Pittsburg",
     commentedMoves: "1.g4 e5 2.Bg2 d6 3.c4 Bxg4 4.Bxb7",
     moves: ["g4", "e5", "Bg2", "d6", "c4", "Bxg4", "Bxb7"],
     fen: "rn1qkbnr/pBp2ppp/3p4/4p3/2P3b1/8/PP1PPP1P/RNBQK1NR b KQkq - 0 4",
@@ -10445,6 +11453,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves: "1.g4 e5 2.Bg2 d6 3.h3 f5 4.gxf5 Bxf5 5.Bxb7",
     moves: ["g4", "e5", "Bg2", "d6", "h3", "f5", "gxf5", "Bxf5", "Bxb7"],
     fen: "rn1qkbnr/pBp3pp/3p4/4pb2/8/7P/PPPPPP2/RNBQK1NR b KQkq - 0 5",
@@ -10458,6 +11469,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Zavelstein",
+    trapNameFr: "Zavelstein",
+    trapNameEs: "Zavelstein",
+    trapNameAr: "Zavelstein",
     commentedMoves:
         "1.g4 e5 2.Bg2 h5 3.gxh5 d5 4.d4 e4 5.Bf4 Bd6 6.Bg3 Nf6 7.Qd2 Na6 8.Nc3 c6 9.Qg5 Rxh5 10.Qxg7 Bf8",
     moves: [
@@ -10492,7 +11506,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D81",
     opening: "Gruenfeld defence",
     openingId: "gruenfeld_defence",
-    trapName: "Corr.",
+    trapName: "Musolino vs Porreca",
+    trapNameFr: "Musolino contre Porreca",
+    trapNameEs: "Musolino contra Porreca",
+    trapNameAr: "Musolino ضد Porreca",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Qb3 dxc4 5.Qxc4 Be6 6.Qb5+ Nc6 7.Nf3 Nd5 8.e4 a6 9.Qb3 Ne3 10.Nd5 Nxd5 11.exd5 Qxd5 12.Qxb7 Qe4+ 13.Be3 Ra7",
     moves: [
@@ -10534,6 +11551,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's Indian defence",
     openingId: "kings_indian_defence",
     trapName: "USSR",
+    trapNameFr: "USSR",
+    trapNameEs: "USSR",
+    trapNameAr: "USSR",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nf3 Bg7 4.Nc3 d5 5.cxd5 Nxd5 6.e4 Nxc3 7.bxc3 c5 8.Be3 Qa5 9.Qd2 Nc6 10.Rb1 cxd4 11.cxd4 O-O 12.d5 Bc3",
     moves: [
@@ -10573,6 +11593,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Gruenfeld defence",
     openingId: "gruenfeld_defence",
     trapName: "USSR",
+    trapNameFr: "USSR",
+    trapNameEs: "USSR",
+    trapNameAr: "USSR",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.cxd5 Nxd5 5.e4 Nxc3 6.bxc3 Bg7 7.Nf3 c5 8.Rb1 Qa5 9.Rb5 Qxc3+ 10.Bd2 Qa3 11.Qc2 Nc6 12.Rb3 Qa4 13.Bb5",
     moves: [
@@ -10613,6 +11636,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Gruenfeld defence",
     openingId: "gruenfeld_defence",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Bg5 Ne4 6.Nxd5 Nxg5 7.Nxg5 e6",
     moves: [
@@ -10642,6 +11668,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Gruenfeld defence",
     openingId: "gruenfeld_defence",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.g4 Bg7 5.g5 Ne4 6.Nxd5 c6 7.Nc3 Qa5 8.Bd2 Qf5 9.f4 Bxd4 10.Bh3 Qxh3 11.Nxh3 Bxh3 12.Nxe4 Bg2",
     moves: [
@@ -10680,7 +11709,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D80",
     opening: "Gruenfeld defence",
     openingId: "gruenfeld_defence",
-    trapName: "Corr.",
+    trapName: "NN vs Steinberg",
+    trapNameFr: "NN contre Steinberg",
+    trapNameEs: "NN contra Steinberg",
+    trapNameAr: "NN ضد Steinberg",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Bg5 Ne4 5.cxd5 Nxg5 6.h4 Ne4 7.Nxe4 Qxd5 8.Nc5 e5 9.Nf3 exd4 10.Qa4+ Nc6 11.Nb3 b5",
     moves: [
@@ -10719,6 +11751,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Gruenfeld defence",
     openingId: "gruenfeld_defence",
     trapName: "Tulsa",
+    trapNameFr: "Tulsa",
+    trapNameEs: "Tulsa",
+    trapNameAr: "Tulsa",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Bg5 Ne4 5.Nxe4 dxe4 6.g3 Bg7 7.e3 c5 8.Bg2 cxd4 9.Bxe4 Qa5+ 10.Qd2 Qxg5",
     moves: [
@@ -10754,6 +11789,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Johannesburg",
+    trapNameFr: "Johannesburg",
+    trapNameEs: "Johannesburg",
+    trapNameAr: "Johannesburg",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 exd4 5.c3 dxc3 6.Qd5 d6 7.Qxf7+ Kd7 8.Be6#",
     moves: [
@@ -10784,6 +11822,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Nice",
+    trapNameFr: "Nice",
+    trapNameEs: "Nice",
+    trapNameAr: "Nice",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 exd4 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 O-O 8.Bc1 Nb4 9.Qh5 Nc2+",
     moves: [
@@ -10817,6 +11858,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Oostenrijk",
+    trapNameFr: "Oostenrijk",
+    trapNameEs: "Oostenrijk",
+    trapNameAr: "Oostenrijk",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 exd4 5.c3 Nf6 6.e5 Ne4 7.Bd5 Ng5 8.Nxg5 Bxg5 9.Qh5",
     moves: [
@@ -10849,6 +11893,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Ohio",
+    trapNameFr: "Ohio",
+    trapNameEs: "Ohio",
+    trapNameAr: "Ohio",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 exd4 5.Nxd4 Nxd4 6.Qxd4 Nf6 7.e5 c5 8.Qf4",
     moves: [
@@ -10879,6 +11926,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 d6 5.c3 Nf6 6.d5 Nb8 7.Be2 Nxe4 8.Qa4+",
     moves: [
@@ -10908,7 +11958,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C50",
     opening: "Italian Game",
     openingId: "italian_game",
-    trapName: "Moscow",
+    trapName: "Estrin vs Liberzon",
+    trapNameFr: "Estrin contre Liberzon",
+    trapNameEs: "Estrin contra Liberzon",
+    trapNameAr: "Estrin ضد Liberzon",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Be7 4.d4 d6 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Qh5 g6 8.Qxe5",
     moves: [
@@ -10939,6 +11992,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Michigan",
+    trapNameFr: "Michigan",
+    trapNameEs: "Michigan",
+    trapNameAr: "Michigan",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Bc4 d5 4.exd5 Qh4+ 5.Kf1 f3 6.Qe1+ Qxe1+ 7.Kxe1 fxg2",
     moves: [
@@ -10967,7 +12023,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C33",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Paris",
+    trapName: "Budzinsky vs Morphy, P.",
+    trapNameFr: "Budzinsky contre Morphy, P.",
+    trapNameEs: "Budzinsky contra Morphy, P.",
+    trapNameAr: "Budzinsky ضد Morphy, P.",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Bc4 d5 4.Bxd5 Nf6 5.Nc3 Bb4 6.d3 Nxd5 7.exd5 O-O 8.Qf3 Re8+ 9.Nge2 Bxc3+ 10.bxc3 Qh4+ 11.g3 Bg4",
     moves: [
@@ -11005,6 +12064,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Bc4 Nf6 4.d3 d5 5.exd5 Nxd5 6.Qh5 c6 7.Bxf4 Qe7+ 8.Qe5 Nxf4",
     moves: [
@@ -11035,7 +12097,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C33",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Internet",
+    trapName: "Salomon vs Brown, M.",
+    trapNameFr: "Salomon contre Brown, M.",
+    trapNameEs: "Salomon contra Brown, M.",
+    trapNameAr: "Salomon ضد Brown, M.",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Bc4 Qh4+ 4.Kf1 Nf6 5.Nf3 Qh5 6.Qe1 b5 7.e5 Ng4 8.Qe4 c6 9.Bxb5 d5 10.exd6+",
     moves: [
@@ -11070,6 +12135,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "New Orleans",
+    trapNameFr: "New Orleans",
+    trapNameEs: "New Orleans",
+    trapNameAr: "New Orleans",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 d5 4.Nc3 dxe4 5.Nxe4 Bg4 6.Qe2 Bxf3 7.Nf6#",
     moves: [
@@ -11096,7 +12164,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C36",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Akoneu",
+    trapNameFr: "Wall, Bill contre Akoneu",
+    trapNameEs: "Wall, Bill contra Akoneu",
+    trapNameAr: "Wall, Bill ضد Akoneu",
     commentedMoves: "1.e4 e5 2.f4 exf4 3.Nf3 d5 4.exd5 Qxd5 5.Nc3 Qc6 6.Bb5",
     moves: [
       "e4",
@@ -11122,6 +12193,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Odessa",
+    trapNameFr: "Odessa",
+    trapNameEs: "Odessa",
+    trapNameAr: "Odessa",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 d6 4.Bc4 Be6 5.Bxe6 fxe6 6.d4 Qf6 7.Nc3 Ne7 8.Qe2 c6 9.e5 dxe5 10.Ne4 Qh6 11.Nd6+",
     moves: [
@@ -11158,6 +12232,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Madrid",
+    trapNameFr: "Madrid",
+    trapNameEs: "Madrid",
+    trapNameAr: "Madrid",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 d6 4.Bc4 Nh6 5.O-O Be7 6.d4 g5 7.Nc3 Bd7 8.h4 f6 9.Nh2 Nc6 10.Qh5+ Kf8 11.Qxh6+ Ke8 12.Qh5+ Kf8 13.Qf7#",
     moves: [
@@ -11197,7 +12274,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C35",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "England",
+    trapName: "Teschner vs NN",
+    trapNameFr: "Teschner contre NN",
+    trapNameEs: "Teschner contra NN",
+    trapNameAr: "Teschner ضد NN",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 Be7 4.Bc4 Nf6 5.Nc3 Nxe4 6.Bxf7+ Kxf7 7.Ne5+ Ke6 8.Qg4+ Kxe5 9.d4+ Kxd4 10.Be3+ Ke5 11.Bxf4+ Kf6 12.Bxc7 Qxc7 13.Nd5+",
     moves: [
@@ -11237,7 +12317,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C34",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "New York",
+    trapName: "Rather vs Gresser",
+    trapNameFr: "Rather contre Gresser",
+    trapNameEs: "Rather contra Gresser",
+    trapNameAr: "Rather ضد Gresser",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 Nf6 4.Nc3 d5 5.exd5 Nxd5 6.Nxd5 Qxd5 7.d4 Be7 8.Bxf4 Qe4+",
     moves: [
@@ -11269,6 +12352,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Pennsylvania",
+    trapNameFr: "Pennsylvania",
+    trapNameEs: "Pennsylvania",
+    trapNameAr: "Pennsylvania",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Nc3 g4 5.Nd4 Qh4+ 6.Ke2 Bc5 7.Nf5 Qf2+ 8.Kd3 Nc6 9.Qe2 Ne5#",
     moves: [
@@ -11302,6 +12388,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 f6 5.Nxg5 fxg5 6.Qh5+ Ke7 7.Qxg5+ Ke8 8.Qh5+ Ke7 9.Qe5#",
     moves: [
@@ -11334,6 +12423,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.Ne5 Nh6 6.Nxg4 Qh4+ 7.Nf2 d5 8.Bxd5 Bg4",
     moves: [
@@ -11364,7 +12456,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C37",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Corr.",
+    trapName: "Cage vs McCoy",
+    trapNameFr: "Cage contre McCoy",
+    trapNameEs: "Cage contra McCoy",
+    trapNameAr: "Cage ضد McCoy",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.Qxf3 Qe7 7.Qc3 Bg7 8.Qxg7 Qc5+ 9.Kh1 Qxc4 10.Rxf4 Qxc2 11.Qxf7+ Kd8 12.Qf8#",
     moves: [
@@ -11401,7 +12496,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C37",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Internet",
+    trapName: "Stu vs Wall, Bill",
+    trapNameFr: "Stu contre Wall, Bill",
+    trapNameEs: "Stu contra Wall, Bill",
+    trapNameAr: "Stu ضد Wall, Bill",
     commentedMoves: "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.d4 Bg7 5.Nc3 g4 6.Nd2 Qh4+",
     moves: [
       "e4",
@@ -11427,7 +12525,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C37",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Internet",
+    trapName: "Park vs Dion",
+    trapNameFr: "Park contre Dion",
+    trapNameEs: "Park contra Dion",
+    trapNameAr: "Park ضد Dion",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.d4 h6 5.h4 Bg7 6.hxg5 hxg5 7.Rxh8 Bxh8 8.g3 d5 9.Nc3 dxe4 10.Nxe4 g4 11.Ne5 f5",
     moves: [
@@ -11465,6 +12566,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.h4 g4 5.Ng5 h6 6.Nxf7 Kxf7 7.Bc4+ Ke8 8.Qxg4 d6 9.Qg6+ Ke7 10.Qf7#",
     moves: [
@@ -11497,7 +12601,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C30",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Paris",
+    trapName: "Tchineoff vs Maillard",
+    trapNameFr: "Tchineoff contre Maillard",
+    trapNameEs: "Tchineoff contra Maillard",
+    trapNameAr: "Tchineoff ضد Maillard",
     commentedMoves: "1.e4 e5 2.f4 Bc5 3.fxe5 Qh4+ 4.Ke2 Qxe4#",
     moves: ["e4", "e5", "f4", "Bc5", "fxe5", "Qh4+", "Ke2", "Qxe4#"],
     fen: "rnb1k1nr/pppp1ppp/8/2b1P3/4q3/8/PPPPK1PP/RNBQ1BNR w kq - 0 5",
@@ -11510,6 +12617,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Houston",
+    trapNameFr: "Houston",
+    trapNameEs: "Houston",
+    trapNameAr: "Houston",
     commentedMoves: "1.e4 e5 2.f4 Bc5 3.Nf3 Nf6 4.fxe5 Nxe4 5.d4 Bb6 6.Bd3",
     moves: [
       "e4",
@@ -11535,6 +12645,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Bratislava",
+    trapNameFr: "Bratislava",
+    trapNameEs: "Bratislava",
+    trapNameAr: "Bratislava",
     commentedMoves:
         "1.e4 e5 2.f4 Bc5 3.Nf3 d6 4.c3 Nf6 5.fxe5 dxe5 6.Nxe5 Nxe4 7.Qa4+ c6 8.Qxe4",
     moves: [
@@ -11563,7 +12676,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C30",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Europe",
+    trapName: "Boldman vs Jansson",
+    trapNameFr: "Boldman contre Jansson",
+    trapNameEs: "Boldman contra Jansson",
+    trapNameAr: "Boldman ضد Jansson",
     commentedMoves: "1.e4 e5 2.f4 Nc6 3.fxe5 Qh4+ 4.g3 Qxe4+ 5.Qe2 Qxh1",
     moves: [
       "e4",
@@ -11587,6 +12703,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Sweden",
+    trapNameFr: "Sweden",
+    trapNameEs: "Sweden",
+    trapNameAr: "Sweden",
     commentedMoves: "1.e4 e5 2.f4 Nc6 3.f5 Qh4+",
     moves: ["e4", "e5", "f4", "Nc6", "f5", "Qh4+"],
     fen: "r1b1kbnr/pppp1ppp/2n5/4pP2/4P2q/8/PPPP2PP/RNBQKBNR w KQkq - 1 4",
@@ -11599,7 +12718,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C31",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "New York",
+    trapName: "Sanders vs NN",
+    trapNameFr: "Sanders contre NN",
+    trapNameEs: "Sanders contra NN",
+    trapNameAr: "Sanders ضد NN",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.Nc3 dxe4 4.Nxe4 exf4 5.Bc4 Qh4+ 6.g3 fxg3 7.Qe2 g2+ 8.Kd1 gxh1=Q 9.Nf6+ Kd8 10.Qe8#",
     moves: [
@@ -11632,7 +12754,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C31",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Paris",
+    trapName: "NN vs Gedult",
+    trapNameFr: "NN contre Gedult",
+    trapNameEs: "NN contra Gedult",
+    trapNameAr: "NN ضد Gedult",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 c6 4.Qe2 cxd5 5.Qxe5+ Be7 6.Qxg7 Bf6",
     moves: [
@@ -11660,6 +12785,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Guam",
+    trapNameFr: "Guam",
+    trapNameEs: "Guam",
+    trapNameAr: "Guam",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 Qxd5 4.Nc3 Qd8 5.Qe2 c6 6.Qxe5+ Be7 7.Qxg7 Bf6 8.Qg3 Bh4",
     moves: [
@@ -11690,7 +12818,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C31",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "USA",
+    trapName: "Saxton vs Darting",
+    trapNameFr: "Saxton contre Darting",
+    trapNameEs: "Saxton contra Darting",
+    trapNameAr: "Saxton ضد Darting",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 Qxd5 4.Nc3 Qe6 5.Nf3 exf4+ 6.Kf2 Bd6 7.Bb5+",
     moves: [
@@ -11718,7 +12849,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C31",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Internet",
+    trapName: "CobaltBlue vs Wall, Bill",
+    trapNameFr: "CobaltBlue contre Wall, Bill",
+    trapNameEs: "CobaltBlue contra Wall, Bill",
+    trapNameAr: "CobaltBlue ضد Wall, Bill",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.Nc3 Nf6 5.d3 Bb4 6.Bd2 O-O 7.dxe4 Re8 8.Bd3 Bxc3 9.Bxc3 Nxe4 10.Bxe4 Rxe4+ 11.Ne2 Bg4",
     moves: [
@@ -11755,7 +12889,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C31",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "France",
+    trapName: "Mascotti vs Gedult",
+    trapNameFr: "Mascotti contre Gedult",
+    trapNameEs: "Mascotti contra Gedult",
+    trapNameAr: "Mascotti ضد Gedult",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.Nc3 Nf6 5.Qe2 Bf5 6.Nxe4 Nxe4 7.d3 Qh4+ 8.g3 Qe7 9.dxe4 Bxe4",
     moves: [
@@ -11788,7 +12925,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C32",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "USA",
+    trapName: "Bowlby vs Cooledge",
+    trapNameFr: "Bowlby contre Cooledge",
+    trapNameEs: "Bowlby contra Cooledge",
+    trapNameAr: "Bowlby ضد Cooledge",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.Nd2 exd3 6.Bxd3 Nxd5 7.Ne2 Ne3",
     moves: [
@@ -11818,6 +12958,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "USSR",
+    trapNameFr: "USSR",
+    trapNameEs: "USSR",
+    trapNameAr: "USSR",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.Qe2 Bf5 6.dxe4 Bxe4 7.Nc3 Bb4 8.Qb5+",
     moves: [
@@ -11848,6 +12991,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Boston",
+    trapNameFr: "Boston",
+    trapNameEs: "Boston",
+    trapNameAr: "Boston",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.dxe4 Nxe4 6.Nc3 Qh4+ 7.g3 Nxg3 8.Nf3 Qe7+ 9.Kf2 Nxh1+",
     moves: [
@@ -11880,7 +13026,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C32",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Paris",
+    trapName: "Tagnon vs Jojic",
+    trapNameFr: "Tagnon contre Jojic",
+    trapNameEs: "Tagnon contra Jojic",
+    trapNameAr: "Tagnon ضد Jojic",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.dxe4 Nxe4 6.Nf3 Bb4+ 7.c3 Bc5 8.Qa4+",
     moves: [
@@ -11910,7 +13059,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C32",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Internet",
+    trapName: "Fenton vs Tosato",
+    trapNameFr: "Fenton contre Tosato",
+    trapNameEs: "Fenton contra Tosato",
+    trapNameAr: "Fenton ضد Tosato",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.exd5 e4 4.d3 Nf6 5.dxe4 Nxe4 6.Nf3 Bc5 7.Bd3 f5 8.Ne5 Qh4+ 9.g3 Nxg3 10.d6 Ne4+ 11.Kf1 Qf2#",
     moves: [
@@ -11947,6 +13099,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves: "1.e4 e5 2.f4 d5 3.fxe5 Qh4+ 4.g3 Qxe4+ 5.Kf2 Bc5+",
     moves: [
       "e4",
@@ -11970,7 +13125,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C31",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "New York",
+    trapName: "Etlinger vs Janowski",
+    trapNameFr: "Etlinger contre Janowski",
+    trapNameEs: "Etlinger contra Janowski",
+    trapNameAr: "Etlinger ضد Janowski",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.Nf3 Bc5 4.Nc3 Nf6 5.Nxe5 dxe4 6.Qe2 Nc6 7.Nxf7 Qe7 8.Nxh8 Nd4 9.Qd1 Nf3+ 10.Ke2 Bg4 11.h3 Nd5",
     moves: [
@@ -12007,7 +13165,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C31",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Europe",
+    trapName: "Rivaud vs Terraz",
+    trapNameFr: "Rivaud contre Terraz",
+    trapNameEs: "Rivaud contra Terraz",
+    trapNameAr: "Rivaud ضد Terraz",
     commentedMoves:
         "1.e4 e5 2.f4 d5 3.Nf3 dxe4 4.Nxe5 Nf6 5.Bc4 Nd5 6.Nxf7 Kxf7 7.Qh5+",
     moves: [
@@ -12035,7 +13196,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C30",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Internet",
+    trapName: "Noy vs Zurowsky",
+    trapNameFr: "Noy contre Zurowsky",
+    trapNameEs: "Noy contra Zurowsky",
+    trapNameAr: "Noy ضد Zurowsky",
     commentedMoves:
         "1.e4 e5 2.f4 d6 3.Nf3 Nc6 4.Bc4 Qf6 5.Nc3 Qxf4 6.O-O Nge7 7.d4 Qg4 8.Bxf7+ Kxf7 9.Nxe5+ Kg8 10.Nxg4",
     moves: [
@@ -12070,6 +13234,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Detroit",
+    trapNameFr: "Detroit",
+    trapNameEs: "Detroit",
+    trapNameAr: "Detroit",
     commentedMoves:
         "1.e4 e5 2.f4 f6 3.fxe5 Nc6 4.d4 Be7 5.exf6 gxf6 6.Qh5+ Kf8 7.Bc4 Qe8 8.Bh6+",
     moves: [
@@ -12099,6 +13266,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves: "1.e4 e5 2.f4 f6 3.fxe5 fxe5 4.Qh5+ g6 5.Qxe5+",
     moves: ["e4", "e5", "f4", "f6", "fxe5", "fxe5", "Qh5+", "g6", "Qxe5+"],
     fen: "rnbqkbnr/pppp3p/6p1/4Q3/4P3/8/PPPP2PP/RNB1KBNR b KQkq - 0 5",
@@ -12111,7 +13281,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C30",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "Paris",
+    trapName: "Leray vs De Castet",
+    trapNameFr: "Leray contre De Castet",
+    trapNameEs: "Leray contra De Castet",
+    trapNameAr: "Leray ضد De Castet",
     commentedMoves:
         "1.e4 e5 2.f4 f5 3.exf5 e4 4.Qh5+ g6 5.fxg6 Nf6 6.Qe5+ Be7 7.d3 Nc6 8.Qg5 h6 9.g7 Rg8 10.Qg6#",
     moves: [
@@ -12145,7 +13318,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "E90",
     opening: "King's Indian defence",
     openingId: "kings_indian_defence",
-    trapName: "Hastings",
+    trapName: "Norman vs Vidmar",
+    trapNameFr: "Norman contre Vidmar",
+    trapNameEs: "Norman contra Vidmar",
+    trapNameAr: "Norman ضد Vidmar",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Nf3 O-O 6.Bd3 Bg4 7.h3 Bxf3 8.Qxf3 Nc6 9.Be3 Nd7 10.Ne2 Nde5 11.dxe5 Nxe5",
     moves: [
@@ -12183,6 +13359,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's Indian defence",
     openingId: "kings_indian_defence",
     trapName: "Hickory",
+    trapNameFr: "Hickory",
+    trapNameEs: "Hickory",
+    trapNameAr: "Hickory",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Nf3 O-O 6.h3 b6 7.Bd3 c5 8.e5 dxe5 9.dxe5 Nfd7 10.Be4",
     moves: [
@@ -12217,6 +13396,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's Indian defence",
     openingId: "kings_indian_defence",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.f3 O-O 6.Be3 e5 7.Qd2 c6 8.O-O-O a6 9.dxe5 Ne8 10.exd6",
     moves: [
@@ -12250,7 +13432,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "E76",
     opening: "King's Indian defence",
     openingId: "kings_indian_defence",
-    trapName: "England",
+    trapName: "Atkins vs Conde",
+    trapNameFr: "Atkins contre Conde",
+    trapNameEs: "Atkins contra Conde",
+    trapNameAr: "Atkins ضد Conde",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.f4 O-O 6.Nf3 Re8 7.Be2 Nbd7 8.e5 Ng4 9.e6 Ndf6 10.exf7+ Kxf7 11.h3 Nh6 12.g4 Nd7 13.Ng5+",
     moves: [
@@ -12291,6 +13476,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's Indian defence",
     openingId: "kings_indian_defence",
     trapName: "Pennsylvania",
+    trapNameFr: "Pennsylvania",
+    trapNameEs: "Pennsylvania",
+    trapNameAr: "Pennsylvania",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 Bg7 4.e4 d6 5.Bg5 O-O 6.Qd2 c5 7.dxc5 dxc5 8.Qxd8 Rxd8 9.Bxf6 Bxf6 10.Nd5 Nc6 11.Nxf6+ exf6 12.Ne2 Nb4 13.Rc1 Nd3+",
     moves: [
@@ -12331,7 +13519,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A01",
     opening: "Nimzovich-Larsen attack",
     openingId: "nimzovich_larsen_attack",
-    trapName: "Corr.",
+    trapName: "Deiber vs Delarge",
+    trapNameFr: "Deiber contre Delarge",
+    trapNameEs: "Deiber contra Delarge",
+    trapNameAr: "Deiber ضد Delarge",
     commentedMoves:
         "1.b3 b6 2.Bb2 Bb7 3.f4 e6 4.Nf3 Nf6 5.c4 Bd6 6.Ne5 Bxe5 7.Bxe5 Ng4 8.Bb2 Bxg2 9.Bxg2 Qh4+ 10.Kf1 Qf2#",
     moves: [
@@ -12367,6 +13558,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzovich-Larsen attack",
     openingId: "nimzovich_larsen_attack",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves:
         "1.b3 d5 2.Bb2 e6 3.c4 Nf6 4.Nf3 Bd6 5.e3 O-O 6.Be2 c6 7.O-O b6 8.Qc2 Bb7 9.Ng5 h6 10.Bxf6",
     moves: [
@@ -12401,6 +13595,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzovich-Larsen attack",
     openingId: "nimzovich_larsen_attack",
     trapName: "Wuppertal",
+    trapNameFr: "Wuppertal",
+    trapNameEs: "Wuppertal",
+    trapNameAr: "Wuppertal",
     commentedMoves:
         "1.b3 d5 2.Bb2 Nf6 3.e3 e6 4.f4 g6 5.g4 Bg7 6.Be2 Nxg4 7.Bxg4 Bxb2",
     moves: [
@@ -12429,7 +13626,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A01",
     opening: "Nimzovich-Larsen attack",
     openingId: "nimzovich_larsen_attack",
-    trapName: "France",
+    trapName: "Girard vs Bruneau",
+    trapNameFr: "Girard contre Bruneau",
+    trapNameEs: "Girard contra Bruneau",
+    trapNameAr: "Girard ضد Bruneau",
     commentedMoves:
         "1.b3 d5 2.Bb2 Nf6 3.Nf3 c5 4.e3 Nc6 5.Be2 e6 6.c4 Bd6 7.d4 cxd4 8.cxd5 Qa5+ 9.Qd2 Bb4",
     moves: [
@@ -12464,6 +13664,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzovich-Larsen attack",
     openingId: "nimzovich_larsen_attack",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.b3 c5 2.Bb2 f6 3.e4 e5 4.Bxe5 fxe5 5.Qh5+ g6 6.Qxe5+ Qe7 7.Qxh8 Qxe4+ 8.Be2 Qxg2 9.Bf3",
     moves: [
@@ -12496,6 +13699,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzovich-Larsen attack",
     openingId: "nimzovich_larsen_attack",
     trapName: "Philadelphia",
+    trapNameFr: "Philadelphia",
+    trapNameEs: "Philadelphia",
+    trapNameAr: "Philadelphia",
     commentedMoves:
         "1.b3 Nf6 2.Bb2 d6 3.f4 e5 4.fxe5 dxe5 5.Bxe5 Ng4 6.Bg3 h5 7.h3 Bd6 8.Bxd6 Qh4+ 9.Bg3 Qxg3#",
     moves: [
@@ -12528,7 +13734,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A01",
     opening: "Nimzovich-Larsen attack",
     openingId: "nimzovich_larsen_attack",
-    trapName: "Germany",
+    trapName: "Johansen vs Budde",
+    trapNameFr: "Johansen contre Budde",
+    trapNameEs: "Johansen contra Budde",
+    trapNameAr: "Johansen ضد Budde",
     commentedMoves:
         "1.b3 Nf6 2.Bb2 d5 3.e3 e6 4.f4 g6 5.g4 Bg7 6.Be2 Nxg4 7.Bxg7 Qh4+ 8.Kf1 Qf2#",
     moves: [
@@ -12559,7 +13768,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "England",
+    trapName: "Sergeant vs Senneck",
+    trapNameFr: "Sergeant contre Senneck",
+    trapNameEs: "Sergeant contra Senneck",
+    trapNameAr: "Sergeant ضد Senneck",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.Nc3 d6 4.d4 Nf6 5.dxe5 Nxe4 6.Nxe4 fxe4 7.Ng5 Bf5 8.Qd5 Qd7 9.Qxb7",
     moves: [
@@ -12591,7 +13803,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C50",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Corr.",
+    trapName: "Gunderam vs Grava",
+    trapNameFr: "Gunderam contre Grava",
+    trapNameEs: "Gunderam contra Grava",
+    trapNameAr: "Gunderam ضد Grava",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.Bc4 Nc6 4.d4 Qe7 5.O-O fxe4 6.Ng5 Nf6 7.Bf7+ Kd8 8.dxe5 Nxe5 9.Ne6+",
     moves: [
@@ -12623,7 +13838,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Corr.",
+    trapName: "Robins vs Anders",
+    trapNameFr: "Robins contre Anders",
+    trapNameEs: "Robins contra Anders",
+    trapNameAr: "Robins ضد Anders",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.Bc4 d5 4.Bxd5 Nf6 5.Bb3 Nxe4 6.Nxe5 Nxf2 7.Qh5+ g6 8.Bf7+ Ke7 9.Qg5+ Kd6 10.Qxd8+",
     moves: [
@@ -12658,6 +13876,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
     trapName: "Mannheim",
+    trapNameFr: "Mannheim",
+    trapNameEs: "Mannheim",
+    trapNameAr: "Mannheim",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.d3 Nc6 4.Nc3 Nf6 5.Bg5 h6 6.Bxf6 Qxf6 7.Nd5 Qd8 8.Nd4 Ne7 9.Nxf5 c6 10.Nd6#",
     moves: [
@@ -12691,6 +13912,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
     trapName: "Eindhoven",
+    trapNameFr: "Eindhoven",
+    trapNameEs: "Eindhoven",
+    trapNameAr: "Eindhoven",
     commentedMoves: "1.e4 e5 2.Nf3 f5 3.d4 fxe4 4.Nxe5 d6 5.Qh5+ Ke7 6.Qf7#",
     moves: [
       "e4",
@@ -12716,6 +13940,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.Nxe5 Qe7 4.Qh5+ g6 5.Nxg6 Qxe4+ 6.Kd1 Nf6 7.Qh3 hxg6 8.Qxh8 Ng4 9.Qh4 Ne3+",
     moves: [
@@ -12748,7 +13975,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Internet",
+    trapName: "Sitter vs Wall, Bill",
+    trapNameFr: "Sitter contre Wall, Bill",
+    trapNameEs: "Sitter contra Wall, Bill",
+    trapNameAr: "Sitter ضد Wall, Bill",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.Nxe5 Qe7 4.Qh5+ g6 5.Nxg6 Qxe4+ 6.Be2 Nf6 7.Qf3 hxg6",
     moves: [
@@ -12777,7 +14007,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Paris",
+    trapName: "Deronne vs Gedult",
+    trapNameFr: "Deronne contre Gedult",
+    trapNameEs: "Deronne contra Gedult",
+    trapNameAr: "Deronne ضد Gedult",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.Nxe5 Qf6 4.d4 d6 5.Nf3 fxe4 6.Bg5 Qg6 7.Qe2 Be7 8.Bxe7 exf3 9.Qxf3 Nxe7",
     moves: [
@@ -12810,6 +14043,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves: "1.e4 Nc6 2.d4 b6 3.c3 Bb7 4.Nf3 Nf6 5.e5 Nh5 6.g4",
     moves: [
       "e4",
@@ -12834,7 +14070,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Corr.",
+    trapName: "Clews vs Ellison",
+    trapNameFr: "Clews contre Ellison",
+    trapNameEs: "Clews contra Ellison",
+    trapNameAr: "Clews ضد Ellison",
     commentedMoves:
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nc3 Qxd4 5.Qe2 Bg4 6.f3 Bh5 7.Be3 Qb4 8.O-O-O a6 9.Nd5 Qa5 10.Bb6",
     moves: [
@@ -12868,7 +14107,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "France",
+    trapName: "Belmondo vs Gilardi",
+    trapNameFr: "Belmondo contre Gilardi",
+    trapNameEs: "Belmondo contra Gilardi",
+    trapNameAr: "Belmondo ضد Gilardi",
     commentedMoves:
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nf3 Bg4 5.Be2 Bxf3 6.Bxf3 Qxd4 7.Bxc6+ bxc6 8.Qxd4",
     moves: [
@@ -12898,6 +14140,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves: "1.e4 Nc6 2.d4 e5 3.d5 Nd4 4.c3",
     moves: ["e4", "Nc6", "d4", "e5", "d5", "Nd4", "c3"],
     fen: "r1bqkbnr/pppp1ppp/8/3Pp3/3nP3/2P5/PP3PPP/RNBQKBNR b KQkq - 0 4",
@@ -12910,7 +14155,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Germany",
+    trapName: "Siegemund vs Eger",
+    trapNameFr: "Siegemund contre Eger",
+    trapNameEs: "Siegemund contra Eger",
+    trapNameAr: "Siegemund ضد Eger",
     commentedMoves:
         "1.e4 Nc6 2.d4 e5 3.d5 Nce7 4.c4 Ng6 5.Nf3 Bc5 6.Nc3 d6 7.Na4 Bb6 8.b4 Nf6 9.Bg5 Bxf2+ 10.Ke2 Nxe4 11.Bxd8 Nf4#",
     moves: [
@@ -12947,7 +14195,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Germany",
+    trapName: "Bouillon vs Schwab",
+    trapNameFr: "Bouillon contre Schwab",
+    trapNameEs: "Bouillon contra Schwab",
+    trapNameAr: "Bouillon ضد Schwab",
     commentedMoves:
         "1.e4 Nc6 2.d4 e5 3.dxe5 Nxe5 4.Nf3 Qf6 5.Nxe5 Qxe5 6.Bd3 Bc5 7.O-O Nf6 8.Nc3 d6 9.h3 Bxh3 10.Nd5 Qg3 11.Nxf6+ gxf6 12.Qf3 Qxf3 13.gxf3 Rg8+",
     moves: [
@@ -12989,6 +14240,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Munich",
+    trapNameFr: "Munich",
+    trapNameEs: "Munich",
+    trapNameAr: "Munich",
     commentedMoves:
         "1.e4 Nc6 2.Nf3 d5 3.exd5 Qxd5 4.Nc3 Qa5 5.d4 Bf5 6.Bb5 e6 7.Ne5 Bb4 8.Bd2 Nge7 9.Nc4",
     moves: [
@@ -13020,7 +14274,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "USA",
+    trapName: "Donaldson vs NN",
+    trapNameFr: "Donaldson contre NN",
+    trapNameEs: "Donaldson contra NN",
+    trapNameAr: "Donaldson ضد NN",
     commentedMoves:
         "1.e4 Nc6 2.Nf3 d6 3.d4 Bg4 4.d5 Ne5 5.Nxe5 Bxd1 6.Bb5+ Qd7 7.Bxd7+ Kd8 8.Nxf7+ Kxd7 9.Kxd1",
     moves: [
@@ -13052,6 +14309,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_e00",
     trapName: "Boulder",
+    trapNameFr: "Boulder",
+    trapNameEs: "Boulder",
+    trapNameAr: "Boulder",
     commentedMoves: "1.d4 Nf6 2.c4 e6 3.Nc3 b6 4.e4 Bb4 5.Bd3 d6 6.Qa4+",
     moves: [
       "d4",
@@ -13077,6 +14337,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzo-Indian defence",
     openingId: "nimzo_indian_defence",
     trapName: "Denmark",
+    trapNameFr: "Denmark",
+    trapNameEs: "Denmark",
+    trapNameAr: "Denmark",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qb3 c5 5.dxc5 Nc6 6.Nf3 Ne4 7.Bd2 Nxd2 8.Nxd2 Qa5 9.O-O-O Nd4 10.Qa4 Bxc3",
     moves: [
@@ -13112,6 +14375,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzo-Indian defence",
     openingId: "nimzo_indian_defence",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qb3 Qe7 5.a3 Bxc3+ 6.Qxc3 Ne4 7.Qc2 d5 8.b3 c5 9.dxc5 Qf6",
     moves: [
@@ -13145,6 +14411,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzo-Indian defence",
     openingId: "nimzo_indian_defence",
     trapName: "Reggio Emilia",
+    trapNameFr: "Reggio Emilia",
+    trapNameEs: "Reggio Emilia",
+    trapNameAr: "Reggio Emilia",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Qc2 Nc6 5.Nf3 d6 6.Bg5 e5 7.d5 Ne7 8.Qa4+",
     moves: [
@@ -13174,6 +14443,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzo-Indian defence",
     openingId: "nimzo_indian_defence",
     trapName: "Venice",
+    trapNameFr: "Venice",
+    trapNameEs: "Venice",
+    trapNameAr: "Venice",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 b6 5.Nge2 Ba6 6.Ng3 d5 7.Qa4+",
     moves: [
@@ -13202,7 +14474,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "E20",
     opening: "Nimzo-Indian defence",
     openingId: "nimzo_indian_defence",
-    trapName: "Amsterdam",
+    trapName: "Van Mil vs Witt",
+    trapNameFr: "Van Mil contre Witt",
+    trapNameEs: "Van Mil contra Witt",
+    trapNameAr: "Van Mil ضد Witt",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.g3 c5 5.Nf3 cxd4 6.Nxd4 Ne4 7.Qc2 Qa5 8.Nb3 Qf5",
     moves: [
@@ -13235,6 +14510,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzo-Indian defence",
     openingId: "nimzo_indian_defence",
     trapName: "Reykjavik",
+    trapNameFr: "Reykjavik",
+    trapNameEs: "Reykjavik",
+    trapNameAr: "Reykjavik",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.Bg5 c5 5.e3 Qa5 6.Rc1 Ne4 7.Nf3 Nxg5 8.Nxg5 cxd4",
     moves: [
@@ -13265,7 +14543,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A53",
     opening: "Old Indian defence",
     openingId: "old_indian_defence",
-    trapName: "Europe",
+    trapName: "van der Heiden vs Salam",
+    trapNameFr: "van der Heiden contre Salam",
+    trapNameEs: "van der Heiden contra Salam",
+    trapNameAr: "van der Heiden ضد Salam",
     commentedMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 Nbd7 4.e4 g6 5.f4 c5 6.d5 Qa5 7.Bd2 Nb6 8.Nb5",
     moves: [
@@ -13296,7 +14577,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A53",
     opening: "Old Indian defence",
     openingId: "old_indian_defence",
-    trapName: "Europe",
+    trapName: "Koukolik vs Sykora",
+    trapNameFr: "Koukolik contre Sykora",
+    trapNameEs: "Koukolik contra Sykora",
+    trapNameAr: "Koukolik ضد Sykora",
     commentedMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 e5 4.dxe5 dxe5 5.Bg5 Nbd7 6.Nf3 c6 7.Ne4 Nxe4 8.Bxd8 Bb4+ 9.Nd2 Bxd2+ 10.Qxd2 Nxd2 11.Kxd2 Kxd8",
     moves: [
@@ -13334,6 +14618,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Old Indian defence",
     openingId: "old_indian_defence",
     trapName: "Porz",
+    trapNameFr: "Porz",
+    trapNameEs: "Porz",
+    trapNameAr: "Porz",
     commentedMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 e5 4.e4 exd4 5.Qxd4 g6 6.Bg5 Bg7 7.e5 dxe5 8.Qxd8+ Kxd8 9.Nd5 Nbd7 10.Rd1",
     moves: [
@@ -13368,6 +14655,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Old Indian defence",
     openingId: "old_indian_defence",
     trapName: "Palma de Mallorca",
+    trapNameFr: "Palma de Mallorca",
+    trapNameEs: "Palma de Mallorca",
+    trapNameAr: "Palma de Mallorca",
     commentedMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 Bf5 4.f3 e5 5.dxe5 dxe5 6.Qxd8+ Kxd8 7.Bg5 c6 8.O-O-O+ Kc7 9.g3 Be6 10.b3 Bc5 11.Bh3 Bxg1 12.Rhxg1 Bxh3 13.g4 h5 14.Rg3 hxg4 15.fxg4 Nbd7",
     moves: [
@@ -13412,6 +14702,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Old Indian defence",
     openingId: "old_indian_defence",
     trapName: "Bulgaria",
+    trapNameFr: "Bulgaria",
+    trapNameEs: "Bulgaria",
+    trapNameAr: "Bulgaria",
     commentedMoves: "1.d4 Nf6 2.c4 d6 3.Nf3 Nc6 4.Nc3 Bg4 5.d5 Ne5 6.Nd2 Nd3+",
     moves: [
       "d4",
@@ -13437,7 +14730,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Corr.",
+    trapName: "Bamber vs Chranowski",
+    trapNameFr: "Bamber contre Chranowski",
+    trapNameEs: "Bamber contra Chranowski",
+    trapNameAr: "Bamber ضد Chranowski",
     commentedMoves:
         "1.e4 b6 2.c4 Bb7 3.Nc3 Nf6 4.e5 Ne4 5.Qf3 Nxc3 6.Qxb7 Nc6 7.Qa6 Nb4",
     moves: [
@@ -13467,6 +14763,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "South Carolina",
+    trapNameFr: "South Carolina",
+    trapNameEs: "South Carolina",
+    trapNameAr: "South Carolina",
     commentedMoves:
         "1.e4 b6 2.Bc4 Bb7 3.Qf3 e6 4.d4 Nc6 5.d5 Nd4 6.Qc3 Bb4 7.Qxb4 Nxc2+",
     moves: [
@@ -13495,6 +14794,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Philadelphia",
+    trapNameFr: "Philadelphia",
+    trapNameEs: "Philadelphia",
+    trapNameAr: "Philadelphia",
     commentedMoves: "1.e4 b6 2.Bc4 Bb7 3.Nf3 Bxe4 4.Ng5 Bg6 5.h4 f6 6.h5",
     moves: [
       "e4",
@@ -13519,7 +14821,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Internet",
+    trapName: "Wenger vs Cornell",
+    trapNameFr: "Wenger contre Cornell",
+    trapNameEs: "Wenger contra Cornell",
+    trapNameAr: "Wenger ضد Cornell",
     commentedMoves:
         "1.e4 b6 2.d3 Bb7 3.Nc3 c5 4.Bf4 Nc6 5.Nf3 d6 6.d4 Nxd4 7.Nxd4 cxd4 8.Bb5+",
     moves: [
@@ -13549,7 +14854,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Europe",
+    trapName: "Bhend vs Schneiders",
+    trapNameFr: "Bhend contre Schneiders",
+    trapNameEs: "Bhend contra Schneiders",
+    trapNameAr: "Bhend ضد Schneiders",
     commentedMoves:
         "1.e4 b6 2.d4 Bb7 3.Nc3 e6 4.Bd3 Nf6 5.Nge2 d5 6.e5 Nfd7 7.Nf4 c5 8.Nxe6 Qe7 9.Nxd5 Bxd5 10.Nc7+ Kd8 11.Nxd5",
     moves: [
@@ -13586,6 +14894,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves:
         "1.e4 b6 2.d4 Bb7 3.Bd3 f5 4.exf5 Bxg2 5.Qh5+ g6 6.Nf3 Bxh1 7.fxg6 Nf6 8.gxh7+ Nxh5 9.Bg6#",
     moves: [
@@ -13616,7 +14927,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Dangermouse",
+    trapNameFr: "Wall, Bill contre Dangermouse",
+    trapNameEs: "Wall, Bill contra Dangermouse",
+    trapNameAr: "Wall, Bill ضد Dangermouse",
     commentedMoves: "1.e4 b6 2.d4 Nf6 3.e5 Ne4 4.Bd3 Bb7 5.f3",
     moves: ["e4", "b6", "d4", "Nf6", "e5", "Ne4", "Bd3", "Bb7", "f3"],
     fen: "rn1qkb1r/pbpppppp/1p6/4P3/3Pn3/3B1P2/PPP3PP/RNBQK1NR b KQkq - 0 5",
@@ -13628,7 +14942,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Internet",
+    trapName: "Malloy vs Powell",
+    trapNameFr: "Malloy contre Powell",
+    trapNameEs: "Malloy contra Powell",
+    trapNameAr: "Malloy ضد Powell",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Bb5 c6 4.Bc4 Nxe4 5.d3 Nf6 6.Nxe5 Qa5+",
     moves: [
@@ -13656,6 +14973,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "San Francisco",
+    trapNameFr: "San Francisco",
+    trapNameEs: "San Francisco",
+    trapNameAr: "San Francisco",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nc3 d5 4.exd5 Bg4 5.Be2 Bd6 6.d4 exd4 7.Qxd4 O-O 8.Bg5 h6 9.Bxf6 Qxf6 10.Qxg4",
     moves: [
@@ -13689,7 +15009,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C27",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Germany",
+    trapName: "Kaspareit vs Paulsen",
+    trapNameFr: "Kaspareit contre Paulsen",
+    trapNameEs: "Kaspareit contra Paulsen",
+    trapNameAr: "Kaspareit ضد Paulsen",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Bc4 Nxe4 4.Nc3 Nxc3 5.dxc3 d5 6.Bxd5 c6 7.Bxf7+",
     moves: [
@@ -13717,7 +15040,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "USA",
+    trapName: "Robinson vs Davie",
+    trapNameFr: "Robinson contre Davie",
+    trapNameEs: "Robinson contra Davie",
+    trapNameAr: "Robinson ضد Davie",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Bc4 Nxe4 4.Bxf7+ Kxf7 5.Nxe5+ Kg8 6.O-O d6 7.Qf3 dxe5 8.Qb3+",
     moves: [
@@ -13748,6 +15074,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Kuala Lumpar",
+    trapNameFr: "Kuala Lumpar",
+    trapNameEs: "Kuala Lumpar",
+    trapNameAr: "Kuala Lumpar",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Bc4 Nxe4 4.Bxf7+ Kxf7 5.Nxe5+ Kg8 6.O-O d6 7.Qe2 dxe5 8.Qc4+",
     moves: [
@@ -13777,6 +15106,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Haarlem",
+    trapNameFr: "Haarlem",
+    trapNameEs: "Haarlem",
+    trapNameAr: "Haarlem",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Bc4 Be7 4.Nxe5 d6 5.Nxf7 Qd7 6.Nxh8",
     moves: [
       "e4",
@@ -13801,7 +15133,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C43",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "New York",
+    trapName: "Frank vs Schiller, E.",
+    trapNameFr: "Frank contre Schiller, E.",
+    trapNameEs: "Frank contra Schiller, E.",
+    trapNameAr: "Frank ضد Schiller, E.",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 exd4 4.Nxd4 Qe7 5.Nb5 Nxe4 6.Nxc7+ Kd8 7.Nxa8 Nc3+",
     moves: [
@@ -13831,6 +15166,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Houston",
+    trapNameFr: "Houston",
+    trapNameEs: "Houston",
+    trapNameAr: "Houston",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 exd4 4.e5 Ne4 5.Qe2 Bb4+ 6.Kd1 Nc5 7.Bg5 d3 8.cxd3 f6 9.exf6+ Kf7 10.Ne5+ Ke6 11.Nc6+",
     moves: [
@@ -13867,6 +15205,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Virginia",
+    trapNameFr: "Virginia",
+    trapNameEs: "Virginia",
+    trapNameAr: "Virginia",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 exd4 4.e5 Qe7 5.Be2 Ne4 6.O-O Nc6 7.Re1 b6 8.Bc4 Nc5 9.Bg5",
     moves: [
@@ -13899,6 +15240,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 Nxe4 4.Nxe5 d5 5.Bd3 Bd6 6.f3 Qh4+ 7.g3 Nxg3",
     moves: [
@@ -13928,6 +15272,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.d4 Nxe4 4.Nxe5 d5 5.Qf3 Be6 6.Bd3 Bd6 7.Bxe4 dxe4 8.Qxe4 Bxe5 9.Qxb7 Bxd4 10.Qxa8 Bd5",
     moves: [
@@ -13962,7 +15309,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Corr.",
+    trapName: "Lowens vs Stafford",
+    trapNameFr: "Lowens contre Stafford",
+    trapNameEs: "Lowens contra Stafford",
+    trapNameAr: "Lowens ضد Stafford",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+",
     moves: [
@@ -13991,6 +15341,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Biel",
+    trapNameFr: "Biel",
+    trapNameEs: "Biel",
+    trapNameAr: "Biel",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.Nc3 Bf5 6.Qe2",
     moves: [
       "e4",
@@ -14015,7 +15368,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Internet",
+    trapName: "Revelle vs Cornell",
+    trapNameFr: "Revelle contre Cornell",
+    trapNameEs: "Revelle contra Cornell",
+    trapNameAr: "Revelle ضد Cornell",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 Qe7 6.Be2 Bg4 7.O-O Nd7 8.Re1 O-O-O 9.Nfd2 f5 10.Bxg4 fxg4 11.Nxe4",
     moves: [
@@ -14051,7 +15407,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Pathfinder",
+    trapNameFr: "Wall, Bill contre Pathfinder",
+    trapNameEs: "Wall, Bill contra Pathfinder",
+    trapNameAr: "Wall, Bill ضد Pathfinder",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Bg4 5.Nc3 Qe7 6.d3 g6 7.Bg5 Bxf3 8.Qxf3 Bg7 9.Nd5",
     moves: [
@@ -14083,7 +15442,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Moscow",
+    trapName: "Lazarev vs Kundichev",
+    trapNameFr: "Lazarev contre Kundichev",
+    trapNameEs: "Lazarev contra Kundichev",
+    trapNameAr: "Lazarev ضد Kundichev",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nxf7 Kxf7 5.d4 Nxe4 6.Qh5+ Ke7 7.Qe2 d5 8.Bg5+",
     moves: [
@@ -14113,7 +15475,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Germany",
+    trapName: "Hess vs Born",
+    trapNameFr: "Hess contre Born",
+    trapNameEs: "Hess contra Born",
+    trapNameAr: "Hess ضد Born",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nxf7 Kxf7 5.d4 Nxe4 6.Qh5+ Kg8 7.Qd5+ Be6 8.Qxe6#",
     moves: [
@@ -14143,6 +15508,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Palo Atlo",
+    trapNameFr: "Palo Atlo",
+    trapNameEs: "Palo Atlo",
+    trapNameAr: "Palo Atlo",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 d5 5.Nc6",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "d5", "Nc6"],
     fen: "rnbqkb1r/ppp2ppp/2N5/3p4/4n3/8/PPPPQPPP/RNB1KB1R b KQkq - 1 5",
@@ -14155,7 +15523,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Fitz",
+    trapNameFr: "Wall, Bill contre Fitz",
+    trapNameEs: "Wall, Bill contra Fitz",
+    trapNameAr: "Wall, Bill ضد Fitz",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 d6 5.Nxf7 Kxf7 6.Qxe4 c6 7.Qf3+ Kg8 8.d4 c5 9.Qd5+ Be6 10.Qxe6#",
     moves: [
@@ -14189,7 +15560,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C42",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "Internet",
+    trapName: "Beaver vs Adler",
+    trapNameFr: "Beaver contre Adler",
+    trapNameEs: "Beaver contra Adler",
+    trapNameAr: "Beaver ضد Adler",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Nxf7 Kxf7 5.Qh5+ Kf6 6.Qf3+ Ke5 7.d4+ Kxd4 8.Qf5 Qg5 9.c3+ Nxc3 10.bxc3#",
     moves: [
@@ -14224,6 +15598,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Rhode Island",
+    trapNameFr: "Rhode Island",
+    trapNameEs: "Rhode Island",
+    trapNameAr: "Rhode Island",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Qe7 4.d4 d6 5.Nf3 Qxe4+ 6.Be2 Nc6 7.Nc3 Qg6 8.Nh4",
     moves: [
@@ -14253,7 +15630,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Germany",
+    trapName: "Hagesaether vs Szuveges",
+    trapNameFr: "Hagesaether contre Szuveges",
+    trapNameEs: "Hagesaether contra Szuveges",
+    trapNameAr: "Hagesaether ضد Szuveges",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Nc3 Be6 4.d4 exd4 5.Nxd4 g6 6.Nxe6 fxe6 7.Bc4 e5 8.Qd5",
     moves: [
@@ -14283,7 +15663,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Internet",
+    trapName: "Rimmer vs Hughes",
+    trapNameFr: "Rimmer contre Hughes",
+    trapNameEs: "Rimmer contra Hughes",
+    trapNameAr: "Rimmer ضد Hughes",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Nc3 Bg4 4.Be2 Nf6 5.O-O d5 6.Nxe5 Bxe2 7.Qxe2 dxe4 8.Nxe4 Nc6 9.Nxc6 bxc6 10.Nxf6#",
     moves: [
@@ -14318,6 +15701,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Dubai",
+    trapNameFr: "Dubai",
+    trapNameEs: "Dubai",
+    trapNameAr: "Dubai",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Nc6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     moves: [
@@ -14347,7 +15733,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Paris",
+    trapName: "Labourey vs Dubois",
+    trapNameFr: "Labourey contre Dubois",
+    trapNameEs: "Labourey contra Dubois",
+    trapNameAr: "Labourey ضد Dubois",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Nf6 4.Nc3 Nbd7 5.Ng5 Qe7 6.Bxf7+ Kd8 7.Bb3 Ke8 8.Nf7",
     moves: [
@@ -14377,7 +15766,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Italiano",
+    trapNameFr: "Wall, Bill contre Italiano",
+    trapNameEs: "Wall, Bill contra Italiano",
+    trapNameAr: "Wall, Bill ضد Italiano",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 g6 4.d4 Nc6 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Bxf7+",
     moves: [
@@ -14406,6 +15798,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Tacoma",
+    trapNameFr: "Tacoma",
+    trapNameEs: "Tacoma",
+    trapNameAr: "Tacoma",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 a6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     moves: [
@@ -14434,6 +15829,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Bremen",
+    trapNameFr: "Bremen",
+    trapNameEs: "Bremen",
+    trapNameAr: "Bremen",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 Nf6 5.O-O Nxe4 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     moves: [
@@ -14463,7 +15861,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Paris",
+    trapName: "De Legal vs St. Brie",
+    trapNameFr: "De Legal contre St. Brie",
+    trapNameEs: "De Legal contra St. Brie",
+    trapNameAr: "De Legal ضد St. Brie",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 g6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     moves: [
@@ -14491,7 +15892,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Nagaru",
+    trapNameFr: "Wall, Bill contre Nagaru",
+    trapNameEs: "Wall, Bill contra Nagaru",
+    trapNameAr: "Wall, Bill ضد Nagaru",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.O-O Nc6 5.Nc3 Nd4 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     moves: [
@@ -14521,7 +15925,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Internet",
+    trapName: "Ribeiro vs Skinner",
+    trapNameFr: "Ribeiro contre Skinner",
+    trapNameEs: "Ribeiro contra Skinner",
+    trapNameAr: "Ribeiro ضد Skinner",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 c6 5.c3 Be7 6.Qb3 Nh6 7.Bxh6 gxh6 8.Bxf7+",
     moves: [
@@ -14551,7 +15958,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "New York",
+    trapName: "Fischer, Robert vs Fine, R.",
+    trapNameFr: "Fischer, Robert contre Fine, R.",
+    trapNameEs: "Fischer, Robert contra Fine, R.",
+    trapNameAr: "Fischer, Robert ضد Fine, R.",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 c6 5.O-O Be7 6.dxe5 dxe5 7.Qe2 Ngf6 8.Rd1 Qc7 9.Ng5 O-O 10.Bxf7+ Rxf7 11.Qc4",
     moves: [
@@ -14588,6 +15998,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Yugoslavia",
+    trapNameFr: "Yugoslavia",
+    trapNameEs: "Yugoslavia",
+    trapNameAr: "Yugoslavia",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 Be7 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Qh5 g6 8.Qxe5",
     moves: [
@@ -14618,6 +16031,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Houston",
+    trapNameFr: "Houston",
+    trapNameEs: "Houston",
+    trapNameAr: "Houston",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 f5 4.dxe5 fxe4 5.Ng5 d5 6.Nc3 Ne7 7.e6 Ng6 8.Nf7 Qf6 9.Nxh8",
     moves: [
@@ -14649,7 +16065,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs BigBlueSmurf",
+    trapNameFr: "Wall, Bill contre BigBlueSmurf",
+    trapNameEs: "Wall, Bill contra BigBlueSmurf",
+    trapNameAr: "Wall, Bill ضد BigBlueSmurf",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 f6 4.Bc4 Bd7 5.dxe5 dxe5 6.Nxe5 fxe5 7.Qh5+ g6 8.Qxe5+ Ne7 9.Qxh8",
     moves: [
@@ -14681,7 +16100,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Seaboy",
+    trapNameFr: "Wall, Bill contre Seaboy",
+    trapNameEs: "Wall, Bill contra Seaboy",
+    trapNameAr: "Wall, Bill ضد Seaboy",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Bg4 4.dxe5 dxe5 5.Qxd8+ Kxd8 6.Nxe5 Nh6 7.Bxh6",
     moves: [
@@ -14709,7 +16131,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Clay558",
+    trapNameFr: "Wall, Bill contre Clay558",
+    trapNameEs: "Wall, Bill contra Clay558",
+    trapNameAr: "Wall, Bill ضد Clay558",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Bg4 4.dxe5 Bxf3 5.Qxf3 dxe5 6.Bc4 Bb4+ 7.c3",
     moves: [
@@ -14738,6 +16163,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Bonn",
+    trapNameFr: "Bonn",
+    trapNameEs: "Bonn",
+    trapNameAr: "Bonn",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Bg4 4.dxe5 Bxf3 5.Qxf3 dxe5 6.Bc4 f6 7.Qb3 b6 8.Bf7+ Kd7 9.Qe6#",
     moves: [
@@ -14769,6 +16197,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "San Francisco",
+    trapNameFr: "San Francisco",
+    trapNameEs: "San Francisco",
+    trapNameAr: "San Francisco",
     commentedMoves: "1.e4 e5 2.Nf3 d6 3.d4 g6 4.dxe5 dxe5 5.Qxd8+ Kxd8 6.Nxe5",
     moves: [
       "e4",
@@ -14793,7 +16224,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C41",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "Internet",
+    trapName: "Sanchez vs Delgado",
+    trapNameFr: "Sanchez contre Delgado",
+    trapNameEs: "Sanchez contra Delgado",
+    trapNameAr: "Sanchez ضد Delgado",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nf6 4.dxe5 Nxe4 5.exd6 Bxd6 6.Qd4 Nf6 7.Bg5 Nc6 8.Bb5 O-O 9.Bxf6 Nxd4 10.Bxd8 Nxc2+",
     moves: [
@@ -14828,6 +16262,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Italy",
+    trapNameFr: "Italy",
+    trapNameEs: "Italy",
+    trapNameAr: "Italy",
     commentedMoves: "1.e4 e5 2.Nf3 d6 3.h3 Nf6 4.c3 Nxe4 5.Qa4+ c6 6.Qxe4",
     moves: [
       "e4",
@@ -14852,6 +16289,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Kiev",
+    trapNameFr: "Kiev",
+    trapNameEs: "Kiev",
+    trapNameAr: "Kiev",
     commentedMoves: "1.e4 d6 2.Bc4 Nd7 3.Nf3 g6 4.Ng5 Nh6 5.Bxf7+ Nxf7 6.Ne6",
     moves: [
       "e4",
@@ -14876,7 +16316,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Vienna",
+    trapName: "Hamlisch vs NN",
+    trapNameFr: "Hamlisch contre NN",
+    trapNameEs: "Hamlisch contra NN",
+    trapNameAr: "Hamlisch ضد NN",
     commentedMoves:
         "1.e4 d6 2.d4 Nd7 3.Bc4 g6 4.Nf3 Bg7 5.Bxf7+ Kxf7 6.Ng5+ Kf6 7.Qf3#",
     moves: [
@@ -14905,6 +16348,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves:
         "1.e4 d6 2.d4 Nd7 3.Nf3 e5 4.Bc4 Be7 5.dxe5 dxe5 6.Qd5 Nh6 7.Bxh6",
     moves: [
@@ -14931,7 +16377,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Erndog",
+    trapNameFr: "Wall, Bill contre Erndog",
+    trapNameEs: "Wall, Bill contra Erndog",
+    trapNameAr: "Wall, Bill ضد Erndog",
     commentedMoves: "1.e4 d6 2.d4 Be6 3.c3 Qd7 4.Bd3 Bg4 5.f3 Be6 6.d5",
     moves: [
       "e4",
@@ -14956,7 +16405,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B06",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Germany",
+    trapName: "Gross vs Geiger",
+    trapNameFr: "Gross contre Geiger",
+    trapNameEs: "Gross contra Geiger",
+    trapNameAr: "Gross ضد Geiger",
     commentedMoves:
         "1.e4 d6 2.d4 g6 3.Nf3 Bg7 4.Nc3 Nd7 5.Bc4 e5 6.Bxf7+ Kxf7 7.Ng5+ Ke8 8.Ne6 Qe7 9.Nxc7+",
     moves: [
@@ -14988,7 +16440,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B09",
     opening: "Pirc defence",
     openingId: "pirc_defence",
-    trapName: "Internet",
+    trapName: "Callow vs Powell",
+    trapNameFr: "Callow contre Powell",
+    trapNameEs: "Callow contra Powell",
+    trapNameAr: "Callow ضد Powell",
     commentedMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.f4 c5 5.dxc5 Qa5 6.cxd6 Nxe4 7.Qd5 Nc5 8.Bb5+ Bd7 9.Qxc5",
     moves: [
@@ -15020,7 +16475,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B07",
     opening: "Pirc defence",
     openingId: "pirc_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Stonewolf",
+    trapNameFr: "Wall, Bill contre Stonewolf",
+    trapNameEs: "Wall, Bill contra Stonewolf",
+    trapNameAr: "Wall, Bill ضد Stonewolf",
     commentedMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 Nc6 4.Bc4 e6 5.Nf3 Qe7 6.O-O g6 7.Bg5 e5 8.Nd5",
     moves: [
@@ -15051,6 +16509,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.e4 d6 2.d4 g6 3.Nc3 Bg7 4.Bc4 c6 5.Nf3 b5 6.Nxb5 cxb5 7.Bd5",
     moves: [
@@ -15079,6 +16540,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Thailand",
+    trapNameFr: "Thailand",
+    trapNameEs: "Thailand",
+    trapNameAr: "Thailand",
     commentedMoves:
         "1.e4 d6 2.d4 g6 3.Nc3 Bg7 4.f4 Nh6 5.Nf3 O-O 6.Bd3 c5 7.f5 e6 8.f6 Qxf6 9.Bg5",
     moves: [
@@ -15111,6 +16575,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Latvia",
+    trapNameFr: "Latvia",
+    trapNameEs: "Latvia",
+    trapNameAr: "Latvia",
     commentedMoves:
         "1.e4 d6 2.d4 g6 3.Nf3 Bg7 4.Bc4 Nd7 5.Bxf7+ Kxf7 6.Ng5+ Kf6 7.Qf3#",
     moves: [
@@ -15138,7 +16605,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Budapest",
+    trapName: "Laszlo vs Biro",
+    trapNameFr: "Laszlo contre Biro",
+    trapNameEs: "Laszlo contra Biro",
+    trapNameAr: "Laszlo ضد Biro",
     commentedMoves:
         "1.e4 d6 2.d4 g6 3.Nf3 Bg7 4.Bc4 Bg4 5.Bxf7+ Kf8 6.Bb3 Bf6 7.h3 Bd7 8.e5 Bg7 9.Ng5",
     moves: [
@@ -15171,6 +16641,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Denver",
+    trapNameFr: "Denver",
+    trapNameEs: "Denver",
+    trapNameAr: "Denver",
     commentedMoves:
         "1.e4 d6 2.Nf3 Nd7 3.Nc3 g6 4.Bc4 Bg7 5.d4 a5 6.Ng5 Nh6 7.Bxf7+ Nxf7 8.Ne6",
     moves: [
@@ -15200,6 +16673,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Utrecht",
+    trapNameFr: "Utrecht",
+    trapNameEs: "Utrecht",
+    trapNameAr: "Utrecht",
     commentedMoves: "1.e4 d6 2.Nf3 Nf6 3.c3 Nxe4 4.Qa4+",
     moves: ["e4", "d6", "Nf3", "Nf6", "c3", "Nxe4", "Qa4+"],
     fen: "rnbqkb1r/ppp1pppp/3p4/8/Q3n3/2P2N2/PP1P1PPP/RNB1KB1R b KQkq - 1 4",
@@ -15212,6 +16688,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Minsk",
+    trapNameFr: "Minsk",
+    trapNameEs: "Minsk",
+    trapNameAr: "Minsk",
     commentedMoves: "1.e4 d6 2.Nf3 g6 3.Bc4 Nd7 4.Bxf7+ Kxf7 5.Ng5+",
     moves: ["e4", "d6", "Nf3", "g6", "Bc4", "Nd7", "Bxf7+", "Kxf7", "Ng5+"],
     fen: "r1bq1bnr/pppnpk1p/3p2p1/6N1/4P3/8/PPPP1PPP/RNBQK2R b KQ - 1 5",
@@ -15225,6 +16704,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Torey",
+    trapNameFr: "Torey",
+    trapNameEs: "Torey",
+    trapNameAr: "Torey",
     commentedMoves:
         "1.e4 d6 2.Nf3 g6 3.Bc4 Bg4 4.Bxf7+ Kxf7 5.Ng5+ Ke8 6.Qxg4 Nf6 7.Qe6 Qd7 8.Qf7+ Kd8 9.Ne6+ Kc8 10.Nxf8",
     moves: [
@@ -15258,7 +16740,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B06",
     opening: "Robatsch (modern) defence",
     openingId: "robatsch_modern_defence",
-    trapName: "Germany",
+    trapName: "Hallier vs Fegebank",
+    trapNameFr: "Hallier contre Fegebank",
+    trapNameEs: "Hallier contra Fegebank",
+    trapNameAr: "Hallier ضد Fegebank",
     commentedMoves:
         "1.e4 g6 2.d4 Bg7 3.Nc3 c6 4.f4 d6 5.Be2 Qb6 6.Nf3 Bg4 7.Na4 Qa5+ 8.c3 b5",
     moves: [
@@ -15289,7 +16774,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B06",
     opening: "Robatsch (modern) defence",
     openingId: "robatsch_modern_defence",
-    trapName: "Copenhagen",
+    trapName: "Sylvan vs Flaata",
+    trapNameFr: "Sylvan contre Flaata",
+    trapNameEs: "Sylvan contra Flaata",
+    trapNameAr: "Sylvan ضد Flaata",
     commentedMoves:
         "1.e4 g6 2.d4 Bg7 3.Nc3 d6 4.Bc4 Nd7 5.Nf3 Ngf6 6.e5 dxe5 7.dxe5 Ng4 8.Bxf7+ Kxf7 9.Ng5+ Kg8 10.Qd5+",
     moves: [
@@ -15324,6 +16812,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Robatsch (modern) defence",
     openingId: "robatsch_modern_defence",
     trapName: "Philadelphia",
+    trapNameFr: "Philadelphia",
+    trapNameEs: "Philadelphia",
+    trapNameAr: "Philadelphia",
     commentedMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.c4 Bg4 5.Be2 Nc6 6.Be3 e5 7.Nxe5 dxe5 8.Bxg4 exd4 9.Bf4 h5 10.Be2 d3",
     moves: [
@@ -15358,6 +16849,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Robatsch (modern) defence",
     openingId: "robatsch_modern_defence",
     trapName: "Sacramento",
+    trapNameFr: "Sacramento",
+    trapNameEs: "Sacramento",
+    trapNameAr: "Sacramento",
     commentedMoves: "1.e4 g6 2.d4 f5 3.exf5 gxf5 4.Qh5#",
     moves: ["e4", "g6", "d4", "f5", "exf5", "gxf5", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/8/5p1Q/3P4/8/PPP2PPP/RNB1KBNR b KQkq - 1 4",
@@ -15371,6 +16865,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Robatsch (modern) defence",
     openingId: "robatsch_modern_defence",
     trapName: "Chamonix",
+    trapNameFr: "Chamonix",
+    trapNameEs: "Chamonix",
+    trapNameAr: "Chamonix",
     commentedMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.Nc3 Nd7 5.Bc4 Ngf6 6.e5 dxe5 7.dxe5 Nh5 8.Bxf7+ Kxf7 9.Ng5+ Kg8 10.Qd5+ Kf8 11.Qf7#",
     moves: [
@@ -15406,6 +16903,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Polish (Sokolsky) opening",
     openingId: "polish_opening",
     trapName: "Bulgaria",
+    trapNameFr: "Bulgaria",
+    trapNameEs: "Bulgaria",
+    trapNameAr: "Bulgaria",
     commentedMoves: "1.b4 c6 2.Bb2 Qb6 3.a3 a5 4.c4 e6 5.c5 Bxc5 6.Bxg7 Bxf2#",
     moves: [
       "b4",
@@ -15432,6 +16932,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Polish (Sokolsky) opening",
     openingId: "polish_opening",
     trapName: "Ohio",
+    trapNameFr: "Ohio",
+    trapNameEs: "Ohio",
+    trapNameAr: "Ohio",
     commentedMoves:
         "1.b4 e5 2.a4 d5 3.c4 dxc4 4.Qc2 Nc6 5.Qxc4 Be6 6.Qc2 Nd4 7.Qd1 Bb3",
     moves: [
@@ -15460,6 +16963,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Polish (Sokolsky) opening",
     openingId: "polish_opening",
     trapName: "Zittau",
+    trapNameFr: "Zittau",
+    trapNameEs: "Zittau",
+    trapNameAr: "Zittau",
     commentedMoves: "1.b4 e5 2.Bb2 Bxb4 3.f4 d6 4.e4 Nc6 5.f5 Qh4+ 6.g3 Qxe4+",
     moves: [
       "b4",
@@ -15485,7 +16991,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "Polish (Sokolsky) opening",
     openingId: "polish_opening",
-    trapName: "Germany",
+    trapName: "Meybohm vs Kucharkowski",
+    trapNameFr: "Meybohm contre Kucharkowski",
+    trapNameEs: "Meybohm contra Kucharkowski",
+    trapNameAr: "Meybohm ضد Kucharkowski",
     commentedMoves:
         "1.b4 e5 2.Bb2 Bxb4 3.f4 d6 4.e4 Nf6 5.Qe2 O-O 6.f5 d5 7.Bxe5 Re8 8.Bxf6 Qxf6 9.c3 Rxe4",
     moves: [
@@ -15519,6 +17028,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Polish (Sokolsky) opening",
     openingId: "polish_opening",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.b4 e5 2.Bb2 d6 3.c4 Nc6 4.a3 f6 5.Nf3 g5 6.e3 h5 7.Be2 e4 8.Nxg5 fxg5 9.Bxh8",
     moves: [
@@ -15550,7 +17062,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "Polish (Sokolsky) opening",
     openingId: "polish_opening",
-    trapName: "Berlin",
+    trapName: "Ikes vs Groncki",
+    trapNameFr: "Ikes contre Groncki",
+    trapNameEs: "Ikes contra Groncki",
+    trapNameAr: "Ikes ضد Groncki",
     commentedMoves:
         "1.b4 e5 2.Bb2 e4 3.c4 Nf6 4.b5 d5 5.cxd5 Nxd5 6.f3 e3 7.Qa4 Bb4 8.a3 exd2+ 9.Nxd2 Qh4+ 10.g3 Bxd2+ 11.Kxd2 Qxa4",
     moves: [
@@ -15586,7 +17101,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A00",
     opening: "Polish (Sokolsky) opening",
     openingId: "polish_opening",
-    trapName: "USA",
+    trapName: "Goudreau vs Summers",
+    trapNameFr: "Goudreau contre Summers",
+    trapNameEs: "Goudreau contra Summers",
+    trapNameAr: "Goudreau ضد Summers",
     commentedMoves: "1.b4 e5 2.Bb2 e4 3.e3 d5 4.Ne2 Bxb4 5.Bxg7",
     moves: ["b4", "e5", "Bb2", "e4", "e3", "d5", "Ne2", "Bxb4", "Bxg7"],
     fen: "rnbqk1nr/ppp2pBp/8/3p4/1b2p3/4P3/P1PPNPPP/RN1QKB1R b KQkq - 0 5",
@@ -15600,6 +17118,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Polish (Sokolsky) opening",
     openingId: "polish_opening",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.b4 e5 2.Bb2 f6 3.b5 a6 4.bxa6 bxa6 5.e3 Bc5 6.Bc4 d5 7.Bb3 d4 8.exd4 exd4 9.Qh5+ g6 10.Qxc5",
     moves: [
@@ -15633,7 +17154,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Internet",
+    trapName: "Ocogmas vs Wall, Bill",
+    trapNameFr: "Ocogmas contre Wall, Bill",
+    trapNameEs: "Ocogmas contra Wall, Bill",
+    trapNameAr: "Ocogmas ضد Wall, Bill",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 Bc5 4.d3 d6 5.b4 Bb6 6.b5 Nce7 7.c4 Bg4 8.Qe2 Bxf3 9.Qxf3 Bd4",
     moves: [
@@ -15666,7 +17190,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Germany",
+    trapName: "Komarek vs Korn",
+    trapNameFr: "Komarek contre Korn",
+    trapNameEs: "Komarek contra Korn",
+    trapNameAr: "Komarek ضد Korn",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 d5 4.Qa4 Qd6 5.exd5 Qxd5 6.Bc4 Qe4+ 7.Kd1 Bd7 8.Bxf7+ Kxf7 9.Qxe4",
     moves: [
@@ -15699,6 +17226,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "Boras",
+    trapNameFr: "Boras",
+    trapNameEs: "Boras",
+    trapNameAr: "Boras",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 d5 4.Qa4 dxe4 5.Nxe5 Qd5 6.Nxc6 Qxc6 7.Bb5",
     moves: [
@@ -15726,7 +17256,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Dphfrn",
+    trapNameFr: "Wall, Bill contre Dphfrn",
+    trapNameEs: "Wall, Bill contra Dphfrn",
+    trapNameAr: "Wall, Bill ضد Dphfrn",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 Nf6 4.d4 exd4 5.e5 Ne4 6.Qe2 d5 7.exd6 Bf5 8.Nbd2 Bxd6 9.Nxe4 Bxe4 10.Qxe4+",
     moves: [
@@ -15760,7 +17293,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Corr.",
+    trapName: "Kahn vs Massachaele",
+    trapNameFr: "Kahn contre Massachaele",
+    trapNameEs: "Kahn contra Massachaele",
+    trapNameAr: "Kahn ضد Massachaele",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 Nf6 4.d4 Nxe4 5.d5 Nb8 6.Nxe5 Bc5 7.Nd3 Bb6 8.Be2 d6 9.Qa4+",
     moves: [
@@ -15793,6 +17329,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "Frunse",
+    trapNameFr: "Frunse",
+    trapNameEs: "Frunse",
+    trapNameAr: "Frunse",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.c3 Nf6 4.d4 Nxe4 5.d5 Nb8 6.Nxe5 Qe7 7.Qd4 d6 8.Qxe4 f5 9.Bb5+ Kd8 10.Bg5",
     moves: [
@@ -15826,7 +17365,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D20",
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
-    trapName: "England",
+    trapName: "Donnelly vs Pollington",
+    trapNameFr: "Donnelly contre Pollington",
+    trapNameEs: "Donnelly contra Pollington",
+    trapNameAr: "Donnelly ضد Pollington",
     commentedMoves:
         "1.d4 d5 2.c4 dxc4 3.Nc3 c5 4.e3 cxd4 5.Bxc4 dxc3 6.Bxf7+ Kxf7 7.Qxd8",
     moves: [
@@ -15855,6 +17397,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
     trapName: "Oregon",
+    trapNameFr: "Oregon",
+    trapNameEs: "Oregon",
+    trapNameAr: "Oregon",
     commentedMoves:
         "1.d4 d5 2.c4 dxc4 3.e4 b5 4.Nc3 c6 5.b4 a5 6.Ba3 e6 7.Rb1 Na6 8.Nce2 Nxb4 9.Nf3 Nd3+ 10.Kd2 Bxa3",
     moves: [
@@ -15889,7 +17434,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D20",
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
-    trapName: "Internet",
+    trapName: "Green vs Varley",
+    trapNameFr: "Green contre Varley",
+    trapNameEs: "Green contra Varley",
+    trapNameAr: "Green ضد Varley",
     commentedMoves:
         "1.d4 d5 2.c4 dxc4 3.e4 e5 4.Nf3 Bg4 5.Bxc4 exd4 6.Qb3 Be7 7.Bxf7+ Kf8 8.Ne5 Bc8 9.Bxg8",
     moves: [
@@ -15921,7 +17469,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D21",
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
-    trapName: "Vienna",
+    trapName: "Blackburne vs Fleissig",
+    trapNameFr: "Blackburne contre Fleissig",
+    trapNameEs: "Blackburne contra Fleissig",
+    trapNameAr: "Blackburne ضد Fleissig",
     commentedMoves:
         "1.d4 d5 2.c4 dxc4 3.Nf3 b5 4.a4 c6 5.e3 Bd7 6.Ne5 a6 7.axb5 cxb5 8.Qf3",
     moves: [
@@ -15952,6 +17503,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
     trapName: "Hanover",
+    trapNameFr: "Hanover",
+    trapNameEs: "Hanover",
+    trapNameAr: "Hanover",
     commentedMoves:
         "1.d4 d5 2.c4 dxc4 3.Nf3 c5 4.e3 Bg4 5.Bxc4 e6 6.Qa4+ Nd7 7.Ne5 Bf5 8.Nxd7 Qxd7 9.Bb5",
     moves: [
@@ -15982,7 +17536,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D21",
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
-    trapName: "Budapest",
+    trapName: "Farago vs Blumberg",
+    trapNameFr: "Farago contre Blumberg",
+    trapNameEs: "Farago contra Blumberg",
+    trapNameAr: "Farago ضد Blumberg",
     commentedMoves: "1.d4 d5 2.c4 dxc4 3.Nf3 c6 4.e3 Be6 5.Ng5 Qa5+",
     moves: ["d4", "d5", "c4", "dxc4", "Nf3", "c6", "e3", "Be6", "Ng5", "Qa5+"],
     fen: "rn2kbnr/pp2pppp/2p1b3/q5N1/2pP4/4P3/PP3PPP/RNBQKB1R w KQkq - 3 6",
@@ -15996,6 +17553,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
     trapName: "Warsaw",
+    trapNameFr: "Warsaw",
+    trapNameEs: "Warsaw",
+    trapNameAr: "Warsaw",
     commentedMoves:
         "1.d4 d5 2.c4 dxc4 3.Nf3 Nf6 4.Qa4+ Nbd7 5.Nc3 e6 6.e4 c5 7.d5 exd5 8.e5 d4 9.Bxc4 dxc3 10.Ng5 Qe7 11.Bxf7+ Kd8 12.Ne6+",
     moves: [
@@ -16034,6 +17594,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "Indiana",
+    trapNameFr: "Indiana",
+    trapNameEs: "Indiana",
+    trapNameAr: "Indiana",
     commentedMoves:
         "1.d4 d5 2.c4 c5 3.dxc5 Nf6 4.Nf3 Nc6 5.Bg5 Ne4 6.Bf4 Qa5+ 7.Nbd2 Qxc5 8.Rc1 Qxf2#",
     moves: [
@@ -16065,6 +17628,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "Washington, DC",
+    trapNameFr: "Washington, DC",
+    trapNameEs: "Washington, DC",
+    trapNameAr: "Washington, DC",
     commentedMoves:
         "1.d4 d5 2.c4 c5 3.e3 cxd4 4.cxd5 Qa5+ 5.Qd2 Qxd5 6.exd4 Nc6 7.Nf3 Bf5 8.Nc3 Qa5 9.Bb5 e6 10.O-O Rd8 11.Ne5 Nge7 12.Nd5",
     moves: [
@@ -16103,6 +17669,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined Slav defence",
     openingId: "qgd_slav_defence",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 e5 4.dxe5 d4 5.Ne4 Bb4+ 6.Bd2 Bxd2+ 7.Qxd2 Bf5 8.Nd6+ Kf8 9.Nxf5",
     moves: [
@@ -16134,6 +17703,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined Slav defence",
     openingId: "qgd_slav_defence",
     trapName: "Siegen",
+    trapNameFr: "Siegen",
+    trapNameEs: "Siegen",
+    trapNameAr: "Siegen",
     commentedMoves: "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Bg5 Ne4 5.Nxe4 dxe4 6.e3 Qa5+",
     moves: [
       "d4",
@@ -16159,7 +17731,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D08",
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
-    trapName: "England",
+    trapName: "NN vs Livingtone",
+    trapNameFr: "NN contre Livingtone",
+    trapNameEs: "NN contra Livingtone",
+    trapNameAr: "NN ضد Livingtone",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.e3 exd4 4.exd4 Nf6 5.Bg5 Be6 6.cxd5 Bxd5 7.Nc3 Nc6 8.Nxd5 Qxd5 9.Bxf6 Bb4+ 10.Ke2 Qe4#",
     moves: [
@@ -16195,6 +17770,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 dxc4 4.Qxd8+ Kxd8 5.Nc3 Bb4 6.Bd2 Nc6 7.O-O-O Nxe5 8.Bg5+ Ke8 9.Rd8#",
     moves: [
@@ -16226,7 +17804,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D08",
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
-    trapName: "London",
+    trapName: "Miller vs Petersons",
+    trapNameFr: "Miller contre Petersons",
+    trapNameEs: "Miller contra Petersons",
+    trapNameAr: "Miller ضد Petersons",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e4 Nc6 5.Ne2 Bc5 6.Nd2 Nxe5 7.Nb3 Bb4+ 8.Bd2 Nd3#",
     moves: [
@@ -16258,6 +17839,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "Berkeley",
+    trapNameFr: "Berkeley",
+    trapNameEs: "Berkeley",
+    trapNameAr: "Berkeley",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e4 Nc6 5.f4 Nxe5 6.fxe5 Qh4+ 7.Kd2 Qxe4 8.a3 Bf5 9.Nf3 Qe3#",
     moves: [
@@ -16290,7 +17874,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D32",
     opening: "Queen's gambit declined",
     openingId: "queens_gambit_declined",
-    trapName: "Corr.",
+    trapName: "Fidlow vs Mayer",
+    trapNameFr: "Fidlow contre Mayer",
+    trapNameEs: "Fidlow contra Mayer",
+    trapNameAr: "Fidlow ضد Mayer",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 c5 4.cxd5 cxd4 5.dxe6 dxc3 6.exf7+ Ke7 7.fxg8=N+ Rxg8 8.Bg5+",
     moves: [
@@ -16321,6 +17908,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's gambit declined",
     openingId: "queens_gambit_declined",
     trapName: "Tbilisi",
+    trapNameFr: "Tbilisi",
+    trapNameEs: "Tbilisi",
+    trapNameAr: "Tbilisi",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 c5 4.cxd5 exd5 5.Nf3 Nc6 6.g3 c4 7.e4 dxe4 8.Ng5 Qxd4 9.Bf4 Bb4 10.Ngxe4 Qxe4+",
     moves: [
@@ -16356,6 +17946,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
     trapName: "Thailand",
+    trapNameFr: "Thailand",
+    trapNameEs: "Thailand",
+    trapNameAr: "Thailand",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 h6 5.Bh4 g5 6.Bg3 Be7 7.Nb5 O-O 8.Nxc7 Bb4+",
     moves: [
@@ -16386,7 +17979,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D30",
     opening: "Queen's gambit declined",
     openingId: "queens_gambit_declined",
-    trapName: "USA",
+    trapName: "NN vs Bruning",
+    trapNameFr: "NN contre Bruning",
+    trapNameEs: "NN contra Bruning",
+    trapNameAr: "NN ضد Bruning",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Bf4 c5 4.Nc3 cxd4 5.Bxb8 dxc3 6.Be5 cxb2 7.Bxb2 Bb4+",
     moves: [
@@ -16415,7 +18011,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D06",
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
-    trapName: "Germany",
+    trapName: "Kupel vs Herrman",
+    trapNameFr: "Kupel contre Herrman",
+    trapNameEs: "Kupel contra Herrman",
+    trapNameAr: "Kupel ضد Herrman",
     commentedMoves:
         "1.d4 d5 2.c4 Bf5 3.Nc3 e6 4.Qb3 Nc6 5.cxd5 exd5 6.Nxd5 Be4 7.Nc3 Nxd4 8.Qa4+ b5 9.Nxb5 Nc2+",
     moves: [
@@ -16448,7 +18047,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D06",
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
-    trapName: "Europe",
+    trapName: "Krejcik vs Reti",
+    trapNameFr: "Krejcik contre Reti",
+    trapNameEs: "Krejcik contra Reti",
+    trapNameAr: "Krejcik ضد Reti",
     commentedMoves:
         "1.d4 d5 2.c4 Nf6 3.Nc3 e5 4.dxe5 Ng4 5.Nf3 Bb4 6.Bd2 Qe7 7.Nxd5 Bxd2+ 8.Qxd2 Qc5 9.e3 O-O 10.b4",
     moves: [
@@ -16481,7 +18083,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D06",
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Rafe",
+    trapNameFr: "Wall, Bill contre Rafe",
+    trapNameEs: "Wall, Bill contra Rafe",
+    trapNameAr: "Wall, Bill ضد Rafe",
     commentedMoves: "1.d4 d5 2.c4 Nf6 3.cxd5 Nxd5 4.e4 Nf6 5.Bd3 Qxd4 6.Bb5+",
     moves: [
       "d4",
@@ -16507,6 +18112,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "Szoenor",
+    trapNameFr: "Szoenor",
+    trapNameEs: "Szoenor",
+    trapNameAr: "Szoenor",
     commentedMoves:
         "1.d4 d5 2.c4 Nf6 3.cxd5 Qxd5 4.Nc3 Qd8 5.e4 e5 6.Qa4+ Bd7 7.Qb3 exd4 8.Qxb7 dxc3 9.Qxa8 cxb2 10.Bxb2 Bb4+ 11.Ke2 Bg4+ 12.Nf3 Qd2#",
     moves: [
@@ -16546,6 +18154,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Indian defence",
     openingId: "queens_indian_defence_e12",
     trapName: "Riedenburg",
+    trapNameFr: "Riedenburg",
+    trapNameEs: "Riedenburg",
+    trapNameAr: "Riedenburg",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.a3 Bb7 5.Nc3 Ne4 6.Qc2 Nxc3 7.Qxc3 Be7 8.Bf4 Bf6 9.Qd2 d6 10.e3 Nd7 11.Be2 g5 12.Bg3 g4 13.Ng1 Bxg2",
     moves: [
@@ -16588,6 +18199,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Indian defence",
     openingId: "queens_indian_defence_e12",
     trapName: "Tel Aviv",
+    trapNameFr: "Tel Aviv",
+    trapNameEs: "Tel Aviv",
+    trapNameAr: "Tel Aviv",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.Nc3 Bb4 5.Qc2 Bb7 6.Bg5 h6 7.Bh4 d6 8.Qa4+ Nc6 9.d5",
     moves: [
@@ -16620,6 +18234,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Indian defence",
     openingId: "queens_indian_defence_e12",
     trapName: "Dearborn",
+    trapNameFr: "Dearborn",
+    trapNameEs: "Dearborn",
+    trapNameAr: "Dearborn",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.Nc3 Bb4 5.Bg5 Bb7 6.e3 h6 7.Bh4 d6 8.Qa4+ Nc6 9.d5",
     moves: [
@@ -16651,7 +18268,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "E12",
     opening: "Queen's Indian defence",
     openingId: "queens_indian_defence_e12",
-    trapName: "Corr",
+    trapName: "Berlin vs Aspengren",
+    trapNameFr: "Berlin contre Aspengren",
+    trapNameEs: "Berlin contra Aspengren",
+    trapNameAr: "Berlin ضد Aspengren",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.Nc3 Bb7 5.g3 d5 6.cxd5 exd5 7.Bg2 c5 8.O-O cxd4 9.Nxd4 Be7 10.Nf5 O-O 11.Nxd5 Nxd5 12.Bxd5 Qd7 13.Bxb7 Qxb7 14.Qd5 Qc7 15.Qxa8 Nc6 16.Qxc6 Qxc6 17.Nxe7+ Kh8 18.Nxc6",
     moves: [
@@ -16701,6 +18321,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Indian defence",
     openingId: "queens_indian_defence_e12",
     trapName: "Gausdal",
+    trapNameFr: "Gausdal",
+    trapNameEs: "Gausdal",
+    trapNameAr: "Gausdal",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 b6 4.g3 Ba6 5.Nbd2 Bb4 6.Qc2 d5 7.Qa4+",
     moves: [
@@ -16727,7 +18350,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Internet",
+    trapName: "WMM vs Wall, Bill",
+    trapNameFr: "WMM contre Wall, Bill",
+    trapNameEs: "WMM contra Wall, Bill",
+    trapNameAr: "WMM ضد Wall, Bill",
     commentedMoves: "1.e4 e5 2.Nf3 d5 3.Nc3 d4 4.Nd5 c6",
     moves: ["e4", "e5", "Nf3", "d5", "Nc3", "d4", "Nd5", "c6"],
     fen: "rnbqkbnr/pp3ppp/2p5/3Np3/3pP3/5N2/PPPP1PPP/R1BQKB1R w KQkq - 0 5",
@@ -16740,7 +18366,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Moscow",
+    trapName: "Abrikossowski vs Parkov",
+    trapNameFr: "Abrikossowski contre Parkov",
+    trapNameEs: "Abrikossowski contra Parkov",
+    trapNameAr: "Abrikossowski ضد Parkov",
     commentedMoves:
         "1.e4 e5 2.Nf3 d5 3.exd5 Qxd5 4.Nc3 Qa5 5.Qe2 Nc6 6.d3 Bg4 7.Bd2 Nd4 8.Qxe5+ Qxe5+ 9.Nxe5 Nxc2#",
     moves: [
@@ -16773,7 +18402,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Corr.",
+    trapName: "Solderberg vs Allen",
+    trapNameFr: "Solderberg contre Allen",
+    trapNameEs: "Solderberg contra Allen",
+    trapNameAr: "Solderberg ضد Allen",
     commentedMoves:
         "1.e4 e5 2.Nf3 d5 3.exd5 Bd6 4.Nc3 Nf6 5.d4 e4 6.Ne5 h6 7.Nb5 Bxe5 8.dxe5 Nxd5 9.Qxd5",
     moves: [
@@ -16805,7 +18437,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Internet",
+    trapName: "MikhailTal vs Wall, Bill",
+    trapNameFr: "MikhailTal contre Wall, Bill",
+    trapNameEs: "MikhailTal contra Wall, Bill",
+    trapNameAr: "MikhailTal ضد Wall, Bill",
     commentedMoves:
         "1.e4 e5 2.Nf3 d5 3.exd5 e4 4.Qe2 Qe7 5.Nd4 Nf6 6.Qb5+ Nbd7 7.Nc3 Qe5 8.Qc4 Nb6",
     moves: [
@@ -16836,7 +18471,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "USA",
+    trapName: "Hindley vs Ramsey",
+    trapNameFr: "Hindley contre Ramsey",
+    trapNameEs: "Hindley contra Ramsey",
+    trapNameAr: "Hindley ضد Ramsey",
     commentedMoves: "1.e4 e5 2.Nf3 d5 3.Nxe5 Bd6 4.d4 f6 5.Qh5+ Kf8 6.Qf7#",
     moves: [
       "e4",
@@ -16861,7 +18499,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Internet",
+    trapName: "Vir vs Wall, Bill",
+    trapNameFr: "Vir contre Wall, Bill",
+    trapNameEs: "Vir contra Wall, Bill",
+    trapNameAr: "Vir ضد Wall, Bill",
     commentedMoves:
         "1.d4 d5 2.Nc3 Nf6 3.Bf4 Bf5 4.e3 e6 5.Qe2 Nbd7 6.Qb5 Bxc2 7.Nf3 Qc8 8.Be2 a6 9.Qa5 b6",
     moves: [
@@ -16895,7 +18536,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D01",
     opening: "Richter-Veresov attack",
     openingId: "richter_veresov_attack",
-    trapName: "Europe",
+    trapName: "Wade vs Kincel",
+    trapNameFr: "Wade contre Kincel",
+    trapNameEs: "Wade contra Kincel",
+    trapNameAr: "Wade ضد Kincel",
     commentedMoves:
         "1.d4 d5 2.Nc3 Nf6 3.Bg5 c6 4.Bxf6 gxf6 5.e3 e5 6.Qh5 e4 7.f3 f5 8.fxe4 fxe4 9.Qe5+",
     moves: [
@@ -16927,6 +18571,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Rjasan",
+    trapNameFr: "Rjasan",
+    trapNameEs: "Rjasan",
+    trapNameAr: "Rjasan",
     commentedMoves: "1.d4 d5 2.e3 e5 3.Qf3 e4 4.Qf4 Bd6",
     moves: ["d4", "d5", "e3", "e5", "Qf3", "e4", "Qf4", "Bd6"],
     fen: "rnbqk1nr/ppp2ppp/3b4/3p4/3PpQ2/4P3/PPP2PPP/RNB1KBNR w KQkq - 2 5",
@@ -16940,6 +18587,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves:
         "1.d4 d5 2.e3 e6 3.Nc3 Nf6 4.Bb5+ c6 5.Ba4 a5 6.Nf3 b5 7.Bb3 a4",
     moves: [
@@ -16968,7 +18618,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D00",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "Internet",
+    trapName: "DeButts vs Critchfield",
+    trapNameFr: "DeButts contre Critchfield",
+    trapNameEs: "DeButts contra Critchfield",
+    trapNameAr: "DeButts ضد Critchfield",
     commentedMoves:
         "1.d4 d5 2.e3 Nf6 3.Bd3 Bg4 4.f3 Bh5 5.c3 Nc6 6.Qb3 b6 7.Qa4 Qd7 8.Bb5",
     moves: [
@@ -17000,6 +18653,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d02",
     trapName: "Havana",
+    trapNameFr: "Havana",
+    trapNameEs: "Havana",
+    trapNameAr: "Havana",
     commentedMoves:
         "1.d4 d5 2.Nf3 Nc6 3.g3 Bg4 4.Bg2 e6 5.O-O Be7 6.c3 h5 7.Ne5 Nxe5 8.dxe5 h4 9.Qa4+",
     moves: [
@@ -17032,6 +18688,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d02",
     trapName: "Nuremberg",
+    trapNameFr: "Nuremberg",
+    trapNameEs: "Nuremberg",
+    trapNameAr: "Nuremberg",
     commentedMoves:
         "1.d4 d5 2.Nf3 Bg4 3.c4 e6 4.Qb3 b6 5.Ne5 Nf6 6.e3 Bd6 7.cxd5 Bxe5 8.dxe5 Nxd5 9.Qa4+",
     moves: [
@@ -17063,7 +18722,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D02",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d02",
-    trapName: "Berlin",
+    trapName: "Bernstein vs NN",
+    trapNameFr: "Bernstein contre NN",
+    trapNameEs: "Bernstein contra NN",
+    trapNameAr: "Bernstein ضد NN",
     commentedMoves:
         "1.d4 d5 2.Nf3 Bg4 3.c4 e6 4.Ne5 Bf5 5.cxd5 exd5 6.Qb3 b6 7.e4 Bxe4 8.Bb5+ Ke7 9.Bc6",
     moves: [
@@ -17096,6 +18758,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Santiago",
+    trapNameFr: "Santiago",
+    trapNameEs: "Santiago",
+    trapNameAr: "Santiago",
     commentedMoves:
         "1.d4 Nf6 2.Nc3 c5 3.Nf3 cxd4 4.Nxd4 d5 5.Bg5 e5 6.Ndb5 a6 7.Nxd5 axb5 8.Nxf6+ gxf6 9.Qxd8+ Kxd8 10.Bxf6+",
     moves: [
@@ -17130,6 +18795,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Baden Bade",
+    trapNameFr: "Baden Bade",
+    trapNameEs: "Baden Bade",
+    trapNameAr: "Baden Bade",
     commentedMoves:
         "1.d4 Nf6 2.Nc3 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.Ne4 Bb4+ 6.c3 Ba5 7.h3 Nh6 8.Bg5 f6 9.exf6",
     moves: [
@@ -17162,6 +18830,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Bucharest",
+    trapNameFr: "Bucharest",
+    trapNameEs: "Bucharest",
+    trapNameAr: "Bucharest",
     commentedMoves:
         "1.d4 Nf6 2.Nd2 e5 3.dxe5 Ng4 4.Ngf3 Be7 5.h3 Ne3 6.fxe3 Bh4+ 7.Nxh4 Qxh4+ 8.g3 Qxg3#",
     moves: [
@@ -17191,7 +18862,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A45",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
-    trapName: "Paris",
+    trapName: "Gibaud vs Lazard",
+    trapNameFr: "Gibaud contre Lazard",
+    trapNameEs: "Gibaud contra Lazard",
+    trapNameAr: "Gibaud ضد Lazard",
     commentedMoves:
         "1.d4 Nf6 2.Nd2 e5 3.dxe5 Ng4 4.h3 Ne3 5.fxe3 Qh4+ 6.g3 Qxg3#",
     moves: [
@@ -17218,6 +18892,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Voronets",
+    trapNameFr: "Voronets",
+    trapNameEs: "Voronets",
+    trapNameAr: "Voronets",
     commentedMoves: "1.d4 Nf6 2.Nf3 b5 3.Bg5 Bb7 4.e3 Ne4 5.Bxb5 c6",
     moves: ["d4", "Nf6", "Nf3", "b5", "Bg5", "Bb7", "e3", "Ne4", "Bxb5", "c6"],
     fen: "rn1qkb1r/pb1ppppp/2p5/1B4B1/3Pn3/4PN2/PPP2PPP/RN1QK2R w KQkq - 0 6",
@@ -17229,7 +18906,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A46",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
-    trapName: "Vienna",
+    trapName: "Halics vs Lanz",
+    trapNameFr: "Halics contre Lanz",
+    trapNameEs: "Halics contra Lanz",
+    trapNameAr: "Halics ضد Lanz",
     commentedMoves: "1.d4 Nf6 2.Nf3 c5 3.Bf4 cxd4 4.Nxd4 e5 5.Bxe5 Qa5+",
     moves: [
       "d4",
@@ -17252,7 +18932,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A45",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
-    trapName: "USA",
+    trapName: "Shuler vs Hall, E.",
+    trapNameFr: "Shuler contre Hall, E.",
+    trapNameEs: "Shuler contra Hall, E.",
+    trapNameAr: "Shuler ضد Hall, E.",
     commentedMoves:
         "1.d4 Nf6 2.Bf4 c5 3.Nf3 cxd4 4.Nxd4 e5 5.Bxe5 Qa5+ 6.c3 Qxe5",
     moves: [
@@ -17279,7 +18962,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D02",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
-    trapName: "Internet",
+    trapName: "LordVader vs Wall, Bill",
+    trapNameFr: "LordVader contre Wall, Bill",
+    trapNameEs: "LordVader contra Wall, Bill",
+    trapNameAr: "LordVader ضد Wall, Bill",
     commentedMoves:
         "1.d4 Nf6 2.Bf4 d5 3.Nf3 c5 4.dxc5 e6 5.Na3 Bxc5 6.Nb5 Qa5+ 7.c3 Qxb5",
     moves: [
@@ -17308,6 +18994,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Bela Crka",
+    trapNameFr: "Bela Crka",
+    trapNameEs: "Bela Crka",
+    trapNameAr: "Bela Crka",
     commentedMoves: "1.d4 Nf6 2.Bg5 c6 3.e3 Qa5+",
     moves: ["d4", "Nf6", "Bg5", "c6", "e3", "Qa5+"],
     fen: "rnb1kb1r/pp1ppppp/2p2n2/q5B1/3P4/4P3/PPP2PPP/RN1QKBNR w KQkq - 1 4",
@@ -17319,7 +19008,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A45",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
-    trapName: "Europe",
+    trapName: "Hondema vs Baljon",
+    trapNameFr: "Hondema contre Baljon",
+    trapNameEs: "Hondema contra Baljon",
+    trapNameAr: "Hondema ضد Baljon",
     commentedMoves: "1.d4 Nf6 2.Bg5 c5 3.d5 Qb6 4.b3 Ne4 5.Be3 Qb4+ 6.Bd2 Qd4",
     moves: [
       "d4",
@@ -17345,7 +19037,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A45",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
-    trapName: "Internet",
+    trapName: "ShadowDan vs Wall, Bill",
+    trapNameFr: "ShadowDan contre Wall, Bill",
+    trapNameEs: "ShadowDan contra Wall, Bill",
+    trapNameAr: "ShadowDan ضد Wall, Bill",
     commentedMoves:
         "1.d4 Nf6 2.Bg5 Nd5 3.e4 h6 4.Bh4 Nf6 5.e5 Nd5 6.Qf3 c6 7.Bc4 Qb6 8.b3 Qxd4 9.c3 Qxh4",
     moves: [
@@ -17378,6 +19073,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Winston-Salem",
+    trapNameFr: "Winston-Salem",
+    trapNameEs: "Winston-Salem",
+    trapNameAr: "Winston-Salem",
     commentedMoves: "1.d4 Nf6 2.Bg5 d5 3.e3 e6 4.c4 c6 5.Bd3 dxc4 6.Bxc4 Qa5+",
     moves: [
       "d4",
@@ -17404,6 +19102,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Islington",
+    trapNameFr: "Islington",
+    trapNameEs: "Islington",
+    trapNameAr: "Islington",
     commentedMoves:
         "1.d4 Nf6 2.Bg5 Ne4 3.Bf4 c5 4.d5 Qb6 5.Nd2 Qxb2 6.Ngf3 Nc3 7.Nc4 Nxd1 8.Nxb2 Nxb2",
     moves: [
@@ -17433,7 +19134,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A45",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
-    trapName: "Berlin",
+    trapName: "Gant vs Kauschmann",
+    trapNameFr: "Gant contre Kauschmann",
+    trapNameEs: "Gant contra Kauschmann",
+    trapNameAr: "Gant ضد Kauschmann",
     commentedMoves: "1.d4 Nf6 2.Bg5 Ne4 3.h4 d5 4.Nd2 Qd6 5.c3 Ng3",
     moves: ["d4", "Nf6", "Bg5", "Ne4", "h4", "d5", "Nd2", "Qd6", "c3", "Ng3"],
     fen: "rnb1kb1r/ppp1pppp/3q4/3p2B1/3P3P/2P3n1/PP1NPPP1/R2QKBNR w KQkq - 1 6",
@@ -17446,6 +19150,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Mountain View, CA",
+    trapNameFr: "Mountain View, CA",
+    trapNameEs: "Mountain View, CA",
+    trapNameAr: "Mountain View, CA",
     commentedMoves: "1.Nf3 Nc6 2.g3 e5 3.Bg2 e4 4.Nh4 d5 5.c4 g5",
     moves: ["Nf3", "Nc6", "g3", "e5", "Bg2", "e4", "Nh4", "d5", "c4", "g5"],
     fen: "r1bqkbnr/ppp2p1p/2n5/3p2p1/2P1p2N/6P1/PP1PPPBP/RNBQK2R w KQkq - 0 6",
@@ -17457,7 +19164,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A09",
     opening: "Reti opening",
     openingId: "reti_opening",
-    trapName: "Vienna",
+    trapName: "Deutsch vs Konikowski",
+    trapNameFr: "Deutsch contre Konikowski",
+    trapNameEs: "Deutsch contra Konikowski",
+    trapNameAr: "Deutsch ضد Konikowski",
     commentedMoves: "1.Nf3 d5 2.c4 dxc4 3.e3 Nf6 4.Bxc4 Bg4 5.Ne5 Bh5 6.Qxh5",
     moves: [
       "Nf3",
@@ -17482,6 +19192,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Tiblis",
+    trapNameFr: "Tiblis",
+    trapNameEs: "Tiblis",
+    trapNameAr: "Tiblis",
     commentedMoves: "1.Nf3 d5 2.c4 Nf6 3.g3 Bf5 4.cxd5 Nxd5 5.e4 Bxe4 6.Qa4+",
     moves: [
       "Nf3",
@@ -17506,7 +19219,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A06",
     opening: "Reti opening",
     openingId: "reti_opening",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs X1000",
+    trapNameFr: "Wall, Bill contre X1000",
+    trapNameEs: "Wall, Bill contra X1000",
+    trapNameAr: "Wall, Bill ضد X1000",
     commentedMoves:
         "1.Nf3 d5 2.d3 d4 3.c3 dxc3 4.Nxc3 f5 5.e3 g6 6.d4 Bg7 7.Bc4 Nh6 8.Qb3 e6 9.Bxe6 Bxe6 10.Qxe6+ Qe7 11.Qc8+ Kf7 12.Qxb7 Nd7 13.Qd5+ Kf6 14.Qxa8 Rxa8 15.Nd5+",
     moves: [
@@ -17549,7 +19265,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A06",
     opening: "Reti opening",
     openingId: "reti_opening",
-    trapName: "Internet",
+    trapName: "Jesates vs Wall, Bill",
+    trapNameFr: "Jesates contre Wall, Bill",
+    trapNameEs: "Jesates contra Wall, Bill",
+    trapNameAr: "Jesates ضد Wall, Bill",
     commentedMoves: "1.Nf3 d5 2.e4 dxe4 3.Bb5+ c6",
     moves: ["Nf3", "d5", "e4", "dxe4", "Bb5+", "c6"],
     fen: "rnbqkbnr/pp2pppp/2p5/1B6/4p3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
@@ -17563,6 +19282,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Santa Barbara",
+    trapNameFr: "Santa Barbara",
+    trapNameEs: "Santa Barbara",
+    trapNameAr: "Santa Barbara",
     commentedMoves:
         "1.Nf3 d5 2.e4 dxe4 3.Ng5 Bf5 4.Nc3 Nf6 5.Qe2 Nc6 6.Ngxe4 Nd4 7.Nxf6+ gxf6 8.Qd1 Nxc2+",
     moves: [
@@ -17594,6 +19316,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Brooklyn",
+    trapNameFr: "Brooklyn",
+    trapNameEs: "Brooklyn",
+    trapNameAr: "Brooklyn",
     commentedMoves:
         "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.Nc3 Bf5 5.Qe2 c6 6.Ngxe4 Nbd7 7.Nd6#",
     moves: [
@@ -17622,6 +19347,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.Nf3 Nf6 2.g3 d5 3.Bg2 c6 4.c4 dxc4 5.Na3 e5 6.Nxe5 Bxa3 7.bxa3 Qd4 8.Rb1 Qxe5",
     moves: [
@@ -17652,7 +19380,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A05",
     opening: "Reti opening",
     openingId: "reti_opening",
-    trapName: "Germany",
+    trapName: "Kapischka vs Kupreichik",
+    trapNameFr: "Kapischka contre Kupreichik",
+    trapNameEs: "Kapischka contra Kupreichik",
+    trapNameAr: "Kapischka ضد Kupreichik",
     commentedMoves:
         "1.Nf3 Nf6 2.g3 g6 3.Bg2 Bg7 4.O-O O-O 5.c4 d6 6.Nc3 e5 7.d3 Nh5 8.b4 e4",
     moves: [
@@ -17684,6 +19415,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Charlotte",
+    trapNameFr: "Charlotte",
+    trapNameEs: "Charlotte",
+    trapNameAr: "Charlotte",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 a5 6.a4 b4 7.d4 Bd6 8.dxe5 Nxe5 9.Nxe5 Bxe5 10.Qd5",
     moves: [
@@ -17718,6 +19452,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Tilburg",
+    trapNameFr: "Tilburg",
+    trapNameEs: "Tilburg",
+    trapNameAr: "Tilburg",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 Nd4 6.Bxf7+ Kxf7 7.Nxe5+ Ke6 8.Qg4+ Kxe5 9.f4+ Kxe4 10.Nc3#",
     moves: [
@@ -17751,7 +19488,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C70",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Lepine",
+    trapNameFr: "Wall, Bill contre Lepine",
+    trapNameEs: "Wall, Bill contra Lepine",
+    trapNameAr: "Wall, Bill ضد Lepine",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 Nf6 6.Nc3 a5 7.Ng5 b4 8.Nxf7 Qe7 9.Nb5",
     moves: [
@@ -17783,7 +19523,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C70",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Internet",
+    trapName: "D'Agostino vs Apodaca",
+    trapNameFr: "D'Agostino contre Apodaca",
+    trapNameEs: "D'Agostino contra Apodaca",
+    trapNameAr: "D'Agostino ضد Apodaca",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 Nf6 6.O-O Nxe4 7.Nxe5 Nxe5 8.Qh5 Bd6 9.d4 Nc6 10.Qxf7#",
     moves: [
@@ -17818,6 +19561,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Portugal",
+    trapNameFr: "Portugal",
+    trapNameEs: "Portugal",
+    trapNameAr: "Portugal",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nge7 5.O-O b5 6.Bb3 Na5 7.Nxe5 d6 8.Bxf7#",
     moves: [
@@ -17848,6 +19594,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Cincinnati",
+    trapNameFr: "Cincinnati",
+    trapNameEs: "Cincinnati",
+    trapNameAr: "Cincinnati",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.e5 Ng8 9.Qf3",
     moves: [
@@ -17879,7 +19628,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C90",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Germany",
+    trapName: "Mueller vs Petek",
+    trapNameFr: "Mueller contre Petek",
+    trapNameEs: "Mueller contra Petek",
+    trapNameAr: "Mueller ضد Petek",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.d4 exd4 6.O-O Be7 7.Re1 b5 8.Bb3 d6 9.Nxd4 Nxd4 10.Qxd4 c5",
     moves: [
@@ -17914,7 +19666,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C77",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "New York",
+    trapName: "Capablanca vs Meyer",
+    trapNameFr: "Capablanca contre Meyer",
+    trapNameEs: "Capablanca contra Meyer",
+    trapNameAr: "Capablanca ضد Meyer",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.d4 Nxe4 6.d5 Ne7 7.Nxe5 b5 8.Bb3 Bb7 9.d6 Nxd6 10.Qxd6",
     moves: [
@@ -17949,6 +19704,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Charny",
+    trapNameFr: "Charny",
+    trapNameEs: "Charny",
+    trapNameAr: "Charny",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.d4 b5 7.Bb3 exd4 8.Nxd4 Nc5 9.Nxc6 dxc6 10.Bxf7+",
     moves: [
@@ -17982,7 +19740,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C71",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Germany",
+    trapName: "Uhlmeier vs Kreutzkamp",
+    trapNameFr: "Uhlmeier contre Kreutzkamp",
+    trapNameEs: "Uhlmeier contra Kreutzkamp",
+    trapNameAr: "Uhlmeier ضد Kreutzkamp",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5",
     moves: [
@@ -18014,6 +19775,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Britsh Columbia",
+    trapNameFr: "Britsh Columbia",
+    trapNameEs: "Britsh Columbia",
+    trapNameAr: "Britsh Columbia",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Nf6 6.Nxe5 Bd6 7.Nc4 Nxe4 8.Qe2 Qe7 9.Re1 Nf6 10.Nxd6+ cxd6 11.Qxe7#",
     moves: [
@@ -18049,7 +19813,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C68",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Corr.",
+    trapName: "Wall, Bill vs Flygare",
+    trapNameFr: "Wall, Bill contre Flygare",
+    trapNameEs: "Wall, Bill contra Flygare",
+    trapNameAr: "Wall, Bill ضد Flygare",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Nf6 6.Nxe5 Nxe4 7.Re1 Qd4 8.d3 Qxf2+ 9.Kh1 Nf6 10.Ng4+",
     moves: [
@@ -18084,6 +19851,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Ohio",
+    trapNameFr: "Ohio",
+    trapNameEs: "Ohio",
+    trapNameAr: "Ohio",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bd6 6.d4 Bg4 7.dxe5 Bxe5 8.Qxd8+ Kxd8 9.Nxe5",
     moves: [
@@ -18116,6 +19886,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bd6 6.d4 Qf6 7.Bg5 Qe6 8.dxe5 h6 9.exd6 Qxd6 10.Bh4",
     moves: [
@@ -18150,6 +19923,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Qd6 6.d4 Bg4 7.Bg5 f6 8.Be3 O-O-O 9.h3 h5 10.hxg4 hxg4 11.Nh2 exd4 12.Bd2 Qxh2#",
     moves: [
@@ -18189,6 +19965,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 Bh5 7.g4 Bg6 8.Nxe5 Bxe4 9.Re1 Qd5 10.Nc3 Qxe5 11.Rxe4",
     moves: [
@@ -18225,6 +20004,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Arkansas",
+    trapNameFr: "Arkansas",
+    trapNameEs: "Arkansas",
+    trapNameAr: "Arkansas",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.hxg4 hxg4 8.Ne1 Qh4 9.f3 g3",
     moves: [
@@ -18258,6 +20040,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Los Angeles",
+    trapNameFr: "Los Angeles",
+    trapNameEs: "Los Angeles",
+    trapNameAr: "Los Angeles",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.d3 Qf6 8.Nbd2 Ne7 9.Re1 Ng6 10.Qe2 Bc5 11.hxg4 Nf4 12.Qd1 hxg4 13.Nb3 Qh6",
     moves: [
@@ -18298,7 +20083,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C68",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Amsterdam",
+    trapName: "Bohm vs Hernandez",
+    trapNameFr: "Bohm contre Hernandez",
+    trapNameEs: "Bohm contra Hernandez",
+    trapNameAr: "Bohm ضد Hernandez",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.d3 Qf6 8.Be3 Ne7 9.Nbd2 Ng6 10.hxg4 hxg4 11.Ng5 Nf4 12.Qxg4 Qxg5 13.Qf3 Qxg2+ 14.Qxg2 Ne2#",
     moves: [
@@ -18342,6 +20130,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Ohio",
+    trapNameFr: "Ohio",
+    trapNameEs: "Ohio",
+    trapNameAr: "Ohio",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O f6 6.d4 exd4 7.Nxd4 Bc5 8.Qh5+ g6 9.Qxc5",
     moves: [
@@ -18374,6 +20165,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Havana",
+    trapNameFr: "Havana",
+    trapNameEs: "Havana",
+    trapNameAr: "Havana",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O f6 6.d4 exd4 7.Nxd4 c5 8.Nb3 Qxd1 9.Rxd1 Bd6 10.Na5 Bg4 11.f3 O-O-O 12.e5",
     moves: [
@@ -18412,6 +20206,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Switzerland",
+    trapNameFr: "Switzerland",
+    trapNameEs: "Switzerland",
+    trapNameAr: "Switzerland",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O f6 6.d4 exd4 7.Nxd4 c5 8.Nb3 Qxd1 9.Rxd1 Bd7 10.Bf4 O-O-O 11.Nc3 c6 12.Na4 b5 13.Nb6+ Kb7 14.Nxd7",
     moves: [
@@ -18453,7 +20250,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C64",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Internet",
+    trapName: "Ralls vs Beaulieu",
+    trapNameFr: "Ralls contre Beaulieu",
+    trapNameEs: "Ralls contra Beaulieu",
+    trapNameAr: "Ralls ضد Beaulieu",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Bc5 4.c3 d6 5.d4 exd4 6.cxd4 Bb4+ 7.Kf1 Bd7 8.Qa4 Qe7 9.d5 Qxe4 10.Nc3 Qg4 11.h3",
     moves: [
@@ -18490,6 +20290,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "San Antonio",
+    trapNameFr: "San Antonio",
+    trapNameEs: "San Antonio",
+    trapNameAr: "San Antonio",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nd4 4.Bc4 b5 5.Bxf7+ Kxf7 6.Nxd4 exd4 7.Qh5+ g6 8.Qd5+",
     moves: [
@@ -18519,7 +20322,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C60",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "New York",
+    trapName: "Benko, P. vs Sawayer",
+    trapNameFr: "Benko, P. contre Sawayer",
+    trapNameEs: "Benko, P. contra Sawayer",
+    trapNameAr: "Benko, P. ضد Sawayer",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nge7 4.c3 a6 5.Bc4 h6 6.d4 d6 7.Qb3 Na5 8.Bxf7+ Kd7 9.Nxe5+ dxe5 10.Qe6#",
     moves: [
@@ -18553,6 +20359,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Columbus, Ohio",
+    trapNameFr: "Columbus, Ohio",
+    trapNameEs: "Columbus, Ohio",
+    trapNameAr: "Columbus, Ohio",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Bc5 5.Bxc6 dxc6 6.Nxe5 Qd4",
     moves: [
@@ -18580,6 +20389,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Orlando",
+    trapNameFr: "Orlando",
+    trapNameEs: "Orlando",
+    trapNameAr: "Orlando",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.Bxc6 dxc6 5.d3 Bd6 6.Bg5 O-O 7.d4 Bg4 8.dxe5 Bxe5 9.Qxd8 Raxd8 10.Nxe5 Rd1#",
     moves: [
@@ -18614,7 +20426,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C67",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Corr.",
+    trapName: "Pearsall vs White",
+    trapNameFr: "Pearsall contre White",
+    trapNameEs: "Pearsall contra White",
+    trapNameAr: "Pearsall ضد White",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Nxe4 5.Re1 f5 6.d3 Nd6 7.Bxc6 dxc6 8.Rxe5+ Kf7 9.Bg5 Qd7 10.Re7+ Bxe7 11.Ne5+",
     moves: [
@@ -18650,7 +20465,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C65",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs LonelyMonkey",
+    trapNameFr: "Wall, Bill contre LonelyMonkey",
+    trapNameEs: "Wall, Bill contra LonelyMonkey",
+    trapNameAr: "Wall, Bill ضد LonelyMonkey",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O a6 5.Bxc6 bxc6 6.Nxe5 Nxe4 7.Re1 d5 8.d3 Nxf2 9.Qf3",
     moves: [
@@ -18682,6 +20500,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Lublin",
+    trapNameFr: "Lublin",
+    trapNameEs: "Lublin",
+    trapNameAr: "Lublin",
     commentedMoves: "1.e4 a6 2.d4 b5 3.c4 bxc4 4.Bxc4 Bb7 5.Qb3",
     moves: ["e4", "a6", "d4", "b5", "c4", "bxc4", "Bxc4", "Bb7", "Qb3"],
     fen: "rn1qkbnr/1bpppppp/p7/8/2BPP3/1Q6/PP3PPP/RNB1K1NR b KQkq - 2 5",
@@ -18694,7 +20515,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B00",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "Internet",
+    trapName: "Mic vs Wall, Bill",
+    trapNameFr: "Mic contre Wall, Bill",
+    trapNameEs: "Mic contra Wall, Bill",
+    trapNameAr: "Mic ضد Wall, Bill",
     commentedMoves:
         "1.e4 a6 2.d4 b5 3.e5 e6 4.Qf3 Nc6 5.c3 Bb7 6.Nh3 Nxd4 7.Qxb7 Nc2+",
     moves: [
@@ -18724,6 +20548,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "North Carolina",
+    trapNameFr: "North Carolina",
+    trapNameEs: "North Carolina",
+    trapNameAr: "North Carolina",
     commentedMoves:
         "1.e4 a6 2.d4 b5 3.Nf3 Bb7 4.Bd3 c5 5.dxc5 e6 6.O-O Bxc5 7.c4 b4 8.Bg5 f6 9.Be3 Qc7 10.Nh4 Ne7 11.Qh5+ g6 12.Qxc5",
     moves: [
@@ -18762,6 +20589,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Denmark",
+    trapNameFr: "Denmark",
+    trapNameEs: "Denmark",
+    trapNameAr: "Denmark",
     commentedMoves:
         "1.e4 a6 2.d4 b5 3.Nf3 Bb7 4.Bd3 e6 5.O-O c5 6.c3 Nf6 7.Re1 d5 8.e5 Nfd7 9.Ng5 cxd4 10.Nxe6 Qc8 11.Nxd4",
     moves: [
@@ -18798,6 +20628,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Seville",
+    trapNameFr: "Seville",
+    trapNameEs: "Seville",
+    trapNameAr: "Seville",
     commentedMoves:
         "1.e4 a6 2.d4 b5 3.Nf3 Bb7 4.Bd3 Nf6 5.e5 Nd5 6.a4 b4 7.Ng5 g6 8.Qf3 f5 9.Bxf5 Qc8 10.Be4 c6 11.Nxh7",
     moves: [
@@ -18833,7 +20666,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Moscow",
+    trapName: "Muratov vs Zonov",
+    trapNameFr: "Muratov contre Zonov",
+    trapNameEs: "Muratov contra Zonov",
+    trapNameAr: "Muratov ضد Zonov",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.c3 dxc3 5.Bc4 Be7 6.Qd5",
     moves: [
       "e4",
@@ -18859,6 +20695,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "Lewisham",
+    trapNameFr: "Lewisham",
+    trapNameEs: "Lewisham",
+    trapNameAr: "Lewisham",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.c3 dxc3 5.Bc4 Nf6 6.Nxc3 Bb4 7.e5 Ng4 8.Bxf7+ Kxf7 9.Ng5+ Kg8 10.Qd5+ Kf8 11.Qf7#",
     moves: [
@@ -18894,7 +20733,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Germany",
+    trapName: "Schachter vs Grabowski",
+    trapNameFr: "Schachter contre Grabowski",
+    trapNameEs: "Schachter contra Grabowski",
+    trapNameAr: "Schachter ضد Grabowski",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.Qd5 d6 7.Qxf7#",
     moves: [
@@ -18922,7 +20764,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Corr.",
+    trapName: "Dowd vs Roscher",
+    trapNameFr: "Dowd contre Roscher",
+    trapNameEs: "Dowd contra Roscher",
+    trapNameAr: "Dowd ضد Roscher",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.c3 Nf6 6.b4 Bb6 7.e5 Ne4 8.b5 dxc3 9.Qd5 Bxf2+ 10.Ke2",
     moves: [
@@ -18956,7 +20801,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Vienna",
+    trapName: "Falkbeer vs NN",
+    trapNameFr: "Falkbeer contre NN",
+    trapNameEs: "Falkbeer contra NN",
+    trapNameAr: "Falkbeer ضد NN",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 d6 5.c3 dxc3 6.Nxc3 Bg4 7.O-O Ne5 8.Nxe5 Bxd1 9.Bxf7+ Ke7 10.Nd5#",
     moves: [
@@ -18990,7 +20838,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "New York",
+    trapName: "DeVisser vs Jennings",
+    trapNameFr: "DeVisser contre Jennings",
+    trapNameEs: "DeVisser contra Jennings",
+    trapNameAr: "DeVisser ضد Jennings",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 gxh6 8.Qxf7#",
     moves: [
@@ -19021,6 +20872,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "Chicago",
+    trapNameFr: "Chicago",
+    trapNameEs: "Chicago",
+    trapNameAr: "Chicago",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 d6 7.Qxf7+ Kd7 8.Be6#",
     moves: [
@@ -19050,6 +20904,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scotch game",
     openingId: "scotch_game",
     trapName: "Spain",
+    trapNameFr: "Spain",
+    trapNameEs: "Spain",
+    trapNameAr: "Spain",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Bc5 5.Nxc6 Qh4 6.Nd4",
     moves: [
       "e4",
@@ -19075,6 +20932,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scotch game",
     openingId: "scotch_game",
     trapName: "Wichita Falls",
+    trapNameFr: "Wichita Falls",
+    trapNameEs: "Wichita Falls",
+    trapNameAr: "Wichita Falls",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nxd4 5.Qxd4 Nf6 6.Bc4 Be7 7.e5 c5 8.Qf4",
     moves: [
@@ -19104,7 +20964,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C45",
     opening: "Scotch game",
     openingId: "scotch_game",
-    trapName: "London",
+    trapName: "Hopkins vs NN",
+    trapNameFr: "Hopkins contre NN",
+    trapNameEs: "Hopkins contra NN",
+    trapNameAr: "Hopkins ضد NN",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nge7 5.Nc3 g6 6.Bg5 Bg7 7.Nd5 Bxd4 8.Qxd4 Nxd4 9.Nf6+ Kf8 10.Bh6#",
     moves: [
@@ -19138,7 +21001,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C45",
     opening: "Scotch game",
     openingId: "scotch_game",
-    trapName: "Paris",
+    trapName: "Frazer vs Taubenhaus",
+    trapNameFr: "Frazer contre Taubenhaus",
+    trapNameEs: "Frazer contra Taubenhaus",
+    trapNameAr: "Frazer ضد Taubenhaus",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Qh4 5.Nc3 Nf6 6.Nf5 Qh5 7.Be2 Qg6 8.Nh4",
     moves: [
@@ -19167,7 +21033,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C45",
     opening: "Scotch game",
     openingId: "scotch_game",
-    trapName: "Internet",
+    trapName: "Lukelau vs Wall, Bill",
+    trapNameFr: "Lukelau contre Wall, Bill",
+    trapNameEs: "Lukelau contra Wall, Bill",
+    trapNameAr: "Lukelau ضد Wall, Bill",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Bd3 Nxd4",
     moves: [
       "e4",
@@ -19191,7 +21060,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C45",
     opening: "Scotch game",
     openingId: "scotch_game",
-    trapName: "New York",
+    trapName: "Miller vs Chernev, I.",
+    trapNameFr: "Miller contre Chernev, I.",
+    trapNameEs: "Miller contra Chernev, I.",
+    trapNameAr: "Miller ضد Chernev, I.",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Bg5 Be7 6.Nf5 d5 7.exd5 Ne5 8.Nxe7 Qxe7 9.Bxf6 Nf3#",
     moves: [
@@ -19224,7 +21096,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Milkman",
+    trapNameFr: "Wall, Bill contre Milkman",
+    trapNameEs: "Wall, Bill contra Milkman",
+    trapNameAr: "Wall, Bill ضد Milkman",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 f5 4.exf5 e4 5.Ne5 Nxe5 6.dxe5 d6 7.Qh5+ Ke7 8.Bg5+ Nf6 9.exf6+",
     moves: [
@@ -19256,7 +21131,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Germany",
+    trapName: "Jahn vs Bayer",
+    trapNameFr: "Jahn contre Bayer",
+    trapNameEs: "Jahn contra Bayer",
+    trapNameAr: "Jahn ضد Bayer",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 f6 4.Bc4 Bb4+ 5.c3 Ba5 6.dxe5 fxe5 7.Nxe5 Nxe5 8.Qh5+ Nf7 9.Qxf7#",
     moves: [
@@ -19288,7 +21166,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "Germany",
+    trapName: "Krumm vs Mattern",
+    trapNameFr: "Krumm contre Mattern",
+    trapNameEs: "Krumm contra Mattern",
+    trapNameAr: "Krumm ضد Mattern",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 Nf6 4.d5 Ne7 5.Nxe5 d6 6.Bb5+ c6 7.dxc6 Qa5+ 8.Nc3",
     moves: [
@@ -19318,6 +21199,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Berkeley",
+    trapNameFr: "Berkeley",
+    trapNameEs: "Berkeley",
+    trapNameAr: "Berkeley",
     commentedMoves: "1.e4 c5 2.b4 cxb4 3.a3 d5 4.exd5 Qxd5 5.axb4 Qe5+",
     moves: [
       "e4",
@@ -19340,7 +21224,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B22",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Moscow",
+    trapName: "Suchin vs Miroshishenko",
+    trapNameFr: "Suchin contre Miroshishenko",
+    trapNameEs: "Suchin contra Miroshishenko",
+    trapNameAr: "Suchin ضد Miroshishenko",
     commentedMoves: "1.e4 c5 2.c3 d6 3.d4 Nf6 4.dxc5 Nxe4 5.Qa4+",
     moves: ["e4", "c5", "c3", "d6", "d4", "Nf6", "dxc5", "Nxe4", "Qa4+"],
     fen: "rnbqkb1r/pp2pppp/3p4/2P5/Q3n3/2P5/PP3PPP/RNB1KBNR b KQkq - 1 5",
@@ -19354,6 +21241,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Dortmund",
+    trapNameFr: "Dortmund",
+    trapNameEs: "Dortmund",
+    trapNameAr: "Dortmund",
     commentedMoves:
         "1.e4 c5 2.c3 d5 3.exd5 Qxd5 4.Nf3 e6 5.d4 Nf6 6.Bd3 c4 7.Qa4+ b5",
     moves: [
@@ -19381,7 +21271,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B22",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Internet",
+    trapName: "Correa vs Barkoviak",
+    trapNameFr: "Correa contre Barkoviak",
+    trapNameEs: "Correa contra Barkoviak",
+    trapNameAr: "Correa ضد Barkoviak",
     commentedMoves: "1.e4 c5 2.c3 Nf6 3.e5 Nd5 4.Bc4 Nf4 5.Qf3 Ng6 6.Qxf7#",
     moves: [
       "e4",
@@ -19406,6 +21299,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Panchev",
+    trapNameFr: "Panchev",
+    trapNameEs: "Panchev",
+    trapNameAr: "Panchev",
     commentedMoves: "1.e4 c5 2.Nc3 Nc6 3.Nge2 g6 4.d3 Bg7 5.Be3 Nd4 6.g3 Nf3#",
     moves: [
       "e4",
@@ -19431,7 +21327,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B23",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Corr.",
+    trapName: "Smrcka vs Engel",
+    trapNameFr: "Smrcka contre Engel",
+    trapNameEs: "Smrcka contra Engel",
+    trapNameAr: "Smrcka ضد Engel",
     commentedMoves:
         "1.e4 c5 2.Nc3 Nc6 3.f4 g6 4.Nf3 Bg7 5.Bb5 Nd4 6.Nxd4 cxd4 7.Ne2 e6 8.d3 Qa5+",
     moves: [
@@ -19461,7 +21360,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B20",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Europe",
+    trapName: "Molinari vs Bordais",
+    trapNameFr: "Molinari contre Bordais",
+    trapNameEs: "Molinari contra Bordais",
+    trapNameAr: "Molinari ضد Bordais",
     commentedMoves: "1.e4 c5 2.c4 Nc6 3.Ne2 Nf6 4.Nbc3 Nb4 5.g3 Nd3#",
     moves: ["e4", "c5", "c4", "Nc6", "Ne2", "Nf6", "Nbc3", "Nb4", "g3", "Nd3#"],
     fen:
@@ -19474,7 +21376,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B21",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Somarian",
+    trapNameFr: "Wall, Bill contre Somarian",
+    trapNameEs: "Wall, Bill contra Somarian",
+    trapNameAr: "Wall, Bill ضد Somarian",
     commentedMoves: "1.e4 c5 2.d4 Na6 3.Bxa6 bxa6 4.dxc5 Nf6 5.e5 Ne4 6.Qd5",
     moves: [
       "e4",
@@ -19499,6 +21404,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Indiana",
+    trapNameFr: "Indiana",
+    trapNameEs: "Indiana",
+    trapNameAr: "Indiana",
     commentedMoves: "1.e4 c5 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     moves: [
       "e4",
@@ -19524,6 +21432,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Dubai",
+    trapNameFr: "Dubai",
+    trapNameEs: "Dubai",
+    trapNameAr: "Dubai",
     commentedMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 d6 5.Bc4 g6 6.e5 dxe5 7.Bxf7+ Kxf7 8.Qxd8",
     moves: [
@@ -19554,6 +21465,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "New Jersey",
+    trapNameFr: "New Jersey",
+    trapNameEs: "New Jersey",
+    trapNameAr: "New Jersey",
     commentedMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 d6 5.Bc4 Nf6 6.e5 dxe5 7.Bxf7+ Kxf7 8.Qxd8",
     moves: [
@@ -19583,7 +21497,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B21",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Corr.",
+    trapName: "Kvist vs Johannson",
+    trapNameFr: "Kvist contre Johannson",
+    trapNameEs: "Kvist contra Johannson",
+    trapNameAr: "Kvist ضد Johannson",
     commentedMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 d6 5.Nf3 Nf6 6.Bc4 Nc6 7.e5 Nxe5 8.Nxe5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
     moves: [
@@ -19618,6 +21535,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Hungary",
+    trapNameFr: "Hungary",
+    trapNameEs: "Hungary",
+    trapNameAr: "Hungary",
     commentedMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 g6 6.Bc4 Na5 7.Bxf7+ Kxf7 8.Qd4 Bg7 9.Ng5+ Kf8 10.Ne6+",
     moves: [
@@ -19650,7 +21570,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B30",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Corr.",
+    trapName: "Bleischmidt vs Lytschuk",
+    trapNameFr: "Bleischmidt contre Lytschuk",
+    trapNameEs: "Bleischmidt contra Lytschuk",
+    trapNameAr: "Bleischmidt ضد Lytschuk",
     commentedMoves: "1.e4 c5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 c4",
     moves: ["e4", "c5", "Nf3", "Nc6", "Bb5", "a6", "Ba4", "b5", "Bb3", "c4"],
     fen: "r1bqkbnr/3ppppp/p1n5/1p6/2p1P3/1B3N2/PPPP1PPP/RNBQK2R w KQkq - 0 6",
@@ -19664,6 +21587,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Israel",
+    trapNameFr: "Israel",
+    trapNameEs: "Israel",
+    trapNameAr: "Israel",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.Bb5 Qb6 4.Nc3 Nd4 5.Nxd4 cxd4 6.Nd5 Qd8 7.Qh5 a6 8.Qe5 f6 9.Nc7+ Kf7 10.Qd5+ e6 11.Nxe6 dxe6 12.Qxd8",
     moves: [
@@ -19702,6 +21628,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Nottingham",
+    trapNameFr: "Nottingham",
+    trapNameEs: "Nottingham",
+    trapNameAr: "Nottingham",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.Bc4 d6 4.O-O Nf6 5.d3 Bg4 6.h3 Bh5 7.g4 Nxg4 8.hxg4 Bxg4 9.Bxf7+ Kd7 10.Bd5 Ne5 11.Nxe5+ dxe5 12.Qxg4+",
     moves: [
@@ -19739,6 +21668,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Scotland",
+    trapNameFr: "Scotland",
+    trapNameEs: "Scotland",
+    trapNameAr: "Scotland",
     commentedMoves: "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e5 5.Nf5 Nge7 6.Nd6#",
     moves: [
       "e4",
@@ -19763,7 +21695,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B57",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Germany",
+    trapName: "Vavrak vs Mohsin",
+    trapNameFr: "Vavrak contre Mohsin",
+    trapNameEs: "Vavrak contra Mohsin",
+    trapNameAr: "Vavrak ضد Mohsin",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 d6 6.Bc4 g6 7.Nxc6 bxc6 8.e5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
     moves: [
@@ -19797,7 +21732,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B60",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Internet",
+    trapName: "Mecking vs Sepulveda",
+    trapNameFr: "Mecking contre Sepulveda",
+    trapNameEs: "Mecking contra Sepulveda",
+    trapNameAr: "Mecking ضد Sepulveda",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 d6 6.Bg5 Bd7 7.Be2 e5 8.Ndb5 Bc8 9.Nd5 Be6 10.Nbc7+",
     moves: [
@@ -19830,7 +21768,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B50",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "France",
+    trapName: "Seret vs Liedl",
+    trapNameFr: "Seret contre Liedl",
+    trapNameEs: "Seret contra Liedl",
+    trapNameAr: "Seret ضد Liedl",
     commentedMoves: "1.e4 c5 2.Nf3 d6 3.c3 Nf6 4.Be2 Nxe4 5.Qa4+",
     moves: ["e4", "c5", "Nf3", "d6", "c3", "Nf6", "Be2", "Nxe4", "Qa4+"],
     fen: "rnbqkb1r/pp2pppp/3p4/2p5/Q3n3/2P2N2/PP1PBPPP/RNB1K2R b KQkq - 1 5",
@@ -19843,6 +21784,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Herculane",
+    trapNameFr: "Herculane",
+    trapNameEs: "Herculane",
+    trapNameAr: "Herculane",
     commentedMoves: "1.e4 c5 2.Nf3 d6 3.c3 Nf6 4.h3 Nxe4 5.Qa4+ Nc6 6.Qxe4",
     moves: [
       "e4",
@@ -19867,7 +21811,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B50",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Germany",
+    trapName: "Wetscherek vs Erhart",
+    trapNameFr: "Wetscherek contre Erhart",
+    trapNameEs: "Wetscherek contra Erhart",
+    trapNameAr: "Wetscherek ضد Erhart",
     commentedMoves:
         "1.e4 c5 2.Nf3 d6 3.Bc4 Nc6 4.O-O e6 5.c3 Nf6 6.d4 Nxe4 7.d5 Ne7 8.dxe6 Bxe6 9.Bxe6 fxe6 10.Qa4+",
     moves: [
@@ -19901,6 +21848,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Mar del Plata",
+    trapNameFr: "Mar del Plata",
+    trapNameEs: "Mar del Plata",
+    trapNameAr: "Mar del Plata",
     commentedMoves: "1.e4 c5 2.Nf3 d6 3.d4 b6 4.dxc5 bxc5 5.Qd5",
     moves: ["e4", "c5", "Nf3", "d6", "d4", "b6", "dxc5", "bxc5", "Qd5"],
     fen: "rnbqkbnr/p3pppp/3p4/2pQ4/4P3/5N2/PPP2PPP/RNB1KB1R b KQkq - 1 5",
@@ -19913,7 +21863,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B50",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Internet",
+    trapName: "Martin vs Fernandez",
+    trapNameFr: "Martin contre Fernandez",
+    trapNameEs: "Martin contra Fernandez",
+    trapNameAr: "Martin ضد Fernandez",
     commentedMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 Nc6 4.d5 Nb8 5.Ng5 h6 6.Bb5+ Nd7 7.Ne6 fxe6 8.Qh5+ g6 9.Qxg6#",
     moves: [
@@ -19945,6 +21898,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Thessaloniki",
+    trapNameFr: "Thessaloniki",
+    trapNameEs: "Thessaloniki",
+    trapNameAr: "Thessaloniki",
     commentedMoves: "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Qxd4 a6 5.Be3 b5 6.Qd5",
     moves: [
       "e4",
@@ -19970,6 +21926,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Qatar",
+    trapNameFr: "Qatar",
+    trapNameEs: "Qatar",
+    trapNameAr: "Qatar",
     commentedMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Qxd4 a6 5.Be3 Nf6 6.Nc3 Nc6 7.Qd2 e6 8.O-O-O Qc7 9.Bf4 Ne5 10.Nxe5 dxe5 11.Bxe5 Qxe5 12.Qd8#",
     moves: [
@@ -20007,7 +21966,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B94",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Vienna",
+    trapName: "Sandmer vs Wimmer",
+    trapNameFr: "Sandmer contre Wimmer",
+    trapNameEs: "Sandmer contra Wimmer",
+    trapNameAr: "Sandmer ضد Wimmer",
     commentedMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 a6 6.Bg5 Qb6 7.Nb3 Qb4 8.Bd3 h6 9.Be3 d5 10.Bc5",
     moves: [
@@ -20041,7 +22003,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B72",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Germany",
+    trapName: "Rahn vs Rellstab",
+    trapNameFr: "Rahn contre Rellstab",
+    trapNameEs: "Rahn contra Rellstab",
+    trapNameAr: "Rahn ضد Rellstab",
     commentedMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 g6 6.Be3 Ng4 7.Bb5+ Bd7 8.Qxg4",
     moves: [
@@ -20072,6 +22037,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Landau",
+    trapNameFr: "Landau",
+    trapNameEs: "Landau",
+    trapNameAr: "Landau",
     commentedMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 g6 6.f4 Bg7 7.e5 dxe5 8.Bb5+ Kf8 9.Ne6+",
     moves: [
@@ -20102,7 +22070,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B41",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "New York",
+    trapName: "NN vs Pandolfini",
+    trapNameFr: "NN contre Pandolfini",
+    trapNameEs: "NN contra Pandolfini",
+    trapNameAr: "NN ضد Pandolfini",
     commentedMoves: "1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 a6 5.Bf4 e5 6.Bxe5 Qa5+",
     moves: [
       "e4",
@@ -20129,6 +22100,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Reykjavik",
+    trapNameFr: "Reykjavik",
+    trapNameEs: "Reykjavik",
+    trapNameAr: "Reykjavik",
     commentedMoves:
         "1.e4 c5 2.Nf3 e6 3.d4 cxd4 4.Nxd4 a6 5.Nc3 g6 6.Be3 Bg7 7.Nb3 Ne7 8.Na4 Nbc6 9.Bb6",
     moves: [
@@ -20160,6 +22134,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Eindhoven",
+    trapNameFr: "Eindhoven",
+    trapNameEs: "Eindhoven",
+    trapNameAr: "Eindhoven",
     commentedMoves: "1.e4 c5 2.Nf3 f6 3.d4 cxd4 4.Nxd4 e5 5.Nf5 Ne7 6.Nd6#",
     moves: [
       "e4",
@@ -20185,6 +22162,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Malmo",
+    trapNameFr: "Malmo",
+    trapNameEs: "Malmo",
+    trapNameAr: "Malmo",
     commentedMoves:
         "1.e4 c5 2.f4 e5 3.Nf3 d5 4.Nxe5 dxe4 5.Bc4 Nh6 6.Qe2 Bd6 7.Bb5+ Kf8 8.Qxe4 Qc7 9.Ng6+",
     moves: [
@@ -20216,7 +22196,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B21",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "Internet",
+    trapName: "Springett vs Wead",
+    trapNameFr: "Springett contre Wead",
+    trapNameEs: "Springett contra Wead",
+    trapNameAr: "Springett ضد Wead",
     commentedMoves:
         "1.e4 c5 2.f4 g6 3.Nf3 Bg7 4.Nc3 d6 5.Bc4 Bg4 6.Bxf7+ Kxf7 7.Ng5+ Ke8 8.Qxg4 Nh6 9.Qg3 Qa5 10.Nxh7 Rxh7 11.Qxg6+",
     moves: [
@@ -20252,7 +22235,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C46",
     opening: "Three knights game",
     openingId: "three_knights_game",
-    trapName: "Vienna",
+    trapName: "Reti vs Dunkelblum",
+    trapNameFr: "Reti contre Dunkelblum",
+    trapNameEs: "Reti contra Dunkelblum",
+    trapNameAr: "Reti ضد Dunkelblum",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Bc5 4.Nxe5 Nxe5 5.d4 Bxd4 6.Qxd4 Qf6 7.Nb5 Kd8 8.Qc5 Nc6 9.Qf8#",
     moves: [
@@ -20285,6 +22271,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Three knights game",
     openingId: "three_knights_game",
     trapName: "Porz",
+    trapNameFr: "Porz",
+    trapNameEs: "Porz",
+    trapNameAr: "Porz",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Bc5 4.Nxe5 Bxf2+ 5.Kxf2 Nxe5 6.d4 Qf6+ 7.Kg1 Nc6 8.e5 Nxe5 9.dxe5 Qb6+",
     moves: [
@@ -20318,6 +22307,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Three knights game",
     openingId: "three_knights_game",
     trapName: "Malta",
+    trapNameFr: "Malta",
+    trapNameEs: "Malta",
+    trapNameAr: "Malta",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 Bc5 4.Nxe5 Bxf2+ 5.Kxf2 Qf6+ 6.Nf3 d6 7.Nd5 Qd8 8.d4 Be6 9.Ne3",
     moves: [
@@ -20350,6 +22342,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Three knights game",
     openingId: "three_knights_game",
     trapName: "Aarhus",
+    trapNameFr: "Aarhus",
+    trapNameEs: "Aarhus",
+    trapNameAr: "Aarhus",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 d6 4.d4 exd4 5.Nxd4 g6 6.Nd5 Bg7 7.Nb5 Rb8 8.Ndxc7+ Kd7 9.Qxd6#",
     moves: [
@@ -20381,7 +22376,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C46",
     opening: "Three knights game",
     openingId: "three_knights_game",
-    trapName: "Internet",
+    trapName: "Stulz vs Wall, Bill",
+    trapNameFr: "Stulz contre Wall, Bill",
+    trapNameEs: "Stulz contra Wall, Bill",
+    trapNameAr: "Stulz ضد Wall, Bill",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 f5 4.Bc4 fxe4 5.Nxe4 d5 6.Bb5 dxe4 7.Bxc6+ bxc6 8.Nxe5 Qg5 9.Nxc6 Qxg2 10.Rf1 Bg4",
     moves: [
@@ -20416,7 +22414,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C46",
     opening: "Three knights game",
     openingId: "three_knights_game",
-    trapName: "Germany",
+    trapName: "Michaelsen, D. vs Michaelsen, F.",
+    trapNameFr: "Michaelsen, D. contre Michaelsen, F.",
+    trapNameEs: "Michaelsen, D. contra Michaelsen, F.",
+    trapNameAr: "Michaelsen, D. ضد Michaelsen, F.",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 f5 4.d4 fxe4 5.Nxe5 Nf6 6.Bc4 d5 7.Nxd5 Nxd5 8.Qh5+ g6 9.Nxg6 Nf6 10.Bf7+ Kd7 11.Qf5+ Kd6 12.Bf4+ Ne5 13.Qxe5+",
     moves: [
@@ -20456,6 +22457,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Frieburg",
+    trapNameFr: "Frieburg",
+    trapNameEs: "Frieburg",
+    trapNameAr: "Frieburg",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 f6 4.Nh4 g5 5.Qh5+ Ke7 6.Nf5#",
     moves: [
       "e4",
@@ -20480,7 +22484,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C57",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "Internet",
+    trapName: "Fedotov vs Woschkat",
+    trapNameFr: "Fedotov contre Woschkat",
+    trapNameEs: "Fedotov contra Woschkat",
+    trapNameAr: "Fedotov ضد Woschkat",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nb4 6.d6 Nbd5 7.dxc7 Qxc7 8.Bxd5 Nxd5 9.Qf3 Be7 10.Qxf7+",
     moves: [
@@ -20515,6 +22522,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "San Francisco",
+    trapNameFr: "San Francisco",
+    trapNameEs: "San Francisco",
+    trapNameAr: "San Francisco",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nd4 6.c3 b5 7.Bf1 Nxd5 8.cxd4 Qxg5 9.Bxb5+ Kd8 10.Qf3 Bb7 11.O-O exd4 12.Qxf7 Nf6",
     moves: [
@@ -20554,6 +22564,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Qf6 8.Bxd5+ Be6 9.Bxc6 Qxf3 10.Bxf3",
     moves: [
@@ -20588,6 +22601,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Chicago",
+    trapNameFr: "Chicago",
+    trapNameEs: "Chicago",
+    trapNameAr: "Chicago",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.d4 f6 7.dxe5 Nxe5 8.Bxd5 fxg5 9.O-O Bd7 10.Re1 Qf6 11.Qh5+ Qg6 12.Rxe5+",
     moves: [
@@ -20625,7 +22641,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C57",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "Corr.",
+    trapName: "Hryniw vs Taggert",
+    trapNameFr: "Hryniw contre Taggert",
+    trapNameEs: "Hryniw contra Taggert",
+    trapNameAr: "Hryniw ضد Taggert",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Nd5 5.Nxf7 Kxf7 6.Bxd5+ Ke8 7.O-O Bc5 8.Nc3 Nd4 9.Qh5+ g6 10.Qxe5+",
     moves: [
@@ -20659,7 +22678,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C57",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "Europe",
+    trapName: "O'Brien vs LauerSmith",
+    trapNameFr: "O'Brien contre LauerSmith",
+    trapNameEs: "O'Brien contra LauerSmith",
+    trapNameAr: "O'Brien ضد LauerSmith",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Nxe4 5.Nxf7 Qf6 6.Nxh8 Qxf2#",
     moves: [
@@ -20686,7 +22708,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C50",
     opening: "Italian Game",
     openingId: "italian_game",
-    trapName: "Internet",
+    trapName: "Wall, Bill vs Kerazag",
+    trapNameFr: "Wall, Bill contre Kerazag",
+    trapNameEs: "Wall, Bill contra Kerazag",
+    trapNameAr: "Wall, Bill ضد Kerazag",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nh6 4.d4 Bd6 5.Bg5 f6 6.Bxh6 gxh6 7.Nxe5 fxe5 8.Qh5+ Kf8 9.Qf7#",
     moves: [
@@ -20719,6 +22744,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Dortmund",
+    trapNameFr: "Dortmund",
+    trapNameEs: "Dortmund",
+    trapNameAr: "Dortmund",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d3 d5 5.exd5 Nxd5 6.O-O Bg4 7.Re1 f6 8.Nxe5 Bxd1 9.Nxc6+",
     moves: [
@@ -20750,6 +22778,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Los Angeles",
+    trapNameFr: "Los Angeles",
+    trapNameEs: "Los Angeles",
+    trapNameAr: "Los Angeles",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d4 Nxe4 5.dxe5 Bc5 6.Qd5",
     moves: [
       "e4",
@@ -20775,6 +22806,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Tacoma",
+    trapNameFr: "Tacoma",
+    trapNameEs: "Tacoma",
+    trapNameAr: "Tacoma",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Nxe4 5.Bxf7+ Ke7 6.Nxe4 Kxf7 7.Qf3+ Kg8 8.Ng5 Qe8 9.Qd5+ Qf7 10.Qxf7#",
     moves: [
@@ -20808,7 +22842,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C57",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "Internet",
+    trapName: "Yam vs Wall, Bill",
+    trapNameFr: "Yam contre Wall, Bill",
+    trapNameEs: "Yam contra Wall, Bill",
+    trapNameAr: "Yam ضد Wall, Bill",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kxf2 Nxe4+ 7.Kg1 Qh4 8.Nxh8 Qf2#",
     moves: [
@@ -20839,7 +22876,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C57",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "Germany",
+    trapName: "Werner vs Kutzner",
+    trapNameFr: "Werner contre Kutzner",
+    trapNameEs: "Werner contra Kutzner",
+    trapNameAr: "Werner ضد Kutzner",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kxf2 Nxe4+ 7.Ke1 Qh4+ 8.g3 Nxg3 9.Rf1 Nh1+ 10.Ke2 Qe4#",
     moves: [
@@ -20874,7 +22914,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C57",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "Corr.",
+    trapName: "Jentzch vs Nosotta",
+    trapNameFr: "Jentzch contre Nosotta",
+    trapNameEs: "Jentzch contra Nosotta",
+    trapNameAr: "Jentzch ضد Nosotta",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kxf2 Nxe4+ 7.Ke3 Qh4 8.Qf3 Nf6 9.Ke2 Qxc4+ 10.Kd1 Nd4",
     moves: [
@@ -20909,7 +22952,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C57",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "Internet",
+    trapName: "Crowley vs Wall, Bill",
+    trapNameFr: "Crowley contre Wall, Bill",
+    trapNameEs: "Crowley contra Wall, Bill",
+    trapNameAr: "Crowley ضد Wall, Bill",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.Bxd5 Bg4",
     moves: [
@@ -20940,7 +22986,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C57",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "Corr.",
+    trapName: "Matula vs Leisebein",
+    trapNameFr: "Matula contre Leisebein",
+    trapNameEs: "Matula contra Leisebein",
+    trapNameAr: "Matula ضد Leisebein",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Bxf7+ Ke7 6.Bc4 Rf8 7.Be2 Bxf2+ 8.Kxf2 Nxe4+ 9.Ke1 Nf2 10.Nxh7 Nxd1 11.Nxf8 Qxf8",
     moves: [
@@ -20977,7 +23026,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C25",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Corr.",
+    trapName: "Plath vs Reichel",
+    trapNameFr: "Plath contre Reichel",
+    trapNameEs: "Plath contra Reichel",
+    trapNameAr: "Plath ضد Reichel",
     commentedMoves:
         "1.e4 e5 2.Nc3 Bc5 3.Na4 Bxf2+ 4.Kxf2 Qh4+ 5.Ke3 Qf4+ 6.Kd3 d5 7.Qf3 dxe4+ 8.Qxe4 Bf5",
     moves: [
@@ -21009,6 +23061,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "San Sebastian",
+    trapNameFr: "San Sebastian",
+    trapNameEs: "San Sebastian",
+    trapNameAr: "San Sebastian",
     commentedMoves:
         "1.e4 e5 2.Nc3 Bc5 3.Bc4 Ne7 4.d3 Nbc6 5.Qh5 O-O 6.Bg5 Qe8 7.Nd5 Bb6 8.Nf6+ gxf6 9.Bxf6",
     moves: [
@@ -21040,7 +23095,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C25",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Germany",
+    trapName: "Eissing vs Draeger",
+    trapNameFr: "Eissing contre Draeger",
+    trapNameEs: "Eissing contra Draeger",
+    trapNameAr: "Eissing ضد Draeger",
     commentedMoves:
         "1.e4 e5 2.Nc3 Bc5 3.f4 Bxg1 4.Rxg1 d6 5.Bc4 Qh4+ 6.g3 Qxh2 7.Kf1 Bh3+",
     moves: [
@@ -21069,7 +23127,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C48",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Internet",
+    trapName: "Megatron vs Wall, Bill",
+    trapNameFr: "Megatron contre Wall, Bill",
+    trapNameEs: "Megatron contra Wall, Bill",
+    trapNameAr: "Megatron ضد Wall, Bill",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bb5 Nd4 4.Nf3 Nf6 5.d3 Bb4 6.O-O Bxc3 7.bxc3 Nxb5",
     moves: [
@@ -21098,7 +23159,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C25",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Corr.",
+    trapName: "Keizer vs Kroes",
+    trapNameFr: "Keizer contre Kroes",
+    trapNameEs: "Keizer contra Kroes",
+    trapNameAr: "Keizer ضد Kroes",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Na5 4.Bxf7+ Ke7 5.Bxg8 Rxg8 6.Nd5+ Kd6 7.d4 exd4 8.Bf4+",
     moves: [
@@ -21128,6 +23192,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Dublin",
+    trapNameFr: "Dublin",
+    trapNameEs: "Dublin",
+    trapNameAr: "Dublin",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Nd5 Nf6 5.Nxf6+ Qxf6 6.d3 Qxf2#",
     moves: [
@@ -21155,6 +23222,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Hamburg",
+    trapNameFr: "Hamburg",
+    trapNameEs: "Hamburg",
+    trapNameAr: "Hamburg",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Qg4 Qf6 5.Nd5 Qxf2+ 6.Kd1 Na5 7.Nh3",
     moves: [
@@ -21182,7 +23252,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C25",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Germany",
+    trapName: "Reichel vs Knorr",
+    trapNameFr: "Reichel contre Knorr",
+    trapNameEs: "Reichel contra Knorr",
+    trapNameAr: "Reichel ضد Knorr",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Qg4 Qf6 5.Nd5 Qxf2+ 6.Kd1 Kd8 7.Nh3 d6 8.Nxf2 Bxg4+ 9.Nxg4",
     moves: [
@@ -21215,6 +23288,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "South Africa",
+    trapNameFr: "South Africa",
+    trapNameEs: "South Africa",
+    trapNameAr: "South Africa",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Qg4 Qf6 5.Nd5 Qxf2+ 6.Kd1 Kf8 7.Nh3 Qd4 8.d3 Bb6 9.Rf1 f6 10.Nxf6 Nxf6 11.Bh6 gxh6 12.Rxf6+ Ke8 13.Qg7",
     moves: [
@@ -21255,6 +23331,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Sunnyvale, CA",
+    trapNameFr: "Sunnyvale, CA",
+    trapNameEs: "Sunnyvale, CA",
+    trapNameAr: "Sunnyvale, CA",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 Bc5 4.Qg4 Qf6 5.Nd5 Qxf2+ 6.Kd1 Kf8 7.Nh3 Qd4 8.d3 Nf6 9.Qf3 Nxd5 10.c3",
     moves: [
@@ -21288,7 +23367,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C25",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "USA",
+    trapName: "Luttles vs Miller",
+    trapNameFr: "Luttles contre Miller",
+    trapNameEs: "Luttles contra Miller",
+    trapNameAr: "Luttles ضد Miller",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.Bc4 d6 4.f4 exf4 5.Nf3 Bg4 6.O-O Ne5 7.Nxe5 Bxd1 8.Bxf7+ Ke7 9.Nd5#",
     moves: [
@@ -21321,6 +23403,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Havana",
+    trapNameFr: "Havana",
+    trapNameEs: "Havana",
+    trapNameAr: "Havana",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.f4 d6 4.Nf3 a6 5.Bc4 Bg4 6.fxe5 Nxe5 7.Nxe5 Bxd1 8.Bxf7+ Ke7 9.Nd5#",
     moves: [
@@ -21352,7 +23437,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C25",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Berlin",
+    trapName: "Kolbe vs Rotenstein",
+    trapNameFr: "Kolbe contre Rotenstein",
+    trapNameEs: "Kolbe contra Rotenstein",
+    trapNameAr: "Kolbe ضد Rotenstein",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.f4 exf4 4.Bc4 Qh4+ 5.Kf1 Bc5 6.g3 fxg3 7.Nf3 g2+ 8.Kxg2 Qf2+ 9.Kh3 d5#",
     moves: [
@@ -21385,7 +23473,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C25",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Corr.",
+    trapName: "Bluemich vs Svenson",
+    trapNameFr: "Bluemich contre Svenson",
+    trapNameEs: "Bluemich contra Svenson",
+    trapNameAr: "Bluemich ضد Svenson",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.f4 exf4 4.d4 Qh4+ 5.Ke2 d6 6.Nf3 Bg4 7.Bxf4 f5 8.Kd3 Qe7 9.Qd2 fxe4+ 10.Nxe4 Bf5 11.Re1 Nf6",
     moves: [
@@ -21423,6 +23514,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nc6 3.g3 Bc5 4.Bg2 h5 5.Nf3 h4 6.Nxe5 Nxe5 7.d4 h3 8.Bxh3 Bxd4 9.Bg2 Bxc3+ 10.bxc3 d6",
     moves: [
@@ -21457,6 +23551,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Kostelec",
+    trapNameFr: "Kostelec",
+    trapNameEs: "Kostelec",
+    trapNameAr: "Kostelec",
     commentedMoves: "1.e4 e5 2.Nc3 Ne7 3.Nd5 Rg8 4.Bc4 g6 5.Nf6#",
     moves: ["e4", "e5", "Nc3", "Ne7", "Nd5", "Rg8", "Bc4", "g6", "Nf6#"],
     fen: "rnbqkbr1/ppppnp1p/5Np1/4p3/2B1P3/8/PPPP1PPP/R1BQK1NR b KQq - 1 5",
@@ -21469,6 +23566,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Guam",
+    trapNameFr: "Guam",
+    trapNameEs: "Guam",
+    trapNameAr: "Guam",
     commentedMoves: "1.e4 e5 2.Nc3 f5 3.Bc4 fxe4 4.Qh5+ g6 5.Qxe5+ Qe7 6.Qxh8",
     moves: [
       "e4",
@@ -21494,6 +23594,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Prague",
+    trapNameFr: "Prague",
+    trapNameEs: "Prague",
+    trapNameAr: "Prague",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Nxe4 d5 5.Bb3 dxe4 6.Qh5 Qe7 7.Ne2 g6",
     moves: [
@@ -21522,7 +23625,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C27",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Paris",
+    trapName: "Brunel vs Kong",
+    trapNameFr: "Brunel contre Kong",
+    trapNameEs: "Brunel contra Kong",
+    trapNameAr: "Brunel ضد Kong",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Nxe4 d5 5.Bxd5 Qxd5 6.d3 Bf5 7.Qf3 Bg6 8.Nf6+ gxf6 9.Qxd5",
     moves: [
@@ -21555,6 +23661,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Munich",
+    trapNameFr: "Munich",
+    trapNameEs: "Munich",
+    trapNameAr: "Munich",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Bxf7+ Kxf7 5.Nxe4 Nc6 6.Qf3+ Kg8 7.Ng5 Qe7 8.Qd5+",
     moves: [
@@ -21584,7 +23693,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C27",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "USA",
+    trapName: "Bass vs Armstrong",
+    trapNameFr: "Bass contre Armstrong",
+    trapNameEs: "Bass contra Armstrong",
+    trapNameAr: "Bass ضد Armstrong",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Qh5 Nd6 5.Bb3 Nc6 6.d4 exd4 7.Nd5 g6 8.Qe2+ Be7 9.Nf6+ Kf8 10.Bh6#",
     moves: [
@@ -21618,6 +23730,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Dayton",
+    trapNameFr: "Dayton",
+    trapNameEs: "Dayton",
+    trapNameAr: "Dayton",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f3 Nh5 4.d4 Qh4+ 5.g3 Nxg3 6.hxg3 Qxh1",
     moves: [
@@ -21644,7 +23759,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C29",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Europe",
+    trapName: "Ninov vs Nathan",
+    trapNameFr: "Ninov contre Nathan",
+    trapNameEs: "Ninov contra Nathan",
+    trapNameAr: "Ninov ضد Nathan",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.d4 Bb4 5.fxe5 Nxe4 6.Bd2 Qh4+ 7.Ke2 Qf2+ 8.Kd3 Bf5",
     moves: [
@@ -21676,6 +23794,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Reykjavik",
+    trapNameFr: "Reykjavik",
+    trapNameEs: "Reykjavik",
+    trapNameAr: "Reykjavik",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.fxe5 Nxe4 5.Nf3 Bg4 6.Qe2 Nc6 7.Nxe4 Nd4 8.Qd3 Bxf3 9.Ng3",
     moves: [
@@ -21707,7 +23828,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C29",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Germany",
+    trapName: "Neureiter vs Reinle",
+    trapNameFr: "Neureiter contre Reinle",
+    trapNameEs: "Neureiter contra Reinle",
+    trapNameAr: "Neureiter ضد Reinle",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.fxe5 Nxe4 5.Qf3 Nc6 6.Nxe4 Nd4 7.Qd3 dxe4 8.Qc3 Bb4 9.Qc4 Be6",
     moves: [
@@ -21741,6 +23865,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Vienna game",
     openingId: "vienna_game",
     trapName: "Mannheim",
+    trapNameFr: "Mannheim",
+    trapNameEs: "Mannheim",
+    trapNameAr: "Mannheim",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d6 4.Nf3 Nbd7 5.Bc4 Be7 6.Bxf7+ Kxf7 7.Ng5+ Kg6 8.f5+ Kxg5 9.d3+ Kh4 10.Qf3",
     moves: [
@@ -21774,7 +23901,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C29",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Paris",
+    trapName: "Wurzburger vs Peifer",
+    trapNameFr: "Wurzburger contre Peifer",
+    trapNameEs: "Wurzburger contra Peifer",
+    trapNameAr: "Wurzburger ضد Peifer",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 exf4 4.e5 Qe7 5.Qe2 Ng8 6.Nf3 Nc6 7.d4 d6 8.Nd5 Qd8 9.Nxc7+ Qxc7 10.exd6+",
     moves: [
@@ -21808,7 +23938,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C29",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Europe",
+    trapName: "Krejcik vs Kraus",
+    trapNameFr: "Krejcik contre Kraus",
+    trapNameEs: "Krejcik contra Kraus",
+    trapNameAr: "Krejcik ضد Kraus",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 exf4 4.e5 Qe7 5.Qe2 Ng8 6.Nf3 d6 7.Nd5 Qd7 8.exd6+ Kd8 9.dxc7+",
     moves: [
@@ -21839,7 +23972,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C25",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "Germany",
+    trapName: "Reinle vs Neureitser",
+    trapNameFr: "Reinle contre Neureitser",
+    trapNameEs: "Reinle contra Neureitser",
+    trapNameAr: "Reinle ضد Neureitser",
     commentedMoves: "1.e4 e5 2.Nc3 g6 3.Nd5 Ne7 4.Nf6#",
     moves: ["e4", "e5", "Nc3", "g6", "Nd5", "Ne7", "Nf6#"],
     fen: "rnbqkb1r/ppppnp1p/5Np1/4p3/4P3/8/PPPP1PPP/R1BQKBNR b KQkq - 3 4",
@@ -21852,6 +23988,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Toplice",
+    trapNameFr: "Toplice",
+    trapNameEs: "Toplice",
+    trapNameAr: "Toplice",
     commentedMoves: "1.d4 d5 2.Nc3 c5 3.e4 dxe4 4.Bf4 Qxd4 5.Nd5 Qxd1+ 6.Rxd1",
     moves: [
       "d4",
@@ -21876,7 +24015,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C40",
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
-    trapName: "Corr.",
+    trapName: "Valverde vs Rosso",
+    trapNameFr: "Valverde contre Rosso",
+    trapNameEs: "Valverde contra Rosso",
+    trapNameAr: "Valverde ضد Rosso",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.exf5 Bc5 4.Nxe5 d5 5.Qh5+ Ke7 6.Qg5+ Ke8 7.Qxd8+ Kxd8 8.Nf7+ Ke7 9.Nxh8",
     moves: [
@@ -21908,6 +24050,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Crotia",
+    trapNameFr: "Crotia",
+    trapNameEs: "Crotia",
+    trapNameAr: "Crotia",
     commentedMoves: "1.e4 c5 2.c4 Nc6 3.Ne2 Ne5 4.d4 Qa5+ 5.Bd2 Nd3#",
     moves: ["e4", "c5", "c4", "Nc6", "Ne2", "Ne5", "d4", "Qa5+", "Bd2", "Nd3#"],
     fen: "r1b1kbnr/pp1ppppp/8/q1p5/2PPP3/3n4/PP1BNPPP/RN1QKB1R w KQkq - 3 6",
@@ -21920,6 +24065,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Posen",
+    trapNameFr: "Posen",
+    trapNameEs: "Posen",
+    trapNameAr: "Posen",
     commentedMoves: "1.e4 e5 2.Bc4 Nf6 3.Nf3 Nxe4 4.Nxe5 d5 5.Bb3 Qg5",
     moves: [
       "e4",
@@ -21944,6 +24092,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Aachen",
+    trapNameFr: "Aachen",
+    trapNameEs: "Aachen",
+    trapNameAr: "Aachen",
     commentedMoves:
         "1.e4 e6 2.d4 c5 3.d5 Nf6 4.Nc3 exd5 5.e5 d4 6.exf6 dxc3 7.Qe2+ Be7 8.fxe7 Qxe7 9.Qxe7+ Kxe7 10.Bc4",
     moves: [
@@ -21977,6 +24128,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Montreal",
+    trapNameFr: "Montreal",
+    trapNameEs: "Montreal",
+    trapNameAr: "Montreal",
     commentedMoves: "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 Be7 5.dxe5 dxe5 6.Qd5",
     moves: [
       "e4",
@@ -22001,6 +24155,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "USSR",
+    trapNameFr: "USSR",
+    trapNameEs: "USSR",
+    trapNameAr: "USSR",
     commentedMoves: "1.e4 Nf6 2.Nc3 d5 3.e5 Ne4 4.Nce2 d4 5.c3 dxc3 6.Qa4+",
     moves: [
       "e4",
@@ -22025,6 +24182,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "Bulgaria",
+    trapNameFr: "Bulgaria",
+    trapNameEs: "Bulgaria",
+    trapNameAr: "Bulgaria",
     commentedMoves: "1.d4 Nc6 2.c4 Nf6 3.Nf3 d6 4.Nc3 Bg4 5.d5 Ne5 6.Nd2 Nd3+",
     moves: [
       "d4",
@@ -22049,7 +24209,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A80",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "England",
+    trapName: "Hopton vs Eastwood",
+    trapNameFr: "Hopton contre Eastwood",
+    trapNameEs: "Hopton contra Eastwood",
+    trapNameAr: "Hopton ضد Eastwood",
     commentedMoves: "1.d4 f5 2.Bg5 h6 3.Bh4 c5 4.e3 Qb6 5.b3 Nf6 6.dxc5 Qb4+",
     moves: [
       "d4",
@@ -22076,6 +24239,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bird's opening",
     openingId: "birds_opening",
     trapName: "Parsippany",
+    trapNameFr: "Parsippany",
+    trapNameEs: "Parsippany",
+    trapNameAr: "Parsippany",
     commentedMoves:
         "1.f4 Nc6 2.b3 e5 3.e4 exf4 4.Bc4 Qh4+ 5.Kf1 Bc5 6.Nf3 Qf2#",
     moves: [
@@ -22103,6 +24269,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Guernsey",
+    trapNameFr: "Guernsey",
+    trapNameEs: "Guernsey",
+    trapNameAr: "Guernsey",
     commentedMoves:
         "1.Nc3 d5 2.e4 dxe4 3.Nxe4 e5 4.Bc4 Bf5 5.Qf3 Bg6 6.Ng5 Nf6 7.Qb3",
     moves: [
@@ -22131,6 +24300,9 @@ const List<ChessTrap> chessTraps = [
     opening: "",
     openingId: "",
     trapName: "Germay",
+    trapNameFr: "Germay",
+    trapNameEs: "Germay",
+    trapNameAr: "Germay",
     commentedMoves:
         "1.Nc3 e5 2.Nf3 d6 3.e4 Bg4 4.Bc4 Bh5 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     moves: [
@@ -22159,6 +24331,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
     trapName: "Dresden",
+    trapNameFr: "Dresden",
+    trapNameEs: "Dresden",
+    trapNameAr: "Dresden",
     commentedMoves:
         "1.d4 d5 2.Bf4 Nf6 3.e3 c5 4.c3 Qb6 5.Qc2 Bf5 6.Qxf5 Qxb2 7.Qc8#",
     moves: [
@@ -22186,6 +24361,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Denver",
+    trapNameFr: "Denver",
+    trapNameEs: "Denver",
+    trapNameAr: "Denver",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.Nc3 e5 4.Bc4 d6 5.d3 Bg4 6.h3 Bh5 7.Nxe5",
     moves: [
@@ -22214,6 +24392,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Gibralter",
+    trapNameFr: "Gibralter",
+    trapNameEs: "Gibralter",
+    trapNameAr: "Gibralter",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Bf5 5.Bd3 Bg6 6.Qe2 Nd7 7.Nd6#",
     moves: [
@@ -22241,7 +24422,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "B01",
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
-    trapName: "Zurich",
+    trapName: "Jenal vs Stoecklin",
+    trapNameFr: "Jenal contre Stoecklin",
+    trapNameEs: "Jenal contra Stoecklin",
+    trapNameAr: "Jenal ضد Stoecklin",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.d4 c6 5.Bd3 Nf6 6.Nge2 Bf5 7.b4",
     moves: [
@@ -22269,6 +24453,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
     trapName: "Argentina",
+    trapNameFr: "Argentina",
+    trapNameEs: "Argentina",
+    trapNameAr: "Argentina",
     commentedMoves:
         "1.e4 e5 2.Nf3 f5 3.Nxe5 Qf6 4.d4 fxe4 5.Nc3 d6 6.Nd5 Qf5 7.g4",
     moves: [
@@ -22296,6 +24483,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Netherlands",
+    trapNameFr: "Netherlands",
+    trapNameEs: "Netherlands",
+    trapNameAr: "Netherlands",
     commentedMoves:
         "1.Nf3 Nf6 2.g3 b5 3.Na3 b4 4.Nc4 e6 5.Bg2 d5 6.Nce5 Bb7 7.Ng5",
     moves: [
@@ -22324,6 +24514,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Denmark",
+    trapNameFr: "Denmark",
+    trapNameEs: "Denmark",
+    trapNameAr: "Denmark",
     commentedMoves:
         "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Bd3 e5 6.Nf3 d5 7.c3 dxe4",
     moves: [
@@ -22353,6 +24546,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined Slav defence",
     openingId: "qgd_slav_defence",
     trapName: "Vietnam",
+    trapNameFr: "Vietnam",
+    trapNameEs: "Vietnam",
+    trapNameAr: "Vietnam",
     commentedMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Nf3 a6 5.Qc2 b5 6.cxd5 cxd5 7.Bf4 Nbd7 8.Nxb5",
     moves: [
@@ -22383,6 +24579,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
     trapName: "Ukraine",
+    trapNameFr: "Ukraine",
+    trapNameEs: "Ukraine",
+    trapNameAr: "Ukraine",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 Nbd7 6.Bxf6 Nxf6 7.Bd3 Bb4 8.Qa4+",
     moves: [
@@ -22413,6 +24612,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's Indian, East Indian defence",
     openingId: "kings_indian_east_indian_defence",
     trapName: "Marseille",
+    trapNameFr: "Marseille",
+    trapNameEs: "Marseille",
+    trapNameAr: "Marseille",
     commentedMoves:
         "1.d4 Nf6 2.Nf3 g6 3.c4 Bg7 4.Nc3 d5 5.cxd5 Nxd5 6.Bg5 c5 7.Rc1 cxd4 8.Nxd5",
     moves: [
@@ -22443,6 +24645,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "Nova Gorica",
+    trapNameFr: "Nova Gorica",
+    trapNameEs: "Nova Gorica",
+    trapNameAr: "Nova Gorica",
     commentedMoves:
         "1.e4 e5 2.f4 d6 3.Nf3 Nc6 4.Bc4 Bg4 5.Nc3 Nd4 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     moves: [
@@ -22473,6 +24678,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Belgrade",
+    trapNameFr: "Belgrade",
+    trapNameEs: "Belgrade",
+    trapNameAr: "Belgrade",
     commentedMoves:
         "1.e4 e6 2.c4 c5 3.Nc3 Nc6 4.f4 Nge7 5.Nf3 g6 6.e5 d6 7.Ne4 dxe5 8.Nf6#",
     moves: [
@@ -22504,6 +24712,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Slovakia",
+    trapNameFr: "Slovakia",
+    trapNameEs: "Slovakia",
+    trapNameAr: "Slovakia",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.d4 Bg4 5.c3 f5 6.Qb3 Nge7 7.Bf7+ Kd7 8.Qe6#",
     moves: [
@@ -22533,7 +24744,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "C44",
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
-    trapName: "England",
+    trapName: "Miller, N. vs Hewitt",
+    trapNameFr: "Miller, N. contre Hewitt",
+    trapNameEs: "Miller, N. contra Hewitt",
+    trapNameAr: "Miller, N. ضد Hewitt",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O h6 7.a3 Be7 8.Qd5",
     moves: [
@@ -22563,7 +24777,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "D02",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d02",
-    trapName: "Zurich",
+    trapName: "Steckner vs Csajka",
+    trapNameFr: "Steckner contre Csajka",
+    trapNameEs: "Steckner contra Csajka",
+    trapNameAr: "Steckner ضد Csajka",
     commentedMoves:
         "1.d4 d5 2.Nf3 Nf6 3.g3 g6 4.b3 Bg7 5.Bb2 c5 6.dxc5 Qa5+ 7.Nbd2 Qxc5 8.c4 Ng4",
     moves: [
@@ -22595,6 +24812,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "Cullera",
+    trapNameFr: "Cullera",
+    trapNameEs: "Cullera",
+    trapNameAr: "Cullera",
     commentedMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Qd2 Qxb2 6.Qc3 Bb4 7.Bd2 Bxc3 8.Bxc3 Qc1#",
     moves: [
@@ -22626,6 +24846,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Copenhage",
+    trapNameFr: "Copenhage",
+    trapNameEs: "Copenhage",
+    trapNameAr: "Copenhage",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e6 5.Nc3 a6 6.Be2 Qc7 7.O-O Nf6 8.f4 Nxd4 9.Qxd4 Bc5",
     moves: [
@@ -22659,6 +24882,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "oh no, smothered mate!",
+    trapNameFr: "oh no, smothered mate!",
+    trapNameEs: "oh no, smothered mate!",
+    trapNameAr: "oh no, smothered mate!",
     commentedMoves: "1.e4 c6 2.Nf3 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     moves: [
       "e4",
@@ -22685,6 +24911,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "what, checkmate?",
+    trapNameFr: "what, checkmate?",
+    trapNameEs: "what, checkmate?",
+    trapNameAr: "what, checkmate?",
     commentedMoves:
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nf3 Bg4 5.Nc3 Bxf3 6.Nxd5 Bxd1 7.Nxc7+ Kd8 8.Nxa8 Bxc2 9.Bf4 Nxd4 10.Nc7 e5 11.Bxe5 Bb4#",
     moves: [
@@ -22723,6 +24952,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Alekhine's defence",
     openingId: "alekhines_defence",
     trapName: "Knight and Bishop Mate",
+    trapNameFr: "Knight and Bishop Mat",
+    trapNameEs: "Knight and Bishop Mate",
+    trapNameAr: "Knight and Bishop كش ملك",
     commentedMoves:
         "1.e4 Nf6 2.Nc3 d5 3.exd5 Nxd5 4.Nge2 Nc6 5.g3 Bg4 6.Bg2 Nd4 7.Bxd5 Qxd5 8.Nxd5 Nf3+ 9.Kf1 Bh3#",
     moves: [
@@ -22757,6 +24989,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Bishop Brother's Mate",
+    trapNameFr: "Bishop Brother's Mat",
+    trapNameEs: "Bishop Brother's Mate",
+    trapNameAr: "Bishop Brother's كش ملك",
     commentedMoves:
         "1.e4 c6 2.Nf3 d5 3.Nc3 Bg4 4.h3 Bxf3 5.Qxf3 Nf6 6.d4 dxe4 7.Qe3 Nd5 8.Qxe4 Nxc3 9.bxc3 e6 10.Rb1 Qc8 11.Bd3 Nd7 12.Bg5 h6 13.Qxe6+ fxe6 14.Bg6#",
     moves: [
@@ -22800,6 +25035,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scotch game",
     openingId: "scotch_game",
     trapName: "Smothered Mate in the corner",
+    trapNameFr: "Étouffé Mat in the corner",
+    trapNameEs: "Ahogado Mate in the corner",
+    trapNameAr: "مخنوق كش ملك in the corner",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 Nf6 5.Nc3 Bb4 6.Nxc6 bxc6 7.Qf3 h6 8.a3 Bxc3+ 9.Qxc3 O-O 10.Bd3 Re8 11.f3 d5 12.Qxc6 dxe4 13.fxe4 Nxe4 14.O-O Qd4+ 15.Kh1 Bd7 16.Qc4 Nf2+ 17.Kg1 Nh3+ 18.Kh1 Qg1+ 19.Rxg1 Nf2#",
     moves: [
@@ -22854,6 +25092,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Sacrifice the Knight!",
+    trapNameFr: "Sacrifice the Knight!",
+    trapNameEs: "Sacrifice the Knight!",
+    trapNameAr: "Sacrifice the Knight!",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d3 h6 5.Bb3 Bc5 6.c3 Bb6 7.Nbd2 d6 8.Nf1 Bg4 9.h3 Bh5 10.Ng3 Bxf3 11.Qxf3 O-O 12.Nf5 Ne7 13.Nxh6+ gxh6 14.Qxf6",
     moves: [
@@ -22897,6 +25138,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Double Attack with the Queen",
+    trapNameFr: "Double Attaque with the Queen",
+    trapNameEs: "Double Ataque with the Queen",
+    trapNameAr: "Double هجوم with the Queen",
     commentedMoves:
         "1.d4 Nf6 2.Bg5 e6 3.Nf3 Be7 4.Nbd2 d5 5.e3 c5 6.c3 Nbd7 7.Bd3 b6 8.Qa4 O-O 9.Ne5 Nxe5 10.dxe5 Nd7 11.Qh4",
     moves: [
@@ -22934,6 +25178,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Win the Queen with Bxh7+",
+    trapNameFr: "Win the Queen with Bxh7+",
+    trapNameEs: "Win the Queen with Bxh7+",
+    trapNameAr: "Win the Queen with Bxh7+",
     commentedMoves:
         "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Bd3 e5 6.Nf3 Nc6 7.O-O Bc5 8.h3 O-O 9.Nc3 d5 10.exd5 Nxd5 11.Nxd5 Qxd5 12.Bxh7+ Kxh7 13.Qxd5",
     moves: [
@@ -22975,6 +25222,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Attack on f7",
+    trapNameFr: "Attaque on f7",
+    trapNameEs: "Ataque on f7",
+    trapNameAr: "هجوم on f7",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 c6 4.d4 Nd7 5.c3 Be7 6.Qb3 d5 7.exd5 b5 8.Bd3 exd4 9.cxd4 c5 10.Bxb5 Nf6 11.Bc6",
     moves: [
@@ -23012,6 +25262,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Sacrifice on F7",
+    trapNameFr: "Sacrifice on F7",
+    trapNameEs: "Sacrifice on F7",
+    trapNameAr: "Sacrifice on F7",
     commentedMoves:
         "1.Nf3 Nf6 2.c4 e6 3.g3 d5 4.Bg2 dxc4 5.O-O a6 6.Na3 c5 7.Nxc4 b5 8.Nce5 Bb7 9.Nxf7 Kxf7 10.Ng5+ Ke8 11.Bxb7",
     moves: [
@@ -23049,6 +25302,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Brilliant unpin",
+    trapNameFr: "Brilliant unpin",
+    trapNameEs: "Brilliant unpin",
+    trapNameAr: "Brilliant unpin",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.f3 dxe4 4.fxe4 e5 5.Nf3 Bg4 6.Bc4 Nf6 7.Bxf7+ Kxf7 8.Nxe5+ Ke8 9.Nxg4 Nxg4 10.Qxg4 Qxd4 11.Nc3",
     moves: [
@@ -23085,6 +25341,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "Catastrophe on f2",
+    trapNameFr: "Catastrophe on f2",
+    trapNameEs: "Catastrophe on f2",
+    trapNameAr: "Catastrophe on f2",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.d5 Bc5 4.Bg5 Bxf2+ 5.Kxf2 Ng4+ 6.Ke1 Qxg5",
     moves: [
@@ -23113,6 +25372,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
     trapName: "Blunder unpin",
+    trapNameFr: "Blunder unpin",
+    trapNameEs: "Blunder unpin",
+    trapNameAr: "Blunder unpin",
     commentedMoves:
         "1.e4 d5 2.exd5 Qxd5 3.Nc3 Qa5 4.Bc4 Nf6 5.d4 c6 6.Nf3 Bg4 7.Bxf7+ Kxf7 8.Ne5+ Qxe5+ 9.dxe5 Bxd1",
     moves: [
@@ -23147,6 +25409,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scotch game",
     openingId: "scotch_game",
     trapName: "Just Attack c7",
+    trapNameFr: "Just Attaque c7",
+    trapNameEs: "Just Ataque c7",
+    trapNameAr: "Just هجوم c7",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Nxd4 d6 5.Nc3 g6 6.Nd5 Bg7 7.Nb5",
     moves: [
@@ -23176,6 +25441,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "OMG Trap",
+    trapNameFr: "OMG Piège",
+    trapNameEs: "OMG Trampa",
+    trapNameAr: "OMG فخ",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nd4 6.d6 Qxd6 7.Nxf7 Qc6 8.Nxh8 Qxg2 9.Rf1 Qe4+ 10.Be2 Nf3#",
     moves: [
@@ -23212,6 +25480,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Robatsch (modern) defence",
     openingId: "robatsch_modern_defence",
     trapName: "Win the Queen with Bxf7+",
+    trapNameFr: "Win the Queen with Bxf7+",
+    trapNameEs: "Win the Queen with Bxf7+",
+    trapNameAr: "Win the Queen with Bxf7+",
     commentedMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.Bc4 Nd7 5.Bxf7+ Kxf7 6.Ng5+ Ke8 7.Ne6",
     moves: [
@@ -23241,6 +25512,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "The Bishop helps to win the Queen",
+    trapNameFr: "The Bishop helps to win the Queen",
+    trapNameEs: "The Bishop helps to win the Queen",
+    trapNameAr: "The Bishop helps to win the Queen",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Bc5 4.O-O Nge7 5.c3 f5 6.d4 Bb6 7.d5 fxe4 8.Ng5 Nb8 9.Ne6",
     moves: [
@@ -23274,6 +25548,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Pawn Fork",
+    trapNameFr: "Pawn Fork",
+    trapNameEs: "Pawn Fork",
+    trapNameAr: "Pawn Fork",
     commentedMoves:
         "1.Nf3 d5 2.b3 Bf5 3.Bb2 e6 4.g3 Nf6 5.Bg2 Nbd7 6.O-O Bd6 7.d3 O-O 8.Nbd2 h6 9.Re1 c6 10.e4 Bg4 11.e5",
     moves: [
@@ -23311,6 +25588,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Sacrifice  pawn, win Bishop",
+    trapNameFr: "Sacrifice  pawn, win Bishop",
+    trapNameEs: "Sacrifice  pawn, win Bishop",
+    trapNameAr: "Sacrifice  pawn, win Bishop",
     commentedMoves: "1.d4 Nf6 2.Bf4 c5 3.Nf3 cxd4 4.Nxd4 e5 5.Bxe5 Qa5+",
     moves: [
       "d4",
@@ -23336,6 +25616,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_e00",
     trapName: "Sacrifice the Queen!!",
+    trapNameFr: "Sacrifice the Queen!!",
+    trapNameEs: "Sacrifice the Queen!!",
+    trapNameAr: "Sacrifice the Queen!!",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 d5 4.Bg5 c5 5.Nf3 cxd4 6.Nxd4 e5 7.Ndb5 a6 8.Nxd5 axb5 9.Nxf6+ Qxf6 10.Bxf6 Bb4+",
     moves: [
@@ -23371,6 +25654,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Brother of the Englud Trap",
+    trapNameFr: "Brother of the Englud Piège",
+    trapNameEs: "Brother of the Englud Trampa",
+    trapNameAr: "Brother of the Englud فخ",
     commentedMoves:
         "1.d4 Nf6 2.Bg5 Ne4 3.Bh4 c5 4.Qd3 Qb6 5.b3 Qh6 6.Qxe4 Qc1#",
     moves: [
@@ -23399,6 +25685,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzo-Indian defence",
     openingId: "nimzo_indian_defence",
     trapName: "Smothered Mate 2.0",
+    trapNameFr: "Étouffé Mat 2.0",
+    trapNameEs: "Ahogado Mate 2.0",
+    trapNameAr: "مخنوق كش ملك 2.0",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 c5 5.Ne2 d5 6.Bd2 Qa5 7.a3 Nc6 8.axb4 Nxb4 9.Rxa5 Nd3#",
     moves: [
@@ -23433,6 +25722,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d02",
     trapName: "Double Attack",
+    trapNameFr: "Double Attaque",
+    trapNameEs: "Double Ataque",
+    trapNameAr: "Double هجوم",
     commentedMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.g3 Bb4+ 5.Bd2 Be7 6.Qb3 O-O 7.Bg2 c6 8.Bb4 dxc4 9.Qxc4 Qd5 10.Qc3 Ne4 11.Qa3 Qc4",
     moves: [
@@ -23471,6 +25763,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "The Knight opens the door for his brother",
+    trapNameFr: "The Knight opens the door for his brother",
+    trapNameEs: "The Knight opens the door for his brother",
+    trapNameAr: "The Knight opens the door for his brother",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 e6 5.Nc3 a6 6.a3 Qc7 7.Be2 d6 8.O-O Nge7 9.Ndb5 axb5 10.Nxb5 Qd8 11.Nxd6+ Kd7 12.Nxf7+",
     moves: [
@@ -23510,6 +25805,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's gambit declined",
     openingId: "queens_gambit_declined",
     trapName: "Castle Queenside with check",
+    trapNameFr: "Castle Queenside with check",
+    trapNameEs: "Castle Queenside with check",
+    trapNameAr: "Castle Queenside with check",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 c6 4.e4 Bb4 5.Bd3 e5 6.dxe5 dxe4 7.Bxe4 Bxc3+ 8.bxc3 Qxd1+ 9.Kxd1 Be6 10.Rb1 Na6 11.Rxb7 O-O-O+",
     moves: [
@@ -23548,6 +25846,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
     trapName: "Cambridge springs Trap",
+    trapNameFr: "Cambridge springs Piège",
+    trapNameEs: "Cambridge springs Trampa",
+    trapNameAr: "Cambridge springs فخ",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.e3 c6 6.Nf3 Qa5 7.Nd2 Bb4 8.Qc2 O-O 9.Bd3 dxc4 10.Bxc4 Qxg5",
     moves: [
@@ -23584,6 +25885,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Hungarian Opening: Symmetrical Variation",
     openingId: "",
     trapName: "Queen Sacrifice for a Knight fork",
+    trapNameFr: "Queen Sacrifice for a Knight fork",
+    trapNameEs: "Queen Sacrifice for a Knight fork",
+    trapNameAr: "Queen Sacrifice for a Knight fork",
     commentedMoves:
         "1.g3 g6 2.Bg2 Bg7 3.e4 c5 4.d3 Nc6 5.c3 d6 6.Be3 Qb6 7.Qd2 Ne5 8.Na3 Qxb2 9.Qxb2 Nxd3+ 10.Kd2 Nxb2",
     moves: [
@@ -23619,6 +25923,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Nimzo-Indian defence",
     openingId: "nimzo_indian_defence",
     trapName: "The rare Bishop on a6",
+    trapNameFr: "The rare Bishop on a6",
+    trapNameEs: "The rare Bishop on a6",
+    trapNameAr: "The rare Bishop on a6",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nc3 Bb4 4.e3 b6 5.Ne2 Ba6 6.Ng3 d5 7.Qa4+",
     moves: [
@@ -23649,6 +25956,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Benko gambit",
     openingId: "benko_gambit",
     trapName: "Queen Fork 2.0",
+    trapNameFr: "Queen Fork 2.0",
+    trapNameEs: "Queen Fork 2.0",
+    trapNameAr: "Queen Fork 2.0",
     commentedMoves:
         "1.d4 Nf6 2.c4 c5 3.d5 b5 4.cxb5 a6 5.bxa6 g6 6.g3 Bg7 7.Bg2 d6 8.Nc3 O-O 9.Nf3 Bxa6 10.O-O Nbd7 11.Re1 Ng4 12.Qc2 Rb8 13.Qa4",
     moves: [
@@ -23690,6 +26000,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's Indian Attack: French Variation",
     openingId: "",
     trapName: "Pin on the e-File",
+    trapNameFr: "Pin on the e-File",
+    trapNameEs: "Pin on the e-File",
+    trapNameAr: "Pin on the e-File",
     commentedMoves:
         "1.g3 d5 2.Nf3 c5 3.Bg2 Nc6 4.O-O e5 5.d3 f5 6.c4 d4 7.e3 Nf6 8.exd4 cxd4 9.Nxe5 Nxe5 10.Re1 Ng4 11.f4 Bb4 12.Re2",
     moves: [
@@ -23729,6 +26042,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Reti opening",
     openingId: "reti_opening",
     trapName: "Sacrifice the Queen!! 2.0",
+    trapNameFr: "Sacrifice the Queen!! 2.0",
+    trapNameEs: "Sacrifice the Queen!! 2.0",
+    trapNameAr: "Sacrifice the Queen!! 2.0",
     commentedMoves:
         "1.Nf3 d5 2.c4 Nf6 3.cxd5 Nxd5 4.e4 Nf6 5.Nc3 Nc6 6.d4 Bg4 7.d5 Ne5 8.Nxe5 Bxd1 9.Bb5+ c6 10.dxc6 a6 11.c7+ axb5 12.cxd8=Q+ Rxd8 13.Nxd1",
     moves: [
@@ -23770,6 +26086,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Sicilian Unpin",
+    trapNameFr: "Sicilian Unpin",
+    trapNameEs: "Sicilian Unpin",
+    trapNameAr: "Sicilian Unpin",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Bg5 a6 8.Na3 Be6 9.Nc4 Rc8 10.Ne3 Be7 11.Bd3 Nxe4 12.Bxe7 Nxc3 13.Bxd8 Nxd1",
     moves: [
@@ -23812,6 +26131,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Pirc defence",
     openingId: "pirc_defence",
     trapName: "The Brother of the Sicilian unpin",
+    trapNameFr: "The Brother of the Sicilian unpin",
+    trapNameEs: "The Brother of the Sicilian unpin",
+    trapNameAr: "The Brother of the Sicilian unpin",
     commentedMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 e5 4.Nf3 exd4 5.Qxd4 a6 6.Bg5 Be7 7.h3 Nc6 8.Qd2 Be6 9.Nd4 Nxd4 10.Qxd4 O-O 11.Be2 Re8 12.O-O Nxe4 13.Qxe4 Bxg5 14.Qxb7 Rb8 15.Qxa6 Rxb2",
     moves: [
@@ -23858,6 +26180,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_a45",
     trapName: "Queen vs. Queen",
+    trapNameFr: "Queen vs. Queen",
+    trapNameEs: "Queen vs. Queen",
+    trapNameAr: "Queen vs. Queen",
     commentedMoves:
         "1.d4 Nf6 2.Bg5 Ne4 3.Bf4 c5 4.f3 Nf6 5.dxc5 Na6 6.e4 Nxc5 7.Nc3 d6 8.Qd2 Bd7 9.O-O-O Qa5 10.Kb1 Rd8 11.Nd5 Qxd2 12.Nc7#",
     moves: [
@@ -23897,6 +26222,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Pawn Running",
+    trapNameFr: "Pawn Running",
+    trapNameEs: "Pawn Running",
+    trapNameAr: "Pawn Running",
     commentedMoves:
         "1.c4 c5 2.Nc3 b6 3.g3 Bb7 4.e4 e6 5.Bg2 Nf6 6.Nge2 Be7 7.O-O d6 8.e5 Bxg2 9.exf6 Bxf1 10.fxe7 Qxe7 11.Qxf1",
     moves: [
@@ -23934,6 +26262,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "Sacrifice the Knight on f7",
+    trapNameFr: "Sacrifice the Knight on f7",
+    trapNameEs: "Sacrifice the Knight on f7",
+    trapNameAr: "Sacrifice the Knight on f7",
     commentedMoves:
         "1.d4 e6 2.Nf3 f5 3.g3 b6 4.d5 Be7 5.Bg2 Bb7 6.Ne5 d6 7.Nf7 Kxf7 8.dxe6+",
     moves: [
@@ -23965,6 +26296,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Gruenfeld defence",
     openingId: "gruenfeld_defence",
     trapName: "Anton the Pawn Attacks the Queen",
+    trapNameFr: "Anton the Pawn Attaques the Queen",
+    trapNameEs: "Anton the Pawn Ataques the Queen",
+    trapNameAr: "Anton the Pawn هجومs the Queen",
     commentedMoves:
         "1.d4 Nf6 2.c4 g6 3.Nc3 d5 4.Nf3 Bg7 5.Qb3 dxc4 6.Qxc4 O-O 7.e4 a6 8.a4 b5 9.axb5 axb5 10.Qxb5 Rxa1",
     moves: [
@@ -24001,6 +26335,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Robatsch (modern) defence",
     openingId: "robatsch_modern_defence",
     trapName: "The Pawn wins the Knight",
+    trapNameFr: "The Pawn wins the Knight",
+    trapNameEs: "The Pawn wins the Knight",
+    trapNameAr: "The Pawn wins the Knight",
     commentedMoves:
         "1.e4 g6 2.d4 Bg7 3.Nf3 d6 4.c3 Nf6 5.Bd3 O-O 6.O-O c5 7.h3 Nc6 8.d5 Na5 9.Re1 e5 10.b4",
     moves: [
@@ -24037,6 +26374,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Pirc defence",
     openingId: "pirc_defence",
     trapName: "B2:Pawn with Poison",
+    trapNameFr: "B2:Pawn with Poison",
+    trapNameEs: "B2:Pawn with Poison",
+    trapNameAr: "B2:Pawn with Poison",
     commentedMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 c6 4.f4 Qa5 5.Bd3 e5 6.Nf3 Bg4 7.Be3 exf4 8.Bxf4 Qb6 9.Na4 Qa5+ 10.Nc3 Qb4 11.a3 Qxb2 12.Na4 Bxf3 13.gxf3 Qxd4 14.c3",
     moves: [
@@ -24080,6 +26420,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
     trapName: "Win the Queen",
+    trapNameFr: "Win the Queen",
+    trapNameEs: "Win the Queen",
+    trapNameAr: "Win the Queen",
     commentedMoves:
         "1.e4 c5 2.Nf3 Nc6 3.Bb5 g6 4.O-O Bg7 5.c3 Nf6 6.e5 Nd5 7.d4 cxd4 8.cxd4 O-O 9.Bg5 Qb6 10.Bc4 Qxb2 11.Bxd5 Qxa1 12.Qd2",
     moves: [
@@ -24119,6 +26462,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Win the Queen in the middle of the board",
+    trapNameFr: "Win the Queen in the middle of the board",
+    trapNameEs: "Win the Queen in the middle of the board",
+    trapNameAr: "Win the Queen in the middle of the board",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.O-O Nf6 5.d4 exd4 6.e5 d5 7.exf6 dxc4 8.Re1+ Be6 9.fxg7 Rg8 10.Bg5 Qd5 11.Nc3 Qf5 12.Ne4 Rxg7 13.Nh4",
     moves: [
@@ -24160,6 +26506,9 @@ const List<ChessTrap> chessTraps = [
     opening: "French defence",
     openingId: "french_defence",
     trapName: "Win the Queen like a GM",
+    trapNameFr: "Win the Queen like a GM",
+    trapNameEs: "Win the Queen like a GM",
+    trapNameAr: "Win the Queen like a GM",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.Nd2 dxe4 4.Nxe4 Bd7 5.Nf3 Bc6 6.Bd3 Nf6 7.Nxf6+ Qxf6 8.Bg5 Bxf3 9.Qd2 Qxd4 10.Bb5+",
     moves: [
@@ -24195,6 +26544,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
     trapName: "A  mousetrap for rooks",
+    trapNameFr: "A  mousetrap for rooks",
+    trapNameEs: "A  mousetrap for rooks",
+    trapNameAr: "A  mousetrap for rooks",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.Nf3 O-O 6.e3 h6 7.Bh4 Ne4 8.Bxe7 Qxe7 9.cxd5 Nxc3 10.bxc3 exd5 11.Bd3 Bg4 12.Rb1 Nd7 13.Rxb7 Nb6 14.Qb3 Bc8 15.Rxb6 axb6 16.Qxd5 Be6 17.Qe4 f5 18.Qe5 Ra5",
     moves: [
@@ -24247,6 +26599,9 @@ const List<ChessTrap> chessTraps = [
     opening: "English opening",
     openingId: "english_opening",
     trapName: "Steal the cheese",
+    trapNameFr: "Steal the cheese",
+    trapNameEs: "Steal the cheese",
+    trapNameAr: "Steal the cheese",
     commentedMoves:
         "1.c4 Nf6 2.Nc3 d5 3.cxd5 Nxd5 4.g3 g6 5.Bg2 Nxc3 6.bxc3 Bg7 7.Rb1 O-O 8.Rxb7 Bxb7 9.Bxb7 Nd7 10.Bxa8 Qxa8 11.Nf3",
     moves: [
@@ -24284,6 +26639,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "win the Queen with Bxf7+ 2.0",
+    trapNameFr: "win the Queen with Bxf7+ 2.0",
+    trapNameEs: "win the Queen with Bxf7+ 2.0",
+    trapNameAr: "win the Queen with Bxf7+ 2.0",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3 Nb8 10.d4 Nbd7 11.Nbd2 Re8 12.Bxf7+ Kxf7 13.Ng5+ Kg8 14.Ne6",
     moves: [
@@ -24327,6 +26685,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Fischer trap",
+    trapNameFr: "Fischer trap",
+    trapNameEs: "Fischer trap",
+    trapNameAr: "Fischer trap",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Be7 4.d4 exd4 5.Nxd4 Nd7 6.Bxf7+ Kxf7 7.Ne6 Qe8 8.Nxc7 Qf8 9.Qh5+ g6 10.Qd5+ Kf6 11.Bg5+ Kg7 12.Ne6+",
     moves: [
@@ -24366,6 +26727,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Anastasia's Mate",
+    trapNameFr: "Anastasia's Mat",
+    trapNameEs: "Anastasia's Mate",
+    trapNameAr: "Anastasia's كش ملك",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.Re1 Nc5 7.Nc3 Nxa4 8.Nxe5 Nxe5 9.Rxe5+ Be7 10.Nd5 O-O 11.Nxe7+ Kh8 12.Qh5 d6 13.Qxh7+ Kxh7 14.Rh5#",
     moves: [
@@ -24408,6 +26772,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Trap 3",
+    trapNameFr: "Piège 3",
+    trapNameEs: "Trampa 3",
+    trapNameAr: "فخ 3",
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qf3 f5 4.Qxf5 d5 5.Bxd5 Bxf5",
     moves: [
       "e4",
@@ -24433,6 +26800,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Trap 4",
+    trapNameFr: "Piège 4",
+    trapNameEs: "Trampa 4",
+    trapNameAr: "فخ 4",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.d4 exd4 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5",
     moves: [
@@ -24465,6 +26835,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Trap 5",
+    trapNameFr: "Piège 5",
+    trapNameEs: "Trampa 5",
+    trapNameAr: "فخ 5",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 Nf6 5.Nc6+",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "Nf6", "Nc6+"],
     fen: "rnbqkb1r/pppp1ppp/2N2n2/8/8/8/PPPPQPPP/RNB1KB1R b KQkq - 3 5",
@@ -24479,6 +26852,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
     trapName: "Trap 6",
+    trapNameFr: "Piège 6",
+    trapNameEs: "Trampa 6",
+    trapNameAr: "فخ 6",
     commentedMoves:
         "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3 Nc6 7.Qxc6+",
     moves: [
@@ -24508,6 +26884,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
     trapName: "Englund Gambit 3",
+    trapNameFr: "Englund Gambit 3",
+    trapNameEs: "Englund Gambito 3",
+    trapNameAr: "Englund غامبيت 3",
     commentedMoves:
         "1.d4 e5 2.dxe5 f6 3.exf6 Nxf6 4.Nf3 Bc5 5.Bg5 Ne4 6.Bxd8 Bxf2#",
     moves: [
@@ -24535,6 +26914,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Bishop's opening",
     openingId: "bishops_opening",
     trapName: "Bishop Opening 4",
+    trapNameFr: "Bishop Ouverture 4",
+    trapNameEs: "Bishop Apertura 4",
+    trapNameAr: "Bishop افتتاحية 4",
     commentedMoves: "1.e4 e5 2.Bc4 b6 3.Qh5 g6 4.Qxe5+",
     moves: ["e4", "e5", "Bc4", "b6", "Qh5", "g6", "Qxe5+"],
     fen: "rnbqkbnr/p1pp1p1p/1p4p1/4Q3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
@@ -24548,6 +26930,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Caro kann trap for white",
+    trapNameFr: "Caro kann trap for white",
+    trapNameEs: "Caro kann trap for white",
+    trapNameAr: "Caro kann trap for white",
     commentedMoves: "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nf6 5.Qe2 Nbd7 6.Nd6#",
     moves: [
       "e4",
@@ -24574,6 +26959,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Fried Liver checkmate trap!",
+    trapNameFr: "Fried Liver checkmate trap!",
+    trapNameEs: "Fried Liver checkmate trap!",
+    trapNameAr: "Fried Liver checkmate trap!",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Kg8 8.Bxd5+ Qxd5 9.Qxd5+ Be6 10.Qxe6#",
     moves: [
@@ -24609,6 +26997,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Three knights game",
     openingId: "three_knights_game",
     trapName: "Legal's Mate⚖️",
+    trapNameFr: "Legal's Mat⚖️",
+    trapNameEs: "Legal's Mate⚖️",
+    trapNameAr: "Legal's كش ملك⚖️",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Nc3 d6 4.Bc4 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     moves: [
@@ -24640,6 +27031,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "Lasker Trap✌️",
+    trapNameFr: "Lasker Piège✌️",
+    trapNameEs: "Lasker Trampa✌️",
+    trapNameAr: "Lasker فخ✌️",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Rxg1 Qd4+",
     moves: [
@@ -24676,6 +27070,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d02",
     trapName: "Rubenstien Trap😶‍🌫️",
+    trapNameFr: "Rubenstien Piège😶‍🌫️",
+    trapNameEs: "Rubenstien Trampa😶‍🌫️",
+    trapNameAr: "Rubenstien فخ😶‍🌫️",
     commentedMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7 Qxc7 15.Qxc7",
     moves: [
@@ -24721,6 +27118,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
     trapName: "Shool mat-works on low rated players",
+    trapNameFr: "Shool mat-works on low rated players",
+    trapNameEs: "Shool mat-works on low rated players",
+    trapNameAr: "Shool mat-works on low rated players",
     commentedMoves:
         "1.e4 e5 2.Qh5 Nc6 3.Bc4 g6 4.Qf3 Nf6 5.g4 h6 6.Nh3 d6 7.g5 Bxh3 8.gxf6 Bd7 9.c3",
     moves: [
@@ -24755,6 +27155,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Italian game, crush it!!",
+    trapNameFr: "Italian game, crush it!!",
+    trapNameEs: "Italian game, crush it!!",
+    trapNameAr: "Italian game, crush it!!",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Qe2 Nxe2",
     moves: [
@@ -24785,6 +27188,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Ruy lopez ,more like ruy looser",
+    trapNameFr: "Ruy lopez ,more like ruy looser",
+    trapNameEs: "Ruy lopez ,more like ruy looser",
+    trapNameAr: "Ruy lopez ,more like ruy looser",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Nh2 Qh4 8.f3 g3 9.Re1 Qxh2+ 10.Kf1 Nd4 11.Bxd7+ Kxd7 12.Qe2 Qh1#",
     moves: [
@@ -24825,6 +27231,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Legal Mate",
+    trapNameFr: "Legal Mat",
+    trapNameEs: "Legal Mate",
+    trapNameAr: "Legal كش ملك",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
     moves: [
@@ -24856,6 +27265,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "Albin counter gamit, Lakser trap⚔️",
+    trapNameFr: "Albin counter gamit, Lakser trap⚔️",
+    trapNameEs: "Albin counter gamit, Lakser trap⚔️",
+    trapNameAr: "Albin counter gamit, Lakser trap⚔️",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Kc3 Qf2 11.Na3 Qe3+ 12.Bd3 Qxe5+ 13.Kd2 Bf5 14.Qe1 O-O-O 15.Qxe5 Rxd3+ 16.Ke1 Nf3+ 17.gxf3 Nxe5",
     moves: [
@@ -24906,6 +27318,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d02",
     trapName: "Rubinstein trap.👾",
+    trapNameFr: "Rubinstein trap.👾",
+    trapNameEs: "Rubinstein trap.👾",
+    trapNameAr: "Rubinstein trap.👾",
     commentedMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7",
     moves: [
@@ -24949,6 +27364,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Budapest defence",
     openingId: "budapest_defence",
     trapName: "Fajarowicz Trap.🛸",
+    trapNameFr: "Fajarowicz Piège.🛸",
+    trapNameEs: "Fajarowicz Trampa.🛸",
+    trapNameAr: "Fajarowicz فخ.🛸",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Nf3 d6 5.exd6 Bxd6 6.g3 Nxf2 7.Kxf2 Bxg3+ 8.hxg3 Qxd1",
     moves: [
@@ -24981,6 +27399,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Fishing Pole Trap",
+    trapNameFr: "Fishing Pole Piège",
+    trapNameEs: "Fishing Pole Trampa",
+    trapNameAr: "Fishing Pole فخ",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.hxg4 hxg4 8.Nxe5 Qh4 9.f4 g3 10.Qh5 Rxh5 11.Rf2 Qh1#",
     moves: [
@@ -25018,6 +27439,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "Introduction 🥳",
+    trapNameFr: "Introduction 🥳",
+    trapNameEs: "Introduction 🥳",
+    trapNameAr: "Introduction 🥳",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4",
     moves: ["e4", "e5", "Nf3", "Nc6", "d4", "exd4", "Bc4"],
     fen: "r1bqkbnr/pppp1ppp/2n5/8/2BpP3/5N2/PPP2PPP/RNBQK2R b KQkq - 1 4",
@@ -25032,6 +27456,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game: Scotch Gambit, Max Lange Attack",
     openingId: "",
     trapName: "📚 Main variation Nf6 - Theory 💡",
+    trapNameFr: "📚 Main variation Nf6 - Theory 💡",
+    trapNameEs: "📚 Main variation Nf6 - Theory 💡",
+    trapNameAr: "📚 Main variation Nf6 - Theory 💡",
     commentedMoves:
         "1.Nf6 e5 2.d5 Bb5 3.Ne4 Nxd4 4.Bd7 Bxc6 5.Bxc6 Nxc6 6.bxc6 O-O 7.Qe7",
     moves: [
@@ -25061,6 +27488,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "📚 Main variation Nf6 - Exercise 🔍",
+    trapNameFr: "📚 Main variation Nf6 - Exercise 🔍",
+    trapNameEs: "📚 Main variation Nf6 - Exercise 🔍",
+    trapNameAr: "📚 Main variation Nf6 - Exercise 🔍",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Nf6 5.e5 d5 6.Bb5 Ne4 7.Nxd4",
     moves: [
@@ -25090,6 +27520,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "📕 London Defense [Bb4] - Theory 💡",
+    trapNameFr: "📕 London Défense [Bb4] - Theory 💡",
+    trapNameEs: "📕 London Defensa [Bb4] - Theory 💡",
+    trapNameAr: "📕 London دفاع [Bb4] - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O Nf6 7.e5 d5 8.exf6 dxc4 9.Qxd8+ Kxd8 10.fxg7 Rg8",
     moves: [
@@ -25126,6 +27559,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "📘 London Defense [Bb4] Secondary Variation cxb2? - Theory 💡",
+    trapNameFr: "📘 London Défense [Bb4] Secondary Variante cxb2? - Theory 💡",
+    trapNameEs: "📘 London Defensa [Bb4] Secondary Variante cxb2? - Theory 💡",
+    trapNameAr: "📘 London دفاع [Bb4] Secondary تنويعة cxb2? - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O cxb2 7.Bxb2 Nf6 8.e5 Ng4 9.h3 Nh6",
     moves: [
@@ -25160,6 +27596,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "📙 Hungarian/Benima Defense [Be7] - Theory 💡",
+    trapNameFr: "📙 Hungarian/Benima Défense [Be7] - Theory 💡",
+    trapNameEs: "📙 Hungarian/Benima Defensa [Be7] - Theory 💡",
+    trapNameAr: "📙 Hungarian/Benima دفاع [Be7] - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 O-O 8.Nxc3 gxh6 9.O-O",
     moves: [
@@ -25193,6 +27632,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "📗 Haxo Gambit [Bc5] Secondary Variation - Theory 💡",
+    trapNameFr: "📗 Haxo Gambit [Bc5] Secondary Variante - Theory 💡",
+    trapNameEs: "📗 Haxo Gambito [Bc5] Secondary Variante - Theory 💡",
+    trapNameAr: "📗 Haxo غامبيت [Bc5] Secondary تنويعة - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5 d5 10.O-O",
     moves: [
@@ -25228,6 +27670,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "📗 Haxo Gambit [Bc5] Secondary Variation - Exercise 🔍",
+    trapNameFr: "📗 Haxo Gambit [Bc5] Secondary Variante - Exercise 🔍",
+    trapNameEs: "📗 Haxo Gambito [Bc5] Secondary Variante - Exercise 🔍",
+    trapNameAr: "📗 Haxo غامبيت [Bc5] Secondary تنويعة - Exercise 🔍",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5",
     moves: [
@@ -25261,6 +27706,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "📔 Secondary Variation [d6] - Theory 💡",
+    trapNameFr: "📔 Secondary Variante [d6] - Theory 💡",
+    trapNameEs: "📔 Secondary Variante [d6] - Theory 💡",
+    trapNameAr: "📔 Secondary تنويعة [d6] - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 d6 5.Nxd4 Nf6 6.Nc3 Be7 7.O-O O-O",
     moves: [
@@ -25291,6 +27739,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c44",
     trapName: "📓 Haxo Gambit [Bc5]  c3 - Theory 💡",
+    trapNameFr: "📓 Haxo Gambit [Bc5]  c3 - Theory 💡",
+    trapNameEs: "📓 Haxo Gambito [Bc5]  c3 - Theory 💡",
+    trapNameAr: "📓 Haxo غامبيت [Bc5]  c3 - Theory 💡",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5 cxb2 10.Bxb2 Nf6 11.Qc1",
     moves: [
@@ -25327,6 +27778,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "-- Intro ⏱️ --",
+    trapNameFr: "-- Intro ⏱️ --",
+    trapNameEs: "-- Intro ⏱️ --",
+    trapNameAr: "-- Intro ⏱️ --",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Qe7 6.Nxh8",
     moves: [
       "e4",
@@ -25352,6 +27806,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "-- Stafford Gambit | The Exoskeleton 📒--",
+    trapNameFr: "-- Stafford Gambit | The Exoskeleton 📒--",
+    trapNameEs: "-- Stafford Gambito | The Exoskeleton 📒--",
+    trapNameAr: "-- Stafford غامبيت | The Exoskeleton 📒--",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nc6", "Nxc6", "dxc6", "d3"],
     fen: "r1bqkb1r/ppp2ppp/2p2n2/8/4P3/3P4/PPP2PPP/RNBQKB1R b KQkq - 0 5",
@@ -25366,6 +27823,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "-- The Queen-Knight Corner Mate ↖️ --",
+    trapNameFr: "-- The Queen-Knight Corner Mat ↖️ --",
+    trapNameEs: "-- The Queen-Knight Corner Mate ↖️ --",
+    trapNameAr: "-- The Queen-Knight Corner كش ملك ↖️ --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.g3 Qxg3+ 10.Kh1 Qh2#",
     moves: [
@@ -25402,6 +27862,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "-- ICBM-Style Trap 🚀 --",
+    trapNameFr: "-- ICBM-Style Piège 🚀 --",
+    trapNameEs: "-- ICBM-Style Trampa 🚀 --",
+    trapNameAr: "-- ICBM-Style فخ 🚀 --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1 9.Nc3",
     moves: [
@@ -25435,6 +27898,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "-- The Queen-Rook Mate ⬆️ --",
+    trapNameFr: "-- The Queen-Rook Mat ⬆️ --",
+    trapNameEs: "-- The Queen-Rook Mate ⬆️ --",
+    trapNameAr: "-- The Queen-Rook كش ملك ⬆️ --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4 10.e5 Qxe5 11.Bf4 Qxf4 12.g3 Qxg3#",
     moves: [
@@ -25474,6 +27940,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Introduction",
+    trapNameFr: "Introduction",
+    trapNameEs: "Introduction",
+    trapNameAr: "Introduction",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nc6", "Nxc6", "dxc6"],
     fen: "r1bqkb1r/ppp2ppp/2p2n2/8/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 5",
@@ -25488,6 +27957,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Oh no my knight!",
+    trapNameFr: "Oh no my knight!",
+    trapNameEs: "Oh no my knight!",
+    trapNameAr: "Oh no my knight!",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1",
     moves: [
@@ -25520,6 +27992,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Take my knight, but I'll take your rook...",
+    trapNameFr: "Take my knight, but I'll take your rook...",
+    trapNameEs: "Take my knight, but I'll take your rook...",
+    trapNameAr: "Take my knight, but I'll take your rook...",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d4 Qh4 7.g3 Nxg3 8.fxg3 Qe4+",
     moves: [
@@ -25552,6 +28027,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Most common trap",
+    trapNameFr: "Most common trap",
+    trapNameEs: "Most common trap",
+    trapNameAr: "Most common trap",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.d3 Ng4 7.Be3 Nxe3 8.fxe3 Bxe3",
     moves: [
@@ -25584,6 +28062,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Punishing Natural Development",
+    trapNameFr: "Punishing Natural Development",
+    trapNameEs: "Punishing Natural Development",
+    trapNameAr: "Punishing Natural Development",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Bc4 Ng4 7.O-O Qh4 8.h3 Nxf2 9.Qf3 Nxh3+ 10.Kh1 Nf2+ 11.Kg1 Qh1#",
     moves: [
@@ -25622,6 +28103,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "My Favorite Trap (Sometimes works against GMs!)",
+    trapNameFr: "My Favorite Piège (Sometimes works against GMs!)",
+    trapNameEs: "My Favorite Trampa (Sometimes works against GMs!)",
+    trapNameAr: "My Favorite فخ (Sometimes works against GMs!)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Be2 h5 7.h3 Qd4 8.O-O Ng4 9.hxg4 hxg4 10.g3 Qe5 11.Kg2 Bxf2 12.Kxf2 Rh2+ 13.Ke3 Qxg3+ 14.Kd4 Be6",
     moves: [
@@ -25666,6 +28150,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Drag white's king to e4 (before move 10!)",
+    trapNameFr: "Drag white's king to e4 (before move 10!)",
+    trapNameEs: "Drag white's king to e4 (before move 10!)",
+    trapNameAr: "Drag white's king to e4 (before move 10!)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.h3 Bxf2+ 7.Kxf2 Nxe4+ 8.Ke3 O-O 9.Kxe4",
     moves: [
@@ -25699,6 +28186,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Everyone falls for this trap 😁",
+    trapNameFr: "Everyone falls for this trap 😁",
+    trapNameEs: "Everyone falls for this trap 😁",
+    trapNameAr: "Everyone falls for this trap 😁",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4",
     moves: [
@@ -25733,6 +28223,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
     trapName: "Miscellaneous Lines",
+    trapNameFr: "Miscellaneous Lines",
+    trapNameEs: "Miscellaneous Lines",
+    trapNameAr: "Miscellaneous Lines",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be3 Bxe3 7.fxe3 Ng4 8.Qf3 Qg5 9.Qf4 Qc5 10.Kd2",
     moves: [
@@ -25768,6 +28261,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Roman_Onoprienko (1231?) - AARAVIYPE (1166)",
+    trapNameFr: "Roman_Onoprienko (1231?) - AARAVIYPE (1166)",
+    trapNameEs: "Roman_Onoprienko (1231?) - AARAVIYPE (1166)",
+    trapNameAr: "Roman_Onoprienko (1231?) - AARAVIYPE (1166)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.Bb5+ Nxb5 10.Kxf2 Ng4+ 11.Ke1 Nd4 12.c3 Qf6 13.Rf1 Qh4+ 14.g3 Qxh2 15.cxd4 Qxg3+ 16.Ke2 Nf6 17.Qa4+ Bd7 18.Qc4 Bg4+ 19.Rf3 Bxf3+ 20.Ke3 Bxd5+ 21.Ke2 Bxc4+ 22.Kd1 Bd3 23.Nc3 Qg1#",
     moves: [
@@ -25828,6 +28324,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Hello!",
+    trapNameFr: "Hello!",
+    trapNameEs: "Hello!",
+    trapNameAr: "Hello!",
     commentedMoves: "1.e4",
     moves: ["e4"],
     fen: "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
@@ -25842,6 +28341,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Zukertort Opening: Tennison Gambit",
     openingId: "",
     trapName: "Tennison gambit",
+    trapNameFr: "Tennison gambit",
+    trapNameEs: "Tennison gambit",
+    trapNameAr: "Tennison gambit",
     commentedMoves:
         "1.d5 Nf3 2.dxe4 Ng5 3.Nf6 d3 4.exd3 Bxd3 5.h6 Nxf7 6.Kxf7 Bg6+ 7.Kxg6 Qxd8",
     moves: [
@@ -25872,6 +28374,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "Lasker trap",
+    trapNameFr: "Lasker trap",
+    trapNameEs: "Lasker trap",
+    trapNameAr: "Lasker trap",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+ 9.Kf2 Qxd1",
     moves: [
@@ -25906,6 +28411,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
     trapName: "Karpov trap",
+    trapNameFr: "Karpov trap",
+    trapNameEs: "Karpov trap",
+    trapNameAr: "Karpov trap",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Ng5 h6 6.Ne6 fxe6 7.Qh5+ g6 8.Qxg6#",
     moves: [
@@ -25937,6 +28445,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's knight opening",
     openingId: "kings_knight_opening",
     trapName: "Damiano gambit",
+    trapNameFr: "Damiano gambit",
+    trapNameEs: "Damiano gambit",
+    trapNameAr: "Damiano gambit",
     commentedMoves:
         "1.e4 e5 2.Nf3 f6 3.Nxe5 fxe5 4.Qh5+ Ke7 5.Qxe5+ Kf7 6.Bc4+ Kg6 7.Qf5+ Kh6 8.h4 d5 9.d3+ g5 10.Qf7 Bb4+ 11.c3 Bxc3+ 12.bxc3 Bh3 13.Rxh3 dxc4 14.hxg5#",
     moves: [
@@ -25980,6 +28491,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Centre game",
     openingId: "centre_game",
     trapName: "Danish gambit",
+    trapNameFr: "Danish gambit",
+    trapNameEs: "Danish gambit",
+    trapNameAr: "Danish gambit",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Bxf7+ Kxf7 9.Qd5+ Kg6 10.Qxe4+ Kf7 11.Nf3 d5 12.exd6 Qxd6 13.Ng5+ Kg8 14.Qc4+ Be6 15.Nxe6 b5 16.Qb3",
     moves: [
@@ -26027,6 +28541,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Fishing pole - Ruy Lopez and Sicilian (black)",
+    trapNameFr: "Fishing pole - Ruy Lopez and Sicilian (black)",
+    trapNameEs: "Fishing pole - Ruy Lopez and Sicilian (black)",
+    trapNameAr: "Fishing pole - Ruy Lopez and Sicilian (black)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f4 g3 9.Qh5 Rxh5 10.Nf3 Qh1#",
     moves: [
@@ -26063,6 +28580,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
     trapName: "Rubinstein Trap - QGD (white)",
+    trapNameFr: "Rubinstein Piège - QGD (white)",
+    trapNameEs: "Rubinstein Trampa - QGD (white)",
+    trapNameAr: "Rubinstein فخ - QGD (white)",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 Re8 9.Rc1 c6 10.O-O h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7 Qxc7 14.Rxc7",
     moves: [
@@ -26106,6 +28626,10 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
     trapName: "Lasker Trap - Albin Counter-Gambit to Queens Gambit (black)",
+    trapNameFr: "Lasker Piège - Albin Counter-Gambit to Queens Gambit (black)",
+    trapNameEs:
+        "Lasker Trampa - Albin Counter-Gambito to Queens Gambito (black)",
+    trapNameAr: "Lasker فخ - Albin Counter-غامبيت to Queens غامبيت (black)",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.fxe3 Qh4+ 7.g3 Qe4",
     moves: [
@@ -26136,6 +28660,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's gambit declined",
     openingId: "queens_gambit_declined",
     trapName: "Elephant Trap - QGD (black)",
+    trapNameFr: "Elephant Piège - QGD (black)",
+    trapNameEs: "Elephant Trampa - QGD (black)",
+    trapNameAr: "Elephant فخ - QGD (black)",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.cxd5 exd5 5.Bg5 Nbd7 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
     moves: [
@@ -26170,6 +28697,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
     trapName: "Mortimer Trap - Ruy Lopez (black)",
+    trapNameFr: "Mortimer Piège - Ruy Lopez (black)",
+    trapNameEs: "Mortimer Trampa - Ruy Lopez (black)",
+    trapNameAr: "Mortimer فخ - Ruy Lopez (black)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 d6 7.Ba4 b5",
     moves: [
@@ -26200,6 +28730,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Queen's Gambit Declined Slav defence",
     openingId: "qgd_slav_defence",
     trapName: "Reverse London - Slav Defense to Queens Gambit (white)",
+    trapNameFr: "Reverse London - Slav Défense to Queens Gambit (white)",
+    trapNameEs: "Reverse London - Slav Defensa to Queens Gambito (white)",
+    trapNameAr: "Reverse London - Slav دفاع to Queens غامبيت (white)",
     commentedMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Nf3 Bf5 5.cxd5 cxd5 6.Qb3 Qb6 7.Nxd5 Qxb3 8.Nxf6+ exf6 9.axb3",
     moves: [
@@ -26231,6 +28764,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
     trapName: "Fool mate",
+    trapNameFr: "Fool mate",
+    trapNameEs: "Fool mate",
+    trapNameAr: "Fool mate",
     commentedMoves: "1.e4 f6 2.d4 g5 3.Qh5#",
     moves: ["e4", "f6", "d4", "g5", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/5p2/6pQ/3PP3/8/PPP2PPP/RNB1KBNR b KQkq - 1 3",
@@ -26243,6 +28779,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's pawn game",
     openingId: "kings_pawn_game_c20",
     trapName: "Scholar’s mate",
+    trapNameFr: "Scholar’s mate",
+    trapNameEs: "Scholar’s mate",
+    trapNameAr: "Scholar’s mate",
     commentedMoves: "1.e4 e5 2.Qh5 Nc6 3.Bc4 Nf6 4.Qxf7#",
     moves: ["e4", "e5", "Qh5", "Nc6", "Bc4", "Nf6", "Qxf7#"],
     fen: "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
@@ -26256,6 +28795,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Philidor's defence",
     openingId: "philidors_defence",
     trapName: "Legal mate",
+    trapNameFr: "Legal mate",
+    trapNameEs: "Legal mate",
+    trapNameAr: "Legal mate",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 f6 5.Nxe5 Bxd1 6.Bf7+ Ke7 7.Nd5#",
     moves: [
@@ -26285,6 +28827,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Two knights defence",
     openingId: "two_knights_defence",
     trapName: "Fried liver attack",
+    trapNameFr: "Fried liver attack",
+    trapNameEs: "Fried liver attack",
+    trapNameAr: "Fried liver attack",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ne7 9.O-O",
     moves: [
@@ -26318,6 +28863,9 @@ const List<ChessTrap> chessTraps = [
     opening: "King's gambit",
     openingId: "kings_gambit",
     trapName: "King gambit trap",
+    trapNameFr: "King gambit trap",
+    trapNameEs: "King gambit trap",
+    trapNameAr: "King gambit trap",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.d4 fxg2 7.Bxf7+ Kxf7 8.Qh5+ Ke7 9.Rxf4 Nf6 10.Rxf6 Kxf6 11.Bg5+ Kg7 12.Bxd8",
     moves: [
@@ -26357,6 +28905,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Italian Game",
     openingId: "italian_game",
     trapName: "Bishop safari gambit",
+    trapNameFr: "Bishop safari gambit",
+    trapNameEs: "Bishop safari gambit",
+    trapNameAr: "Bishop safari gambit",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Na5 4.Bxf7+ Kxf7 5.Nxe5+ Ke8 6.Qh5+ g6 7.Nxg6 hxg6 8.Qxh8",
     moves: [
@@ -26388,6 +28939,9 @@ const List<ChessTrap> chessTraps = [
     opening: "Scandinavian (centre counter) defence",
     openingId: "scandinavian_defence",
     trapName: "Ballistic missle gambit",
+    trapNameFr: "Ballistic missle gambit",
+    trapNameEs: "Ballistic missle gambit",
+    trapNameAr: "Ballistic missle gambit",
     commentedMoves:
         "1.e4 d5 2.Nf3 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
     moves: [

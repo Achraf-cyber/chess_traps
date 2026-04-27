@@ -1,4 +1,7 @@
 [Event "Common Opening Traps: Legal's mate"]
+[Event_fr "Legal's mate"]
+[Event_es "Legal's mate"]
+[Event_ar "Legal's mate"]
 [Date "2026.02.25"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. e4 { [%eval 0.18] } 1... e5 { [%eval 0.22] } 2. Nf3 { [%eval 0.18] } 2... d6 { [%eval 0.48] } { The Philidore Defense } { [%cal Gf1c4,Gd2d4] } 3. Bc4 { [%eval 0.23] } 3... Bg4 { [%eval 0.63] } 4. Nc3 { [%eval 0.44] [%csl Yf3][%cal Rg7g6,Gb8c6,Yg4f3] } 4... g6? { [%eval 1.64] } { Mistake. Nf6 was best. } { Nc6 was best. Other bad moves are Ne7, a6, etc. } { [%csl Ge5][%cal Gf3e5] } (4... Nc6) (4... Nf6 5. h3 Bxf3 6. Qxf3 Nc6 7. Ne2 Na5 8. Bb5+ c6 9. Bd3) (4... c6) 5. Nxe5!! { [%eval 1.67] } { Bxd1 is a mistake. } { [%cal Rg4d1,Gf8g7] } 5... Bxd1?? { [%eval #2] } { Checkmate is now unavoidable. dxe5 was best. } { [%cal Gc4f7] } (5... dxe5 6. Qxg4 Nc6 7. Qf3 Qd7 8. Ne2 Bg7 9. a3 a5 10. d3) 6. Bxf7+!! { [%eval #1] [%cal Be8e7] } 6... Ke7 $7 { [%eval #1] [%cal Gc3d5] } 7. Nd5#!! *
 
-
 [Event "Common Opening Traps: Italian Trap"]
+[Event_fr "Italian Piège"]
+[Event_es "Italian Trampa"]
+[Event_ar "Italian فخ"]
 [Date "2026.02.25"]
 [Result "*"]
 [Variant "Standard"]
@@ -28,5 +33,3 @@
 [UTCTime "09:27:22"]
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 { [%cal Yc6d4] } 3... Nd4 { The trap begins here. } { [%csl Re5,Gd4][%cal Gf3d4,Rf3e5] } 4. Nxe5?? { [%cal Gd8g5] } (4. Nxd4!) 4... Qg5! { [%csl Bf7][%cal Re5f7,Gc4f7] } 5. Nxf7? (5. Bxf7+) 5... Qxg2!! 6. Rf1? (6. Nxh8? Qxe4+ 7. Kf1 (7. Be2 Qxh1+ 8. Bf1 Qe4+ 9. Be2 Bc5 10. b3 Nxc2+ 11. Kf1 Qh1#) 7... Qxh1#) 6... Qxe4+!! 7. Be2 $7 (7. Qe2 Nxe2!) 7... Nf3#!! *
-
-

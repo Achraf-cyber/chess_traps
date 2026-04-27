@@ -1,4 +1,7 @@
 [Event "Opening traps.: Albin counter gamit, Lakser trap⚔️"]
+[Event_fr "Albin counter gamit, Lakser trap⚔️"]
+[Event_es "Albin counter gamit, Lakser trap⚔️"]
+[Event_ar "Albin counter gamit, Lakser trap⚔️"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -13,8 +16,10 @@
 
 1. d4 d5 2. c4 e5!? (2... e6 3. Nc3 Nf6 4. Bg5 Be7 { Was the main line. }) 3. dxe5 d4 4. e3? Bb4+! 5. Bd2 dxe3 6. Bxb4?? (6. fxe3 Qh4+! 7. g3 Qe4 8. Nf3 Bxd2+ 9. Nbxd2 Qxe3+ $15 { Black is a little better }) 6... exf2+ 7. Ke2 fxg1=N+! (7... fxg1=Q?? 8. Qxd8+ Kxd8 9. Rxg1) 8. Ke1 (8. Rxg1 Bg4+ 9. Kf2 Qxd1) 8... Qh4+ 9. Kd2 { [%csl Gb4,Gg4][%cal Gb8c6,Gc6b4,Gc8g4] } (9. g3 Qe4+! { [%csl Gh1,Ge1][%cal Ge4h1,Ge4e1] }) 9... Nc6! 10. Kc3 (10. Bc3?! Bg4 11. Qe1 O-O-O+!) 10... Qf2 11. Na3 { [%csl Ge3] } (11. Qd2 Qxf1) 11... Qe3+ 12. Bd3 { [%csl Gg1][%cal Gd1g1,Gh1g1] } (12. Qd3? { [%csl Gg1][%cal Gh1g1] }) 12... Qxe5+ 13. Kd2 { [%cal Ge8c8,Ga8d8,Gd8d1] } 13... Bf5! 14. Qe1 (14. Bxf5 Rd8+!) 14... O-O-O 15. Qxe5 Rxd3+ 16. Ke1 Nf3+! { Creating weak pawn } 17. gxf3 Nxe5 *
 
-
 [Event "Opening traps.: Noah's ark trap.🔪"]
+[Event_fr "Noah's ark trap.🔪"]
+[Event_es "Noah's ark trap.🔪"]
+[Event_ar "Noah's ark trap.🔪"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -29,8 +34,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 (4. Bxc6 dxc6 5. O-O (5. Nxe5 Qd4!) 5... Bg4 6. h3 h5! 7. hxg4? hxg4 8. Nxe5?? Qh4! 9. f4 g3 10. Qh5 Rxh5 11. a3 Qh1#) 4... d6 5. d4?! b5! 6. Bb3 Nxd4 7. Nxd4 exd4 8. Qxd4?? c5 9. Qd5 Be6 10. Qc6+ Bd7 11. Qd5 c4! *
 
-
 [Event "Opening traps.: Legal's trap⚖️"]
+[Event_fr "Legal's trap⚖️"]
+[Event_es "Legal's trap⚖️"]
+[Event_ar "Legal's trap⚖️"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -45,8 +52,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 d6?! (3... Bc5 { Was better than D6 }) (3... Nf6 { Was better than D6 }) 4. Nc3 Bg4 5. h3 Bh5? (5... Bxf3 { Was better }) 6. Nxe5 Bxd1?? 7. Bxf7+ Ke7 8. Nd5# *
 
-
 [Event "Opening traps.: Elephant trap.🐘"]
+[Event_fr "Elephant trap.🐘"]
+[Event_es "Elephant trap.🐘"]
+[Event_ar "Elephant trap.🐘"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -61,8 +70,10 @@
 
 1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7!? (4... Be7 5. e3 h6 { Could have been better }) 5. cxd5 exd5 6. Nxd5?? Nxd5! 7. Bxd8 Bb4+ 8. Qd2 Bxd2+ 9. Kxd2 Kxd8 *
 
-
 [Event "Opening traps.: Rubinstein trap.👾"]
+[Event_fr "Rubinstein trap.👾"]
+[Event_es "Rubinstein trap.👾"]
+[Event_ar "Rubinstein trap.👾"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -77,8 +88,10 @@
 
 1. d4 d5 2. Nf3 (2. c4 e6 3. Nc3 { Is more popular }) 2... Nf6 3. c4 e6 4. Bg5 Nbd7 5. e3 Be7 6. Nc3 O-O 7. Rc1 Re8?! 8. Qc2 a6 9. cxd5 exd5 10. Bd3 c6 11. O-O Ne4 12. Bf4 f5?? { Careless } 13. Nxd5 cxd5 14. Bc7 *
 
-
 [Event "Opening traps.: Siberian trap."]
+[Event_fr "Siberian trap."]
+[Event_es "Siberian trap."]
+[Event_ar "Siberian trap."]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -93,8 +106,10 @@
 
 1. e4 c5 2. d4 (2. Nf3 { Was popular }) 2... cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 e6 6. Bc4 Qc7 7. O-O Nf6 8. Qe2?! { Nb5 was better. } (8. Nb5 Qb8) 8... Ng4! 9. h3?? { [%csl Gh2][%cal Gc7h2,Gg4h2] } 9... Nd4! 10. Nxd4 Qh2# *
 
-
 [Event "Opening traps.: Fajarowicz Trap.🛸"]
+[Event_fr "Fajarowicz Piège.🛸"]
+[Event_es "Fajarowicz Trampa.🛸"]
+[Event_ar "Fajarowicz فخ.🛸"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -109,8 +124,10 @@
 
 1. d4 Nf6 2. c4 e5!? 3. dxe5 Ne4 4. Nf3 d6 5. exd6?! { Inaccuracy.Qc2 was best. } (5. Qc2 Nc5 6. Bg5) 5... Bxd6 6. g3? { Mistake.Nbd2 was best. } (6. Nbd2 Qe7 7. Nxe4 Qxe4) 6... Nxf2 7. Kxf2?? { Blunder.Qd4 was best. } (7. Qd4 Nxh1) 7... Bxg3+ 8. hxg3 Qxd1 *
 
-
 [Event "Opening traps.: Blackburne Shilling Trap🦕"]
+[Event_fr "Blackburne Shilling Piège🦕"]
+[Event_es "Blackburne Shilling Trampa🦕"]
+[Event_ar "Blackburne Shilling فخ🦕"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -125,8 +142,10 @@
 
 1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 4. Nxe5? Qg5 5. Nxf7?? Qxg2 6. Rf1 Qxe4+ 7. Be2 Nf3# *
 
-
 [Event "Opening traps.: Fishing Pole Trap"]
+[Event_fr "Fishing Pole Piège"]
+[Event_es "Fishing Pole Trampa"]
+[Event_ar "Fishing Pole فخ"]
 [Date "2026.03.14"]
 [Result "*"]
 [Variant "Standard"]
@@ -140,5 +159,3 @@
 [UTCTime "11:58:59"]
 
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. O-O Bg4 6. h3 h5! 7. hxg4? hxg4 8. Nxe5?? Qh4 9. f4 g3 10. Qh5 Rxh5 11. Rf2 Qh1# *
-
-

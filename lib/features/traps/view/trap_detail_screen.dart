@@ -271,7 +271,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               await SharePlus.instance.share(
                 ShareParams(
                   text:
-                      "Can you survive this trap? Check out ${trap.trapName}!\n$link",
+                      "Can you survive this trap? Check out ${trap.getLocalizedName(context)}!\n$link",
                 ),
               );
             },
@@ -602,7 +602,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            trap.trapName,
+                            trap.getLocalizedName(context),
                             style: context.textTheme.headlineSmall?.copyWith(
                               fontWeight: FontWeight.w900,
                               color: context.colors.primary,

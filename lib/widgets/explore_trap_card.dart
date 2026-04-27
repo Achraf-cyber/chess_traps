@@ -94,7 +94,7 @@ class ExploreTrapCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    trap.trapName,
+                    trap.getLocalizedName(context),
                     style: context.textTheme.titleSmall?.copyWith(
                       fontWeight: FontWeight.w900,
                       letterSpacing: -0.2,

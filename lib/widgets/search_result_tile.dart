@@ -50,7 +50,7 @@ class SearchResultTile extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        trap.trapName,
+                        trap.getLocalizedName(context),
                         style: context.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.w700,
                         ),

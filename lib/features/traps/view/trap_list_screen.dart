@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/providers/traps_group_provider.dart';
+import 'package:chess_traps/providers/traps_provider.dart';
 import 'package:chess_traps/widgets/ad_banner_widget.dart';
 import 'package:chess_traps/widgets/explore_trap_card.dart';
 import 'package:chessground/chessground.dart';
@@ -256,16 +257,14 @@ class FloatingSearchTextField extends StatelessWidget {
   }
 }
 
-class _TrapOfTheDayCard extends StatelessWidget {
+class _TrapOfTheDayCard extends ConsumerWidget {
   const _TrapOfTheDayCard();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     if (chessTraps.isEmpty) return const SizedBox.shrink();
 
-    final dayOfYear = DateTime.now().difference(DateTime(DateTime.now().year)).inDays;
-    final index = dayOfYear % chessTraps.length;
-    final trap = chessTraps[index];
+    final trap = ref.watch(trapOfTheDayProvider);
 
     return Padding(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
@@ -274,7 +273,11 @@ class _TrapOfTheDayCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.auto_awesome_rounded, size: 18, color: context.colors.primary),
+              Icon(
+                Icons.auto_awesome_rounded,
+                size: 18,
+                color: context.colors.primary,
+              ),
               const SizedBox(width: 8),
               Text(
                 'TRAP OF THE DAY',
@@ -381,7 +384,7 @@ class _TrapOfDayTextContent extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          trap.trapName,
+          trap.getLocalizedName(context),
           style: context.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.w900,
             letterSpacing: -0.5,

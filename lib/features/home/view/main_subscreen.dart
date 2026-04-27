@@ -130,16 +130,16 @@ class MainSubscreen extends ConsumerWidget {
                     TrapDetailRoute(index: randomTrap.id).push<void>(context);
                   },
                 ),
-                const SizedBox(height: 12),
-                QuickActionCard(
-                  title: context.phrase.strategyGuide,
-                  subtitle: context.phrase.comingSoonDeepDives,
-                  icon: Icons.auto_stories_rounded,
-                  color: context.colors.tertiaryContainer.withValues(
-                    alpha: 0.4,
-                  ),
-                  onTap: () {},
-                ),
+                // const SizedBox(height: 12),
+                // QuickActionCard(
+                //   title: context.phrase.strategyGuide,
+                //   subtitle: context.phrase.comingSoonDeepDives,
+                //   icon: Icons.auto_stories_rounded,
+                //   color: context.colors.tertiaryContainer.withValues(
+                //     alpha: 0.4,
+                //   ),
+                //   onTap: () {},
+                // ),
               ],
             ),
           ),

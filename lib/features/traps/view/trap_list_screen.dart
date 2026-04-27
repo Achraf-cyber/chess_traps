@@ -1,15 +1,9 @@
-import 'dart:math' as math;
-
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/providers/traps_group_provider.dart';
-import 'package:chess_traps/providers/traps_provider.dart';
 import 'package:chess_traps/widgets/ad_banner_widget.dart';
 import 'package:chess_traps/widgets/explore_trap_card.dart';
-import 'package:chessground/chessground.dart';
-import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 
 import '../../../router.dart';
 import '../../../utils.dart';
@@ -107,7 +101,8 @@ class TrapGroupGridSliver extends ConsumerWidget {
               onTap: () {
                 TrapGroupRoute(name: entry.key).push<void>(context);
               },
-              child: Stack(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,

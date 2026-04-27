@@ -12,9 +12,9 @@ class InterstitialAdManager {
 
   InterstitialAd? _interstitialAd;
   int _trapViewsCount = 0;
-  static const int _adFrequency = 10;
+  static const int _adFrequency = 5;
   DateTime? _lastAdShownAt;
-  static const Duration _adCooldown = Duration(minutes: 3);
+  static const Duration _adCooldown = Duration(minutes: 5);
   bool _isShowingAd = false;
 
   void loadAd() {
@@ -43,8 +43,8 @@ class InterstitialAdManager {
 
       final now = DateTime.now();
       final lastShown = _lastAdShownAt;
-      final canShow = lastShown == null ||
-          now.difference(lastShown) >= _adCooldown;
+      final canShow =
+          lastShown == null || now.difference(lastShown) >= _adCooldown;
 
       if (canShow && _interstitialAd != null && !_isShowingAd) {
         showAd();

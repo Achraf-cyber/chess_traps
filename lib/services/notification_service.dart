@@ -6,7 +6,6 @@ import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 import 'package:chess_traps/router.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'dart:io';
 
 class NotificationService {
@@ -35,18 +34,18 @@ class NotificationService {
     const DarwinInitializationSettings initializationSettingsDarwin =
         DarwinInitializationSettings();
 
-    const InitializationSettings initializationSettings = InitializationSettings(
-      android: initializationSettingsAndroid,
-      iOS: initializationSettingsDarwin,
-    );
+    const InitializationSettings initializationSettings =
+        InitializationSettings(
+          android: initializationSettingsAndroid,
+          iOS: initializationSettingsDarwin,
+        );
 
     await flutterLocalNotificationsPlugin.initialize(
       settings: initializationSettings,
       onDidReceiveNotificationResponse: (details) {
         if (chessTraps.isEmpty) return;
         final now = DateTime.now();
-        final dayOfYear =
-            now.difference(DateTime(now.year)).inDays;
+        final dayOfYear = now.difference(DateTime(now.year)).inDays;
         final index = dayOfYear % chessTraps.length;
         router.push(TrapDetailRoute(index: index).location);
       },
@@ -91,37 +90,6 @@ class NotificationService {
     }
   }
 
-  Future<bool> canScheduleExactAlarms() async {
-    if (!Platform.isAndroid) return true;
-    final android = flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-          AndroidFlutterLocalNotificationsPlugin
-        >();
-    final canSchedule = await android?.canScheduleExactNotifications();
-    return canSchedule ?? false;
-  }
-
-  Future<void> requestExactAlarmsPermission() async {
-    if (Platform.isAndroid) {
-      final android = flutterLocalNotificationsPlugin
-          .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin
-          >();
-      await android?.requestExactAlarmsPermission();
-    }
-  }
-
-  Future<bool> isIgnoringBatteryOptimizations() async {
-    if (!Platform.isAndroid) return true;
-    return await Permission.ignoreBatteryOptimizations.isGranted;
-  }
-
-  Future<void> requestIgnoreBatteryOptimizations() async {
-    if (Platform.isAndroid) {
-      await Permission.ignoreBatteryOptimizations.request();
-    }
-  }
-
   Future<void> _configureLocalTimezone() async {
     try {
       final String? deviceTimeZone = await FlutterTimezone.getLocalTimezone();
@@ -142,7 +110,7 @@ class NotificationService {
     await prefs.setInt(_prefTimeMinute, time.minute);
     await prefs.setBool(_prefEnabled, true);
 
-    final details = const NotificationDetails(
+    const details = NotificationDetails(
       android: AndroidNotificationDetails(
         'daily_trap_channel',
         'Daily Trap Notifications',
@@ -154,28 +122,16 @@ class NotificationService {
     );
 
     final scheduledDate = _nextInstanceOfTime(time);
-    try {
-      await flutterLocalNotificationsPlugin.zonedSchedule(
-        id: 0,
-        title: '✨ Trap of the Day is Ready!',
-        body: 'Jump in to learn a new opening trap and boost your rating ♟️',
-        scheduledDate: scheduledDate,
-        notificationDetails: details,
-        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
-        matchDateTimeComponents: DateTimeComponents.time,
-      );
-    } catch (_) {
-      // Fallback when exact alarms are unavailable on some Android setups.
-      await flutterLocalNotificationsPlugin.zonedSchedule(
-        id: 0,
-        title: '✨ Trap of the Day is Ready!',
-        body: 'Jump in to learn a new opening trap and boost your rating ♟️',
-        scheduledDate: scheduledDate,
-        notificationDetails: details,
-        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-        matchDateTimeComponents: DateTimeComponents.time,
-      );
-    }
+
+    await flutterLocalNotificationsPlugin.zonedSchedule(
+      id: 0,
+      title: 'Trap of the Day is Ready!',
+      body: 'Jump in to learn a new opening trap and boost your rating ♟️',
+      scheduledDate: scheduledDate,
+      notificationDetails: details,
+      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      matchDateTimeComponents: DateTimeComponents.time,
+    );
   }
 
   Future<void> cancelNotifications() async {

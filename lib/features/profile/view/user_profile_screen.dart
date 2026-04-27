@@ -66,7 +66,7 @@ class UserProfileScreen extends ConsumerWidget {
                   _ProfileSettingsTile(
                     icon: Icons.info_outline_rounded,
                     title: context.phrase.appVersion,
-                    subtitle: "1.2.0 (Premium UI)",
+                    subtitle: "1.2.0",
                   ),
                   _ProfileSettingsTile(
                     icon: Icons.privacy_tip_outlined,
@@ -402,8 +402,6 @@ class _ProfileNotificationSettingsState
   bool _enabled = true;
   TimeOfDay _time = const TimeOfDay(hour: 9, minute: 0);
   bool _loading = true;
-  bool _canScheduleExactAlarms = true;
-  bool _ignoringBatteryOptimizations = true;
 
   @override
   void initState() {
@@ -413,18 +411,13 @@ class _ProfileNotificationSettingsState
 
   Future<void> _loadSettings() async {
     final prefs = await SharedPreferences.getInstance();
-    final canScheduleExactAlarms = await NotificationService()
-        .canScheduleExactAlarms();
-    final ignoringBatteryOptimizations = await NotificationService()
-        .isIgnoringBatteryOptimizations();
 
     setState(() {
       _enabled = prefs.getBool('notification_enabled') ?? true;
       final hour = prefs.getInt('notification_time_hour') ?? 9;
       final minute = prefs.getInt('notification_time_minute') ?? 0;
       _time = TimeOfDay(hour: hour, minute: minute);
-      _canScheduleExactAlarms = canScheduleExactAlarms;
-      _ignoringBatteryOptimizations = ignoringBatteryOptimizations;
+
       _loading = false;
     });
   }
@@ -513,99 +506,6 @@ class _ProfileNotificationSettingsState
                 ),
               ),
             ),
-          if (_enabled &&
-              Platform.isAndroid &&
-              (!_canScheduleExactAlarms || !_ignoringBatteryOptimizations))
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-              child: Column(
-                children: [
-                  if (!_canScheduleExactAlarms)
-                    _NotificationWarning(
-                      icon: Icons.timer_outlined,
-                      message:
-                          "Exact alarm permission is off. Daily reminders may arrive up to ~15 minutes late.",
-                      buttonLabel: "ENABLE",
-                      onPressed: () async {
-                        await NotificationService()
-                            .requestExactAlarmsPermission();
-                        await _loadSettings();
-                      },
-                    ),
-                  if (!_canScheduleExactAlarms &&
-                      !_ignoringBatteryOptimizations)
-                    const SizedBox(height: 8),
-                  if (!_ignoringBatteryOptimizations)
-                    _NotificationWarning(
-                      icon: Icons.battery_saver_outlined,
-                      message:
-                          "Battery optimization is on. The system may prevent notifications when the app is closed.",
-                      buttonLabel: "FIX NOW",
-                      onPressed: () async {
-                        await NotificationService()
-                            .requestIgnoreBatteryOptimizations();
-                        await _loadSettings();
-                      },
-                    ),
-                ],
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-class _NotificationWarning extends StatelessWidget {
-  const _NotificationWarning({
-    required this.icon,
-    required this.message,
-    required this.buttonLabel,
-    required this.onPressed,
-  });
-
-  final IconData icon;
-  final String message;
-  final String buttonLabel;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        color: context.colors.errorContainer.withValues(alpha: 0.3),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Icon(icon, size: 18, color: context.colors.error),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  message,
-                  style: context.textTheme.bodySmall?.copyWith(
-                    color: context.colors.onErrorContainer,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                InkWell(
-                  onTap: onPressed,
-                  child: Text(
-                    buttonLabel,
-                    style: context.textTheme.labelLarge?.copyWith(
-                      color: context.colors.primary,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
         ],
       ),
     );
@@ -642,7 +542,7 @@ class _ProfileLanguageSelector extends ConsumerWidget {
           final isLast = languages.last == lang;
 
           return InkWell(
-            onTap: () => notifier.updateLocale(lang['code'] as String?),
+            onTap: () => notifier.updateLocale(lang['code']),
             borderRadius: isLast
                 ? const BorderRadius.vertical(bottom: Radius.circular(20))
                 : (lang == languages.first

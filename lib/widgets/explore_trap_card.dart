@@ -40,6 +40,7 @@ class ExploreTrapCard extends StatelessWidget {
         onTap: () => TrapDetailRoute(index: trap.id).push<void>(context),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
           children: [
             AspectRatio(
               aspectRatio: 1,
@@ -47,14 +48,15 @@ class ExploreTrapCard extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   IgnorePointer(
-                    child: SizedBox(
-                      width: 200,
-                      height: 200,
-                      child: StaticChessboard(
-                        size: 200,
-                        orientation: Side.white,
-                        fen: trap.fen,
-                      ),
+                    child: LayoutBuilder(
+                      builder: (context, constraints) {
+                        final width = constraints.maxWidth;
+                        return StaticChessboard(
+                          size: width,
+                          orientation: Side.white,
+                          fen: trap.fen,
+                        );
+                      },
                     ),
                   ),
                   if (showBadge)

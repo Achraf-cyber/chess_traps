@@ -23,15 +23,18 @@ class ExploreTrapCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: context.colors.surface,
-        borderRadius: BorderRadius.circular(28),
+        borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: context.colors.outlineVariant.withValues(alpha: 0.3),
+          // ignore: deprecated_member_use
+          color: context.colors.outlineVariant.withOpacity(0.4),
+          width: 1.5,
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.04),
-            blurRadius: 24,
-            offset: const Offset(0, 12),
+            // ignore: deprecated_member_use
+            color: context.colors.shadow.withOpacity(0.06),
+            blurRadius: 16,
+            offset: const Offset(0, 8),
           ),
         ],
       ),
@@ -43,48 +46,50 @@ class ExploreTrapCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             AspectRatio(
-              aspectRatio: 1,
+              aspectRatio: 1.1,
               child: Stack(
                 fit: StackFit.expand,
                 children: [
-                  IgnorePointer(
-                    child: LayoutBuilder(
-                      builder: (context, constraints) {
-                        final width = constraints.maxWidth;
-                        return StaticChessboard(
-                          size: width,
-                          orientation: Side.white,
-                          fen: trap.fen,
-                        );
-                      },
+                  Container(
+                    // ignore: deprecated_member_use
+                    color: context.colors.surfaceContainerHighest.withOpacity(0.3),
+                    child: IgnorePointer(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final width = constraints.maxWidth;
+                          return StaticChessboard(
+                            size: width,
+                            orientation: trap.targetSide,
+                            fen: trap.fen,
+                          );
+                        },
+                      ),
                     ),
                   ),
                   if (showBadge)
                     Positioned(
-                      top: 12,
-                      right: 12,
+                      top: 10,
+                      right: 10,
                       child: Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 8,
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: context.colors.primaryContainer.withValues(
-                            alpha: 0.9,
-                          ),
-                          borderRadius: BorderRadius.circular(12),
+                          // ignore: deprecated_member_use
+                          color: context.colors.surface.withOpacity(0.85),
+                          borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            color: context.colors.primary.withValues(
-                              alpha: 0.1,
-                            ),
+                            // ignore: deprecated_member_use
+                            color: context.colors.outlineVariant.withOpacity(0.3),
                           ),
                         ),
                         child: Text(
                           difficulty,
                           style: context.textTheme.labelSmall?.copyWith(
-                            color: context.colors.onPrimaryContainer,
-                            fontWeight: FontWeight.w900,
-                            fontSize: 9,
+                            color: context.colors.onSurface,
+                            fontWeight: FontWeight.w700,
+                            fontSize: 10,
                           ),
                         ),
                       ),
@@ -92,46 +97,47 @@ class ExploreTrapCard extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    trap.getLocalizedName(context),
-                    style: context.textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w900,
-                      letterSpacing: -0.2,
-                      height: 1.1,
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      trap.getLocalizedName(context),
+                      style: context.textTheme.titleSmall?.copyWith(
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: -0.2,
+                        height: 1.2,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
                     ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  const SizedBox(height: 4),
-                  Row(
-                    children: [
-                      Icon(
-                        Icons.history_edu_rounded,
-                        size: 12,
-                        color: context.colors.onSurfaceVariant.withValues(
-                          alpha: 0.6,
+                    Row(
+                      children: [
+                        Icon(
+                          Icons.keyboard_arrow_right_rounded,
+                          size: 14,
+                          // ignore: deprecated_member_use
+                          color: context.colors.primary.withOpacity(0.8),
                         ),
-                      ),
-                      const SizedBox(width: 4),
-                      Expanded(
-                        child: Text(
-                          trap.opening,
-                          style: context.textTheme.labelSmall?.copyWith(
-                            color: context.colors.onSurfaceVariant,
-                            fontSize: 10,
+                        Expanded(
+                          child: Text(
+                            trap.opening,
+                            style: context.textTheme.labelSmall?.copyWith(
+                              // ignore: deprecated_member_use
+                              color: context.colors.onSurfaceVariant.withOpacity(0.8),
+                              fontWeight: FontWeight.w500,
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
@@ -140,3 +146,4 @@ class ExploreTrapCard extends StatelessWidget {
     );
   }
 }
+

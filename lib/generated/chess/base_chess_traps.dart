@@ -1,6 +1,7 @@
 // GENERATED FILE DO NOT EDIT
 // ignore_for_file: prefer_single_quotes
 import '../../data/chess_trap.dart';
+import 'package:dartchess/dartchess.dart';
 
 const List<ChessTrap> chessTraps = [
   ChessTrap(
@@ -9,13 +10,14 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "1. Scholar's Mate Trap",
-    trapNameFr: "1. Piège du Mat du Berger",
-    trapNameEs: "1. Trampa del Mate del Pastor",
-    trapNameAr: "1. فخ مات الراعي",
+    trapName: "Scholar's Mate Trap",
+    trapNameFr: "Piège du Mat du Berger",
+    trapNameEs: "Trampa del Mate del Pastor",
+    trapNameAr: "فخ مات الراعي",
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#",
     moves: ["e4", "e5", "Bc4", "Nc6", "Qh5", "Nf6", "Qxf7#"],
     fen: "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24,13 +26,14 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "",
     openingId: "",
-    trapName: "2. Fool's Mate Trap",
-    trapNameFr: "2. Piège du Mat de l'Idiot",
-    trapNameEs: "2. Trampa del Mate del Loco",
-    trapNameAr: "2. فخ مات الأحمق",
+    trapName: "Fool's Mate Trap",
+    trapNameFr: "Piège du Mat de l'Idiot",
+    trapNameEs: "Trampa del Mate del Loco",
+    trapNameAr: "فخ مات الأحمق",
     commentedMoves: "1.f3 e5 2.g4 Qh4#",
     moves: ["f3", "e5", "g4", "Qh4#"],
     fen: "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -40,10 +43,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "3. Legal's Mate Trap",
-    trapNameFr: "3. Piège du Mat de Légal",
-    trapNameEs: "3. Trampa del Mate de Légal",
-    trapNameAr: "3. فخ مات ليجال",
+    trapName: "Legal's Mate Trap",
+    trapNameFr: "Piège du Mat de Légal",
+    trapNameEs: "Trampa del Mate de Légal",
+    trapNameAr: "فخ مات ليجال",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 h6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
     moves: [
@@ -62,6 +65,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "rn1q1bnr/ppp1kBp1/3p3p/3NN3/4P3/8/PPPP1PPP/R1BbK2R b KQ - 2 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -71,10 +75,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Italian Game",
     openingId: "italian_game",
-    trapName: "4. Blackburne Shilling Gambit Trap",
-    trapNameFr: "4. Piège du Gambit Blackburne-Shilling",
-    trapNameEs: "4. Trampa del Gambito Blackburne-Shilling",
-    trapNameAr: "4. فخ غامبيت بلاكبيرن شيلنغ",
+    trapName: "Blackburne Shilling Gambit Trap",
+    trapNameFr: "Piège du Gambit Blackburne-Shilling",
+    trapNameEs: "Trampa del Gambito Blackburne-Shilling",
+    trapNameAr: "فخ غامبيت بلاكبيرن شيلنغ",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
     moves: [
@@ -94,6 +98,7 @@ const List<ChessTrap> chessTraps = [
       "Nf3#",
     ],
     fen: "r1b1kbnr/pppp1Npp/8/8/4q3/5n2/PPPPBP1P/RNBQKR2 w Qkq - 2 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -103,10 +108,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Reti opening",
     openingId: "reti_opening",
-    trapName: "5. Tennison Gambit (ICBM) Trap",
-    trapNameFr: "5. Piège du Gambit Tennison (ICBM)",
-    trapNameEs: "5. Trampa del Gambito Tennison (ICBM)",
-    trapNameAr: "5. فخ غامبيت تينيسون",
+    trapName: "Tennison Gambit (ICBM) Trap",
+    trapNameFr: "Piège du Gambit Tennison (ICBM)",
+    trapNameEs: "Trampa del Gambito Tennison (ICBM)",
+    trapNameAr: "فخ غامبيت تينيسون",
     commentedMoves:
         "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
     moves: [
@@ -127,6 +132,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "rnbQ1b1r/ppp1p1p1/5nkp/8/8/8/PPP2PPP/RNB1K2R b KQ - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -136,10 +142,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
-    trapName: "6. Englund Gambit Trap",
-    trapNameFr: "6. Piège du Gambit Englund",
-    trapNameEs: "6. Trampa del Gambito Englund",
-    trapNameAr: "6. فخ غامبيت إنجلوند",
+    trapName: "Englund Gambit Trap",
+    trapNameFr: "Piège du Gambit Englund",
+    trapNameEs: "Trampa del Gambito Englund",
+    trapNameAr: "فخ غامبيت إنجلوند",
     commentedMoves:
         "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3 Bb4 7.Qd2 Bxc3 8.Qxc3 Qc1#",
     moves: [
@@ -161,6 +167,7 @@ const List<ChessTrap> chessTraps = [
       "Qc1#",
     ],
     fen: "r1b1k1nr/pppp1ppp/2n5/4P3/8/2Q2N2/P1P1PPPP/RNq1KB1R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -170,10 +177,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "7. Fishing Pole Trap",
-    trapNameFr: "7. Piège de la Canne à Pêche",
-    trapNameEs: "7. Trampa de la Caña de Pescar",
-    trapNameAr: "7. فخ صنارة الصيد",
+    trapName: "Fishing Pole Trap",
+    trapNameFr: "Piège de la Canne à Pêche",
+    trapNameEs: "Trampa de la Caña de Pescar",
+    trapNameAr: "فخ صنارة الصيد",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f3 g3 9.d4 Qh1#",
     moves: [
@@ -197,6 +204,7 @@ const List<ChessTrap> chessTraps = [
       "Qh1#",
     ],
     fen: "r1b1kb1r/pppp1pp1/2n5/1B2p3/3PP3/5Pp1/PPP3P1/RNBQNRKq w kq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -206,10 +214,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
-    trapName: "8. Elephant Trap",
-    trapNameFr: "8. Piège de l'Éléphant",
-    trapNameEs: "8. Trampa del Elefante",
-    trapNameAr: "8. فخ الفيل",
+    trapName: "Elephant Trap",
+    trapNameFr: "Piège de l'Éléphant",
+    trapNameEs: "Trampa del Elefante",
+    trapNameAr: "فخ الفيل",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
     moves: [
@@ -233,6 +241,7 @@ const List<ChessTrap> chessTraps = [
       "Kxd8",
     ],
     fen: "r1bk3r/pppn1ppp/8/3n4/3P4/8/PP1KPPPP/R4BNR w - - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -242,10 +251,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Queen's Gambit",
     openingId: "queens_gambit",
-    trapName: "9. Lasker Trap",
-    trapNameFr: "9. Piège de Lasker",
-    trapNameEs: "9. Trampa de Lasker",
-    trapNameAr: "9. فخ لاسكر",
+    trapName: "Lasker Trap",
+    trapNameFr: "Piège de Lasker",
+    trapNameEs: "Trampa de Lasker",
+    trapNameAr: "فخ لاسكر",
     commentedMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+",
     moves: [
@@ -267,6 +276,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4+",
     ],
     fen: "rn1qk1nr/ppp2ppp/8/4P3/1BP3b1/8/PP2K1PP/RN1Q1BR1 w kq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -276,10 +286,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Queen's Gambit Declined, 4.Bg5",
     openingId: "qgd_4_bg5",
-    trapName: "10. Rubinstein Trap",
-    trapNameFr: "10. Piège de Rubinstein",
-    trapNameEs: "10. Trampa de Rubinstein",
-    trapNameAr: "10. فخ روبنشتاين",
+    trapName: "Rubinstein Trap",
+    trapNameFr: "Piège de Rubinstein",
+    trapNameEs: "Trampa de Rubinstein",
+    trapNameAr: "فخ روبنشتاين",
     commentedMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 c6 9.O-O Re8 10.Rc1 h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7",
     moves: [
@@ -310,6 +320,7 @@ const List<ChessTrap> chessTraps = [
       "Bc7",
     ],
     fen: "r1bqr1k1/ppBnbpp1/7p/3p3n/3P4/3BPN2/PP3PPP/2RQ1RK1 b - - 1 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -319,10 +330,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "11. Siberian Trap",
-    trapNameFr: "11. Piège Sibérien",
-    trapNameEs: "11. Trampa Siberiana",
-    trapNameAr: "11. الفخ السيبيري",
+    trapName: "Siberian Trap",
+    trapNameFr: "Piège Sibérien",
+    trapNameEs: "Trampa Siberiana",
+    trapNameAr: "الفخ السيبيري",
     commentedMoves:
         "1.e4 c5 2.d4 cxd4 3.c3 dxc3 4.Nxc3 Nc6 5.Nf3 e6 6.Bc4 Qc7 7.O-O Nf6 8.Qe2 Ng4 9.h3 Nd4 10.Nxd4 Qh2#",
     moves: [
@@ -348,6 +359,7 @@ const List<ChessTrap> chessTraps = [
       "Qh2#",
     ],
     fen: "r1b1kb1r/pp1p1ppp/4p3/8/2BNP1n1/2N4P/PP2QPPq/R1B2RK1 w kq - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -357,10 +369,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "12. Mortimer Trap",
-    trapNameFr: "12. Piège de Mortimer",
-    trapNameEs: "12. Trampa de Mortimer",
-    trapNameAr: "12. فخ مورتيمر",
+    trapName: "Mortimer Trap",
+    trapNameFr: "Piège de Mortimer",
+    trapNameEs: "Trampa de Mortimer",
+    trapNameAr: "فخ مورتيمر",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 cxb5 7.Nd6#",
     moves: [
@@ -379,6 +391,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/pp1pnppp/3N1n2/1p6/4P3/3P4/PPP2PPP/RNBQK2R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -388,10 +401,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "13. Noah's Ark Trap",
-    trapNameFr: "13. Piège de l'Arche de Noé",
-    trapNameEs: "13. Trampa del Arca de Noé",
-    trapNameAr: "13. فخ سفينة نوح",
+    trapName: "Noah's Ark Trap",
+    trapNameFr: "Piège de l'Arche de Noé",
+    trapNameEs: "Trampa del Arca de Noé",
+    trapNameAr: "فخ سفينة نوح",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 d6 5.d4 b5 6.Bb3 Nxd4 7.Nxd4 exd4 8.Qxd4 c5 9.Qd5 Be6 10.Qc6+ Bd7 11.Qd5 c4",
     moves: [
@@ -419,6 +432,7 @@ const List<ChessTrap> chessTraps = [
       "c4",
     ],
     fen: "r2qkbnr/3b1ppp/p2p4/1p1Q4/2p1P3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -428,10 +442,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "14. Tarrasch Trap",
-    trapNameFr: "14. Piège de Tarrasch",
-    trapNameEs: "14. Trampa de Tarrasch",
-    trapNameAr: "14. فخ تاراش",
+    trapName: "Tarrasch Trap",
+    trapNameFr: "Piège de Tarrasch",
+    trapNameEs: "Trampa de Tarrasch",
+    trapNameAr: "فخ تاراش",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Nxe4 6.d4 b5 7.Bb3 d5 8.dxe5 Be6 9.c3 Be7 10.Re1 O-O 11.Nd4 Qd7 12.Nxe6 fxe6 13.Rxe4",
     moves: [
@@ -462,6 +476,7 @@ const List<ChessTrap> chessTraps = [
       "Rxe4",
     ],
     fen: "r4rk1/2pqb1pp/p1n1p3/1p1pP3/4R3/1BP5/PP3PPP/RNBQ2K1 b - - 0 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -471,10 +486,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Queen's pawn game",
     openingId: "queens_pawn_game_d00",
-    trapName: "15. Halosar Trap",
-    trapNameFr: "15. Piège Halosar",
-    trapNameEs: "15. Trampa Halosar",
-    trapNameAr: "15. فخ هالوسار",
+    trapName: "Halosar Trap",
+    trapNameFr: "Piège Halosar",
+    trapNameEs: "Trampa Halosar",
+    trapNameAr: "فخ هالوسار",
     commentedMoves:
         "1.d4 d5 2.e4 dxe4 3.Nc3 Nf6 4.f3 exf3 5.Nxf3 Bg4 6.h3 Bh5 7.g4 Bg6 8.Ne5 e6 9.Qf3 c6 10.g5 Nd5 11.Bd3 Nxc3 12.Bxg6",
     moves: [
@@ -503,6 +518,7 @@ const List<ChessTrap> chessTraps = [
       "Bxg6",
     ],
     fen: "rn1qkb1r/pp3ppp/2p1p1B1/4N1P1/3P4/2n2Q1P/PPP5/R1B1K2R b KQkq - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -512,10 +528,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "16. Kieninger Trap",
-    trapNameFr: "16. Piège de Kieninger",
-    trapNameEs: "16. Trampa de Kieninger",
-    trapNameAr: "16. فخ كينينغر",
+    trapName: "Kieninger Trap",
+    trapNameFr: "Piège de Kieninger",
+    trapNameEs: "Trampa de Kieninger",
+    trapNameAr: "فخ كينينغر",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Bf4 Nc6 5.Nf3 Bb4+ 6.Nbd2 Qe7 7.a3 Ngxe5 8.axb4 Nd3#",
     moves: [
@@ -537,6 +553,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r1b1k2r/ppppqppp/2n5/8/1PP2B2/3n1N2/1P1NPPPP/R2QKB1R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -546,10 +563,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Bogo-Indian defence",
     openingId: "bogo_indian_defence",
-    trapName: "17. Monticelli Trap",
-    trapNameFr: "17. Piège de Monticelli",
-    trapNameEs: "17. Trampa de Monticelli",
-    trapNameAr: "17. فخ مونتيتشيلي",
+    trapName: "Monticelli Trap",
+    trapNameFr: "Piège de Monticelli",
+    trapNameEs: "Trampa de Monticelli",
+    trapNameAr: "فخ مونتيتشيلي",
     commentedMoves:
         "1.d4 Nf6 2.c4 e6 3.Nf3 Bb4+ 4.Bd2 Bxd2+ 5.Qxd2 b6 6.g3 Bb7 7.Bg2 O-O 8.Nc3 Ne4 9.Qc2 Nxc3 10.Ng5",
     moves: [
@@ -574,6 +591,7 @@ const List<ChessTrap> chessTraps = [
       "Ng5",
     ],
     fen: "rn1q1rk1/pbpp1ppp/1p2p3/6N1/2PP4/2n3P1/PPQ1PPBP/R3K2R b KQ - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -583,10 +601,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "18. Stafford Gambit Trap",
-    trapNameFr: "18. Piège du Gambit Stafford",
-    trapNameEs: "18. Trampa del Gambito Stafford",
-    trapNameAr: "18. فخ غامبيت ستافورد",
+    trapName: "Stafford Gambit Trap",
+    trapNameFr: "Piège du Gambit Stafford",
+    trapNameEs: "Trampa del Gambito Stafford",
+    trapNameAr: "فخ غامبيت ستافورد",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
     moves: [
@@ -608,6 +626,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4#",
     ],
     fen: "r2Bk2r/ppp2ppp/2p5/8/4n1b1/3P4/PPP1KbPP/RN1Q1B1R w kq - 2 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -617,10 +636,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Giuoco Piano",
     openingId: "giuoco_piano",
-    trapName: "19. Giuoco Piano Trap",
-    trapNameFr: "19. Piège du Giuoco Piano",
-    trapNameEs: "19. Trampa del Giuoco Piano",
-    trapNameAr: "19. فخ جيوكو بيانو",
+    trapName: "Giuoco Piano Trap",
+    trapNameFr: "Piège du Giuoco Piano",
+    trapNameEs: "Trampa del Giuoco Piano",
+    trapNameAr: "فخ جيوكو بيانو",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.c3 Nf6 5.d4 exd4 6.cxd4 Bb4+ 7.Nc3 Nxe4 8.O-O Nxc3 9.bxc3 Bxc3 10.Qb3 Bxa1 11.Bxf7+ Kf8 12.Bg5 Ne7 13.Re1",
     moves: [
@@ -651,6 +670,7 @@ const List<ChessTrap> chessTraps = [
       "Re1",
     ],
     fen: "r1bq1k1r/ppppnBpp/8/6B1/3P4/1Q3N2/P4PPP/b3R1K1 b - - 4 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -660,10 +680,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Italian Game",
     openingId: "italian_game",
-    trapName: "20. Rousseau Gambit Trap",
-    trapNameFr: "20. Piège du Gambit Rousseau",
-    trapNameEs: "20. Trampa del Gambito Rousseau",
-    trapNameAr: "20. فخ غامبيت روسو",
+    trapName: "Rousseau Gambit Trap",
+    trapNameFr: "Piège du Gambit Rousseau",
+    trapNameEs: "Trampa del Gambito Rousseau",
+    trapNameAr: "فخ غامبيت روسو",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 f5 4.d3 Nf6 5.Nc3 Bc5 6.Bg5 d6 7.Nd5 fxe4 8.dxe4 Bxf2+ 9.Kxf2 Nxe4+ 10.Kg1 Nxg5",
     moves: [
@@ -689,6 +709,7 @@ const List<ChessTrap> chessTraps = [
       "Nxg5",
     ],
     fen: "r1bqk2r/ppp3pp/2np4/3Np1n1/2B5/5N2/PPP3PP/R2Q2KR w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -698,10 +719,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Italian Game",
     openingId: "italian_game",
-    trapName: "21. Jerome Gambit Trap",
-    trapNameFr: "21. Piège du Gambit Jerome",
-    trapNameEs: "21. Trampa del Gambito Jerome",
-    trapNameAr: "21. فخ غامبيت جيروم",
+    trapName: "Jerome Gambit Trap",
+    trapNameFr: "Piège du Gambit Jerome",
+    trapNameEs: "Trampa del Gambito Jerome",
+    trapNameAr: "فخ غامبيت جيروم",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.Bxf7+ Kxf7 5.Nxe5+ Nxe5 6.Qh5+ Kf8 7.Qxe5 d6 8.Qf4+ Qf6",
     moves: [
@@ -723,6 +744,7 @@ const List<ChessTrap> chessTraps = [
       "Qf6",
     ],
     fen: "r1b2knr/ppp3pp/3p1q2/2b5/4PQ2/8/PPPP1PPP/RNB1K2R w KQ - 2 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -732,10 +754,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Bishop's opening",
     openingId: "bishops_opening",
-    trapName: "22. Nakhmanson Gambit Trap",
-    trapNameFr: "22. Piège du Gambit Nakhmanson",
-    trapNameEs: "22. Trampa del Gambito Nakhmanson",
-    trapNameAr: "22. فخ غامبيت ناخمانسون",
+    trapName: "Nakhmanson Gambit Trap",
+    trapNameFr: "Piège du Gambit Nakhmanson",
+    trapNameEs: "Trampa del Gambito Nakhmanson",
+    trapNameAr: "فخ غامبيت ناخمانسون",
     commentedMoves:
         "1.e4 e5 2.Bc4 Nf6 3.d4 exd4 4.Nf3 Nc6 5.O-O Nxe4 6.Nc3 dxc3 7.Bxf7+ Kxf7 8.Qd5+ Ke8 9.Re1 Be7 10.Rxe4 d6 11.Bg5",
     moves: [
@@ -762,6 +784,7 @@ const List<ChessTrap> chessTraps = [
       "Bg5",
     ],
     fen: "r1bqk2r/ppp1b1pp/2np4/3Q2B1/4R3/2p2N2/PPP2PPP/R5K1 b - - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -771,10 +794,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Centre game",
     openingId: "centre_game",
-    trapName: "23. Danish Gambit Trap",
-    trapNameFr: "23. Piège du Gambit Danois",
-    trapNameEs: "23. Trampa del Gambito Danés",
-    trapNameAr: "23. فخ الغامبيت الدنماركي",
+    trapName: "Danish Gambit Trap",
+    trapNameFr: "Piège du Gambit Danois",
+    trapNameEs: "Trampa del Gambito Danés",
+    trapNameAr: "فخ الغامبيت الدنماركي",
     commentedMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Qd5",
     moves: [
@@ -795,6 +818,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "rnbqk2r/pppp1ppp/8/3QP3/1bB1n3/8/PB3PPP/RN3KNR b kq - 2 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -804,10 +828,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "24. O'Kelly Trap",
-    trapNameFr: "24. Piège d'O'Kelly",
-    trapNameEs: "24. Trampa de O'Kelly",
-    trapNameAr: "24. فخ أوكيلي",
+    trapName: "O'Kelly Trap",
+    trapNameFr: "Piège d'O'Kelly",
+    trapNameEs: "Trampa de O'Kelly",
+    trapNameAr: "فخ أوكيلي",
     commentedMoves:
         "1.e4 c5 2.Nf3 a6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Nf3 Bb4 7.Bd3 d5 8.exd5 e4",
     moves: [
@@ -829,6 +853,7 @@ const List<ChessTrap> chessTraps = [
       "e4",
     ],
     fen: "rnbqk2r/1p3ppp/p4n2/3P4/1b2p3/2NB1N2/PPP2PPP/R1BQK2R w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -838,10 +863,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "25. Magnus Smith Trap",
-    trapNameFr: "25. Piège de Magnus Smith",
-    trapNameEs: "25. Trampa de Magnus Smith",
-    trapNameAr: "25. فخ ماغنوس سميث",
+    trapName: "Magnus Smith Trap",
+    trapNameFr: "Piège de Magnus Smith",
+    trapNameEs: "Trampa de Magnus Smith",
+    trapNameAr: "فخ ماغنوس سميث",
     commentedMoves:
         "1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 Nc6 6.Bc4 g6 7.Nxc6 bxc6 8.e5 dxe5 9.Bxf7+ Kxf7 10.Qxd8",
     moves: [
@@ -866,6 +891,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "r1bQ1b1r/p3pk1p/2p2np1/4p3/8/2N5/PPP2PPP/R1B1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -874,10 +900,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "26. Caro-Kann Smyslov Trap",
-    trapNameFr: "26. Piège Caro-Kann Smyslov",
-    trapNameEs: "26. Trampa Caro-Kann Smyslov",
-    trapNameAr: "26. فخ كارو كان سميسلوف",
+    trapName: "Caro-Kann Smyslov Trap",
+    trapNameFr: "Piège Caro-Kann Smyslov",
+    trapNameEs: "Trampa Caro-Kann Smyslov",
+    trapNameAr: "فخ كارو كان سميسلوف",
     commentedMoves: "1.e4 c6 2.Nc3 d5 3.Nf3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     moves: [
       "e4",
@@ -893,6 +919,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/pp1npppp/2pN1n2/8/8/5N2/PPPPQPPP/R1B1KB1R b KQkq - 4 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -902,10 +929,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "27. Caro-Kann Advance Trap",
-    trapNameFr: "27. Piège Caro-Kann Avance",
-    trapNameEs: "27. Trampa Caro-Kann Avance",
-    trapNameAr: "27. فخ كارو كان المتقدم",
+    trapName: "Caro-Kann Advance Trap",
+    trapNameFr: "Piège Caro-Kann Avance",
+    trapNameEs: "Trampa Caro-Kann Avance",
+    trapNameAr: "فخ كارو كان المتقدم",
     commentedMoves:
         "1.e4 c6 2.d4 d5 3.e5 Bf5 4.h4 h6 5.g4 Bh7 6.e6 fxe6 7.Bd3 Bxd3 8.Qxd3",
     moves: [
@@ -926,6 +953,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd3",
     ],
     fen: "rn1qkbnr/pp2p1p1/2p1p2p/3p4/3P2PP/3Q4/PPP2P2/RNB1K1NR b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -935,10 +963,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "French defence",
     openingId: "french_defence",
-    trapName: "28. French Milner-Barry Trap",
-    trapNameFr: "28. Piège Française Milner-Barry",
-    trapNameEs: "28. Trampa Francesa Milner-Barry",
-    trapNameAr: "28. فخ الفرنسية ميلنر باري",
+    trapName: "French Milner-Barry Trap",
+    trapNameFr: "Piège Française Milner-Barry",
+    trapNameEs: "Trampa Francesa Milner-Barry",
+    trapNameAr: "فخ الفرنسية ميلنر باري",
     commentedMoves:
         "1.e4 e6 2.d4 d5 3.e5 c5 4.c3 Nc6 5.Nf3 Qb6 6.Bd3 cxd4 7.cxd4 Bd7 8.O-O Nxd4 9.Nxd4 Qxd4 10.Nc3 Qxe5 11.Re1 Qb8 12.Nxd5",
     moves: [
@@ -967,6 +995,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd5",
     ],
     fen: "rq2kbnr/pp1b1ppp/4p3/3N4/8/3B4/PP3PPP/R1BQR1K1 b kq - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -976,10 +1005,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Pirc defence",
     openingId: "pirc_defence",
-    trapName: "29. Pirc Austrian Attack Trap",
-    trapNameFr: "29. Piège de l'Attaque Autrichienne Pirc",
-    trapNameEs: "29. Trampa del Ataque Austriaco Pirc",
-    trapNameAr: "29. فخ الهجوم النمساوي بيرك",
+    trapName: "Pirc Austrian Attack Trap",
+    trapNameFr: "Piège de l'Attaque Autrichienne Pirc",
+    trapNameEs: "Trampa del Ataque Austriaco Pirc",
+    trapNameAr: "فخ الهجوم النمساوي بيرك",
     commentedMoves:
         "1.e4 d6 2.d4 Nf6 3.Nc3 g6 4.f4 Bg7 5.Nf3 O-O 6.e5 Nfd7 7.h4 c5 8.h5 cxd4 9.hxg6 dxc3 10.gxf7+ Rxf7 11.Bc4 e6 12.Ng5",
     moves: [
@@ -1008,6 +1037,7 @@ const List<ChessTrap> chessTraps = [
       "Ng5",
     ],
     fen: "rnbq2k1/pp1n1rbp/3pp3/4P1N1/2B2P2/2p5/PPP3P1/R1BQK2R b KQ - 1 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1017,10 +1047,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Philidor's defence",
     openingId: "philidors_defence",
-    trapName: "30. Philidor Hanham Trap",
-    trapNameFr: "30. Piège Philidor Hanham",
-    trapNameEs: "30. Trampa Philidor Hanham",
-    trapNameAr: "30. فخ فيليدور هانهام",
+    trapName: "Philidor Hanham Trap",
+    trapNameFr: "Piège Philidor Hanham",
+    trapNameEs: "Trampa Philidor Hanham",
+    trapNameAr: "فخ فيليدور هانهام",
     commentedMoves:
         "1.e4 e5 2.Nf3 d6 3.d4 Nd7 4.Bc4 Be7 5.dxe5 Nxe5 6.Nxe5 dxe5 7.Qh5 g6 8.Qxe5 Nf6 9.Bh6",
     moves: [
@@ -1043,6 +1073,7 @@ const List<ChessTrap> chessTraps = [
       "Bh6",
     ],
     fen: "r1bqk2r/ppp1bp1p/5npB/4Q3/2B1P3/8/PPP2PPP/RN2K2R b KQkq - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1052,10 +1083,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "31. Muzio Gambit Trap",
-    trapNameFr: "31. Piège du Gambit Muzio",
-    trapNameEs: "31. Trampa del Gambito Muzio",
-    trapNameAr: "31. فخ غامبيت موزيو",
+    trapName: "Muzio Gambit Trap",
+    trapNameFr: "Piège du Gambit Muzio",
+    trapNameEs: "Trampa del Gambito Muzio",
+    trapNameAr: "فخ غامبيت موزيو",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.Qxf3 Bh6 7.d4 d6 8.Bxf4 Bxf4 9.Qxf4 f6 10.Nc3",
     moves: [
@@ -1080,6 +1111,7 @@ const List<ChessTrap> chessTraps = [
       "Nc3",
     ],
     fen: "rnbqk1nr/ppp4p/3p1p2/8/2BPPQ2/2N5/PPP3PP/R4RK1 b kq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1089,10 +1121,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "King's gambit",
     openingId: "kings_gambit",
-    trapName: "32. Kieseritzky Gambit Trap",
-    trapNameFr: "32. Piège du Gambit Kieseritzky",
-    trapNameEs: "32. Trampa del Gambito Kieseritzky",
-    trapNameAr: "32. فخ غامبيت كيزيريتسكي",
+    trapName: "Kieseritzky Gambit Trap",
+    trapNameFr: "Piège du Gambit Kieseritzky",
+    trapNameEs: "Trampa del Gambito Kieseritzky",
+    trapNameAr: "فخ غامبيت كيزيريتسكي",
     commentedMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.h4 g4 5.Ne5 h5 6.Bc4 Rh7 7.d4 d6 8.Nxf7 Rxf7 9.Bxf7+ Kxf7 10.Bxf4",
     moves: [
@@ -1117,6 +1149,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf4",
     ],
     fen: "rnbq1bn1/ppp2k2/3p4/7p/3PPBpP/8/PPP3P1/RN1QK2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1126,10 +1159,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Evans gambit",
     openingId: "evans_gambit",
-    trapName: "33. Evans Gambit Trap",
-    trapNameFr: "33. Piège du Gambit Evans",
-    trapNameEs: "33. Trampa del Gambito Evans",
-    trapNameAr: "33. فخ غامبيت إيفانز",
+    trapName: "Evans Gambit Trap",
+    trapNameFr: "Piège du Gambit Evans",
+    trapNameEs: "Trampa del Gambito Evans",
+    trapNameAr: "فخ غامبيت إيفانز",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Bc5 4.b4 Bxb4 5.c3 Ba5 6.d4 exd4 7.O-O dxc3 8.Qb3 Qe7 9.Nxc3 Nf6 10.Nd5 Nxd5 11.exd5 Ne5 12.Nxe5 Qxe5 13.Bb2 Qg5 14.Rae1+ Kd8 15.d6",
     moves: [
@@ -1164,6 +1197,7 @@ const List<ChessTrap> chessTraps = [
       "d6",
     ],
     fen: "r1bk3r/pppp1ppp/3P4/b5q1/2B5/1Q6/PB3PPP/4RRK1 b - - 0 15",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1173,10 +1207,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Old Benoni defence",
     openingId: "old_benoni_defence",
-    trapName: "34. Benoni Trap",
-    trapNameFr: "34. Piège Benoni",
-    trapNameEs: "34. Trampa Benoni",
-    trapNameAr: "34. فخ بنوني",
+    trapName: "Benoni Trap",
+    trapNameFr: "Piège Benoni",
+    trapNameEs: "Trampa Benoni",
+    trapNameAr: "فخ بنوني",
     commentedMoves:
         "1.d4 c5 2.d5 e6 3.c4 exd5 4.cxd5 d6 5.Nc3 g6 6.e4 Bg7 7.Nf3 Nf6 8.Bb5+ Nfd7 9.O-O a6 10.Bg5 Qc7 11.e5 axb5 12.Nxb5 Qb6 13.Nxd6+ Kf8 14.Nxc8",
     moves: [
@@ -1209,6 +1243,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc8",
     ],
     fen: "rnN2k1r/1p1n1pbp/1q4p1/2pPP1B1/8/5N2/PP3PPP/R2Q1RK1 b - - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1218,10 +1253,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "35. Kortchnoi Trap (Dutch Defense)",
-    trapNameFr: "35. Piège de Kortchnoï (Défense Hollandaise)",
-    trapNameEs: "35. Trampa de Korchnoi (Defensa Holandesa)",
-    trapNameAr: "35. فخ كورتشنوي (الدفاع الهولندي)",
+    trapName: "Kortchnoi Trap (Dutch Defense)",
+    trapNameFr: "Piège de Kortchnoï (Défense Hollandaise)",
+    trapNameEs: "Trampa de Korchnoi (Defensa Holandesa)",
+    trapNameAr: "فخ كورتشنوي (الدفاع الهولندي)",
     commentedMoves:
         "1.d4 f5 2.h3 Nf6 3.g4 fxg4 4.hxg4 Nxg4 5.Qd3 Nf6 6.Rxh7 Rxh7 7.Qg6#",
     moves: [
@@ -1240,6 +1275,7 @@ const List<ChessTrap> chessTraps = [
       "Qg6#",
     ],
     fen: "rnbqkb2/ppppp1pr/5nQ1/8/3P4/8/PPP1PP2/RNB1KBN1 b Qq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1249,10 +1285,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Reti opening",
     openingId: "reti_opening",
-    trapName: "36. Reti Opening Trap",
-    trapNameFr: "36. Piège de l'Ouverture Réti",
-    trapNameEs: "36. Trampa de la Apertura Réti",
-    trapNameAr: "36. فخ افتتاحية ريتي",
+    trapName: "Reti Opening Trap",
+    trapNameFr: "Piège de l'Ouverture Réti",
+    trapNameEs: "Trampa de la Apertura Réti",
+    trapNameAr: "فخ افتتاحية ريتي",
     commentedMoves:
         "1.Nf3 d5 2.c4 d4 3.b4 f6 4.e3 e5 5.exd4 e4 6.Qe2 Qe7 7.Ng1 Nc6 8.Bb2 Nxb4",
     moves: [
@@ -1274,6 +1310,7 @@ const List<ChessTrap> chessTraps = [
       "Nxb4",
     ],
     fen: "r1b1kbnr/ppp1q1pp/5p2/8/1nPPp3/8/PB1PQPPP/RN2KBNR w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -1282,10 +1319,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Bird's opening",
     openingId: "birds_opening",
-    trapName: "37. From's Gambit Trap",
-    trapNameFr: "37. Piège du Gambit From",
-    trapNameEs: "37. Trampa del Gambito From",
-    trapNameAr: "37. فخ غامبيت فروم",
+    trapName: "From's Gambit Trap",
+    trapNameFr: "Piège du Gambit From",
+    trapNameEs: "Trampa del Gambito From",
+    trapNameAr: "فخ غامبيت فروم",
     commentedMoves: "1.f4 e5 2.fxe5 d6 3.exd6 Bxd6 4.Nf3 g5 5.h3 Bg3#",
     moves: [
       "f4",
@@ -1300,6 +1337,7 @@ const List<ChessTrap> chessTraps = [
       "Bg3#",
     ],
     fen: "rnbqk1nr/ppp2p1p/8/6p1/8/5NbP/PPPPP1P1/RNBQKB1R w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -1309,10 +1347,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "38. Fried Liver Attack Trap",
-    trapNameFr: "38. Piège de l'Attaque du Foie Frit",
-    trapNameEs: "38. Trampa del Ataque del Hígado Frito",
-    trapNameAr: "38. فخ هجوم الكبد المقلي",
+    trapName: "Fried Liver Attack Trap",
+    trapNameFr: "Piège de l'Attaque du Foie Frit",
+    trapNameEs: "Trampa del Ataque del Hígado Frito",
+    trapNameAr: "فخ هجوم الكبد المقلي",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ncb4 9.a3 Nxc2+ 10.Kd1 Nxa1 11.Nxd5",
     moves: [
@@ -1339,6 +1377,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd5",
     ],
     fen: "r1bq1b1r/ppp3pp/4k3/3Np3/2B5/P4Q2/1P1P1PPP/n1BK3R b - - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -1348,10 +1387,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "39. Traxler Counterattack Trap",
-    trapNameFr: "39. Piège de la Contre-attaque Traxler",
-    trapNameEs: "39. Trampa del Contraataque Traxler",
-    trapNameAr: "39. فخ الهجوم المضاد تراكسلر",
+    trapName: "Traxler Counterattack Trap",
+    trapNameFr: "Piège de la Contre-attaque Traxler",
+    trapNameEs: "Trampa del Contraataque Traxler",
+    trapNameAr: "فخ الهجوم المضاد تراكسلر",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.c3 Bg4 10.Qa4+ Nd7 11.Kxf2 Qf6+ 12.Ke1 Qh4+ 13.Kf1 O-O-O",
     moves: [
@@ -1383,6 +1422,7 @@ const List<ChessTrap> chessTraps = [
       "O-O-O",
     ],
     fen: "2kr3N/pppn2pp/8/3Pp3/Q1Bn2bq/2P5/PP1P2PP/RNB2K1R w - - 5 14",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -1392,10 +1432,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "40. Owen's Defense Trap",
-    trapNameFr: "40. Piège de la Défense Owen",
-    trapNameEs: "40. Trampa de la Defensa Owen",
-    trapNameAr: "40. فخ دفاع أوين",
+    trapName: "Owen's Defense Trap",
+    trapNameFr: "Piège de la Défense Owen",
+    trapNameEs: "Trampa de la Defensa Owen",
+    trapNameAr: "فخ دفاع أوين",
     commentedMoves:
         "1.e4 b6 2.d4 Bb7 3.Bd3 f5 4.exf5 Bxg2 5.Qh5+ g6 6.fxg6 Nf6 7.gxh7+ Nxh5 8.Bg6#",
     moves: [
@@ -1416,6 +1456,7 @@ const List<ChessTrap> chessTraps = [
       "Bg6#",
     ],
     fen: "rn1qkb1r/p1ppp2P/1p4B1/7n/3P4/8/PPP2PbP/RNB1K1NR b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1424,10 +1465,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Queen's gambit accepted",
     openingId: "queens_gambit_accepted",
-    trapName: "41. Queen's Gambit Accepted Trap",
-    trapNameFr: "41. Piège du Gambit Dame Accepté",
-    trapNameEs: "41. Trampa del Gambito de Dama Aceptado",
-    trapNameAr: "41. فخ غامبيت الملكة المقبول",
+    trapName: "Queen's Gambit Accepted Trap",
+    trapNameFr: "Piège du Gambit Dame Accepté",
+    trapNameEs: "Trampa del Gambito de Dama Aceptado",
+    trapNameAr: "فخ غامبيت الملكة المقبول",
     commentedMoves: "1.d4 d5 2.c4 dxc4 3.e3 b5 4.a4 c6 5.axb5 cxb5 6.Qf3",
     moves: [
       "d4",
@@ -1443,6 +1484,7 @@ const List<ChessTrap> chessTraps = [
       "Qf3",
     ],
     fen: "rnbqkbnr/p3pppp/8/1p6/2pP4/4PQ2/1P3PPP/RNB1KBNR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1452,10 +1494,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "42. Frankenstein-Dracula Trap",
-    trapNameFr: "42. Piège Frankenstein-Dracula",
-    trapNameEs: "42. Trampa Frankenstein-Drácula",
-    trapNameAr: "42. فخ فرانكنشتاين دراكولا",
+    trapName: "Frankenstein-Dracula Trap",
+    trapNameFr: "Piège Frankenstein-Dracula",
+    trapNameEs: "Trampa Frankenstein-Drácula",
+    trapNameAr: "فخ فرانكنشتاين دراكولا",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.Bc4 Nxe4 4.Qh5 Nd6 5.Bb3 Nc6 6.Nb5 g6 7.Qf3 f5 8.Qd5 Qe7 9.Nxc7+ Kd8 10.Nxa8 b6 11.d3 Bb7 12.h4 f4",
     moves: [
@@ -1485,6 +1527,7 @@ const List<ChessTrap> chessTraps = [
       "f4",
     ],
     fen: "N2k1b1r/pb1pq2p/1pnn2p1/3Qp3/5p1P/1B1P4/PPP2PP1/R1B1K1NR w KQ - 0 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1494,10 +1537,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "43. Fajarowicz Trap (Budapest Gambit)",
-    trapNameFr: "43. Piège de Fajarowicz (Gambit Budapest)",
-    trapNameEs: "43. Trampa de Fajarowicz (Gambito Budapest)",
-    trapNameAr: "43. فخ فاياروفيتش (غامبيت بودابست)",
+    trapName: "Fajarowicz Trap (Budapest Gambit)",
+    trapNameFr: "Piège de Fajarowicz (Gambit Budapest)",
+    trapNameEs: "Trampa de Fajarowicz (Gambito Budapest)",
+    trapNameAr: "فخ فاياروفيتش (غامبيت بودابست)",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.a3 d6 5.exd6 Bxd6 6.Nd2 Nxf2 7.Kxf2 Qh4+ 8.g3 Bxg3+ 9.hxg3 Qxh1",
     moves: [
@@ -1521,6 +1564,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh1",
     ],
     fen: "rnb1k2r/ppp2ppp/8/8/2P5/P5P1/1P1NPK2/R1BQ1BNq w kq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1530,10 +1574,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Queen's pawn",
     openingId: "queens_pawn_a40",
-    trapName: "44. Englund Gambit Complex Trap",
-    trapNameFr: "44. Piège du Gambit Englund Complexe",
-    trapNameEs: "44. Trampa del Gambito Englund Complejo",
-    trapNameAr: "44. فخ غامبيت إنجلوند المعقد",
+    trapName: "Englund Gambit Complex Trap",
+    trapNameFr: "Piège du Gambit Englund Complexe",
+    trapNameEs: "Trampa del Gambito Englund Complejo",
+    trapNameAr: "فخ غامبيت إنجلوند المعقد",
     commentedMoves:
         "1.d4 e5 2.dxe5 Bc5 3.Nf3 d6 4.exd6 Ne7 5.dxe7 Bxf2+ 6.Kxf2 Qxd1",
     moves: [
@@ -1551,6 +1595,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd1",
     ],
     fen: "rnb1k2r/ppp1Pppp/8/8/8/5N2/PPP1PKPP/RNBq1B1R w kq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -1560,10 +1605,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Vienna game",
     openingId: "vienna_game",
-    trapName: "45. Würzburger Trap (Vienna Game)",
-    trapNameFr: "45. Piège de Würzburg (Partie Viennoise)",
-    trapNameEs: "45. Trampa de Würzburg (Partida Vienesa)",
-    trapNameAr: "45. فخ فورتسبورغ (لعبة فيينا)",
+    trapName: "Würzburger Trap (Vienna Game)",
+    trapNameFr: "Piège de Würzburg (Partie Viennoise)",
+    trapNameEs: "Trampa de Würzburg (Partida Vienesa)",
+    trapNameAr: "فخ فورتسبورغ (لعبة فيينا)",
     commentedMoves:
         "1.e4 e5 2.Nc3 Nf6 3.f4 d5 4.fxe5 Nxe4 5.d3 Qh4+ 6.g3 Nxg3 7.Nf3 Qh5 8.Nxd5 Bg4 9.Nf4 Bxf3 10.Nxh5 Bxd1 11.hxg3 Bxc2 12.b3",
     moves: [
@@ -1592,6 +1637,7 @@ const List<ChessTrap> chessTraps = [
       "b3",
     ],
     fen: "rn2kb1r/ppp2ppp/8/4P2N/8/1P1P2P1/P1b5/R1B1KB1R b KQkq - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1601,10 +1647,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Budapest defence",
     openingId: "budapest_defence",
-    trapName: "46. Budapest Gambit Adler Trap",
-    trapNameFr: "46. Piège Adler du Gambit Budapest",
-    trapNameEs: "46. Trampa Adler del Gambito Budapest",
-    trapNameAr: "46. فخ أدلر غامبيت بودابست",
+    trapName: "Budapest Gambit Adler Trap",
+    trapNameFr: "Piège Adler du Gambit Budapest",
+    trapNameEs: "Trampa Adler del Gambito Budapest",
+    trapNameAr: "فخ أدلر غامبيت بودابست",
     commentedMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ng4 4.Nf3 Bc5 5.e3 Nc6 6.a3 a5 7.b3 Ngxe5 8.Nxe5 Nxe5 9.Bb2 Qe7 10.Nc3 c6 11.Ne4 Bb6 12.Nd6+ Kd8 13.Bxe5 Qxe5 14.Nxf7+",
     moves: [
@@ -1637,6 +1683,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf7+",
     ],
     fen: "r1bk3r/1p1p1Npp/1bp5/p3q3/2P5/PP2P3/5PPP/R2QKB1R b KQ - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1646,10 +1693,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "47. Marshall Trap (Petrov's Defense)",
-    trapNameFr: "47. Piège de Marshall (Défense Petroff)",
-    trapNameEs: "47. Trampa de Marshall (Defensa Petrov)",
-    trapNameAr: "47. فخ مارشال (دفاع بتروف)",
+    trapName: "Marshall Trap (Petrov's Defense)",
+    trapNameFr: "Piège de Marshall (Défense Petroff)",
+    trapNameEs: "Trampa de Marshall (Defensa Petrov)",
+    trapNameAr: "فخ مارشال (دفاع بتروف)",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 d6 4.Nf3 Nxe4 5.d4 d5 6.Bd3 Bd6 7.O-O O-O 8.c4 c6 9.cxd5 cxd5 10.Nc3 Nxc3 11.bxc3 Bg4 12.h3 Bh5 13.Rb1 b6 14.Rb5 Bc7 15.Rxd5 Qxd5 16.Bxh7+ Kxh7 17.Ng5+ Qxg5 18.Bxg5 Bxd1",
     moves: [
@@ -1691,6 +1738,7 @@ const List<ChessTrap> chessTraps = [
       "Bxd1",
     ],
     fen: "rn3r2/p1b2ppk/1p6/6B1/3P4/2P4P/P4PP1/3b1RK1 w - - 0 19",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -1700,10 +1748,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Sicilian defence",
     openingId: "sicilian_defence",
-    trapName: "48. Alapin Sicilian Trap",
-    trapNameFr: "48. Piège Sicilienne Alapine",
-    trapNameEs: "48. Trampa Siciliana Alapin",
-    trapNameAr: "48. فخ الصقلية ألابين",
+    trapName: "Alapin Sicilian Trap",
+    trapNameFr: "Piège Sicilienne Alapine",
+    trapNameEs: "Trampa Siciliana Alapin",
+    trapNameAr: "فخ الصقلية ألابين",
     commentedMoves:
         "1.e4 c5 2.c3 Nf6 3.e5 Nd5 4.d4 cxd4 5.Nf3 Nc6 6.Bc4 Nb6 7.Bb3 d5 8.exd6 Qxd6 9.O-O Be6 10.Na3 dxc3 11.Qe2 Bxb3 12.Nb5 Qd7 13.axb3 a6 14.Rd1 Qc8 15.Nd6+",
     moves: [
@@ -1738,6 +1786,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6+",
     ],
     fen: "r1q1kb1r/1p2pppp/pnnN4/8/8/1Pp2N2/1P2QPPP/R1BR2K1 b kq - 3 15",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1747,10 +1796,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Dutch",
     openingId: "dutch",
-    trapName: "49. Krejcik Trap (Dutch Defense)",
-    trapNameFr: "49. Piège de Krejcik (Défense Hollandaise)",
-    trapNameEs: "49. Trampa de Krejcik (Defensa Holandesa)",
-    trapNameAr: "49. فخ كريتشيك (الدفاع الهولندي)",
+    trapName: "Krejcik Trap (Dutch Defense)",
+    trapNameFr: "Piège de Krejcik (Défense Hollandaise)",
+    trapNameEs: "Trampa de Krejcik (Defensa Holandesa)",
+    trapNameAr: "فخ كريتشيك (الدفاع الهولندي)",
     commentedMoves:
         "1.d4 f5 2.g4 fxg4 3.h3 gxh3 4.Nxh3 Nf6 5.Ng5 d5 6.Qd3 Nc6 7.Rxh7 Rxh7 8.Qg6+ Kd7 9.Nxh7 Nxh7 10.Bh3+ e6 11.Qxe6#",
     moves: [
@@ -1777,6 +1826,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe6#",
     ],
     fen: "r1bq1b2/pppk2pn/2n1Q3/3p4/3P4/7B/PPP1PP2/RNB1K3 b Q - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1786,10 +1836,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "50. Two Knights Trap",
-    trapNameFr: "50. Piège des Deux Cavaliers",
-    trapNameEs: "50. Trampa de los Dos Caballos",
-    trapNameAr: "50. فخ الحصانين",
+    trapName: "Two Knights Trap",
+    trapNameFr: "Piège des Deux Cavaliers",
+    trapNameEs: "Trampa de los Dos Caballos",
+    trapNameAr: "فخ الحصانين",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.d4 exd4 5.Ng5 d5 6.exd5 Nxd5 7.O-O Be7 8.Nxf7 Kxf7 9.Qf3+ Ke6 10.Re1+ Ne5 11.Bf4 Bf6 12.Bxe5 Bxe5 13.Nd2",
     moves: [
@@ -1820,6 +1870,7 @@ const List<ChessTrap> chessTraps = [
       "Nd2",
     ],
     fen: "r1bq3r/ppp3pp/4k3/3nb3/2Bp4/5Q2/PPPN1PPP/R3R1K1 b - - 1 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1856,6 +1907,7 @@ const List<ChessTrap> chessTraps = [
       "Nf3#",
     ],
     fen: "r1b1k2r/pppp1ppp/2n5/2b1P3/4P3/2P2nP1/PP1PN3/RNBQKB2 w Qkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -1883,6 +1935,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5",
     ],
     fen: "rnb1kbnr/ppp2p1p/2q3p1/1B2p3/8/2N3N1/PPPP1PPP/R1BQK2R b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1919,6 +1972,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r3kbnr/ppp2ppp/8/q2Pp3/8/2Nn4/PPRBNPPP/3QKB1R w Kkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -1954,6 +2008,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe4",
     ],
     fen: "rnb1kb1r/pp1p1ppp/2p5/3N1q2/3PN3/8/PPP1Q1PP/R1B1KB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -1996,6 +2051,7 @@ const List<ChessTrap> chessTraps = [
       "Bc5",
     ],
     fen: "r1b1k2r/pppp1ppp/8/2b1P3/3Q1N2/1P4P1/1P2K2P/RNq2BR1 w kq - 1 13",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -2029,6 +2085,7 @@ const List<ChessTrap> chessTraps = [
       "Qb3+",
     ],
     fen: "rnb2bkr/ppp3pp/3p1q2/4p1N1/8/1Q6/PPPP1PPP/R1B1K1NR b KQ - 5 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2056,6 +2113,7 @@ const List<ChessTrap> chessTraps = [
       "d3",
     ],
     fen: "rnbqkb1r/pp2pppp/8/2p1P3/3pn3/2PP4/PP3PPP/RNBQKBNR b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2091,6 +2149,7 @@ const List<ChessTrap> chessTraps = [
       "Qd4",
     ],
     fen: "r1bqkb1r/pp2p2p/2n1p1p1/1Bnp4/3Q4/2N2N2/PPP2PPP/R1B1K2R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2128,6 +2187,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe6#",
     ],
     fen: "r2q1b1r/pppk1Bpp/1nn1Q3/8/8/2N2b1P/PPPP1PP1/R1B1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2165,6 +2225,7 @@ const List<ChessTrap> chessTraps = [
       "Qb3",
     ],
     fen: "rn1qkbr1/pp2p2p/2p1p1p1/8/2B5/1Q6/PPPP1PPP/R1B1K2R b KQq - 2 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2180,6 +2241,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 Nf6 2.e5 Ne4 3.d3 Nc5 4.d4 Ne4 5.Bd3",
     moves: ["e4", "Nf6", "e5", "Ne4", "d3", "Nc5", "d4", "Ne4", "Bd3"],
     fen: "rnbqkb1r/pppppppp/8/4P3/3Pn3/3B4/PPP2PPP/RNBQK1NR b KQkq - 2 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2195,6 +2257,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 Nf6 2.e5 Nd5 3.Bc4 Nf4 4.Qf3 Ng6 5.Bxf7#",
     moves: ["e4", "Nf6", "e5", "Nd5", "Bc4", "Nf4", "Qf3", "Ng6", "Bxf7#"],
     fen: "rnbqkb1r/pppppBpp/6n1/4P3/8/5Q2/PPPP1PPP/RNB1K1NR b KQkq - 0 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2230,6 +2293,7 @@ const List<ChessTrap> chessTraps = [
       "Nf7+",
     ],
     fen: "r1bq1b1r/pppnpNpp/1n2p3/4k3/8/5Q2/PPPP1PPP/RNB1K2R b KQ - 7 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2260,6 +2324,7 @@ const List<ChessTrap> chessTraps = [
       "Qxb4",
     ],
     fen: "rnbqkb1r/pppp1ppp/4p3/2P1P3/1QB5/8/PP1P1PPP/RNB1K1NR b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2295,6 +2360,7 @@ const List<ChessTrap> chessTraps = [
       "Bc4",
     ],
     fen: "r1bqkb1r/pppnpppp/8/2P1p1B1/2B5/1QP5/PP3PPP/R3K1NR b KQkq - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2328,6 +2394,7 @@ const List<ChessTrap> chessTraps = [
       "Bxc4",
     ],
     fen: "r1bqkb1r/pppppppp/6n1/2PP4/2B2P2/8/PP4PP/RNBQK1NR b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2365,6 +2432,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "r1bQ1b1r/ppp1pkp1/1n3np1/8/2P5/8/PP3PPP/RNB1K1NR b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2402,6 +2470,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg6#",
     ],
     fen: "rn2kb1r/pppqp3/1n1pN1Qp/4P3/8/2N5/PPPP1PPP/R1B1K2R b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2439,6 +2508,7 @@ const List<ChessTrap> chessTraps = [
       "exf7#",
     ],
     fen: "rnb2bkr/ppp1pPp1/1n1p3p/6N1/8/8/PPPP1PPP/RNB1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2472,6 +2542,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe5",
     ],
     fen: "r1bqkb1r/ppppp2p/1n3p2/3PN3/2P5/8/PP3PPP/RNBQKB1R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2507,6 +2578,7 @@ const List<ChessTrap> chessTraps = [
       "Bd3",
     ],
     fen: "r1b1kb1r/pppn1ppp/4p3/3nNqB1/3P4/3B2Q1/PPP2PPP/RN2K2R b KQkq - 6 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2550,6 +2622,7 @@ const List<ChessTrap> chessTraps = [
       "Nxh8+",
     ],
     fen: "r1b1kb1N/pppqp3/1nnp2Q1/4p3/2PP4/8/PP3PPP/RNB1K2R b KQ - 0 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2565,6 +2638,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 g5 2.Nc3 f5 3.Qh5#",
     moves: ["e4", "g5", "Nc3", "f5", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/8/5ppQ/4P3/2N5/PPPP1PPP/R1B1KBNR b KQkq - 1 3",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2597,6 +2671,7 @@ const List<ChessTrap> chessTraps = [
       "Bxb2",
     ],
     fen: "rnbBk2r/pppp1p2/4p2p/7n/2B1P3/3P1N2/PbP2PPP/RN2K2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -2647,6 +2722,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1b1kbnr/2pqp3/ppn1P3/1B1p1N1p/3P1Pp1/1NB5/PPP1Q1PP/R3K2R b KQkq - 0 16",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2662,6 +2738,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 g5 2.d4 f6 3.Qh5#",
     moves: ["e4", "g5", "d4", "f6", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/5p2/6pQ/3PP3/8/PPP2PPP/RNB1KBNR b KQkq - 1 3",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2700,6 +2777,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd5",
     ],
     fen: "r1b1k1nr/pp2pp2/2n4p/1BPq2p1/8/2P5/P1P2PPP/R1B1K1NR w KQkq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -2743,6 +2821,7 @@ const List<ChessTrap> chessTraps = [
       "Bd5",
     ],
     fen: "rnb1k2r/p3ppb1/3p3p/1p1B4/3PPBnN/8/PPPR1PP1/2K4R b kq - 1 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2793,6 +2872,7 @@ const List<ChessTrap> chessTraps = [
       "Ne5",
     ],
     fen: "1q1rk2r/pp2ppb1/7n/1NP1n1Np/2Q3bR/2PB4/PP3PP1/R1B1K3 w Qk - 7 17",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -2808,6 +2888,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 g5 2.Nf3 f6 3.d4 c6 4.Ne5 fxe5 5.Qh5#",
     moves: ["e4", "g5", "Nf3", "f6", "d4", "c6", "Ne5", "fxe5", "Qh5#"],
     fen: "rnbqkbnr/pp1pp2p/2p5/4p1pQ/3PP3/8/PPP2PPP/RNB1KB1R b KQkq - 1 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2858,6 +2939,7 @@ const List<ChessTrap> chessTraps = [
       "Bd6",
     ],
     fen: "2r1k2r/p2q1pp1/3bbn1p/2ppQ3/1p6/4PN2/PPN2PPP/R1B2RK1 w k - 2 17",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -2894,6 +2976,7 @@ const List<ChessTrap> chessTraps = [
       "Bxa1",
     ],
     fen: "rnbqk2r/p3pp1p/3p2p1/2pP4/2P1N3/5N2/P4PPP/b1BQKB1R w Kkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -2939,6 +3022,7 @@ const List<ChessTrap> chessTraps = [
       "Rh2",
     ],
     fen: "rnb1k2r/p2pppbp/6p1/1RpP4/2P5/3BBN1P/P4PqR/3QK3 b kq - 1 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -2981,6 +3065,7 @@ const List<ChessTrap> chessTraps = [
       "Qe4",
     ],
     fen: "rnb1k2r/4ppbp/P2p2p1/2pP4/4q3/1Pn2NP1/P1QBPPBP/R3K2R w KQkq - 1 13",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3022,6 +3107,7 @@ const List<ChessTrap> chessTraps = [
       "Re1",
     ],
     fen: "r1b1qrk1/p2nppbp/2N2np1/2pP4/2B5/2N5/PP3PPP/R1BQR1K1 b - - 6 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3069,6 +3155,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "rnb2b1r/p2kpB1p/3P2p1/q1pQp2n/8/4B3/PP1N1PPP/R3K1NR b KQ - 4 15",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3103,6 +3190,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "rn2kb1r/3ppppp/5n2/qBpP4/8/4P3/PP3PPP/R1BQK1NR w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3138,6 +3226,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "rnbqkb1r/3ppppp/3N1n2/2pP4/1p6/8/PP2QPPP/R1B1KBNR b KQkq - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3175,6 +3264,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd6+",
     ],
     fen: "rnbqkb1r/4pppp/3N1n2/2pP4/1p3B2/8/PP2QPPP/R3KBNR b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3215,6 +3305,7 @@ const List<ChessTrap> chessTraps = [
       "exd5",
     ],
     fen: "rn2kb1r/1b1p1ppp/5n2/2pp4/1qB5/1QN1P3/PP3PPP/R1B1K1NR w KQkq - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3260,6 +3351,7 @@ const List<ChessTrap> chessTraps = [
       "Nxg5",
     ],
     fen: "rn1q3r/p1Nk1pbp/1p6/2pP2N1/4nB2/8/PP3PPP/R2QK2R b KQ - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3301,6 +3393,7 @@ const List<ChessTrap> chessTraps = [
       "Bh6",
     ],
     fen: "rnbqkr2/pp1p1pQp/3P3B/b1p1P3/4n3/8/PP2KPPP/R4BNR b q - 4 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3340,6 +3433,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4",
     ],
     fen: "r3kb1r/pp1nqp1p/3p2p1/2pP4/4Q1b1/2N2N2/PP2BPPP/R1B2RK1 b kq - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3393,6 +3487,7 @@ const List<ChessTrap> chessTraps = [
       "g4",
     ],
     fen: "r1bqr1k1/pp1p1p1p/3P2p1/b2NnPNn/6PQ/8/PP2P1BP/R1B2RK1 b - - 0 18",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3426,6 +3521,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5#",
     ],
     fen: "r3kbnr/pp2pppp/n7/BBpPp3/4P3/8/PPP2PPP/RN1bK2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3453,6 +3549,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe5+",
     ],
     fen: "rnbqkbnr/pp1p3p/6p1/2p1Q3/4P3/8/PPP2PPP/RNB1KBNR b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3492,6 +3589,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd5",
     ],
     fen: "rnb2r2/p2pqppk/1p1b4/2pQ4/8/4BN2/PPP2PPP/RN2R1K1 b - - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3542,6 +3640,7 @@ const List<ChessTrap> chessTraps = [
       "Bb7",
     ],
     fen: "r4rk1/pb2ppbp/1qN2np1/1Npn4/1p3B2/5B1P/PPP2PP1/R2Q1RK1 w - - 6 17",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3601,6 +3700,7 @@ const List<ChessTrap> chessTraps = [
       "Rd7",
     ],
     fen: "1rk4r/pp1RqnQp/4p1p1/1Bp2b2/P7/2N5/1PP2PPP/4R1K1 b - - 7 21",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3617,6 +3717,7 @@ const List<ChessTrap> chessTraps = [
     moves: ["f4", "d5", "b3", "Nf6", "e3", "c5", "Bb5+", "Nc6", "d4", "Qa5+"],
     fen:
         "r1b1kb1r/pp2pppp/2n2n2/qBpp4/3P1P2/1P2P3/P1P3PP/RNBQK1NR w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3652,6 +3753,7 @@ const List<ChessTrap> chessTraps = [
       "c5",
     ],
     fen: "r2qk2r/1ppbnppp/p1nbp3/2Pp4/3P1P2/4PN2/PP2B1PP/RNBQ1RK1 b kq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3685,6 +3787,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf7#",
     ],
     fen: "r2qkb1r/ppp1pBpp/5n2/4N3/3n1P2/2N5/PPPP2PP/R1BbK2R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3719,6 +3822,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe3",
     ],
     fen: "rnbq1rk1/pp2ppbp/6p1/2ppN3/5P2/1P1Pn2P/P1PN2P1/R1BQKB1R w KQ - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3748,6 +3852,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh4#",
     ],
     fen: "rnb1kbn1/ppp2pp1/8/3pP3/7q/8/PPPPP2P/RNBQKB1R w KQq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3783,6 +3888,7 @@ const List<ChessTrap> chessTraps = [
       "Qc8#",
     ],
     fen: "rnQ1kb1r/p1p1pppp/2q2n2/8/4pP2/2N5/PPPP2PP/R1B1K1NR b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -3798,6 +3904,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.f4 d5 2.h3 e5 3.g4 Qh4#",
     moves: ["f4", "d5", "h3", "e5", "g4", "Qh4#"],
     fen: "rnb1kbnr/ppp2ppp/8/3pp3/5PPq/7P/PPPPP3/RNBQKBNR w KQkq - 1 4",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3836,6 +3943,7 @@ const List<ChessTrap> chessTraps = [
       "Nc2+",
     ],
     fen: "rn1qk2r/p1p2ppp/2b5/4P3/1Q6/3P4/PPnBP1PP/RN2KBNR w KQkq - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3877,6 +3985,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r3k2r/ppp2ppp/2n1p3/2np1b2/1bPP1P2/1P1KP3/P2N1qPP/RNBQ1B1R w kq - 9 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3909,6 +4018,7 @@ const List<ChessTrap> chessTraps = [
       "Bg7",
     ],
     fen: "rnbq2nr/ppp2kb1/6pp/3pQ3/4pP2/4P3/PPPP2PP/RNB1KB1R w KQ - 2 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3945,6 +4055,7 @@ const List<ChessTrap> chessTraps = [
       "Bf2#",
     ],
     fen: "r1b1k2r/ppp2ppp/2np4/8/6nN/2PP4/PP1NPbPP/R2QKB1R w KQkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -3975,6 +4086,7 @@ const List<ChessTrap> chessTraps = [
       "Bxg3#",
     ],
     fen: "rnb1k1nr/ppp2ppp/8/8/8/1P4b1/P1PPP3/RNBQKBNR w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4015,6 +4127,7 @@ const List<ChessTrap> chessTraps = [
       "Qb4#",
     ],
     fen: "rnb1k2r/ppp2ppp/3b4/8/1q6/2K2N2/PPP1PnPP/RNBQ1B1R w kq - 12 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4041,6 +4154,7 @@ const List<ChessTrap> chessTraps = [
       "Bg3#",
     ],
     fen: "r1bqk1nr/ppp2ppp/2n5/8/8/5NbP/PPPPP1P1/RNBQKB1R w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4077,6 +4191,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd4",
     ],
     fen: "r1b1k1nr/ppp2p1p/8/6N1/3qP1p1/6P1/PPP3P1/RNB1KB1R w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4115,6 +4230,7 @@ const List<ChessTrap> chessTraps = [
       "Qd4",
     ],
     fen: "rnb1r1k1/ppp2ppp/8/8/3qP3/2NP2b1/PPP1B1PN/R1BQ1K1R w - - 3 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4155,6 +4271,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf2#",
     ],
     fen: "rn2r1k1/ppp2ppp/8/8/2PPn1bN/4P2P/PP3bP1/RNB1KB1R w KQ - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4193,6 +4310,7 @@ const List<ChessTrap> chessTraps = [
       "Nxh1",
     ],
     fen: "rnbqk2r/ppp3pp/5p2/8/3P3B/2N2Nb1/PPPKP1P1/R1Q2B1n w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4228,6 +4346,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf3",
     ],
     fen: "rn2k2r/ppp1np1p/3b1p2/8/8/4PQ2/PPPP2PP/R1B1KB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4266,6 +4385,7 @@ const List<ChessTrap> chessTraps = [
       "gxh2",
     ],
     fen: "r1b1k1nr/ppp2p1p/2nb4/8/QP1N4/2P5/P2PP1Pp/RNBK1B2 w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4304,6 +4424,7 @@ const List<ChessTrap> chessTraps = [
       "gxh2",
     ],
     fen: "r1b1k1nr/ppp2p1p/2nb4/8/Q2N4/1PP5/P2PP1Pp/RNBK1B2 w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4338,6 +4459,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd4#",
     ],
     fen: "rnb1k1nr/pp3p1p/8/2p3N1/3q2p1/6bP/PPPKP1P1/RNBQ1B1R w kq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4374,6 +4496,7 @@ const List<ChessTrap> chessTraps = [
       "gxh2",
     ],
     fen: "rnb1k1nr/ppp2p1p/3b4/8/3NP3/3P4/PPP1K1Pp/RNBQ1B2 w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4410,6 +4533,7 @@ const List<ChessTrap> chessTraps = [
       "gxh2",
     ],
     fen: "rnb1k1nr/ppp2p1p/3b4/8/4P3/2N5/PPPPK1Pp/R1BQ1BN1 w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4442,6 +4566,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh4#",
     ],
     fen: "rnb1k1n1/ppp2pp1/3b4/8/7q/8/PPPPP2P/RNBQKB1R w KQq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4480,6 +4605,7 @@ const List<ChessTrap> chessTraps = [
       "Bg3+",
     ],
     fen: "rnbq1rk1/ppp3pp/8/8/4P3/2N3b1/PPP1Q1PN/R1B1KB1R w KQ - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4510,6 +4636,7 @@ const List<ChessTrap> chessTraps = [
       "Bxg3#",
     ],
     fen: "rnb1k1nr/ppp2ppp/8/8/8/5Nb1/PPPPP3/RNBQKB1R w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4547,6 +4674,7 @@ const List<ChessTrap> chessTraps = [
       "Na4",
     ],
     fen: "r1b1kbnr/pppp1ppp/2n5/4P1B1/N2PP3/P4NP1/1qP4P/R2QKB1R b KQkq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4582,6 +4710,7 @@ const List<ChessTrap> chessTraps = [
       "fxg7",
     ],
     fen: "rn1qkb1r/ppp2pPp/4b3/4Q3/2pp4/2P5/PP3PPP/RNB1K1NR b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4619,6 +4748,7 @@ const List<ChessTrap> chessTraps = [
       "Qf3#",
     ],
     fen: "rnbq3r/pppp2pp/1b6/8/1P2k3/5Q2/PBPP1PPP/R3K2R b KQ - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4635,6 +4765,7 @@ const List<ChessTrap> chessTraps = [
     moves: ["e4", "e5", "Bc4", "Bc5", "d3", "Nc6", "Nh3", "Qh4", "Bg5"],
     fen:
         "r1b1k1nr/pppp1ppp/2n5/2b1p1B1/2B1P2q/3P3N/PPP2PPP/RN1QK2R b KQkq - 4 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4650,6 +4781,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Bc4 Bc5 3.Qh5 g6 4.Qxe5+",
     moves: ["e4", "e5", "Bc4", "Bc5", "Qh5", "g6", "Qxe5+"],
     fen: "rnbqk1nr/pppp1p1p/6p1/2b1Q3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4682,6 +4814,7 @@ const List<ChessTrap> chessTraps = [
       "Ng4+",
     ],
     fen: "rnb1k2r/pp1pqppp/2p5/4Q3/2B1P1n1/2N2N2/PPPP1KPP/R1B4R w kq - 1 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4709,6 +4842,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe5",
     ],
     fen: "r1bq1bnr/pppp1k1p/6p1/n3Q3/4P3/3P4/PPP2PPP/RNB1K1NR b KQ - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4744,6 +4878,7 @@ const List<ChessTrap> chessTraps = [
       "Bf4",
     ],
     fen: "r1b2bnr/pppp2pp/3k4/n3qQ2/4PB2/8/PPP2PPP/RN2K1NR b KQ - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4780,6 +4915,7 @@ const List<ChessTrap> chessTraps = [
       "Nxg3",
     ],
     fen: "r1b1kb1r/pp3ppp/2p5/3pp3/2Bn3q/3Q1Pn1/PPPP3P/RNB1K1NR w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4795,6 +4931,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qg4 d5",
     moves: ["e4", "e5", "Bc4", "Nc6", "Qg4", "d5"],
     fen: "r1bqkbnr/ppp2ppp/2n5/3pp3/2B1P1Q1/8/PPPP1PPP/RNB1K1NR w KQkq - 0 4",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4810,6 +4947,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Bc4 Nc6 3.Qh5 d6 4.Qxf7#",
     moves: ["e4", "e5", "Bc4", "Nc6", "Qh5", "d6", "Qxf7#"],
     fen: "r1bqkbnr/ppp2Qpp/2np4/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4847,6 +4985,7 @@ const List<ChessTrap> chessTraps = [
       "c8=Q#",
     ],
     fen: "rnQ1kbnr/p3qppp/8/8/2p1Q3/8/PPPP1PPP/RNB1K2R b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4875,6 +5014,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "rnb1kb1r/pp3ppp/2p2n2/q3N3/4p3/1B1P4/PPP2PPP/RNBQK2R w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4914,6 +5054,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd8",
     ],
     fen: "r2N1k1r/ppp2ppp/5b2/1B1n4/8/3P4/PPP2PPP/RNBbR1K1 b - - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4943,6 +5084,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4+",
     ],
     fen: "rnbqk2r/ppp2ppp/5n2/8/1bBQ4/8/PPP2PPP/RNB1K1NR w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -4976,6 +5118,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4",
     ],
     fen: "1n1qkb1r/p1p2ppp/8/4p3/2b1Q3/8/PPP2PPP/RNB1K1NR b KQk - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -4991,6 +5134,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.d4 d5 2.e4 Nf6 3.e5 Ne4 4.f3",
     moves: ["d4", "d5", "e4", "Nf6", "e5", "Ne4", "f3"],
     fen: "rnbqkb1r/ppp1pppp/8/3pP3/3Pn3/5P2/PPP3PP/RNBQKBNR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5018,6 +5162,7 @@ const List<ChessTrap> chessTraps = [
       "Nc7#",
     ],
     fen: "rnb1kbnr/ppN1pppp/8/2p5/2q1p3/8/PPP2PPP/R1BQK1NR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5053,6 +5198,7 @@ const List<ChessTrap> chessTraps = [
       "bxa8=Q",
     ],
     fen: "Q1bk1bnr/p3pppp/6n1/1B6/3qp3/2N5/PPP2PPP/R1B1K1NR b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5082,6 +5228,7 @@ const List<ChessTrap> chessTraps = [
       "Bxc3",
     ],
     fen: "rnb1k1nr/ppp2ppp/8/4p3/3qQ3/2b5/PPPB1PPP/R3KBNR w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5117,6 +5264,7 @@ const List<ChessTrap> chessTraps = [
       "Qh5#",
     ],
     fen: "r1bqkb1r/1pp1p2p/p1n4p/1B2Np1Q/3P4/2N5/PPP3PP/R3K2R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5154,6 +5302,7 @@ const List<ChessTrap> chessTraps = [
       "Rxd1",
     ],
     fen: "r1b1kb1r/ppB1pppp/8/8/3pp3/5P2/PPP3PP/3RKBNR b Kkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5197,6 +5346,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "r1bq1b1r/pp1n1Qkp/6p1/8/2BP4/8/PPP3PP/R1B1K2R b KQ - 2 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5236,6 +5386,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf7#",
     ],
     fen: "rnq1kb1r/ppp2Bp1/8/4NpBp/3P2n1/2N5/PPP3PP/R3K2R b KQkq - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5271,6 +5422,7 @@ const List<ChessTrap> chessTraps = [
       "Qc8#",
     ],
     fen: "rnQ1kb1r/p1p1pppp/5n2/8/5q2/2N5/PPP3PP/R3KB1R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5308,6 +5460,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6",
     ],
     fen: "r1bqk2r/pppnp1bp/4Nnp1/8/3P3P/2N5/PPP3P1/R1BQK2R b KQ - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5341,6 +5494,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc6+",
     ],
     fen: "r1b1kb1r/p1p1pppp/2Q2n2/8/3q4/2N5/PPP3PP/R1B1K1NR b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5381,6 +5535,7 @@ const List<ChessTrap> chessTraps = [
       "f6",
     ],
     fen: "r1b1kb1r/ppp3pp/n4p2/1N2p1B1/4q1n1/P7/1PP2QPP/2KR1BNR w kq - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5420,6 +5575,7 @@ const List<ChessTrap> chessTraps = [
       "Rd8#",
     ],
     fen: "r1bRkb1r/ppp2ppp/n4B2/1N6/1q6/5p2/PPP3PP/2K2BNR b kq - 1 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5457,6 +5613,7 @@ const List<ChessTrap> chessTraps = [
       "Qc8#",
     ],
     fen: "rnQ1kb1r/p1p1pppp/5n2/qN6/8/4B3/PPP3PP/2Kb1BNR b kq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5494,6 +5651,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc7+",
     ],
     fen: "2r1kb1r/pQN1pppp/n4n2/8/1q4b1/4B3/PPP3PP/2KR1BNR b k - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5529,6 +5687,7 @@ const List<ChessTrap> chessTraps = [
       "Qxb7",
     ],
     fen: "rn2kb1r/pQpnpppp/8/1N6/1q4b1/4B3/PPP3PP/2KR1BNR b kq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5568,6 +5727,7 @@ const List<ChessTrap> chessTraps = [
       "Bc5#",
     ],
     fen: "rn3b1r/pqN1kppp/5n2/2B1p3/6b1/8/PPP3PP/2KR1BNR b - - 1 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5605,6 +5765,7 @@ const List<ChessTrap> chessTraps = [
       "Qc8#",
     ],
     fen: "rnQ1kb1r/p1p1pppp/5n2/8/8/2N1q3/PPP3PP/1K1b1BNR b kq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5642,6 +5803,7 @@ const List<ChessTrap> chessTraps = [
       "Qe1",
     ],
     fen: "r1b1kb1r/ppp1pppp/2n2n2/qN6/8/4B3/PPP3PP/2KRQBNR b kq - 9 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5657,6 +5819,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.d4 Nf6 2.c4 e5 3.d5 Bb4+ 4.Nc3 d6 5.Qa4+",
     moves: ["d4", "Nf6", "c4", "e5", "d5", "Bb4+", "Nc3", "d6", "Qa4+"],
     fen: "rnbqk2r/ppp2ppp/3p1n2/3Pp3/QbP5/2N5/PP2PPPP/R1B1KBNR b KQkq - 1 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -5683,6 +5846,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf2#",
     ],
     fen: "rnbBk2r/pppp1ppp/8/3Pp3/2P1n3/8/PP2PbPP/RN1QKBNR w KQkq - 0 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5717,6 +5881,7 @@ const List<ChessTrap> chessTraps = [
       "Qh6",
     ],
     fen: "rnb1k2r/pppp1ppp/7q/3Pp3/2P5/4PNn1/PP2P2P/RN1QKB1R w KQkq - 2 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5749,6 +5914,7 @@ const List<ChessTrap> chessTraps = [
       "Bxg3+",
     ],
     fen: "rnbqk2r/ppp2ppp/8/8/2P5/P5b1/1P2PK1P/RNBQ1BNR w kq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5787,6 +5953,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r3k2r/ppP1qppp/2n5/5b2/1bP5/P2n4/1P1NPPPP/R1BQKBNR w KQkq - 3 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5823,6 +5990,7 @@ const List<ChessTrap> chessTraps = [
       "Ke6",
     ],
     fen: "rn5r/ppQ2ppp/4k3/3qP3/1b6/8/PP1nPPPP/R1B1KBNR w KQ - 3 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5855,6 +6023,7 @@ const List<ChessTrap> chessTraps = [
       "Ne4#",
     ],
     fen: "rnb1k2r/pppp1ppp/8/4P3/1BP1n2q/5P2/PP2P2P/RN1QKBNR w KQkq - 1 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5893,6 +6062,7 @@ const List<ChessTrap> chessTraps = [
       "Qg6#",
     ],
     fen: "rn2k2r/ppp2ppp/3b2q1/5K2/2P5/2N4P/PP2P1P1/R1BQ1BNR w kq - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5922,6 +6092,7 @@ const List<ChessTrap> chessTraps = [
       "Be5",
     ],
     fen: "rnbqk2r/ppp2pQp/8/4b3/2P3n1/8/PP2PPPP/RNB1KBNR w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5958,6 +6129,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd1",
     ],
     fen: "r1b1k2r/ppp2ppp/2n5/2P5/8/6P1/PP2PKP1/RNBq1BNR w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -5994,6 +6166,7 @@ const List<ChessTrap> chessTraps = [
       "Bxb2",
     ],
     fen: "r1bBk2r/pppp1ppp/8/4P3/2P1P1n1/5N2/Pb2K1PP/RN3B1R w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6033,6 +6206,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1b1k2r/ppppq1p1/7p/5p2/1bP2Bn1/2Nn2P1/PP1NPP1P/R2QKB1R w KQkq - 2 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6067,6 +6241,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r1b1k2r/ppppqppp/2n5/8/1PP2B2/3n1N2/1P1NPPPP/R2QKB1R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6101,6 +6276,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd1",
     ],
     fen: "rnb1k2r/ppp2ppp/8/8/2P5/5NKP/PP2P1P1/RNBq1B1R w kq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6135,6 +6311,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r1b1k2r/ppppqppp/8/8/1PP2Bn1/3n1N2/1P1NPPPP/R2QKB1R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6171,6 +6348,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r1b1k2r/ppppqppp/8/8/1bP2B2/P2n3P/1P1NPPP1/R2QKB1R w KQkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6208,6 +6386,7 @@ const List<ChessTrap> chessTraps = [
       "exf4",
     ],
     fen: "r2qkb1r/ppp2p1p/2npb3/4n3/2P2P2/2B5/PP2B1PP/RN1QK1NR b KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6223,6 +6402,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 c6 2.Nc3 d5 3.f3 d4 4.Na4 e6 5.Ne2 b5",
     moves: ["e4", "c6", "Nc3", "d5", "f3", "d4", "Na4", "e6", "Ne2", "b5"],
     fen: "rnbqkbnr/p4ppp/2p1p3/1p6/N2pP3/5P2/PPPPN1PP/R1BQKB1R w KQkq - 0 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6260,6 +6440,7 @@ const List<ChessTrap> chessTraps = [
       "Bxe6",
     ],
     fen: "r1b1kbr1/pp3Npp/1np1Bn2/6N1/3q4/8/PPPPQPPP/R1B1K2R b KQq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6287,6 +6468,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/pp1npppp/2pN1n2/8/8/5N2/PPPPQPPP/R1B1KB1R b KQkq - 4 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6318,6 +6500,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r2qkb1r/pp1npppp/2pN1n2/8/6b1/5NP1/PPPPQP1P/R1B1KB1R b KQkq - 2 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6349,6 +6532,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5+",
     ],
     fen: "r2qkbnr/pp2pppp/n7/1B1p3b/8/2N2N1P/PPPP1PP1/R1BQK2R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6386,6 +6570,7 @@ const List<ChessTrap> chessTraps = [
       "Bg5+",
     ],
     fen: "r1bq1b1r/pp1nk2p/2p3p1/6B1/8/2P2Q2/PPP2PPP/R3K1NR b KQ - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6417,6 +6602,7 @@ const List<ChessTrap> chessTraps = [
       "Qb3",
     ],
     fen: "rn1qkb1r/pp3ppp/2p2n2/4p1N1/2B3b1/1Q6/PPPP1PPP/R1B1K1NR b KQkq - 5 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6444,6 +6630,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5",
     ],
     fen: "rnb1kb1r/pp1qpppp/5n2/1B1P4/Q7/8/PP1P1PPP/RNB1K1NR b KQkq - 4 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6478,6 +6665,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc4",
     ],
     fen: "rn2kb1r/p2bpppp/3P1n2/1p6/2q5/1Q6/PP1P1PPP/RNB1K1NR w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6506,6 +6694,7 @@ const List<ChessTrap> chessTraps = [
       "Ne3",
     ],
     fen: "rnbqkb1r/pp2pp1p/2p3p1/3p4/4PP2/3PnN2/PPPNB1PP/R1BQK2R w KQkq - 5 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6543,6 +6732,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf7",
     ],
     fen: "rn1qkb1r/pp3Np1/2p2n1p/5p2/2BP4/2N5/PPP3PP/R1BQ2K1 b kq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6570,6 +6760,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r2qkbnr/pp1npppp/2pN4/5b2/3P4/8/PPP1QPPP/R1B1KBNR b KQkq - 4 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6603,6 +6794,7 @@ const List<ChessTrap> chessTraps = [
       "Bxg6#",
     ],
     fen: "rnbqkb1r/pp1np3/2p1p1B1/3p4/3P4/8/PPP2PPP/RNB1K1NR b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6634,6 +6826,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/p2npppp/2pN1n2/1p6/3P4/5N2/PPP1QPPP/R1B1KB1R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6671,6 +6864,7 @@ const List<ChessTrap> chessTraps = [
       "Ba5",
     ],
     fen: "r1bk1bnr/pp1np1p1/1qp1p2p/B6Q/3P4/3B4/PPP2PPP/R3K1NR b KQ - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6703,6 +6897,7 @@ const List<ChessTrap> chessTraps = [
       "Qb4+",
     ],
     fen: "rnb1kb1r/pp3ppp/2p2p2/8/1qBP4/8/PPP1NPPP/R1BQK2R w KQkq - 4 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6737,6 +6932,7 @@ const List<ChessTrap> chessTraps = [
       "Qb4+",
     ],
     fen: "rn2kb1r/pp3ppp/2p1bp2/8/1qBP4/4B3/PPP1QPPP/R3K1NR w KQkq - 6 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -6776,6 +6972,7 @@ const List<ChessTrap> chessTraps = [
       "Bd8#",
     ],
     fen: "rnbB1b1r/ppk2ppp/2p5/4q3/4n3/8/PPP2PPP/2KR1BNR b - - 3 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6813,6 +7010,7 @@ const List<ChessTrap> chessTraps = [
       "Nb5",
     ],
     fen: "r1b1kb1r/pp2pppp/2n2n2/1N4B1/2B5/8/PP3PPP/2KR2NR b kq - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6850,6 +7048,7 @@ const List<ChessTrap> chessTraps = [
       "Bxa6",
     ],
     fen: "r1b1k2r/ppB2ppp/B1nbpn2/3p4/3P4/8/PPP2PPP/R2QK1NR b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6887,6 +7086,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc7+",
     ],
     fen: "r3kbnr/ppN1pppp/2n5/1q6/1P6/5Q1P/P1PP1PP1/R1B1K2R b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6920,6 +7120,7 @@ const List<ChessTrap> chessTraps = [
       "Bxb4",
     ],
     fen: "r3kb1r/pppbpppp/5n2/qB1N4/1B1P4/8/PPP2PPP/R2QK1NR b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6951,6 +7152,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5",
     ],
     fen: "rnb1kbnr/2p1pppp/pq6/1p1N4/3P1B2/8/PPP1NPPP/R2QKB1R b KQkq - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -6982,6 +7184,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh8",
     ],
     fen: "rnbqkb1Q/ppp1np1p/6p1/8/2B5/2N5/PPPP1PPP/R1B1K1NR b KQq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7015,6 +7218,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf7#",
     ],
     fen: "rn1qkb1r/ppp1pBpp/8/4N2n/8/2N5/PPPP1PPP/R1B1K2R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7048,6 +7252,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5+",
     ],
     fen: "r2qkbnr/ppp1pppp/8/1B1PN3/8/2N5/PPP2PPP/R1BbK2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7083,6 +7288,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc7+",
     ],
     fen: "r3kbnr/ppN1pppp/2n5/1q3b2/3P4/5N2/PPP1BPPP/R1BQ1RK1 b kq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7114,6 +7320,7 @@ const List<ChessTrap> chessTraps = [
       "d4",
     ],
     fen: "rn2kbnr/ppp2ppp/4p3/1N2q2b/3P4/5P2/PPP1B1PP/R1BQK1NR b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7149,6 +7356,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc7+",
     ],
     fen: "rnb1kb1r/ppN1pppp/6q1/3P4/8/5B2/PP1P1P1P/R1BQK1NR b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7185,6 +7393,7 @@ const List<ChessTrap> chessTraps = [
       "Bxd1",
     ],
     fen: "r3kbnr/ppp2ppp/2N5/8/3P4/2P5/P1P2PPP/R1BbK2R w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -7219,6 +7428,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4+",
     ],
     fen: "rn1qk2r/ppp2ppp/8/3Q4/1b6/8/PPP2PPP/R1B1KBNR w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -7254,6 +7464,7 @@ const List<ChessTrap> chessTraps = [
       "Qc8#",
     ],
     fen: "rnQ1kb1r/p1p1pppp/2q5/8/8/8/PPPP1PPP/R1B1K1NR b KQkq - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7287,6 +7498,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5",
     ],
     fen: "r1bqkb1r/ppp2pp1/2n1p2p/1B6/8/2Q2N2/PPPP1PPP/R1B1K2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7325,6 +7537,7 @@ const List<ChessTrap> chessTraps = [
       "Rxe2+",
     ],
     fen: "rn1q2k1/ppp2ppp/5n2/6N1/3P2b1/2B5/PPP1rPPP/R2QK2R w KQ - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -7363,6 +7576,7 @@ const List<ChessTrap> chessTraps = [
       "a5",
     ],
     fen: "r1bqkb1r/2p2ppp/1pP1p3/pQn5/2P5/P7/1P2KPPP/RNB2BNR w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -7394,6 +7608,7 @@ const List<ChessTrap> chessTraps = [
       "Bf3",
     ],
     fen: "rn2kb1r/ppp1pppp/5n2/8/3P4/5B2/PPP2PqP/RNBQK1NR b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7421,6 +7636,7 @@ const List<ChessTrap> chessTraps = [
       "Be4",
     ],
     fen: "rnb1kbnr/ppp1pppp/8/6N1/4B3/8/PPP2PqP/RNBQK2R b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7456,6 +7672,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "rnbq1b1r/ppNpkppp/8/3Q4/2B1nB2/8/PP3PPP/R3K1NR b KQ - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7497,6 +7714,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "r1bQ1b1r/ppp2kpp/5n2/4p3/8/B7/P4PPP/RN3RK1 b - - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7532,6 +7750,7 @@ const List<ChessTrap> chessTraps = [
       "Ng5+",
     ],
     fen: "rnb2bnr/pppp1kpp/8/6N1/4P3/7q/PB3P1P/RN1QK1R1 b Q - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7565,6 +7784,7 @@ const List<ChessTrap> chessTraps = [
       "fxg7",
     ],
     fen: "rn1qkb1r/ppp2pP1/4b3/3p2p1/3Q4/2P5/PP3PPP/RN2KBNR b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7600,6 +7820,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "r1b1k2r/ppp2ppp/5n2/3q4/Qb1P4/2N5/PP3PPP/R1B1KB1R b KQkq - 4 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7631,6 +7852,7 @@ const List<ChessTrap> chessTraps = [
       "Bxe2",
     ],
     fen: "rnb1kb1r/ppp2ppp/5P2/3p4/3p4/8/PPP1BPPP/RNB1K1NR b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7669,6 +7891,7 @@ const List<ChessTrap> chessTraps = [
       "Bh3#",
     ],
     fen: "rn2k2r/ppp2ppp/8/3pP3/4n2P/1B1p1P1b/PPP1Nb1P/RNBQ1K1R w kq - 3 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -7706,6 +7929,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4",
     ],
     fen: "r1bk1b1r/ppp2ppp/2n2n2/6B1/4Q3/8/PPP2PPP/2K2BNR b - - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7743,6 +7967,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4",
     ],
     fen: "r1bk1b1r/ppp2ppp/2n2n2/6B1/4Q3/8/PPP2PPP/2K2BNR b - - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7758,6 +7983,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qc3 Bb4",
     moves: ["e4", "e5", "d4", "exd4", "Qxd4", "Nc6", "Qc3", "Bb4"],
     fen: "r1bqk1nr/pppp1ppp/2n5/8/1b2P3/2Q5/PPP2PPP/RNB1KBNR w KQkq - 3 5",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -7794,6 +8020,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe4+",
     ],
     fen: "r1bqk2r/pppp1ppp/8/4n3/4n3/1BP3Q1/PP3KPP/RNB3NR w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -7829,6 +8056,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc7+",
     ],
     fen: "rnb1kb1r/ppN2ppp/3p4/1q6/4PQn1/8/PPP2PPP/R1B1K1NR b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7866,6 +8094,7 @@ const List<ChessTrap> chessTraps = [
       "c3#",
     ],
     fen: "rnbq1bnr/pp3ppp/2p5/3N1Q2/1P1kpB2/2P5/P4PPP/R3KBNR b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7901,6 +8130,7 @@ const List<ChessTrap> chessTraps = [
       "Qe6#",
     ],
     fen: "rn1q1b1r/p1p1kBpp/2bpQn2/4p3/3PP3/2P5/PP3PPP/RNB1K1NR b KQ - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7928,6 +8158,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh8",
     ],
     fen: "rnbqkb1Q/ppppn2p/6p1/8/4P3/8/PPP2PPP/RNB1KBNR b KQq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7961,6 +8192,7 @@ const List<ChessTrap> chessTraps = [
       "Be6#",
     ],
     fen: "rnbq1bnr/ppNkp2p/2p1B1p1/4Q3/3pp3/8/PPPP1PPP/R1B1K1NR b KQ - 3 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -7996,6 +8228,7 @@ const List<ChessTrap> chessTraps = [
       "Nf5#",
     ],
     fen: "rn1q1bnr/pp2kBpp/5p2/2p1NN2/3pP3/8/PPPP1PPP/R1BbK2R b KQ - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8036,6 +8269,7 @@ const List<ChessTrap> chessTraps = [
       "Bxc2#",
     ],
     fen: "Qn2kb1r/p1p1pppp/8/6P1/2B5/2N1P3/PPb2q1P/R1BK2NR w k - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -8069,6 +8303,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe6+",
     ],
     fen: "r1bq3r/pppnbkpp/4Qn2/8/2B5/8/PPPP1PPP/R1B1K1NR b KQ - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8096,6 +8331,7 @@ const List<ChessTrap> chessTraps = [
       "d3",
     ],
     fen: "rnbqk2r/ppp1bppp/7n/4p2Q/2B1N3/3P4/PPP2PPP/R1B1K1NR b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8133,6 +8369,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe6+",
     ],
     fen: "r2kqQnr/ppp3pp/2n1N3/4p3/8/8/PPPP1PPP/R1B1K1NR b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8172,6 +8409,7 @@ const List<ChessTrap> chessTraps = [
       "Nc5+",
     ],
     fen: "rn1q2nr/pppkbQ1p/8/2N1p1p1/2B5/3P3P/PPP2PP1/R1B1K2R b KQ - 2 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8206,6 +8444,7 @@ const List<ChessTrap> chessTraps = [
       "Bxc3+",
     ],
     fen: "rnbqk2r/pp1p2pp/2p1p3/5p2/B2P4/2b1PN2/P1P1QPPP/R1B1K2R w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -8239,6 +8478,7 @@ const List<ChessTrap> chessTraps = [
       "Na4",
     ],
     fen: "rnb1kb1r/pp4pp/2p2p2/3p1p2/N2P4/P2BP3/1qP2PPP/R2QK1NR b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8276,6 +8516,7 @@ const List<ChessTrap> chessTraps = [
       "Nf4",
     ],
     fen: "rnb2k1r/pp1pq1p1/2p2p1p/7Q/1bBPpN2/2N5/PPP2PPP/2KR3R b - - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8323,6 +8564,7 @@ const List<ChessTrap> chessTraps = [
       "Qh7+",
     ],
     fen: "rnbq1r2/pppp1k1Q/7b/3N4/2PP4/8/PP2BPP1/R3K1N1 b Q - 1 15",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8357,6 +8599,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4",
     ],
     fen: "rnb1k2r/pp1p2pp/4pn2/5p2/1b6/2Q1B1P1/PqP1PP1P/RN2KBNR w KQkq - 2 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -8387,6 +8630,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf5",
     ],
     fen: "rn1qkb1r/p3p1pp/1ppp1n2/5Q2/2PP4/2N5/PP3PPP/R1B1KBNR b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8414,6 +8658,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh8",
     ],
     fen: "rnb1kbnQ/ppppq2p/6p1/8/3Pp3/2N5/PPP2PPP/R1B1KBNR b KQq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8449,6 +8694,7 @@ const List<ChessTrap> chessTraps = [
       "Bxg6#",
     ],
     fen: "rnbqkb1r/1ppnp3/p5Bp/3p2P1/3PpP2/2N5/PPP4P/R1BQK1NR b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8484,6 +8730,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe4#",
     ],
     fen: "r1bq1b1r/pppp1Qp1/2nk1p1p/8/2BPN3/8/PPP2PPP/R3K1NR b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8499,6 +8746,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.d4 f5 2.e4 g6 3.exf5 gxf5 4.Qh5#",
     moves: ["d4", "f5", "e4", "g6", "exf5", "gxf5", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/8/5p1Q/3P4/8/PPP2PPP/RNB1KBNR b KQkq - 1 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8526,6 +8774,7 @@ const List<ChessTrap> chessTraps = [
       "Rxh7",
     ],
     fen: "rnbqkb1r/ppppp1pR/5n2/8/3P4/3Q4/PPP1PP2/RNB1KBN1 b Qkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8563,6 +8812,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "rnbQ2nr/pp2pk1p/2p2bp1/5pB1/4P3/2N5/PPP3PP/R3K1NR b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8600,6 +8850,7 @@ const List<ChessTrap> chessTraps = [
       "Rxh7",
     ],
     fen: "rn1qk2r/pppbp1bR/3p2p1/6P1/3P2P1/2NB4/PPP2P2/R2QK1N1 b Qkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8633,6 +8884,7 @@ const List<ChessTrap> chessTraps = [
       "Bg6#",
     ],
     fen: "rnbqkbn1/ppppp3/6B1/6pr/3P1p2/4P1B1/PPP2PPP/RN2K1NR b KQq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8660,6 +8912,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "rn1qkb1r/pp1bnppp/3N4/2ppp3/Q1P5/4P3/PP1P1PPP/R1B1KBNR b KQkq - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8675,6 +8928,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.c4 c5 2.Nc3 e6 3.Nf3 Ne7 4.Ne4 f5 5.Nd6#",
     moves: ["c4", "c5", "Nc3", "e6", "Nf3", "Ne7", "Ne4", "f5", "Nd6#"],
     fen: "rnbqkb1r/pp1pn1pp/3Np3/2p2p2/2P5/5N2/PP1PPPPP/R1BQKB1R b KQkq - 1 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8690,6 +8944,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.c4 c5 2.d4 cxd4 3.Nf3 e5 4.Nxe5 Qa5+",
     moves: ["c4", "c5", "d4", "cxd4", "Nf3", "e5", "Nxe5", "Qa5+"],
     fen: "rnb1kbnr/pp1p1ppp/8/q3N3/2Pp4/8/PP2PPPP/RNBQKB1R w KQkq - 1 5",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -8728,6 +8983,7 @@ const List<ChessTrap> chessTraps = [
       "Bxd2+",
     ],
     fen: "r1b1k1nr/pp1ppp1p/6p1/8/2P5/1P6/P2bPPPP/R3KB1R w KQkq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -8743,6 +8999,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.c4 d5 2.cxd5 Nf6 3.e4 Nxe4 4.Qa4+",
     moves: ["c4", "d5", "cxd5", "Nf6", "e4", "Nxe4", "Qa4+"],
     fen: "rnbqkb1r/ppp1pppp/8/3P4/Q3n3/8/PP1P1PPP/RNB1KBNR b KQkq - 1 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8779,6 +9036,7 @@ const List<ChessTrap> chessTraps = [
       "gxh1=Q",
     ],
     fen: "r1bBkb1r/pppn2pp/8/5p2/2P5/2N5/PP2PP1P/R2QKB1q w Qkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -8814,6 +9072,7 @@ const List<ChessTrap> chessTraps = [
       "Nbxc7+",
     ],
     fen: "r1bqk1nr/ppN2p2/2np2pp/3N4/2P2B2/8/Pb2PPPP/R2QKB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8847,6 +9106,7 @@ const List<ChessTrap> chessTraps = [
       "Qg4",
     ],
     fen: "r1bqk2r/pppp1ppp/8/3Ppn2/1b4Q1/4P1P1/PP1P1PBP/R1B1K1NR b KQkq - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8881,6 +9141,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4+",
     ],
     fen: "rn1qk2r/p1pp1ppp/1p6/3bB3/1b6/1P1P4/P3PPPP/R2QKBNR w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -8918,6 +9179,7 @@ const List<ChessTrap> chessTraps = [
       "Nxb4",
     ],
     fen: "r1bBk2r/pppp1pp1/7p/8/1NP5/8/PP2PPPP/R2nKB1R b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8951,6 +9213,7 @@ const List<ChessTrap> chessTraps = [
       "Qb3",
     ],
     fen: "r1bqk2r/pppp1ppp/2P5/8/1b6/1Q3pP1/PP1PPP1P/R1B1KB1R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -8988,6 +9251,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf6+",
     ],
     fen: "rn1q1rk1/pbp2ppp/5N2/1p6/2P5/4PQ2/PP1P1PPP/R1B1KB1R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9024,6 +9288,7 @@ const List<ChessTrap> chessTraps = [
       "Kxd8",
     ],
     fen: "rnbk3r/pp3ppp/2p5/4p3/2Ppn3/3P2P1/PP1bPP1P/R2K1BNR w - - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9059,6 +9324,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "r2qk2r/ppp2ppp/3pbn2/4p3/QbP5/4P1P1/PP1PNPBP/R1B1K2R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9074,6 +9340,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.c4 d6 2.Nf3 Bg4 3.Qb3 Qc8 4.h3 Bh5 5.Qb5+",
     moves: ["c4", "d6", "Nf3", "Bg4", "Qb3", "Qc8", "h3", "Bh5", "Qb5+"],
     fen: "rnq1kbnr/ppp1pppp/3p4/1Q5b/2P5/5N1P/PP1PPPP1/RNB1KB1R b KQkq - 2 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9101,6 +9368,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "r2qkb1r/ppp1pppp/5n2/3P1b2/Q2n4/2N5/PP2PPPP/R1B1KBNR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9137,6 +9405,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "rn3rk1/pRp1bppp/4p3/3q4/8/2P3P1/P2PPP1P/2BQK1NR w K - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9166,6 +9435,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1bqkb1r/p1pp1ppp/1p2pn2/8/2PPP3/2N2nP1/PP2NP1P/R1BQKB1R w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9198,6 +9468,7 @@ const List<ChessTrap> chessTraps = [
       "Ne3",
     ],
     fen: "rnbq1rk1/pppp1ppp/4p3/8/2P2P2/1P1PnN1P/P2KPbP1/RNBQ1B1R w - - 3 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9236,6 +9507,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc2+",
     ],
     fen: "r3k2r/ppp2ppp/5n2/5bB1/3Q4/8/PPn1PPPP/R3KB1R w KQkq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9262,6 +9534,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r1b1kbnr/ppppqppp/8/8/8/2Pn1N2/PP1BPPPP/RN1QKB1R w KQkq - 2 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9293,6 +9566,7 @@ const List<ChessTrap> chessTraps = [
       "Bf4",
     ],
     fen: "r1b1kbnr/pppp1ppp/3q4/3N4/5B2/8/PPP1PPPP/R2QKB1R b KQkq - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9319,6 +9593,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r1b1kbnr/ppppqppp/8/8/8/2Pn1N2/PP1NPPPP/R1BQKB1R w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9356,6 +9631,7 @@ const List<ChessTrap> chessTraps = [
       "Nxa8",
     ],
     fen: "N1bq1k1r/pp1pnpb1/2nQ3p/4P1p1/8/5N2/PPPBPPPP/R3KB1R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9385,6 +9661,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4",
     ],
     fen: "r1b1k1nr/pppp1ppp/2n5/4P3/1b3B2/2Q2N2/PqP1PPPP/RN2KB1R w KQkq - 2 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9425,6 +9702,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg3#",
     ],
     fen: "3rk1nr/ppp3pp/2p5/2b5/6b1/5PqP/PPPNP3/R1BQKB1R w KQk - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9463,6 +9741,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf2#",
     ],
     fen: "r1b1k1nr/pppp1ppp/1b6/3PN3/2B5/8/P4qPP/RNBQK2R w KQkq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9498,6 +9777,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "r1bqk2r/pppp1ppp/1bn5/3QP3/2B1n3/2P2N2/P4PPP/RNB2RK1 b kq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9537,6 +9817,7 @@ const List<ChessTrap> chessTraps = [
       "Qe1+",
     ],
     fen: "r1bqk2r/pppp1ppp/5b2/n7/2BP4/5N2/P4PPP/RNB1QRK1 b kq - 1 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9572,6 +9853,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4",
     ],
     fen: "r1bqk2r/ppppbppp/8/n3P3/Q3n3/2P2N2/P3BPPP/RNB1K2R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9609,6 +9891,7 @@ const List<ChessTrap> chessTraps = [
       "Bh6+",
     ],
     fen: "r1bq1kr1/ppp1b2p/2np2pB/4p3/3PP3/1QP2N2/P4PPP/RN2K2R b KQ - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9646,6 +9929,7 @@ const List<ChessTrap> chessTraps = [
       "Bh5",
     ],
     fen: "r1bq1k1r/ppp1b2p/2np3p/4p2B/3PP3/1QP2N2/P4PPP/RN2K2R b KQ - 2 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9683,6 +9967,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5+",
     ],
     fen: "r1b2bkr/pppp2pp/5q2/3Qp1N1/8/8/PPPP1PPP/R1B1K2R b KQ - 4 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9717,6 +10002,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4",
     ],
     fen: "r3kb1r/ppp1qppp/3p1n2/1N6/4PPb1/3N4/PPPP2PP/R1BQK2R w KQkq - 2 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9754,6 +10040,7 @@ const List<ChessTrap> chessTraps = [
       "Ng4",
     ],
     fen: "r1bqk2r/pppp1ppp/5nn1/3P2B1/3Q2N1/2P5/P1P2PPP/R3KB1R b KQkq - 4 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9791,6 +10078,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5",
     ],
     fen: "r1b1nrk1/ppppqppp/8/2bNP3/3B4/8/PPP1BPPP/R2QK2R b KQ - 2 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9826,6 +10114,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc6",
     ],
     fen: "r1b1kb1r/ppp2ppp/2N5/1B1q4/8/8/PPP2PPP/R1BQK2R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9861,6 +10150,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd5",
     ],
     fen: "r1b1kb1r/p1p2ppp/2pq4/1B1Q4/8/2N5/PPP2PPP/R1B1K2R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -9897,6 +10187,7 @@ const List<ChessTrap> chessTraps = [
       "Bh6+",
     ],
     fen: "r1b1k2r/ppppqp1p/6pb/3P4/1nBp4/5N2/PPPK1PPP/R1BQR3 w kq - 2 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9929,6 +10220,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd3#",
     ],
     fen: "r1b1kbnr/ppp2ppp/8/3Pp3/8/3n4/PP1NNPPP/R1BQKB1R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -9963,6 +10255,7 @@ const List<ChessTrap> chessTraps = [
       "Ne3+",
     ],
     fen: "rnbqk2r/ppp2ppp/4p3/8/4P3/4nNP1/PPPNQb1P/R1BK1B1R w kq - 2 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -10002,6 +10295,7 @@ const List<ChessTrap> chessTraps = [
       "Qh8#",
     ],
     fen: "rnb2rkQ/pppqnp2/3bpB2/8/3P4/8/PPP2PPP/R3K1NR b KQ - 3 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10039,6 +10333,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5+",
     ],
     fen: "rn2kb1r/ppp2ppp/4p3/1B4B1/3q4/5b2/PPPQ1PPP/R3K2R b KQkq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10066,6 +10361,7 @@ const List<ChessTrap> chessTraps = [
       "Nf6#",
     ],
     fen: "rnbqkb1r/ppp1np1p/4pNp1/8/3P4/3B4/PPP2PPP/R1BQK1NR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10099,6 +10395,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5+",
     ],
     fen: "rnb1k2r/ppp2ppp/4pn2/1B6/3qN3/8/PPPQ1PPP/R3K1NR b KQkq - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10134,6 +10431,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd4",
     ],
     fen: "rnb1k1nr/pp3ppp/4p3/8/1P1N4/2NB4/1PP2PPP/q1BQK2R b Kkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10165,6 +10463,7 @@ const List<ChessTrap> chessTraps = [
       "Kd1",
     ],
     fen: "rnb1k2r/ppp1npQp/4p3/8/1b1Pq3/2N5/PPP2PPP/R1BK1BNR b kq - 2 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10201,6 +10500,7 @@ const List<ChessTrap> chessTraps = [
       "Qd3#",
     ],
     fen: "r1b1k1nr/ppp2pQp/4p3/8/4p3/P1Nq4/1Pn1KPPP/R1B2B1R w kq - 2 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -10236,6 +10536,7 @@ const List<ChessTrap> chessTraps = [
       "Bh6",
     ],
     fen: "r1b1k1nr/pp3pQp/4pq1B/2Ppn3/8/2P5/P1P2PPP/R3KBNR b KQkq - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10268,6 +10569,7 @@ const List<ChessTrap> chessTraps = [
       "Qxb5",
     ],
     fen: "rnb1k1nr/p1p2ppp/1p2p3/1q1pP3/3P4/2P2N2/P1P2PPP/R1BQK2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -10297,6 +10599,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4+",
     ],
     fen: "rnb1k1nr/ppp2ppp/4p3/8/1b1Pq3/2N3P1/PPP4P/R1BQKBNR w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -10336,6 +10639,7 @@ const List<ChessTrap> chessTraps = [
       "Qxa5",
     ],
     fen: "rnb4r/pp1nkpp1/7p/Q1PpP3/7P/8/PPP2PP1/R3KBNR b KQ - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10373,6 +10677,7 @@ const List<ChessTrap> chessTraps = [
       "Rd8#",
     ],
     fen: "r1bRk1nr/ppp2ppp/1qn1p3/6B1/Q1P1p3/8/Pb3PPP/1K3BNR b kq - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10410,6 +10715,7 @@ const List<ChessTrap> chessTraps = [
       "Ne5",
     ],
     fen: "r1b1k2r/p1pq1ppp/1pn1pn2/1B2N3/1bPPN3/8/PP2QPPP/R1B2K1R b kq - 4 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10437,6 +10743,7 @@ const List<ChessTrap> chessTraps = [
       "c5",
     ],
     fen: "rnbqk2r/ppp1nppp/3b4/2Pp4/3P4/5N2/PP3PPP/RNBQKB1R b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10466,6 +10773,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf3",
     ],
     fen: "rn1qk1nr/ppp2ppp/3b4/3p2B1/3P4/3B1b2/PPP2PPP/RN1QK2R w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -10494,6 +10802,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1bqkb1r/pppp1pp1/n3p2p/4P2n/3P2P1/3B1N2/PPP2P1P/RNBQK2R b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10527,6 +10836,7 @@ const List<ChessTrap> chessTraps = [
       "Qh5",
     ],
     fen: "rnbq1r1k/ppppBppB/4p3/7Q/3P4/2n5/PPP2PPP/R3K1NR b KQ - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10559,6 +10869,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4",
     ],
     fen: "rn1qk2r/pp3ppp/2pb1n2/3p4/3P2b1/2N1BQ1N/PPP2PPP/R3KB1R w KQkq - 4 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -10594,6 +10905,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "r1bQ2nr/ppp2kpp/1b6/4p3/4P3/2P5/PP3PPP/RNB1K2R b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10629,6 +10941,7 @@ const List<ChessTrap> chessTraps = [
       "b4",
     ],
     fen: "r1bqk1nr/pp3ppp/1bpp4/n2P4/1P2P3/3B1N2/P4PPP/RNBQK2R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10672,6 +10985,7 @@ const List<ChessTrap> chessTraps = [
       "Qe8+",
     ],
     fen: "r1b1Q1nr/ppp3qp/1bnpk3/4p1B1/3PP3/2P5/PP3PPP/RN3RK1 b - - 1 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10705,6 +11019,7 @@ const List<ChessTrap> chessTraps = [
       "Ke2",
     ],
     fen: "r1bqk2r/pppp1ppp/2n5/3QP3/2B1n3/2P2N2/PP2KbPP/RNB4R b kq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10750,6 +11065,7 @@ const List<ChessTrap> chessTraps = [
       "Bxh6#",
     ],
     fen: "r1bq1k1r/pppp3p/1b1P1pnB/8/2B5/5N1P/PP2QPP1/RN2K2R b KQ - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10787,6 +11103,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf7",
     ],
     fen: "r1bqnrk1/pppp1Np1/1bn4p/4P2Q/2BP4/8/PP3PPP/RNB1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10830,6 +11147,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "r2q1k1r/ppp2Qpp/2nP4/2b3N1/3p4/2P5/PP3nPP/RNB1K2R b KQ - 2 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10865,6 +11183,7 @@ const List<ChessTrap> chessTraps = [
       "Qh5",
     ],
     fen: "r1bq1rk1/pppp1ppn/2n5/2b1p1PQ/2B1P3/2PP4/PP3PP1/RNB1K2R b KQ - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10900,6 +11219,7 @@ const List<ChessTrap> chessTraps = [
       "Be6",
     ],
     fen: "r1b2k1r/pppqn1pp/1bnpB3/4p1N1/4P3/2NPB3/PPP2PPP/R2QK2R b KQ - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -10938,6 +11258,7 @@ const List<ChessTrap> chessTraps = [
       "Qg5+",
     ],
     fen: "r3k1nr/ppp2ppp/3p4/4p1q1/2B1P3/2NPPP1b/PPP4P/R2QR1K1 w kq - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -10978,6 +11299,7 @@ const List<ChessTrap> chessTraps = [
       "Qg2#",
     ],
     fen: "r3k1nr/ppp2ppp/3p4/4p3/2B1P3/2NPPP1b/PPP2KqP/R2QR3 w kq - 3 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11019,6 +11341,7 @@ const List<ChessTrap> chessTraps = [
       "Nf7",
     ],
     fen: "r1b1k2r/ppp2Npp/3q4/2b1np2/2Bp4/8/PPP2PPP/RN1QR1K1 b kq - 1 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11048,6 +11371,7 @@ const List<ChessTrap> chessTraps = [
       "Qh5+",
     ],
     fen: "rn2kbnr/ppp2ppp/8/3pp2q/5P2/4PK2/PPPP3P/RNBQ1B1R w kq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11077,6 +11401,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc1+",
     ],
     fen: "rn2kbnr/pp2pppp/8/3B4/6b1/1Q6/PP1PPP1P/RNq1K1NR w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11114,6 +11439,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc8+",
     ],
     fen: "rnQ1kbnr/p4ppp/8/3b4/8/8/PP1PPP1P/R1B1K1NR b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11147,6 +11473,7 @@ const List<ChessTrap> chessTraps = [
       "Bxb7",
     ],
     fen: "rn2kb1r/pB2pppp/5n2/8/6b1/8/PP1PPP1P/RNB1K1NR b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11174,6 +11501,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rn1qkbnr/pp3ppp/4p3/3p4/Q5b1/8/PP1PPPBP/RNB1K1NR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11201,6 +11529,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rn1qkbnr/pp3ppp/4p3/3p4/Q5b1/8/PP1PPPBP/RNB1K1NR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11244,6 +11573,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5+",
     ],
     fen: "r2q2r1/p1p2kpp/3b2n1/3Q3b/3P4/2N4P/PP2PP2/R1B1K1NR b KQ - 2 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11279,6 +11609,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4+",
     ],
     fen: "1n1qk2r/p1p2ppp/8/2b5/4Q1b1/8/PP1PPP1P/RNB1K1NR b KQk - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11306,6 +11637,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rn1qkb1r/ppp2ppp/4p3/3n4/Q5b1/8/PP1PPPBP/RNB1K1NR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11337,6 +11669,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rn1qkbnr/pp3p1p/4p1p1/3p4/Q5bP/8/PP1PPPB1/RNB1K1NR b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11365,6 +11698,7 @@ const List<ChessTrap> chessTraps = [
       "Qe4",
     ],
     fen: "rnb1k1nr/ppp2ppp/8/4p1P1/2p1q3/P7/P2PPP1P/1RBQKBNR w Kkq - 3 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11398,6 +11732,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5",
     ],
     fen: "Bn1qk1nr/p1pb1ppp/8/Q1b1p3/2P3P1/2p5/PP1PPP1P/R1B1K1NR b KQk - 4 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11429,6 +11764,7 @@ const List<ChessTrap> chessTraps = [
       "Nf3",
     ],
     fen: "rnb1k2r/pppp1ppp/3b1n2/8/3P2Pq/5N1P/PPP2PB1/RNBQK2R b KQkq - 2 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11444,6 +11780,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.g4 e5 2.Bg2 d6 3.c4 Bxg4 4.Bxb7",
     moves: ["g4", "e5", "Bg2", "d6", "c4", "Bxg4", "Bxb7"],
     fen: "rn1qkbnr/pBp2ppp/3p4/4p3/2P3b1/8/PP1PPP1P/RNBQK1NR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11459,6 +11796,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.g4 e5 2.Bg2 d6 3.h3 f5 4.gxf5 Bxf5 5.Bxb7",
     moves: ["g4", "e5", "Bg2", "d6", "h3", "f5", "gxf5", "Bxf5", "Bxb7"],
     fen: "rn1qkbnr/pBp3pp/3p4/4pb2/8/7P/PPPPPP2/RNBQK1NR b KQkq - 0 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11497,6 +11835,7 @@ const List<ChessTrap> chessTraps = [
       "Bf8",
     ],
     fen: "r1bqkb2/pp3pQ1/n1p2n2/3p3r/3Pp3/2N3B1/PPP1PPBP/R3K1NR w KQq - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11541,6 +11880,7 @@ const List<ChessTrap> chessTraps = [
       "Ra7",
     ],
     fen: "4kb1r/rQp1pp1p/p1n1b1p1/8/3Pq3/4BN2/PP3PPP/R3KB1R w KQk - 3 14",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11583,6 +11923,7 @@ const List<ChessTrap> chessTraps = [
       "Bc3",
     ],
     fen: "r1b2rk1/pp2pp1p/2n3p1/q2P4/4P3/2b1BN2/P2Q1PPP/1R2KB1R w K - 1 13",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11626,6 +11967,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5",
     ],
     fen: "r1b1k2r/pp2ppbp/2n3p1/1Bp5/q2PP3/1R3N2/P1QB1PPP/4K2R b Kkq - 7 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11658,6 +12000,7 @@ const List<ChessTrap> chessTraps = [
       "e6",
     ],
     fen: "rnbqk2r/ppp2pbp/4p1p1/3N2N1/2PP4/8/PP2PPPP/R2QKB1R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11700,6 +12043,7 @@ const List<ChessTrap> chessTraps = [
       "Bg2",
     ],
     fen: "rn2k2r/pp2pp1p/2p3p1/6P1/2PbNP2/8/PP1BP1bP/R2QK2R w KQkq - 1 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11741,6 +12085,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1b1kb1r/p1p2p1p/2n3p1/1p1q4/Q2p3P/1N3N2/PP2PPP1/R3KB1R w KQkq - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11779,6 +12124,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg5",
     ],
     fen: "rnb1k2r/pp2ppbp/6p1/6q1/2PpB3/4P1P1/PP1Q1P1P/R3K1NR w KQkq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11812,6 +12158,7 @@ const List<ChessTrap> chessTraps = [
       "Be6#",
     ],
     fen: "r1bq2nr/pppkbQpp/2npB3/8/4P3/2p2N2/PP3PPP/RNB1K2R b KQ - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11848,6 +12195,7 @@ const List<ChessTrap> chessTraps = [
       "Nc2+",
     ],
     fen: "r1bq1rk1/ppppbppp/8/7Q/2B1P3/2p2N2/PPn2PPP/RNB1K2R w KQ - 5 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -11883,6 +12231,7 @@ const List<ChessTrap> chessTraps = [
       "Qh5",
     ],
     fen: "r1bqk2r/pppp1ppp/2n5/3BP1bQ/3p4/2P5/PP3PPP/RNB1K2R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11916,6 +12265,7 @@ const List<ChessTrap> chessTraps = [
       "Qf4",
     ],
     fen: "r1bqk2r/pp1pbppp/5n2/2p1P3/2B2Q2/8/PPP2PPP/RNB1K2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11949,6 +12299,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rnbqk2r/ppp1bppp/3p4/3Pp3/Q3n3/2P2N2/PP2BPPP/RNB1K2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -11982,6 +12333,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe5",
     ],
     fen: "r1bqk1nr/ppp1bp1p/6p1/4Q3/2B1P3/8/PPP2PPP/RNB1K2R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12014,6 +12366,7 @@ const List<ChessTrap> chessTraps = [
       "fxg2",
     ],
     fen: "rnb1kbnr/ppp2ppp/8/3P4/2B5/8/PPPP2pP/RNB1K1NR w kq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12054,6 +12407,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4",
     ],
     fen: "rn2r1k1/ppp2ppp/8/3P4/5pbq/2PP1QP1/P1P1N2P/R1B1K2R w KQ - 1 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12088,6 +12442,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf4",
     ],
     fen: "rnb1kb1r/pp2qppp/2p5/4Q3/2B2n2/3P4/PPP3PP/RN2K1NR w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12125,6 +12480,7 @@ const List<ChessTrap> chessTraps = [
       "exd6+",
     ],
     fen: "rnb1kb1r/p4ppp/2pP4/1B5q/4Qpn1/5N2/PPPP2PP/RNB2K1R b kq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12156,6 +12512,7 @@ const List<ChessTrap> chessTraps = [
       "Nf6#",
     ],
     fen: "rn1qkbnr/ppp2ppp/5N2/8/5p2/5b2/PPPPQ1PP/R1B1KB1R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12183,6 +12540,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5",
     ],
     fen: "rnb1kbnr/ppp2ppp/2q5/1B6/5p2/2N2N2/PPPP2PP/R1BQK2R b KQkq - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12222,6 +12580,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6+",
     ],
     fen: "rn2kb1r/pp2n1pp/2pNp2q/4p3/3P1p2/5N2/PPP1Q1PP/R1B1K2R b KQkq - 3 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12265,6 +12624,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "r2q1k1r/pppbbQ1p/2np1p2/6p1/2BPPp1P/2N5/PPP3PN/R1B2RK1 b - - 4 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12308,6 +12668,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5+",
     ],
     fen: "rnb4r/ppqpb1pp/5k2/3N4/4n1Q1/8/PPP3PP/R3K2R b KQ - 1 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12342,6 +12703,7 @@ const List<ChessTrap> chessTraps = [
       "Qe4+",
     ],
     fen: "rnb1k2r/ppp1bppp/8/8/3PqB2/5N2/PPP3PP/R2QKB1R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12378,6 +12740,7 @@ const List<ChessTrap> chessTraps = [
       "Ne5#",
     ],
     fen: "r1b1k1nr/pppp1p1p/8/2b1nN2/4Ppp1/2NK4/PPPPQqPP/R1B2B1R w kq - 10 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12413,6 +12776,7 @@ const List<ChessTrap> chessTraps = [
       "Qe5#",
     ],
     fen: "rnbq1bnr/ppppk2p/8/4Q3/2B1Pp2/8/PPPP2PP/RNB1K2R b KQ - 4 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12447,6 +12811,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4",
     ],
     fen: "rn2kb1r/ppp2p1p/7n/3B4/4Ppbq/8/PPPP1NPP/RNBQK2R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12488,6 +12853,7 @@ const List<ChessTrap> chessTraps = [
       "Qf8#",
     ],
     fen: "rnbk1Qnr/pppp3p/8/8/4PR2/8/PPqP2PP/RNB4K b - - 2 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12516,6 +12882,7 @@ const List<ChessTrap> chessTraps = [
       "Qh4+",
     ],
     fen: "rnb1k1nr/pppp1pbp/8/8/3PPppq/2N5/PPPN2PP/R1BQKB1R w KQkq - 2 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12556,6 +12923,7 @@ const List<ChessTrap> chessTraps = [
       "f5",
     ],
     fen: "rnbqk1nb/ppp5/8/4Np2/3PNpp1/6P1/PPP5/R1BQKB2 w Qq - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12593,6 +12961,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "rnbq1bnr/ppp1kQ2/3p3p/8/2B1Pp1P/8/PPPP2P1/RNB1K2R b KQ - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12608,6 +12977,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.f4 Bc5 3.fxe5 Qh4+ 4.Ke2 Qxe4#",
     moves: ["e4", "e5", "f4", "Bc5", "fxe5", "Qh4+", "Ke2", "Qxe4#"],
     fen: "rnb1k1nr/pppp1ppp/8/2b1P3/4q3/8/PPPPK1PP/RNBQ1BNR w kq - 0 5",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12635,6 +13005,7 @@ const List<ChessTrap> chessTraps = [
       "Bd3",
     ],
     fen: "rnbqk2r/pppp1ppp/1b6/4P3/3Pn3/3B1N2/PPP3PP/RNBQK2R b KQkq - 2 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12668,6 +13039,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4",
     ],
     fen: "rnbqk2r/pp3ppp/2p5/2b1N3/4Q3/2P5/PP1P2PP/RNB1KB1R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12694,6 +13066,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh1",
     ],
     fen: "r1b1kbnr/pppp1ppp/2n5/4P3/8/6P1/PPPPQ2P/RNB1KBNq w Qkq - 0 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12709,6 +13082,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.f4 Nc6 3.f5 Qh4+",
     moves: ["e4", "e5", "f4", "Nc6", "f5", "Qh4+"],
     fen: "r1b1kbnr/pppp1ppp/2n5/4pP2/4P2q/8/PPPP2PP/RNBQKBNR w KQkq - 1 4",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12746,6 +13120,7 @@ const List<ChessTrap> chessTraps = [
       "Qe8#",
     ],
     fen: "rnbkQbnr/ppp2ppp/5N2/8/2B4q/8/PPPP3P/R1BK2Nq b - - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12775,6 +13150,7 @@ const List<ChessTrap> chessTraps = [
       "Bf6",
     ],
     fen: "rnbqk1nr/pp3pQp/5b2/3p4/5P2/8/PPPP2PP/RNB1KBNR w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12809,6 +13185,7 @@ const List<ChessTrap> chessTraps = [
       "Bh4",
     ],
     fen: "rnbqk1nr/pp3p1p/2p5/8/5P1b/2N3Q1/PPPP2PP/R1B1KBNR w KQkq - 3 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12840,6 +13217,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5+",
     ],
     fen: "rnb1k1nr/ppp2ppp/3bq3/1B6/5p2/2N2N2/PPPP1KPP/R1BQ3R b kq - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -12880,6 +13258,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4",
     ],
     fen: "rn1q2k1/ppp2ppp/8/3P4/4rPb1/2B5/PPP1N1PP/R2QK2R w KQ - 2 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12916,6 +13295,7 @@ const List<ChessTrap> chessTraps = [
       "Bxe4",
     ],
     fen: "rn2kb1r/ppp1qppp/8/3P4/4bP2/6P1/PPP1Q2P/R1B1KBNR w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12948,6 +13328,7 @@ const List<ChessTrap> chessTraps = [
       "Ne3",
     ],
     fen: "rnbqkb1r/ppp2ppp/8/8/5P2/3Bn3/PPPNN1PP/R1BQK2R w KQkq - 2 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -12981,6 +13362,7 @@ const List<ChessTrap> chessTraps = [
       "Qb5+",
     ],
     fen: "rn1qk2r/ppp2ppp/5n2/1Q1P4/1b2bP2/2N5/PPP3PP/R1B1KBNR b KQkq - 3 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13017,6 +13399,7 @@ const List<ChessTrap> chessTraps = [
       "Nxh1+",
     ],
     fen: "rnb1kb1r/ppp1qppp/8/3P4/5P2/2N2N2/PPP2K1P/R1BQ1B1n w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13050,6 +13433,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rnbqk2r/ppp2ppp/8/2bP4/Q3nP2/2P2N2/PP4PP/RNB1KB1R b KQkq - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13090,6 +13474,7 @@ const List<ChessTrap> chessTraps = [
       "Qf2#",
     ],
     fen: "rnb1k2r/ppp3pp/3P4/2b1Np2/4nP2/3B4/PPP2q1P/RNBQ1K1R w kq - 3 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13116,6 +13501,7 @@ const List<ChessTrap> chessTraps = [
       "Bc5+",
     ],
     fen: "rnb1k1nr/ppp2ppp/8/2bpP3/4q3/6P1/PPPP1K1P/RNBQ1BNR w kq - 2 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13156,6 +13542,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5",
     ],
     fen: "r3k2N/ppp1q1pp/8/2bn4/4pPb1/2N2n1P/PPPPK1P1/R1BQ1B1R w q - 1 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13187,6 +13574,7 @@ const List<ChessTrap> chessTraps = [
       "Qh5+",
     ],
     fen: "rnbq1b1r/ppp2kpp/8/3n3Q/2B1pP2/8/PPPP2PP/RNB1K2R b KQ - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13224,6 +13612,7 @@ const List<ChessTrap> chessTraps = [
       "Nxg4",
     ],
     fen: "r1b2bkr/ppp1n1pp/2np4/8/3PP1N1/2N5/PPP3PP/R1BQ1RK1 b - - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13257,6 +13646,7 @@ const List<ChessTrap> chessTraps = [
       "Bh6+",
     ],
     fen: "r1b1qknr/ppppb2p/2n2p1B/7Q/2BPP3/8/PPP3PP/RN2K1NR b KQ - 5 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13272,6 +13662,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.f4 f6 3.fxe5 fxe5 4.Qh5+ g6 5.Qxe5+",
     moves: ["e4", "e5", "f4", "f6", "fxe5", "fxe5", "Qh5+", "g6", "Qxe5+"],
     fen: "rnbqkbnr/pppp3p/6p1/4Q3/4P3/8/PPPP2PP/RNB1KBNR b KQkq - 0 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13309,6 +13700,7 @@ const List<ChessTrap> chessTraps = [
       "Qg6#",
     ],
     fen: "r1bqk1r1/ppppb1P1/2n2nQp/8/4pP2/3P4/PPP3PP/RNB1KBNR b KQq - 2 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13349,6 +13741,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe5",
     ],
     fen: "r2q1rk1/ppp1ppbp/3p2p1/4n3/2P1P3/3BBQ1P/PP2NPP1/R3K2R w KQ - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13386,6 +13779,7 @@ const List<ChessTrap> chessTraps = [
       "Be4",
     ],
     fen: "rnbq1rk1/p2nppbp/1p4p1/2p1P3/2P1B3/2N2N1P/PP3PP1/R1BQK2R b KQ - 2 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13423,6 +13817,7 @@ const List<ChessTrap> chessTraps = [
       "exd6",
     ],
     fen: "rnbqnrk1/1p3pbp/p1pP2p1/8/2P1P3/2N1BP2/PP1Q2PP/2KR1BNR b - - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13466,6 +13861,7 @@ const List<ChessTrap> chessTraps = [
       "Ng5+",
     ],
     fen: "r1bqr3/pppnpkbp/3p2pn/6N1/2PP1PP1/2N4P/PP2B3/R1BQK2R b KQ - 2 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13510,6 +13906,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3+",
     ],
     fen: "r1br2k1/pp3p1p/5pp1/2p5/2P1P3/3n4/PP2NPPP/2R1KB1R w K - 4 14",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13548,6 +13945,7 @@ const List<ChessTrap> chessTraps = [
       "Qf2#",
     ],
     fen: "rn2k2r/p1pp1ppp/1p2p3/8/2P2Pn1/1P6/PB1PPqBP/RN1Q1K1R w kq - 3 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13585,6 +13983,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf6",
     ],
     fen: "rn1q1rk1/pb3pp1/1ppbpB1p/3p2N1/2P5/1P2P3/P1QPBPPP/RN3RK1 b - - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13617,6 +14016,7 @@ const List<ChessTrap> chessTraps = [
       "Bxb2",
     ],
     fen: "rnbqk2r/ppp2p1p/4p1p1/3p4/5PB1/1P2P3/PbPP3P/RN1QK1NR w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13654,6 +14054,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1b1k2r/pp3ppp/2n1pn2/q2P4/1b1p4/1P2PN2/PB1QBPPP/RN2K2R w KQkq - 3 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13689,6 +14090,7 @@ const List<ChessTrap> chessTraps = [
       "Bf3",
     ],
     fen: "rnb1kbnQ/pp1p3p/6p1/2p5/8/1P3B2/P1PP1PqP/RN2K1NR b KQq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13725,6 +14127,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg3#",
     ],
     fen: "rnb1k2r/ppp2pp1/8/7p/6n1/1P4qP/P1PPP1P1/RN1QKBNR w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13759,6 +14162,7 @@ const List<ChessTrap> chessTraps = [
       "Qf2#",
     ],
     fen: "rnb1k2r/ppp2pBp/4p1p1/3p4/5Pn1/1P2P3/P1PPBq1P/RN1Q1KNR w kq - 3 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13794,6 +14198,7 @@ const List<ChessTrap> chessTraps = [
       "Qxb7",
     ],
     fen: "rn2kb1r/pQpq2pp/3p4/4PbN1/4p3/8/PPP2PPP/R1B1KB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13829,6 +14234,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6+",
     ],
     fen: "r1bk1b1r/ppppqBpp/4Nn2/4n3/4p3/8/PPP2PPP/RNBQ1RK1 b - - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13866,6 +14272,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8+",
     ],
     fen: "rnbQ1b1r/ppp2B1p/3k2p1/4Np2/8/8/PPPP1nPP/RNB1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13903,6 +14310,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/pp1pn1p1/2pN3p/3Np3/4P3/3P4/PPP2PPP/R2QKB1R b KQkq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13930,6 +14338,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "rnbq1bnr/ppp1kQpp/3p4/4N3/3Pp3/8/PPP2PPP/RNB1KB1R b KQ - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -13966,6 +14375,7 @@ const List<ChessTrap> chessTraps = [
       "Ne3+",
     ],
     fen: "rnb1kb2/pppp4/6p1/5p2/4q2Q/4n3/PPPP1PPP/RNBK1B1R w q - 3 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -13998,6 +14408,7 @@ const List<ChessTrap> chessTraps = [
       "hxg6",
     ],
     fen: "rnb1kb1r/pppp4/5np1/5p2/4q3/5Q2/PPPPBPPP/RNB1K2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14034,6 +14445,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe7",
     ],
     fen: "rnb1k2r/ppp1n1pp/3p2q1/8/3P4/5Q2/PPP2PPP/RN2KB1R w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14061,6 +14473,7 @@ const List<ChessTrap> chessTraps = [
       "g4",
     ],
     fen: "r2qkb1r/pbpppppp/1pn5/4P2n/3P2P1/2P2N2/PP3P1P/RNBQKB1R b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14098,6 +14511,7 @@ const List<ChessTrap> chessTraps = [
       "Bb6",
     ],
     fen: "r3kbnr/1pp1pppp/pBn5/q2N3b/8/5P2/PPP1Q1PP/2KR1BNR b kq - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14131,6 +14545,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd4",
     ],
     fen: "r3kbnr/p1p1pppp/2p5/8/3Q4/8/PPP2PPP/RNB1K2R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14146,6 +14561,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 Nc6 2.d4 e5 3.d5 Nd4 4.c3",
     moves: ["e4", "Nc6", "d4", "e5", "d5", "Nd4", "c3"],
     fen: "r1bqkbnr/pppp1ppp/8/3Pp3/3nP3/2P5/PP3PPP/RNBQKBNR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14186,6 +14602,7 @@ const List<ChessTrap> chessTraps = [
       "Nf4#",
     ],
     fen: "r1bBk2r/ppp2ppp/3p4/3Pp3/NPP1nn2/5N2/P3KbPP/R2Q1B1R w kq - 1 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14230,6 +14647,7 @@ const List<ChessTrap> chessTraps = [
       "Rg8+",
     ],
     fen: "r3k1r1/ppp2p1p/3p1p2/2b5/4P3/3B1P1b/PPP2P2/R1B2RK1 w q - 1 14",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14265,6 +14683,7 @@ const List<ChessTrap> chessTraps = [
       "Nc4",
     ],
     fen: "r3k2r/ppp1nppp/2n1p3/qB3b2/1bNP4/2N5/PPPB1PPP/R2QK2R b KQkq - 5 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14300,6 +14719,7 @@ const List<ChessTrap> chessTraps = [
       "Kxd1",
     ],
     fen: "r4bnr/pppkpNpp/3p4/3P4/4P3/8/PPP2PPP/RNBK3R b - - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14327,6 +14747,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rnbqk2r/p1p2ppp/1p1ppn2/8/QbPPP3/2NB4/PP3PPP/R1B1K1NR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14365,6 +14786,7 @@ const List<ChessTrap> chessTraps = [
       "Bxc3",
     ],
     fen: "r1b1k2r/pp1p1ppp/4p3/q1P5/Q1Pn4/2b5/PP1NPPPP/2KR1B1R w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14401,6 +14823,7 @@ const List<ChessTrap> chessTraps = [
       "Qf6",
     ],
     fen: "rnb1k2r/pp3ppp/4pq2/2Pp4/2P1n3/PP6/2Q1PPPP/R1B1KBNR w KQkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14434,6 +14857,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "r1bqk2r/ppp1nppp/3p1n2/3Pp1B1/QbP5/2N2N2/PP2PPPP/R3KB1R b KQkq - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14465,6 +14889,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "rn1qk2r/p1p2ppp/bp2pn2/3p4/QbPP4/2N1P1N1/PP3PPP/R1B1KB1R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14500,6 +14925,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "rnb1k2r/pp1p1ppp/4p3/5q2/1bP1n3/1NN3P1/PPQ1PP1P/R1B1KB1R w KQkq - 5 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14534,6 +14960,7 @@ const List<ChessTrap> chessTraps = [
       "cxd4",
     ],
     fen: "rnb1k2r/pp1p1ppp/4p3/q5N1/1bPp4/2N1P3/PP3PPP/2RQKB1R w Kkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14543,10 +14970,10 @@ const List<ChessTrap> chessTraps = [
     metadata: "A53",
     opening: "Old Indian defence",
     openingId: "old_indian_defence",
-    trapName: "van der Heiden vs Salam",
-    trapNameFr: "van der Heiden contre Salam",
-    trapNameEs: "van der Heiden contra Salam",
-    trapNameAr: "van der Heiden ضد Salam",
+    trapName: "Van der Heiden vs Salam",
+    trapNameFr: "Van der Heiden contre Salam",
+    trapNameEs: "Van der Heiden contra Salam",
+    trapNameAr: "Van der Heiden ضد Salam",
     commentedMoves:
         "1.d4 Nf6 2.c4 d6 3.Nc3 Nbd7 4.e4 g6 5.f4 c5 6.d5 Qa5 7.Bd2 Nb6 8.Nb5",
     moves: [
@@ -14568,6 +14995,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1b1kb1r/pp2pp1p/1n1p1np1/qNpP4/2P1PP2/8/PP1B2PP/R2QKBNR b KQkq - 4 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14608,6 +15036,7 @@ const List<ChessTrap> chessTraps = [
       "Kxd8",
     ],
     fen: "r1bk3r/pp1n1ppp/2p5/4p3/2P5/8/PP1KPPPP/R4B1R w - - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14645,6 +15074,7 @@ const List<ChessTrap> chessTraps = [
       "Rd1",
     ],
     fen: "r1bk3r/pppn1pbp/5np1/3Np1B1/2P5/8/PP3PPP/3RKBNR b K - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14693,6 +15123,7 @@ const List<ChessTrap> chessTraps = [
       "Nbd7",
     ],
     fen: "r6r/ppkn1pp1/2p2n2/4p1B1/2P3P1/1PN3Rb/P3P2P/2KR4 w - - 1 16",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14721,6 +15152,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3+",
     ],
     fen: "r2qkb1r/ppp1pppp/3p1n2/3P4/2P3b1/2Nn4/PP1NPPPP/R1BQKB1R w KQkq - 3 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14753,6 +15185,7 @@ const List<ChessTrap> chessTraps = [
       "Nb4",
     ],
     fen: "r2qkb1r/p1pppppp/Qp6/4P3/1nP5/2n5/PP1P1PPP/R1B1KBNR w KQkq - 3 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14785,6 +15218,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc2+",
     ],
     fen: "r2qk1nr/pbpp1ppp/1p2p3/3P4/1QB1P3/8/PPn2PPP/RNB1K1NR w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -14812,6 +15246,7 @@ const List<ChessTrap> chessTraps = [
       "h5",
     ],
     fen: "rn1qkbnr/p1ppp1pp/1p3pb1/6NP/2B5/8/PPPP1PP1/RNBQK2R b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14845,6 +15280,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5+",
     ],
     fen: "r2qkbnr/pb2pppp/1p1p4/1B6/3pPB2/2N5/PPP2PPP/R2QK2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14884,6 +15320,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd5",
     ],
     fen: "rn1k1b1r/p2nqppp/1p6/2pNP3/3P4/3B4/PPP2PPP/R1BQK2R b KQ - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14919,6 +15356,7 @@ const List<ChessTrap> chessTraps = [
       "Bg6#",
     ],
     fen: "rn1qkb1r/p1ppp2P/1p4B1/7n/3P4/5N2/PPP2P1P/RNB1K2b b Qkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14934,6 +15372,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 b6 2.d4 Nf6 3.e5 Ne4 4.Bd3 Bb7 5.f3",
     moves: ["e4", "b6", "d4", "Nf6", "e5", "Ne4", "Bd3", "Bb7", "f3"],
     fen: "rn1qkb1r/pbpppppp/1p6/4P3/3Pn3/3B1P2/PPP3PP/RNBQK1NR b KQkq - 0 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -14963,6 +15402,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "rnb1kb1r/pp1p1ppp/2p2n2/q3N3/2B5/3P4/PPP2PPP/RNBQK2R w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -15000,6 +15440,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg4",
     ],
     fen: "rn3rk1/ppp2pp1/3b1q1p/3P4/6Q1/2N2N2/PPP1BPPP/R3K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15031,6 +15472,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf7+",
     ],
     fen: "rnbqkb1r/pp3Bpp/2p5/4p3/8/2P2N2/PPP2PPP/R1BQK2R b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15064,6 +15506,7 @@ const List<ChessTrap> chessTraps = [
       "Qb3+",
     ],
     fen: "rnbq1bkr/ppp3pp/8/4p3/4n3/1Q6/PPPP1PPP/RNB2RK1 b - - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15097,6 +15540,7 @@ const List<ChessTrap> chessTraps = [
       "Qc4+",
     ],
     fen: "rnbq1bkr/ppp3pp/8/4p3/2Q1n3/8/PPPP1PPP/RNB2RK1 b - - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15124,6 +15568,7 @@ const List<ChessTrap> chessTraps = [
       "Nxh8",
     ],
     fen: "rnb1k2N/pppqb1pp/3p1n2/8/2B1P3/8/PPPP1PPP/RNBQK2R b KQq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15156,6 +15601,7 @@ const List<ChessTrap> chessTraps = [
       "Nc3+",
     ],
     fen: "Nnbk1b1r/pp1pqppp/8/8/8/2n5/PPP2PPP/RNBQKB1R w KQ - 1 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -15195,6 +15641,7 @@ const List<ChessTrap> chessTraps = [
       "Nc6+",
     ],
     fen: "rnbq3r/pppp2pp/2N1kP2/2n3B1/1b6/3P4/PP2QPPP/RN1K1B1R b - - 4 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15230,6 +15677,7 @@ const List<ChessTrap> chessTraps = [
       "Bg5",
     ],
     fen: "r1b1kb1r/p1ppqppp/1pn5/2n1P1B1/2Bp4/5N2/PPP2PPP/RN1QR1K1 b kq - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15262,6 +15710,7 @@ const List<ChessTrap> chessTraps = [
       "Nxg3",
     ],
     fen: "rnb1k2r/ppp2ppp/3b4/3pN3/3P3q/3B1Pn1/PPP4P/RNBQK2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -15300,6 +15749,7 @@ const List<ChessTrap> chessTraps = [
       "Bd5",
     ],
     fen: "Qn1qk2r/p1p2ppp/8/3b4/3b4/8/PPP2PPP/RNB1K2R w KQk - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -15332,6 +15782,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf2+",
     ],
     fen: "r1bqk2r/ppp2ppp/2p5/4P3/4P3/8/PPP2bPP/RNBQKB1R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -15359,6 +15810,7 @@ const List<ChessTrap> chessTraps = [
       "Qe2",
     ],
     fen: "rn1qkb1r/ppp2ppp/3p4/5b2/4n3/2N2N2/PPPPQPPP/R1B1KB1R b KQkq - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15398,6 +15850,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe4",
     ],
     fen: "2kr1b1r/pppnq1pp/3p4/8/3PN1p1/8/PPP2PPP/RNBQR1K1 b - - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15433,6 +15886,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5",
     ],
     fen: "rn2k2r/ppp1qpbp/3p1np1/3N2B1/4P3/3P1Q2/PPP2PPP/R3KB1R b KQkq - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15466,6 +15920,7 @@ const List<ChessTrap> chessTraps = [
       "Bg5+",
     ],
     fen: "rnbq1b1r/ppp1k1pp/8/3p2B1/3Pn3/8/PPP1QPPP/RN2KB1R b KQ - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15499,6 +15954,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe6#",
     ],
     fen: "rn1q1bkr/ppp3pp/3pQ3/8/3Pn3/8/PPP2PPP/RNB1KB1R b KQ - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15514,6 +15970,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 d5 5.Nc6",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "d5", "Nc6"],
     fen: "rnbqkb1r/ppp2ppp/2N5/3p4/4n3/8/PPPPQPPP/RNB1KB1R b KQkq - 1 5",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -15551,6 +16008,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe6#",
     ],
     fen: "rn1q1bkr/pp4pp/3pQ3/2p5/3P4/8/PPP2PPP/RNB1KB1R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15588,6 +16046,7 @@ const List<ChessTrap> chessTraps = [
       "bxc3#",
     ],
     fen: "rnb2b1r/pppp2pp/8/5Qq1/3k4/2P5/P4PPP/RNB1KB1R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15621,6 +16080,7 @@ const List<ChessTrap> chessTraps = [
       "Nh4",
     ],
     fen: "r1b1kb1r/ppp2ppp/2np1nq1/8/3P3N/2N5/PPP1BPPP/R1BQK2R b KQkq - 5 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15654,6 +16114,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "rn1qkbnr/ppp4p/3p2p1/3Qp3/2B1P3/2N5/PPP2PPP/R1B1K2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15691,6 +16152,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf6#",
     ],
     fen: "r2qkb1r/p1p2ppp/2p2N2/8/8/8/PPPPQPPP/R1B2RK1 b kq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15724,6 +16186,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "r2q1bnr/ppp1kBpp/2np4/3NN3/4P3/7P/PPPP1PP1/R1BbK2R b KQ - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15757,6 +16220,7 @@ const List<ChessTrap> chessTraps = [
       "Nf7",
     ],
     fen: "r1b1kb1r/pppnqNpp/3p1n2/4p3/4P3/1BN5/PPPP1PPP/R1BQK2R b KQ - 4 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15788,6 +16252,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf7+",
     ],
     fen: "r1bqkbnr/ppp2B1p/6p1/4p3/4P3/8/PPP2PPP/RNBQK2R b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15819,6 +16284,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "rn1q1bnr/1pp1kBpp/p2p4/3NN3/4P3/8/PPPP1PPP/R1BbK2R b KQ - 2 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15852,6 +16318,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "rn1q1b1r/ppp1kBpp/3p4/3NN3/4n3/8/PPPP1PPP/R1Bb1RK1 b - - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15883,6 +16350,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "rn1q1bnr/ppp1kB1p/3p2p1/3NN3/4P3/8/PPPP1PPP/R1BbK2R b KQ - 2 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15916,6 +16384,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "r2q1bnr/ppp1kBpp/3p4/3NN3/3nP3/8/PPPP1PPP/R1Bb1RK1 b - - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15949,6 +16418,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf7+",
     ],
     fen: "r1bqk2r/pp1nbB1p/2pp3p/4p3/3PP3/1QP2N2/PP3PPP/RN2K2R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -15988,6 +16458,7 @@ const List<ChessTrap> chessTraps = [
       "Qc4",
     ],
     fen: "r1b3k1/ppqnbrpp/2p2n2/4p1N1/2Q1P3/8/PPP2PPP/RNBR2K1 b - - 1 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16021,6 +16492,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe5",
     ],
     fen: "r1bqk1nr/ppp1bp1p/6p1/4Q3/2B1P3/8/PPP2PPP/RNB1K2R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16056,6 +16528,7 @@ const List<ChessTrap> chessTraps = [
       "Nxh8",
     ],
     fen: "rnb1kb1N/ppp3pp/4Pqn1/3p4/4p3/2N5/PPP2PPP/R1BQKB1R b KQq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16091,6 +16564,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh8",
     ],
     fen: "rn1qkb1Q/pppbn2p/6p1/8/2B1P3/8/PPP2PPP/RNB1K2R b KQq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16122,6 +16596,7 @@ const List<ChessTrap> chessTraps = [
       "Bxh6",
     ],
     fen: "rn1k1b1r/ppp2ppp/7B/4N3/4P1b1/8/PPP2PPP/RN2KB1R b KQ - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16153,6 +16628,7 @@ const List<ChessTrap> chessTraps = [
       "c3",
     ],
     fen: "rn1qk1nr/ppp2ppp/8/4p3/1bB1P3/2P2Q2/PP3PPP/RNB1K2R b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16188,6 +16664,7 @@ const List<ChessTrap> chessTraps = [
       "Qe6#",
     ],
     fen: "rn1q1bnr/p1pk1Bpp/1p2Qp2/4p3/4P3/8/PPP2PPP/RNB1K2R b KQ - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16215,6 +16692,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe5",
     ],
     fen: "rnbk1bnr/ppp2p1p/6p1/4N3/4P3/8/PPP2PPP/RNB1KB1R b KQ - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16253,6 +16731,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc2+",
     ],
     fen: "r1bB1rk1/ppp2ppp/3b4/1B6/8/5N2/PPn2PPP/RN2K2R w KQ - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -16280,6 +16759,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4",
     ],
     fen: "rnbqkb1r/pp3ppp/2pp4/4p3/4Q3/2P2N1P/PP1P1PP1/RNB1KB1R b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16307,6 +16787,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6",
     ],
     fen: "r1bqkb1r/pppnpn1p/3pN1p1/8/4P3/8/PPPP1PPP/RNBQK2R b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16338,6 +16819,7 @@ const List<ChessTrap> chessTraps = [
       "Qf3#",
     ],
     fen: "r1bq2nr/pppnp1bp/3p1kp1/6N1/3PP3/5Q2/PPP2PPP/RNB1K2R b KQ - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16369,6 +16851,7 @@ const List<ChessTrap> chessTraps = [
       "Bxh6",
     ],
     fen: "r1bqk2r/pppnbppp/7B/3Qp3/2B1P3/5N2/PPP2PPP/RN2K2R b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16396,6 +16879,7 @@ const List<ChessTrap> chessTraps = [
       "d5",
     ],
     fen: "rn2kbnr/pppqpppp/3pb3/3P4/4P3/2PB1P2/PP4PP/RNBQK1NR b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16431,6 +16915,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc7+",
     ],
     fen: "r1b1k1nr/ppNnq1bp/3p2p1/4p3/3PP3/2N5/PPP2PPP/R1BQK2R b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16466,6 +16951,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc5",
     ],
     fen: "rn2kb1r/pp1bpp1p/3P2p1/qBQ5/5P2/2N5/PPP3PP/R1B1K1NR b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16500,6 +16986,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1b1kb1r/ppp1qp1p/2np1np1/3Np1B1/2BPP3/5N2/PPP2PPP/R2Q1RK1 b kq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16530,6 +17017,7 @@ const List<ChessTrap> chessTraps = [
       "Bd5",
     ],
     fen: "rnbqk1nr/p3ppbp/3p2p1/1p1B4/3PP3/5N2/PPP2PPP/R1BQK2R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16565,6 +17053,7 @@ const List<ChessTrap> chessTraps = [
       "Bg5",
     ],
     fen: "rnb2rk1/pp3pbp/3ppqpn/2p3B1/3PP3/2NB1N2/PPP3PP/R2QK2R b KQ - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16596,6 +17085,7 @@ const List<ChessTrap> chessTraps = [
       "Qf3#",
     ],
     fen: "r1bq2nr/pppnp1bp/3p1kp1/6N1/3PP3/5Q2/PPP2PPP/RNB1K2R b KQ - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16631,6 +17121,7 @@ const List<ChessTrap> chessTraps = [
       "Ng5",
     ],
     fen: "rn1q1knr/pppbp1bp/3p2p1/4P1N1/3P4/1B5P/PPP2PP1/RNBQK2R b KQ - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16664,6 +17155,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6",
     ],
     fen: "r1bqk2r/1ppnpnbp/3pN1p1/p7/3PP3/2N5/PPP2PPP/R1BQK2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16679,6 +17171,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 d6 2.Nf3 Nf6 3.c3 Nxe4 4.Qa4+",
     moves: ["e4", "d6", "Nf3", "Nf6", "c3", "Nxe4", "Qa4+"],
     fen: "rnbqkb1r/ppp1pppp/3p4/8/Q3n3/2P2N2/PP1P1PPP/RNB1KB1R b KQkq - 1 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16694,6 +17187,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 d6 2.Nf3 g6 3.Bc4 Nd7 4.Bxf7+ Kxf7 5.Ng5+",
     moves: ["e4", "d6", "Nf3", "g6", "Bc4", "Nd7", "Bxf7+", "Kxf7", "Ng5+"],
     fen: "r1bq1bnr/pppnpk1p/3p2p1/6N1/4P3/8/PPPP1PPP/RNBQK2R b KQ - 1 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16731,6 +17225,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf8",
     ],
     fen: "rnk2N1r/pppqpQ1p/3p1np1/8/4P3/8/PPPP1PPP/RNB1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16765,6 +17260,7 @@ const List<ChessTrap> chessTraps = [
       "b5",
     ],
     fen: "rn2k1nr/p3ppbp/2pp2p1/qp6/N2PPPb1/2P2N2/PP2B1PP/R1BQK2R w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -16802,6 +17298,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5+",
     ],
     fen: "r1bq2kr/pppnp1bp/6p1/3QP1N1/6n1/2N5/PPP2PPP/R1B1K2R b KQ - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16840,6 +17337,7 @@ const List<ChessTrap> chessTraps = [
       "d3",
     ],
     fen: "r2qk1nr/ppp2pb1/2n3p1/7p/2P1PB2/3p4/PP2BPPP/RN1QK2R w KQkq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -16855,6 +17353,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 g6 2.d4 f5 3.exf5 gxf5 4.Qh5#",
     moves: ["e4", "g6", "d4", "f5", "exf5", "gxf5", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/8/5p1Q/3P4/8/PPP2PPP/RNB1KBNR b KQkq - 1 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16894,6 +17393,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "r1bq1k1r/pppnpQbp/6p1/4P1Nn/8/2N5/PPP2PPP/R1B1K2R b KQ - 5 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -16922,6 +17422,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf2#",
     ],
     fen: "rnb1k1nr/1p1p1pBp/1qp1p3/p7/1P6/P7/3PPbPP/RN1QKBNR w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -16954,6 +17455,7 @@ const List<ChessTrap> chessTraps = [
       "Bb3",
     ],
     fen: "r2qkbnr/ppp2ppp/8/4p3/PP1n4/1b6/3PPPPP/RNBQKBNR w KQkq - 5 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -16982,6 +17484,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4+",
     ],
     fen: "r1b1k1nr/ppp2ppp/2np4/4pP2/1b2q3/6P1/PBPP3P/RN1QKBNR w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17018,6 +17521,7 @@ const List<ChessTrap> chessTraps = [
       "Rxe4",
     ],
     fen: "rnb3k1/ppp2ppp/5q2/3p1P2/1b2r3/2P5/P2PQ1PP/RN2KBNR w KQ - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17053,6 +17557,7 @@ const List<ChessTrap> chessTraps = [
       "Bxh8",
     ],
     fen: "r1bqkbnB/ppp5/2np4/6pp/1PP1p3/P3P3/3PBPPP/RN1QK2R b KQq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17093,6 +17598,7 @@ const List<ChessTrap> chessTraps = [
       "Qxa4",
     ],
     fen: "rnb1k2r/ppp2ppp/8/1P1n4/q7/P4PP1/1B1KP2P/R4BNR w kq - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17108,6 +17614,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.b4 e5 2.Bb2 e4 3.e3 d5 4.Ne2 Bxb4 5.Bxg7",
     moves: ["b4", "e5", "Bb2", "e4", "e3", "d5", "Ne2", "Bxb4", "Bxg7"],
     fen: "rnbqk1nr/ppp2pBp/8/3p4/1b2p3/4P3/P1PPNPPP/RN1QKB1R b KQkq - 0 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17145,6 +17652,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc5",
     ],
     fen: "rnbqk1nr/2p4p/p4pp1/2Q5/3p4/1B6/PBPP1PPP/RN2K1NR b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17181,6 +17689,7 @@ const List<ChessTrap> chessTraps = [
       "Bd4",
     ],
     fen: "r2qk1nr/ppp1nppp/3p4/1P2p3/2PbP3/3P1Q2/P4PPP/RNB1KB1R w KQkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17216,6 +17725,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4",
     ],
     fen: "r4bnr/pppb1kpp/2n5/4p3/4Q3/2P2N2/PP1P1PPP/RNBK3R b - - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17247,6 +17757,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5",
     ],
     fen: "r1b1kbnr/ppp2ppp/2q5/1B6/Q3p3/2P5/PP1P1PPP/RNB1K2R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17284,6 +17795,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4+",
     ],
     fen: "r2qk2r/ppp2ppp/2nb4/8/3pQ3/2P2N2/PP3PPP/R1B1KB1R b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17319,6 +17831,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rnbqk2r/ppp2ppp/1b1p4/3P4/Q3n3/2PN4/PP2BPPP/RNB1K2R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17356,6 +17869,7 @@ const List<ChessTrap> chessTraps = [
       "Bg5",
     ],
     fen: "rnbk1b1r/ppp1q1pp/3p4/1B1PNpB1/4Q3/2P5/PP3PPP/RN2K2R b KQ - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17387,6 +17901,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "rnbQ1bnr/pp2pkpp/8/8/8/2p1P3/PP3PPP/R1B1K1NR b KQ - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17425,6 +17940,7 @@ const List<ChessTrap> chessTraps = [
       "Bxa3",
     ],
     fen: "r1bqk1nr/5ppp/2p1p3/pp6/2pPP3/b2n1N2/P2KNPPP/1R1Q1B1R w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17460,6 +17976,7 @@ const List<ChessTrap> chessTraps = [
       "Bxg8",
     ],
     fen: "rnbq1kBr/ppp1b1pp/8/4N3/3pP3/1Q6/PP3PPP/RNB1K2R b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17493,6 +18010,7 @@ const List<ChessTrap> chessTraps = [
       "Qf3",
     ],
     fen: "rn1qkbnr/3bpppp/p7/1p2N3/2pP4/4PQ2/1P3PPP/RNB1KB1R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17528,6 +18046,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5",
     ],
     fen: "r3kbnr/pp1q1ppp/4p3/1Bp2b2/Q2P4/4P3/PP3PPP/RNB1K2R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17543,6 +18062,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.d4 d5 2.c4 dxc4 3.Nf3 c6 4.e3 Be6 5.Ng5 Qa5+",
     moves: ["d4", "d5", "c4", "dxc4", "Nf3", "c6", "e3", "Be6", "Ng5", "Qa5+"],
     fen: "rn2kbnr/pp2pppp/2p1b3/q5N1/2pP4/4P3/PP3PPP/RNBQKB1R w KQkq - 3 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17584,6 +18104,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6+",
     ],
     fen: "r1bk1b1r/pp1nqBpp/4Nn2/2p1P3/Q7/2p5/PP3PPP/R1B1K2R b KQ - 2 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17618,6 +18139,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf2#",
     ],
     fen: "r1b1kb1r/pp2pppp/2n5/3p4/2P1nB2/5N2/PP1NPqPP/2RQKB1R w Kkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17659,6 +18181,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5",
     ],
     fen: "3rkb1r/pp2nppp/2n1p3/qB1NNb2/3P4/8/PP1Q1PPP/R1B2RK1 b k - 5 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17694,6 +18217,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf5",
     ],
     fen: "rn1q1knr/pp3ppp/2p5/4PN2/2Pp4/8/PP1QPPPP/R3KBNR b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17722,6 +18246,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "rnb1kb1r/pp2pppp/2p5/q5B1/2PPp3/4P3/PP3PPP/R2QKBNR w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17760,6 +18285,7 @@ const List<ChessTrap> chessTraps = [
       "Qe4#",
     ],
     fen: "r3k2r/ppp2ppp/2n2B2/8/1b1Pq3/8/PP2KPPP/R2Q1BNR w kq - 3 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17795,6 +18321,7 @@ const List<ChessTrap> chessTraps = [
       "Rd8#",
     ],
     fen: "r1bRk1nr/ppp2ppp/8/4n1B1/1bp5/2N5/PP2PPPP/2K2BNR b - - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17829,6 +18356,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r1bqk1nr/ppp2ppp/8/8/1bPpP3/1N1n4/PP1BNPPP/R2QKB1R w KQkq - 4 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17865,6 +18393,7 @@ const List<ChessTrap> chessTraps = [
       "Qe3#",
     ],
     fen: "r3kbnr/ppp2ppp/8/4Pb2/2Pp4/P3qN2/1P1K2PP/RNBQ1B1R w kq - 3 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17898,6 +18427,7 @@ const List<ChessTrap> chessTraps = [
       "Bg5+",
     ],
     fen: "rnbq1br1/pp2k1pp/8/6B1/8/2p5/PP2PPPP/R2QKBNR b KQ - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -17936,6 +18466,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4+",
     ],
     fen: "r1b1k1nr/pp3ppp/2n5/8/1bp1qB2/2N3P1/PP3P1P/R2QKB1R w KQkq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -17970,6 +18501,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4+",
     ],
     fen: "rnbq1rk1/ppN2p2/4pn1p/3p2p1/1bPP4/6B1/PP2PPPP/R2QKBNR w KQ - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18002,6 +18534,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4+",
     ],
     fen: "r1bqk1nr/pp3ppp/4p3/3p4/1bP5/8/PB2PPPP/R2QKBNR w KQkq - 1 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18038,6 +18571,7 @@ const List<ChessTrap> chessTraps = [
       "Nc2+",
     ],
     fen: "r2qkbnr/p1p2ppp/8/1N6/Q3b3/8/PPn1PPPP/R1B1KBNR w KQkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18075,6 +18609,7 @@ const List<ChessTrap> chessTraps = [
       "b4",
     ],
     fen: "rnb2rk1/ppp2ppp/8/2qNP3/1PP3n1/4PN2/P2Q1PPP/R3KB1R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18102,6 +18637,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5+",
     ],
     fen: "rnb1kb1r/ppp1pppp/5n2/1B6/3qP3/8/PP3PPP/RNBQK1NR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18144,6 +18680,7 @@ const List<ChessTrap> chessTraps = [
       "Qd2#",
     ],
     fen: "Qn2k2r/p1p2ppp/5n2/8/1b2P1b1/5N2/PB1qKPPP/R4B1R w k - 5 13",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18189,6 +18726,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r2qk2r/p1pn1p1p/1p1ppb2/8/2PP2p1/P3P1B1/1P1QBPbP/R3K1NR w KQkq - 0 14",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18224,6 +18762,7 @@ const List<ChessTrap> chessTraps = [
       "d5",
     ],
     fen: "r2qk2r/pbp2pp1/1pnppn1p/3P4/QbP4B/2N2N2/PP2PPPP/R3KB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18259,6 +18798,7 @@ const List<ChessTrap> chessTraps = [
       "d5",
     ],
     fen: "r2qk2r/pbp2pp1/1pnppn1p/3P4/QbP4B/2N1PN2/PP3PPP/R3KB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18312,6 +18852,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc6",
     ],
     fen: "5r1k/p4ppp/1pN5/8/8/6P1/PP2PP1P/R1B2RK1 b - - 0 18",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18342,6 +18883,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rn1qk2r/p1p2ppp/bp2pn2/3p4/QbPP4/5NP1/PP1NPP1P/R1B1KB1R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18357,6 +18899,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Nf3 d5 3.Nc3 d4 4.Nd5 c6",
     moves: ["e4", "e5", "Nf3", "d5", "Nc3", "d4", "Nd5", "c6"],
     fen: "rnbqkbnr/pp3ppp/2p5/3Np3/3pP3/5N2/PPPP1PPP/R1BQKB1R w KQkq - 0 5",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18393,6 +18936,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc2#",
     ],
     fen: "r3kbnr/ppp2ppp/8/4N3/6b1/2NP4/PPnB1PPP/R3KB1R w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18428,6 +18972,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd5",
     ],
     fen: "rnbqk2r/ppp2pp1/7p/1N1QP3/4p3/8/PPP2PPP/R1B1KB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18463,6 +19008,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1b1kb1r/ppp2ppp/1n3n2/3Pq3/2QNp3/2N5/PPPP1PPP/R1B1KB1R w KQkq - 10 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18490,6 +19036,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "rnbq1knr/ppp2Qpp/3b1p2/3pN3/3PP3/8/PPP2PPP/RNB1KB1R b KQ - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18527,6 +19074,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1q1kb1r/2pn1ppp/pp2pn2/Q2p4/3P1B2/2N1PN2/PPb1BPPP/R3K2R w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18562,6 +19110,7 @@ const List<ChessTrap> chessTraps = [
       "Qe5+",
     ],
     fen: "rnbqkb1r/pp3p1p/2p5/3pQ3/3Pp3/2N1P3/PPP3PP/R3KBNR b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18577,6 +19126,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.d4 d5 2.e3 e5 3.Qf3 e4 4.Qf4 Bd6",
     moves: ["d4", "d5", "e3", "e5", "Qf3", "e4", "Qf4", "Bd6"],
     fen: "rnbqk1nr/ppp2ppp/3b4/3p4/3PpQ2/4P3/PPP2PPP/RNB1KBNR w KQkq - 2 5",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18609,6 +19159,7 @@ const List<ChessTrap> chessTraps = [
       "a4",
     ],
     fen: "rnbqkb1r/5ppp/2p1pn2/1p1p4/p2P4/1BN1PN2/PPP2PPP/R1BQK2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18643,6 +19194,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r3kb1r/p1pqpppp/1pn2n2/1B1p3b/Q2P4/2P1PP2/PP4PP/RNB1K1NR b KQkq - 3 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18678,6 +19230,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "r2qk1nr/ppp1bpp1/4p3/3pP3/Q5bp/2P3P1/PP2PPBP/RNB2RK1 b kq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18713,6 +19266,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rn1qk2r/p1p2ppp/1p2p3/3nP3/Q5b1/4P3/PP3PPP/RNB1KB1R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18748,6 +19302,7 @@ const List<ChessTrap> chessTraps = [
       "Bc6",
     ],
     fen: "rn1q1bnr/p1p1kppp/1pB5/3pN3/3Pb3/1Q6/PP3PPP/RNB1K2R b KQ - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18785,6 +19340,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf6+",
     ],
     fen: "rnbk1b1r/1p3p1p/5B2/1p2p3/8/8/PPP1PPPP/R3KB1R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18820,6 +19376,7 @@ const List<ChessTrap> chessTraps = [
       "exf6",
     ],
     fen: "rnbqk2r/pppp2pp/5P1n/b5B1/4N3/2P2N1P/PP2PPP1/R2QKB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -18854,6 +19411,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg3#",
     ],
     fen: "rnb1k2r/pppp1ppp/8/4P3/8/4P1qP/PPPNP3/R1BQKB1R w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18883,6 +19441,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg3#",
     ],
     fen: "rnb1kb1r/pppp1ppp/8/4P3/8/4P1qP/PPPNP3/R1BQKBNR w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18898,6 +19457,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.d4 Nf6 2.Nf3 b5 3.Bg5 Bb7 4.e3 Ne4 5.Bxb5 c6",
     moves: ["d4", "Nf6", "Nf3", "b5", "Bg5", "Bb7", "e3", "Ne4", "Bxb5", "c6"],
     fen: "rn1qkb1r/pb1ppppp/2p5/1B4B1/3Pn3/4PN2/PPP2PPP/RN1QK2R w KQkq - 0 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18924,6 +19484,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "rnb1kb1r/pp1p1ppp/5n2/q3B3/3N4/8/PPP1PPPP/RN1QKB1R w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18953,6 +19514,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe5",
     ],
     fen: "rnb1kb1r/pp1p1ppp/5n2/4q3/3N4/2P5/PP2PPPP/RN1QKB1R w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -18985,6 +19547,7 @@ const List<ChessTrap> chessTraps = [
       "Qxb5",
     ],
     fen: "rnb1k2r/pp3ppp/4pn2/1qbp4/5B2/2P2N2/PP2PPPP/R2QKB1R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19000,6 +19563,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.d4 Nf6 2.Bg5 c6 3.e3 Qa5+",
     moves: ["d4", "Nf6", "Bg5", "c6", "e3", "Qa5+"],
     fen: "rnb1kb1r/pp1ppppp/2p2n2/q5B1/3P4/4P3/PPP2PPP/RN1QKBNR w KQkq - 1 4",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19028,6 +19592,7 @@ const List<ChessTrap> chessTraps = [
       "Qd4",
     ],
     fen: "rnb1kb1r/pp1ppppp/8/2pP4/3qn3/1P6/P1PBPPPP/RN1QKBNR w KQkq - 5 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19064,6 +19629,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh4",
     ],
     fen: "rnb1kb1r/pp1pppp1/2p4p/3nP3/2B4q/1PP2Q2/P4PPP/RN2K1NR w KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19092,6 +19658,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "rnb1kb1r/pp3ppp/2p1pn2/q5B1/2BP4/4P3/PP3PPP/RN1QK1NR w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19126,6 +19693,7 @@ const List<ChessTrap> chessTraps = [
       "Nxb2",
     ],
     fen: "rnb1kb1r/pp1ppppp/8/2pP4/5B2/5N2/PnP1PPPP/R3KB1R w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19141,6 +19709,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.d4 Nf6 2.Bg5 Ne4 3.h4 d5 4.Nd2 Qd6 5.c3 Ng3",
     moves: ["d4", "Nf6", "Bg5", "Ne4", "h4", "d5", "Nd2", "Qd6", "c3", "Ng3"],
     fen: "rnb1kb1r/ppp1pppp/3q4/3p2B1/3P3P/2P3n1/PP1NPPP1/R2QKBNR w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19156,6 +19725,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.Nf3 Nc6 2.g3 e5 3.Bg2 e4 4.Nh4 d5 5.c4 g5",
     moves: ["Nf3", "Nc6", "g3", "e5", "Bg2", "e4", "Nh4", "d5", "c4", "g5"],
     fen: "r1bqkbnr/ppp2p1p/2n5/3p2p1/2P1p2N/6P1/PP1PPPBP/RNBQK2R w KQkq - 0 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19183,6 +19753,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh5",
     ],
     fen: "rn1qkb1r/ppp1pppp/5n2/4N2Q/2B5/4P3/PP1P1PPP/RNB1K2R b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19210,6 +19781,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rn1qkb1r/ppp1pppp/8/3n4/Q3b3/5NP1/PP1P1P1P/RNB1KB1R b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19257,6 +19829,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5+",
     ],
     fen: "r7/p1pnq1bp/5kpn/3N1p2/3P4/4PN2/PP3PPP/R1B1K2R b KQ - 1 15",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19272,6 +19845,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.Nf3 d5 2.e4 dxe4 3.Bb5+ c6",
     moves: ["Nf3", "d5", "e4", "dxe4", "Bb5+", "c6"],
     fen: "rnbqkbnr/pp2pppp/2p5/1B6/4p3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19306,6 +19880,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc2+",
     ],
     fen: "r2qkb1r/ppp1pp1p/5p2/5b2/8/2N5/PPnP1PPP/R1BQKB1R w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19337,6 +19912,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r2qkb1r/pp1npppp/2pN1n2/5b2/8/2N5/PPPPQPPP/R1B1KB1R b KQkq - 2 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19371,6 +19947,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe5",
     ],
     fen: "rnb1k2r/pp3ppp/2p2n2/4q3/2p5/P5P1/P2PPPBP/1RBQK2R w Kkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19405,6 +19982,7 @@ const List<ChessTrap> chessTraps = [
       "e4",
     ],
     fen: "rnbq1rk1/ppp2pbp/3p2p1/7n/1PP1p3/2NP1NP1/P3PPBP/R1BQ1RK1 w - - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19442,6 +20020,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "r1bqk1nr/2pp1ppp/8/p2Qb3/Pp2P3/1B6/1PP2PPP/RNB1K2R b KQkq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19479,6 +20058,7 @@ const List<ChessTrap> chessTraps = [
       "Nc3#",
     ],
     fen: "r1bq1bnr/2pp2pp/p7/1p6/3nkPQ1/2N5/PPPP2PP/R1B1K2R b KQ - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19514,6 +20094,7 @@ const List<ChessTrap> chessTraps = [
       "Nb5",
     ],
     fen: "r1b1kb1r/2ppqNpp/2n2n2/pN2p3/1p2P3/1B6/PPPP1PPP/R1BQK2R b KQkq - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19551,6 +20132,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf7#",
     ],
     fen: "r1bqk2r/2pp1Qpp/p1nb4/1p6/3Pn3/1B6/PPP2PPP/RNB2RK1 b kq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19584,6 +20166,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf7#",
     ],
     fen: "r1bqkb1r/2p1nBpp/p2p4/np2N3/4P3/8/PPPP1PPP/RNBQ1RK1 b kq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19619,6 +20202,7 @@ const List<ChessTrap> chessTraps = [
       "Qf3",
     ],
     fen: "r1bqkbnr/2pp1ppp/p7/1p2P3/3p4/1B3Q2/PPP2PPP/RNB1K2R b KQkq - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19657,6 +20241,7 @@ const List<ChessTrap> chessTraps = [
       "c5",
     ],
     fen: "r1bqk2r/4bppp/p2p1n2/1pp5/3QP3/1B6/PPP2PPP/RNB1R1K1 w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19694,6 +20279,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd6",
     ],
     fen: "r2qkb1r/1bppnppp/p2Q4/1p2N3/8/1B6/PPP2PPP/RNB1K2R b KQkq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19731,6 +20317,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf7+",
     ],
     fen: "r1bqkb1r/2p2Bpp/p1p5/1pn5/8/8/PPP2PPP/RNBQ1RK1 b kq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19765,6 +20352,7 @@ const List<ChessTrap> chessTraps = [
       "c5",
     ],
     fen: "r1bqkbnr/5ppp/p2p4/1pp5/3QP3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19804,6 +20392,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe7#",
     ],
     fen: "r1b1k2r/1p2Qppp/p1pp1n2/8/8/8/PPPP1PPP/RNB1R1K1 b kq - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19841,6 +20430,7 @@ const List<ChessTrap> chessTraps = [
       "Ng4+",
     ],
     fen: "r1b1kb1r/1pp2ppp/p1p2n2/8/6N1/3P4/PPP2qPP/RNBQR2K b kq - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19876,6 +20466,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe5",
     ],
     fen: "r2k2nr/1pp2ppp/p1p5/4N3/4P1b1/8/PPP2PPP/RNB2RK1 b - - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19913,6 +20504,7 @@ const List<ChessTrap> chessTraps = [
       "Bh4",
     ],
     fen: "r1b1k1nr/1pp2pp1/p1pq3p/8/4P2B/5N2/PPP2PPP/RN1Q1RK1 b kq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -19955,6 +20547,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh2#",
     ],
     fen: "2kr1bnr/1pp3p1/p1p2p2/8/3pP1p1/8/PPPB1PPq/RN1Q1RK1 w - - 0 13",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -19994,6 +20587,7 @@ const List<ChessTrap> chessTraps = [
       "Rxe4",
     ],
     fen: "r3kbnr/1pp2ppp/p1p5/4q3/4R1P1/2N4P/PPPP1P2/R1BQ2K1 b kq - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20030,6 +20624,7 @@ const List<ChessTrap> chessTraps = [
       "g3",
     ],
     fen: "r3kbnr/1pp2pp1/p1p5/4p3/4P2q/5Pp1/PPPP2P1/RNBQNRK1 w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -20074,6 +20669,7 @@ const List<ChessTrap> chessTraps = [
       "Qh6",
     ],
     fen: "r3k2r/1pp2pp1/p1p4q/2b1p3/4Pnp1/1N1P1N2/PPP2PP1/R1BQR1K1 w kq - 2 14",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -20120,6 +20716,7 @@ const List<ChessTrap> chessTraps = [
       "Ne2#",
     ],
     fen: "r3kb1r/1pp2pp1/p1p5/4p3/4P3/3PB3/PPPNnPQ1/R4RK1 w kq - 1 15",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -20155,6 +20752,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc5",
     ],
     fen: "r1bqk1nr/1pp4p/p1p2pp1/2Q5/3NP3/8/PPP2PPP/RNB2RK1 b kq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20196,6 +20794,7 @@ const List<ChessTrap> chessTraps = [
       "e5",
     ],
     fen: "2kr2nr/1pp3pp/p2b1p2/N1p1P3/6b1/5P2/PPP3PP/RNBR2K1 b - - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20241,6 +20840,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd7",
     ],
     fen: "3r1bnr/1k1N2pp/p1p2p2/1pp5/4PB2/1N6/PPP2PPP/R2R2K1 b - - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20280,6 +20880,7 @@ const List<ChessTrap> chessTraps = [
       "h3",
     ],
     fen: "r3k1nr/pppb1ppp/2np4/1B1P4/Qb4q1/2N2N1P/PP3PP1/R1B2K1R b kq - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20313,6 +20914,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5+",
     ],
     fen: "r1bq1bnr/p1pp1k1p/6p1/1p1Q4/3pP3/8/PPPP1PPP/RNB1K2R b KQ - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20350,6 +20952,7 @@ const List<ChessTrap> chessTraps = [
       "Qe6#",
     ],
     fen: "r1bq1b1r/1ppknBp1/p3Q2p/n3p3/3PP3/2P5/PP3PPP/RNB1K2R b KQ - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20379,6 +20982,7 @@ const List<ChessTrap> chessTraps = [
       "Qd4",
     ],
     fen: "r1b1k2r/ppp2ppp/2p2n2/2b1N3/3qP3/3P4/PPP2PPP/RNBQK2R w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -20417,6 +21021,7 @@ const List<ChessTrap> chessTraps = [
       "Rd1#",
     ],
     fen: "5rk1/ppp2ppp/2p2n2/4N1B1/4P1b1/8/PPP2PPP/RN1rK2R w KQ - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -20456,6 +21061,7 @@ const List<ChessTrap> chessTraps = [
       "Ne5+",
     ],
     fen: "r1b4r/pppqbkpp/2pn4/4NpB1/8/3P4/PPP2PPP/RN1Q2K1 b - - 1 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20491,6 +21097,7 @@ const List<ChessTrap> chessTraps = [
       "Qf3",
     ],
     fen: "r1bqkb1r/2p2ppp/p1p5/3pN3/8/3P1Q2/PPP2nPP/RNB1R1K1 b kq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20506,6 +21113,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 a6 2.d4 b5 3.c4 bxc4 4.Bxc4 Bb7 5.Qb3",
     moves: ["e4", "a6", "d4", "b5", "c4", "bxc4", "Bxc4", "Bb7", "Qb3"],
     fen: "rn1qkbnr/1bpppppp/p7/8/2BPP3/1Q6/PP3PPP/RNB1K1NR b KQkq - 2 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20538,6 +21146,7 @@ const List<ChessTrap> chessTraps = [
       "Nc2+",
     ],
     fen: "r2qkbnr/1Qpp1ppp/p3p3/1p2P3/8/2P4N/PPn2PPP/RNB1KB1R w KQkq - 1 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -20579,6 +21188,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc5",
     ],
     fen: "rn2k2r/1bqpn2p/p3ppp1/2Q5/1pP1P2N/3BB3/PP3PPP/RN3RK1 b kq - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20618,6 +21228,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd4",
     ],
     fen: "rnq1kb1r/1b1n1ppp/p7/1p1pP3/3N4/2PB4/PP3PPP/RNBQR1K1 b kq - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20658,6 +21269,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "rnq1kb1r/1b1pp2N/p1p3p1/3nP3/Pp1PB3/5Q2/1PP2PPP/RNB1K2R b KQkq - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20685,6 +21297,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "r1bqk1nr/ppppbppp/2n5/3Q4/2B1P3/2p2N2/PP3PPP/RNB1K2R b KQkq - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20724,6 +21337,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "r1bq1k1r/pppp1Qpp/2n5/4P1N1/1b4n1/2N5/PP3PPP/R1B1K2R b KQ - 5 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20755,6 +21369,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf7#",
     ],
     fen: "r1bqk1nr/ppp2Qpp/2np4/8/1bB1P3/2p2N2/PP3PPP/RNB1K2R b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20792,6 +21407,7 @@ const List<ChessTrap> chessTraps = [
       "Ke2",
     ],
     fen: "r1bqk2r/pppp1ppp/2n5/1P1QP3/2B1n3/2p2N2/P3KbPP/RNB4R b kq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20829,6 +21445,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "r2q1bnr/ppp1kBpp/3p4/3NN3/4P3/8/PP3PPP/R1Bb1RK1 b - - 2 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20862,6 +21479,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf7#",
     ],
     fen: "r1bqk2r/ppppbQ1p/2n4p/8/2B1P3/2p2N2/PP3PPP/RN2K2R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20895,6 +21513,7 @@ const List<ChessTrap> chessTraps = [
       "Be6#",
     ],
     fen: "r1bq2nr/pppkbQpp/2npB3/8/4P3/2p2N2/PP3PPP/RNB1K2R b KQ - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20922,6 +21541,7 @@ const List<ChessTrap> chessTraps = [
       "Nd4",
     ],
     fen: "r1b1k1nr/pppp1ppp/8/2b5/3NP2q/8/PPP2PPP/RNBQKB1R b KQkq - 2 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20955,6 +21575,7 @@ const List<ChessTrap> chessTraps = [
       "Qf4",
     ],
     fen: "r1bqk2r/pp1pbppp/5n2/2p1P3/2B2Q2/8/PPP2PPP/RNB1K2R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -20992,6 +21613,7 @@ const List<ChessTrap> chessTraps = [
       "Bh6#",
     ],
     fen: "r1bq1k1r/ppppnp1p/5NpB/8/3nP3/8/PPP2PPP/R3KB1R b KQ - 3 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21025,6 +21647,7 @@ const List<ChessTrap> chessTraps = [
       "Nh4",
     ],
     fen: "r1b1kb1r/pppp1ppp/2n2nq1/8/4P2N/2N5/PPP1BPPP/R1BQK2R b KQkq - 8 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21051,6 +21674,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd4",
     ],
     fen: "r1bqkb1r/pppp1ppp/5n2/8/3nP3/3B4/PPP2PPP/RNBQK2R w KQkq - 0 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -21087,6 +21711,7 @@ const List<ChessTrap> chessTraps = [
       "Nf3#",
     ],
     fen: "r1b1k2r/ppp1qppp/5B2/3P4/8/5n2/PPP2PPP/RN1QKB1R w KQkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -21122,6 +21747,7 @@ const List<ChessTrap> chessTraps = [
       "exf6+",
     ],
     fen: "r1bq1b1r/ppp1k1pp/3p1P2/5PBQ/4p3/8/PPP2PPP/RN2KB1R b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21157,6 +21783,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf7#",
     ],
     fen: "r1bqk1nr/pppp1Qpp/8/b7/2B1P3/2P5/PP3PPP/RNB1K2R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21190,6 +21817,7 @@ const List<ChessTrap> chessTraps = [
       "Nc3",
     ],
     fen: "r1b1kb1r/pp2nppp/2Pp1n2/qB2N3/4P3/2N5/PPP2PPP/R1BQK2R b KQkq - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21216,6 +21844,7 @@ const List<ChessTrap> chessTraps = [
       "Qe5+",
     ],
     fen: "rnb1kbnr/pp2pppp/8/4q3/1P6/8/2PP1PPP/RNBQKBNR w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -21231,6 +21860,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 c5 2.c3 d6 3.d4 Nf6 4.dxc5 Nxe4 5.Qa4+",
     moves: ["e4", "c5", "c3", "d6", "d4", "Nf6", "dxc5", "Nxe4", "Qa4+"],
     fen: "rnbqkb1r/pp2pppp/3p4/2P5/Q3n3/2P5/PP3PPP/RNB1KBNR b KQkq - 1 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21263,6 +21893,7 @@ const List<ChessTrap> chessTraps = [
       "b5",
     ],
     fen: "rnb1kb1r/p4ppp/4pn2/1p1q4/Q1pP4/2PB1N2/PP3PPP/RNB1K2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -21290,6 +21921,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf7#",
     ],
     fen: "rnbqkb1r/pp1ppQpp/6n1/2p1P3/2B5/2P5/PP1P1PPP/RNB1K1NR b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21318,6 +21950,7 @@ const List<ChessTrap> chessTraps = [
       "Nf3#",
     ],
     fen: "r1bqk1nr/pp1pppbp/6p1/2p5/4P3/2NPBnP1/PPP1NP1P/R2QKB1R w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -21352,6 +21985,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "r1b1k1nr/pp1p1pbp/4p1p1/qB6/3pPP2/3P4/PPP1N1PP/R1BQK2R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -21368,6 +22002,7 @@ const List<ChessTrap> chessTraps = [
     moves: ["e4", "c5", "c4", "Nc6", "Ne2", "Nf6", "Nbc3", "Nb4", "g3", "Nd3#"],
     fen:
         "r1bqkb1r/pp1ppppp/5n2/2p5/2P1P3/2Nn2P1/PP1PNP1P/R1BQKB1R w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -21395,6 +22030,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "r1bqkb1r/p2ppppp/p7/2PQP3/4n3/8/PPP2PPP/RNB1K1NR b KQkq - 2 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21422,6 +22058,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/pp1npppp/3N1n2/2p5/3P4/8/PPP1QPPP/R1B1KBNR b KQkq - 4 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21455,6 +22092,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "rnbQ1bnr/pp2pk1p/6p1/4p3/8/2N5/PP3PPP/R1B1K1NR b KQ - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21488,6 +22126,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "rnbQ1b1r/pp2pkpp/5n2/4p3/8/2N5/PP3PPP/R1B1K1NR b KQ - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21525,6 +22164,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "r1bQ1b1r/pp2pkpp/5n2/4p3/8/2N5/PP3PPP/R1B1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21562,6 +22202,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6+",
     ],
     fen: "r1bq1knr/pp1pp1bp/4N1p1/n7/3QP3/2N5/PP3PPP/R1B1K2R b KQ - 5 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21577,6 +22218,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 c5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 b5 5.Bb3 c4",
     moves: ["e4", "c5", "Nf3", "Nc6", "Bb5", "a6", "Ba4", "b5", "Bb3", "c4"],
     fen: "r1bqkbnr/3ppppp/p1n5/1p6/2p1P3/1B3N2/PPPP1PPP/RNBQK2R w KQkq - 0 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -21618,6 +22260,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "r1bQ1bnr/1p3kpp/p3pp2/1B6/3pP3/8/PPPP1PPP/R1B1K2R b KQ - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21659,6 +22302,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg4+",
     ],
     fen: "r2q1b1r/pp1kp1pp/8/2pBp3/4P1Q1/3P4/PPP2P2/RNB2RK1 b - - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21686,6 +22330,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/pp1pnppp/2nN4/4p3/4P3/8/PPP2PPP/RNBQKB1R b KQkq - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21723,6 +22368,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "r1bQ1b1r/p3pk1p/2p2np1/4p3/8/2N5/PPP2PPP/R1B1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21760,6 +22406,7 @@ const List<ChessTrap> chessTraps = [
       "Nbc7+",
     ],
     fen: "r2qkb1r/ppN2ppp/2npbn2/3Np1B1/4P3/8/PPP1BPPP/R2QK2R b KQkq - 5 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21775,6 +22422,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 c5 2.Nf3 d6 3.c3 Nf6 4.Be2 Nxe4 5.Qa4+",
     moves: ["e4", "c5", "Nf3", "d6", "c3", "Nf6", "Be2", "Nxe4", "Qa4+"],
     fen: "rnbqkb1r/pp2pppp/3p4/2p5/Q3n3/2P2N2/PP1PBPPP/RNB1K2R b KQkq - 1 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21802,6 +22450,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe4",
     ],
     fen: "r1bqkb1r/pp2pppp/2np4/2p5/4Q3/2P2N1P/PP1P1PP1/RNB1KB1R b KQkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21839,6 +22488,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "r2qkb1r/pp2n1pp/3pp3/2p5/Q3n3/2P2N2/PP3PPP/RNB2RK1 b kq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21854,6 +22504,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 c5 2.Nf3 d6 3.d4 b6 4.dxc5 bxc5 5.Qd5",
     moves: ["e4", "c5", "Nf3", "d6", "d4", "b6", "dxc5", "bxc5", "Qd5"],
     fen: "rnbqkbnr/p3pppp/3p4/2pQ4/4P3/5N2/PPP2PPP/RNB1KB1R b KQkq - 1 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21889,6 +22540,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg6#",
     ],
     fen: "r1bqkbnr/pp1np3/3pp1Qp/1BpP4/4P3/8/PPP2PPP/RNB1K2R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21916,6 +22568,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "rnbqkbnr/4pppp/p2p4/1p1Q4/4P3/4BN2/PPP2PPP/RN2KB1R b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21957,6 +22610,7 @@ const List<ChessTrap> chessTraps = [
       "Qd8#",
     ],
     fen: "r1bQkb1r/1p3ppp/p3pn2/4q3/4P3/2N5/PPP2PPP/2KR1B1R b kq - 1 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -21994,6 +22648,7 @@ const List<ChessTrap> chessTraps = [
       "Bc5",
     ],
     fen: "rnb1kb1r/1p2ppp1/p4n1p/2Bp4/1q2P3/1NNB4/PPP2PPP/R2QK2R b KQkq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22027,6 +22682,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg4",
     ],
     fen: "rn1qkb1r/pp1bpp1p/3p2p1/1B6/3NP1Q1/2N1B3/PPP2PPP/R3K2R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22062,6 +22718,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6+",
     ],
     fen: "rnbq1k1r/pp2ppbp/4Nnp1/1B2p3/5P2/2N5/PPP3PP/R1BQK2R b KQ - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22090,6 +22747,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "rnb1kbnr/1p1p1ppp/p7/q3B3/3NP3/8/PPP2PPP/RN1QKB1R w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -22125,6 +22783,7 @@ const List<ChessTrap> chessTraps = [
       "Bb6",
     ],
     fen: "r1bqk2r/1p1pnpbp/pBn1p1p1/8/N3P3/1N6/PPP2PPP/R2QKB1R b KQkq - 7 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22152,6 +22811,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "rnbqkb1r/pp1pn1pp/3N1p2/4p3/4P3/8/PPP2PPP/RNBQKB1R b KQkq - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22187,6 +22847,7 @@ const List<ChessTrap> chessTraps = [
       "Ng6+",
     ],
     fen: "rnb2k1r/ppq2ppp/3b2Nn/1Bp5/4QP2/8/PPPP2PP/RNB1K2R b KQ - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22226,6 +22887,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg6+",
     ],
     fen: "rn2k3/pp2p1br/3p2Qn/q1p5/4PP2/2N5/PPPP2PP/R1B1K2R b KQ - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22261,6 +22923,7 @@ const List<ChessTrap> chessTraps = [
       "Qf8#",
     ],
     fen: "r1bk1Qnr/pppp1ppp/2n2q2/1N6/4P3/8/PPP2PPP/R1B1KB1R b KQ - 6 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22297,6 +22960,7 @@ const List<ChessTrap> chessTraps = [
       "Qb6+",
     ],
     fen: "r1b1k1nr/pppp1ppp/1q6/4P3/8/2N5/PPP3PP/R1BQ1BKR w kq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -22332,6 +22996,7 @@ const List<ChessTrap> chessTraps = [
       "Ne3",
     ],
     fen: "r2qk1nr/ppp2ppp/2npb3/8/3PP3/4NN2/PPP2KPP/R1BQ1B1R b kq - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22367,6 +23032,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd6#",
     ],
     fen: "1rbq2nr/ppNk1pbp/2nQ2p1/1N6/4P3/8/PPP2PPP/R1B1KB1R b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22405,6 +23071,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4",
     ],
     fen: "r3kbnr/p1p3pp/2N5/8/4p1b1/8/PPPP1PqP/R1BQKR2 w Qkq - 2 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -22448,6 +23115,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe5+",
     ],
     fen: "r1bq1b1r/ppp2B1p/3k1nN1/4Q3/3PpB2/8/PPP2PPP/R3K2R b KQ - 0 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22475,6 +23143,7 @@ const List<ChessTrap> chessTraps = [
       "Nf5#",
     ],
     fen: "r1bq1bnr/ppppk2p/2n2p2/4pNpQ/2B1P3/8/PPPP1PPP/RNB1K2R b KQ - 3 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22512,6 +23181,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf7+",
     ],
     fen: "r1b1k2r/ppq1bQpp/8/3np1N1/8/8/PPPP1PPP/RNB1K2R b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22554,6 +23224,7 @@ const List<ChessTrap> chessTraps = [
       "Nf6",
     ],
     fen: "r2k1b1r/pbp2Qpp/5n2/1B4q1/3p4/8/PP1P1PPP/RNB2RK1 w - - 1 13",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -22591,6 +23262,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf3",
     ],
     fen: "r4b1r/ppp2kpp/4b3/4p3/8/5B2/PPPP1PPP/RNB1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22632,6 +23304,7 @@ const List<ChessTrap> chessTraps = [
       "Rxe5+",
     ],
     fen: "r3kb1r/pppb2pp/6q1/3BR1pQ/8/8/PPP2PPP/RNB3K1 b kq - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22669,6 +23342,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe5+",
     ],
     fen: "r1bqk2r/pppp3p/6p1/2bBQ3/3nP3/2N5/PPPP1PPP/R1B2RK1 b - - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22699,6 +23373,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf2#",
     ],
     fen: "r1b1kb1N/pppp2pp/2n5/4p3/2B1n3/8/PPPP1qPP/RNBQK2R w KQq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -22734,6 +23409,7 @@ const List<ChessTrap> chessTraps = [
       "Qf7#",
     ],
     fen: "r1bq1k1r/pppp1Q1p/2nb3p/4p3/2BPP3/8/PPP2PPP/RN2K2R b KQ - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22769,6 +23445,7 @@ const List<ChessTrap> chessTraps = [
       "Nxc6+",
     ],
     fen: "r2qkb1r/ppp3pp/2N2p2/3n4/2B5/3P4/PPP2PPP/RNBbR1K1 b kq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22796,6 +23473,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "r1bqk2r/pppp1ppp/2n5/2bQP3/2B1n3/5N2/PPP2PPP/RNB1K2R b KQkq - 2 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22833,6 +23511,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf7#",
     ],
     fen: "r1b2bkr/pppp1Qpp/2n5/4p1N1/8/8/PPPP1PPP/RNB1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -22867,6 +23546,7 @@ const List<ChessTrap> chessTraps = [
       "Qf2#",
     ],
     fen: "r1b1k2N/pppp2pp/2n5/4p3/2B1n3/8/PPPP1qPP/RNBQ2KR w q - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -22905,6 +23585,7 @@ const List<ChessTrap> chessTraps = [
       "Qe4#",
     ],
     fen: "r1b1k2r/pppp1Npp/2n5/4p3/2B1q3/8/PPPPK2P/RNBQ1R1n w kq - 4 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -22943,6 +23624,7 @@ const List<ChessTrap> chessTraps = [
       "Nd4",
     ],
     fen: "r1b1k2r/pppp1Npp/5n2/4p3/2qn4/5Q2/PPPP2PP/RNBK3R w kq - 2 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -22977,6 +23659,7 @@ const List<ChessTrap> chessTraps = [
       "Bg4",
     ],
     fen: "r3k2N/ppp1q1pp/2n2n2/3Bp3/4P1b1/8/PPPP1bPP/RNBQ1K1R w q - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23017,6 +23700,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf8",
     ],
     fen: "r1b2q2/ppppk1p1/2n5/4p3/8/8/PPPPB1PP/RNBnK2R w - - 0 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23051,6 +23735,7 @@ const List<ChessTrap> chessTraps = [
       "Bf5",
     ],
     fen: "rn2k1nr/ppp2ppp/8/4pb2/N3Qq2/3K4/PPPP2PP/R1B2BNR w kq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23086,6 +23771,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf6",
     ],
     fen: "r1b1qrk1/ppppnp1p/1bn2B2/4p2Q/2B1P3/3P4/PPP2PPP/R3K1NR b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23118,6 +23804,7 @@ const List<ChessTrap> chessTraps = [
       "Bh3+",
     ],
     fen: "rn2k1nr/ppp2ppp/3p4/4p3/2B1PP2/2N3Pb/PPPP3q/R1BQ1KR1 w kq - 2 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23150,6 +23837,7 @@ const List<ChessTrap> chessTraps = [
       "Nxb5",
     ],
     fen: "r1bqk2r/pppp1ppp/5n2/1n2p3/4P3/2PP1N2/P1P2PPP/R1BQ1RK1 w kq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23183,6 +23871,7 @@ const List<ChessTrap> chessTraps = [
       "Bf4+",
     ],
     fen: "r1bq1br1/pppp2pp/3k4/n2N4/3pPB2/8/PPP2PPP/R2QK1NR b KQ - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23212,6 +23901,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf2#",
     ],
     fen: "r1b1k2r/pppp1ppp/2n5/2b1p3/2B1P3/3P4/PPP2qPP/R1BQK1NR w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23243,6 +23933,7 @@ const List<ChessTrap> chessTraps = [
       "Nh3",
     ],
     fen: "r1b1k1nr/pppp1ppp/8/n1bNp3/2B1P1Q1/7N/PPPP1qPP/R1BK3R b kq - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23278,6 +23969,7 @@ const List<ChessTrap> chessTraps = [
       "Nxg4",
     ],
     fen: "r2k2nr/ppp2ppp/2np4/2bNp3/2B1P1N1/8/PPPP2PP/R1BK3R b - - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23321,6 +24013,7 @@ const List<ChessTrap> chessTraps = [
       "Qg7",
     ],
     fen: "r1b1k2r/pppp2Qp/1bn2R1p/4p3/2BqP3/3P3N/PPP3PP/R2K4 b - - 2 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23358,6 +24051,7 @@ const List<ChessTrap> chessTraps = [
       "c3",
     ],
     fen: "r1b2k1r/pppp1ppp/2n5/2bnp3/2BqP3/2PP1Q1N/PP4PP/R1BK3R b - - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23393,6 +24087,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "r2q1bnr/ppp1kBpp/3p4/3NN3/4Pp2/8/PPPP2PP/R1Bb1RK1 b - - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23428,6 +24123,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "r2q1bnr/1pp1kBpp/p2p4/3NN3/4P3/8/PPPP2PP/R1BbK2R b KQ - 2 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23464,6 +24160,7 @@ const List<ChessTrap> chessTraps = [
       "d5#",
     ],
     fen: "r1b1k1nr/ppp2ppp/2n5/2bp4/2B1P3/2N2N1K/PPPP1q1P/R1BQ3R w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23504,6 +24201,7 @@ const List<ChessTrap> chessTraps = [
       "Nf6",
     ],
     fen: "r3kb1r/ppp1q1pp/2np1n2/5b2/3PNB2/3K1N2/PPPQ2PP/4RB1R w kq - 3 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23542,6 +24240,7 @@ const List<ChessTrap> chessTraps = [
       "d6",
     ],
     fen: "r1bqk1nr/ppp2pp1/3p4/4n3/4P3/2P3P1/P1P2PBP/R1BQK2R w KQkq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23557,6 +24256,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Nc3 Ne7 3.Nd5 Rg8 4.Bc4 g6 5.Nf6#",
     moves: ["e4", "e5", "Nc3", "Ne7", "Nd5", "Rg8", "Bc4", "g6", "Nf6#"],
     fen: "rnbqkbr1/ppppnp1p/5Np1/4p3/2B1P3/8/PPPP1PPP/R1BQK1NR b KQq - 1 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23584,6 +24284,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh8",
     ],
     fen: "rnb1kbnQ/ppppq2p/6p1/8/2B1p3/2N5/PPPP1PPP/R1B1K1NR b KQq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23616,6 +24317,7 @@ const List<ChessTrap> chessTraps = [
       "g6",
     ],
     fen: "rnb1kb1r/ppp1qp1p/6p1/4p2Q/4p3/1B6/PPPPNPPP/R1B1K2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23651,6 +24353,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd5",
     ],
     fen: "rn2kb1r/ppp2p1p/5pb1/3Qp3/8/3P4/PPP2PPP/R1B1K1NR b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23684,6 +24387,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5+",
     ],
     fen: "r1b2bkr/ppppq1pp/2n5/3Qp1N1/8/8/PPPP1PPP/R1B1K1NR b KQ - 6 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23721,6 +24425,7 @@ const List<ChessTrap> chessTraps = [
       "Bh6#",
     ],
     fen: "r1bq1k1r/ppppbp1p/2nn1NpB/8/3p4/1B6/PPP1QPPP/R3K1NR b KQ - 5 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23750,6 +24455,7 @@ const List<ChessTrap> chessTraps = [
       "Qxh1",
     ],
     fen: "rnb1kb1r/pppp1ppp/8/4p3/3PP3/2N2PP1/PPP5/R1BQKBNq w Qkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23784,6 +24490,7 @@ const List<ChessTrap> chessTraps = [
       "Bf5",
     ],
     fen: "rn2k2r/ppp2ppp/8/3pPb2/1b1Pn3/2NK4/PPPB1qPP/R2Q1BNR w kq - 6 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23819,6 +24526,7 @@ const List<ChessTrap> chessTraps = [
       "Ng3",
     ],
     fen: "r2qkb1r/ppp2ppp/8/3pP3/3n4/3Q1bN1/PPPP2PP/R1B1KB1R b KQkq - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23855,6 +24563,7 @@ const List<ChessTrap> chessTraps = [
       "Be6",
     ],
     fen: "r2qk2r/ppp2ppp/4b3/4P3/1bQnp3/8/PPPP2PP/R1B1KBNR w KQkq - 4 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -23892,6 +24601,7 @@ const List<ChessTrap> chessTraps = [
       "Qf3",
     ],
     fen: "r1bq3r/pppnb1pp/3p1n2/4pP2/4P2k/2NP1Q2/PPP3PP/R1B1K2R b KQ - 2 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23929,6 +24639,7 @@ const List<ChessTrap> chessTraps = [
       "exd6+",
     ],
     fen: "r1b1kbnr/ppq2ppp/2nP4/8/3P1p2/5N2/PPP1Q1PP/R1B1KB1R b KQkq - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23964,6 +24675,7 @@ const List<ChessTrap> chessTraps = [
       "dxc7+",
     ],
     fen: "rnbk1bnr/ppPq1ppp/8/3N4/5p2/5N2/PPPPQ1PP/R1B1KB1R b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -23979,6 +24691,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Nc3 g6 3.Nd5 Ne7 4.Nf6#",
     moves: ["e4", "e5", "Nc3", "g6", "Nd5", "Ne7", "Nf6#"],
     fen: "rnbqkb1r/ppppnp1p/5Np1/4p3/4P3/8/PPPP1PPP/R1BQKBNR b KQkq - 3 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24006,6 +24719,7 @@ const List<ChessTrap> chessTraps = [
       "Rxd1",
     ],
     fen: "rnb1kbnr/pp2pppp/8/2pN4/4pB2/8/PPP2PPP/3RKBNR b Kkq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24041,6 +24755,7 @@ const List<ChessTrap> chessTraps = [
       "Nxh8",
     ],
     fen: "rnb3nN/ppp1k1pp/8/2bp1P2/8/8/PPPP1PPP/RNB1KB1R b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24056,6 +24771,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 c5 2.c4 Nc6 3.Ne2 Ne5 4.d4 Qa5+ 5.Bd2 Nd3#",
     moves: ["e4", "c5", "c4", "Nc6", "Ne2", "Ne5", "d4", "Qa5+", "Bd2", "Nd3#"],
     fen: "r1b1kbnr/pp1ppppp/8/q1p5/2PPP3/3n4/PP1BNPPP/RN1QKB1R w KQkq - 3 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24082,6 +24798,7 @@ const List<ChessTrap> chessTraps = [
       "Qg5",
     ],
     fen: "rnb1kb1r/ppp2ppp/8/3pN1q1/4n3/1B6/PPPP1PPP/RNBQK2R w KQkq - 2 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24119,6 +24836,7 @@ const List<ChessTrap> chessTraps = [
       "Bc4",
     ],
     fen: "rnb4r/pp1pkppp/8/2p5/2B5/2p5/PPP2PPP/R1B1K1NR b KQ - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24146,6 +24864,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "r1bqk1nr/pppnbppp/8/3Qp3/2B1P3/5N2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24173,6 +24892,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "rnbqkb1r/ppp1pppp/8/4P3/Q3n3/2p5/PP1PNPPP/R1B1KBNR b KQkq - 1 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24201,6 +24921,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3+",
     ],
     fen: "r2qkb1r/ppp1pppp/3p1n2/3P4/2P3b1/2Nn4/PP1NPPPP/R1BQKB1R w KQkq - 3 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24230,6 +24951,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "rnb1kb1r/pp1pp1p1/5n1p/2P2p2/1q5B/1P2P3/P1P2PPP/RN1QKBNR w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24259,6 +24981,7 @@ const List<ChessTrap> chessTraps = [
       "Qf2#",
     ],
     fen: "r1b1k1nr/pppp1ppp/2n5/2b5/2B1Pp2/1P3N2/P1PP1qPP/RNBQ1K1R w kq - 6 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24290,6 +25013,7 @@ const List<ChessTrap> chessTraps = [
       "Qb3",
     ],
     fen: "rn1qkb1r/ppp2ppp/5nb1/4p1N1/2B5/1Q6/PPPP1PPP/R1B1K1NR b KQkq - 7 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24321,6 +25045,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "rn1q1bnr/ppp1kBpp/3p4/3NN3/4P3/8/PPPP1PPP/R1BbK2R b KQ - 2 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24352,6 +25077,7 @@ const List<ChessTrap> chessTraps = [
       "Qc8#",
     ],
     fen: "rnQ1kb1r/pp2pppp/5n2/2pp4/3P1B2/2P1P3/Pq3PPP/RN2KBNR b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24382,6 +25108,7 @@ const List<ChessTrap> chessTraps = [
       "Nxe5",
     ],
     fen: "r2qkbnr/pp3ppp/2np4/2p1N2b/2B1P3/2NP3P/PPP2PP1/R1BQK2R b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24413,6 +25140,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r2qkbnr/pp1npppp/2pN2b1/8/3P4/3B4/PPP1QPPP/R1B1K1NR b KQkq - 6 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24444,6 +25172,7 @@ const List<ChessTrap> chessTraps = [
       "b4",
     ],
     fen: "rn2kb1r/pp2pppp/2p2n2/q4b2/1P1P4/2NB4/P1P1NPPP/R1BQK2R b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24474,6 +25203,7 @@ const List<ChessTrap> chessTraps = [
       "g4",
     ],
     fen: "rnb1kbnr/ppp3pp/3p4/3NNq2/3Pp1P1/8/PPP2P1P/R1BQKB1R b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24504,6 +25234,7 @@ const List<ChessTrap> chessTraps = [
       "Ng5",
     ],
     fen: "rn1qkb1r/pbp2ppp/4pn2/3pN1N1/1p6/6P1/PPPPPPBP/R1BQK2R b KQkq - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24536,6 +25267,7 @@ const List<ChessTrap> chessTraps = [
       "dxe4",
     ],
     fen: "rnbqkb1r/1p3ppp/p4n2/4p3/4p3/2PB1N2/PP3PPP/RNBQK2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24569,6 +25301,7 @@ const List<ChessTrap> chessTraps = [
       "Nxb5",
     ],
     fen: "r1bqkb1r/3npppp/p4n2/1N1p4/3P1B2/5N2/PPQ1PPPP/R3KB1R b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24602,6 +25335,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4+",
     ],
     fen: "r1bqk2r/ppp2ppp/4pn2/3p4/QbPP4/2NBP3/PP3PPP/R3K1NR b KQkq - 3 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24635,6 +25369,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd5",
     ],
     fen: "rnbqk2r/pp2ppbp/6p1/3N2B1/3p4/5N2/PP2PPPP/2RQKB1R b Kkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24668,6 +25403,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "r2q1bnr/ppp1kBpp/3p4/3NN3/3nPP2/8/PPPP2PP/R1BbK2R b KQ - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24702,6 +25438,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1bqkb1r/pp2np1p/2n1pNp1/2p1p3/2P2P2/5N2/PP1P2PP/R1BQKB1R b KQkq - 1 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24735,6 +25472,7 @@ const List<ChessTrap> chessTraps = [
       "Qe6#",
     ],
     fen: "r2q1b1r/pppknBpp/2npQ3/4pp2/3PP1b1/2P2N2/PP3PPP/RNB1K2R b KQ - 5 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24768,6 +25506,7 @@ const List<ChessTrap> chessTraps = [
       "Qd5",
     ],
     fen: "r1bqk1nr/ppppbpp1/2n4p/3Q4/2B1P3/P1p2N2/1P3PPP/RNB2RK1 b kq - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24802,6 +25541,7 @@ const List<ChessTrap> chessTraps = [
       "Ng4",
     ],
     fen: "rnb1k2r/pp2ppbp/6p1/2qp4/2P3n1/1P3NP1/PB1NPP1P/R2QKB1R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24836,6 +25576,7 @@ const List<ChessTrap> chessTraps = [
       "Qc1#",
     ],
     fen: "r1b1k1nr/pppp1ppp/2n5/4P3/8/2B2N2/P1P1PPPP/RNq1KB1R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24872,6 +25613,7 @@ const List<ChessTrap> chessTraps = [
       "Bc5",
     ],
     fen: "r1b1k2r/1pqp1ppp/p3pn2/2b5/3QPP2/2N5/PPP1B1PP/R1B2RK1 w kq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24881,10 +25623,10 @@ const List<ChessTrap> chessTraps = [
         "50 Opening Traps,Part 1 - oh no, smothered mate! - B10 - https://lichess.org/@/CHESSLUCAFD",
     opening: "Caro-Kann defence",
     openingId: "caro_kann_defence",
-    trapName: "oh no, smothered mate!",
-    trapNameFr: "oh no, smothered mate!",
-    trapNameEs: "oh no, smothered mate!",
-    trapNameAr: "oh no, smothered mate!",
+    trapName: "Oh no, smothered mate!",
+    trapNameFr: "Oh no, smothered mate!",
+    trapNameEs: "Oh no, smothered mate!",
+    trapNameAr: "Oh no, smothered mate!",
     commentedMoves: "1.e4 c6 2.Nf3 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Qe2 Ngf6 6.Nd6#",
     moves: [
       "e4",
@@ -24900,6 +25642,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/pp1npppp/2pN1n2/8/8/5N2/PPPPQPPP/R1B1KB1R b KQkq - 4 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -24910,10 +25653,10 @@ const List<ChessTrap> chessTraps = [
         "50 Opening Traps,Part 1 - what, checkmate? - B00 - https://lichess.org/@/CHESSLUCAFD",
     opening: "King's pawn opening",
     openingId: "kings_pawn_opening_b00",
-    trapName: "what, checkmate?",
-    trapNameFr: "what, checkmate?",
-    trapNameEs: "what, checkmate?",
-    trapNameAr: "what, checkmate?",
+    trapName: "What, checkmate?",
+    trapNameFr: "What, checkmate?",
+    trapNameEs: "What, checkmate?",
+    trapNameAr: "What, checkmate?",
     commentedMoves:
         "1.e4 Nc6 2.d4 d5 3.exd5 Qxd5 4.Nf3 Bg4 5.Nc3 Bxf3 6.Nxd5 Bxd1 7.Nxc7+ Kd8 8.Nxa8 Bxc2 9.Bf4 Nxd4 10.Nc7 e5 11.Bxe5 Bb4#",
     moves: [
@@ -24941,6 +25684,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4#",
     ],
     fen: "3k2nr/ppN2ppp/8/4B3/1b1n4/8/PPb2PPP/R3KB1R w KQ - 1 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -24978,6 +25722,7 @@ const List<ChessTrap> chessTraps = [
       "Bh3#",
     ],
     fen: "r3kb1r/ppp1pppp/8/3N4/8/5nPb/PPPPNP1P/R1BQ1K1R w kq - 3 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25024,6 +25769,7 @@ const List<ChessTrap> chessTraps = [
       "Bg6#",
     ],
     fen: "r1q1kb1r/pp1n2p1/2p1p1Bp/6B1/3P4/2P4P/P1P2PP1/1R2K2R b Kkq - 1 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25081,6 +25827,7 @@ const List<ChessTrap> chessTraps = [
       "Nf2#",
     ],
     fen: "r3r1k1/p1pb1pp1/7p/8/2Q5/P2B4/1PP2nPP/R1B3RK w - - 1 20",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25127,6 +25874,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf6",
     ],
     fen: "r2q1rk1/ppp1np2/1b1p1Q1p/4p3/4P3/1BPP3P/PP3PP1/R1B1K2R b KQ - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25167,6 +25915,7 @@ const List<ChessTrap> chessTraps = [
       "Qh4",
     ],
     fen: "r1bq1rk1/p2nbppp/1p2p3/2ppP1B1/7Q/2PBP3/PP1N1PPP/R3K2R b KQ - 2 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25211,6 +25960,7 @@ const List<ChessTrap> chessTraps = [
       "Qxd5",
     ],
     fen: "r1b2r2/1p3ppk/p1n5/2bQp3/8/5N1P/PPP2PP1/R1B2RK1 b - - 0 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25251,6 +26001,7 @@ const List<ChessTrap> chessTraps = [
       "Bc6",
     ],
     fen: "r1bqk2r/p2nbppp/2B2n2/2pP4/3P4/1Q3N2/PP3PPP/RNB1K2R b KQkq - 2 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25291,6 +26042,7 @@ const List<ChessTrap> chessTraps = [
       "Bxb7",
     ],
     fen: "rn1qkb1r/1B4pp/p3pn2/1pp3N1/8/6P1/PP1PPP1P/R1BQ1RK1 b - - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25331,6 +26083,7 @@ const List<ChessTrap> chessTraps = [
       "Nc3",
     ],
     fen: "rn2kb1r/pp4pp/2p5/8/3qP1Q1/2N5/PPP3PP/R1B1K2R b KQ - 1 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25361,6 +26114,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg5",
     ],
     fen: "rnb1k2r/pppp1ppp/8/3Pp1q1/2P3n1/8/PP2P1PP/RN1QKBNR w kq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25398,6 +26152,7 @@ const List<ChessTrap> chessTraps = [
       "Bxd1",
     ],
     fen: "rn3b1r/pp2pkpp/2p2n2/4P3/8/2N5/PPP2PPP/R1BbK2R w KQ - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25430,6 +26185,7 @@ const List<ChessTrap> chessTraps = [
       "Nb5",
     ],
     fen: "r1bqk1nr/ppp2pbp/2np2p1/1N1N4/4P3/8/PPP2PPP/R1BQKB1R b KQkq - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25469,6 +26225,7 @@ const List<ChessTrap> chessTraps = [
       "Nf3#",
     ],
     fen: "r1b1kb1N/ppp3pp/5n2/4p3/4q3/5n2/PPPPBP1P/RNBQKR2 w Qq - 4 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25501,6 +26258,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6",
     ],
     fen: "r1bqk1nr/pppnp1bp/3pN1p1/8/3PP3/8/PPP2PPP/RNBQK2R b KQ - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25537,6 +26295,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6",
     ],
     fen: "rnbqk2r/ppppn1pp/1b2N3/1B1Pp3/4p3/2P5/PP3PPP/RNBQ1RK1 b kq - 3 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25578,6 +26337,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r2q1rk1/pp1n1pp1/2pbpn1p/3pP3/6b1/1P1P1NP1/PBPN1PBP/R2QR1K1 b - - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25605,6 +26365,7 @@ const List<ChessTrap> chessTraps = [
       "Qa5+",
     ],
     fen: "rnb1kb1r/pp1p1ppp/5n2/q3B3/3N4/8/PPP1PPPP/RN1QKB1R w KQkq - 1 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25644,6 +26405,7 @@ const List<ChessTrap> chessTraps = [
       "Bb4+",
     ],
     fen: "rnb1k2r/1p3ppp/5B2/1p2p3/1bP5/8/PP2PPPP/R2QKB1R w KQkq - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25674,6 +26436,7 @@ const List<ChessTrap> chessTraps = [
       "Qc1#",
     ],
     fen: "rnb1kb1r/pp1ppppp/8/2p5/3PQ2B/1P6/P1P1PPPP/RNq1KBNR w KQkq - 1 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25711,6 +26474,7 @@ const List<ChessTrap> chessTraps = [
       "Nd3#",
     ],
     fen: "r1b1k2r/pp3ppp/4pn2/R1pp4/2PP4/2NnP3/1P1BNPPP/3QKB1R w Kkq - 1 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25752,6 +26516,7 @@ const List<ChessTrap> chessTraps = [
       "Qc4",
     ],
     fen: "rnb2rk1/pp2bppp/2p1p3/8/1BqPn3/Q4NP1/PP2PPBP/RN2K2R w KQ - 5 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25794,6 +26559,7 @@ const List<ChessTrap> chessTraps = [
       "Nxf7+",
     ],
     fen: "r1bq1b1r/1p1knNpp/2n1p3/8/4P3/P7/1PP1BPPP/R1BQ1RK1 b - - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25835,6 +26601,7 @@ const List<ChessTrap> chessTraps = [
       "O-O-O+",
     ],
     fen: "2kr2nr/pR3ppp/n1p1b3/4P3/2P1B3/2P5/P4PPP/2BK2NR w - - 1 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25874,6 +26641,7 @@ const List<ChessTrap> chessTraps = [
       "Qxg5",
     ],
     fen: "r1b2rk1/pp1n1ppp/2p1pn2/6q1/1bBP4/2N1P3/PPQN1PPP/R3K2R w KQ - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25913,6 +26681,7 @@ const List<ChessTrap> chessTraps = [
       "Nxb2",
     ],
     fen: "r1b1k1nr/pp2ppbp/3p2p1/2p5/4P3/N1P1B1P1/Pn1K1PBP/R5NR w kq - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -25945,6 +26714,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "rn1qk2r/p1p2ppp/bp2pn2/3p4/QbPP4/2N1P1N1/PP3PPP/R1B1KB1R b KQkq - 1 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -25989,6 +26759,7 @@ const List<ChessTrap> chessTraps = [
       "Qa4",
     ],
     fen: "1r1q1rk1/3nppbp/b2p2p1/2pP4/Q5n1/2N2NP1/PP2PPBP/R1B1R1K1 b - - 7 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26031,6 +26802,7 @@ const List<ChessTrap> chessTraps = [
       "Re2",
     ],
     fen: "r1bqk2r/pp4pp/8/4np2/1bPp1Pn1/3P2P1/PP2R1BP/RNBQ2K1 b kq - 2 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26075,6 +26847,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd1",
     ],
     fen: "3rkb1r/1p2pppp/5n2/1p2N3/4P3/8/PP3PPP/R1BNK2R b KQk - 0 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26120,6 +26893,7 @@ const List<ChessTrap> chessTraps = [
       "Nxd1",
     ],
     fen: "2rBk2r/1p3ppp/p1npb3/4p3/8/3BN3/PPP2PPP/R2nK2R w KQk - 0 14",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -26169,6 +26943,7 @@ const List<ChessTrap> chessTraps = [
       "Rxb2",
     ],
     fen: "3qr1k1/2p2ppp/Q2pb3/6b1/8/2N4P/PrP1BPP1/R4RK1 w - - 0 16",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -26211,6 +26986,7 @@ const List<ChessTrap> chessTraps = [
       "Nc7#",
     ],
     fen: "3rkb1r/ppNbpppp/3p1n2/2n5/4PB2/5P2/PPPq2PP/1K1R1BNR b k - 1 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26251,6 +27027,7 @@ const List<ChessTrap> chessTraps = [
       "Qxf1",
     ],
     fen: "rn2k2r/p3qppp/1p1pp3/2p5/2P5/2N3P1/PP1PNP1P/R1B2QK1 b kq - 0 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26285,6 +27062,7 @@ const List<ChessTrap> chessTraps = [
       "dxe6+",
     ],
     fen: "rn1q2nr/pbp1bkpp/1p1pP3/5p2/8/6P1/PPP1PPBP/RNBQK2R b KQ - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26324,6 +27102,7 @@ const List<ChessTrap> chessTraps = [
       "Rxa1",
     ],
     fen: "1nbq1rk1/2p1ppbp/5np1/1Q6/3PP3/2N2N2/1P3PPP/r1B1KB1R w K - 0 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -26363,6 +27142,7 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r1bq1rk1/pp3pbp/3p1np1/n1pPp3/1P2P3/2PB1N1P/P4PP1/RNBQR1K1 b - - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26409,6 +27189,7 @@ const List<ChessTrap> chessTraps = [
       "c3",
     ],
     fen: "rn2kb1r/pp3ppp/2pp1n2/8/N2qPB2/P1PB1P2/7P/R2QK2R b KQkq - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26451,6 +27232,7 @@ const List<ChessTrap> chessTraps = [
       "Qd2",
     ],
     fen: "r1b2rk1/pp1pppbp/2n3p1/3BP1B1/3P4/5N2/P2Q1PPP/qN3RK1 b - - 1 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26495,6 +27277,7 @@ const List<ChessTrap> chessTraps = [
       "Nh4",
     ],
     fen: "r3k3/ppp2prp/2n1b3/2b2qB1/2ppN2N/8/PPP2PPP/R2QR1K1 b q - 1 13",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26533,6 +27316,7 @@ const List<ChessTrap> chessTraps = [
       "Bb5+",
     ],
     fen: "rn2kb1r/ppp2ppp/4p3/1B4B1/3q4/5b2/PPPQ1PPP/R3K2R b KQkq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26588,6 +27372,7 @@ const List<ChessTrap> chessTraps = [
       "Ra5",
     ],
     fen: "5rk1/2p1q1p1/1p2b2p/r3Qp2/3P4/2PBPN2/P4PPP/4K2R w K - 2 19",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -26628,6 +27413,7 @@ const List<ChessTrap> chessTraps = [
       "Nf3",
     ],
     fen: "q4rk1/p1pnppbp/6p1/8/8/2P2NP1/P2PPP1P/2BQK2R b K - 1 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26638,10 +27424,10 @@ const List<ChessTrap> chessTraps = [
         "50 Opening Traps,Part 1 - win the Queen with Bxf7+ 2.0 - C95 - https://lichess.org/@/CHESSLUCAFD",
     opening: "Ruy Lopez (Spanish opening)",
     openingId: "ruy_lopez",
-    trapName: "win the Queen with Bxf7+ 2.0",
-    trapNameFr: "win the Queen with Bxf7+ 2.0",
-    trapNameEs: "win the Queen with Bxf7+ 2.0",
-    trapNameAr: "win the Queen with Bxf7+ 2.0",
+    trapName: "Win the Queen with Bxf7+ 2.0",
+    trapNameFr: "Win the Queen with Bxf7+ 2.0",
+    trapNameEs: "Win the Queen with Bxf7+ 2.0",
+    trapNameAr: "Win the Queen with Bxf7+ 2.0",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Ba4 Nf6 5.O-O Be7 6.Re1 b5 7.Bb3 d6 8.c3 O-O 9.h3 Nb8 10.d4 Nbd7 11.Nbd2 Re8 12.Bxf7+ Kxf7 13.Ng5+ Kg8 14.Ne6",
     moves: [
@@ -26674,6 +27460,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6",
     ],
     fen: "r1bqr1k1/2pnb1pp/p2pNn2/1p2p3/3PP3/2P4P/PP1N1PP1/R1BQR1K1 b - - 3 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26716,6 +27503,7 @@ const List<ChessTrap> chessTraps = [
       "Ne6+",
     ],
     fen: "r1b2qnr/pp1nb1kp/3pN1p1/3Q2B1/4P3/8/PPP2PPP/RN2K2R b KQ - 5 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26762,6 +27550,7 @@ const List<ChessTrap> chessTraps = [
       "Rh5#",
     ],
     fen: "r1bq1r2/1pp1Nppk/p2p4/7R/n7/8/PPPP1PPP/R1B3K1 b - - 1 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26789,6 +27578,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf5",
     ],
     fen: "r2qkbnr/ppp3pp/2n5/3Bpb2/4P3/8/PPPP1PPP/RNB1K1NR w KQkq - 0 6",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -26825,6 +27615,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc5",
     ],
     fen: "r1bqk1nr/pppp3p/2n3p1/2Q5/4P3/2p2N2/PP3PPP/RNB1K2R b KQ - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26841,6 +27632,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nxe4 4.Qe2 Nf6 5.Nc6+",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nxe4", "Qe2", "Nf6", "Nc6+"],
     fen: "rnbqkb1r/pppp1ppp/2N2n2/8/8/8/PPPPQPPP/RNB1KB1R b KQkq - 3 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26873,6 +27665,7 @@ const List<ChessTrap> chessTraps = [
       "Qxc6+",
     ],
     fen: "r1bqkbnr/p3pppp/2Q5/1p6/2pP4/4P3/1P3PPP/RNB1KBNR b KQkq - 0 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26904,6 +27697,7 @@ const List<ChessTrap> chessTraps = [
       "Bxf2#",
     ],
     fen: "rnbBk2r/pppp2pp/8/8/4n3/5N2/PPP1PbPP/RN1QKB1R w KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -26920,6 +27714,7 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Bc4 b6 3.Qh5 g6 4.Qxe5+",
     moves: ["e4", "e5", "Bc4", "b6", "Qh5", "g6", "Qxe5+"],
     fen: "rnbqkbnr/p1pp1p1p/1p4p1/4Q3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26948,6 +27743,7 @@ const List<ChessTrap> chessTraps = [
       "Nd6#",
     ],
     fen: "r1bqkb1r/pp1npppp/2pN1n2/8/3P4/8/PPP1QPPP/R1B1KBNR b KQkq - 4 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -26986,6 +27782,7 @@ const List<ChessTrap> chessTraps = [
       "Qxe6#",
     ],
     fen: "r4bkr/ppp3pp/2n1Q3/4p3/8/8/PPPP1PPP/RNB1K2R b KQ - 0 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -27020,6 +27817,7 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "r2q1bnr/ppp1kBpp/2np4/3NN3/4P3/7P/PPPP1PP1/R1BbK2R b KQ - 2 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
@@ -27059,6 +27857,7 @@ const List<ChessTrap> chessTraps = [
       "Qd4+",
     ],
     fen: "r1b1k1nr/ppp2ppp/2n5/4P3/1BPq4/8/PP1K2PP/RN1Q1BR1 w kq - 1 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
@@ -27107,10 +27906,804 @@ const List<ChessTrap> chessTraps = [
       "Qxc7",
     ],
     fen: "r1b1r1k1/1pQnb1pp/p7/3p1p2/3Pn3/3BPN2/PP3PPP/2R2RK1 b - - 0 15",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
     id: 799,
+    cleanMoves:
+        "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8 e5 9.Qxc8 Bb4+ 10.c3 Rxc8 11.cxb4",
+    metadata:
+        "Chess  traps - Inter Continental Ballistic Missile- Trap for Black - A06 - https://lichess.org/@/AbhiCricket",
+    opening: "Reti opening",
+    openingId: "reti_opening",
+    trapName: "Inter Continental Ballistic Missile- Trap for Black",
+    commentedMoves:
+        "1.Nf3 d5 2.e4 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8 e5 9.Qxc8 Bb4+ 10.c3 Rxc8 11.cxb4",
+    moves: [
+      "Nf3",
+      "d5",
+      "e4",
+      "dxe4",
+      "Ng5",
+      "Nf6",
+      "d3",
+      "exd3",
+      "Bxd3",
+      "h6",
+      "Nxf7",
+      "Kxf7",
+      "Bg6+",
+      "Kxg6",
+      "Qxd8",
+      "e5",
+      "Qxc8",
+      "Bb4+",
+      "c3",
+      "Rxc8",
+      "cxb4",
+    ],
+    fen: "rnr5/ppp3p1/5nkp/4p3/1P6/8/PP3PPP/RNB1K2R b KQ - 0 11",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 800,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Ke2 Bg4+ 9.Kxf2 Qxd1",
+    metadata:
+        "Chess  traps - Stafford Gambit- trap 1 - C42 - https://lichess.org/@/AbhiCricket",
+    opening: "Petrov's defence",
+    openingId: "petrovs_defence",
+    trapName: "Stafford Gambit- trap 1",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Ke2 Bg4+ 9.Kxf2 Qxd1",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nf6",
+      "Nxe5",
+      "Nc6",
+      "Nxc6",
+      "dxc6",
+      "e5",
+      "Ne4",
+      "d3",
+      "Bc5",
+      "dxe4",
+      "Bxf2+",
+      "Ke2",
+      "Bg4+",
+      "Kxf2",
+      "Qxd1",
+    ],
+    fen: "r3k2r/ppp2ppp/2p5/4P3/4P1b1/8/PPP2KPP/RNBq1B1R w kq - 0 10",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 801,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kxf2 Nxe4+ 7.Ke1 Qh4+ 8.g3 Nxg3 9.hxg3 Qxh1+ 10.Ke2 Nd4+ 11.Kf2 Qxd1",
+    metadata:
+        "Chess  traps - Traxler-Counter Gambit - C57 - https://lichess.org/@/AbhiCricket",
+    opening: "Two knights defence",
+    openingId: "two_knights_defence",
+    trapName: "Traxler-Counter Gambit",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kxf2 Nxe4+ 7.Ke1 Qh4+ 8.g3 Nxg3 9.hxg3 Qxh1+ 10.Ke2 Nd4+ 11.Kf2 Qxd1",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "Bc5",
+      "Nxf7",
+      "Bxf2+",
+      "Kxf2",
+      "Nxe4+",
+      "Ke1",
+      "Qh4+",
+      "g3",
+      "Nxg3",
+      "hxg3",
+      "Qxh1+",
+      "Ke2",
+      "Nd4+",
+      "Kf2",
+      "Qxd1",
+    ],
+    fen: "r1b1k2r/pppp1Npp/8/4p3/2Bn4/6P1/PPPP1K2/RNBq4 w kq - 0 12",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 802,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke8 8.Qxd5",
+    metadata:
+        "Chess  traps - Fried Liver Attack - C57 - https://lichess.org/@/AbhiCricket",
+    opening: "Two knights defence",
+    openingId: "two_knights_defence",
+    trapName: "Fried Liver Attack",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke8 8.Qxd5",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7",
+      "Kxf7",
+      "Qf3+",
+      "Ke8",
+      "Qxd5",
+    ],
+    fen: "r1bqkb1r/ppp3pp/2n5/3Qp3/2B5/8/PPPP1PPP/RNB1K2R b KQ - 0 8",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 803,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Nb4 9.Bb3 c6 10.a3 Qa5 11.axb4 Qxa1 12.Bxd5+ cxd5 13.Qxd5+ Kf5 14.g4+ Kf4 15.Ne2+ Kxg4 16.Rg1+ Kf5 17.Qf3+ Ke6 18.Qg4+ Kd5 19.c4+ Kd6 20.c5+ Kc6 21.Qe4+ Kb5 22.Nc3+ Ka6 23.Qc4+ b5 24.Qxb5#",
+    metadata:
+        "Chess  traps - Fried Liver Attack- Variation 2 - C57 - https://lichess.org/@/AbhiCricket",
+    opening: "Two knights defence",
+    openingId: "two_knights_defence",
+    trapName: "Fried Liver Attack- Variation 2",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Nb4 9.Bb3 c6 10.a3 Qa5 11.axb4 Qxa1 12.Bxd5+ cxd5 13.Qxd5+ Kf5 14.g4+ Kf4 15.Ne2+ Kxg4 16.Rg1+ Kf5 17.Qf3+ Ke6 18.Qg4+ Kd5 19.c4+ Kd6 20.c5+ Kc6 21.Qe4+ Kb5 22.Nc3+ Ka6 23.Qc4+ b5 24.Qxb5#",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7",
+      "Kxf7",
+      "Qf3+",
+      "Ke6",
+      "Nc3",
+      "Nb4",
+      "Bb3",
+      "c6",
+      "a3",
+      "Qa5",
+      "axb4",
+      "Qxa1",
+      "Bxd5+",
+      "cxd5",
+      "Qxd5+",
+      "Kf5",
+      "g4+",
+      "Kf4",
+      "Ne2+",
+      "Kxg4",
+      "Rg1+",
+      "Kf5",
+      "Qf3+",
+      "Ke6",
+      "Qg4+",
+      "Kd5",
+      "c4+",
+      "Kd6",
+      "c5+",
+      "Kc6",
+      "Qe4+",
+      "Kb5",
+      "Nc3+",
+      "Ka6",
+      "Qc4+",
+      "b5",
+      "Qxb5#",
+    ],
+    fen: "r1b2b1r/p5pp/k7/1QP1p3/1P6/2N5/1P1P1P1P/q1B1K1R1 b - - 0 24",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 804,
+    cleanMoves:
+        "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Qg5 6.Nf3 Qxg2 7.Rg1 Qh3 8.Bxf7+ Kxf7 9.Ng5+ Ke8 10.Nxh3",
+    metadata:
+        "Chess  traps - Danish Gambit Trap - C21 - https://lichess.org/@/AbhiCricket",
+    opening: "Centre game",
+    openingId: "centre_game",
+    trapName: "Danish Gambit Trap",
+    commentedMoves:
+        "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Qg5 6.Nf3 Qxg2 7.Rg1 Qh3 8.Bxf7+ Kxf7 9.Ng5+ Ke8 10.Nxh3",
+    moves: [
+      "e4",
+      "e5",
+      "d4",
+      "exd4",
+      "c3",
+      "dxc3",
+      "Bc4",
+      "cxb2",
+      "Bxb2",
+      "Qg5",
+      "Nf3",
+      "Qxg2",
+      "Rg1",
+      "Qh3",
+      "Bxf7+",
+      "Kxf7",
+      "Ng5+",
+      "Ke8",
+      "Nxh3",
+    ],
+    fen: "rnb1kbnr/pppp2pp/8/8/4P3/7N/PB3P1P/RN1QK1R1 b Q - 0 10",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 805,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Nxe4 5.d4 Nd6 6.dxe5 Nxb5 7.a4 Nbd4 8.Nxd4 d5 9.exd6 Nxd4 10.Qxd4 Qxd6 11.Qe4+ Qe6 12.Qd4 Qd6 13.Qe4+ Qe6",
+    metadata:
+        "Chess  traps - Ruy Lopez draw - C67 - https://lichess.org/@/AbhiCricket",
+    opening: "Ruy Lopez (Spanish opening)",
+    openingId: "ruy_lopez",
+    trapName: "Ruy Lopez draw",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Nxe4 5.d4 Nd6 6.dxe5 Nxb5 7.a4 Nbd4 8.Nxd4 d5 9.exd6 Nxd4 10.Qxd4 Qxd6 11.Qe4+ Qe6 12.Qd4 Qd6 13.Qe4+ Qe6",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "Nf6",
+      "O-O",
+      "Nxe4",
+      "d4",
+      "Nd6",
+      "dxe5",
+      "Nxb5",
+      "a4",
+      "Nbd4",
+      "Nxd4",
+      "d5",
+      "exd6",
+      "Nxd4",
+      "Qxd4",
+      "Qxd6",
+      "Qe4+",
+      "Qe6",
+      "Qd4",
+      "Qd6",
+      "Qe4+",
+      "Qe6",
+    ],
+    fen: "r1b1kb1r/ppp2ppp/4q3/8/P3Q3/8/1PP2PPP/RNB2RK1 w kq - 6 14",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 806,
+    cleanMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
+    metadata:
+        "Traps - Chess Traps - Legal Trap - C50 - https://lichess.org/@/gambits2pieces",
+    opening: "Italian Game",
+    openingId: "italian_game",
+    trapName: "Legal Trap",
+    commentedMoves:
+        "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
+    moves: [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "d6",
+      "Nc3",
+      "Bg4",
+      "h3",
+      "Bh5",
+      "Nxe5",
+      "Bxd1",
+      "Bxf7+",
+      "Ke7",
+      "Nd5#",
+    ],
+    fen: "r2q1bnr/ppp1kBpp/2np4/3NN3/4P3/7P/PPPP1PP1/R1BbK2R b KQ - 2 8",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 807,
+    cleanMoves:
+        "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Bc3 Bg4 11.Be2 O-O-O+ 12.Kc2",
+    metadata:
+        "Traps - Chess Traps - Lasker Trap - D08 - https://lichess.org/@/gambits2pieces",
+    opening: "Queen's Gambit",
+    openingId: "queens_gambit",
+    trapName: "Lasker Trap",
+    commentedMoves:
+        "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Bc3 Bg4 11.Be2 O-O-O+ 12.Kc2",
+    moves: [
+      "d4",
+      "d5",
+      "c4",
+      "e5",
+      "dxe5",
+      "d4",
+      "e3",
+      "Bb4+",
+      "Bd2",
+      "dxe3",
+      "Bxb4",
+      "exf2+",
+      "Ke2",
+      "fxg1=N+",
+      "Ke1",
+      "Qh4+",
+      "Kd2",
+      "Nc6",
+      "Bc3",
+      "Bg4",
+      "Be2",
+      "O-O-O+",
+      "Kc2",
+    ],
+    fen: "2kr2nr/ppp2ppp/2n5/4P3/2P3bq/2B5/PPK1B1PP/RN1Q2nR b - - 9 12",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 808,
+    cleanMoves:
+        "1.e4 e5 2.Bc4 d6 3.Nf3 h6 4.d4 exd4 5.c3 dxc3 6.Bxf7+ Kxf7 7.Ne5+ Ke8 8.Qh5+ g6 9.Qxg6+ Ke7",
+    metadata:
+        "Traps - Chess Traps - Bishops Opening Trap - C41 - https://lichess.org/@/gambits2pieces",
+    opening: "Bishop's opening",
+    openingId: "bishops_opening",
+    trapName: "Bishops Opening Trap",
+    commentedMoves:
+        "1.e4 e5 2.Bc4 d6 3.Nf3 h6 4.d4 exd4 5.c3 dxc3 6.Bxf7+ Kxf7 7.Ne5+ Ke8 8.Qh5+ g6 9.Qxg6+ Ke7",
+    moves: [
+      "e4",
+      "e5",
+      "Bc4",
+      "d6",
+      "Nf3",
+      "h6",
+      "d4",
+      "exd4",
+      "c3",
+      "dxc3",
+      "Bxf7+",
+      "Kxf7",
+      "Ne5+",
+      "Ke8",
+      "Qh5+",
+      "g6",
+      "Qxg6+",
+      "Ke7",
+    ],
+    fen: "rnbq1bnr/ppp1k3/3p2Qp/4N3/4P3/2p5/PP3PPP/RNB1K2R w KQ - 1 10",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 809,
+    cleanMoves:
+        "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qe3 Nf6 5.Bc4 Ne5 6.Bb3 Bb4+ 7.c3 Bc5 8.Qxc5 Nd3+ 9.Ke2 Nxc5 10.e5 Ng4 11.Nf3 Nxb3 12.axb3 O-O 13.c4 d6 14.e6 Bxe6 15.Rd1 Re8 16.Kf1 a6 17.Nc3 Qc8 18.Bf4 Nf6 19.Nd4 Kh8 20.Re1 Qd7 21.Nxe6 Rxe6 22.Rxe6 Qxe6 23.Re1 Qf5 24.Be3 Qc2 25.Nd1 Qxb3 26.Kg1 Qxc4 27.Bd2 Qc2 28.Ba5 b6 29.Bc3 Ne4 30.g4 Nxc3 31.Nxc3 Qxb2 32.Nd1 Qd2 33.Rf1 a5 34.Ne3 a4 35.h4 a3 36.Kg2 a2 37.Kf3 a1=Q 38.Rxa1 Rxa1 39.g5 Ra3 40.Kg3 Ra2 41.Ng4 Qd3+ 42.Ne3 Qe4 43.g6 fxg6 44.Nd1 Ra4 45.Ne3 Qxh4+ 46.Kf3 Rf4+ 47.Ke2 Qxf2+ 48.Kd3 c5 49.Nc2 b5 50.Kc3 Rc4+ 51.Kd3 Qxc2+ 52.Ke3",
+    metadata:
+        "Traps - Chess Traps - Danish Gambit Queen Trap 1 - C22 - https://lichess.org/@/gambits2pieces",
+    opening: "Centre game",
+    openingId: "centre_game",
+    trapName: "Danish Gambit Queen Trap 1",
+    commentedMoves:
+        "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qe3 Nf6 5.Bc4 Ne5 6.Bb3 Bb4+ 7.c3 Bc5 8.Qxc5 Nd3+ 9.Ke2 Nxc5 10.e5 Ng4 11.Nf3 Nxb3 12.axb3 O-O 13.c4 d6 14.e6 Bxe6 15.Rd1 Re8 16.Kf1 a6 17.Nc3 Qc8 18.Bf4 Nf6 19.Nd4 Kh8 20.Re1 Qd7 21.Nxe6 Rxe6 22.Rxe6 Qxe6 23.Re1 Qf5 24.Be3 Qc2 25.Nd1 Qxb3 26.Kg1 Qxc4 27.Bd2 Qc2 28.Ba5 b6 29.Bc3 Ne4 30.g4 Nxc3 31.Nxc3 Qxb2 32.Nd1 Qd2 33.Rf1 a5 34.Ne3 a4 35.h4 a3 36.Kg2 a2 37.Kf3 a1=Q 38.Rxa1 Rxa1 39.g5 Ra3 40.Kg3 Ra2 41.Ng4 Qd3+ 42.Ne3 Qe4 43.g6 fxg6 44.Nd1 Ra4 45.Ne3 Qxh4+ 46.Kf3 Rf4+ 47.Ke2 Qxf2+ 48.Kd3 c5 49.Nc2 b5 50.Kc3 Rc4+ 51.Kd3 Qxc2+ 52.Ke3",
+    moves: [
+      "e4",
+      "e5",
+      "d4",
+      "exd4",
+      "Qxd4",
+      "Nc6",
+      "Qe3",
+      "Nf6",
+      "Bc4",
+      "Ne5",
+      "Bb3",
+      "Bb4+",
+      "c3",
+      "Bc5",
+      "Qxc5",
+      "Nd3+",
+      "Ke2",
+      "Nxc5",
+      "e5",
+      "Ng4",
+      "Nf3",
+      "Nxb3",
+      "axb3",
+      "O-O",
+      "c4",
+      "d6",
+      "e6",
+      "Bxe6",
+      "Rd1",
+      "Re8",
+      "Kf1",
+      "a6",
+      "Nc3",
+      "Qc8",
+      "Bf4",
+      "Nf6",
+      "Nd4",
+      "Kh8",
+      "Re1",
+      "Qd7",
+      "Nxe6",
+      "Rxe6",
+      "Rxe6",
+      "Qxe6",
+      "Re1",
+      "Qf5",
+      "Be3",
+      "Qc2",
+      "Nd1",
+      "Qxb3",
+      "Kg1",
+      "Qxc4",
+      "Bd2",
+      "Qc2",
+      "Ba5",
+      "b6",
+      "Bc3",
+      "Ne4",
+      "g4",
+      "Nxc3",
+      "Nxc3",
+      "Qxb2",
+      "Nd1",
+      "Qd2",
+      "Rf1",
+      "a5",
+      "Ne3",
+      "a4",
+      "h4",
+      "a3",
+      "Kg2",
+      "a2",
+      "Kf3",
+      "a1=Q",
+      "Rxa1",
+      "Rxa1",
+      "g5",
+      "Ra3",
+      "Kg3",
+      "Ra2",
+      "Ng4",
+      "Qd3+",
+      "Ne3",
+      "Qe4",
+      "g6",
+      "fxg6",
+      "Nd1",
+      "Ra4",
+      "Ne3",
+      "Qxh4+",
+      "Kf3",
+      "Rf4+",
+      "Ke2",
+      "Qxf2+",
+      "Kd3",
+      "c5",
+      "Nc2",
+      "b5",
+      "Kc3",
+      "Rc4+",
+      "Kd3",
+      "Qxc2+",
+      "Ke3",
+    ],
+    fen: "7k/6pp/3p2p1/1pp5/2r5/4K3/2q5/8 b - - 1 52",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 810,
+    cleanMoves:
+        "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qe3 Nf6 5.Bc4 Ne5 6.Bb3 Bb4+ 7.c3 Bc5 8.Qxc5 Nd3+ 9.Ke2 Nxc5 10.e5 O-O 11.Nf3 Ng4 12.Re1 d6 13.Bg5 Qd7 14.Kf1 dxe5 15.h3 e4 16.Nd4 Nxb3",
+    metadata:
+        "Traps - Chess Traps - Danish Gambit Queen Trap 2 - C22 - https://lichess.org/@/gambits2pieces",
+    opening: "Centre game",
+    openingId: "centre_game",
+    trapName: "Danish Gambit Queen Trap 2",
+    commentedMoves:
+        "1.e4 e5 2.d4 exd4 3.Qxd4 Nc6 4.Qe3 Nf6 5.Bc4 Ne5 6.Bb3 Bb4+ 7.c3 Bc5 8.Qxc5 Nd3+ 9.Ke2 Nxc5 10.e5 O-O 11.Nf3 Ng4 12.Re1 d6 13.Bg5 Qd7 14.Kf1 dxe5 15.h3 e4 16.Nd4 Nxb3",
+    moves: [
+      "e4",
+      "e5",
+      "d4",
+      "exd4",
+      "Qxd4",
+      "Nc6",
+      "Qe3",
+      "Nf6",
+      "Bc4",
+      "Ne5",
+      "Bb3",
+      "Bb4+",
+      "c3",
+      "Bc5",
+      "Qxc5",
+      "Nd3+",
+      "Ke2",
+      "Nxc5",
+      "e5",
+      "O-O",
+      "Nf3",
+      "Ng4",
+      "Re1",
+      "d6",
+      "Bg5",
+      "Qd7",
+      "Kf1",
+      "dxe5",
+      "h3",
+      "e4",
+      "Nd4",
+      "Nxb3",
+    ],
+    fen: "r1b2rk1/pppq1ppp/8/6B1/3Np1n1/1nP4P/PP3PP1/RN2RK2 w - - 0 17",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 811,
+    cleanMoves:
+        "1.e4 e5 2.f4 exf4 3.Bc4 Qh4+ 4.Kf1 Bc5 5.d4 Bb6 6.Nf3 Qh6 7.g3 Qh3+ 8.Kf2 fxg3+ 9.hxg3 Qg4 10.Bxf7+ Kxf7 11.Ne5+ Kf8 12.Nxg4 d6 13.Ne3 Nf6 14.Rf1 Bg4 15.Nxg4 Nc6 16.Kg2 h5 17.Nxf6 gxf6 18.Rxf6+ Ke7 19.Bg5 Rag8 20.Rg6+ Kd7 21.Rxg8 Rxg8 22.Qxh5 Kc8 23.Qf7 Rh8 24.Na3 Nd8 25.Bxd8 Rxd8 26.Rh1",
+    metadata:
+        "Traps - Chess Traps - Kings Gambit - Queen Trap - C33 - https://lichess.org/@/gambits2pieces",
+    opening: "King's gambit",
+    openingId: "kings_gambit",
+    trapName: "Kings Gambit - Queen Trap",
+    commentedMoves:
+        "1.e4 e5 2.f4 exf4 3.Bc4 Qh4+ 4.Kf1 Bc5 5.d4 Bb6 6.Nf3 Qh6 7.g3 Qh3+ 8.Kf2 fxg3+ 9.hxg3 Qg4 10.Bxf7+ Kxf7 11.Ne5+ Kf8 12.Nxg4 d6 13.Ne3 Nf6 14.Rf1 Bg4 15.Nxg4 Nc6 16.Kg2 h5 17.Nxf6 gxf6 18.Rxf6+ Ke7 19.Bg5 Rag8 20.Rg6+ Kd7 21.Rxg8 Rxg8 22.Qxh5 Kc8 23.Qf7 Rh8 24.Na3 Nd8 25.Bxd8 Rxd8 26.Rh1",
+    moves: [
+      "e4",
+      "e5",
+      "f4",
+      "exf4",
+      "Bc4",
+      "Qh4+",
+      "Kf1",
+      "Bc5",
+      "d4",
+      "Bb6",
+      "Nf3",
+      "Qh6",
+      "g3",
+      "Qh3+",
+      "Kf2",
+      "fxg3+",
+      "hxg3",
+      "Qg4",
+      "Bxf7+",
+      "Kxf7",
+      "Ne5+",
+      "Kf8",
+      "Nxg4",
+      "d6",
+      "Ne3",
+      "Nf6",
+      "Rf1",
+      "Bg4",
+      "Nxg4",
+      "Nc6",
+      "Kg2",
+      "h5",
+      "Nxf6",
+      "gxf6",
+      "Rxf6+",
+      "Ke7",
+      "Bg5",
+      "Rag8",
+      "Rg6+",
+      "Kd7",
+      "Rxg8",
+      "Rxg8",
+      "Qxh5",
+      "Kc8",
+      "Qf7",
+      "Rh8",
+      "Na3",
+      "Nd8",
+      "Bxd8",
+      "Rxd8",
+      "Rh1",
+    ],
+    fen: "2kr4/ppp2Q2/1b1p4/8/3PP3/N5P1/PPP3K1/7R b - - 1 26",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 812,
+    cleanMoves:
+        "1.e4 e5 2.f4 exf4 3.Bc4 Qh4+ 4.Kf1 Bc5 5.d4 Bb6 6.Nf3 Qh6 7.g3 Qh3+ 8.Kf2 fxg3+ 9.hxg3 Qg4 10.Bxf7+ Kf8 11.Rh4 Qxh4 12.Nxh4 Kxf7 13.Bg5 Ke8 14.Qh5+ Kf8 15.Nc3 d6 16.Kg2 Bxd4 17.Rf1+ Bf6 18.Nd5 Nc6 19.Ng6+ hxg6 20.Qxh8 Bf5 21.exf5 Ne7 22.Nxe7 Kxe7 23.Qxg7+ Kd8 24.Qxg8+ Kd7 25.Qxa8 Kc6 26.Be3 Kd7 27.fxg6 Bd4 28.Bxd4 a6 29.Qxb7 d5 30.Qxd5+ Ke8 31.Rf8+ Kxf8 32.Qf7#",
+    metadata:
+        "Traps - Chess Traps - Kings Gambit  - Queen Trap 2 - C33 - https://lichess.org/@/gambits2pieces",
+    opening: "King's gambit",
+    openingId: "kings_gambit",
+    trapName: "Kings Gambit  - Queen Trap 2",
+    commentedMoves:
+        "1.e4 e5 2.f4 exf4 3.Bc4 Qh4+ 4.Kf1 Bc5 5.d4 Bb6 6.Nf3 Qh6 7.g3 Qh3+ 8.Kf2 fxg3+ 9.hxg3 Qg4 10.Bxf7+ Kf8 11.Rh4 Qxh4 12.Nxh4 Kxf7 13.Bg5 Ke8 14.Qh5+ Kf8 15.Nc3 d6 16.Kg2 Bxd4 17.Rf1+ Bf6 18.Nd5 Nc6 19.Ng6+ hxg6 20.Qxh8 Bf5 21.exf5 Ne7 22.Nxe7 Kxe7 23.Qxg7+ Kd8 24.Qxg8+ Kd7 25.Qxa8 Kc6 26.Be3 Kd7 27.fxg6 Bd4 28.Bxd4 a6 29.Qxb7 d5 30.Qxd5+ Ke8 31.Rf8+ Kxf8 32.Qf7#",
+    moves: [
+      "e4",
+      "e5",
+      "f4",
+      "exf4",
+      "Bc4",
+      "Qh4+",
+      "Kf1",
+      "Bc5",
+      "d4",
+      "Bb6",
+      "Nf3",
+      "Qh6",
+      "g3",
+      "Qh3+",
+      "Kf2",
+      "fxg3+",
+      "hxg3",
+      "Qg4",
+      "Bxf7+",
+      "Kf8",
+      "Rh4",
+      "Qxh4",
+      "Nxh4",
+      "Kxf7",
+      "Bg5",
+      "Ke8",
+      "Qh5+",
+      "Kf8",
+      "Nc3",
+      "d6",
+      "Kg2",
+      "Bxd4",
+      "Rf1+",
+      "Bf6",
+      "Nd5",
+      "Nc6",
+      "Ng6+",
+      "hxg6",
+      "Qxh8",
+      "Bf5",
+      "exf5",
+      "Ne7",
+      "Nxe7",
+      "Kxe7",
+      "Qxg7+",
+      "Kd8",
+      "Qxg8+",
+      "Kd7",
+      "Qxa8",
+      "Kc6",
+      "Be3",
+      "Kd7",
+      "fxg6",
+      "Bd4",
+      "Bxd4",
+      "a6",
+      "Qxb7",
+      "d5",
+      "Qxd5+",
+      "Ke8",
+      "Rf8+",
+      "Kxf8",
+      "Qf7#",
+    ],
+    fen: "5k2/2p2Q2/p5P1/8/3B4/6P1/PPP3K1/8 b - - 1 32",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 813,
+    cleanMoves:
+        "1.e4 g5 2.d4 g4 3.Qxg4 d5 4.Qf3 dxe4 5.Qxe4 Nf6 6.Qh4 Rg8 7.Nf3 Rg4 8.Qh3 Re4+ 9.Be3 Bxh3 10.gxh3",
+    metadata:
+        "Traps - Chess Traps - Coach Ali's Madland G Slap from the Borg/Grob reverse - B00 - https://lichess.org/@/gambits2pieces",
+    opening: "King's pawn opening",
+    openingId: "kings_pawn_opening_b00",
+    trapName: "Coach Ali's Madland G Slap from the Borg/Grob reverse",
+    commentedMoves:
+        "1.e4 g5 2.d4 g4 3.Qxg4 d5 4.Qf3 dxe4 5.Qxe4 Nf6 6.Qh4 Rg8 7.Nf3 Rg4 8.Qh3 Re4+ 9.Be3 Bxh3 10.gxh3",
+    moves: [
+      "e4",
+      "g5",
+      "d4",
+      "g4",
+      "Qxg4",
+      "d5",
+      "Qf3",
+      "dxe4",
+      "Qxe4",
+      "Nf6",
+      "Qh4",
+      "Rg8",
+      "Nf3",
+      "Rg4",
+      "Qh3",
+      "Re4+",
+      "Be3",
+      "Bxh3",
+      "gxh3",
+    ],
+    fen: "rn1qkb2/ppp1pp1p/5n2/8/3Pr3/4BN1P/PPP2P1P/RN2KB1R b KQq - 0 10",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 814,
+    cleanMoves:
+        "1.e4 e5 2.Bc4 Bc5 3.d4 exd4 4.Bxf7+ Kxf7 5.Qh5+ g6 6.Qxc5 Nc6 7.Nf3 d6 8.Qd5+ Be6 9.Ng5+ Kg7 10.Nxe6+ Kf7 11.Nxd8+ Ke8 12.Nf7 Nb4 13.Qe6+ Kf8 14.Nxh8 Re8 15.Qf7#",
+    metadata:
+        "Traps - Chess Traps - Bishops Opening Trap 2 - C23 - https://lichess.org/@/gambits2pieces",
+    opening: "Bishop's opening",
+    openingId: "bishops_opening",
+    trapName: "Bishops Opening Trap 2",
+    commentedMoves:
+        "1.e4 e5 2.Bc4 Bc5 3.d4 exd4 4.Bxf7+ Kxf7 5.Qh5+ g6 6.Qxc5 Nc6 7.Nf3 d6 8.Qd5+ Be6 9.Ng5+ Kg7 10.Nxe6+ Kf7 11.Nxd8+ Ke8 12.Nf7 Nb4 13.Qe6+ Kf8 14.Nxh8 Re8 15.Qf7#",
+    moves: [
+      "e4",
+      "e5",
+      "Bc4",
+      "Bc5",
+      "d4",
+      "exd4",
+      "Bxf7+",
+      "Kxf7",
+      "Qh5+",
+      "g6",
+      "Qxc5",
+      "Nc6",
+      "Nf3",
+      "d6",
+      "Qd5+",
+      "Be6",
+      "Ng5+",
+      "Kg7",
+      "Nxe6+",
+      "Kf7",
+      "Nxd8+",
+      "Ke8",
+      "Nf7",
+      "Nb4",
+      "Qe6+",
+      "Kf8",
+      "Nxh8",
+      "Re8",
+      "Qf7#",
+    ],
+    fen: "4rknN/ppp2Q1p/3p2p1/8/1n1pP3/8/PPP2PPP/RNB1K2R b KQ - 2 15",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 815,
     cleanMoves:
         "1.e4 e5 2.Qh5 Nc6 3.Bc4 g6 4.Qf3 Nf6 5.g4 h6 6.Nh3 d6 7.g5 Bxh3 8.gxf6 Bd7 9.c3",
     metadata:
@@ -27144,10 +28737,11 @@ const List<ChessTrap> chessTraps = [
     ],
     fen:
         "r2qkb1r/pppb1p2/2np1Ppp/4p3/2B1P3/2P2Q2/PP1P1P1P/RNB1K2R b KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 800,
+    id: 816,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Qe2 Nxe2",
     metadata:
@@ -27177,10 +28771,11 @@ const List<ChessTrap> chessTraps = [
       "Nxe2",
     ],
     fen: "r1b1kbnr/pppp1Npp/8/8/2B1q3/8/PPPPnP1P/RNB1KR2 w Qkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 801,
+    id: 817,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Nh2 Qh4 8.f3 g3 9.Re1 Qxh2+ 10.Kf1 Nd4 11.Bxd7+ Kxd7 12.Qe2 Qh1#",
     metadata:
@@ -27220,44 +28815,11 @@ const List<ChessTrap> chessTraps = [
       "Qh1#",
     ],
     fen: "r1b2b1r/pppk1pp1/8/4p3/3nP3/5Pp1/PPPPQ1P1/RNB1RK1q w - - 2 13",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 802,
-    cleanMoves:
-        "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
-    metadata:
-        "Opening traps - Legal Mate - C50 - https://lichess.org/@/capybara_go",
-    opening: "Italian Game",
-    openingId: "italian_game",
-    trapName: "Legal Mate",
-    trapNameFr: "Legal Mat",
-    trapNameEs: "Legal Mate",
-    trapNameAr: "Legal كش ملك",
-    commentedMoves:
-        "1.e4 e5 2.Nf3 Nc6 3.Bc4 d6 4.Nc3 Bg4 5.h3 Bh5 6.Nxe5 Bxd1 7.Bxf7+ Ke7 8.Nd5#",
-    moves: [
-      "e4",
-      "e5",
-      "Nf3",
-      "Nc6",
-      "Bc4",
-      "d6",
-      "Nc3",
-      "Bg4",
-      "h3",
-      "Bh5",
-      "Nxe5",
-      "Bxd1",
-      "Bxf7+",
-      "Ke7",
-      "Nd5#",
-    ],
-    fen: "r2q1bnr/ppp1kBpp/2np4/3NN3/4P3/7P/PPPP1PP1/R1BbK2R b KQ - 2 8",
-  ),
-
-  ChessTrap(
-    id: 803,
+    id: 818,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Ke1 Qh4+ 9.Kd2 Nc6 10.Kc3 Qf2 11.Na3 Qe3+ 12.Bd3 Qxe5+ 13.Kd2 Bf5 14.Qe1 O-O-O 15.Qxe5 Rxd3+ 16.Ke1 Nf3+ 17.gxf3 Nxe5",
     metadata:
@@ -27307,10 +28869,11 @@ const List<ChessTrap> chessTraps = [
       "Nxe5",
     ],
     fen: "2k3nr/ppp2ppp/8/4nb2/1BP5/N2r1P2/PP5P/R3K2R w - - 0 18",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 804,
+    id: 819,
     cleanMoves:
         "1.d4 d5 2.Nf3 Nf6 3.c4 e6 4.Bg5 Nbd7 5.e3 Be7 6.Nc3 O-O 7.Rc1 Re8 8.Qc2 a6 9.cxd5 exd5 10.Bd3 c6 11.O-O Ne4 12.Bf4 f5 13.Nxd5 cxd5 14.Bc7",
     metadata:
@@ -27353,10 +28916,11 @@ const List<ChessTrap> chessTraps = [
       "Bc7",
     ],
     fen: "r1bqr1k1/1pBnb1pp/p7/3p1p2/3Pn3/3BPN2/PPQ2PPP/2R2RK1 b - - 1 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 805,
+    id: 820,
     cleanMoves:
         "1.d4 Nf6 2.c4 e5 3.dxe5 Ne4 4.Nf3 d6 5.exd6 Bxd6 6.g3 Nxf2 7.Kxf2 Bxg3+ 8.hxg3 Qxd1",
     metadata:
@@ -27388,10 +28952,11 @@ const List<ChessTrap> chessTraps = [
       "Qxd1",
     ],
     fen: "rnb1k2r/ppp2ppp/8/8/2P5/5NP1/PP2PK2/RNBq1B1R w kq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 806,
+    id: 821,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 a6 4.Bxc6 dxc6 5.O-O Bg4 6.h3 h5 7.hxg4 hxg4 8.Nxe5 Qh4 9.f4 g3 10.Qh5 Rxh5 11.Rf2 Qh1#",
     metadata:
@@ -27429,10 +28994,70 @@ const List<ChessTrap> chessTraps = [
       "Qh1#",
     ],
     fen: "r3kbn1/1pp2pp1/p1p5/4N2r/4PP2/6p1/PPPP1RP1/RNB3Kq w q - 2 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 807,
+    id: 822,
+    cleanMoves:
+        "1.e4 d5 2.f3 dxe4 3.fxe4 e5 4.d3 Nf6 5.Nf3 Nc6 6.Be2 Bc5 7.Nc3 O-O 8.Na4 Bb6 9.Nxb6 axb6 10.O-O Be6 11.a3 Nd4 12.Nxd4 Qxd4+ 13.Kh1 Ra4 14.c3 Qd7 15.b4 Rfa8 16.Qe1 Bg4 17.h3 Bxe2 18.Qxe2 c5 19.bxc5 bxc5 20.Rf3 Nh5 21.Rf5 Ng3+",
+    metadata:
+        "Chess Trap - Faves4life (1853) - Cococh360 (1845) - B01 - https://lichess.org/@/Cococh360",
+    opening: "Scandinavian (centre counter) defence",
+    openingId: "scandinavian_defence",
+    trapName: "Faves4life (1853) - Cococh360 (1845)",
+    commentedMoves:
+        "1.e4 d5 2.f3 dxe4 3.fxe4 e5 4.d3 Nf6 5.Nf3 Nc6 6.Be2 Bc5 7.Nc3 O-O 8.Na4 Bb6 9.Nxb6 axb6 10.O-O Be6 11.a3 Nd4 12.Nxd4 Qxd4+ 13.Kh1 Ra4 14.c3 Qd7 15.b4 Rfa8 16.Qe1 Bg4 17.h3 Bxe2 18.Qxe2 c5 19.bxc5 bxc5 20.Rf3 Nh5 21.Rf5 Ng3+",
+    moves: [
+      "e4",
+      "d5",
+      "f3",
+      "dxe4",
+      "fxe4",
+      "e5",
+      "d3",
+      "Nf6",
+      "Nf3",
+      "Nc6",
+      "Be2",
+      "Bc5",
+      "Nc3",
+      "O-O",
+      "Na4",
+      "Bb6",
+      "Nxb6",
+      "axb6",
+      "O-O",
+      "Be6",
+      "a3",
+      "Nd4",
+      "Nxd4",
+      "Qxd4+",
+      "Kh1",
+      "Ra4",
+      "c3",
+      "Qd7",
+      "b4",
+      "Rfa8",
+      "Qe1",
+      "Bg4",
+      "h3",
+      "Bxe2",
+      "Qxe2",
+      "c5",
+      "bxc5",
+      "bxc5",
+      "Rf3",
+      "Nh5",
+      "Rf5",
+      "Ng3+",
+    ],
+    fen: "r5k1/1p1q1ppp/8/2p1pR2/r3P3/P1PP2nP/4Q1P1/R1B4K w - - 4 22",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 823,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4",
     metadata:
         "Scotch Gambit - Crush your opponent! - Introduction 🥳 - C44 - https://lichess.org/@/BZ333",
@@ -27445,10 +29070,11 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4",
     moves: ["e4", "e5", "Nf3", "Nc6", "d4", "exd4", "Bc4"],
     fen: "r1bqkbnr/pppp1ppp/2n5/8/2BpP3/5N2/PPP2PPP/RNBQK2R b KQkq - 1 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 808,
+    id: 824,
     cleanMoves:
         "1.Nf6 e5 2.d5 Bb5 3.Ne4 Nxd4 4.Bd7 Bxc6 5.Bxc6 Nxc6 6.bxc6 O-O 7.Qe7",
     metadata:
@@ -27477,10 +29103,11 @@ const List<ChessTrap> chessTraps = [
       "Qe7",
     ],
     fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 809,
+    id: 825,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Nf6 5.e5 d5 6.Bb5 Ne4 7.Nxd4",
     metadata:
@@ -27509,10 +29136,11 @@ const List<ChessTrap> chessTraps = [
       "Nxd4",
     ],
     fen: "r1bqkb1r/ppp2ppp/2n5/1B1pP3/3Nn3/8/PPP2PPP/RNBQK2R b KQkq - 0 7",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 810,
+    id: 826,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O Nf6 7.e5 d5 8.exf6 dxc4 9.Qxd8+ Kxd8 10.fxg7 Rg8",
     metadata:
@@ -27548,10 +29176,11 @@ const List<ChessTrap> chessTraps = [
       "Rg8",
     ],
     fen: "r1bk2r1/ppp2pPp/2n5/8/1bp5/2p2N2/PP3PPP/RNB2RK1 w - - 1 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 811,
+    id: 827,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bb4+ 5.c3 dxc3 6.O-O cxb2 7.Bxb2 Nf6 8.e5 Ng4 9.h3 Nh6",
     metadata:
@@ -27585,10 +29214,11 @@ const List<ChessTrap> chessTraps = [
       "Nh6",
     ],
     fen: "r1bqk2r/pppp1ppp/2n4n/4P3/1bB5/5N1P/PB3PP1/RN1Q1RK1 w kq - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 812,
+    id: 828,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Be7 5.c3 dxc3 6.Qd5 Nh6 7.Bxh6 O-O 8.Nxc3 gxh6 9.O-O",
     metadata:
@@ -27621,10 +29251,11 @@ const List<ChessTrap> chessTraps = [
       "O-O",
     ],
     fen: "r1bq1rk1/ppppbp1p/2n4p/3Q4/2B1P3/2N2N2/PP3PPP/R4RK1 b - - 1 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 813,
+    id: 829,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5 d5 10.O-O",
     metadata:
@@ -27659,10 +29290,11 @@ const List<ChessTrap> chessTraps = [
       "O-O",
     ],
     fen: "r1bq3r/ppp2k1p/2n3p1/2Qp4/3pP3/8/PPP2PPP/RNB2RK1 b - - 1 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 814,
+    id: 830,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.Ng5 Nh6 6.Bxf7+ Nxf7 7.Nxf7 Kxf7 8.Qh5+ g6 9.Qxc5",
     metadata:
@@ -27695,10 +29327,11 @@ const List<ChessTrap> chessTraps = [
       "Qxc5",
     ],
     fen: "r1bq3r/pppp1k1p/2n3p1/2Q5/3pP3/8/PPP2PPP/RNB1K2R b KQ - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 815,
+    id: 831,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 d6 5.Nxd4 Nf6 6.Nc3 Be7 7.O-O O-O",
     metadata:
@@ -27728,10 +29361,11 @@ const List<ChessTrap> chessTraps = [
       "O-O",
     ],
     fen: "r1bq1rk1/ppp1bppp/2np1n2/8/2BNP3/2N5/PPP2PPP/R1BQ1RK1 w - - 5 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 816,
+    id: 832,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.d4 exd4 4.Bc4 Bc5 5.c3 dxc3 6.Bxf7+ Kxf7 7.Qd5+ Ke8 8.Qh5+ g6 9.Qxc5 cxb2 10.Bxb2 Nf6 11.Qc1",
     metadata:
@@ -27768,19 +29402,20 @@ const List<ChessTrap> chessTraps = [
       "Qc1",
     ],
     fen: "r1bqk2r/pppp3p/2n2np1/8/4P3/5N2/PB3PPP/RNQ1K2R b KQ - 2 11",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 817,
+    id: 833,
     cleanMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Qe7 6.Nxh8",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- Intro ⏱️ -- - C57 - https://lichess.org/@/protonie",
     opening: "Two knights defence",
     openingId: "two_knights_defence",
-    trapName: "-- Intro ⏱️ --",
-    trapNameFr: "-- Intro ⏱️ --",
-    trapNameEs: "-- Intro ⏱️ --",
-    trapNameAr: "-- Intro ⏱️ --",
+    trapName: "Intro ⏱️ --",
+    trapNameFr: "Intro ⏱️ --",
+    trapNameEs: "Intro ⏱️ --",
+    trapNameAr: "Intro ⏱️ --",
     commentedMoves: "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Qe7 6.Nxh8",
     moves: [
       "e4",
@@ -27796,36 +29431,38 @@ const List<ChessTrap> chessTraps = [
       "Nxh8",
     ],
     fen: "r1b1k2N/ppppq1pp/2n2n2/2b1p3/2B1P3/8/PPPP1PPP/RNBQK2R b KQq - 0 6",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 818,
+    id: 834,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- Stafford Gambit | The Exoskeleton 📒-- - C42 - https://lichess.org/@/protonie",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "-- Stafford Gambit | The Exoskeleton 📒--",
-    trapNameFr: "-- Stafford Gambit | The Exoskeleton 📒--",
-    trapNameEs: "-- Stafford Gambito | The Exoskeleton 📒--",
-    trapNameAr: "-- Stafford غامبيت | The Exoskeleton 📒--",
+    trapName: "Stafford Gambit | The Exoskeleton 📒--",
+    trapNameFr: "Stafford Gambit | The Exoskeleton 📒--",
+    trapNameEs: "Stafford Gambito | The Exoskeleton 📒--",
+    trapNameAr: "Stafford غامبيت | The Exoskeleton 📒--",
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nc6", "Nxc6", "dxc6", "d3"],
     fen: "r1bqkb1r/ppp2ppp/2p2n2/8/4P3/3P4/PPP2PPP/RNBQKB1R b KQkq - 0 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 819,
+    id: 835,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.g3 Qxg3+ 10.Kh1 Qh2#",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- The Queen-Knight Corner Mate ↖️ -- - C42 - https://lichess.org/@/protonie",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "-- The Queen-Knight Corner Mate ↖️ --",
-    trapNameFr: "-- The Queen-Knight Corner Mat ↖️ --",
-    trapNameEs: "-- The Queen-Knight Corner Mate ↖️ --",
-    trapNameAr: "-- The Queen-Knight Corner كش ملك ↖️ --",
+    trapName: "The Queen-Knight Corner Mate ↖️ --",
+    trapNameFr: "The Queen-Knight Corner Mat ↖️ --",
+    trapNameEs: "The Queen-Knight Corner Mate ↖️ --",
+    trapNameAr: "The Queen-Knight Corner كش ملك ↖️ --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.g3 Qxg3+ 10.Kh1 Qh2#",
     moves: [
@@ -27851,20 +29488,21 @@ const List<ChessTrap> chessTraps = [
       "Qh2#",
     ],
     fen: "r1b1k2r/ppp2pp1/2p5/2b4p/4P1n1/3P3P/PPP1BP1q/RNBQ1R1K w kq - 2 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 820,
+    id: 836,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1 9.Nc3",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- ICBM-Style Trap 🚀 -- - C42 - https://lichess.org/@/protonie",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "-- ICBM-Style Trap 🚀 --",
-    trapNameFr: "-- ICBM-Style Piège 🚀 --",
-    trapNameEs: "-- ICBM-Style Trampa 🚀 --",
-    trapNameAr: "-- ICBM-Style فخ 🚀 --",
+    trapName: "ICBM-Style Trap 🚀 --",
+    trapNameFr: "ICBM-Style Piège 🚀 --",
+    trapNameEs: "ICBM-Style Trampa 🚀 --",
+    trapNameAr: "ICBM-Style فخ 🚀 --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1 9.Nc3",
     moves: [
@@ -27887,20 +29525,21 @@ const List<ChessTrap> chessTraps = [
       "Nc3",
     ],
     fen: "r1b1k2r/ppp2ppp/2p5/4P3/4P3/2N5/PPP2KPP/R1Bq1B1R b kq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 821,
+    id: 837,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4 10.e5 Qxe5 11.Bf4 Qxf4 12.g3 Qxg3#",
     metadata:
         "Series of Traps: No. 1 - St. Petrov's Defense - -- The Queen-Rook Mate ⬆️ -- - C42 - https://lichess.org/@/protonie",
     opening: "Petrov's defence",
     openingId: "petrovs_defence",
-    trapName: "-- The Queen-Rook Mate ⬆️ --",
-    trapNameFr: "-- The Queen-Rook Mat ⬆️ --",
-    trapNameEs: "-- The Queen-Rook Mate ⬆️ --",
-    trapNameAr: "-- The Queen-Rook كش ملك ⬆️ --",
+    trapName: "The Queen-Rook Mate ⬆️ --",
+    trapNameFr: "The Queen-Rook Mat ⬆️ --",
+    trapNameEs: "The Queen-Rook Mate ⬆️ --",
+    trapNameAr: "The Queen-Rook كش ملك ⬆️ --",
     commentedMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4 10.e5 Qxe5 11.Bf4 Qxf4 12.g3 Qxg3#",
     moves: [
@@ -27930,10 +29569,11 @@ const List<ChessTrap> chessTraps = [
       "Qxg3#",
     ],
     fen: "r1b1k2r/ppp2pp1/2p5/2b5/6p1/3P2q1/PPP1BP2/RN1Q1RK1 w kq - 0 13",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 822,
+    id: 838,
     cleanMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6",
     metadata:
         "Stafford Gambit Traps - Introduction - C42 - https://lichess.org/@/nhatduy",
@@ -27946,10 +29586,11 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6",
     moves: ["e4", "e5", "Nf3", "Nf6", "Nxe5", "Nc6", "Nxc6", "dxc6"],
     fen: "r1bqkb1r/ppp2ppp/2p2n2/8/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 5",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 823,
+    id: 839,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d3 Bc5 7.dxe4 Bxf2+ 8.Kxf2 Qxd1",
     metadata:
@@ -27981,10 +29622,11 @@ const List<ChessTrap> chessTraps = [
       "Qxd1",
     ],
     fen: "r1b1k2r/ppp2ppp/2p5/4P3/4P3/8/PPP2KPP/RNBq1B1R w kq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 824,
+    id: 840,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.e5 Ne4 6.d4 Qh4 7.g3 Nxg3 8.fxg3 Qe4+",
     metadata:
@@ -28016,10 +29658,11 @@ const List<ChessTrap> chessTraps = [
       "Qe4+",
     ],
     fen: "r1b1kb1r/ppp2ppp/2p5/4P3/3Pq3/6P1/PPP4P/RNBQKB1R w KQkq - 1 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 825,
+    id: 841,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.d3 Ng4 7.Be3 Nxe3 8.fxe3 Bxe3",
     metadata:
@@ -28051,10 +29694,11 @@ const List<ChessTrap> chessTraps = [
       "Bxe3",
     ],
     fen: "r1bqk2r/ppp2ppp/2p5/8/4P3/2NPb3/PPP3PP/R2QKB1R w KQkq - 0 9",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 826,
+    id: 842,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Bc4 Ng4 7.O-O Qh4 8.h3 Nxf2 9.Qf3 Nxh3+ 10.Kh1 Nf2+ 11.Kg1 Qh1#",
     metadata:
@@ -28092,10 +29736,11 @@ const List<ChessTrap> chessTraps = [
       "Qh1#",
     ],
     fen: "r1b1k2r/ppp2ppp/2p5/2b5/2B1P3/2N2Q2/PPPP1nP1/R1B2RKq w kq - 4 12",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 827,
+    id: 843,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.Nc3 Bc5 6.Be2 h5 7.h3 Qd4 8.O-O Ng4 9.hxg4 hxg4 10.g3 Qe5 11.Kg2 Bxf2 12.Kxf2 Rh2+ 13.Ke3 Qxg3+ 14.Kd4 Be6",
     metadata:
@@ -28139,10 +29784,11 @@ const List<ChessTrap> chessTraps = [
       "Be6",
     ],
     fen: "r3k3/ppp2pp1/2p1b3/8/3KP1p1/2N3q1/PPPPB2r/R1BQ1R2 w q - 2 15",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 828,
+    id: 844,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.h3 Bxf2+ 7.Kxf2 Nxe4+ 8.Ke3 O-O 9.Kxe4",
     metadata:
@@ -28175,10 +29821,11 @@ const List<ChessTrap> chessTraps = [
       "Kxe4",
     ],
     fen: "r1bq1rk1/ppp2ppp/2p5/8/4K3/3P3P/PPP3P1/RNBQ1B1R b - - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 829,
+    id: 845,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2 h5 7.O-O Ng4 8.h3 Qd6 9.hxg4 hxg4",
     metadata:
@@ -28212,10 +29859,11 @@ const List<ChessTrap> chessTraps = [
       "hxg4",
     ],
     fen: "r1b1k2r/ppp2pp1/2pq4/2b5/4P1p1/3P4/PPP1BPP1/RNBQ1RK1 w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 830,
+    id: 846,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be3 Bxe3 7.fxe3 Ng4 8.Qf3 Qg5 9.Qf4 Qc5 10.Kd2",
     metadata:
@@ -28250,10 +29898,11 @@ const List<ChessTrap> chessTraps = [
       "Kd2",
     ],
     fen: "r1b1k2r/ppp2ppp/2p5/2q5/4PQn1/3PP3/PPPK2PP/RN3B1R b kq - 6 10",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 831,
+    id: 847,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 Bc5 5.Nxf7 Bxf2+ 6.Kf1 Qe7 7.Nxh8 d5 8.exd5 Nd4 9.Bb5+ Nxb5 10.Kxf2 Ng4+ 11.Ke1 Nd4 12.c3 Qf6 13.Rf1 Qh4+ 14.g3 Qxh2 15.cxd4 Qxg3+ 16.Ke2 Nf6 17.Qa4+ Bd7 18.Qc4 Bg4+ 19.Rf3 Bxf3+ 20.Ke3 Bxd5+ 21.Ke2 Bxc4+ 22.Kd1 Bd3 23.Nc3 Qg1#",
     metadata:
@@ -28315,10 +29964,11 @@ const List<ChessTrap> chessTraps = [
       "Qg1#",
     ],
     fen: "r3k2N/ppp3pp/5n2/4p3/3P4/2Nb4/PP1P4/R1BK2q1 w q - 4 24",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 832,
+    id: 848,
     cleanMoves: "1.e4",
     metadata: "Traps 99% win - Hello! - B00 - https://lichess.org/@/MaxMalkov",
     opening: "King's pawn opening",
@@ -28330,10 +29980,11 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4",
     moves: ["e4"],
     fen: "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 833,
+    id: 849,
     cleanMoves:
         "1.d5 Nf3 2.dxe4 Ng5 3.Nf6 d3 4.exd3 Bxd3 5.h6 Nxf7 6.Kxf7 Bg6+ 7.Kxg6 Qxd8",
     metadata:
@@ -28363,10 +30014,11 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 834,
+    id: 850,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+ 9.Kf2 Qxd1",
     metadata:
@@ -28400,10 +30052,11 @@ const List<ChessTrap> chessTraps = [
       "Qxd1",
     ],
     fen: "rn2k1nr/ppp2ppp/8/4P3/1BP3b1/8/PP3KPP/RN1q1BR1 w kq - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 835,
+    id: 851,
     cleanMoves:
         "1.e4 c6 2.d4 d5 3.Nc3 dxe4 4.Nxe4 Nd7 5.Ng5 h6 6.Ne6 fxe6 7.Qh5+ g6 8.Qxg6#",
     metadata:
@@ -28434,10 +30087,11 @@ const List<ChessTrap> chessTraps = [
       "Qxg6#",
     ],
     fen: "r1bqkbnr/pp1np3/2p1p1Qp/8/3P4/8/PPP2PPP/R1B1KBNR b KQkq - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 836,
+    id: 852,
     cleanMoves:
         "1.e4 e5 2.Nf3 f6 3.Nxe5 fxe5 4.Qh5+ Ke7 5.Qxe5+ Kf7 6.Bc4+ Kg6 7.Qf5+ Kh6 8.h4 d5 9.d3+ g5 10.Qf7 Bb4+ 11.c3 Bxc3+ 12.bxc3 Bh3 13.Rxh3 dxc4 14.hxg5#",
     metadata:
@@ -28480,10 +30134,11 @@ const List<ChessTrap> chessTraps = [
       "hxg5#",
     ],
     fen: "rn1q2nr/ppp2Q1p/7k/6P1/2p1P3/2PP3R/P4PP1/RNB1K3 b Q - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 837,
+    id: 853,
     cleanMoves:
         "1.e4 e5 2.d4 exd4 3.c3 dxc3 4.Bc4 cxb2 5.Bxb2 Bb4+ 6.Kf1 Nf6 7.e5 Ne4 8.Bxf7+ Kxf7 9.Qd5+ Kg6 10.Qxe4+ Kf7 11.Nf3 d5 12.exd6 Qxd6 13.Ng5+ Kg8 14.Qc4+ Be6 15.Nxe6 b5 16.Qb3",
     metadata:
@@ -28530,10 +30185,11 @@ const List<ChessTrap> chessTraps = [
       "Qb3",
     ],
     fen: "rn4kr/p1p3pp/3qN3/1p6/1b6/1Q6/PB3PPP/RN3K1R b - - 1 16",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 838,
+    id: 854,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f4 g3 9.Qh5 Rxh5 10.Nf3 Qh1#",
     metadata:
@@ -28569,10 +30225,11 @@ const List<ChessTrap> chessTraps = [
       "Qh1#",
     ],
     fen: "r1b1kb2/pppp1pp1/2n5/1B2p2r/4PP2/5Np1/PPPP2P1/RNB2RKq w q - 2 11",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 839,
+    id: 855,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Be7 5.e3 O-O 6.Nf3 Nbd7 7.cxd5 exd5 8.Bd3 Re8 9.Rc1 c6 10.O-O h6 11.Bf4 Nh5 12.Nxd5 cxd5 13.Bc7 Qxc7 14.Rxc7",
     metadata:
@@ -28615,10 +30272,11 @@ const List<ChessTrap> chessTraps = [
       "Rxc7",
     ],
     fen: "r1b1r1k1/ppRnbpp1/7p/3p3n/3P4/3BPN2/PP3PPP/3Q1RK1 b - - 0 14",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 840,
+    id: 856,
     cleanMoves:
         "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.fxe3 Qh4+ 7.g3 Qe4",
     metadata:
@@ -28649,10 +30307,11 @@ const List<ChessTrap> chessTraps = [
       "Qe4",
     ],
     fen: "rnb1k1nr/ppp2ppp/8/4P3/1bP1q3/4P1P1/PP1B3P/RN1QKBNR w KQkq - 1 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 841,
+    id: 857,
     cleanMoves:
         "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.cxd5 exd5 5.Bg5 Nbd7 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
     metadata:
@@ -28686,10 +30345,11 @@ const List<ChessTrap> chessTraps = [
       "Kxd8",
     ],
     fen: "r1bk3r/pppn1ppp/8/3n4/3P4/8/PP1KPPPP/R4BNR w - - 0 10",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 842,
+    id: 858,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.d3 Ne7 5.Nxe5 c6 6.Nc4 d6 7.Ba4 b5",
     metadata:
@@ -28719,10 +30379,11 @@ const List<ChessTrap> chessTraps = [
       "b5",
     ],
     fen: "r1bqkb1r/p3nppp/2pp1n2/1p6/B1N1P3/3P4/PPP2PPP/RNBQK2R w KQkq - 0 8",
+    targetSide: Side.black,
   ),
 
   ChessTrap(
-    id: 843,
+    id: 859,
     cleanMoves:
         "1.d4 d5 2.c4 c6 3.Nc3 Nf6 4.Nf3 Bf5 5.cxd5 cxd5 6.Qb3 Qb6 7.Nxd5 Qxb3 8.Nxf6+ exf6 9.axb3",
     metadata:
@@ -28755,10 +30416,11 @@ const List<ChessTrap> chessTraps = [
       "axb3",
     ],
     fen: "rn2kb1r/pp3ppp/5p2/5b2/3P4/1P3N2/1P2PPPP/R1B1KB1R b KQkq - 0 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 844,
+    id: 860,
     cleanMoves: "1.e4 f6 2.d4 g5 3.Qh5#",
     metadata: "Traps - Fool mate - B00 - https://lichess.org/@/MaxMalkov",
     opening: "King's pawn opening",
@@ -28770,10 +30432,11 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 f6 2.d4 g5 3.Qh5#",
     moves: ["e4", "f6", "d4", "g5", "Qh5#"],
     fen: "rnbqkbnr/ppppp2p/5p2/6pQ/3PP3/8/PPP2PPP/RNB1KBNR b KQkq - 1 3",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 845,
+    id: 861,
     cleanMoves: "1.e4 e5 2.Qh5 Nc6 3.Bc4 Nf6 4.Qxf7#",
     metadata: "Traps - Scholar’s mate - C20 - https://lichess.org/@/MaxMalkov",
     opening: "King's pawn game",
@@ -28785,10 +30448,11 @@ const List<ChessTrap> chessTraps = [
     commentedMoves: "1.e4 e5 2.Qh5 Nc6 3.Bc4 Nf6 4.Qxf7#",
     moves: ["e4", "e5", "Qh5", "Nc6", "Bc4", "Nf6", "Qxf7#"],
     fen: "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 846,
+    id: 862,
     cleanMoves:
         "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 f6 5.Nxe5 Bxd1 6.Bf7+ Ke7 7.Nd5#",
     metadata: "Traps - Legal mate - C41 - https://lichess.org/@/MaxMalkov",
@@ -28816,10 +30480,11 @@ const List<ChessTrap> chessTraps = [
       "Nd5#",
     ],
     fen: "rn1q1bnr/ppp1kBpp/3p1p2/3NN3/4P3/8/PPPP1PPP/R1BbK2R b KQ - 3 7",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 847,
+    id: 863,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3 Ne7 9.O-O",
     metadata:
@@ -28852,10 +30517,11 @@ const List<ChessTrap> chessTraps = [
       "O-O",
     ],
     fen: "r1bq1b1r/ppp1n1pp/4k3/3np3/2B5/2N2Q2/PPPP1PPP/R1B2RK1 b - - 5 9",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 848,
+    id: 864,
     cleanMoves:
         "1.e4 e5 2.f4 exf4 3.Nf3 g5 4.Bc4 g4 5.O-O gxf3 6.d4 fxg2 7.Bxf7+ Kxf7 8.Qh5+ Ke7 9.Rxf4 Nf6 10.Rxf6 Kxf6 11.Bg5+ Kg7 12.Bxd8",
     metadata:
@@ -28894,10 +30560,11 @@ const List<ChessTrap> chessTraps = [
       "Bxd8",
     ],
     fen: "rnbB1b1r/pppp2kp/8/7Q/3PP3/8/PPP3pP/RN4K1 b - - 0 12",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 849,
+    id: 865,
     cleanMoves:
         "1.e4 e5 2.Nf3 Nc6 3.Bc4 Na5 4.Bxf7+ Kxf7 5.Nxe5+ Ke8 6.Qh5+ g6 7.Nxg6 hxg6 8.Qxh8",
     metadata:
@@ -28928,10 +30595,11 @@ const List<ChessTrap> chessTraps = [
       "Qxh8",
     ],
     fen: "r1bqkbnQ/pppp4/6p1/n7/4P3/8/PPPP1PPP/RNB1K2R b KQ - 0 8",
+    targetSide: Side.white,
   ),
 
   ChessTrap(
-    id: 850,
+    id: 866,
     cleanMoves:
         "1.e4 d5 2.Nf3 dxe4 3.Ng5 Nf6 4.d3 exd3 5.Bxd3 h6 6.Nxf7 Kxf7 7.Bg6+ Kxg6 8.Qxd8",
     metadata:
@@ -28962,5 +30630,109 @@ const List<ChessTrap> chessTraps = [
       "Qxd8",
     ],
     fen: "rnbQ1b1r/ppp1p1p1/5nkp/8/8/8/PPP2PPP/RNB1K2R b KQ - 0 8",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 867,
+    cleanMoves:
+        "1.e4 e5 2.Nc3 Nf6 3.Nf3 Nc6 4.Bc4 Bc5 5.d3 O-O 6.Ng5 h6 7.h4 hxg5 8.hxg5 Nh7 9.Qh5 g6 10.Qxh7#",
+    metadata:
+        "Chess Traps - Trap 4 - C50 - https://lichess.org/@/Aras_Acikkol11",
+    opening: "Vienna game",
+    openingId: "vienna_game",
+    trapName: "Trap 4",
+    commentedMoves:
+        "1.e4 e5 2.Nc3 Nf6 3.Nf3 Nc6 4.Bc4 Bc5 5.d3 O-O 6.Ng5 h6 7.h4 hxg5 8.hxg5 Nh7 9.Qh5 g6 10.Qxh7#",
+    moves: [
+      "e4",
+      "e5",
+      "Nc3",
+      "Nf6",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "d3",
+      "O-O",
+      "Ng5",
+      "h6",
+      "h4",
+      "hxg5",
+      "hxg5",
+      "Nh7",
+      "Qh5",
+      "g6",
+      "Qxh7#",
+    ],
+    fen:
+        "r1bq1rk1/pppp1p1Q/2n3p1/2b1p1P1/2B1P3/2NP4/PPP2PP1/R1B1K2R b KQ - 0 10",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 868,
+    cleanMoves: "1.f4 e6 2.g4 Qh4#",
+    metadata:
+        "Chess Traps - Trap 5 - A02 - https://lichess.org/@/Aras_Acikkol11",
+    opening: "Bird's opening",
+    openingId: "birds_opening",
+    trapName: "Trap 5",
+    commentedMoves: "1.f4 e6 2.g4 Qh4#",
+    moves: ["f4", "e6", "g4", "Qh4#"],
+    fen: "rnb1kbnr/pppp1ppp/4p3/8/5PPq/8/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+    targetSide: Side.black,
+  ),
+
+  ChessTrap(
+    id: 869,
+    cleanMoves:
+        "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Nd5 Nxd5 8.exd5 Ne7 9.c4 a6 10.Qa4 Bd7 11.Nxd6#",
+    metadata:
+        "Chess Traps - Trap 6 - B33 - https://lichess.org/@/Aras_Acikkol11",
+    opening: "Sicilian defence",
+    openingId: "sicilian_defence",
+    trapName: "Trap 6",
+    commentedMoves:
+        "1.e4 c5 2.Nf3 Nc6 3.d4 cxd4 4.Nxd4 Nf6 5.Nc3 e5 6.Ndb5 d6 7.Nd5 Nxd5 8.exd5 Ne7 9.c4 a6 10.Qa4 Bd7 11.Nxd6#",
+    moves: [
+      "e4",
+      "c5",
+      "Nf3",
+      "Nc6",
+      "d4",
+      "cxd4",
+      "Nxd4",
+      "Nf6",
+      "Nc3",
+      "e5",
+      "Ndb5",
+      "d6",
+      "Nd5",
+      "Nxd5",
+      "exd5",
+      "Ne7",
+      "c4",
+      "a6",
+      "Qa4",
+      "Bd7",
+      "Nxd6#",
+    ],
+    fen: "r2qkb1r/1p1bnppp/p2N4/3Pp3/Q1P5/8/PP3PPP/R1B1KB1R b KQkq - 0 11",
+    targetSide: Side.white,
+  ),
+
+  ChessTrap(
+    id: 870,
+    cleanMoves: "1.e4 f5 2.Qh5+ g6 3.Be2 gxh5 4.Bxh5#",
+    metadata:
+        "Chess Traps - Trap 8 - B00 - https://lichess.org/@/Aras_Acikkol11",
+    opening: "King's pawn opening",
+    openingId: "kings_pawn_opening_b00",
+    trapName: "Trap 8",
+    commentedMoves: "1.e4 f5 2.Qh5+ g6 3.Be2 gxh5 4.Bxh5#",
+    moves: ["e4", "f5", "Qh5+", "g6", "Be2", "gxh5", "Bxh5#"],
+    fen: "rnbqkbnr/ppppp2p/8/5p1B/4P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+    targetSide: Side.white,
   ),
 ];

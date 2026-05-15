@@ -4,15 +4,10 @@ import 'dart:io';
 import 'package:dartchess/dartchess.dart' hide File;
 import 'package:chess_traps/data/openings.dart';
 
-const String reset = '\x1B[0m';
-const String green = '\x1B[32m';
-
 void main() async {
   final trapsDir = Directory('data/chess traps');
-  // ignore: avoid_slow_async_io
   if (!await trapsDir.exists()) {
-    stderr.writeln('Folder not found: ${trapsDir.path}');
-    return;
+    throw Exception('Folder not found: ${trapsDir.path}');
   }
 
   final pgnFiles = await trapsDir
@@ -22,8 +17,7 @@ void main() async {
       .toList();
 
   if (pgnFiles.isEmpty) {
-    stderr.writeln('No PGN files found in: ${trapsDir.path}');
-    return;
+    throw Exception('No PGN files found in: ${trapsDir.path}');
   }
 
   final games = <PgnGame>[];
@@ -33,21 +27,73 @@ void main() async {
       try {
         games.add(PgnGame.parsePgn(chunk));
       } catch (e) {
-        stderr.writeln('Failed parsing PGN game in ${f.path}: $e');
+        print('Failed parsing PGN game in ${f.path}: $e');
       }
     }
   }
 
-  final content = StringBuffer();
+  print('Loaded ${games.length} games. Starting Stockfish...');
 
+  final stockfishProcess = await Process.start('stockfish.exe', []);
+  
+  String? currentBestMove;
+  int currentScore = 0;
+  bool isComputing = false;
+
+  stockfishProcess.stdout.transform(utf8.decoder).transform(const LineSplitter()).listen((output) {
+    if (output.startsWith('info depth') && output.contains('score cp ')) {
+      final parts = output.split('score cp ');
+      if (parts.length > 1) {
+        final scoreStr = parts[1].split(' ').first;
+        currentScore = int.tryParse(scoreStr) ?? 0;
+      }
+    } else if (output.startsWith('info depth') && output.contains('score mate ')) {
+      final parts = output.split('score mate ');
+      if (parts.length > 1) {
+        final scoreStr = parts[1].split(' ').first;
+        currentScore = (int.tryParse(scoreStr) ?? 0) > 0 ? 10000 : -10000;
+      }
+    }
+    if (output.startsWith('bestmove')) {
+      currentBestMove = output;
+      isComputing = false;
+    }
+  });
+
+  Future<Side> determineTargetSide(String fen) async {
+    currentBestMove = null;
+    currentScore = 0;
+    isComputing = true;
+    
+    stockfishProcess.stdin.writeln('position fen $fen');
+    stockfishProcess.stdin.writeln('go movetime 100');
+    
+    while (isComputing) {
+      await Future.delayed(const Duration(milliseconds: 10));
+    }
+    
+    final parts = fen.split(' ');
+    final sideToMove = parts.length > 1 ? parts[1] : 'w';
+    
+    if (sideToMove == 'w') {
+      return currentScore > 0 ? Side.white : Side.black;
+    } else {
+      return currentScore > 0 ? Side.black : Side.white;
+    }
+  }
+
+  final content = StringBuffer();
   content.writeln(r'// GENERATED FILE DO NOT EDIT');
   content.writeln(r'// ignore_for_file: prefer_single_quotes');
   content.writeln("import '../../data/chess_trap.dart';");
+  content.writeln("import 'package:dartchess/dartchess.dart';");
   content.writeln('const List<ChessTrap> chessTraps = [\n');
   var id = 0;
   final uniques = <String>{};
   final groups = <String, List<int>>{};
-  for (final game in games) {
+  
+  for (int i = 0; i < games.length; i++) {
+    final game = games[i];
     final sanMoves = game.moves.mainline().map((n) => n.san).toList();
     if (sanMoves.isEmpty) continue;
 
@@ -59,20 +105,36 @@ void main() async {
     uniques.add(uniqueKey);
 
     final fen = _pgnToFen(cleanMoves);
+    print('Evaluating [${i + 1}/${games.length}] FEN: $fen');
+    final targetSide = await determineTargetSide(fen);
 
-    // Look up opening from our openings database
     final matchedOpening = _findOpening(sanMoves);
     final opening = matchedOpening?.name ?? (game.headers['Opening'] ?? '');
     final openingId = matchedOpening?.id ?? '';
 
-    // Add to groups
     groups.putIfAbsent(opening, () => []).add(id);
 
-    final trapName =
-        game.headers['ChapterName'] ?? game.headers['Event'] ?? opening;
-    final trapNameFr = game.headers['Event_fr'] ?? '';
-    final trapNameEs = game.headers['Event_es'] ?? '';
-    final trapNameAr = game.headers['Event_ar'] ?? '';
+    String cleanName(String name) {
+      if (name.isEmpty) return name;
+      // Remove leading digits, dots, dashes, and spaces
+      var cleaned = name.replaceAll(RegExp(r'^[\d\.\-\s]+'), '').trim();
+      // Basic capitalization if it's not already
+      if (cleaned.isNotEmpty) {
+        cleaned = cleaned[0].toUpperCase() + cleaned.substring(1);
+      }
+      return cleaned;
+    }
+
+    var trapName = game.headers['ChapterName'] ?? game.headers['Event'] ?? opening;
+    var trapNameFr = game.headers['Event_fr'] ?? '';
+    var trapNameEs = game.headers['Event_es'] ?? '';
+    var trapNameAr = game.headers['Event_ar'] ?? '';
+
+    trapName = cleanName(trapName);
+    trapNameFr = cleanName(trapNameFr);
+    trapNameEs = cleanName(trapNameEs);
+    trapNameAr = cleanName(trapNameAr);
+
     final metadata = _buildMetadata(game.headers);
 
     final moveList = sanMoves.map(_encode).join(',');
@@ -87,25 +149,23 @@ void main() async {
     if (trapNameFr.isNotEmpty) content.writeln('  trapNameFr: ${_encode(trapNameFr)},');
     if (trapNameEs.isNotEmpty) content.writeln('  trapNameEs: ${_encode(trapNameEs)},');
     if (trapNameAr.isNotEmpty) content.writeln('  trapNameAr: ${_encode(trapNameAr)},');
-
-    // NOTE: commentedMoves not needed yet -> keep as plain cleaned moves.
     content.writeln('  commentedMoves: ${_encode(cleanMoves)},');
     content.writeln('  moves: [$moveList],');
     content.writeln('  fen: ${_encode(fen)},');
+    content.writeln('  targetSide: ${targetSide == Side.white ? "Side.white" : "Side.black"},');
     content.writeln('),\n');
   }
   content.writeln('];');
 
-  // Ensure output folder exists
+  stockfishProcess.kill();
+
   const outputFolder = 'lib/generated/chess';
   await Directory(outputFolder).create(recursive: true);
-
   final baseFile = File('$outputFolder/base_chess_traps.dart');
   await baseFile.writeAsString(content.toString());
+  print('Running dart format...');
+  await Process.run('dart', ['format', baseFile.path]);
 
-  await _runDartCommand(['format', baseFile.path]);
-
-  // Generate chess_groups.dart
   final groupsFile = File('lib/generated/chess_groups.dart');
   final groupsContent = StringBuffer();
   groupsContent.writeln('const trapsGroup = {');
@@ -115,20 +175,19 @@ void main() async {
   }
   groupsContent.writeln('};');
   await groupsFile.writeAsString(groupsContent.toString());
-  await _runDartCommand(['format', groupsFile.path]);
+  await Process.run('dart', ['format', groupsFile.path]);
 
-  // Generate trie + name index from the updated chessTraps list
-  await _runDartCommand(['run', 'scripts/generate_chess_tries.dart']);
-
-  stdout.writeln('$green Finished generating traps and tries $reset');
+  print('Generating tries...');
+  await Process.run('dart', ['run', 'scripts/generate_chess_tries.dart']);
+  
+  print('Done!');
+  exit(0);
 }
 
-/// Finds the longest matching opening from [ecoOpenings] that is a prefix of [trapMoves].
 OpeningEntry? _findOpening(List<String> trapMoves) {
   OpeningEntry? bestMatch;
   for (final opening in ecoOpenings) {
     if (opening.moves.length > trapMoves.length) continue;
-
     bool match = true;
     for (int i = 0; i < opening.moves.length; i++) {
       if (opening.moves[i] != trapMoves[i]) {
@@ -136,7 +195,6 @@ OpeningEntry? _findOpening(List<String> trapMoves) {
         break;
       }
     }
-
     if (match) {
       if (bestMatch == null || opening.moves.length > bestMatch.moves.length) {
         bestMatch = opening;
@@ -149,7 +207,6 @@ OpeningEntry? _findOpening(List<String> trapMoves) {
 String _pgnToFen(String pgn) {
   final game = PgnGame.parsePgn(pgn);
   var position = PgnGame.startingPosition(game.headers);
-
   for (final node in game.moves.mainline()) {
     final move = position.parseSan(node.san);
     if (move == null) break;
@@ -158,22 +215,9 @@ String _pgnToFen(String pgn) {
   return position.fen;
 }
 
-Future<void> _runDartCommand(List<String> args) async {
-  final result = await Process.run('dart', args);
-  if (result.exitCode != 0) {
-    stderr.writeln(
-      '⚠ Command failed: dart ${args.join(' ')}\n${result.stdout}\n${result.stderr}',
-    );
-  } else {
-    stdout.writeln('✅ Command succeeded: dart ${args.join(' ')}');
-  }
-}
-
 Iterable<String> _splitPgnIntoGames(String pgnFileContents) sync* {
   final normalized = pgnFileContents.replaceAll('\r\n', '\n').trim();
   if (normalized.isEmpty) return;
-
-  // Lichess studies export multiple games; each starts with [Event "..."]
   final parts = normalized.split(RegExp(r'(?=\[Event\s+")'));
   for (final part in parts) {
     final chunk = part.trim();
@@ -203,19 +247,15 @@ String _buildMetadata(Map<String, String> headers) {
   final chapter = headers['ChapterName'];
   final eco = headers['ECO'];
   final annotator = headers['Annotator'];
-
   final parts = <String>[
     if (study != null && study.trim().isNotEmpty) study.trim(),
     if (chapter != null && chapter.trim().isNotEmpty) chapter.trim(),
     if (eco != null && eco.trim().isNotEmpty) eco.trim(),
     if (annotator != null && annotator.trim().isNotEmpty) annotator.trim(),
   ];
-
   return parts.isEmpty ? '' : parts.join(' - ');
 }
 
 String _encode(String value) {
-  // jsonEncode produces a quoted string literal safe for Dart source.
-  // Example: hello -> "hello", Alapin’s -> "Alapin\u2019s"
   return jsonEncode(value);
 }

@@ -1,0 +1,144 @@
+[Event "Chess Traps: Trap 1"]
+[Date "2021.02.21"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Blackburne-Kostić Gambit"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 1"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/ytUpF7W0"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.02.21"]
+[UTCTime "07:02:20"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 4. Nxe5 { This greedy but obvious move is getting the whites in trouble. } 4... Qg5 5. Nxf7 { Continuing his greed, he gets even more in trouble! } 5... Qxg2 6. Rf1 Qxe4+ 7. Be2 Nf3# { And the game ends with a nice whooping matte! } *
+
+
+[Event "Chess Traps: Trap 2"]
+[Date "2021.03.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Paris Defense"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 2"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/BR3XqY4d"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.03.09"]
+[UTCTime "08:10:16"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 d6 { [%csl Gc3][%cal Gb1c3] } 4. Nc3 Bg4 { [%cal Gd2c3] } 5. h3 Bh5 6. Nxe5 Bxd1 7. Bxf7+ Ke7 8. Nd5# *
+
+
+[Event "Chess Traps: Trap 3"]
+[Date "2021.03.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A52"]
+[Opening "Indian Defense: Budapest Defense, Rubinstein Variation"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 3"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/wDcIfHdy"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.03.09"]
+[UTCTime "08:12:32"]
+
+1. d4 Nf6 2. c4 e5 3. dxe5 { [%cal Gf6g4] } 3... Ng4 4. Bf4 Nc6 5. Nf3 Bb4+ 6. Nbd2 Qe7 7. a3 Ncxe5 8. axb4 Nd3# *
+
+
+[Event "Chess Traps: Trap 4"]
+[Date "2021.03.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Giuoco Pianissimo, Italian Four Knights Variation"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 4"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/TUnAzOdY"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.03.09"]
+[UTCTime "08:13:28"]
+
+1. e4 e5 2. Nc3 Nf6 3. Nf3 Nc6 4. Bc4 Bc5 5. d3 O-O 6. Ng5 h6 7. h4 hxg5 8. hxg5 Nh7 9. Qh5 g6 10. Qxh7# *
+
+
+[Event "Chess Traps: Trap 5"]
+[Date "2021.03.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A02"]
+[Opening "Bird Opening"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 5"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/kIw0ytYx"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.03.09"]
+[UTCTime "08:18:57"]
+
+1. f4 e6 2. g4 Qh4# *
+
+
+[Event "Chess Traps: Trap 6"]
+[Date "2021.03.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B33"]
+[Opening "Sicilian Defense: Lasker-Pelikan Variation"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 6"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/jNHtymH6"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.03.09"]
+[UTCTime "08:21:30"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 e5 6. Ndb5 d6 7. Nd5 Nxd5 8. exd5 Ne7 9. c4 a6 10. Qa4 Bd7 11. Nxd6# *
+
+
+[Event "Chess Traps: Trap 7"]
+[Date "2021.03.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A40"]
+[Opening "Englund Gambit: Main Line"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 7"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/7u33y1Jk"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.03.09"]
+[UTCTime "08:23:32"]
+
+1. d4 e5 2. dxe5 Nc6 3. Nf3 Qe7 4. Bf4 Qb4+ 5. Bd2 Qxb2 6. Bc3 Bb4 7. Qd2 Bxc3 8. Qxc3 Qc1# *
+
+
+[Event "Chess Traps: Trap 8"]
+[Date "2021.03.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B00"]
+[Opening "Duras Gambit"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 8"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/C6lOmfVu"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.03.09"]
+[UTCTime "08:26:58"]
+
+1. e4 f5 2. Qh5+ g6 3. Be2 gxh5 4. Bxh5# *
+
+
+[Event "Chess Traps: Trap 9"]
+[Date "2021.03.09"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C65"]
+[Opening "Ruy Lopez: Berlin Defense, Fishing Pole Variation"]
+[StudyName "Chess Traps"]
+[ChapterName "Trap 9"]
+[ChapterURL "https://lichess.org/study/W05AdWmr/Uw3br3bg"]
+[Annotator "https://lichess.org/@/Aras_Acikkol11"]
+[UTCDate "2021.03.09"]
+[UTCTime "08:27:40"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Ng4 5. h3 h5 6. hxg4 hxg4 7. Ne1 Qh4 8. f3 g3 9. d4 Qh1# *
+
+

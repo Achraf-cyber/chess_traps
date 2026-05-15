@@ -1,0 +1,208 @@
+[Event "Traps - Chess Traps: Legal Trap"]
+[Date "2024.01.21"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Paris Defense"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Legal Trap"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/qrqocoYa"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.21"]
+[UTCTime "05:59:26"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 d6 4. Nc3 Bg4 5. h3 Bh5 6. Nxe5 Bxd1 7. Bxf7+ Ke7 8. Nd5# *
+
+
+[Event "Traps - Chess Traps: Elephant Trap"]
+[Date "2024.01.21"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D51"]
+[Opening "Queen's Gambit Declined: Modern Variation, Knight Defense"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Elephant Trap"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/mbi09Gmu"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.21"]
+[UTCTime "06:02:48"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5 Nbd7 5. cxd5 exd5 6. Nxd5 Nxd5 7. Bxd8 Bb4+ 8. Qd2 Bxd2+ 9. Kxd2 Kxd8 { [%cal Gd7f6,Gf6e4,Ge4f2,Gf2h1] } *
+
+
+[Event "Traps - Chess Traps: Noahs Ark Trap"]
+[Date "2024.01.21"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C71"]
+[Opening "Ruy Lopez: Noah's Ark Trap"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Noahs Ark Trap"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/P8q7dDiD"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.21"]
+[UTCTime "06:05:13"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 d6 5. d4 b5 6. Bb3 Nxd4 7. Nxd4 exd4 8. Qxd4 c5 9. Qd5 Be6 10. Qc6+ Bd7 11. Qd5 c4 *
+
+
+[Event "Traps - Chess Traps: Lasker Trap"]
+[Date "2024.01.21"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D08"]
+[Opening "Queen's Gambit Declined: Albin Countergambit, Lasker Trap"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Lasker Trap"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/It2m59N5"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.21"]
+[UTCTime "06:08:41"]
+
+1. d4 d5 2. c4 e5 3. dxe5 d4 4. e3 Bb4+ 5. Bd2 dxe3 6. Bxb4 exf2+ 7. Ke2 fxg1=N+ 8. Ke1 Qh4+ 9. Kd2 Nc6 10. Bc3 Bg4 11. Be2 O-O-O+ 12. Kc2 { [%csl Gd1][%cal Gd8d1] } *
+
+
+[Event "Traps - Chess Traps: Bishops Opening Trap"]
+[Date "2024.01.21"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C41"]
+[Opening "Philidor Defense"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Bishops Opening Trap"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/WIm3GUWR"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.21"]
+[UTCTime "06:11:40"]
+
+1. e4 e5 2. Bc4 d6 3. Nf3 h6 4. d4 exd4 5. c3 dxc3 6. Bxf7+ Kxf7 7. Ne5+ Ke8 8. Qh5+ g6 9. Qxg6+ Ke7 *
+
+
+[Event "Traps - Chess Traps: Morphy Trap"]
+[Date "2024.01.21"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C83"]
+[Opening "Ruy Lopez: Open, Tarrasch Trap"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Morphy Trap"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/lbLhHJRy"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.21"]
+[UTCTime "19:47:09"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 5. O-O Nxe4 6. d4 b5 7. Bb3 d5 8. dxe5 Be6 9. c3 Be7 10. Re1 O-O 11. Nd4 Qd7 12. Nxe6 fxe6 13. Rxe4 *
+
+
+[Event "Traps - Chess Traps: Blackburne Shilling Gambit"]
+[Date "2024.01.22"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Blackburne-Kostić Gambit"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Blackburne Shilling Gambit"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/luZk7IrK"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.22"]
+[UTCTime "00:12:55"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 4. Nxe5 Qg5 5. Nxf7 Qxg2 6. Rf1 Qxe4+ 7. Be2 Nf3# *
+
+
+[Event "Traps - Chess Traps: Danish Gambit Queen Trap 1"]
+[Date "2024.01.24"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C22"]
+[Opening "Center Game: Berger Variation"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Danish Gambit Queen Trap 1"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/I8mCXWrc"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.24"]
+[UTCTime "01:17:14"]
+
+1. e4 e5 2. d4 exd4 3. Qxd4 Nc6 4. Qe3 Nf6 5. Bc4 Ne5 6. Bb3 Bb4+ 7. c3 Bc5 8. Qxc5 Nd3+ 9. Ke2 Nxc5 10. e5 Ng4 11. Nf3 Nxb3 12. axb3 O-O 13. c4 d6 14. e6 Bxe6 15. Rd1 Re8 16. Kf1 a6 17. Nc3 Qc8 18. Bf4 Nf6 19. Nd4 Kh8 20. Re1 Qd7 21. Nxe6 Rxe6 22. Rxe6 Qxe6 23. Re1 Qf5 24. Be3 Qc2 25. Nd1 Qxb3 26. Kg1 Qxc4 27. Bd2 Qc2 28. Ba5 b6 29. Bc3 Ne4 30. g4 Nxc3 31. Nxc3 Qxb2 32. Nd1 Qd2 33. Rf1 a5 34. Ne3 a4 35. h4 a3 36. Kg2 a2 37. Kf3 a1=Q 38. Rxa1 Rxa1 39. g5 Ra3 40. Kg3 Ra2 41. Ng4 Qd3+ 42. Ne3 Qe4 43. g6 fxg6 44. Nd1 Ra4 45. Ne3 Qxh4+ 46. Kf3 Rf4+ 47. Ke2 Qxf2+ 48. Kd3 c5 49. Nc2 b5 50. Kc3 Rc4+ 51. Kd3 Qxc2+ 52. Ke3 *
+
+
+[Event "Traps - Chess Traps: Danish Gambit Queen Trap 2"]
+[Date "2024.01.24"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C22"]
+[Opening "Center Game: Berger Variation"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Danish Gambit Queen Trap 2"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/lHyuFZO5"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.24"]
+[UTCTime "01:25:06"]
+
+1. e4 e5 2. d4 (2. Nf3 Nc6 3. Bc4 d6 4. Nc3 Bg4 { [%csl Gd1][%cal Gg4d1] } 5. h3 Bh5 6. Nxe5) 2... exd4 3. Qxd4 Nc6 4. Qe3 Nf6 5. Bc4 Ne5 6. Bb3 Bb4+ 7. c3 Bc5 8. Qxc5 Nd3+ 9. Ke2 Nxc5 10. e5 O-O 11. Nf3 Ng4 12. Re1 d6 13. Bg5 Qd7 14. Kf1 dxe5 15. h3 e4 16. Nd4 Nxb3 *
+
+
+[Event "Traps - Chess Traps: Kings Gambit - Queen Trap"]
+[Date "2024.01.24"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C33"]
+[Opening "King's Gambit Accepted: Bishop's Gambit, Greco Variation"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Kings Gambit - Queen Trap"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/jErdioRP"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.24"]
+[UTCTime "16:44:57"]
+
+1. e4 e5 2. f4 exf4 3. Bc4 Qh4+ { [%csl Ge1][%cal Gh4e1] } 4. Kf1 Bc5 5. d4 Bb6 6. Nf3 { [%cal Gf3h4] } 6... Qh6 7. g3 Qh3+ 8. Kf2 fxg3+ 9. hxg3 Qg4 10. Bxf7+ Kxf7 11. Ne5+ Kf8 12. Nxg4 d6 13. Ne3 { [%cal Gh1f1,Gf1f8] } 13... Nf6 14. Rf1 Bg4 15. Nxg4 Nc6 16. Kg2 h5 17. Nxf6 gxf6 18. Rxf6+ Ke7 19. Bg5 Rag8 20. Rg6+ Kd7 21. Rxg8 Rxg8 22. Qxh5 Kc8 23. Qf7 Rh8 24. Na3 Nd8 25. Bxd8 Rxd8 26. Rh1 *
+
+
+[Event "Traps - Chess Traps: Kings Gambit  - Queen Trap 2"]
+[Date "2024.01.24"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C33"]
+[Opening "King's Gambit Accepted: Bishop's Gambit, Greco Variation"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Kings Gambit  - Queen Trap 2"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/7M13hNNy"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.24"]
+[UTCTime "17:13:49"]
+
+1. e4 e5 2. f4 exf4 3. Bc4 Qh4+ 4. Kf1 Bc5 5. d4 Bb6 6. Nf3 Qh6 7. g3 (7. Kf2) 7... Qh3+ 8. Kf2 fxg3+ 9. hxg3 Qg4 10. Bxf7+ Kf8 { The King declines the Bishops attack to avoid the Knights fork which leads to the Queen falling. } 11. Rh4 { After this move, the Queens has nowhere to go } 11... Qxh4 12. Nxh4 Kxf7 13. Bg5 Ke8 14. Qh5+ Kf8 15. Nc3 d6 16. Kg2 Bxd4 17. Rf1+ Bf6 18. Nd5 Nc6 19. Ng6+ hxg6 20. Qxh8 Bf5 21. exf5 Ne7 22. Nxe7 Kxe7 23. Qxg7+ Kd8 24. Qxg8+ Kd7 25. Qxa8 Kc6 26. Be3 Kd7 27. fxg6 Bd4 28. Bxd4 a6 29. Qxb7 d5 30. Qxd5+ Ke8 31. Rf8+ Kxf8 32. Qf7# *
+
+
+[Event "Traps - Chess Traps: Coach Ali's Madland G Slap from the Borg/Grob reverse"]
+[Date "2024.01.24"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "B00"]
+[Opening "Borg Defense"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Coach Ali's Madland G Slap from the Borg/Grob reverse"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/OVgxA5t3"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.24"]
+[UTCTime "17:45:01"]
+
+1. e4 g5 2. d4 g4 3. Qxg4 d5 4. Qf3 dxe4 5. Qxe4 Nf6 6. Qh4 Rg8 7. Nf3 Rg4 8. Qh3 Re4+ 9. Be3 Bxh3 10. gxh3 *
+
+
+[Event "Traps - Chess Traps: Bishops Opening Trap 2"]
+[Date "2024.01.24"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C23"]
+[Opening "Bishop's Opening: Lewis Gambit"]
+[StudyName "Traps - Chess Traps"]
+[ChapterName "Bishops Opening Trap 2"]
+[ChapterURL "https://lichess.org/study/O6E5ouBO/OehYi8cY"]
+[Annotator "https://lichess.org/@/gambits2pieces"]
+[UTCDate "2024.01.24"]
+[UTCTime "22:29:11"]
+
+1. e4 e5 2. Bc4 Bc5 3. d4 exd4 4. Bxf7+ Kxf7 5. Qh5+ g6 6. Qxc5 Nc6 7. Nf3 d6 8. Qd5+ Be6 9. Ng5+ Kg7 10. Nxe6+ Kf7 11. Nxd8+ Ke8 12. Nf7 Nb4 13. Qe6+ Kf8 14. Nxh8 Re8 15. Qf7# { 1-0 White wins by checkmate. } *
+
+

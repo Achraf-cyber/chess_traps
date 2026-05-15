@@ -1,0 +1,22 @@
+[Event "rated blitz game"]
+[Site "https://lichess.org/5rYdN6eC"]
+[Date "2025.10.18"]
+[White "Faves4life"]
+[Black "Cococh360"]
+[Result "0-1"]
+[WhiteElo "1853"]
+[BlackElo "1845"]
+[TimeControl "300+0"]
+[Termination "Normal"]
+[GameId "5rYdN6eC"]
+[Variant "Standard"]
+[ECO "B01"]
+[Opening "Scandinavian Defense"]
+[StudyName "Chess Trap"]
+[ChapterName "Faves4life (1853) - Cococh360 (1845)"]
+[ChapterURL "https://lichess.org/study/r13a21a7/TqOrPSvg"]
+[Annotator "https://lichess.org/@/Cococh360"]
+
+1. e4 { [%clk 0:05:00] } 1... d5 { [%clk 0:05:00] } 2. f3 { [%clk 0:04:59] } (2. exd5 Qxd5 3. Nc3 Qd8 4. d4 Nf6 5. Nf3 e6 6. Bg5 Be7) 2... dxe4 { [%clk 0:04:58] } (2... e5 3. exd5 Qxd5 4. Nc3 Qe6 5. f4 exf4+ 6. Be2 Qh6 7. Nf3) 3. fxe4 { [%clk 0:04:58] } 3... e5 { [%clk 0:04:57] } 4. d3 { [%clk 0:04:57] } 4... Nf6 { [%clk 0:04:54] } 5. Nf3 { [%clk 0:04:52] } 5... Nc6 { [%clk 0:04:50] } (5... Bc5 6. Nxe5 Qd4 7. Qf3 Qxe5) 6. Be2 { [%clk 0:04:51] } (6. Be3 Be7 7. h3 Qd6 8. Qd2 Nd4 9. Qf2 O-O 10. Bxd4 exd4) 6... Bc5 { [%clk 0:04:47] } 7. Nc3 { [%clk 0:04:50] } (7. Bg5 h6 8. Bxf6 Qxf6 9. Nc3 Be6 10. Qd2 O-O-O 11. Na4 Bd6) 7... O-O { [%clk 0:04:44] } (7... Ng4 8. d4 Nxd4 9. Na4 Nxf3+ 10. Bxf3 Bb4+ 11. c3 Qxd1+ 12. Bxd1) 8. Na4 { [%clk 0:04:49] } 8... Bb6 { [%clk 0:04:37] } 9. Nxb6 { [%clk 0:04:45] } 9... axb6 { [%clk 0:04:37] } 10. O-O { [%clk 0:04:43] } 10... Be6 { [%clk 0:04:36] } 11. a3 { [%clk 0:04:41] } 11... Nd4 { [%clk 0:04:33] } 12. Nxd4 { [%clk 0:04:36] } 12... Qxd4+ { [%clk 0:04:20] } 13. Kh1 { [%clk 0:04:33] } 13... Ra4 { [%clk 0:04:01] } (13... Ne8 14. Qe1 f6 15. h3 Nd6 16. Kh2 Kh8 17. Qg3 f5 18. c3 Qc5 19. Bg5) 14. c3 { [%clk 0:04:29] } 14... Qd7 { [%clk 0:03:59] } 15. b4 { [%clk 0:04:14] } (15. Bg5 Ng4 16. h3 Nh6 17. Qd2 f5 18. Bxh6 gxh6 19. exf5 Bxf5 20. Qxh6 Qd6) 15... Rfa8 { [%clk 0:03:56] } 16. Qe1 { [%clk 0:03:51] } 16... Bg4 { [%clk 0:03:43] } 17. h3 { [%clk 0:03:47] } (17. Bxg4) 17... Bxe2 { [%clk 0:03:41] } 18. Qxe2 { [%clk 0:03:46] } 18... c5 { [%clk 0:03:33] } 19. bxc5 { [%clk 0:03:39] } 19... bxc5 { [%clk 0:03:27] } 20. Rf3 { [%clk 0:03:33] } 20... Nh5 { [%clk 0:03:15] } 21. Rf5 { [%clk 0:03:27] } (21. Qf2 Qd6) 21... Ng3+ { 0-1 White resigns. } { [%clk 0:03:12] } 0-1
+
+

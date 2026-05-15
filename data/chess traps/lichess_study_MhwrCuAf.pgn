@@ -1,0 +1,193 @@
+[Event "Chess  traps: Inter Continental Ballistic Missile"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A06"]
+[Opening "Zukertort Opening: Tennison Gambit"]
+[StudyName "Chess  traps"]
+[ChapterName "Inter Continental Ballistic Missile"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/15BhkrZL"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:15:51"]
+
+1. Nf3 d5 2. e4 dxe4 3. Ng5 Nf6 4. d3 exd3 5. Bxd3 h6 6. Nxf7 { Oh no my knight! } 6... Kxf7 7. Bg6+ { Oh no my bishop } 7... Kxg6 8. Qxd8 { Well..... There goes your queen! Hahahahahahaha } *
+
+
+[Event "Chess  traps: Inter Continental Ballistic Missile- Trap for Black"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A06"]
+[Opening "Zukertort Opening: Tennison Gambit"]
+[StudyName "Chess  traps"]
+[ChapterName "Inter Continental Ballistic Missile- Trap for Black"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/dJUkS9yP"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:22:45"]
+
+1. Nf3 d5 2. e4 dxe4 3. Ng5 Nf6 4. d3 exd3 5. Bxd3 h6 6. Nxf7 Kxf7 7. Bg6+ Kxg6 8. Qxd8 e5 { At this point as temting as it is to take the hanging bishop, it's a clear blunder } 9. Qxc8 Bb4+ { [%cal Gb4e1,Gh8c8] } 10. c3 Rxc8 11. cxb4 { Now your advantage being a queen up is lost and its an equal position in terms of materials. Thank me later for not taking the bishop! } *
+
+
+[Event "Chess  traps: Stafford Gambit- trap 1"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Chess  traps"]
+[ChapterName "Stafford Gambit- trap 1"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/xJ4bdMK5"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:19:35"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. e5 Ne4 6. d3 Bc5 { Oh no my knight! } 7. dxe4 Bxf2+ { [%cal Ge1f2,Gd8d1] } 8. Ke2 Bg4+ { [%cal Gg4d1,Gd8d1] } 9. Kxf2 Qxd1 { Oh no your queen! LOL } *
+
+
+[Event "Chess  traps: Stafford Gambit- trap 2"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C42"]
+[Opening "Petrov's Defense: Stafford Gambit"]
+[StudyName "Chess  traps"]
+[ChapterName "Stafford Gambit- trap 2"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/hV08pJjo"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:27:55"]
+
+1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Bg5 Nxe4 { Oh no my Queen! } 7. Bxd8 Bxf2+ 8. Ke2 Bg4# { This is a devastating trap that most players fall into! } *
+
+
+[Event "Chess  traps: Englund Gambit Trap"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "A40"]
+[Opening "Englund Gambit"]
+[StudyName "Chess  traps"]
+[ChapterName "Englund Gambit Trap"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/Y7z69uEp"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:29:52"]
+
+1. d4 e5 { Oh no my pawn! } 2. dxe5 Bc5 3. Nf3 d6 4. exd6 Ne7 { Oh no I mouse-slipped my knight } 5. dxe7 Bxf2+ { There goes your Queen! Hahahahaha } 6. Kxf2 Qxd1 *
+
+
+[Event "Chess  traps: Elephant Gambit"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "D51"]
+[Opening "Queen's Gambit Declined: Modern Variation, Knight Defense"]
+[StudyName "Chess  traps"]
+[ChapterName "Elephant Gambit"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/605d8CH3"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:33:21"]
+
+1. d4 d5 2. c4 e6 3. Nc3 { [%cal Rc3d5,Rc4d5,Ge6d5] } 3... Nf6 4. Bg5 { [%cal Gf6e4,Gf6g4,Rg5d8] } 4... Nbd7 { Oh no my pawn! } 5. cxd5 exd5 6. Nxd5 Nxd5 { Oh no my Queen! } 7. Bxd8 Bb4+ { The White King has no where to go and is therefore forced to defend with the Queen } 8. Qd2 Bxd2+ 9. Kxd2 Kxd8 { Now Black is up a Knight. How the tables have turned...... } *
+
+
+[Event "Chess  traps: Blackburne Shilling Gambit"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C50"]
+[Opening "Italian Game: Blackburne-Kostić Gambit"]
+[StudyName "Chess  traps"]
+[ChapterName "Blackburne Shilling Gambit"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/ixUUlUxl"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:38:39"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nd4 { If white accepts this pawn, he is in deep trouble } 4. Nxe5 Qg5 5. Nxf7 { Oh no, I've blundered into a fork } 5... Qxg2 6. Rf1 { Seems like I am just loosing a Rook.... } 6... Qxe4+ { [%cal Rd1e2,Gd4e2] } 7. Be2 Nf3# { What a brilliant smothered mate! } *
+
+
+[Event "Chess  traps: Traxler-Counter Gambit"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C57"]
+[Opening "Italian Game: Two Knights Defense, Traxler Counterattack, Knight Sacrifice Line"]
+[StudyName "Chess  traps"]
+[ChapterName "Traxler-Counter Gambit"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/bBLIrec6"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:43:00"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 Bc5 5. Nxf7 { Oh no, its a nasty fork! } 5... Bxf2+ 6. Kxf2 Nxe4+ 7. Ke1 Qh4+ { [%cal Re1f1,Gh4f2] } 8. g3 Nxg3 9. hxg3 Qxh1+ { This is a completely winning position as you have a lethal attack forming } { [%cal Rc4f1,Rh8f8] } 10. Ke2 Nd4+ { The King can no longer defend the Queen resulting in White having an utterly terrible position } 11. Kf2 Qxd1 *
+
+
+[Event "Chess  traps: Fried Liver Attack"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C57"]
+[Opening "Italian Game: Two Knights Defense, Fried Liver Attack"]
+[StudyName "Chess  traps"]
+[ChapterName "Fried Liver Attack"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/u8UC5PKO"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:47:19"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Nxd5 6. Nxf7 { Black simply has no option but to take the Knight } { [%cal Gf7d8,Gf7h8] } 6... Kxf7 7. Qf3+ { We use this simple tactic to win back our piece } 7... Ke8 8. Qxd5 *
+
+
+[Event "Chess  traps: Fried Liver Attack- Variation 2"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C57"]
+[Opening "Italian Game: Two Knights Defense, Fried Liver Attack"]
+[StudyName "Chess  traps"]
+[ChapterName "Fried Liver Attack- Variation 2"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/nouIpExz"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "12:49:15"]
+
+{ Now from the previous chapter you might ask me what if the King moves up to e6 to add another defender to the Knight. I would like to show you a game where this exactly happened. }
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Nxd5 6. Nxf7 Kxf7 7. Qf3+ Ke6 8. Nc3 Nb4 9. Bb3 c6 10. a3 Qa5 11. axb4 Qxa1 12. Bxd5+ cxd5 13. Qxd5+ Kf5 14. g4+ Kf4 15. Ne2+ Kxg4 16. Rg1+ Kf5 17. Qf3+ Ke6 18. Qg4+ Kd5 19. c4+ Kd6 20. c5+ Kc6 21. Qe4+ Kb5 22. Nc3+ Ka6 23. Qc4+ b5 24. Qxb5# *
+
+
+[Event "Chess  traps: Danish Gambit Trap"]
+[Date "2021.04.14"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C21"]
+[Opening "Danish Gambit Accepted"]
+[StudyName "Chess  traps"]
+[ChapterName "Danish Gambit Trap"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/XlXcZQJ2"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.04.14"]
+[UTCTime "13:00:25"]
+
+1. e4 e5 2. d4 exd4 (2... Nc6) 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 { Oh no I am two pawns down } 5... Qg5 6. Nf3 Qxg2 { Oh no I am 3 whole pawns down } 7. Rg1 Qh3 8. Bxf7+ Kxf7 9. Ng5+ { The mighty fork to the rescue! } 9... Ke8 10. Nxh3 *
+
+
+[Event "Chess  traps: Ruy Lopez draw"]
+[Date "2021.06.04"]
+[Result "*"]
+[Variant "Standard"]
+[ECO "C67"]
+[Opening "Ruy Lopez: Open Berlin Defense, l'Hermet Variation"]
+[StudyName "Chess  traps"]
+[ChapterName "Ruy Lopez draw"]
+[ChapterURL "https://lichess.org/study/MhwrCuAf/SoahO4ei"]
+[Annotator "https://lichess.org/@/AbhiCricket"]
+[UTCDate "2021.06.04"]
+[UTCTime "13:26:06"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. O-O Nxe4 5. d4 Nd6 6. dxe5 Nxb5 7. a4 Nbd4 8. Nxd4 d5 9. exd6 Nxd4 10. Qxd4 Qxd6 11. Qe4+ Qe6 12. Qd4 Qd6 13. Qe4+ Qe6 { This is one of the most common lines for a draw these days and you can see the likes of Magnus Carlsen and Wesley So using this very frequently. } *
+
+

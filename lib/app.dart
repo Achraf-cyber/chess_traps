@@ -12,6 +12,7 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/providers/app_theme_provider.dart';
 import 'package:chess_traps/providers/settings_provider.dart';
 import 'package:chess_traps/services/app_open_ad_manager.dart';
+import 'package:chess_traps/services/rewarded_ad_manager.dart';
 import 'package:chess_traps/services/remote_config_service.dart';
 import 'package:chess_traps/services/notification_service.dart';
 import 'package:chess_traps/services/consent_manager.dart';
@@ -100,6 +101,7 @@ Future<void> runMainApp(String envFile) async {
       MobileAds.instance.initialize().then((_) {
         debugPrint('initialize mobile ads');
         final appOpenAdManager = AppOpenAdManager()..loadAd();
+        RewardedAdManager().loadAd();
         AppLifecycleReactor(
           appOpenAdManager: appOpenAdManager,
         ).listenToAppStateChanges();

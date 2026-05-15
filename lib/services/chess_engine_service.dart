@@ -94,6 +94,16 @@ class ChessEngineService {
     });
   }
 
+  void playMove(String fen, int elo) {
+    _sendWhenReady(() {
+      _safeWrite('stop');
+      _safeWrite('setoption name UCI_LimitStrength value true');
+      _safeWrite('setoption name UCI_Elo value $elo');
+      _safeWrite('position fen $fen');
+      _safeWrite('go movetime 1000'); // Think for 1 second
+    });
+  }
+
   void _sendWhenReady(void Function() send) {
     if (_stockfish.state.value == StockfishState.ready) {
       send();

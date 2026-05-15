@@ -1,1 +1,25 @@
-{}
+{
+  "ar": [
+    "avoidTrap",
+    "avoidModeActive",
+    "blunderPrevented",
+    "findBetterMove",
+    "play"
+  ],
+
+  "es": [
+    "avoidTrap",
+    "avoidModeActive",
+    "blunderPrevented",
+    "findBetterMove",
+    "play"
+  ],
+
+  "fr": [
+    "avoidTrap",
+    "avoidModeActive",
+    "blunderPrevented",
+    "findBetterMove",
+    "play"
+  ]
+}

@@ -17,7 +17,7 @@ class MainScreen extends ConsumerWidget {
     int currentIndex = 0;
     if (uri.path.startsWith('/traps')) {
       currentIndex = 1;
-    } else if (uri.path.startsWith('/favorites')) {
+    } else if (uri.path.startsWith('/play')) {
       currentIndex = 2;
     } else if (uri.path.startsWith('/searchbymoves')) {
       currentIndex = 3;
@@ -36,7 +36,7 @@ class MainScreen extends ConsumerWidget {
             case 1:
               const TrapsRoute().go(context);
             case 2:
-              const FavoritesRoute().go(context);
+              const PlayRoute().go(context);
             case 3:
               const SearchByMovesRoute().go(context);
             case 4:
@@ -55,9 +55,9 @@ class MainScreen extends ConsumerWidget {
             label: context.phrase.traps,
           ),
           NavigationDestination(
-            icon: const Icon(Icons.favorite_outline),
-            selectedIcon: const Icon(Icons.favorite),
-            label: context.phrase.favorite,
+            icon: const Icon(Icons.videogame_asset_outlined),
+            selectedIcon: const Icon(Icons.videogame_asset),
+            label: context.phrase.play,
           ),
           NavigationDestination(
             icon: const Icon(Icons.search_outlined),

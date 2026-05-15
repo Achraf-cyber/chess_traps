@@ -10,6 +10,7 @@ import 'features/home/view/main_subscreen.dart';
 import 'features/profile/view/user_profile_screen.dart';
 import 'features/search_by_moves/view/trap_search_screen.dart';
 import 'features/traps/view/trap_list_screen.dart';
+import 'features/play/view/play_screen.dart';
 
 part 'router.g.dart';
 
@@ -21,14 +22,16 @@ final GoRouter router = GoRouter(
   observers: [
     FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
   ],
-  routes: $appRoutes,
+  routes: [
+    ...$appRoutes,
+  ],
 );
 
 @TypedShellRoute<MainShellRouteData>(
   routes: <TypedRoute<RouteData>>[
     TypedGoRoute<HomeRoute>(path: '/'),
     TypedGoRoute<TrapsRoute>(path: '/traps'),
-    TypedGoRoute<FavoritesRoute>(path: '/favorites'),
+    TypedGoRoute<PlayRoute>(path: '/play'),
     TypedGoRoute<ProfileRoute>(path: '/profile'),
     TypedGoRoute<SearchByMovesRoute>(path: '/searchbymoves'),
   ],
@@ -58,13 +61,23 @@ class TrapsRoute extends GoRouteData with $TrapsRoute {
       const NoTransitionPage(child: TrapListScreen());
 }
 
+class PlayRoute extends GoRouteData with $PlayRoute {
+  const PlayRoute();
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      const NoTransitionPage(child: PlayScreen());
+}
+
+@TypedGoRoute<FavoritesRoute>(path: '/favorites')
 class FavoritesRoute extends GoRouteData with $FavoritesRoute {
   const FavoritesRoute();
 
   @override
-  Page<void> buildPage(BuildContext context, GoRouterState state) =>
-      const NoTransitionPage(child: FavoritesScreen());
+  Widget build(BuildContext context, GoRouterState state) =>
+      const FavoritesScreen();
 }
+
 
 class SearchByMovesRoute extends GoRouteData with $SearchByMovesRoute {
   const SearchByMovesRoute();

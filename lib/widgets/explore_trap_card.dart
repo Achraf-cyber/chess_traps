@@ -2,17 +2,66 @@ import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/router.dart';
 import 'package:chess_traps/utils.dart';
 import 'package:chessground/chessground.dart';
-import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:chess_traps/providers/daily_limit_provider.dart';
+import 'package:chess_traps/services/rewarded_ad_manager.dart';
 
-class ExploreTrapCard extends StatelessWidget {
+class ExploreTrapCard extends ConsumerWidget {
   const ExploreTrapCard({super.key, required this.trap, this.showBadge = true});
 
   final ChessTrap trap;
   final bool showBadge;
 
+  void _handleTap(BuildContext context, WidgetRef ref) {
+    final dailyLimit = ref.read(dailyLimitProvider.notifier);
+    if (!dailyLimit.canViewTrap()) {
+      showDialog(
+        context: context,
+        builder: (ctx) => AlertDialog(
+          title: Text(context.phrase.limitReached),
+          content: const Text("You've viewed your 10 free traps for today! Watch a short ad to unlock all traps for the rest of the day."),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(ctx),
+              child: Text(context.phrase.cancel),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pop(ctx);
+                if (RewardedAdManager().isAdAvailable) {
+                  RewardedAdManager().showAdIfAvailable(
+                    onRewardEarned: () {
+                      dailyLimit.unlockForToday();
+                      TrapDetailRoute(index: trap.id).push<void>(context);
+                    },
+                    onFailed: () {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(content: Text("Ad could not be loaded. Try again later.")),
+                      );
+                    },
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Ad not ready yet. Try again later.")),
+                  );
+                  RewardedAdManager().loadAd();
+                }
+              },
+              child: Text(context.phrase.watchAd),
+            ),
+          ],
+        ),
+      );
+      return;
+    }
+    
+    dailyLimit.incrementViewCount();
+    TrapDetailRoute(index: trap.id).push<void>(context);
+  }
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     // Generate a pseudo-difficulty based on move count for extra detail
     final String difficulty = trap.moves.length > 10
         ? context.phrase.advanced
@@ -31,7 +80,7 @@ class ExploreTrapCard extends StatelessWidget {
       ),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
-        onTap: () => TrapDetailRoute(index: trap.id).push<void>(context),
+        onTap: () => _handleTap(context, ref),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           mainAxisSize: MainAxisSize.min,

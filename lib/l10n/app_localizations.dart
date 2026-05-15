@@ -611,6 +611,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Learn Now'**
   String get learnNow;
+
+  /// No description provided for @avoidTrap.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid the Trap'**
+  String get avoidTrap;
+
+  /// No description provided for @avoidModeActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid Mode active. Find the best move!'**
+  String get avoidModeActive;
+
+  /// No description provided for @blunderPrevented.
+  ///
+  /// In en, this message translates to:
+  /// **'Great! You avoided the trap.'**
+  String get blunderPrevented;
+
+  /// No description provided for @findBetterMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Find a better move to avoid the trap.'**
+  String get findBetterMove;
+
+  /// No description provided for @play.
+  ///
+  /// In en, this message translates to:
+  /// **'Play'**
+  String get play;
 }
 
 class _AppLocalizationsDelegate

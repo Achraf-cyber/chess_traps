@@ -8,6 +8,7 @@ part of 'router.dart';
 
 List<RouteBase> get $appRoutes => [
   $mainShellRouteData,
+  $favoritesRoute,
   $trapDetailRoute,
   $trapGroupRoute,
 ];
@@ -17,7 +18,7 @@ RouteBase get $mainShellRouteData => ShellRouteData.$route(
   routes: [
     GoRouteData.$route(path: '/', factory: $HomeRoute._fromState),
     GoRouteData.$route(path: '/traps', factory: $TrapsRoute._fromState),
-    GoRouteData.$route(path: '/favorites', factory: $FavoritesRoute._fromState),
+    GoRouteData.$route(path: '/play', factory: $PlayRoute._fromState),
     GoRouteData.$route(path: '/profile', factory: $ProfileRoute._fromState),
     GoRouteData.$route(
       path: '/searchbymoves',
@@ -71,12 +72,11 @@ mixin $TrapsRoute on GoRouteData {
   void replace(BuildContext context) => context.replace(location);
 }
 
-mixin $FavoritesRoute on GoRouteData {
-  static FavoritesRoute _fromState(GoRouterState state) =>
-      const FavoritesRoute();
+mixin $PlayRoute on GoRouteData {
+  static PlayRoute _fromState(GoRouterState state) => const PlayRoute();
 
   @override
-  String get location => GoRouteData.$location('/favorites');
+  String get location => GoRouteData.$location('/play');
 
   @override
   void go(BuildContext context) => context.go(location);
@@ -118,6 +118,30 @@ mixin $SearchByMovesRoute on GoRouteData {
 
   @override
   String get location => GoRouteData.$location('/searchbymoves');
+
+  @override
+  void go(BuildContext context) => context.go(location);
+
+  @override
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  @override
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  @override
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $favoritesRoute =>
+    GoRouteData.$route(path: '/favorites', factory: $FavoritesRoute._fromState);
+
+mixin $FavoritesRoute on GoRouteData {
+  static FavoritesRoute _fromState(GoRouterState state) =>
+      const FavoritesRoute();
+
+  @override
+  String get location => GoRouteData.$location('/favorites');
 
   @override
   void go(BuildContext context) => context.go(location);

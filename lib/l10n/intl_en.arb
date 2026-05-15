@@ -93,5 +93,10 @@
   "incorrectMove": "Incorrect move. Try again!",
   "goBack": "Go Back",
   "boardTheme": "Board Theme",
-  "learnNow": "Learn Now"
+  "learnNow": "Learn Now",
+  "avoidTrap": "Avoid the Trap",
+  "avoidModeActive": "Avoid Mode active. Find the best move!",
+  "blunderPrevented": "Great! You avoided the trap.",
+  "findBetterMove": "Find a better move to avoid the trap.",
+  "play": "Play"
 }

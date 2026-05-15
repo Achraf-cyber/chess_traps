@@ -19,6 +19,7 @@ import '../../../providers/engine_analysis_provider.dart';
 import '../../../providers/settings_provider.dart';
 import '../../../widgets/ad_banner_widget.dart';
 import '../../../widgets/evaluation_bar.dart';
+import '../../../data/chess_trap.dart';
 
 class TrapDetailScreen extends ConsumerStatefulWidget {
   const TrapDetailScreen({super.key, required this.trapIndex});
@@ -36,6 +37,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   Timer? _autoPlayTimer;
   bool isAutoPlaying = false;
   bool isPracticeMode = false;
+  bool isAvoidMode = false;
+  int? blunderIndex;
   NormalMove? promotionMove;
   bool? _isLastMoveCorrect;
   Timer? _feedbackTimer;
@@ -50,6 +53,18 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
         InterstitialAdManager().onTrapViewed();
       });
     });
+  }
+
+  void _calculateBlunderIndex(ChessTrap trap) {
+    // Find the last move of the losing side
+    int lastLosingMoveIndex = -1;
+    for (int i = 0; i < trap.moves.length; i++) {
+      final turn = (i % 2 == 0) ? Side.white : Side.black;
+      if (turn != trap.targetSide) {
+        lastLosingMoveIndex = i;
+      }
+    }
+    blunderIndex = lastLosingMoveIndex;
   }
 
   void _scrollToCurrentMove() {
@@ -82,6 +97,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
 
   void _toggleAutoPlay(int maxMoves) {
     if (isPracticeMode) setState(() => isPracticeMode = false);
+    if (isAvoidMode) setState(() => isAvoidMode = false);
     if (isAutoPlaying) {
       _autoPlayTimer?.cancel();
       setState(() => isAutoPlaying = false);
@@ -100,6 +116,12 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   void _onPracticeMove(Move move, {bool? viaDragAndDrop}) {
     final trap = ref.read(trapGameProvider(widget.trapIndex));
     if (trap == null) return;
+
+    if (isAvoidMode) {
+      _handleAvoidMove(move);
+      return;
+    }
+
     if (currentMoveIndex >= trap.moves.length) return;
 
     final position = ref.read(
@@ -142,6 +164,50 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
+      );
+    }
+  }
+
+  void _handleAvoidMove(Move move) {
+    final position = ref.read(
+      trapPositionProvider(widget.trapIndex, currentMoveIndex),
+    );
+    final engineState = ref.read(engineAnalysisProvider(position.fen));
+    
+    // Check if the move is among the best engine moves or at least not a blunder
+    // For simplicity, we check if it's in multiPv or if evaluation is okay
+    bool isCorrect = false;
+    final uci = move.uci;
+    
+    for (final bestMoves in engineState.multiPv.values) {
+      if (bestMoves.contains(uci)) {
+        isCorrect = true;
+        break;
+      }
+    }
+
+    // If no engine data yet, we can't be sure, but let's assume if score > -100 (for black) or < 100 (for white)
+    if (!isCorrect && engineState.depth > 10) {
+      final score = engineState.scoreInCentipawns;
+      final side = position.turn;
+      if (side == Side.white && score > -50) isCorrect = true;
+      if (side == Side.black && score < 50) isCorrect = true;
+    }
+
+    if (isCorrect) {
+      HapticFeedback.heavyImpact();
+      _showFeedback(true);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(context.phrase.blunderPrevented)),
+      );
+      Future.delayed(const Duration(milliseconds: 1500), () {
+        if (mounted) setState(() => isAvoidMode = false);
+      });
+    } else {
+      HapticFeedback.vibrate();
+      _showFeedback(false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(context.phrase.incorrectMove)),
       );
     }
   }
@@ -286,9 +352,47 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           ),
           IconButton(
             onPressed: () {
+              setState(() {
+                isAvoidMode = !isAvoidMode;
+                if (isAvoidMode) {
+                  isPracticeMode = false;
+                  isAutoPlaying = false;
+                  _calculateBlunderIndex(trap);
+                  
+                  // Auto play until blunder
+                  currentMoveIndex = 0;
+                  final targetIndex = blunderIndex ?? 0;
+                  
+                  _autoPlayTimer?.cancel();
+                  _autoPlayTimer = Timer.periodic(const Duration(milliseconds: 800), (timer) {
+                    if (currentMoveIndex < targetIndex) {
+                      _updateMoveIndex(currentMoveIndex + 1, maxMoves);
+                    } else {
+                      timer.cancel();
+                      // Flip board to losing side
+                      setState(() {
+                        orientation = trap.targetSide == Side.white ? Side.black : Side.white;
+                      });
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text(context.phrase.avoidModeActive)),
+                      );
+                    }
+                  });
+                }
+              });
+            },
+            icon: Icon(
+              isAvoidMode ? Icons.shield_rounded : Icons.shield_outlined,
+              color: isAvoidMode ? Colors.orange : null,
+            ),
+            tooltip: "Avoid Trap Mode",
+          ),
+          IconButton(
+            onPressed: () {
               final maxMoves = trap.moves.length;
               setState(() {
                 isPracticeMode = !isPracticeMode;
+                isAvoidMode = false;
                 if (isPracticeMode) {
                   currentMoveIndex = 0; // Reset to start
                   if (isAutoPlaying) {
@@ -476,7 +580,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                               clipBehavior: Clip.antiAlias,
                               child: Stack(
                                 children: [
-                                  isPracticeMode && position.turn == trap.targetSide
+                                  (isPracticeMode && position.turn == trap.targetSide) || isAvoidMode
                                       ? cg.Chessboard(
                                           size: size,
                                           orientation: orientation,
@@ -509,7 +613,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                             colorScheme:
                                                 settings.boardTheme.colorScheme,
                                           ),
-                                          shapes: isPracticeMode
+                                          shapes: isPracticeMode || isAvoidMode
                                               ? ISet()
                                               : arrows,
                                         ),
@@ -582,7 +686,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               ],
             ),
           ),
-          if (!isPracticeMode)
+          if (!isPracticeMode && !isAvoidMode)
             Expanded(
               flex: 5,
               child: Container(
@@ -623,7 +727,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                 padding: const EdgeInsets.symmetric(
                                   horizontal: 8,
                                   vertical: 2,
-                                ),
+                                  ),
                                 decoration: BoxDecoration(
                                   color: context.colors.tertiaryContainer,
                                   borderRadius: BorderRadius.circular(8),
@@ -660,6 +764,41 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                     const Divider(height: 1),
                     Expanded(
                       child: _buildVerticalMoveHistory(trap.moves, engineState),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          if (isAvoidMode)
+            Expanded(
+              flex: 5,
+              child: Container(
+                padding: const EdgeInsets.all(24),
+                decoration: BoxDecoration(
+                  color: context.colors.primaryContainer.withOpacity(0.3),
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(32),
+                  ),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.shield_rounded, size: 64, color: context.colors.primary),
+                    const SizedBox(height: 16),
+                    Text(
+                      context.phrase.avoidTrap,
+                      style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(
+                      context.phrase.findBetterMove,
+                      textAlign: TextAlign.center,
+                      style: context.textTheme.bodyLarge,
+                    ),
+                    const SizedBox(height: 24),
+                    OutlinedButton(
+                      onPressed: () => setState(() => isAvoidMode = false),
+                      child: Text(context.phrase.cancel),
                     ),
                   ],
                 ),

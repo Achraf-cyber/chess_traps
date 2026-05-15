@@ -27,7 +27,7 @@ dependencies:
   path: ^1.9.1
   riverpod: ^3.0.3
   riverpod_annotation: ^4.0.0
-  shared_preferences: ^2.5.4
+  shared_preferences: ^2.5.5
   url_launcher: ^6.3.2
   fast_immutable_collections: ^11.1.0
   google_mobile_ads: ^8.0.0

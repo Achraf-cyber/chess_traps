@@ -273,4 +273,19 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get learnNow => 'Apprendre maintenant';
+
+  @override
+  String get avoidTrap => 'Avoid the Trap';
+
+  @override
+  String get avoidModeActive => 'Avoid Mode active. Find the best move!';
+
+  @override
+  String get blunderPrevented => 'Great! You avoided the trap.';
+
+  @override
+  String get findBetterMove => 'Find a better move to avoid the trap.';
+
+  @override
+  String get play => 'Play';
 }

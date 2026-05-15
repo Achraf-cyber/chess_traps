@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:dartchess/dartchess.dart';
 
 class ChessTrap {
   const ChessTrap({
@@ -14,6 +15,7 @@ class ChessTrap {
     required this.metadata,
     required this.moves,
     required this.fen,
+    required this.targetSide,
   });
 
   final int id;
@@ -32,6 +34,7 @@ class ChessTrap {
 
   final String metadata;
   final String fen;
+  final Side targetSide;
 
   String getLocalizedName(BuildContext context) {
     final languageCode = Localizations.localeOf(context).languageCode;

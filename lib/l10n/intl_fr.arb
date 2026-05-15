@@ -76,5 +76,22 @@
     "undo": "Annuler",
     "flip": "Retourner",
     "privacyPolicy": "Politique de Confidentialité",
-    "termsOfUse": "Conditions d'Utilisation"
+    "termsOfUse": "Conditions d'Utilisation",
+    "browseByOpening": "Parcourir par ouverture",
+    "allTraps": "Tous les pièges",
+    "searchResults": "Résultats de recherche",
+    "featuredTrap": "Piège en vedette",
+    "startTraining": "Commencer l'entraînement",
+    "beginner": "Débutant",
+    "intermediate": "Intermédiaire",
+    "advanced": "Avancé",
+    "unlockedExtraMoves": "5 coups supplémentaires débloqués !",
+    "limitReached": "Limite atteinte",
+    "cancel": "ANNULER",
+    "watchAd": "VOIR UNE PUB",
+    "trapCompleted": "Piège complété ! Bien joué !",
+    "incorrectMove": "Coup incorrect. Réessayez !",
+    "goBack": "Retour",
+    "boardTheme": "Thème de l'échiquier",
+    "learnNow": "Apprendre maintenant"
 }

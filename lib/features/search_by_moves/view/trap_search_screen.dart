@@ -82,7 +82,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
         });
         if (!mounted) return;
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Unlocked 5 extra moves!")),
+          SnackBar(content: Text(context.phrase.unlockedExtraMoves)),
         );
       },
     );
@@ -140,7 +140,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("Limit Reached"),
+        title: Text(context.phrase.limitReached),
         content: const Text(
           "You've reached the free move limit for this search. Watch a short video ad to unlock 5 more moves.",
         ),
@@ -149,7 +149,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: const Text("CANCEL"),
+            child: Text(context.phrase.cancel),
           ),
           ElevatedButton.icon(
             onPressed: () {
@@ -157,7 +157,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
               _showRewardedAd();
             },
             icon: const Icon(Icons.play_circle_fill_rounded),
-            label: const Text("WATCH AD"),
+            label: Text(context.phrase.watchAd),
           ),
         ],
       ),

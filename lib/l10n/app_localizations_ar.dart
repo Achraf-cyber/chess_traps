@@ -219,4 +219,55 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get termsOfUse => 'شروط الاستخدام';
+
+  @override
+  String get browseByOpening => 'تصفح حسب الافتتاحية';
+
+  @override
+  String get allTraps => 'جميع الفخاخ';
+
+  @override
+  String get searchResults => 'نتائج البحث';
+
+  @override
+  String get featuredTrap => 'فخ مميز';
+
+  @override
+  String get startTraining => 'بدء التدريب';
+
+  @override
+  String get beginner => 'مبتدئ';
+
+  @override
+  String get intermediate => 'متوسط';
+
+  @override
+  String get advanced => 'متقدم';
+
+  @override
+  String get unlockedExtraMoves => 'تم فتح 5 حركات إضافية!';
+
+  @override
+  String get limitReached => 'تم بلوغ الحد الأقصى';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get watchAd => 'مشاهدة إعلان';
+
+  @override
+  String get trapCompleted => 'اكتمل الفخ! أحسنت!';
+
+  @override
+  String get incorrectMove => 'حركة خاطئة. حاول مرة أخرى!';
+
+  @override
+  String get goBack => 'العودة';
+
+  @override
+  String get boardTheme => 'مظهر الرقعة';
+
+  @override
+  String get learnNow => 'تعلم الآن';
 }

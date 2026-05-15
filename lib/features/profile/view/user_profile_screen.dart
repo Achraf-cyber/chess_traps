@@ -1,5 +1,4 @@
 import 'package:chess_traps/providers/user_favorites_provider.dart';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -77,13 +76,13 @@ class UserProfileScreen extends ConsumerWidget {
                       ),
                     ),
                   ),
-                  _ProfileSettingsTile(
-                    icon: Icons.gavel_rounded,
-                    title: context.phrase.termsOfUse,
-                    onTap: () {
-                      // Placeholder for Terms of Use if needed, or link to same page if applicable
-                    },
-                  ),
+                  // _ProfileSettingsTile(
+                  //   icon: Icons.gavel_rounded,
+                  //   title: context.phrase.termsOfUse,
+                  //   onTap: () {
+                  //     // Placeholder for Terms of Use if needed, or link to same page if applicable
+                  //   },
+                  // ),
                   _ProfileSettingsTile(
                     icon: Icons.article_outlined,
                     title: context.phrase.openSourceLicense,

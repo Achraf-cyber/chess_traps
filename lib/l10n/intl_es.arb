@@ -76,5 +76,22 @@
     "undo": "Deshacer",
     "flip": "Girar",
     "privacyPolicy": "Política de privacidad",
-    "termsOfUse": "Términos de uso"
+    "termsOfUse": "Términos de uso",
+    "browseByOpening": "Explorar por apertura",
+    "allTraps": "Todas las celadas",
+    "searchResults": "Resultados de búsqueda",
+    "featuredTrap": "Celada destacada",
+    "startTraining": "Empezar entrenamiento",
+    "beginner": "Principiante",
+    "intermediate": "Intermedio",
+    "advanced": "Avanzado",
+    "unlockedExtraMoves": "¡5 movimientos extra desbloqueados!",
+    "limitReached": "Límite alcanzado",
+    "cancel": "CANCELAR",
+    "watchAd": "VER ANUNCIO",
+    "trapCompleted": "¡Celada completada! ¡Bien hecho!",
+    "incorrectMove": "Movimiento incorrecto. ¡Inténtalo de nuevo!",
+    "goBack": "Volver",
+    "boardTheme": "Tema del tablero",
+    "learnNow": "Aprender ahora"
 }

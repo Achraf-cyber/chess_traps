@@ -89,7 +89,7 @@ class TrapFeaturedCard extends StatelessWidget {
                     onPressed: () =>
                         TrapDetailRoute(index: trap.id).push<void>(context),
                     icon: const Icon(Icons.play_arrow_rounded),
-                    label: const Text("Learn Now"),
+                    label: Text(context.phrase.learnNow),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: context.colors.primary,
                       foregroundColor: context.colors.onPrimary,

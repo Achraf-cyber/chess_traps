@@ -31,6 +31,7 @@ class TrapDetailScreen extends ConsumerStatefulWidget {
 class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   int currentMoveIndex = 0;
   Side orientation = Side.white;
+  bool _orientationInitialized = false;
   final ScrollController _scrollController = ScrollController();
   Timer? _autoPlayTimer;
   bool isAutoPlaying = false;
@@ -119,14 +120,14 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
 
           if (currentMoveIndex >= trap.moves.length) {
             ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(content: Text("Trap completed! Well done!")),
+              SnackBar(content: Text(context.phrase.trapCompleted)),
             );
             setState(() => isPracticeMode = false);
           }
         });
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Trap completed! Well done!")),
+          SnackBar(content: Text(context.phrase.trapCompleted)),
         );
         setState(() => isPracticeMode = false);
       }
@@ -135,7 +136,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       _showFeedback(false);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: const Text("Incorrect move. Try again!"),
+          content: Text(context.phrase.incorrectMove),
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
@@ -204,12 +205,17 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               ),
               TextButton(
                 onPressed: () => context.pop(),
-                child: const Text("Go Back"),
+                child: Text(context.phrase.goBack),
               ),
             ],
           ),
         ),
       );
+    }
+
+    if (!_orientationInitialized) {
+      orientation = trap.targetSide;
+      _orientationInitialized = true;
     }
 
     final maxMoves = trap.moves.length;
@@ -293,7 +299,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   final firstPosition = ref.read(
                     trapPositionProvider(widget.trapIndex, 0),
                   );
-                  if (firstPosition.turn != orientation) {
+                  if (firstPosition.turn != trap.targetSide) {
                     Future.delayed(const Duration(milliseconds: 600), () {
                       if (!mounted || !isPracticeMode) return;
                       _updateMoveIndex(1, maxMoves);
@@ -423,7 +429,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                   height: barHeight,
                                   child: DecoratedBox(
                                     decoration: BoxDecoration(
-                                      color: context.colors.surfaceContainerHigh,
+                                      color:
+                                          context.colors.surfaceContainerHigh,
                                       borderRadius: BorderRadius.circular(999),
                                     ),
                                     child: Center(
@@ -469,7 +476,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                               clipBehavior: Clip.antiAlias,
                               child: Stack(
                                 children: [
-                                  isPracticeMode && position.turn == orientation
+                                  isPracticeMode && position.turn == trap.targetSide
                                       ? cg.Chessboard(
                                           size: size,
                                           orientation: orientation,
@@ -567,10 +574,10 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 4),
                 if (!isPracticeMode) ...[
                   _buildMoveNavigation(maxMoves),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 4),
                 ],
               ],
             ),
@@ -704,7 +711,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       },
                     ),
                     const SizedBox(height: 16),
-                    Text('Board Theme', style: context.textTheme.labelLarge),
+                    Text(context.phrase.boardTheme, style: context.textTheme.labelLarge),
                     const SizedBox(height: 8),
                     DropdownButtonFormField<AppBoardTheme>(
                       initialValue: settings.boardTheme,

@@ -76,5 +76,22 @@
   "undo": "Undo",
   "flip": "Flip",
   "privacyPolicy": "Privacy Policy",
-  "termsOfUse": "Terms of Use"
+  "termsOfUse": "Terms of Use",
+  "browseByOpening": "Browse by Opening",
+  "allTraps": "All Traps",
+  "searchResults": "Search Results",
+  "featuredTrap": "Featured Trap",
+  "startTraining": "Start Training",
+  "beginner": "Beginner",
+  "intermediate": "Intermediate",
+  "advanced": "Advanced",
+  "unlockedExtraMoves": "Unlocked 5 extra moves!",
+  "limitReached": "Limit Reached",
+  "cancel": "CANCEL",
+  "watchAd": "WATCH AD",
+  "trapCompleted": "Trap completed! Well done!",
+  "incorrectMove": "Incorrect move. Try again!",
+  "goBack": "Go Back",
+  "boardTheme": "Board Theme",
+  "learnNow": "Learn Now"
 }

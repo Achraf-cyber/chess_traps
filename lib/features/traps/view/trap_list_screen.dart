@@ -82,7 +82,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 24, 16, 12),
                   child: Text(
-                    'Browse by Opening',
+                    context.phrase.browseByOpening,
                     style: context.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w800,
                     ),
@@ -96,7 +96,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(16, 32, 16, 16),
                   child: Text(
-                    'All Traps',
+                    context.phrase.allTraps,
                     style: context.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w800,
                     ),
@@ -109,7 +109,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    'Search Results',
+                    context.phrase.searchResults,
                     style: context.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.w800,
                     ),
@@ -149,14 +149,12 @@ class HorizontalTrapGroups extends StatelessWidget {
             child: Card(
               elevation: 0,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
+                borderRadius: BorderRadius.circular(16),
                 side: BorderSide(
-                  // ignore: deprecated_member_use
-                  color: context.colors.outlineVariant.withOpacity(0.3),
+                  color: context.colors.outlineVariant,
                 ),
               ),
-              // ignore: deprecated_member_use
-              color: context.colors.surfaceContainerHighest.withOpacity(0.3),
+              color: context.colors.surfaceContainerHighest,
               clipBehavior: Clip.antiAlias,
               child: InkWell(
                 onTap: () {
@@ -170,8 +168,7 @@ class HorizontalTrapGroups extends StatelessWidget {
                       Container(
                         padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
-                          // ignore: deprecated_member_use
-                          color: context.colors.primary.withOpacity(0.1),
+                          color: context.colors.primaryContainer,
                           shape: BoxShape.circle,
                         ),
                         child: Icon(
@@ -246,7 +243,7 @@ class FloatingSearchTextField extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         color: context.colors.surfaceContainerHigh,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(16),
       ),
       child: TextField(
         controller: controller,
@@ -254,8 +251,7 @@ class FloatingSearchTextField extends StatelessWidget {
         style: context.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600),
         decoration: InputDecoration(
           hintText: hint,
-          // ignore: deprecated_member_use
-          hintStyle: TextStyle(color: context.colors.onSurfaceVariant.withOpacity(0.6)),
+          hintStyle: TextStyle(color: context.colors.onSurfaceVariant),
           prefixIcon: Icon(Icons.search_rounded, color: context.colors.onSurfaceVariant),
           suffixIcon: controller.text.isNotEmpty
               ? IconButton(
@@ -276,3 +272,4 @@ class FloatingSearchTextField extends StatelessWidget {
     );
   }
 }
+

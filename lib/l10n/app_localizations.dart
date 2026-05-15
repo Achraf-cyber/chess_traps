@@ -509,6 +509,108 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Terms of Use'**
   String get termsOfUse;
+
+  /// No description provided for @browseByOpening.
+  ///
+  /// In en, this message translates to:
+  /// **'Browse by Opening'**
+  String get browseByOpening;
+
+  /// No description provided for @allTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'All Traps'**
+  String get allTraps;
+
+  /// No description provided for @searchResults.
+  ///
+  /// In en, this message translates to:
+  /// **'Search Results'**
+  String get searchResults;
+
+  /// No description provided for @featuredTrap.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured Trap'**
+  String get featuredTrap;
+
+  /// No description provided for @startTraining.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Training'**
+  String get startTraining;
+
+  /// No description provided for @beginner.
+  ///
+  /// In en, this message translates to:
+  /// **'Beginner'**
+  String get beginner;
+
+  /// No description provided for @intermediate.
+  ///
+  /// In en, this message translates to:
+  /// **'Intermediate'**
+  String get intermediate;
+
+  /// No description provided for @advanced.
+  ///
+  /// In en, this message translates to:
+  /// **'Advanced'**
+  String get advanced;
+
+  /// No description provided for @unlockedExtraMoves.
+  ///
+  /// In en, this message translates to:
+  /// **'Unlocked 5 extra moves!'**
+  String get unlockedExtraMoves;
+
+  /// No description provided for @limitReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Limit Reached'**
+  String get limitReached;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'CANCEL'**
+  String get cancel;
+
+  /// No description provided for @watchAd.
+  ///
+  /// In en, this message translates to:
+  /// **'WATCH AD'**
+  String get watchAd;
+
+  /// No description provided for @trapCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Trap completed! Well done!'**
+  String get trapCompleted;
+
+  /// No description provided for @incorrectMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect move. Try again!'**
+  String get incorrectMove;
+
+  /// No description provided for @goBack.
+  ///
+  /// In en, this message translates to:
+  /// **'Go Back'**
+  String get goBack;
+
+  /// No description provided for @boardTheme.
+  ///
+  /// In en, this message translates to:
+  /// **'Board Theme'**
+  String get boardTheme;
+
+  /// No description provided for @learnNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn Now'**
+  String get learnNow;
 }
 
 class _AppLocalizationsDelegate

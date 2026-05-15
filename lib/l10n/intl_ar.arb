@@ -76,5 +76,22 @@
     "undo": "تراجع",
     "flip": "قلب",
     "privacyPolicy": "سياسة الخصوصية",
-    "termsOfUse": "شروط الاستخدام"
+    "termsOfUse": "شروط الاستخدام",
+    "browseByOpening": "تصفح حسب الافتتاحية",
+    "allTraps": "جميع الفخاخ",
+    "searchResults": "نتائج البحث",
+    "featuredTrap": "فخ مميز",
+    "startTraining": "بدء التدريب",
+    "beginner": "مبتدئ",
+    "intermediate": "متوسط",
+    "advanced": "متقدم",
+    "unlockedExtraMoves": "تم فتح 5 حركات إضافية!",
+    "limitReached": "تم بلوغ الحد الأقصى",
+    "cancel": "إلغاء",
+    "watchAd": "مشاهدة إعلان",
+    "trapCompleted": "اكتمل الفخ! أحسنت!",
+    "incorrectMove": "حركة خاطئة. حاول مرة أخرى!",
+    "goBack": "العودة",
+    "boardTheme": "مظهر الرقعة",
+    "learnNow": "تعلم الآن"
 }

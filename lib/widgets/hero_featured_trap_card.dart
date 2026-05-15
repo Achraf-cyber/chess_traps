@@ -4,7 +4,6 @@ import 'package:chess_traps/utils.dart';
 import 'package:chessground/chessground.dart';
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
-import 'dart:ui';
 
 class HeroFeaturedTrapCard extends StatelessWidget {
   const HeroFeaturedTrapCard({super.key, required this.trap});
@@ -16,33 +15,19 @@ class HeroFeaturedTrapCard extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(32),
-        gradient: LinearGradient(
-          colors: [
-            context.colors.primary,
-            context.colors.tertiary,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: context.colors.primary.withOpacity(0.4),
-            blurRadius: 24,
-            offset: const Offset(0, 12),
-          ),
-        ],
+        color: context.colors.primaryContainer,
+        borderRadius: BorderRadius.circular(24),
       ),
       clipBehavior: Clip.antiAlias,
       child: Stack(
         children: [
-          // Background Chessboard fade
+          // Background Chessboard fade - keeping it but making it flat and less intrusive
           Positioned(
             right: -60,
             top: -40,
             bottom: -40,
             child: Opacity(
-              opacity: 0.15,
+              opacity: 0.1,
               child: IgnorePointer(
                 child: SizedBox(
                   width: 300,
@@ -65,19 +50,19 @@ class HeroFeaturedTrapCard extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(20),
+                    color: context.colors.onPrimaryContainer.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(16),
                   ),
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.star_rounded, color: Colors.amber, size: 16),
+                      Icon(Icons.star_rounded, color: context.colors.onPrimaryContainer, size: 16),
                       const SizedBox(width: 4),
                       Text(
-                        'Featured Trap',
+                        context.phrase.featuredTrap,
                         style: context.textTheme.labelMedium?.copyWith(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w900,
+                          color: context.colors.onPrimaryContainer,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
                     ],
@@ -87,7 +72,7 @@ class HeroFeaturedTrapCard extends StatelessWidget {
                 Text(
                   trap.getLocalizedName(context),
                   style: context.textTheme.headlineSmall?.copyWith(
-                    color: Colors.white,
+                    color: context.colors.onPrimaryContainer,
                     fontWeight: FontWeight.w900,
                     height: 1.1,
                   ),
@@ -98,7 +83,7 @@ class HeroFeaturedTrapCard extends StatelessWidget {
                 Text(
                   trap.opening,
                   style: context.textTheme.bodyMedium?.copyWith(
-                    color: Colors.white.withOpacity(0.8),
+                    color: context.colors.onPrimaryContainer.withOpacity(0.8),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -108,20 +93,20 @@ class HeroFeaturedTrapCard extends StatelessWidget {
                     TrapDetailRoute(index: trap.id).push<void>(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: context.colors.primary,
+                    backgroundColor: context.colors.primary,
+                    foregroundColor: context.colors.onPrimary,
                     padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
+                      borderRadius: BorderRadius.circular(12),
                     ),
                     elevation: 0,
                   ),
-                  child: const Row(
+                  child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text('Start Training', style: TextStyle(fontWeight: FontWeight.w800)),
-                      SizedBox(width: 8),
-                      Icon(Icons.play_arrow_rounded),
+                      Text(context.phrase.startTraining, style: const TextStyle(fontWeight: FontWeight.w700)),
+                      const SizedBox(width: 8),
+                      const Icon(Icons.play_arrow_rounded),
                     ],
                   ),
                 ),
@@ -133,3 +118,4 @@ class HeroFeaturedTrapCard extends StatelessWidget {
     );
   }
 }
+

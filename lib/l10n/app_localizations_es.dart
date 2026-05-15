@@ -222,4 +222,55 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get termsOfUse => 'Términos de uso';
+
+  @override
+  String get browseByOpening => 'Explorar por apertura';
+
+  @override
+  String get allTraps => 'Todas las celadas';
+
+  @override
+  String get searchResults => 'Resultados de búsqueda';
+
+  @override
+  String get featuredTrap => 'Celada destacada';
+
+  @override
+  String get startTraining => 'Empezar entrenamiento';
+
+  @override
+  String get beginner => 'Principiante';
+
+  @override
+  String get intermediate => 'Intermedio';
+
+  @override
+  String get advanced => 'Avanzado';
+
+  @override
+  String get unlockedExtraMoves => '¡5 movimientos extra desbloqueados!';
+
+  @override
+  String get limitReached => 'Límite alcanzado';
+
+  @override
+  String get cancel => 'CANCELAR';
+
+  @override
+  String get watchAd => 'VER ANUNCIO';
+
+  @override
+  String get trapCompleted => '¡Celada completada! ¡Bien hecho!';
+
+  @override
+  String get incorrectMove => 'Movimiento incorrecto. ¡Inténtalo de nuevo!';
+
+  @override
+  String get goBack => 'Volver';
+
+  @override
+  String get boardTheme => 'Tema del tablero';
+
+  @override
+  String get learnNow => 'Aprender ahora';
 }

@@ -15,28 +15,19 @@ class ExploreTrapCard extends StatelessWidget {
   Widget build(BuildContext context) {
     // Generate a pseudo-difficulty based on move count for extra detail
     final String difficulty = trap.moves.length > 10
-        ? "Advanced"
+        ? context.phrase.advanced
         : trap.moves.length > 6
-        ? "Intermediate"
-        : "Beginner";
+        ? context.phrase.intermediate
+        : context.phrase.beginner;
 
     return Container(
       decoration: BoxDecoration(
         color: context.colors.surface,
-        borderRadius: BorderRadius.circular(24),
+        borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          // ignore: deprecated_member_use
-          color: context.colors.outlineVariant.withOpacity(0.4),
-          width: 1.5,
+          color: context.colors.outlineVariant,
+          width: 1.0,
         ),
-        boxShadow: [
-          BoxShadow(
-            // ignore: deprecated_member_use
-            color: context.colors.shadow.withOpacity(0.06),
-            blurRadius: 16,
-            offset: const Offset(0, 8),
-          ),
-        ],
       ),
       clipBehavior: Clip.antiAlias,
       child: InkWell(
@@ -51,8 +42,7 @@ class ExploreTrapCard extends StatelessWidget {
                 fit: StackFit.expand,
                 children: [
                   Container(
-                    // ignore: deprecated_member_use
-                    color: context.colors.surfaceContainerHighest.withOpacity(0.3),
+                    color: context.colors.surfaceContainerHighest,
                     child: IgnorePointer(
                       child: LayoutBuilder(
                         builder: (context, constraints) {
@@ -76,12 +66,10 @@ class ExploreTrapCard extends StatelessWidget {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          // ignore: deprecated_member_use
-                          color: context.colors.surface.withOpacity(0.85),
+                          color: context.colors.surface,
                           borderRadius: BorderRadius.circular(8),
                           border: Border.all(
-                            // ignore: deprecated_member_use
-                            color: context.colors.outlineVariant.withOpacity(0.3),
+                            color: context.colors.outlineVariant,
                           ),
                         ),
                         child: Text(
@@ -107,7 +95,7 @@ class ExploreTrapCard extends StatelessWidget {
                     Text(
                       trap.getLocalizedName(context),
                       style: context.textTheme.titleSmall?.copyWith(
-                        fontWeight: FontWeight.w800,
+                        fontWeight: FontWeight.w700,
                         letterSpacing: -0.2,
                         height: 1.2,
                       ),
@@ -119,15 +107,13 @@ class ExploreTrapCard extends StatelessWidget {
                         Icon(
                           Icons.keyboard_arrow_right_rounded,
                           size: 14,
-                          // ignore: deprecated_member_use
-                          color: context.colors.primary.withOpacity(0.8),
+                          color: context.colors.primary,
                         ),
                         Expanded(
                           child: Text(
                             trap.opening,
                             style: context.textTheme.labelSmall?.copyWith(
-                              // ignore: deprecated_member_use
-                              color: context.colors.onSurfaceVariant.withOpacity(0.8),
+                              color: context.colors.onSurfaceVariant,
                               fontWeight: FontWeight.w500,
                             ),
                             maxLines: 1,

@@ -128,6 +128,7 @@ class NotificationService {
       title: 'Trap of the Day is Ready!',
       body: 'Jump in to learn a new opening trap and boost your rating ♟️',
       scheduledDate: scheduledDate,
+
       notificationDetails: details,
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       matchDateTimeComponents: DateTimeComponents.time,

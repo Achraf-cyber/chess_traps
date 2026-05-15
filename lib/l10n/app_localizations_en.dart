@@ -221,4 +221,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get termsOfUse => 'Terms of Use';
+
+  @override
+  String get browseByOpening => 'Browse by Opening';
+
+  @override
+  String get allTraps => 'All Traps';
+
+  @override
+  String get searchResults => 'Search Results';
+
+  @override
+  String get featuredTrap => 'Featured Trap';
+
+  @override
+  String get startTraining => 'Start Training';
+
+  @override
+  String get beginner => 'Beginner';
+
+  @override
+  String get intermediate => 'Intermediate';
+
+  @override
+  String get advanced => 'Advanced';
+
+  @override
+  String get unlockedExtraMoves => 'Unlocked 5 extra moves!';
+
+  @override
+  String get limitReached => 'Limit Reached';
+
+  @override
+  String get cancel => 'CANCEL';
+
+  @override
+  String get watchAd => 'WATCH AD';
+
+  @override
+  String get trapCompleted => 'Trap completed! Well done!';
+
+  @override
+  String get incorrectMove => 'Incorrect move. Try again!';
+
+  @override
+  String get goBack => 'Go Back';
+
+  @override
+  String get boardTheme => 'Board Theme';
+
+  @override
+  String get learnNow => 'Learn Now';
 }

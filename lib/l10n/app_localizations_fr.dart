@@ -222,4 +222,55 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get termsOfUse => 'Conditions d\'Utilisation';
+
+  @override
+  String get browseByOpening => 'Parcourir par ouverture';
+
+  @override
+  String get allTraps => 'Tous les pièges';
+
+  @override
+  String get searchResults => 'Résultats de recherche';
+
+  @override
+  String get featuredTrap => 'Piège en vedette';
+
+  @override
+  String get startTraining => 'Commencer l\'entraînement';
+
+  @override
+  String get beginner => 'Débutant';
+
+  @override
+  String get intermediate => 'Intermédiaire';
+
+  @override
+  String get advanced => 'Avancé';
+
+  @override
+  String get unlockedExtraMoves => '5 coups supplémentaires débloqués !';
+
+  @override
+  String get limitReached => 'Limite atteinte';
+
+  @override
+  String get cancel => 'ANNULER';
+
+  @override
+  String get watchAd => 'VOIR UNE PUB';
+
+  @override
+  String get trapCompleted => 'Piège complété ! Bien joué !';
+
+  @override
+  String get incorrectMove => 'Coup incorrect. Réessayez !';
+
+  @override
+  String get goBack => 'Retour';
+
+  @override
+  String get boardTheme => 'Thème de l\'échiquier';
+
+  @override
+  String get learnNow => 'Apprendre maintenant';
 }

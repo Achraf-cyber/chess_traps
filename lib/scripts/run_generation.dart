@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
 
   Future<void> generateData() async {
     final trapsDir = Directory('data/chess traps');
-    if (!await trapsDir.exists()) {
+    if (!trapsDir.existsSync()) {
       throw Exception('Folder not found: ${trapsDir.path}');
     }
 
@@ -57,14 +57,14 @@ class MyApp extends StatelessWidget {
         try {
           games.add(PgnGame.parsePgn(chunk));
         } catch (e) {
-          print('Failed parsing PGN game in ${f.path}: $e');
+          debugPrint('Failed parsing PGN game in ${f.path}: $e');
         }
       }
     }
 
     final engine = Stockfish();
     while (engine.state.value != StockfishState.ready) {
-      await Future.delayed(const Duration(milliseconds: 100));
+      await Future<void>.delayed(const Duration(milliseconds: 100));
     }
 
     String? currentBestMove;
@@ -98,10 +98,10 @@ class MyApp extends StatelessWidget {
       
       int waitTicks = 0;
       while (currentBestMove == null) {
-        await Future.delayed(const Duration(milliseconds: 10));
+        await Future<void>.delayed(const Duration(milliseconds: 10));
         waitTicks++;
         if (waitTicks > 200) {
-           print('WARNING: timed out waiting for bestmove');
+           debugPrint('WARNING: timed out waiting for bestmove');
            break;
         }
       }

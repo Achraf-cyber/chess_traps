@@ -16,7 +16,7 @@ class ExploreTrapCard extends ConsumerWidget {
   void _handleTap(BuildContext context, WidgetRef ref) {
     final dailyLimit = ref.read(dailyLimitProvider.notifier);
     if (!dailyLimit.canViewTrap()) {
-      showDialog(
+      showDialog<void>(
         context: context,
         builder: (ctx) => AlertDialog(
           title: Text(context.phrase.limitReached),
@@ -75,7 +75,6 @@ class ExploreTrapCard extends ConsumerWidget {
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
           color: context.colors.outlineVariant,
-          width: 1.0,
         ),
       ),
       clipBehavior: Clip.antiAlias,

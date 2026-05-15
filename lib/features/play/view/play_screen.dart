@@ -12,13 +12,6 @@ part 'play_screen.g.dart';
 enum PlayerColor { white, black, random }
 
 class PlayGameState {
-  final Position chess;
-  final PlayerColor userColor;
-  final int elo;
-  final bool isPlaying;
-  final bool engineThinking;
-  final String? gameResult; // null = ongoing, 'win', 'loss', 'draw'
-
   PlayGameState({
     required this.chess,
     required this.userColor,
@@ -27,6 +20,14 @@ class PlayGameState {
     required this.engineThinking,
     this.gameResult,
   });
+
+  final Position chess;
+  final PlayerColor userColor;
+  final int elo;
+  final bool isPlaying;
+  final bool engineThinking;
+  final String? gameResult; // null = ongoing, 'win', 'loss', 'draw'
+
 
   PlayGameState copyWith({
     Position? chess,
@@ -415,7 +416,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                   size: boardSize,
                   orientation: boardOrientation,
                   fen: state.chess.fen,
-                  lastMove: null,
+
                 ),
         ),
         const SizedBox(height: 12),

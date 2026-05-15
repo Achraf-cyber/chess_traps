@@ -6,7 +6,7 @@ void main() async {
   final url = Uri.parse('https://lichess.org/study/search?q=${Uri.encodeComponent(query)}');
   
   final client = HttpClient();
-  print('Searching Lichess for: $query...');
+  stdout.writeln('Searching Lichess for: $query...');
   
   try {
     final request = await client.getUrl(url);
@@ -18,11 +18,11 @@ void main() async {
       final matches = regex.allMatches(html);
       
       final studyIds = matches.map((m) => m.group(1)!).toSet().toList();
-      print('Found ${studyIds.length} studies: $studyIds');
+      stdout.writeln('Found ${studyIds.length} studies: $studyIds');
       
       int downloaded = 0;
       for (final id in studyIds.take(5)) { // Download top 5 studies
-        print('Downloading study $id...');
+        stdout.writeln('Downloading study $id...');
         final pgnUrl = Uri.parse('https://lichess.org/api/study/$id.pgn');
         final pgnReq = await client.getUrl(pgnUrl);
         final pgnRes = await pgnReq.close();
@@ -31,19 +31,19 @@ void main() async {
           final pgnData = await pgnRes.transform(utf8.decoder).join();
           final file = File('data/chess traps/lichess_study_$id.pgn');
           await file.writeAsString(pgnData);
-          print('Saved ${file.path}');
+          stdout.writeln('Saved ${file.path}');
           downloaded++;
         } else {
-          print('Failed to download study $id');
+          stdout.writeln('Failed to download study $id');
         }
-        await Future.delayed(Duration(seconds: 1)); // Be nice to Lichess API
+        await Future<void>.delayed(const Duration(seconds: 1)); // Be nice to Lichess API
       }
-      print('Downloaded $downloaded studies.');
+      stdout.writeln('Downloaded $downloaded studies.');
     } else {
-      print('Failed to search Lichess: ${response.statusCode}');
+      stdout.writeln('Failed to search Lichess: ${response.statusCode}');
     }
   } catch (e) {
-    print('Error: $e');
+    stdout.writeln('Error: $e');
   } finally {
     client.close();
   }

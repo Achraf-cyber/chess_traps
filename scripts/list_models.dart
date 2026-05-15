@@ -4,7 +4,7 @@ import 'dart:convert';
 void main() async {
   final apiKey = Platform.environment['GOOGLE_AI_KEY'] ?? _getApiKey();
   if (apiKey == null) {
-    print('No API key');
+    stdout.writeln('No API key');
     return;
   }
   
@@ -16,10 +16,10 @@ void main() async {
   final models = json['models'] as List<dynamic>?;
   if (models != null) {
     for (final model in models) {
-      print(model['name']);
+      stdout.writeln((model as Map<String, dynamic>)['name']);
     }
   } else {
-    print(responseBody);
+    stdout.writeln(responseBody);
   }
   client.close();
 }

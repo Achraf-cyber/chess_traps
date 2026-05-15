@@ -56,7 +56,7 @@ class RewardedAdManager {
 
   bool get isAdAvailable => _isAdLoaded && _rewardedAd != null;
 
-  void showAdIfAvailable({required Function onRewardEarned, required Function onFailed}) {
+  void showAdIfAvailable({required VoidCallback onRewardEarned, required VoidCallback onFailed}) {
     if (!RemoteConfigService().adsEnabled) {
       // If ads are disabled, instantly give the reward
       onRewardEarned();

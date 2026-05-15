@@ -7,7 +7,7 @@ import 'dart:io';
 /// No API key needed.
 void main() async {
   final trapsDir = Directory('data/chess traps');
-  if (!await trapsDir.exists()) {
+  if (!trapsDir.existsSync()) {
     stderr.writeln('Folder not found: ${trapsDir.path}');
     return;
   }
@@ -85,7 +85,7 @@ Future<void> _processFile(File file) async {
     newContent.writeln();
   }
 
-  await file.writeAsString(newContent.toString().trim() + '\n');
+  await file.writeAsString('${newContent.toString().trim()}\n');
   stdout.writeln('  ✓ ${games.length} games processed ($renamed renamed)');
 }
 

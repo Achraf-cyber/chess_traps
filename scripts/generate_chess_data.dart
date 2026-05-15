@@ -6,7 +6,7 @@ import 'package:chess_traps/data/openings.dart';
 
 void main() async {
   final trapsDir = Directory('data/chess traps');
-  if (!await trapsDir.exists()) {
+  if (!trapsDir.existsSync()) {
     throw Exception('Folder not found: ${trapsDir.path}');
   }
 
@@ -27,16 +27,15 @@ void main() async {
       try {
         games.add(PgnGame.parsePgn(chunk));
       } catch (e) {
-        print('Failed parsing PGN game in ${f.path}: $e');
+        stdout.writeln('Failed parsing PGN game in ${f.path}: $e');
       }
     }
   }
 
-  print('Loaded ${games.length} games. Starting Stockfish...');
+  stdout.writeln('Loaded ${games.length} games. Starting Stockfish...');
 
   final stockfishProcess = await Process.start('stockfish.exe', []);
   
-  String? currentBestMove;
   int currentScore = 0;
   bool isComputing = false;
 
@@ -55,13 +54,11 @@ void main() async {
       }
     }
     if (output.startsWith('bestmove')) {
-      currentBestMove = output;
       isComputing = false;
     }
   });
 
   Future<Side> determineTargetSide(String fen) async {
-    currentBestMove = null;
     currentScore = 0;
     isComputing = true;
     
@@ -69,7 +66,7 @@ void main() async {
     stockfishProcess.stdin.writeln('go movetime 100');
     
     while (isComputing) {
-      await Future.delayed(const Duration(milliseconds: 10));
+      await Future<void>.delayed(const Duration(milliseconds: 10));
     }
     
     final parts = fen.split(' ');
@@ -105,7 +102,7 @@ void main() async {
     uniques.add(uniqueKey);
 
     final fen = _pgnToFen(cleanMoves);
-    print('Evaluating [${i + 1}/${games.length}] FEN: $fen');
+    stdout.writeln('Evaluating [${i + 1}/${games.length}] FEN: $fen');
     final targetSide = await determineTargetSide(fen);
 
     final matchedOpening = _findOpening(sanMoves);
@@ -163,7 +160,7 @@ void main() async {
   await Directory(outputFolder).create(recursive: true);
   final baseFile = File('$outputFolder/base_chess_traps.dart');
   await baseFile.writeAsString(content.toString());
-  print('Running dart format...');
+  stdout.writeln('Running dart format...');
   await Process.run('dart', ['format', baseFile.path]);
 
   final groupsFile = File('lib/generated/chess_groups.dart');
@@ -177,10 +174,10 @@ void main() async {
   await groupsFile.writeAsString(groupsContent.toString());
   await Process.run('dart', ['format', groupsFile.path]);
 
-  print('Generating tries...');
+  stdout.writeln('Generating tries...');
   await Process.run('dart', ['run', 'scripts/generate_chess_tries.dart']);
   
-  print('Done!');
+  stdout.writeln('Done!');
   exit(0);
 }
 

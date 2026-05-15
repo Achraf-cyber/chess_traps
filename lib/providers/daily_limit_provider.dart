@@ -1,17 +1,17 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'daily_limit_provider.g.dart';
 
 class DailyLimitState {
-  final int viewsToday;
-  final bool isUnlocked;
-
   const DailyLimitState({
     required this.viewsToday,
     required this.isUnlocked,
   });
+
+  final int viewsToday;
+  final bool isUnlocked;
+
 
   DailyLimitState copyWith({
     int? viewsToday,

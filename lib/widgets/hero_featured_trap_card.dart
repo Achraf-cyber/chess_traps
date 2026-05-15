@@ -15,7 +15,7 @@ class HeroFeaturedTrapCard extends ConsumerWidget {
   void _handleTap(BuildContext context, WidgetRef ref) {
     final dailyLimit = ref.read(dailyLimitProvider.notifier);
     if (!dailyLimit.canViewTrap()) {
-      showDialog(
+      showDialog<void>(
         context: context,
         builder: (ctx) => AlertDialog(
           title: Text(context.phrase.limitReached),
@@ -99,7 +99,7 @@ class HeroFeaturedTrapCard extends ConsumerWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: context.colors.onPrimaryContainer.withOpacity(0.1),
+                    color: context.colors.onPrimaryContainer.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(16),
                   ),
                   child: Row(
@@ -132,7 +132,7 @@ class HeroFeaturedTrapCard extends ConsumerWidget {
                 Text(
                   trap.opening,
                   style: context.textTheme.bodyMedium?.copyWith(
-                    color: context.colors.onPrimaryContainer.withOpacity(0.8),
+                    color: context.colors.onPrimaryContainer.withValues(alpha: 0.8),
                     fontWeight: FontWeight.w500,
                   ),
                 ),

@@ -775,7 +775,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               child: Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
-                  color: context.colors.primaryContainer.withOpacity(0.3),
+                  color: context.colors.primaryContainer.withValues(alpha: 0.3),
                   borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(32),
                   ),

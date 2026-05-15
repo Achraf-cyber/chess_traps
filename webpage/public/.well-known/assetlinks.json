@@ -1,13 +1,15 @@
 [
   {
     "relation": [
-      "delegate_permission/common.handle_all_urls"
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
     ],
     "target": {
       "namespace": "android_app",
       "package_name": "chesstraps.achrafcyber.com",
       "sha256_cert_fingerprints": [
-        "A7:13:EA:D8:F9:72:E5:BC:6B:37:3D:DD:4B:7B:6C:A0:05:1F:F4:DC:0A:CB:E1:19:4E:04:64:C8:EA:48:43:E1A"
+        "A7:13:EA:D8:F9:72:E5:BC:6B:37:3D:DD:4B:7B:6C:A0:05:1F:F4:DC:0A:CB:E1:19:4E:04:64:C8:EA:48:43:E1A",
+        "DB:C5:CB:BA:2D:66:22:7C:BD:FC:7E:54:5F:5B:E1:F0:47:AF:A5:11:DE:0C:FB:90:9B:2D:8C:30:4B:58:47:96"
       ]
     }
   }

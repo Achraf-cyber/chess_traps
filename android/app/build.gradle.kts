@@ -24,12 +24,12 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
     }
 
-    kotlinOptions { jvmTarget = JavaVersion.VERSION_11.toString() }
+    kotlinOptions { jvmTarget = "17" }
 
     defaultConfig {
         // TODO: Specify your own unique Application ID
@@ -42,22 +42,8 @@ android {
         versionCode = flutter.versionCode
         versionName = flutter.versionName
         multiDexEnabled = true
-    }
 
-    flavorDimensions += "app"
-
-    productFlavors {
-        create("dev") {
-            dimension = "app"
-            // Removed applicationIdSuffix = ".dev" to match google-services.json
-            resValue("string", "app_name", "Chess Traps Dev")
-            manifestPlaceholders["admobAppId"] = "ca-app-pub-3940256099942544~3347511713"
-        }
-        create("prod") {
-            dimension = "app"
-            resValue("string", "app_name", "Chess Traps")
-            manifestPlaceholders["admobAppId"] = "ca-app-pub-1073733523973638~5434537572"
-        }
+        resValue("string", "app_name", "Chess Traps")
     }
 
     signingConfigs {
@@ -72,7 +58,12 @@ android {
     }
 
     buildTypes {
+        getByName("debug") {
+            manifestPlaceholders["admobAppId"] = "ca-app-pub-3940256099942544~3347511713"
+        }
         release {
+            manifestPlaceholders["admobAppId"] = "ca-app-pub-1073733523973638~5434537572"
+            
             if (keystorePropertiesFile.exists()) {
                 signingConfig = signingConfigs.getByName("release")
             } else {
@@ -82,12 +73,6 @@ android {
             // Temporary fix for R8 NosuchFileException:
             isMinifyEnabled = false
             isShrinkResources = false
-        }
-    }
-
-    variantFilter {
-        if (flavors.any { it.name == "dev" } && buildType.name == "release") {
-            ignore = true
         }
     }
 }

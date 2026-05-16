@@ -63,10 +63,11 @@ class MainSubscreen extends ConsumerWidget {
                       child: _ActionTile(
                         icon: Icons.shuffle_rounded,
                         label: context.phrase.randomTrap,
-                        sublabel: 'Surprise me',
+                        sublabel: context.phrase.surprise_me,
                         color: const Color(0xFF5D5FEF),
                         onTap: () {
-                          final randomId = Random().nextInt(allTraps.length);
+                          final random = Random.secure();
+                          final randomId = random.nextInt(allTraps.length);
                           final randomTrap = allTraps[randomId];
                           InterstitialAdManager().onTrapViewed();
                           TrapDetailRoute(
@@ -79,8 +80,8 @@ class MainSubscreen extends ConsumerWidget {
                     Expanded(
                       child: _ActionTile(
                         icon: Icons.videogame_asset_rounded,
-                        label: 'Play Mode',
-                        sublabel: 'vs Engine',
+                        label: context.phrase.play_mode,
+                        sublabel: context.phrase.vs_engine,
                         color: const Color(0xFF00C48C),
                         onTap: () => const PlayRoute().go(context),
                       ),
@@ -93,8 +94,8 @@ class MainSubscreen extends ConsumerWidget {
                     Expanded(
                       child: _ActionTile(
                         icon: Icons.search_rounded,
-                        label: 'By Moves',
-                        sublabel: 'Find by position',
+                        label: context.phrase.by_moves,
+                        sublabel: context.phrase.find_by_position,
                         color: const Color(0xFFFF4B55),
                         onTap: () => const SearchByMovesRoute().go(context),
                       ),
@@ -103,8 +104,8 @@ class MainSubscreen extends ConsumerWidget {
                     Expanded(
                       child: _ActionTile(
                         icon: Icons.format_list_bulleted_rounded,
-                        label: 'All Traps',
-                        sublabel: '${allTraps.length} traps',
+                        label: context.phrase.allTraps,
+                        sublabel: context.phrase.traps_count(allTraps.length),
                         color: const Color(0xFFFF9F0A),
                         onTap: () => const TrapsRoute().go(context),
                       ),
@@ -170,7 +171,7 @@ class _HeroSection extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
-                        '$totalTraps Opening Traps',
+                        context.phrase.opening_traps_count(totalTraps),
                         style: TextStyle(
                           color: foregroundColor,
                           fontSize: 12,
@@ -183,7 +184,7 @@ class _HeroSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Outplay Your\nOpponent',
+                  context.phrase.hero_title,
                   style: TextStyle(
                     color: foregroundColor,
                     fontSize: 34,
@@ -194,7 +195,7 @@ class _HeroSection extends StatelessWidget {
                 ),
                 const SizedBox(height: 10),
                 Text(
-                  'Master the traps that grandmasters use.',
+                  context.phrase.hero_subtitle,
                   style: TextStyle(
                     color: foregroundColor.withValues(alpha: 0.75),
                     fontSize: 14,
@@ -206,19 +207,19 @@ class _HeroSection extends StatelessWidget {
                 Row(
                   children: [
                     _HeroStat(
-                      label: 'Traps',
+                      label: context.phrase.traps,
                       value: totalTraps.toString(),
                       color: foregroundColor,
                     ),
                     _HeroDivider(color: foregroundColor),
                     _HeroStat(
-                      label: 'Openings',
+                      label: context.phrase.openings,
                       value: '40+',
                       color: foregroundColor,
                     ),
                     _HeroDivider(color: foregroundColor),
                     _HeroStat(
-                      label: 'Languages',
+                      label: context.phrase.languages,
                       value: '4',
                       color: foregroundColor,
                     ),

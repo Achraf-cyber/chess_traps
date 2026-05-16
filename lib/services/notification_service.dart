@@ -16,9 +16,8 @@ class NotificationService {
   final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
       FlutterLocalNotificationsPlugin();
 
-  static const _prefTimeHour = 'notification_time_hour';
-  static const _prefTimeMinute = 'notification_time_minute';
   static const _prefEnabled = 'notification_enabled';
+  static const _prefLocale = 'appLocale';
 
   Future<void> init() async {
     tz.initializeTimeZones();
@@ -122,12 +121,16 @@ class NotificationService {
 
     final scheduledDate = _nextInstanceOfTime(time);
 
+    // Load localizations manually since we might not have context
+    final localeCode = prefs.getString(_prefLocale);
+    final locale = localeCode != null ? Locale(localeCode) : const Locale('en');
+    final localizations = await AppLocalizations.delegate.load(locale);
+
     await flutterLocalNotificationsPlugin.zonedSchedule(
       id: 0,
-      title: 'Trap of the Day is Ready!',
-      body: 'Jump in to learn a new opening trap and boost your rating ♟️',
+      title: localizations.notification_trap_ready_title,
+      body: localizations.notification_trap_ready_body,
       scheduledDate: scheduledDate,
-
       notificationDetails: details,
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       matchDateTimeComponents: DateTimeComponents.time,

@@ -45,7 +45,7 @@ class TrapsGroupScreen extends ConsumerWidget {
               child: Padding(
                 padding: const EdgeInsets.all(24),
                 child: Text(
-                  'No traps available for this opening yet.',
+                  context.phrase.no_traps_in_group,
                   textAlign: TextAlign.center,
                   style: context.textTheme.bodyMedium?.copyWith(
                     color: context.colors.onSurfaceVariant,

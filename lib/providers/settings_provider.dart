@@ -1,6 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:chess_traps/services/notification_service.dart';
+import 'package:flutter/material.dart';
 
 part 'settings_provider.g.dart';
 
@@ -115,5 +117,15 @@ class ChessSettingsNotifier extends _$ChessSettingsNotifier {
       await prefs.setString(_localeKey, code);
     }
     state = state.copyWith(localeCode: code);
+
+    // Reschedule notification with new locale if enabled
+    final hour = prefs.getInt('notification_time_hour') ?? 9;
+    final minute = prefs.getInt('notification_time_minute') ?? 0;
+    final enabled = prefs.getBool('notification_enabled') ?? true;
+    if (enabled) {
+      await NotificationService().scheduleDailyNotification(
+        TimeOfDay(hour: hour, minute: minute),
+      );
+    }
   }
 }

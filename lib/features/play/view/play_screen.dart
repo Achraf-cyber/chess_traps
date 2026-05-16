@@ -14,6 +14,7 @@ import 'package:chess_traps/providers/play_history_provider.dart';
 part 'play_screen.g.dart';
 
 enum PlayerColor { white, black, random }
+enum GameResult { win, loss, draw }
 
 class PlayGameState {
   PlayGameState({
@@ -25,6 +26,7 @@ class PlayGameState {
     required this.evaluation,
     required this.avgEngineDelaySecs,
     this.gameResult,
+    this.lastMove,
   });
 
   final Position chess;
@@ -33,7 +35,9 @@ class PlayGameState {
   final bool isPlaying;
   final bool engineThinking;
   final double evaluation; // Centipawns, positive for white
-  final String? gameResult; // null = ongoing, 'win', 'loss', 'draw'
+  final GameResult? gameResult; // null = ongoing
+  final Move? lastMove;
+
   /// Average engine response time in seconds (power-law distributed)
   final double avgEngineDelaySecs;
 
@@ -44,9 +48,11 @@ class PlayGameState {
     bool? isPlaying,
     bool? engineThinking,
     double? evaluation,
-    String? gameResult,
+    GameResult? gameResult,
     bool clearResult = false,
     double? avgEngineDelaySecs,
+    Move? lastMove,
+    bool clearLastMove = false,
   }) {
     return PlayGameState(
       chess: chess ?? this.chess,
@@ -57,6 +63,7 @@ class PlayGameState {
       evaluation: evaluation ?? this.evaluation,
       gameResult: clearResult ? null : (gameResult ?? this.gameResult),
       avgEngineDelaySecs: avgEngineDelaySecs ?? this.avgEngineDelaySecs,
+      lastMove: clearLastMove ? null : (lastMove ?? this.lastMove),
     );
   }
 }
@@ -171,6 +178,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       engineThinking: false,
       evaluation: 0,
       clearResult: true,
+      clearLastMove: true,
       avgEngineDelaySecs: avgDelaySecs,
     );
 
@@ -185,24 +193,34 @@ class PlayGameNotifier extends _$PlayGameNotifier {
   void onUserMove(Move move) {
     if (!state.isPlaying || state.engineThinking) return;
 
-    final newChess = state.chess.play(move);
-    state = state.copyWith(chess: newChess);
+    final pos = state.chess;
+    final nextPos = pos.play(move);
+    state = state.copyWith(
+      chess: nextPos,
+      lastMove: move,
+    );
 
-    if (newChess.isCheck) {
+    if (nextPos.isCheck) {
       _hapticService.playCheck();
     } else {
       _hapticService.playMove();
     }
 
-    if (newChess.isGameOver) {
-      final result = _getResult(newChess, isEngineMove: false);
+    if (nextPos.isMate) {
+      final winnerSide = !nextPos.turn;
+      final userSide = state.userColor == PlayerColor.white ? Side.white : Side.black;
+      final result = (winnerSide == userSide) ? GameResult.win : GameResult.loss;
       _recordResult(result);
       state = state.copyWith(isPlaying: false, gameResult: result);
+      return;
+    } else if (nextPos.isDraw) {
+      _recordResult(GameResult.draw);
+      state = state.copyWith(isPlaying: false, gameResult: GameResult.draw);
       return;
     }
 
     state = state.copyWith(engineThinking: true);
-    ref.read(chessEngineProvider).playMove(newChess.fen, state.elo);
+    ref.read(chessEngineProvider).playMove(nextPos.fen, state.elo);
   }
 
   void _onEngineMove(String moveUci) {
@@ -213,50 +231,54 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       if (!state.isPlaying) return;
 
       final move = NormalMove.fromUci(moveUci);
-      final newChess = state.chess.play(move);
+      final nextPos = state.chess.play(move);
 
-      state = state.copyWith(chess: newChess, engineThinking: false);
+      state = state.copyWith(
+        chess: nextPos,
+        engineThinking: false,
+        lastMove: move,
+      );
 
-      if (newChess.isCheck) {
+      if (nextPos.isCheck) {
         _hapticService.playCheck();
       } else {
         _hapticService.playMove();
       }
 
-      if (newChess.isGameOver) {
-        final result = _getResult(newChess, isEngineMove: true);
+      if (nextPos.isMate) {
+        final winnerSide = !nextPos.turn;
+        final userSide = state.userColor == PlayerColor.white ? Side.white : Side.black;
+        final result = (winnerSide == userSide) ? GameResult.win : GameResult.loss;
         _recordResult(result);
         state = state.copyWith(isPlaying: false, gameResult: result);
+      } else if (nextPos.isDraw) {
+        _recordResult(GameResult.draw);
+        state = state.copyWith(isPlaying: false, gameResult: GameResult.draw);
       }
     });
   }
 
-  String _getResult(Position pos, {required bool isEngineMove}) {
-    if (pos.isCheckmate) {
-      return isEngineMove ? 'loss' : 'win';
-    }
-    return 'draw'; // stalemate, 50-move, etc.
-  }
 
-  void _recordResult(String result) {
+  void _recordResult(GameResult result) {
     switch (result) {
-      case 'win':
+      case GameResult.win:
         ref.read(playHistoryProvider.notifier).addWin();
-      case 'loss':
+      case GameResult.loss:
         ref.read(playHistoryProvider.notifier).addLoss();
-      case 'draw':
+      case GameResult.draw:
         ref.read(playHistoryProvider.notifier).addDraw();
     }
   }
 
   void stopGame() {
     if (state.gameResult == null) {
-      _recordResult('loss');
+      _recordResult(GameResult.loss);
     }
     state = state.copyWith(
       isPlaying: false,
       engineThinking: false,
       clearResult: true,
+      clearLastMove: true,
     );
     ref.read(chessEngineProvider).stopAnalysis();
   }
@@ -308,17 +330,25 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
 
   void _showResultDialog(
     BuildContext context,
-    String result,
+    GameResult result,
     PlayGameNotifier notifier,
   ) {
     final (title, subtitle, icon) = switch (result) {
-      'win' => ('You Won! 🎉', 'Congratulations!', Icons.emoji_events_rounded),
-      'loss' => (
-        'Stockfish Won',
-        'Better luck next time!',
+      GameResult.win => (
+        context.phrase.you_won,
+        context.phrase.congratulations,
+        Icons.emoji_events_rounded
+      ),
+      GameResult.loss => (
+        context.phrase.stockfish_won,
+        context.phrase.better_luck_next_time,
         Icons.psychology_rounded,
       ),
-      _ => ('Draw', 'Well played!', Icons.handshake_rounded),
+      GameResult.draw => (
+        context.phrase.draw,
+        context.phrase.well_played,
+        Icons.handshake_rounded
+      ),
     };
 
     showDialog<void>(
@@ -331,7 +361,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(ctx),
-            child: const Text('Close'),
+            child: Text(context.phrase.close),
           ),
           ElevatedButton(
             onPressed: () {
@@ -342,7 +372,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 avgDelaySecs: _currentDelaySecs,
               );
             },
-            child: const Text('Play Again'),
+            child: Text(context.phrase.play_again),
           ),
         ],
       ),
@@ -363,7 +393,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Text(
-            'Opponent Strength',
+            context.phrase.opponent_strength,
             style: context.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w800,
             ),
@@ -384,21 +414,21 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _buildStatColumn(
-                  'Wins',
+                  context.phrase.wins,
                   history.wins.toString(),
                   Colors.green,
                   Icons.emoji_events_rounded,
                   context,
                 ),
                 _buildStatColumn(
-                  'Draws',
+                  context.phrase.draws,
                   history.draws.toString(),
                   Colors.orange,
                   Icons.handshake_rounded,
                   context,
                 ),
                 _buildStatColumn(
-                  'Losses',
+                  context.phrase.losses,
                   history.losses.toString(),
                   Colors.red,
                   Icons.psychology_rounded,
@@ -409,7 +439,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
           ),
           const SizedBox(height: 24),
           Text(
-            'Elo: $_currentElo',
+            context.phrase.eloLabel(_currentElo),
             style: context.textTheme.headlineMedium?.copyWith(
               color: context.colors.primary,
               fontWeight: FontWeight.bold,
@@ -426,7 +456,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
           ),
           const SizedBox(height: 16),
           Text(
-            'Engine Response: ${_currentDelaySecs.toStringAsFixed(1)}s avg',
+            context.phrase.engineResponseLabel(_currentDelaySecs.toStringAsFixed(1)),
             style: context.textTheme.titleMedium?.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -437,13 +467,13 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             min: 0.2,
             max: 5.0,
             divisions: 24,
-            label: '${_currentDelaySecs.toStringAsFixed(1)}s',
+            label: context.phrase.engineResponseLabel(_currentDelaySecs.toStringAsFixed(1)),
             onChanged: (val) => setState(
               () => _currentDelaySecs = double.parse(val.toStringAsFixed(1)),
             ),
           ),
           Text(
-            'Play as',
+            context.phrase.play_as,
             style: context.textTheme.titleLarge?.copyWith(
               fontWeight: FontWeight.w800,
             ),
@@ -454,18 +484,18 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             segments: const [
               ButtonSegment(
                 value: PlayerColor.white,
-                label: Text('White'),
-                icon: Icon(Icons.circle_outlined),
+                label: Text(context.phrase.white),
+                icon: const Icon(Icons.circle_outlined),
               ),
               ButtonSegment(
                 value: PlayerColor.random,
-                label: Text('Random'),
-                icon: Icon(Icons.casino_outlined),
+                label: Text(context.phrase.random),
+                icon: const Icon(Icons.casino_outlined),
               ),
               ButtonSegment(
                 value: PlayerColor.black,
-                label: Text('Black'),
-                icon: Icon(Icons.circle),
+                label: Text(context.phrase.black),
+                icon: const Icon(Icons.circle),
               ),
             ],
             selected: {_currentColor},
@@ -487,9 +517,9 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 borderRadius: BorderRadius.circular(16),
               ),
             ),
-            child: const Text(
-              'Start Game',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            child: Text(
+              context.phrase.start_game,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ),
           const SizedBox(height: 32),
@@ -567,7 +597,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
               ),
               const SizedBox(width: 8),
               Text(
-                'Stockfish (${state.elo})',
+                context.phrase.stockfishLabel(state.elo),
                 style: context.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -577,7 +607,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 Row(
                   children: [
                     Text(
-                      'Thinking...',
+                      context.phrase.thinking,
                       style: context.textTheme.labelMedium?.copyWith(
                         color: context.colors.primary,
                       ),
@@ -632,6 +662,12 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                                         size: size,
                                         orientation: boardOrientation,
                                         fen: state.chess.fen,
+                                        lastMove: state.lastMove != null
+                                            ? cg.Move(
+                                                from: state.lastMove!.from.name,
+                                                to: state.lastMove!.to.name,
+                                              )
+                                            : null,
                                         game: cg.GameData(
                                           playerSide: isWhite
                                               ? cg.PlayerSide.white
@@ -664,6 +700,12 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                                         size: size,
                                         orientation: boardOrientation,
                                         fen: state.chess.fen,
+                                        lastMove: state.lastMove != null
+                                            ? cg.Move(
+                                                from: state.lastMove!.from.name,
+                                                to: state.lastMove!.to.name,
+                                              )
+                                            : null,
                                       ),
                               ),
                             );
@@ -701,7 +743,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
               ),
               const SizedBox(width: 8),
               Text(
-                'You',
+                context.phrase.you,
                 style: context.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -719,7 +761,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      'Your turn',
+                      context.phrase.your_turn,
                       style: context.textTheme.labelSmall?.copyWith(
                         color: context.colors.onPrimaryContainer,
                         fontWeight: FontWeight.bold,
@@ -740,7 +782,11 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                   ? Icons.arrow_back_rounded
                   : Icons.flag_rounded,
             ),
-            label: Text(state.gameResult != null ? 'Back to Setup' : 'Resign'),
+            label: Text(
+              state.gameResult != null
+                  ? context.phrase.back_to_setup
+                  : context.phrase.resign,
+            ),
             style: OutlinedButton.styleFrom(
               foregroundColor: state.gameResult != null
                   ? context.colors.onSurface

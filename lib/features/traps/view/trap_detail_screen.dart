@@ -288,9 +288,9 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                 color: Colors.grey,
               ),
               const SizedBox(height: 16),
-              const Text(
-                "Trap not found",
-                style: TextStyle(fontWeight: FontWeight.bold),
+              Text(
+                context.phrase.trapNotFound,
+                style: const TextStyle(fontWeight: FontWeight.bold),
               ),
               TextButton(
                 onPressed: () => context.pop(),
@@ -417,9 +417,9 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   });
                   if (isPracticeMode) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
+                      SnackBar(
                         content: Text(
-                          "Practice mode active. Play the correct moves!",
+                          context.phrase.practiceModeActive,
                         ),
                       ),
                     );
@@ -473,11 +473,12 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   }
                   break;
                 case 'share':
-                  final link = AppLinkService.buildTrapLink(widget.trapIndex);
                   await SharePlus.instance.share(
                     ShareParams(
-                      text:
-                          "Can you survive this trap? Check out ${trap.getLocalizedName(context)}!\n$link",
+                      text: context.phrase.canYouSurvive(
+                        trap.getLocalizedName(context),
+                        link,
+                      ),
                     ),
                   );
                   break;
@@ -496,7 +497,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       color: isPracticeMode ? context.colors.primary : context.colors.onSurfaceVariant,
                     ),
                     const SizedBox(width: 12),
-                    Text(isPracticeMode ? "Exit Practice" : "Practice Mode"),
+                    Text(isPracticeMode ? context.phrase.exitPractice : context.phrase.practiceMode),
                   ],
                 ),
               ),
@@ -509,7 +510,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       color: isAvoidMode ? Colors.orange : context.colors.onSurfaceVariant,
                     ),
                     const SizedBox(width: 12),
-                    Text(isAvoidMode ? "Exit Avoid Mode" : "Avoid Trap Mode"),
+                    Text(isAvoidMode ? context.phrase.exitAvoidMode : context.phrase.avoidTrapMode),
                   ],
                 ),
               ),
@@ -524,7 +525,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       color: isAutoPlaying ? context.colors.primary : context.colors.onSurfaceVariant,
                     ),
                     const SizedBox(width: 12),
-                    Text(isAutoPlaying ? "Stop Auto Play" : "Auto Play"),
+                    Text(isAutoPlaying ? context.phrase.stopAutoPlay : context.phrase.autoPlay),
                   ],
                 ),
               ),
@@ -534,7 +535,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   children: [
                     Icon(Icons.flip_camera_android_rounded, color: context.colors.onSurfaceVariant),
                     const SizedBox(width: 12),
-                    const Text("Flip Board"),
+                    Text(context.phrase.flipBoard),
                   ],
                 ),
               ),
@@ -548,7 +549,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       color: isLearned ? Colors.green : context.colors.onSurfaceVariant,
                     ),
                     const SizedBox(width: 12),
-                    Text(isLearned ? "Marked as learned" : "Mark as learned"),
+                    Text(isLearned ? context.phrase.markedAsLearned : context.phrase.markAsLearned),
                   ],
                 ),
               ),
@@ -558,7 +559,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   children: [
                     Icon(Icons.share_rounded, color: context.colors.onSurfaceVariant),
                     const SizedBox(width: 12),
-                    const Text("Share Trap"),
+                    Text(context.phrase.shareTrap),
                   ],
                 ),
               ),
@@ -568,7 +569,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   children: [
                     Icon(Icons.settings_rounded, color: context.colors.onSurfaceVariant),
                     const SizedBox(width: 12),
-                    const Text("Settings"),
+                    Text(context.phrase.settings),
                   ],
                 ),
               ),
@@ -651,7 +652,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                     ),
                                     child: Center(
                                       child: Text(
-                                        'Engine starting...',
+                                        context.phrase.engineStarting,
                                         style: context.textTheme.labelMedium
                                             ?.copyWith(
                                               color: context.colors.outline,
@@ -868,7 +869,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                   ),
                                 ),
                                 child: Text(
-                                  trap.targetSide == Side.white ? 'White Profits' : 'Black Profits',
+                                  trap.targetSide == Side.white ? context.phrase.whiteProfits : context.phrase.blackProfits,
                                   style: context.textTheme.labelSmall?.copyWith(
                                     color: trap.targetSide == Side.white 
                                         ? Colors.black87 
@@ -880,7 +881,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                               const Spacer(),
                               if (!engineState.engineAvailable)
                                 Text(
-                                  'Engine unavailable',
+                                  context.phrase.engineUnavailable,
                                   style: context.textTheme.labelSmall?.copyWith(
                                     color: context.colors.error,
                                     fontWeight: FontWeight.w600,
@@ -888,7 +889,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                 )
                               else if (engineState.depth > 0)
                                 Text(
-                                  "Depth: ${engineState.depth}",
+                                  context.phrase.depthLabel(engineState.depth),
                                   style: context.textTheme.labelSmall?.copyWith(
                                     color: context.colors.outline,
                                   ),
@@ -967,14 +968,14 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Analysis Settings',
+                      context.phrase.analysisSettings,
                       style: context.textTheme.titleLarge?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Engine Best Moves (Arrows)',
+                      context.phrase.engineBestMoves,
                       style: context.textTheme.labelLarge,
                     ),
                     Slider(

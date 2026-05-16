@@ -40,7 +40,7 @@ class UserProfileScreen extends ConsumerWidget {
                   const SizedBox(height: 16),
                   const _ProfileLanguageSelector(),
                   const SizedBox(height: 32),
-                  const _ProfileSectionTitle(title: "Notifications"),
+                  _ProfileSectionTitle(title: context.phrase.notifications),
                   const SizedBox(height: 16),
                   const _ProfileNotificationSettings(),
                   const SizedBox(height: 32),
@@ -456,13 +456,13 @@ class _ProfileNotificationSettingsState
         children: [
           SwitchListTile(
             title: Text(
-              "Daily Trap Reminder",
+              context.phrase.daily_trap_reminder,
               style: context.textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
             ),
             subtitle: Text(
-              "Get notified to check the trap of the day",
+              context.phrase.daily_trap_reminder_subtitle,
               style: context.textTheme.labelMedium?.copyWith(
                 color: context.colors.onSurfaceVariant,
               ),
@@ -478,7 +478,7 @@ class _ProfileNotificationSettingsState
           if (_enabled)
             ListTile(
               title: Text(
-                "Reminder Time",
+                context.phrase.reminder_time,
                 style: context.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),

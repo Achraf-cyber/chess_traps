@@ -98,5 +98,116 @@
   "avoidModeActive": "Avoid Mode active. Find the best move!",
   "blunderPrevented": "Great! You avoided the trap.",
   "findBetterMove": "Find a better move to avoid the trap.",
-  "play": "Play"
+  "play": "Play",
+  "you_won": "You Won! 🎉",
+  "congratulations": "Congratulations!",
+  "stockfish_won": "Stockfish Won",
+  "better_luck_next_time": "Better luck next time!",
+  "draw": "Draw",
+  "well_played": "Well played!",
+  "close": "Close",
+  "play_again": "Play Again",
+  "opponent_strength": "Opponent Strength",
+  "wins": "Wins",
+  "draws": "Draws",
+  "losses": "Losses",
+  "engine_response": "Engine Response",
+  "play_as": "Play as",
+  "white": "White",
+  "random": "Random",
+  "black": "Black",
+  "start_game": "Start Game",
+  "thinking": "Thinking...",
+  "your_turn": "Your turn",
+  "back_to_setup": "Back to Setup",
+  "resign": "Resign",
+  "you": "You",
+  "featured_trap": "Featured Trap",
+  "loading_ads": "Loading ads...",
+  "daily_limit_reached": "Daily limit reached",
+  "ad_load_failed": "Ad could not be loaded. Try again later.",
+  "ad_not_ready": "Ad not ready yet. Try again later.",
+  "limit_reached_body": "You've viewed your 10 free traps for today! Watch a short ad to unlock all traps for the rest of the day.",
+  "no_traps_in_group": "No traps available for this opening yet.",
+  "surprise_me": "Surprise me",
+  "play_mode": "Play Mode",
+  "vs_engine": "vs Engine",
+  "by_moves": "By Moves",
+  "find_by_position": "Find by position",
+  "traps_count": "{count} traps",
+  "opening_traps_count": "{count} Opening Traps",
+  "hero_title": "Outplay Your\nOpponent",
+  "hero_subtitle": "Master the traps that grandmasters use.",
+  "openings": "Openings",
+  "languages": "Languages",
+  "move_limit_reached": "Move limit reached. Ad not ready yet, please wait or reset.",
+  "search_limit_body": "You've reached the free move limit for this search. Watch a short video ad to unlock 5 more moves.",
+  "notifications": "Notifications",
+  "daily_trap_reminder": "Daily Trap Reminder",
+  "daily_trap_reminder_subtitle": "Get notified to check the trap of the day",
+  "reminder_time": "Reminder Time",
+  "notification_trap_ready_title": "Trap of the Day is Ready!",
+  "notification_trap_ready_body": "Jump in to learn a new opening trap and boost your rating ♟️",
+  "trapNotFound": "Trap not found",
+  "practiceModeActive": "Practice mode active. Play the correct moves!",
+  "canYouSurvive": "Can you survive this trap? Check out {trapName}!\n{link}",
+  "@canYouSurvive": {
+    "placeholders": {
+      "trapName": {
+        "type": "String"
+      },
+      "link": {
+        "type": "String"
+      }
+    }
+  },
+  "exitPractice": "Exit Practice",
+  "practiceMode": "Practice Mode",
+  "exitAvoidMode": "Exit Avoid Mode",
+  "avoidTrapMode": "Avoid Trap Mode",
+  "stopAutoPlay": "Stop Auto Play",
+  "autoPlay": "Auto Play",
+  "flipBoard": "Flip Board",
+  "markedAsLearned": "Marked as learned",
+  "markAsLearned": "Mark as learned",
+  "shareTrap": "Share Trap",
+  "settings": "Settings",
+  "engineStarting": "Engine starting...",
+  "whiteProfits": "White Profits",
+  "blackProfits": "Black Profits",
+  "engineUnavailable": "Engine unavailable",
+  "depthLabel": "Depth: {depth}",
+  "@depthLabel": {
+    "placeholders": {
+      "depth": {
+        "type": "int"
+      }
+    }
+  },
+  "analysisSettings": "Analysis Settings",
+  "engineBestMoves": "Engine Best Moves (Arrows)",
+  "eloLabel": "Elo: {elo}",
+  "@eloLabel": {
+    "placeholders": {
+      "elo": {
+        "type": "int"
+      }
+    }
+  },
+  "engineResponseLabel": "Engine Response: {delay}s avg",
+  "@engineResponseLabel": {
+    "placeholders": {
+      "delay": {
+        "type": "String"
+      }
+    }
+  },
+  "stockfishLabel": "Stockfish ({elo})",
+  "@stockfishLabel": {
+    "placeholders": {
+      "elo": {
+        "type": "int"
+      }
+    }
+  }
 }

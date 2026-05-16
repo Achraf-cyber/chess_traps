@@ -31,8 +31,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
     final trapsGroups = ref.watch(trapsGroupSourceProvider);
     final trapsSearched = ref.watch(trapsSearchByNameProvider(_searchValue));
 
-    // We can use a pseudo-random featured trap or simply the first one
-    final featuredTrap = trapsSearched.isNotEmpty ? trapsSearched.first : null;
+    final featuredTrap = ref.watch(randomFeaturedTrapProvider);
 
     return Scaffold(
       backgroundColor: context.colors.surface,

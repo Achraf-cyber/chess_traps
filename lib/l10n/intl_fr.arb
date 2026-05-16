@@ -93,5 +93,121 @@
     "incorrectMove": "Coup incorrect. Réessayez !",
     "goBack": "Retour",
     "boardTheme": "Thème de l'échiquier",
-    "learnNow": "Apprendre maintenant"
+    "learnNow": "Apprendre maintenant",
+    "avoidTrap": "Éviter le piège",
+    "avoidModeActive": "Mode Évitement actif. Trouvez le meilleur coup !",
+    "blunderPrevented": "Génial ! Vous avez évité le piège.",
+    "findBetterMove": "Trouvez un meilleur coup pour éviter le piège.",
+    "play": "Jouer",
+    "you_won": "Vous avez gagné ! 🎉",
+    "congratulations": "Félicitations !",
+    "stockfish_won": "Stockfish a gagné",
+    "better_luck_next_time": "Meilleure chance la prochaine fois !",
+    "draw": "Nul",
+    "well_played": "Bien joué !",
+    "close": "Fermer",
+    "play_again": "Rejouer",
+    "opponent_strength": "Force de l'adversaire",
+    "wins": "Victoires",
+    "draws": "Nuls",
+    "losses": "Défaites",
+    "engine_response": "Réponse du moteur",
+    "play_as": "Jouer avec",
+    "white": "Blancs",
+    "random": "Aléatoire",
+    "black": "Noirs",
+    "start_game": "Commencer la partie",
+    "thinking": "Réflexion...",
+    "your_turn": "À vous de jouer",
+    "back_to_setup": "Retour à la configuration",
+    "resign": "Abandonner",
+    "you": "Vous",
+    "featured_trap": "Piège en vedette",
+    "loading_ads": "Chargement des publicités...",
+    "daily_limit_reached": "Limite quotidienne atteinte",
+    "ad_load_failed": "La publicité n'a pas pu être chargée. Réessayez plus tard.",
+    "ad_not_ready": "La publicité n'est pas encore prête. Réessayez plus tard.",
+    "limit_reached_body": "Vous avez vu vos 10 pièges gratuits pour aujourd'hui ! Regardez une courte publicité pour débloquer tous les pièges pour le reste de la journée.",
+    "no_traps_in_group": "Aucun piège n'est encore disponible pour cette ouverture.",
+    "surprise_me": "Surprenez-moi",
+    "play_mode": "Mode Jeu",
+    "vs_engine": "contre l'Ordi",
+    "by_moves": "Par Coups",
+    "find_by_position": "Trouver par position",
+    "traps_count": "{count} pièges",
+    "opening_traps_count": "{count} Pièges d'ouverture",
+    "hero_title": "Surprenez Votre\nAdversaire",
+    "hero_subtitle": "Maîtrisez les pièges utilisés par les grands maîtres.",
+    "openings": "Ouvertures",
+    "languages": "Langues",
+    "move_limit_reached": "Limite de coups atteinte. La publicité n'est pas prête, veuillez patienter ou réinitialiser.",
+    "search_limit_body": "Vous avez atteint la limite de coups gratuits pour cette recherche. Regardez une courte vidéo publicitaire pour débloquer 5 coups supplémentaires.",
+    "notifications": "Notifications",
+    "daily_trap_reminder": "Rappel quotidien",
+    "daily_trap_reminder_subtitle": "Recevez une notification pour le piège du jour",
+    "reminder_time": "Heure du rappel",
+    "notification_trap_ready_title": "Le piège du jour est prêt !",
+    "notification_trap_ready_body": "Apprenez un nouveau piège d'ouverture et boostez votre classement ♟️",
+    "trapNotFound": "Piège non trouvé",
+    "practiceModeActive": "Mode Entraînement actif. Jouez les bons coups !",
+    "canYouSurvive": "Pouvez-vous survivre à ce piège ? Découvrez {trapName} !\n{link}",
+    "@canYouSurvive": {
+        "placeholders": {
+            "trapName": {
+                "type": "String"
+            },
+            "link": {
+                "type": "String"
+            }
+        }
+    },
+    "exitPractice": "Quitter l'entraînement",
+    "practiceMode": "Mode Entraînement",
+    "exitAvoidMode": "Quitter le mode Évitement",
+    "avoidTrapMode": "Mode Éviter le piège",
+    "stopAutoPlay": "Arrêter la lecture",
+    "autoPlay": "Lecture automatique",
+    "flipBoard": "Retourner l'échiquier",
+    "markedAsLearned": "Marqué comme appris",
+    "markAsLearned": "Marquer comme appris",
+    "shareTrap": "Partager le piège",
+    "settings": "Paramètres",
+    "engineStarting": "Démarrage du moteur...",
+    "whiteProfits": "Avantage Blanc",
+    "blackProfits": "Avantage Noir",
+    "engineUnavailable": "Moteur indisponible",
+    "depthLabel": "Profondeur : {depth}",
+    "@depthLabel": {
+        "placeholders": {
+            "depth": {
+                "type": "int"
+            }
+        }
+    },
+    "analysisSettings": "Paramètres d'analyse",
+    "engineBestMoves": "Meilleurs coups (Flèches)",
+    "eloLabel": "Elo : {elo}",
+    "@eloLabel": {
+        "placeholders": {
+            "elo": {
+                "type": "int"
+            }
+        }
+    },
+    "engineResponseLabel": "Réponse : {delay}s moy",
+    "@engineResponseLabel": {
+        "placeholders": {
+            "delay": {
+                "type": "String"
+            }
+        }
+    },
+    "stockfishLabel": "Stockfish ({elo})",
+    "@stockfishLabel": {
+        "placeholders": {
+            "elo": {
+                "type": "int"
+            }
+        }
+    }
 }

@@ -18,8 +18,8 @@ class HeroFeaturedTrapCard extends ConsumerWidget {
       showDialog<void>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text(context.phrase.limitReached),
-          content: const Text("You've viewed your 10 free traps for today! Watch a short ad to unlock all traps for the rest of the day."),
+          title: Text(context.phrase.daily_limit_reached),
+          content: Text(context.phrase.limit_reached_body),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(ctx),
@@ -36,13 +36,13 @@ class HeroFeaturedTrapCard extends ConsumerWidget {
                     },
                     onFailed: () {
                       ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(content: Text("Ad could not be loaded. Try again later.")),
+                        SnackBar(content: Text(context.phrase.ad_load_failed)),
                       );
                     },
                   );
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text("Ad not ready yet. Try again later.")),
+                    SnackBar(content: Text(context.phrase.ad_not_ready)),
                   );
                   RewardedAdManager().loadAd();
                 }

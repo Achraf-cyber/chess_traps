@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:chess_traps/data/chess_search.dart';
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/data/openings.dart';
@@ -40,4 +41,12 @@ List<ChessTrap> trapsOfGroup(Ref ref, String groupName) {
       .where((index) => index >= 0 && index < chessTraps.length)
       .map((index) => chessTraps[index])
       .toList();
+}
+
+@riverpod
+ChessTrap? randomFeaturedTrap(Ref ref) {
+  final allTraps = chessTraps.where((t) => t.trapName.trim().isNotEmpty).toList();
+  if (allTraps.isEmpty) return null;
+  final random = Random.secure();
+  return allTraps[random.nextInt(allTraps.length)];
 }

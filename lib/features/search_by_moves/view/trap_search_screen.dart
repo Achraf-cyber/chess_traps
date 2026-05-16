@@ -116,10 +116,8 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
       } else {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text(
-                "Move limit reached. Ad not ready yet, please wait or reset.",
-              ),
+            SnackBar(
+              content: Text(context.phrase.move_limit_reached),
             ),
           );
         }
@@ -140,10 +138,8 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(context.phrase.limitReached),
-        content: const Text(
-          "You've reached the free move limit for this search. Watch a short video ad to unlock 5 more moves.",
-        ),
+        title: Text(context.phrase.daily_limit_reached),
+        content: Text(context.phrase.search_limit_body),
         actions: [
           TextButton(
             onPressed: () {
@@ -398,13 +394,13 @@ class _TrapSearchFloatingHeader extends StatelessWidget {
             IconButton(
               onPressed: onUndo,
               icon: const Icon(Icons.undo_rounded, size: 20),
-              tooltip: 'Undo',
+              tooltip: context.phrase.undo,
               visualDensity: VisualDensity.compact,
             ),
             IconButton(
               onPressed: onFlip,
               icon: const Icon(Icons.flip_camera_android_rounded, size: 20),
-              tooltip: 'Flip',
+              tooltip: context.phrase.flip,
               visualDensity: VisualDensity.compact,
             ),
             IconButton.filledTonal(
@@ -438,13 +434,13 @@ class _SearchControlsRow extends StatelessWidget {
       children: [
         _SearchNavButton(
           icon: Icons.undo_rounded,
-          label: 'Undo',
+          label: context.phrase.undo,
           onPressed: canUndo ? onUndo : null,
         ),
         const SizedBox(width: 16),
         _SearchNavButton(
           icon: Icons.flip_camera_android_rounded,
-          label: 'Flip',
+          label: context.phrase.flip,
           onPressed: onFlip,
         ),
       ],

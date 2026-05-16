@@ -19,10 +19,10 @@ import 'package:chess_traps/services/consent_manager.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+// import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:splash_master/splash_master.dart';
 
-import 'l10n/app_localizations.dart';
+import 'package:chess_traps/l10n/app_localizations.dart';
 import 'licenses.dart';
 import 'router.dart';
 import 'theme/theme.dart';
@@ -30,8 +30,7 @@ import 'theme/theme_utils.dart';
 
 import 'services/app_link_service.dart';
 
-Future<void> runMainApp(String envFile) async {
-  var selectedEnvFile = envFile;
+Future<void> runMainApp() async {
   if (kIsWeb) {
     usePathUrlStrategy();
   }
@@ -71,22 +70,8 @@ Future<void> runMainApp(String envFile) async {
 
   await RemoteConfigService().initialize();
 
-  // Determine which .env file to load based on remote config
-  if (RemoteConfigService().showLiveAds) {
-    selectedEnvFile = '.env.prod';
-  } else {
-    selectedEnvFile = '.env.dev';
-  }
-
   // Defer first frame to keep the native splash screen until SplashMaster.resume() is called.
   SplashMaster.initialize();
-
-  try {
-    await dotenv.load(fileName: selectedEnvFile);
-    debugPrint('loading dotenv: $selectedEnvFile');
-  } catch (e) {
-    debugPrint('Dotenv loading failed: $e');
-  }
 
   await NotificationService().init();
 

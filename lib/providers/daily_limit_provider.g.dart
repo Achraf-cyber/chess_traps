@@ -42,7 +42,7 @@ final class DailyLimitNotifierProvider
 }
 
 String _$dailyLimitNotifierHash() =>
-    r'3ea91c1eff5790efdf40733bf422a6239d9f89b6';
+    r'8246625fcb8214d66e4d594f92e4d4a83344c0fe';
 
 abstract class _$DailyLimitNotifier extends $Notifier<DailyLimitState> {
   DailyLimitState build();

@@ -49,12 +49,11 @@ class EngineAnalysisState {
 }
 
 @Riverpod(keepAlive: true)
-ChessEngineService chessEngineService(Ref ref) {
+ChessEngineService chessEngine(Ref ref) {
   final service = ChessEngineService();
   service.init().catchError((Object e) {
     debugPrint('Engine init failed: $e');
   });
-  ref.onDispose(() => service.dispose());
   return service;
 }
 
@@ -67,7 +66,7 @@ class EngineAnalysis extends _$EngineAnalysis {
 
   @override
   EngineAnalysisState build(String fen) {
-    final service = ref.watch(chessEngineServiceProvider);
+    final service = ref.watch(chessEngineProvider);
     final isReady = _watchValueListenable(service.engineAvailableNotifier);
 
     // Sync MultiPV with settings

@@ -3,72 +3,116 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="container-wide flex-col items-center min-h-screen relative">
-      <div className="hero-background" />
-
+    <main className="relative min-h-screen">
       {/* Navigation */}
-      <nav className="nav container-wide">
-        <div className="logo">CHESS TRAPS</div>
-        <Link href="#download" className="btn-primary" style={{ padding: '0.75rem 1.5rem', borderRadius: '10px' }}>
-          Get Started
-        </Link>
+      <nav className="nav">
+        <div className="logo">Chess Traps</div>
+        <div className="flex gap-8 items-center">
+          <Link href="#features" className="btn-outline hidden md:flex">Features</Link>
+          <Link href="https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com" className="btn-primary">
+            Download
+          </Link>
+        </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="section-hero container-mid px-5">
-        <h1 className="heading-xl mb-6 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-          MASTER THE <span style={{ color: 'var(--accent)' }}>ART</span><br/>
-          OF THE TRAP
-        </h1>
-        <p className="paragraph-l text-subtle mb-12 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          Stop losing to early blunders. Learn over 1,000 professional chess traps 
-          with interactive practice and engine analysis.
-        </p>
-        
-        <div className="flex-center gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
-          <Link href="https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com" className="btn-primary">
-            Download on Google Play
-          </Link>
+      <section className="section-hero">
+        <div className="reveal" style={{ animationDelay: '0.1s' }}>
+          <h1 className="heading-hero">
+            ELEVATE YOUR <br />
+            <span className="accent-text">CHESS GAME</span>
+          </h1>
+          <p className="max-w-2xl mx-auto text-xl text-[#888] leading-relaxed mb-10">
+            Uncover the secrets of the world's most effective chess traps. 
+            Interactive practice, real-time engine analysis, and over 1,000 patterns.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com" className="btn-primary">
+              Get it on Google Play
+            </Link>
+            <Link href="#features" className="btn-outline">
+              Explore Features
+            </Link>
+          </div>
         </div>
 
-        {/* Hero Image */}
-        <div className="mt-20 animate-fade-in" style={{ animationDelay: '0.7s' }}>
-          <div className="img-container">
-            <Image 
-              src="/hero.png" 
-              alt="Chess Trap Hero" 
-              width={1200} 
-              height={800} 
-              className="img-hero"
-            />
-            <div className="absolute inset-0 bg-gradient-hero" />
+        {/* Hero Image Mockup */}
+        <div className="hero-image-wrap reveal" style={{ animationDelay: '0.3s' }}>
+          <Image 
+            src="/hero.png" 
+            alt="Chess Traps App Mockup" 
+            width={1200} 
+            height={800} 
+            priority
+            className="w-full h-auto opacity-80"
+          />
+        </div>
+
+        {/* Floating Stats */}
+        <div className="floating-stats reveal" style={{ animationDelay: '0.5s' }}>
+          <div className="stat-item">
+            <span className="stat-value">1,000+</span>
+            <span className="stat-label">Unique Traps</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">24/7</span>
+            <span className="stat-label">Engine Access</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">50k+</span>
+            <span className="stat-label">Active Users</span>
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section id="features" className="section-pad container-wide px-5 grid-3">
-        <div className="glass-card">
-          <div style={{ color: 'var(--accent)', fontSize: '2rem', marginBottom: '1rem' }}>01</div>
-          <h3 className="text-2xl font-bold mb-4">1,000+ Traps</h3>
-          <p className="text-subtle">From the Stafford Gambit to the fishing pole, we cover every known opening trap.</p>
+      {/* Features Section */}
+      <section id="features" className="grid-features">
+        <div className="feature-card reveal" style={{ animationDelay: '0.1s' }}>
+          <span className="icon">♟️</span>
+          <h3 className="text-xl font-bold mb-4">Interactive Training</h3>
+          <p className="text-[#888] leading-relaxed text-sm">
+            Don't just memorize. Play through every trap with our interactive board that guides you through the winning moves.
+          </p>
         </div>
-        <div className="glass-card">
-          <div style={{ color: 'var(--accent)', fontSize: '2rem', marginBottom: '1rem' }}>02</div>
-          <h3 className="text-2xl font-bold mb-4">Practice Mode</h3>
-          <p className="text-subtle">Don't just watch. Play the moves yourself and get immediate feedback on your performance.</p>
+
+        <div className="feature-card reveal" style={{ animationDelay: '0.2s' }}>
+          <span className="icon">⚙️</span>
+          <h3 className="text-xl font-bold mb-4">Stockfish Integration</h3>
+          <p className="text-[#888] leading-relaxed text-sm">
+            Analyze every position with the world's strongest chess engine. Understand exactly why a move works or fails.
+          </p>
         </div>
-        <div className="glass-card">
-          <div style={{ color: 'var(--accent)', fontSize: '2rem', marginBottom: '1rem' }}>03</div>
-          <h3 className="text-2xl font-bold mb-4">Pro Engine</h3>
-          <p className="text-subtle">Powered by the latest chess engine for real-time evaluation and best-move analysis.</p>
+
+        <div className="feature-card reveal" style={{ animationDelay: '0.3s' }}>
+          <span className="icon">📈</span>
+          <h3 className="text-xl font-bold mb-4">Personal Progress</h3>
+          <p className="text-[#888] leading-relaxed text-sm">
+            Track your mastery. Mark traps as learned and practice them periodically to ensure they stay in your repertoire.
+          </p>
         </div>
       </section>
 
+      {/* Final CTA */}
+      <section className="py-32 text-center reveal">
+        <h2 className="text-4xl font-bold mb-8">Ready to dominate?</h2>
+        <Link href="https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com" className="btn-primary">
+          Start Training Now
+        </Link>
+      </section>
+
       {/* Footer */}
-      <footer className="py-20 text-center text-faint border-t border-white/5 w-full mt-auto">
-        <p>&copy; 2026 Chess Traps by Achraf Cyber. All rights reserved.</p>
+      <footer className="footer">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="logo opacity-30 text-sm">Chess Traps</div>
+          <div className="flex gap-8 text-xs uppercase tracking-widest">
+            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
+            <Link href="#" className="hover:text-white transition-colors">Contact</Link>
+          </div>
+          <p className="text-[#444] text-xs">&copy; 2026 Achraf Cyber.</p>
+        </div>
       </footer>
     </main>
   );
 }
+

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'play_screen.dart';
+part of 'learned_traps_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,51 +9,51 @@ part of 'play_screen.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(PlayGameNotifier)
-final playGameProvider = PlayGameNotifierProvider._();
+@ProviderFor(LearnedTraps)
+final learnedTrapsProvider = LearnedTrapsProvider._();
 
-final class PlayGameNotifierProvider
-    extends $NotifierProvider<PlayGameNotifier, PlayGameState> {
-  PlayGameNotifierProvider._()
+final class LearnedTrapsProvider
+    extends $NotifierProvider<LearnedTraps, Set<int>> {
+  LearnedTrapsProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'playGameProvider',
+        name: r'learnedTrapsProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$playGameNotifierHash();
+  String debugGetCreateSourceHash() => _$learnedTrapsHash();
 
   @$internal
   @override
-  PlayGameNotifier create() => PlayGameNotifier();
+  LearnedTraps create() => LearnedTraps();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(PlayGameState value) {
+  Override overrideWithValue(Set<int> value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<PlayGameState>(value),
+      providerOverride: $SyncValueProvider<Set<int>>(value),
     );
   }
 }
 
-String _$playGameNotifierHash() => r'3b636a445ea43026f24617bc22f040f7956e0896';
+String _$learnedTrapsHash() => r'de0699ac0a95bc73ea4ab01d2bda5480dc961732';
 
-abstract class _$PlayGameNotifier extends $Notifier<PlayGameState> {
-  PlayGameState build();
+abstract class _$LearnedTraps extends $Notifier<Set<int>> {
+  Set<int> build();
   @$mustCallSuper
   @override
   void runBuild() {
-    final ref = this.ref as $Ref<PlayGameState, PlayGameState>;
+    final ref = this.ref as $Ref<Set<int>, Set<int>>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<PlayGameState, PlayGameState>,
-              PlayGameState,
+              AnyNotifier<Set<int>, Set<int>>,
+              Set<int>,
               Object?,
               Object?
             >;

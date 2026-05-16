@@ -10,6 +10,9 @@ class RemoteConfigService {
 
   static const String _adsEnabledKey = 'ads_enabled';
   static const String _showLiveAdsKey = 'show_live_ads';
+  static const String _minTimeBetweenPopupsAdsInMinutesKey = 'min_time_between_popups_ads_in_minutes';
+  static const String _maxNumberOfPopupAdsPerSessionKey = 'max_number_of_popup_ads_per_session';
+  static const String _popupAdsActiveKey = 'popup_ads_active';
 
   Future<void> initialize() async {
     try {
@@ -25,6 +28,9 @@ class RemoteConfigService {
       await _remoteConfig.setDefaults({
         _adsEnabledKey: false,
         _showLiveAdsKey: false,
+        _minTimeBetweenPopupsAdsInMinutesKey: 5,
+        _maxNumberOfPopupAdsPerSessionKey: 10,
+        _popupAdsActiveKey: true,
       });
 
       await _remoteConfig.fetchAndActivate();
@@ -36,4 +42,7 @@ class RemoteConfigService {
 
   bool get adsEnabled => _remoteConfig.getBool(_adsEnabledKey);
   bool get showLiveAds => _remoteConfig.getBool(_showLiveAdsKey);
+  int get minTimeBetweenPopupsAdsInMinutes => _remoteConfig.getInt(_minTimeBetweenPopupsAdsInMinutesKey);
+  int get maxNumberOfPopupAdsPerSession => _remoteConfig.getInt(_maxNumberOfPopupAdsPerSessionKey);
+  bool get popupAdsActive => _remoteConfig.getBool(_popupAdsActiveKey);
 }

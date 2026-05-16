@@ -1,5 +1,5 @@
+import 'dart:io';
 import 'package:stockfish/stockfish.dart';
-
 void main() async {
   final engine = Stockfish();
   engine.stdout.listen((event) {

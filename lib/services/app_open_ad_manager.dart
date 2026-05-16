@@ -37,6 +37,7 @@ class AppOpenAdManager {
 
   void showAdIfAvailable() {
     if (!RemoteConfigService().adsEnabled) return;
+    if (!AdHelper.canShowPopupAd()) return;
     if (!isAdAvailable) {
       loadAd();
       return;
@@ -44,6 +45,8 @@ class AppOpenAdManager {
     if (_isShowingAd) {
       return;
     }
+
+    AdHelper.recordPopupAdShown();
 
     _appOpenAd!.fullScreenContentCallback = FullScreenContentCallback(
       onAdShowedFullScreenContent: (ad) {

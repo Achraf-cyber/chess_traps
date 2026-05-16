@@ -13,12 +13,11 @@ class InterstitialAdManager {
   InterstitialAd? _interstitialAd;
   int _trapViewsCount = 0;
   static const int _adFrequency = 5;
-  DateTime? _lastAdShownAt;
-  static const Duration _adCooldown = Duration(minutes: 5);
   bool _isShowingAd = false;
 
   void loadAd() {
-    if (!RemoteConfigService().adsEnabled) return;
+    final remoteConfig = RemoteConfigService();
+    if (!remoteConfig.adsEnabled || !remoteConfig.popupAdsActive) return;
     InterstitialAd.load(
       adUnitId: AdHelper.interstitialAdUnitId,
       request: const AdRequest(),
@@ -35,20 +34,13 @@ class InterstitialAdManager {
   }
 
   void onTrapViewed() {
-    if (!RemoteConfigService().adsEnabled) return;
     _trapViewsCount++;
     if (_trapViewsCount >= _adFrequency) {
       // Reset count anyway to avoid re-triggering every time if ad not ready
       _trapViewsCount = 0;
 
-      final now = DateTime.now();
-      final lastShown = _lastAdShownAt;
-      final canShow =
-          lastShown == null || now.difference(lastShown) >= _adCooldown;
-
-      if (canShow && _interstitialAd != null && !_isShowingAd) {
+      if (AdHelper.canShowPopupAd() && _interstitialAd != null && !_isShowingAd) {
         showAd();
-        _lastAdShownAt = now;
       } else {
         if (_interstitialAd == null) loadAd();
       }
@@ -60,6 +52,8 @@ class InterstitialAdManager {
     if (ad == null || _isShowingAd) return;
 
     _isShowingAd = true;
+    AdHelper.recordPopupAdShown();
+
     ad.fullScreenContentCallback = FullScreenContentCallback(
       onAdShowedFullScreenContent: (ad) {
         _isShowingAd = true;

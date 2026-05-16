@@ -30,7 +30,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
   Widget build(BuildContext context) {
     final trapsGroups = ref.watch(trapsGroupSourceProvider);
     final trapsSearched = ref.watch(trapsSearchByNameProvider(_searchValue));
-    
+
     // We can use a pseudo-random featured trap or simply the first one
     final featuredTrap = trapsSearched.isNotEmpty ? trapsSearched.first : null;
 
@@ -55,7 +55,10 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
               ),
             ),
             SliverPadding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 16.0,
+                vertical: 8.0,
+              ),
               sliver: SliverToBoxAdapter(
                 child: FloatingSearchTextField(
                   onChanged: (p0) => setState(() => _searchValue = p0),
@@ -64,7 +67,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
                 ),
               ),
             ),
-            
+
             // Ad Banner elegantly integrated right after search
             const SliverToBoxAdapter(
               child: Padding(
@@ -118,7 +121,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
               ),
               TrapsGridSliver(traps: trapsSearched),
             ],
-            
+
             const SliverToBoxAdapter(child: SizedBox(height: 100)),
           ],
         ),
@@ -150,9 +153,7 @@ class HorizontalTrapGroups extends StatelessWidget {
               elevation: 0,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(16),
-                side: BorderSide(
-                  color: context.colors.outlineVariant,
-                ),
+                side: BorderSide(color: context.colors.outlineVariant),
               ),
               color: context.colors.surfaceContainerHighest,
               clipBehavior: Clip.antiAlias,
@@ -165,19 +166,6 @@ class HorizontalTrapGroups extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Container(
-                        padding: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          color: context.colors.primaryContainer,
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          Icons.auto_awesome_mosaic_rounded,
-                          color: context.colors.primary,
-                          size: 24,
-                        ),
-                      ),
-                      const SizedBox(height: 12),
                       Text(
                         entry.key,
                         textAlign: TextAlign.center,
@@ -248,11 +236,16 @@ class FloatingSearchTextField extends StatelessWidget {
       child: TextField(
         controller: controller,
         onChanged: onChanged,
-        style: context.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w600),
+        style: context.textTheme.bodyLarge?.copyWith(
+          fontWeight: FontWeight.w600,
+        ),
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: TextStyle(color: context.colors.onSurfaceVariant),
-          prefixIcon: Icon(Icons.search_rounded, color: context.colors.onSurfaceVariant),
+          prefixIcon: Icon(
+            Icons.search_rounded,
+            color: context.colors.onSurfaceVariant,
+          ),
           suffixIcon: controller.text.isNotEmpty
               ? IconButton(
                   onPressed: () {
@@ -272,4 +265,3 @@ class FloatingSearchTextField extends StatelessWidget {
     );
   }
 }
-

@@ -45,13 +45,17 @@ class DailyLimitNotifier extends _$DailyLimitNotifier {
     if (savedDate == today) {
       final views = prefs.getInt(_viewsKey) ?? 0;
       final unlocked = prefs.getBool(_unlockedKey) ?? false;
-      state = DailyLimitState(viewsToday: views, isUnlocked: unlocked);
+      try {
+        state = DailyLimitState(viewsToday: views, isUnlocked: unlocked);
+      } catch (_) {}
     } else {
       // New day, reset
       await prefs.setString(_dateKey, today);
       await prefs.setInt(_viewsKey, 0);
       await prefs.setBool(_unlockedKey, false);
-      state = const DailyLimitState(viewsToday: 0, isUnlocked: false);
+      try {
+        state = const DailyLimitState(viewsToday: 0, isUnlocked: false);
+      } catch (_) {}
     }
   }
 

@@ -9,10 +9,10 @@ part of 'engine_analysis_provider.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(chessEngineService)
-final chessEngineServiceProvider = ChessEngineServiceProvider._();
+@ProviderFor(chessEngine)
+final chessEngineProvider = ChessEngineProvider._();
 
-final class ChessEngineServiceProvider
+final class ChessEngineProvider
     extends
         $FunctionalProvider<
           ChessEngineService,
@@ -20,19 +20,19 @@ final class ChessEngineServiceProvider
           ChessEngineService
         >
     with $Provider<ChessEngineService> {
-  ChessEngineServiceProvider._()
+  ChessEngineProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'chessEngineServiceProvider',
+        name: r'chessEngineProvider',
         isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$chessEngineServiceHash();
+  String debugGetCreateSourceHash() => _$chessEngineHash();
 
   @$internal
   @override
@@ -42,7 +42,7 @@ final class ChessEngineServiceProvider
 
   @override
   ChessEngineService create(Ref ref) {
-    return chessEngineService(ref);
+    return chessEngine(ref);
   }
 
   /// {@macro riverpod.override_with_value}
@@ -54,8 +54,7 @@ final class ChessEngineServiceProvider
   }
 }
 
-String _$chessEngineServiceHash() =>
-    r'60eee4712ea8233613de5321143e00fd1a07963b';
+String _$chessEngineHash() => r'cf2c83ddde238ee73a1b1547db8c5389b1eabfd4';
 
 @ProviderFor(EngineAnalysis)
 final engineAnalysisProvider = EngineAnalysisFamily._();
@@ -106,7 +105,7 @@ final class EngineAnalysisProvider
   }
 }
 
-String _$engineAnalysisHash() => r'533eb7c40cbba7b28c41b5926ed5124b3fe003ea';
+String _$engineAnalysisHash() => r'be7f9802e56132928f968c75891f5771bbfc38a3';
 
 final class EngineAnalysisFamily extends $Family
     with

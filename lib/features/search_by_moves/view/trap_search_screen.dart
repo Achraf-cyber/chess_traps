@@ -564,12 +564,6 @@ class _SearchResultsSection extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: Row(
               children: [
-                Icon(
-                  Icons.auto_awesome_rounded,
-                  size: 18,
-                  color: context.colors.secondary,
-                ),
-                const SizedBox(width: 8),
                 Text(
                   phraseMatchingTraps,
                   style: context.textTheme.titleMedium?.copyWith(

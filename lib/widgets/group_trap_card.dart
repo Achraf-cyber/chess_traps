@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'package:dartchess/dartchess.dart';
 
 import 'package:chess_traps/data/chess_trap.dart';
 import 'package:chess_traps/router.dart';
@@ -7,10 +8,7 @@ import 'package:chessground/chessground.dart';
 import 'package:flutter/material.dart';
 
 class GroupTrapCard extends StatelessWidget {
-  const GroupTrapCard({
-    super.key,
-    required this.trap,
-  });
+  const GroupTrapCard({super.key, required this.trap});
 
   final ChessTrap trap;
   static const _defaultFen =
@@ -73,7 +71,9 @@ class GroupTrapCard extends StatelessWidget {
                     Icon(
                       Icons.arrow_forward_ios_rounded,
                       size: 16,
-                      color: context.colors.onSurfaceVariant.withValues(alpha: 0.5),
+                      color: context.colors.onSurfaceVariant.withValues(
+                        alpha: 0.5,
+                      ),
                     ),
                   ],
                 ),
@@ -83,7 +83,9 @@ class GroupTrapCard extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border(
                     top: BorderSide(
-                      color: context.colors.outlineVariant.withValues(alpha: 0.3),
+                      color: context.colors.outlineVariant.withValues(
+                        alpha: 0.3,
+                      ),
                     ),
                   ),
                 ),
@@ -94,14 +96,22 @@ class GroupTrapCard extends StatelessWidget {
                       child: Center(
                         child: LayoutBuilder(
                           builder: (context, constraints) {
-                            final size = math.min(
-                              constraints.maxWidth,
-                              constraints.maxHeight,
-                            ) * 0.9;
-                            return StaticChessboard(
-                              size: size,
-                              orientation: .white,
-                              fen: _isLikelyFen(trap.fen) ? trap.fen : _defaultFen,
+                            final size =
+                                math.min(
+                                  constraints.maxWidth,
+                                  constraints.maxHeight,
+                                ) *
+                                0.9;
+                            return SizedBox(
+                              width: size,
+                              height: size,
+                              child: StaticChessboard(
+                                size: size,
+                                orientation: Side.white,
+                                fen: _isLikelyFen(trap.fen)
+                                    ? trap.fen
+                                    : _defaultFen,
+                              ),
                             );
                           },
                         ),

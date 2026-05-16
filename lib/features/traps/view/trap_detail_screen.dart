@@ -1,5 +1,7 @@
 import 'dart:async';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:chess_traps/providers/learned_traps_provider.dart';
+import 'package:chess_traps/services/audio_haptic_service.dart';
 import 'package:chess_traps/providers/user_favorites_provider.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:dartchess/dartchess.dart';
@@ -42,6 +44,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   NormalMove? promotionMove;
   bool? _isLastMoveCorrect;
   Timer? _feedbackTimer;
+  NormalMove? _hintMove;
+  Timer? _hintTimer;
 
   @override
   void initState() {
@@ -226,6 +230,24 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     });
   }
 
+  void _showHint(EngineAnalysisState engineState) {
+    if (!engineState.engineAvailable || engineState.multiPv.isEmpty) return;
+
+    final sortedEntries = engineState.multiPv.entries.toList()
+      ..sort((a, b) => a.key.compareTo(b.key));
+    
+    if (sortedEntries.first.value.isNotEmpty) {
+      final uci = sortedEntries.first.value.first;
+      setState(() {
+        _hintMove = NormalMove.fromUci(uci);
+      });
+      _hintTimer?.cancel();
+      _hintTimer = Timer(const Duration(seconds: 2), () {
+        if (mounted) setState(() => _hintMove = null);
+      });
+    }
+  }
+
   void _onPromotionSelection(Role? role) {
     if (promotionMove != null && role != null) {
       final move = NormalMove(
@@ -244,6 +266,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   void dispose() {
     _autoPlayTimer?.cancel();
     _feedbackTimer?.cancel();
+    _hintTimer?.cancel();
     _scrollController.dispose();
     super.dispose();
   }
@@ -290,6 +313,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     );
     final favorite = ref.watch(userFavoritesProvider.notifier);
     final isFavorite = ref.watch(userFavoritesProvider).contains(trap.id);
+    final learnedTraps = ref.watch(learnedTrapsProvider);
+    final isLearned = learnedTraps.contains(trap.id);
 
     // Engine Analysis State
     final engineState = ref.watch(engineAnalysisProvider(position.fen));
@@ -325,10 +350,25 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
         }
       }
     }
+    
+    if (_hintMove != null) {
+      arrowList.add(
+        cg.Arrow(
+          color: Colors.green.withValues(alpha: 0.8),
+          orig: _hintMove!.from,
+          dest: _hintMove!.to,
+        ),
+      );
+    }
+
     final ISet<cg.Shape> arrows = ISet(arrowList);
 
     return Scaffold(
+      backgroundColor: context.colors.surface,
       appBar: AppBar(
+        backgroundColor: context.colors.surface,
+        elevation: 0,
+        scrolledUnderElevation: 0,
         leading: BackButton(onPressed: () => context.pop()),
         title: Text(
           trap.opening,
@@ -337,116 +377,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           ),
         ),
         actions: [
-          IconButton(
-            onPressed: () async {
-              final link = AppLinkService.buildTrapLink(widget.trapIndex);
-              await SharePlus.instance.share(
-                ShareParams(
-                  text:
-                      "Can you survive this trap? Check out ${trap.getLocalizedName(context)}!\n$link",
-                ),
-              );
-            },
-            icon: const Icon(Icons.share_rounded),
-            tooltip: "Share Trap",
-          ),
-          IconButton(
-            onPressed: () {
-              setState(() {
-                isAvoidMode = !isAvoidMode;
-                if (isAvoidMode) {
-                  isPracticeMode = false;
-                  isAutoPlaying = false;
-                  _calculateBlunderIndex(trap);
-                  
-                  // Auto play until blunder
-                  currentMoveIndex = 0;
-                  final targetIndex = blunderIndex ?? 0;
-                  
-                  _autoPlayTimer?.cancel();
-                  _autoPlayTimer = Timer.periodic(const Duration(milliseconds: 800), (timer) {
-                    if (currentMoveIndex < targetIndex) {
-                      _updateMoveIndex(currentMoveIndex + 1, maxMoves);
-                    } else {
-                      timer.cancel();
-                      // Flip board to losing side
-                      setState(() {
-                        orientation = trap.targetSide == Side.white ? Side.black : Side.white;
-                      });
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text(context.phrase.avoidModeActive)),
-                      );
-                    }
-                  });
-                }
-              });
-            },
-            icon: Icon(
-              isAvoidMode ? Icons.shield_rounded : Icons.shield_outlined,
-              color: isAvoidMode ? Colors.orange : null,
-            ),
-            tooltip: "Avoid Trap Mode",
-          ),
-          IconButton(
-            onPressed: () {
-              final maxMoves = trap.moves.length;
-              setState(() {
-                isPracticeMode = !isPracticeMode;
-                isAvoidMode = false;
-                if (isPracticeMode) {
-                  currentMoveIndex = 0; // Reset to start
-                  if (isAutoPlaying) {
-                    _toggleAutoPlay(maxMoves);
-                  }
-
-                  // If it's the computer's turn to move first, trigger it
-                  final firstPosition = ref.read(
-                    trapPositionProvider(widget.trapIndex, 0),
-                  );
-                  if (firstPosition.turn != trap.targetSide) {
-                    Future.delayed(const Duration(milliseconds: 600), () {
-                      if (!mounted || !isPracticeMode) return;
-                      _updateMoveIndex(1, maxMoves);
-                    });
-                  }
-                }
-              });
-              if (isPracticeMode) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text(
-                      "Practice mode active. Play the correct moves!",
-                    ),
-                  ),
-                );
-              }
-            },
-            icon: Icon(
-              isPracticeMode ? Icons.school_rounded : Icons.school_outlined,
-              color: isPracticeMode ? context.colors.primary : null,
-            ),
-            tooltip: isPracticeMode ? "Exit Practice Mode" : "Practice Mode",
-          ),
-          IconButton(
-            onPressed: () => _toggleAutoPlay(maxMoves),
-            icon: Icon(
-              isAutoPlaying
-                  ? Icons.pause_circle_filled_rounded
-                  : Icons.play_circle_filled_rounded,
-              color: isAutoPlaying ? context.colors.primary : null,
-            ),
-            tooltip: isAutoPlaying ? "Stop Auto Play" : "Start Auto Play",
-          ),
-          IconButton(
-            onPressed: () {
-              setState(() {
-                orientation = orientation == Side.white
-                    ? Side.black
-                    : Side.white;
-              });
-            },
-            icon: const Icon(Icons.flip_camera_android_rounded),
-          ),
           IconButton(
             onPressed: () {
               favorite.toggleFavorite(trap.id);
@@ -458,10 +388,193 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               color: isFavorite ? Colors.red : null,
             ),
           ),
-          IconButton(
-            onPressed: () => _showSettingsBottomSheet(context, ref),
-            icon: const Icon(Icons.settings_rounded),
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.more_vert_rounded),
+            onSelected: (value) async {
+              switch (value) {
+                case 'practice':
+                  final maxMoves = trap.moves.length;
+                  setState(() {
+                    isPracticeMode = !isPracticeMode;
+                    isAvoidMode = false;
+                    if (isPracticeMode) {
+                      currentMoveIndex = 0; // Reset to start
+                      if (isAutoPlaying) {
+                        _toggleAutoPlay(maxMoves);
+                      }
+
+                      // If it's the computer's turn to move first, trigger it
+                      final firstPosition = ref.read(
+                        trapPositionProvider(widget.trapIndex, 0),
+                      );
+                      if (firstPosition.turn != trap.targetSide) {
+                        Future.delayed(const Duration(milliseconds: 600), () {
+                          if (!mounted || !isPracticeMode) return;
+                          _updateMoveIndex(1, maxMoves);
+                        });
+                      }
+                    }
+                  });
+                  if (isPracticeMode) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          "Practice mode active. Play the correct moves!",
+                        ),
+                      ),
+                    );
+                  }
+                  break;
+                case 'avoid':
+                  setState(() {
+                    isAvoidMode = !isAvoidMode;
+                    if (isAvoidMode) {
+                      isPracticeMode = false;
+                      isAutoPlaying = false;
+                      _calculateBlunderIndex(trap);
+                      
+                      // Auto play until blunder
+                      currentMoveIndex = 0;
+                      final maxMoves = trap.moves.length;
+                      final targetIndex = blunderIndex ?? 0;
+                      
+                      _autoPlayTimer?.cancel();
+                      _autoPlayTimer = Timer.periodic(const Duration(milliseconds: 800), (timer) {
+                        if (currentMoveIndex < targetIndex) {
+                          _updateMoveIndex(currentMoveIndex + 1, maxMoves);
+                        } else {
+                          timer.cancel();
+                          // Flip board to losing side
+                          setState(() {
+                            orientation = trap.targetSide == Side.white ? Side.black : Side.white;
+                          });
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text(context.phrase.avoidModeActive)),
+                          );
+                        }
+                      });
+                    }
+                  });
+                  break;
+                case 'autoplay':
+                  _toggleAutoPlay(trap.moves.length);
+                  break;
+                case 'flip':
+                  setState(() {
+                    orientation = orientation == Side.white
+                        ? Side.black
+                        : Side.white;
+                  });
+                  break;
+                case 'learned':
+                  ref.read(learnedTrapsProvider.notifier).toggleLearned(trap.id);
+                  if (!isLearned) {
+                    AudioHapticService().playCapture();
+                  }
+                  break;
+                case 'share':
+                  final link = AppLinkService.buildTrapLink(widget.trapIndex);
+                  await SharePlus.instance.share(
+                    ShareParams(
+                      text:
+                          "Can you survive this trap? Check out ${trap.getLocalizedName(context)}!\n$link",
+                    ),
+                  );
+                  break;
+                case 'settings':
+                  _showSettingsBottomSheet(context, ref);
+                  break;
+              }
+            },
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                value: 'practice',
+                child: Row(
+                  children: [
+                    Icon(
+                      isPracticeMode ? Icons.school_rounded : Icons.school_outlined,
+                      color: isPracticeMode ? context.colors.primary : context.colors.onSurfaceVariant,
+                    ),
+                    const SizedBox(width: 12),
+                    Text(isPracticeMode ? "Exit Practice" : "Practice Mode"),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'avoid',
+                child: Row(
+                  children: [
+                    Icon(
+                      isAvoidMode ? Icons.shield_rounded : Icons.shield_outlined,
+                      color: isAvoidMode ? Colors.orange : context.colors.onSurfaceVariant,
+                    ),
+                    const SizedBox(width: 12),
+                    Text(isAvoidMode ? "Exit Avoid Mode" : "Avoid Trap Mode"),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'autoplay',
+                child: Row(
+                  children: [
+                    Icon(
+                      isAutoPlaying
+                          ? Icons.pause_circle_filled_rounded
+                          : Icons.play_circle_filled_rounded,
+                      color: isAutoPlaying ? context.colors.primary : context.colors.onSurfaceVariant,
+                    ),
+                    const SizedBox(width: 12),
+                    Text(isAutoPlaying ? "Stop Auto Play" : "Auto Play"),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'flip',
+                child: Row(
+                  children: [
+                    Icon(Icons.flip_camera_android_rounded, color: context.colors.onSurfaceVariant),
+                    const SizedBox(width: 12),
+                    const Text("Flip Board"),
+                  ],
+                ),
+              ),
+              const PopupMenuDivider(),
+              PopupMenuItem(
+                value: 'learned',
+                child: Row(
+                  children: [
+                    Icon(
+                      isLearned ? Icons.check_circle_rounded : Icons.check_circle_outline_rounded,
+                      color: isLearned ? Colors.green : context.colors.onSurfaceVariant,
+                    ),
+                    const SizedBox(width: 12),
+                    Text(isLearned ? "Marked as learned" : "Mark as learned"),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'share',
+                child: Row(
+                  children: [
+                    Icon(Icons.share_rounded, color: context.colors.onSurfaceVariant),
+                    const SizedBox(width: 12),
+                    const Text("Share Trap"),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                value: 'settings',
+                child: Row(
+                  children: [
+                    Icon(Icons.settings_rounded, color: context.colors.onSurfaceVariant),
+                    const SizedBox(width: 12),
+                    const Text("Settings"),
+                  ],
+                ),
+              ),
+            ],
           ),
+          const SizedBox(width: 8),
         ],
       ),
       body: Column(
@@ -484,9 +597,9 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                             constraints.maxHeight - overheadHeight;
                         final availableWidth = constraints.maxWidth - 32;
 
-                        final size = availableHeight < availableWidth
+                        final size = (availableHeight < availableWidth
                             ? availableHeight
-                            : availableWidth;
+                            : availableWidth).clamp(0.0, double.infinity);
 
                         final captured = getCapturedPieces(position.board);
                         final whiteCaptured = captured[Side.white] ?? [];
@@ -508,9 +621,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                   width: size,
                                   height: barHeight,
                                   child: EvaluationBar(
-                                    score: engineState.displayScore.toDouble(),
-                                    isWhiteOrientation:
-                                        orientation == Side.white,
+                                    evaluation: engineState.displayScore * 100,
+                                    isReversed: orientation == Side.black,
                                     orientation: Axis.horizontal,
                                     label: engineState.mateIn != null
                                         ? "M${engineState.mateIn!.abs()}"
@@ -680,7 +792,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                 ),
                 const SizedBox(height: 4),
                 if (!isPracticeMode) ...[
-                  _buildMoveNavigation(maxMoves),
+                  _buildMoveNavigation(maxMoves, engineState),
                   const SizedBox(height: 4),
                 ],
               ],
@@ -706,7 +818,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                    children: [
                     Padding(
                       padding: const EdgeInsets.fromLTRB(24, 24, 24, 12),
                       child: Column(
@@ -736,6 +848,31 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                   context.phrase.theory,
                                   style: context.textTheme.labelSmall?.copyWith(
                                     color: context.colors.onTertiaryContainer,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(width: 8),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 2,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: trap.targetSide == Side.white 
+                                      ? Colors.white 
+                                      : Colors.black87,
+                                  borderRadius: BorderRadius.circular(8),
+                                  border: Border.all(
+                                    color: context.colors.outline.withValues(alpha: 0.3),
+                                  ),
+                                ),
+                                child: Text(
+                                  trap.targetSide == Side.white ? 'White Profits' : 'Black Profits',
+                                  style: context.textTheme.labelSmall?.copyWith(
+                                    color: trap.targetSide == Side.white 
+                                        ? Colors.black87 
+                                        : Colors.white,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
@@ -885,7 +1022,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     );
   }
 
-  Widget _buildMoveNavigation(int maxMoves) {
+  Widget _buildMoveNavigation(int maxMoves, EngineAnalysisState engineState) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
       child: Row(
@@ -896,19 +1033,26 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
             () => _updateMoveIndex(0, maxMoves),
             currentMoveIndex > 0,
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 12),
           _buildNavButton(
             Icons.chevron_left_rounded,
             () => _updateMoveIndex(currentMoveIndex - 1, maxMoves),
             currentMoveIndex > 0,
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 12),
+          _buildNavButton(
+            Icons.lightbulb_outline_rounded,
+            () => _showHint(engineState),
+            engineState.engineAvailable && engineState.multiPv.isNotEmpty,
+            color: Colors.amber,
+          ),
+          const SizedBox(width: 12),
           _buildNavButton(
             Icons.chevron_right_rounded,
             () => _updateMoveIndex(currentMoveIndex + 1, maxMoves),
             currentMoveIndex < maxMoves,
           ),
-          const SizedBox(width: 16),
+          const SizedBox(width: 12),
           _buildNavButton(
             Icons.last_page_rounded,
             () => _updateMoveIndex(maxMoves, maxMoves),
@@ -919,11 +1063,15 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     );
   }
 
-  Widget _buildNavButton(IconData icon, VoidCallback onPressed, bool enabled) {
+  Widget _buildNavButton(IconData icon, VoidCallback onPressed, bool enabled, {Color? color}) {
     return IconButton.filledTonal(
       onPressed: enabled ? onPressed : null,
       icon: Icon(icon),
       iconSize: 28,
+      style: color != null ? IconButton.styleFrom(
+        foregroundColor: color,
+        backgroundColor: color.withValues(alpha: 0.1),
+      ) : null,
     );
   }
 

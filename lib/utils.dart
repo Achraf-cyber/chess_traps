@@ -1,7 +1,7 @@
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 import 'package:fast_immutable_collections/fast_immutable_collections.dart';
-import 'l10n/app_localizations.dart';
+import 'package:chess_traps/l10n/app_localizations.dart';
 
 extension I10nfromContext on BuildContext {
   AppLocalizations get phrase => AppLocalizations.of(this)!;

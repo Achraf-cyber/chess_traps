@@ -3,12 +3,18 @@ import 'package:flutter/foundation.dart';
 import 'package:stockfish/stockfish.dart';
 
 class ChessEngineService {
+  factory ChessEngineService() => _instance;
+  ChessEngineService._internal();
+
+  static final ChessEngineService _instance = ChessEngineService._internal();
+
   final Stockfish _stockfish = Stockfish();
   final _outputController = StreamController<String>.broadcast();
   Stream<String> get engineOutput => _outputController.stream;
   StreamSubscription<String>? _stdoutSubscription;
 
   bool _isInit = false;
+  bool _isInitializing = false;
   // This notifier allows the UI to wait indefinitely for the slow extraction
   final ValueNotifier<bool> engineAvailableNotifier = ValueNotifier(false);
 
@@ -17,8 +23,8 @@ class ChessEngineService {
   void Function()? _pendingCommand;
 
   Future<void> init() async {
-    if (_isInit) return;
-    _isInit = true;
+    if (_isInit || _isInitializing) return;
+    _isInitializing = true;
 
     try {
       _stdoutSubscription = _stockfish.stdout.listen((line) {
@@ -32,9 +38,12 @@ class ChessEngineService {
       } else {
         debugPrint('Stockfish: waiting for ready state...');
       }
+      _isInit = true;
     } catch (e) {
       debugPrint('Stockfish init error: $e');
-      _isInit = false; // Allow retry on fatal error
+      _isInit = false; 
+    } finally {
+      _isInitializing = false;
     }
   }
 
@@ -96,9 +105,13 @@ class ChessEngineService {
 
   void playMove(String fen, int elo) {
     _sendWhenReady(() {
+      // Map Elo (800-3200) to Skill Level (0-20)
+      final skillLevel = ((elo - 800) / (3200 - 800) * 20).round().clamp(0, 20);
+
       _safeWrite('stop');
       _safeWrite('setoption name UCI_LimitStrength value true');
       _safeWrite('setoption name UCI_Elo value $elo');
+      _safeWrite('setoption name Skill Level value $skillLevel');
       _safeWrite('position fen $fen');
       _safeWrite('go movetime 1000'); // Think for 1 second
     });
@@ -119,10 +132,16 @@ class ChessEngineService {
   }
 
   void dispose() {
-    stopAnalysis();
-    _stockfish.state.removeListener(_onStateChanged);
-    _stdoutSubscription?.cancel();
-    _outputController.close();
-    engineAvailableNotifier.dispose();
+    try {
+      stopAnalysis();
+      _stockfish.state.removeListener(_onStateChanged);
+      _stdoutSubscription?.cancel();
+      _stdoutSubscription = null;
+      _outputController.close();
+      engineAvailableNotifier.dispose();
+      _stockfish.dispose();
+    } catch (e) {
+      debugPrint('Error disposing ChessEngineService: $e');
+    }
   }
 }

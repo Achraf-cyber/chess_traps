@@ -477,7 +477,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                     ShareParams(
                       text: context.phrase.canYouSurvive(
                         trap.getLocalizedName(context),
-                        link,
+                        AppLinkService.buildTrapLink(trap.id),
                       ),
                     ),
                   );

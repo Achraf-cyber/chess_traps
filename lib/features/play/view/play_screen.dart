@@ -36,7 +36,7 @@ class PlayGameState {
   final bool engineThinking;
   final double evaluation; // Centipawns, positive for white
   final GameResult? gameResult; // null = ongoing
-  final Move? lastMove;
+  final NormalMove? lastMove;
 
   /// Average engine response time in seconds (power-law distributed)
   final double avgEngineDelaySecs;
@@ -51,7 +51,7 @@ class PlayGameState {
     GameResult? gameResult,
     bool clearResult = false,
     double? avgEngineDelaySecs,
-    Move? lastMove,
+    NormalMove? lastMove,
     bool clearLastMove = false,
   }) {
     return PlayGameState(
@@ -197,7 +197,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     final nextPos = pos.play(move);
     state = state.copyWith(
       chess: nextPos,
-      lastMove: move,
+      lastMove: move as NormalMove?,
     );
 
     if (nextPos.isCheck) {
@@ -206,14 +206,14 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       _hapticService.playMove();
     }
 
-    if (nextPos.isMate) {
-      final winnerSide = !nextPos.turn;
+    if (nextPos.isCheckmate) {
+      final winnerSide = nextPos.turn.opposite;
       final userSide = state.userColor == PlayerColor.white ? Side.white : Side.black;
       final result = (winnerSide == userSide) ? GameResult.win : GameResult.loss;
       _recordResult(result);
       state = state.copyWith(isPlaying: false, gameResult: result);
       return;
-    } else if (nextPos.isDraw) {
+    } else if (nextPos.outcome == Outcome.draw) {
       _recordResult(GameResult.draw);
       state = state.copyWith(isPlaying: false, gameResult: GameResult.draw);
       return;
@@ -245,13 +245,13 @@ class PlayGameNotifier extends _$PlayGameNotifier {
         _hapticService.playMove();
       }
 
-      if (nextPos.isMate) {
-        final winnerSide = !nextPos.turn;
+      if (nextPos.isCheckmate) {
+        final winnerSide = nextPos.turn.opposite;
         final userSide = state.userColor == PlayerColor.white ? Side.white : Side.black;
         final result = (winnerSide == userSide) ? GameResult.win : GameResult.loss;
         _recordResult(result);
         state = state.copyWith(isPlaying: false, gameResult: result);
-      } else if (nextPos.isDraw) {
+      } else if (nextPos.outcome == Outcome.draw) {
         _recordResult(GameResult.draw);
         state = state.copyWith(isPlaying: false, gameResult: GameResult.draw);
       }
@@ -481,7 +481,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
           ),
           const SizedBox(height: 16),
           SegmentedButton<PlayerColor>(
-            segments: const [
+            segments: [
               ButtonSegment(
                 value: PlayerColor.white,
                 label: Text(context.phrase.white),
@@ -662,12 +662,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                                         size: size,
                                         orientation: boardOrientation,
                                         fen: state.chess.fen,
-                                        lastMove: state.lastMove != null
-                                            ? cg.Move(
-                                                from: state.lastMove!.from.name,
-                                                to: state.lastMove!.to.name,
-                                              )
-                                            : null,
+                                        lastMove: state.lastMove,
                                         game: cg.GameData(
                                           playerSide: isWhite
                                               ? cg.PlayerSide.white
@@ -700,12 +695,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                                         size: size,
                                         orientation: boardOrientation,
                                         fen: state.chess.fen,
-                                        lastMove: state.lastMove != null
-                                            ? cg.Move(
-                                                from: state.lastMove!.from.name,
-                                                to: state.lastMove!.to.name,
-                                              )
-                                            : null,
+                                        lastMove: state.lastMove,
                                       ),
                               ),
                             );

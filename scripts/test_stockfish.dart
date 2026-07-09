@@ -1,11 +1,12 @@
 import 'dart:io';
-import 'package:stockfish/stockfish.dart';
+import 'package:multistockfish/multistockfish.dart';
 void main() async {
-  final engine = Stockfish();
-  engine.stdout.listen((event) {
+  final engine = Stockfish.instance;
+  engine.stdout.listen((String event) {
     stdout.writeln(event);
   });
+  await engine.start();
   engine.stdin = 'isready';
   await Future<void>.delayed(const Duration(seconds: 2));
-  engine.dispose();
+  await engine.quit();
 }

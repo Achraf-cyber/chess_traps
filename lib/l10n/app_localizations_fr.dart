@@ -275,17 +275,261 @@ class AppLocalizationsFr extends AppLocalizations {
   String get learnNow => 'Apprendre maintenant';
 
   @override
-  String get avoidTrap => 'Avoid the Trap';
+  String get avoidTrap => 'Éviter le piège';
 
   @override
-  String get avoidModeActive => 'Avoid Mode active. Find the best move!';
+  String get avoidModeActive =>
+      'Mode Évitement actif. Trouvez le meilleur coup !';
 
   @override
-  String get blunderPrevented => 'Great! You avoided the trap.';
+  String get blunderPrevented => 'Génial ! Vous avez évité le piège.';
 
   @override
-  String get findBetterMove => 'Find a better move to avoid the trap.';
+  String get findBetterMove => 'Trouvez un meilleur coup pour éviter le piège.';
 
   @override
-  String get play => 'Play';
+  String get play => 'Jouer';
+
+  @override
+  String get you_won => 'Vous avez gagné ! 🎉';
+
+  @override
+  String get congratulations => 'Félicitations !';
+
+  @override
+  String get stockfish_won => 'Stockfish a gagné';
+
+  @override
+  String get better_luck_next_time => 'Meilleure chance la prochaine fois !';
+
+  @override
+  String get draw => 'Nul';
+
+  @override
+  String get well_played => 'Bien joué !';
+
+  @override
+  String get close => 'Fermer';
+
+  @override
+  String get play_again => 'Rejouer';
+
+  @override
+  String get opponent_strength => 'Force de l\'adversaire';
+
+  @override
+  String get wins => 'Victoires';
+
+  @override
+  String get draws => 'Nuls';
+
+  @override
+  String get losses => 'Défaites';
+
+  @override
+  String get engine_response => 'Réponse du moteur';
+
+  @override
+  String get play_as => 'Jouer avec';
+
+  @override
+  String get white => 'Blancs';
+
+  @override
+  String get random => 'Aléatoire';
+
+  @override
+  String get black => 'Noirs';
+
+  @override
+  String get start_game => 'Commencer la partie';
+
+  @override
+  String get thinking => 'Réflexion...';
+
+  @override
+  String get your_turn => 'À vous de jouer';
+
+  @override
+  String get back_to_setup => 'Retour à la configuration';
+
+  @override
+  String get resign => 'Abandonner';
+
+  @override
+  String get you => 'Vous';
+
+  @override
+  String get featured_trap => 'Piège en vedette';
+
+  @override
+  String get loading_ads => 'Chargement des publicités...';
+
+  @override
+  String get daily_limit_reached => 'Limite quotidienne atteinte';
+
+  @override
+  String get ad_load_failed =>
+      'La publicité n\'a pas pu être chargée. Réessayez plus tard.';
+
+  @override
+  String get ad_not_ready =>
+      'La publicité n\'est pas encore prête. Réessayez plus tard.';
+
+  @override
+  String get limit_reached_body =>
+      'Vous avez vu vos 10 pièges gratuits pour aujourd\'hui ! Regardez une courte publicité pour débloquer tous les pièges pour le reste de la journée.';
+
+  @override
+  String get no_traps_in_group =>
+      'Aucun piège n\'est encore disponible pour cette ouverture.';
+
+  @override
+  String get surprise_me => 'Surprenez-moi';
+
+  @override
+  String get play_mode => 'Mode Jeu';
+
+  @override
+  String get vs_engine => 'contre l\'Ordi';
+
+  @override
+  String get by_moves => 'Par Coups';
+
+  @override
+  String get find_by_position => 'Trouver par position';
+
+  @override
+  String traps_count(Object count) {
+    return '$count pièges';
+  }
+
+  @override
+  String opening_traps_count(Object count) {
+    return '$count Pièges d\'ouverture';
+  }
+
+  @override
+  String get hero_title => 'Surprenez Votre\nAdversaire';
+
+  @override
+  String get hero_subtitle =>
+      'Maîtrisez les pièges utilisés par les grands maîtres.';
+
+  @override
+  String get openings => 'Ouvertures';
+
+  @override
+  String get languages => 'Langues';
+
+  @override
+  String get move_limit_reached =>
+      'Limite de coups atteinte. La publicité n\'est pas prête, veuillez patienter ou réinitialiser.';
+
+  @override
+  String get search_limit_body =>
+      'Vous avez atteint la limite de coups gratuits pour cette recherche. Regardez une courte vidéo publicitaire pour débloquer 5 coups supplémentaires.';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get daily_trap_reminder => 'Rappel quotidien';
+
+  @override
+  String get daily_trap_reminder_subtitle =>
+      'Recevez une notification pour le piège du jour';
+
+  @override
+  String get reminder_time => 'Heure du rappel';
+
+  @override
+  String get notification_trap_ready_title => 'Le piège du jour est prêt !';
+
+  @override
+  String get notification_trap_ready_body =>
+      'Apprenez un nouveau piège d\'ouverture et boostez votre classement ♟️';
+
+  @override
+  String get trapNotFound => 'Piège non trouvé';
+
+  @override
+  String get practiceModeActive =>
+      'Mode Entraînement actif. Jouez les bons coups !';
+
+  @override
+  String canYouSurvive(String trapName, String link) {
+    return 'Pouvez-vous survivre à ce piège ? Découvrez $trapName !\n$link';
+  }
+
+  @override
+  String get exitPractice => 'Quitter l\'entraînement';
+
+  @override
+  String get practiceMode => 'Mode Entraînement';
+
+  @override
+  String get exitAvoidMode => 'Quitter le mode Évitement';
+
+  @override
+  String get avoidTrapMode => 'Mode Éviter le piège';
+
+  @override
+  String get stopAutoPlay => 'Arrêter la lecture';
+
+  @override
+  String get autoPlay => 'Lecture automatique';
+
+  @override
+  String get flipBoard => 'Retourner l\'échiquier';
+
+  @override
+  String get markedAsLearned => 'Marqué comme appris';
+
+  @override
+  String get markAsLearned => 'Marquer comme appris';
+
+  @override
+  String get shareTrap => 'Partager le piège';
+
+  @override
+  String get settings => 'Paramètres';
+
+  @override
+  String get engineStarting => 'Démarrage du moteur...';
+
+  @override
+  String get whiteProfits => 'Avantage Blanc';
+
+  @override
+  String get blackProfits => 'Avantage Noir';
+
+  @override
+  String get engineUnavailable => 'Moteur indisponible';
+
+  @override
+  String depthLabel(int depth) {
+    return 'Profondeur : $depth';
+  }
+
+  @override
+  String get analysisSettings => 'Paramètres d\'analyse';
+
+  @override
+  String get engineBestMoves => 'Meilleurs coups (Flèches)';
+
+  @override
+  String eloLabel(int elo) {
+    return 'Elo : $elo';
+  }
+
+  @override
+  String engineResponseLabel(String delay) {
+    return 'Réponse : ${delay}s moy';
+  }
+
+  @override
+  String stockfishLabel(int elo) {
+    return 'Stockfish ($elo)';
+  }
 }

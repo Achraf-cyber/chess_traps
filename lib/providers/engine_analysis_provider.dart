@@ -54,6 +54,11 @@ ChessEngineService chessEngine(Ref ref) {
   service.init().catchError((Object e) {
     debugPrint('Engine init failed: $e');
   });
+
+  ref.onDispose(() {
+    service.dispose();
+  });
+
   return service;
 }
 

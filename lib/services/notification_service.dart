@@ -6,6 +6,7 @@ import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 import 'package:chess_traps/router.dart';
+import 'package:chess_traps/l10n/app_localizations.dart';
 import 'dart:io';
 
 class NotificationService {
@@ -18,6 +19,8 @@ class NotificationService {
 
   static const _prefEnabled = 'notification_enabled';
   static const _prefLocale = 'appLocale';
+  static const _prefTimeHour = 'notification_time_hour';
+  static const _prefTimeMinute = 'notification_time_minute';
 
   Future<void> init() async {
     tz.initializeTimeZones();

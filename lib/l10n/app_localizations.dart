@@ -641,6 +641,444 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Play'**
   String get play;
+
+  /// No description provided for @you_won.
+  ///
+  /// In en, this message translates to:
+  /// **'You Won! 🎉'**
+  String get you_won;
+
+  /// No description provided for @congratulations.
+  ///
+  /// In en, this message translates to:
+  /// **'Congratulations!'**
+  String get congratulations;
+
+  /// No description provided for @stockfish_won.
+  ///
+  /// In en, this message translates to:
+  /// **'Stockfish Won'**
+  String get stockfish_won;
+
+  /// No description provided for @better_luck_next_time.
+  ///
+  /// In en, this message translates to:
+  /// **'Better luck next time!'**
+  String get better_luck_next_time;
+
+  /// No description provided for @draw.
+  ///
+  /// In en, this message translates to:
+  /// **'Draw'**
+  String get draw;
+
+  /// No description provided for @well_played.
+  ///
+  /// In en, this message translates to:
+  /// **'Well played!'**
+  String get well_played;
+
+  /// No description provided for @close.
+  ///
+  /// In en, this message translates to:
+  /// **'Close'**
+  String get close;
+
+  /// No description provided for @play_again.
+  ///
+  /// In en, this message translates to:
+  /// **'Play Again'**
+  String get play_again;
+
+  /// No description provided for @opponent_strength.
+  ///
+  /// In en, this message translates to:
+  /// **'Opponent Strength'**
+  String get opponent_strength;
+
+  /// No description provided for @wins.
+  ///
+  /// In en, this message translates to:
+  /// **'Wins'**
+  String get wins;
+
+  /// No description provided for @draws.
+  ///
+  /// In en, this message translates to:
+  /// **'Draws'**
+  String get draws;
+
+  /// No description provided for @losses.
+  ///
+  /// In en, this message translates to:
+  /// **'Losses'**
+  String get losses;
+
+  /// No description provided for @engine_response.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine Response'**
+  String get engine_response;
+
+  /// No description provided for @play_as.
+  ///
+  /// In en, this message translates to:
+  /// **'Play as'**
+  String get play_as;
+
+  /// No description provided for @white.
+  ///
+  /// In en, this message translates to:
+  /// **'White'**
+  String get white;
+
+  /// No description provided for @random.
+  ///
+  /// In en, this message translates to:
+  /// **'Random'**
+  String get random;
+
+  /// No description provided for @black.
+  ///
+  /// In en, this message translates to:
+  /// **'Black'**
+  String get black;
+
+  /// No description provided for @start_game.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Game'**
+  String get start_game;
+
+  /// No description provided for @thinking.
+  ///
+  /// In en, this message translates to:
+  /// **'Thinking...'**
+  String get thinking;
+
+  /// No description provided for @your_turn.
+  ///
+  /// In en, this message translates to:
+  /// **'Your turn'**
+  String get your_turn;
+
+  /// No description provided for @back_to_setup.
+  ///
+  /// In en, this message translates to:
+  /// **'Back to Setup'**
+  String get back_to_setup;
+
+  /// No description provided for @resign.
+  ///
+  /// In en, this message translates to:
+  /// **'Resign'**
+  String get resign;
+
+  /// No description provided for @you.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get you;
+
+  /// No description provided for @featured_trap.
+  ///
+  /// In en, this message translates to:
+  /// **'Featured Trap'**
+  String get featured_trap;
+
+  /// No description provided for @loading_ads.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading ads...'**
+  String get loading_ads;
+
+  /// No description provided for @daily_limit_reached.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily limit reached'**
+  String get daily_limit_reached;
+
+  /// No description provided for @ad_load_failed.
+  ///
+  /// In en, this message translates to:
+  /// **'Ad could not be loaded. Try again later.'**
+  String get ad_load_failed;
+
+  /// No description provided for @ad_not_ready.
+  ///
+  /// In en, this message translates to:
+  /// **'Ad not ready yet. Try again later.'**
+  String get ad_not_ready;
+
+  /// No description provided for @limit_reached_body.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve viewed your 10 free traps for today! Watch a short ad to unlock all traps for the rest of the day.'**
+  String get limit_reached_body;
+
+  /// No description provided for @no_traps_in_group.
+  ///
+  /// In en, this message translates to:
+  /// **'No traps available for this opening yet.'**
+  String get no_traps_in_group;
+
+  /// No description provided for @surprise_me.
+  ///
+  /// In en, this message translates to:
+  /// **'Surprise me'**
+  String get surprise_me;
+
+  /// No description provided for @play_mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Play Mode'**
+  String get play_mode;
+
+  /// No description provided for @vs_engine.
+  ///
+  /// In en, this message translates to:
+  /// **'vs Engine'**
+  String get vs_engine;
+
+  /// No description provided for @by_moves.
+  ///
+  /// In en, this message translates to:
+  /// **'By Moves'**
+  String get by_moves;
+
+  /// No description provided for @find_by_position.
+  ///
+  /// In en, this message translates to:
+  /// **'Find by position'**
+  String get find_by_position;
+
+  /// No description provided for @traps_count.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} traps'**
+  String traps_count(Object count);
+
+  /// No description provided for @opening_traps_count.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} Opening Traps'**
+  String opening_traps_count(Object count);
+
+  /// No description provided for @hero_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Outplay Your\nOpponent'**
+  String get hero_title;
+
+  /// No description provided for @hero_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Master the traps that grandmasters use.'**
+  String get hero_subtitle;
+
+  /// No description provided for @openings.
+  ///
+  /// In en, this message translates to:
+  /// **'Openings'**
+  String get openings;
+
+  /// No description provided for @languages.
+  ///
+  /// In en, this message translates to:
+  /// **'Languages'**
+  String get languages;
+
+  /// No description provided for @move_limit_reached.
+  ///
+  /// In en, this message translates to:
+  /// **'Move limit reached. Ad not ready yet, please wait or reset.'**
+  String get move_limit_reached;
+
+  /// No description provided for @search_limit_body.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ve reached the free move limit for this search. Watch a short video ad to unlock 5 more moves.'**
+  String get search_limit_body;
+
+  /// No description provided for @notifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications'**
+  String get notifications;
+
+  /// No description provided for @daily_trap_reminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Trap Reminder'**
+  String get daily_trap_reminder;
+
+  /// No description provided for @daily_trap_reminder_subtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Get notified to check the trap of the day'**
+  String get daily_trap_reminder_subtitle;
+
+  /// No description provided for @reminder_time.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder Time'**
+  String get reminder_time;
+
+  /// No description provided for @notification_trap_ready_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Trap of the Day is Ready!'**
+  String get notification_trap_ready_title;
+
+  /// No description provided for @notification_trap_ready_body.
+  ///
+  /// In en, this message translates to:
+  /// **'Jump in to learn a new opening trap and boost your rating ♟️'**
+  String get notification_trap_ready_body;
+
+  /// No description provided for @trapNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'Trap not found'**
+  String get trapNotFound;
+
+  /// No description provided for @practiceModeActive.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice mode active. Play the correct moves!'**
+  String get practiceModeActive;
+
+  /// No description provided for @canYouSurvive.
+  ///
+  /// In en, this message translates to:
+  /// **'Can you survive this trap? Check out {trapName}!\n{link}'**
+  String canYouSurvive(String trapName, String link);
+
+  /// No description provided for @exitPractice.
+  ///
+  /// In en, this message translates to:
+  /// **'Exit Practice'**
+  String get exitPractice;
+
+  /// No description provided for @practiceMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Practice Mode'**
+  String get practiceMode;
+
+  /// No description provided for @exitAvoidMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Exit Avoid Mode'**
+  String get exitAvoidMode;
+
+  /// No description provided for @avoidTrapMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Avoid Trap Mode'**
+  String get avoidTrapMode;
+
+  /// No description provided for @stopAutoPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Stop Auto Play'**
+  String get stopAutoPlay;
+
+  /// No description provided for @autoPlay.
+  ///
+  /// In en, this message translates to:
+  /// **'Auto Play'**
+  String get autoPlay;
+
+  /// No description provided for @flipBoard.
+  ///
+  /// In en, this message translates to:
+  /// **'Flip Board'**
+  String get flipBoard;
+
+  /// No description provided for @markedAsLearned.
+  ///
+  /// In en, this message translates to:
+  /// **'Marked as learned'**
+  String get markedAsLearned;
+
+  /// No description provided for @markAsLearned.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as learned'**
+  String get markAsLearned;
+
+  /// No description provided for @shareTrap.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Trap'**
+  String get shareTrap;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @engineStarting.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine starting...'**
+  String get engineStarting;
+
+  /// No description provided for @whiteProfits.
+  ///
+  /// In en, this message translates to:
+  /// **'White Profits'**
+  String get whiteProfits;
+
+  /// No description provided for @blackProfits.
+  ///
+  /// In en, this message translates to:
+  /// **'Black Profits'**
+  String get blackProfits;
+
+  /// No description provided for @engineUnavailable.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine unavailable'**
+  String get engineUnavailable;
+
+  /// No description provided for @depthLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Depth: {depth}'**
+  String depthLabel(int depth);
+
+  /// No description provided for @analysisSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Analysis Settings'**
+  String get analysisSettings;
+
+  /// No description provided for @engineBestMoves.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine Best Moves (Arrows)'**
+  String get engineBestMoves;
+
+  /// No description provided for @eloLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Elo: {elo}'**
+  String eloLabel(int elo);
+
+  /// No description provided for @engineResponseLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Engine Response: {delay}s avg'**
+  String engineResponseLabel(String delay);
+
+  /// No description provided for @stockfishLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Stockfish ({elo})'**
+  String stockfishLabel(int elo);
 }
 
 class _AppLocalizationsDelegate

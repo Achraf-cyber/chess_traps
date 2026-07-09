@@ -288,4 +288,243 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get play => 'Play';
+
+  @override
+  String get you_won => 'You Won! 🎉';
+
+  @override
+  String get congratulations => 'Congratulations!';
+
+  @override
+  String get stockfish_won => 'Stockfish Won';
+
+  @override
+  String get better_luck_next_time => 'Better luck next time!';
+
+  @override
+  String get draw => 'Draw';
+
+  @override
+  String get well_played => 'Well played!';
+
+  @override
+  String get close => 'Close';
+
+  @override
+  String get play_again => 'Play Again';
+
+  @override
+  String get opponent_strength => 'Opponent Strength';
+
+  @override
+  String get wins => 'Wins';
+
+  @override
+  String get draws => 'Draws';
+
+  @override
+  String get losses => 'Losses';
+
+  @override
+  String get engine_response => 'Engine Response';
+
+  @override
+  String get play_as => 'Play as';
+
+  @override
+  String get white => 'White';
+
+  @override
+  String get random => 'Random';
+
+  @override
+  String get black => 'Black';
+
+  @override
+  String get start_game => 'Start Game';
+
+  @override
+  String get thinking => 'Thinking...';
+
+  @override
+  String get your_turn => 'Your turn';
+
+  @override
+  String get back_to_setup => 'Back to Setup';
+
+  @override
+  String get resign => 'Resign';
+
+  @override
+  String get you => 'You';
+
+  @override
+  String get featured_trap => 'Featured Trap';
+
+  @override
+  String get loading_ads => 'Loading ads...';
+
+  @override
+  String get daily_limit_reached => 'Daily limit reached';
+
+  @override
+  String get ad_load_failed => 'Ad could not be loaded. Try again later.';
+
+  @override
+  String get ad_not_ready => 'Ad not ready yet. Try again later.';
+
+  @override
+  String get limit_reached_body =>
+      'You\'ve viewed your 10 free traps for today! Watch a short ad to unlock all traps for the rest of the day.';
+
+  @override
+  String get no_traps_in_group => 'No traps available for this opening yet.';
+
+  @override
+  String get surprise_me => 'Surprise me';
+
+  @override
+  String get play_mode => 'Play Mode';
+
+  @override
+  String get vs_engine => 'vs Engine';
+
+  @override
+  String get by_moves => 'By Moves';
+
+  @override
+  String get find_by_position => 'Find by position';
+
+  @override
+  String traps_count(Object count) {
+    return '$count traps';
+  }
+
+  @override
+  String opening_traps_count(Object count) {
+    return '$count Opening Traps';
+  }
+
+  @override
+  String get hero_title => 'Outplay Your\nOpponent';
+
+  @override
+  String get hero_subtitle => 'Master the traps that grandmasters use.';
+
+  @override
+  String get openings => 'Openings';
+
+  @override
+  String get languages => 'Languages';
+
+  @override
+  String get move_limit_reached =>
+      'Move limit reached. Ad not ready yet, please wait or reset.';
+
+  @override
+  String get search_limit_body =>
+      'You\'ve reached the free move limit for this search. Watch a short video ad to unlock 5 more moves.';
+
+  @override
+  String get notifications => 'Notifications';
+
+  @override
+  String get daily_trap_reminder => 'Daily Trap Reminder';
+
+  @override
+  String get daily_trap_reminder_subtitle =>
+      'Get notified to check the trap of the day';
+
+  @override
+  String get reminder_time => 'Reminder Time';
+
+  @override
+  String get notification_trap_ready_title => 'Trap of the Day is Ready!';
+
+  @override
+  String get notification_trap_ready_body =>
+      'Jump in to learn a new opening trap and boost your rating ♟️';
+
+  @override
+  String get trapNotFound => 'Trap not found';
+
+  @override
+  String get practiceModeActive =>
+      'Practice mode active. Play the correct moves!';
+
+  @override
+  String canYouSurvive(String trapName, String link) {
+    return 'Can you survive this trap? Check out $trapName!\n$link';
+  }
+
+  @override
+  String get exitPractice => 'Exit Practice';
+
+  @override
+  String get practiceMode => 'Practice Mode';
+
+  @override
+  String get exitAvoidMode => 'Exit Avoid Mode';
+
+  @override
+  String get avoidTrapMode => 'Avoid Trap Mode';
+
+  @override
+  String get stopAutoPlay => 'Stop Auto Play';
+
+  @override
+  String get autoPlay => 'Auto Play';
+
+  @override
+  String get flipBoard => 'Flip Board';
+
+  @override
+  String get markedAsLearned => 'Marked as learned';
+
+  @override
+  String get markAsLearned => 'Mark as learned';
+
+  @override
+  String get shareTrap => 'Share Trap';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get engineStarting => 'Engine starting...';
+
+  @override
+  String get whiteProfits => 'White Profits';
+
+  @override
+  String get blackProfits => 'Black Profits';
+
+  @override
+  String get engineUnavailable => 'Engine unavailable';
+
+  @override
+  String depthLabel(int depth) {
+    return 'Depth: $depth';
+  }
+
+  @override
+  String get analysisSettings => 'Analysis Settings';
+
+  @override
+  String get engineBestMoves => 'Engine Best Moves (Arrows)';
+
+  @override
+  String eloLabel(int elo) {
+    return 'Elo: $elo';
+  }
+
+  @override
+  String engineResponseLabel(String delay) {
+    return 'Engine Response: ${delay}s avg';
+  }
+
+  @override
+  String stockfishLabel(int elo) {
+    return 'Stockfish ($elo)';
+  }
 }

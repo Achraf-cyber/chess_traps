@@ -211,3 +211,55 @@ final class TrapsOfGroupFamily extends $Family
   @override
   String toString() => r'trapsOfGroupProvider';
 }
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+@ProviderFor(randomFeaturedTrap)
+final randomFeaturedTrapProvider = RandomFeaturedTrapProvider._();
+
+final class RandomFeaturedTrapProvider
+    extends
+        $FunctionalProvider<
+          ChessTrap?,
+          ChessTrap?,
+          ChessTrap?
+        >
+    with $Provider<ChessTrap?> {
+  RandomFeaturedTrapProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'randomFeaturedTrapProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$randomFeaturedTrapHash();
+
+  @$internal
+  @override
+  $ProviderElement<ChessTrap?> $createElement(
+    $ProviderPointer pointer,
+  ) => $ProviderElement(pointer);
+
+  @override
+  ChessTrap? create(Ref ref) {
+    return randomFeaturedTrap(ref);
+  }
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(ChessTrap? value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<ChessTrap?>(value),
+    );
+  }
+}
+
+String _$randomFeaturedTrapHash() => r'randomFeaturedTrapHash';
+

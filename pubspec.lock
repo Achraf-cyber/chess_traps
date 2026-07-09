@@ -953,10 +953,10 @@ packages:
     dependency: transitive
     description:
       name: meta
-      sha256: "23f08335362185a5ea2ad3a4e597f1375e78bce8a040df5c600c8d3552ef2394"
+      sha256: "1741988757a65eb6b36abe716829688cf01910bbf91c34354ff7ec1c3de2b349"
       url: "https://pub.dev"
     source: hosted
-    version: "1.17.0"
+    version: "1.18.0"
   mime:
     dependency: transitive
     description:
@@ -973,6 +973,38 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.6.4"
+  multistockfish:
+    dependency: "direct main"
+    description:
+      name: multistockfish
+      sha256: "604da8568e8d3d43b3f571885080006461d52243e0b178cbef07f328d7622160"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.0"
+  multistockfish_chess:
+    dependency: transitive
+    description:
+      name: multistockfish_chess
+      sha256: d0487def56c742687e21ee6c2730bff069fc216cafdf1c6b5849cff55a939344
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.3.0"
+  multistockfish_sf16:
+    dependency: transitive
+    description:
+      name: multistockfish_sf16
+      sha256: b32eb392d8036668b0f0fd9ed53fff65a12efcf4178e58205147aab27df1b1a9
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
+  multistockfish_variant:
+    dependency: transitive
+    description:
+      name: multistockfish_variant
+      sha256: "24ef2781ae65d6ccdcd95c4b000dbdcdba8368b9fa2f02810eb7f932e6698dc4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.1.1"
   native_toolchain_c:
     dependency: transitive
     description:
@@ -1434,14 +1466,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.0"
-  stockfish:
-    dependency: "direct main"
-    description:
-      name: stockfish
-      sha256: b27956fa6c21f8637db62411c564d1ba1d0b0e9e27ee928f42a85367da891fa0
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.8.1"
   stream_channel:
     dependency: transitive
     description:
@@ -1486,26 +1510,26 @@ packages:
     dependency: transitive
     description:
       name: test
-      sha256: "280d6d890011ca966ad08df7e8a4ddfab0fb3aa49f96ed6de56e3521347a9ae7"
+      sha256: "8d9ceddbab833f180fbefed08afa76d7c03513dfdba87ffcec2718b02bbcbf20"
       url: "https://pub.dev"
     source: hosted
-    version: "1.30.0"
+    version: "1.31.0"
   test_api:
     dependency: transitive
     description:
       name: test_api
-      sha256: "8161c84903fd860b26bfdefb7963b3f0b68fee7adea0f59ef805ecca346f0c7a"
+      sha256: "949a932224383300f01be9221c39180316445ecb8e7547f70a41a35bf421fb9e"
       url: "https://pub.dev"
     source: hosted
-    version: "0.7.10"
+    version: "0.7.11"
   test_core:
     dependency: transitive
     description:
       name: test_core
-      sha256: "0381bd1585d1a924763c308100f2138205252fb90c9d4eeaf28489ee65ccde51"
+      sha256: "1991d4cfe85d5043241acac92962c3977c8d2f2add1ee73130c7b286417d1d34"
       url: "https://pub.dev"
     source: hosted
-    version: "0.6.16"
+    version: "0.6.17"
   timezone:
     dependency: "direct main"
     description:

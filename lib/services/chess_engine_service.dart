@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
-import 'package:stockfish/stockfish.dart';
+import 'package:multistockfish/multistockfish.dart';
 
 class ChessEngineService {
   factory ChessEngineService() => _instance;
@@ -8,7 +8,7 @@ class ChessEngineService {
 
   static final ChessEngineService _instance = ChessEngineService._internal();
 
-  final Stockfish _stockfish = Stockfish();
+  final Stockfish _stockfish = Stockfish.instance;
   final _outputController = StreamController<String>.broadcast();
   Stream<String> get engineOutput => _outputController.stream;
   StreamSubscription<String>? _stdoutSubscription;
@@ -27,11 +27,17 @@ class ChessEngineService {
     _isInitializing = true;
 
     try {
+      // Safety quit before start to ensure a clean state across hot reloads
+      await _stockfish.quit();
+
       _stdoutSubscription = _stockfish.stdout.listen((line) {
         _outputController.add(line);
       });
 
       _stockfish.state.addListener(_onStateChanged);
+
+      // Start the engine
+      await _stockfish.start();
 
       if (_stockfish.state.value == StockfishState.ready) {
         _setEngineReady();
@@ -131,7 +137,7 @@ class ChessEngineService {
     }
   }
 
-  void dispose() {
+  Future<void> dispose() async {
     try {
       stopAnalysis();
       _stockfish.state.removeListener(_onStateChanged);
@@ -139,7 +145,7 @@ class ChessEngineService {
       _stdoutSubscription = null;
       _outputController.close();
       engineAvailableNotifier.dispose();
-      _stockfish.dispose();
+      await _stockfish.quit();
     } catch (e) {
       debugPrint('Error disposing ChessEngineService: $e');
     }

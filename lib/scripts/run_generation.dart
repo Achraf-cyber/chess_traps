@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:dartchess/dartchess.dart' hide File;
 import 'package:chess_traps/data/openings.dart';
-import 'package:stockfish/stockfish.dart';
+import 'package:multistockfish/multistockfish.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,7 +62,8 @@ class MyApp extends StatelessWidget {
       }
     }
 
-    final engine = Stockfish();
+    final engine = Stockfish.instance;
+    await engine.start();
     while (engine.state.value != StockfishState.ready) {
       await Future<void>.delayed(const Duration(milliseconds: 100));
     }
@@ -172,7 +173,7 @@ class MyApp extends StatelessWidget {
     }
     content.writeln('];');
 
-    engine.dispose();
+    await engine.quit();
 
     const outputFolder = 'lib/generated/chess';
     await Directory(outputFolder).create(recursive: true);

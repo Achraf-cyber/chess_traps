@@ -208,9 +208,128 @@ h1, h2, h3, .logo {
   color: var(--text-muted);
 }
 
+.footer-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-logo {
+  opacity: 0.3;
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--foreground);
+}
+
+.footer-copy {
+  color: #444;
+  font-size: 0.75rem;
+}
+
+/* Hero copy + CTA row (shared by hero and closing sections) */
+.lede {
+  max-width: 42rem;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.section-cta {
+  padding: 8rem 5%;
+  text-align: center;
+}
+
+.heading-section {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.9rem;
+}
+
+/* Simple content pages (Terms) */
+.legal-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 9rem 5% 6rem 5%;
+}
+
+.legal-page h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 0.5rem;
+}
+
+.legal-page .updated {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 3rem;
+}
+
+.legal-page h2 {
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.legal-page p, .legal-page li {
+  color: #ccc;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.legal-page ul {
+  padding-left: 1.5rem;
+}
+
+.legal-page a {
+  color: var(--accent);
+}
+
 @media (max-width: 768px) {
   .floating-stats { gap: 2rem; flex-direction: column; }
   .heading-hero { font-size: 3.5rem; }
+}
+
+@media (min-width: 769px) {
+  .footer-inner { flex-direction: row; }
 }
 
 

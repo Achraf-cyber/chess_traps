@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com";
+
 export default function Home() {
   return (
     <main className="relative min-h-screen">
@@ -9,7 +12,7 @@ export default function Home() {
         <div className="logo">Chess Traps</div>
         <div className="flex gap-8 items-center">
           <Link href="#features" className="btn-outline hidden md:flex">Features</Link>
-          <Link href="https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com" className="btn-primary">
+          <Link href={PLAY_STORE_URL} className="btn-primary">
             Download
           </Link>
         </div>
@@ -22,12 +25,12 @@ export default function Home() {
             ELEVATE YOUR <br />
             <span className="accent-text">CHESS GAME</span>
           </h1>
-          <p className="max-w-2xl mx-auto text-xl text-[#888] leading-relaxed mb-10">
-            Uncover the secrets of the world's most effective chess traps. 
-            Interactive practice, real-time engine analysis, and over 1,000 patterns.
+          <p className="lede">
+            Learn 1,000+ traps with an interactive board, play them out live against
+            Stockfish, and get a hint or a plain-English explanation whenever you get stuck.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link href="https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com" className="btn-primary">
+          <div className="cta-row">
+            <Link href={PLAY_STORE_URL} className="btn-primary">
               Get it on Google Play
             </Link>
             <Link href="#features" className="btn-outline">
@@ -38,11 +41,11 @@ export default function Home() {
 
         {/* Hero Image Mockup */}
         <div className="hero-image-wrap reveal" style={{ animationDelay: '0.3s' }}>
-          <Image 
-            src="/hero.png" 
-            alt="Chess Traps App Mockup" 
-            width={1200} 
-            height={800} 
+          <Image
+            src="/hero.png"
+            alt="Chess Traps App Mockup"
+            width={1200}
+            height={800}
             priority
             className="w-full h-auto opacity-80"
           />
@@ -59,8 +62,8 @@ export default function Home() {
             <span className="stat-label">Engine Access</span>
           </div>
           <div className="stat-item">
-            <span className="stat-value">50k+</span>
-            <span className="stat-label">Active Users</span>
+            <span className="stat-value">4</span>
+            <span className="stat-label">Languages</span>
           </div>
         </div>
       </section>
@@ -69,50 +72,56 @@ export default function Home() {
       <section id="features" className="grid-features">
         <div className="feature-card reveal" style={{ animationDelay: '0.1s' }}>
           <span className="icon">♟️</span>
-          <h3 className="text-xl font-bold mb-4">Interactive Training</h3>
-          <p className="text-[#888] leading-relaxed text-sm">
-            Don't just memorize. Play through every trap with our interactive board that guides you through the winning moves.
+          <h3>Interactive Training</h3>
+          <p>
+            Don&apos;t just memorize. Play through every trap on an interactive board that
+            guides you through the winning moves, with per-move explanations of why each
+            one works.
           </p>
         </div>
 
         <div className="feature-card reveal" style={{ animationDelay: '0.2s' }}>
-          <span className="icon">⚙️</span>
-          <h3 className="text-xl font-bold mb-4">Stockfish Integration</h3>
-          <p className="text-[#888] leading-relaxed text-sm">
-            Analyze every position with the world's strongest chess engine. Understand exactly why a move works or fails.
+          <span className="icon">♞</span>
+          <h3>Play Stockfish</h3>
+          <p>
+            Play a full game against the Stockfish engine at any strength, get a hint when
+            you&apos;re unsure of the best move, and review what happened move-by-move once
+            the game ends.
           </p>
         </div>
 
         <div className="feature-card reveal" style={{ animationDelay: '0.3s' }}>
           <span className="icon">📈</span>
-          <h3 className="text-xl font-bold mb-4">Personal Progress</h3>
-          <p className="text-[#888] leading-relaxed text-sm">
-            Track your mastery. Mark traps as learned and practice them periodically to ensure they stay in your repertoire.
+          <h3>Personal Progress</h3>
+          <p>
+            Track your mastery. Mark traps as learned, revisit your saved games any time,
+            and build a repertoire you actually remember over the board.
           </p>
         </div>
       </section>
 
       {/* Final CTA */}
-      <section className="py-32 text-center reveal">
-        <h2 className="text-4xl font-bold mb-8">Ready to dominate?</h2>
-        <Link href="https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com" className="btn-primary">
+      <section className="section-cta reveal">
+        <h2 className="heading-section">Ready to dominate?</h2>
+        <Link href={PLAY_STORE_URL} className="btn-primary">
           Start Training Now
         </Link>
       </section>
 
       {/* Footer */}
       <footer className="footer">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="logo opacity-30 text-sm">Chess Traps</div>
-          <div className="flex gap-8 text-xs uppercase tracking-widest">
-            <Link href="#" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="#" className="hover:text-white transition-colors">Terms</Link>
-            <Link href="#" className="hover:text-white transition-colors">Contact</Link>
+        <div className="footer-inner">
+          <div className="footer-logo logo">Chess Traps</div>
+          <div className="footer-links">
+            <Link href="https://achraf-cyber.github.io/privacy/privacy-policy.html">
+              Privacy
+            </Link>
+            <Link href="/terms">Terms</Link>
+            <Link href="mailto:achrafsimbre@gmail.com">Contact</Link>
           </div>
-          <p className="text-[#444] text-xs">&copy; 2026 Achraf Cyber.</p>
+          <p className="footer-copy">&copy; 2026 Achraf Cyber.</p>
         </div>
       </footer>
     </main>
   );
 }
-

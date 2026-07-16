@@ -262,7 +262,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get trapCompleted => 'Trap completed! Well done!';
 
   @override
+  String get relatedTraps => 'Related traps';
+
+  @override
   String get incorrectMove => 'Incorrect move. Try again!';
+
+  @override
+  String get incorrectMoveWithHint => 'Not quite — here\'s a hint.';
 
   @override
   String get goBack => 'Go Back';
@@ -299,6 +305,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get better_luck_next_time => 'Better luck next time!';
+
+  @override
+  String get you_resigned => 'You resigned';
 
   @override
   String get draw => 'Draw';
@@ -353,6 +362,93 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get resign => 'Resign';
+
+  @override
+  String get hint => 'Hint';
+
+  @override
+  String get your_games => 'Your games';
+
+  @override
+  String get moves => 'moves';
+
+  @override
+  String get first_move => 'First move';
+
+  @override
+  String get previous_move => 'Previous move';
+
+  @override
+  String get next_move => 'Next move';
+
+  @override
+  String get last_move => 'Last move';
+
+  @override
+  String get choose_promotion => 'Promote to';
+
+  @override
+  String get piecePawn => 'pawn';
+
+  @override
+  String get pieceKnight => 'knight';
+
+  @override
+  String get pieceBishop => 'bishop';
+
+  @override
+  String get pieceRook => 'rook';
+
+  @override
+  String get pieceQueen => 'queen';
+
+  @override
+  String get pieceKing => 'king';
+
+  @override
+  String get andSeparator => ' and ';
+
+  @override
+  String explainCheckmate(String piece) {
+    return '$piece delivers checkmate!';
+  }
+
+  @override
+  String explainSacrifice(String piece) {
+    return 'Sacrifices the $piece to open up the attack.';
+  }
+
+  @override
+  String explainCapture(String piece, String captured) {
+    return 'The $piece captures the $captured.';
+  }
+
+  @override
+  String explainFork(String piece, String targets) {
+    return 'The $piece forks $targets.';
+  }
+
+  @override
+  String explainCheck(String piece) {
+    return 'The $piece gives check, forcing a reply.';
+  }
+
+  @override
+  String get explainCastleKingside =>
+      'Castles kingside, tucking the king away safely.';
+
+  @override
+  String get explainCastleQueenside => 'Castles queenside.';
+
+  @override
+  String explainPromotion(String piece) {
+    return 'Promotes to a $piece.';
+  }
+
+  @override
+  String explainDevelop(String piece) {
+    return 'Develops the $piece.';
+  }
 
   @override
   String get you => 'You';
@@ -493,10 +589,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get engineStarting => 'Engine starting...';
 
   @override
-  String get whiteProfits => 'White Profits';
+  String get whiteProfits => 'Advantage for White';
 
   @override
-  String get blackProfits => 'Black Profits';
+  String get blackProfits => 'Advantage for Black';
 
   @override
   String get engineUnavailable => 'Engine unavailable';

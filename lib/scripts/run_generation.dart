@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:dartchess/dartchess.dart' hide File;
-import 'package:chess_traps/data/openings.dart';
+import 'package:chess_traps/data/traps/openings.dart';
 import 'package:multistockfish/multistockfish.dart';
 
 void main() {
@@ -120,7 +120,7 @@ class MyApp extends StatelessWidget {
     final content = StringBuffer();
     content.writeln(r'// GENERATED FILE DO NOT EDIT');
     content.writeln(r'// ignore_for_file: prefer_single_quotes');
-    content.writeln("import '../../data/chess_trap.dart';");
+    content.writeln("import 'package:chess_traps/data/traps/chess_trap.dart';");
     content.writeln("import 'package:dartchess/dartchess.dart';");
     content.writeln('const List<ChessTrap> chessTraps = [\n');
     var id = 0;

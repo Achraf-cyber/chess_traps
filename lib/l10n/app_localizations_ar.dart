@@ -260,7 +260,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get trapCompleted => 'اكتمل الفخ! أحسنت!';
 
   @override
+  String get relatedTraps => 'فخاخ ذات صلة';
+
+  @override
   String get incorrectMove => 'حركة خاطئة. حاول مرة أخرى!';
+
+  @override
+  String get incorrectMoveWithHint => 'ليست صحيحة تمامًا — إليك تلميحًا.';
 
   @override
   String get goBack => 'العودة';
@@ -272,256 +278,344 @@ class AppLocalizationsAr extends AppLocalizations {
   String get learnNow => 'تعلم الآن';
 
   @override
-  String get avoidTrap => 'Avoid the Trap';
+  String get avoidTrap => 'تجنب الفخ';
 
   @override
-  String get avoidModeActive => 'Avoid Mode active. Find the best move!';
+  String get avoidModeActive => 'تجنب الوضع النشط. العثور على أفضل خطوة!';
 
   @override
-  String get blunderPrevented => 'Great! You avoided the trap.';
+  String get blunderPrevented => 'عظيم! لقد تجنبت الفخ.';
 
   @override
-  String get findBetterMove => 'Find a better move to avoid the trap.';
+  String get findBetterMove => 'العثور على خطوة أفضل لتجنب الفخ.';
 
   @override
-  String get play => 'Play';
+  String get play => 'يلعب';
 
   @override
-  String get you_won => 'You Won! 🎉';
+  String get you_won => 'لقد فزت! 🎉';
 
   @override
-  String get congratulations => 'Congratulations!';
+  String get congratulations => 'تهانينا!';
 
   @override
-  String get stockfish_won => 'Stockfish Won';
+  String get stockfish_won => 'فاز ستوكفيش';
 
   @override
-  String get better_luck_next_time => 'Better luck next time!';
+  String get better_luck_next_time => 'حظا أفضل في المرة القادمة!';
 
   @override
-  String get draw => 'Draw';
+  String get you_resigned => 'لقد استسلمت';
 
   @override
-  String get well_played => 'Well played!';
+  String get draw => 'يرسم';
 
   @override
-  String get close => 'Close';
+  String get well_played => 'لعبت بشكل جيد!';
 
   @override
-  String get play_again => 'Play Again';
+  String get close => 'يغلق';
 
   @override
-  String get opponent_strength => 'Opponent Strength';
+  String get play_again => 'العب مرة أخرى';
 
   @override
-  String get wins => 'Wins';
+  String get opponent_strength => 'قوة الخصم';
 
   @override
-  String get draws => 'Draws';
+  String get wins => 'انتصارات';
 
   @override
-  String get losses => 'Losses';
+  String get draws => 'يرسم';
 
   @override
-  String get engine_response => 'Engine Response';
+  String get losses => 'خسائر';
 
   @override
-  String get play_as => 'Play as';
+  String get engine_response => 'استجابة المحرك';
 
   @override
-  String get white => 'White';
+  String get play_as => 'العب ك';
 
   @override
-  String get random => 'Random';
+  String get white => 'أبيض';
 
   @override
-  String get black => 'Black';
+  String get random => 'عشوائي';
 
   @override
-  String get start_game => 'Start Game';
+  String get black => 'أسود';
 
   @override
-  String get thinking => 'Thinking...';
+  String get start_game => 'ابدأ اللعبة';
 
   @override
-  String get your_turn => 'Your turn';
+  String get thinking => 'أفكر...';
 
   @override
-  String get back_to_setup => 'Back to Setup';
+  String get your_turn => 'دورك';
 
   @override
-  String get resign => 'Resign';
+  String get back_to_setup => 'العودة إلى الإعداد';
 
   @override
-  String get you => 'You';
+  String get resign => 'استقالة';
 
   @override
-  String get featured_trap => 'Featured Trap';
+  String get hint => 'تلميح';
 
   @override
-  String get loading_ads => 'Loading ads...';
+  String get your_games => 'مبارياتك';
 
   @override
-  String get daily_limit_reached => 'Daily limit reached';
+  String get moves => 'نقلات';
 
   @override
-  String get ad_load_failed => 'Ad could not be loaded. Try again later.';
+  String get first_move => 'أول نقلة';
 
   @override
-  String get ad_not_ready => 'Ad not ready yet. Try again later.';
+  String get previous_move => 'النقلة السابقة';
+
+  @override
+  String get next_move => 'النقلة التالية';
+
+  @override
+  String get last_move => 'آخر نقلة';
+
+  @override
+  String get choose_promotion => 'الترقية إلى';
+
+  @override
+  String get piecePawn => 'البيدق';
+
+  @override
+  String get pieceKnight => 'الحصان';
+
+  @override
+  String get pieceBishop => 'الفيل';
+
+  @override
+  String get pieceRook => 'القلعة';
+
+  @override
+  String get pieceQueen => 'الملكة';
+
+  @override
+  String get pieceKing => 'الملك';
+
+  @override
+  String get andSeparator => ' و ';
+
+  @override
+  String explainCheckmate(String piece) {
+    return '$piece يحقق كش ملك!';
+  }
+
+  @override
+  String explainSacrifice(String piece) {
+    return 'يضحي بـ$piece لفتح الهجوم.';
+  }
+
+  @override
+  String explainCapture(String piece, String captured) {
+    return 'يأسر $piece الـ$captured.';
+  }
+
+  @override
+  String explainFork(String piece, String targets) {
+    return 'يشوك $piece $targets.';
+  }
+
+  @override
+  String explainCheck(String piece) {
+    return 'يكشف $piece الملك.';
+  }
+
+  @override
+  String get explainCastleKingside => 'تبييت قصير، يؤمّن الملك.';
+
+  @override
+  String get explainCastleQueenside => 'تبييت طويل.';
+
+  @override
+  String explainPromotion(String piece) {
+    return 'يترقى إلى $piece.';
+  }
+
+  @override
+  String explainDevelop(String piece) {
+    return 'يطوّر $piece.';
+  }
+
+  @override
+  String get you => 'أنت';
+
+  @override
+  String get featured_trap => 'مصيدة مميزة';
+
+  @override
+  String get loading_ads => 'جارٍ تحميل الإعلانات...';
+
+  @override
+  String get daily_limit_reached => 'تم الوصول إلى الحد اليومي';
+
+  @override
+  String get ad_load_failed => 'لا يمكن تحميل الإعلان. حاول مرة أخرى لاحقًا.';
+
+  @override
+  String get ad_not_ready => 'الإعلان ليس جاهزا بعد حاول مرة أخرى لاحقًا.';
 
   @override
   String get limit_reached_body =>
-      'You\'ve viewed your 10 free traps for today! Watch a short ad to unlock all traps for the rest of the day.';
+      'لقد شاهدت 10 مصائد مجانية لهذا اليوم! شاهد إعلانًا قصيرًا لفتح جميع الأفخاخ لبقية اليوم.';
 
   @override
-  String get no_traps_in_group => 'No traps available for this opening yet.';
+  String get no_traps_in_group => 'لا توجد مصائد متاحة لهذا الافتتاح حتى الآن.';
 
   @override
-  String get surprise_me => 'Surprise me';
+  String get surprise_me => 'فاجأني';
 
   @override
-  String get play_mode => 'Play Mode';
+  String get play_mode => 'وضع التشغيل';
 
   @override
-  String get vs_engine => 'vs Engine';
+  String get vs_engine => 'مقابل المحرك';
 
   @override
-  String get by_moves => 'By Moves';
+  String get by_moves => 'بواسطة التحركات';
 
   @override
-  String get find_by_position => 'Find by position';
+  String get find_by_position => 'البحث حسب الموقف';
 
   @override
   String traps_count(Object count) {
-    return '$count traps';
+    return '$count الفخاخ';
   }
 
   @override
   String opening_traps_count(Object count) {
-    return '$count Opening Traps';
+    return '$count فتح الفخاخ';
   }
 
   @override
-  String get hero_title => 'Outplay Your\nOpponent';
+  String get hero_title => 'التفوق على الخاص بك\nالخصم';
 
   @override
-  String get hero_subtitle => 'Master the traps that grandmasters use.';
+  String get hero_subtitle => 'إتقان الفخاخ التي يستخدمها السادة الكبار.';
 
   @override
-  String get openings => 'Openings';
+  String get openings => 'الفتحات';
 
   @override
-  String get languages => 'Languages';
+  String get languages => 'اللغات';
 
   @override
   String get move_limit_reached =>
-      'Move limit reached. Ad not ready yet, please wait or reset.';
+      'تم الوصول إلى حد الحركة. الإعلان ليس جاهزًا بعد، يرجى الانتظار أو إعادة التعيين.';
 
   @override
   String get search_limit_body =>
-      'You\'ve reached the free move limit for this search. Watch a short video ad to unlock 5 more moves.';
+      'لقد وصلت إلى الحد الأقصى للحركة المجانية لهذا البحث. شاهد إعلان فيديو قصيرًا لفتح 5 حركات أخرى.';
 
   @override
-  String get notifications => 'Notifications';
+  String get notifications => 'إشعارات';
 
   @override
-  String get daily_trap_reminder => 'Daily Trap Reminder';
+  String get daily_trap_reminder => 'تذكير الفخ اليومي';
 
   @override
   String get daily_trap_reminder_subtitle =>
-      'Get notified to check the trap of the day';
+      'الحصول على إخطار للتحقق من فخ اليوم';
 
   @override
-  String get reminder_time => 'Reminder Time';
+  String get reminder_time => 'وقت التذكير';
 
   @override
-  String get notification_trap_ready_title => 'Trap of the Day is Ready!';
+  String get notification_trap_ready_title => 'فخ اليوم جاهز!';
 
   @override
   String get notification_trap_ready_body =>
-      'Jump in to learn a new opening trap and boost your rating ♟️';
+      'انضم لتتعلم فخًا افتتاحيًا جديدًا وتعزز تقييمك ♟️';
 
   @override
-  String get trapNotFound => 'Trap not found';
+  String get trapNotFound => 'لم يتم العثور على الفخ';
 
   @override
-  String get practiceModeActive =>
-      'Practice mode active. Play the correct moves!';
+  String get practiceModeActive => 'وضع الممارسة نشط. لعب التحركات الصحيحة!';
 
   @override
   String canYouSurvive(String trapName, String link) {
-    return 'Can you survive this trap? Check out $trapName!\n$link';
+    return 'هل يمكنك النجاة من هذا الفخ؟ تحقق من $trapName!\n$link';
   }
 
   @override
-  String get exitPractice => 'Exit Practice';
+  String get exitPractice => 'ممارسة الخروج';
 
   @override
-  String get practiceMode => 'Practice Mode';
+  String get practiceMode => 'وضع الممارسة';
 
   @override
-  String get exitAvoidMode => 'Exit Avoid Mode';
+  String get exitAvoidMode => 'الخروج من وضع التجنب';
 
   @override
-  String get avoidTrapMode => 'Avoid Trap Mode';
+  String get avoidTrapMode => 'تجنب وضع الاعتراض';
 
   @override
-  String get stopAutoPlay => 'Stop Auto Play';
+  String get stopAutoPlay => 'إيقاف التشغيل التلقائي';
 
   @override
-  String get autoPlay => 'Auto Play';
+  String get autoPlay => 'اللعب التلقائي';
 
   @override
-  String get flipBoard => 'Flip Board';
+  String get flipBoard => 'الوجه المجلس';
 
   @override
-  String get markedAsLearned => 'Marked as learned';
+  String get markedAsLearned => 'تم وضع علامة على أنه تم تعلمه';
 
   @override
-  String get markAsLearned => 'Mark as learned';
+  String get markAsLearned => 'وضع علامة كما تعلمت';
 
   @override
-  String get shareTrap => 'Share Trap';
+  String get shareTrap => 'مشاركة الفخ';
 
   @override
-  String get settings => 'Settings';
+  String get settings => 'إعدادات';
 
   @override
-  String get engineStarting => 'Engine starting...';
+  String get engineStarting => 'بدء تشغيل المحرك...';
 
   @override
-  String get whiteProfits => 'White Profits';
+  String get whiteProfits => 'أفضلية للأبيض';
 
   @override
-  String get blackProfits => 'Black Profits';
+  String get blackProfits => 'أفضلية للأسود';
 
   @override
-  String get engineUnavailable => 'Engine unavailable';
+  String get engineUnavailable => 'المحرك غير متوفر';
 
   @override
   String depthLabel(int depth) {
-    return 'Depth: $depth';
+    return 'العمق: $depth';
   }
 
   @override
-  String get analysisSettings => 'Analysis Settings';
+  String get analysisSettings => 'إعدادات التحليل';
 
   @override
-  String get engineBestMoves => 'Engine Best Moves (Arrows)';
+  String get engineBestMoves => 'أفضل تحركات المحرك (الأسهم)';
 
   @override
   String eloLabel(int elo) {
-    return 'Elo: $elo';
+    return 'إيلو: $elo';
   }
 
   @override
   String engineResponseLabel(String delay) {
-    return 'Engine Response: ${delay}s avg';
+    return 'استجابة المحرك: ${delay}s متوسط';
   }
 
   @override
   String stockfishLabel(int elo) {
-    return 'Stockfish ($elo)';
+    return 'ستوكفيش ($elo)';
   }
 }

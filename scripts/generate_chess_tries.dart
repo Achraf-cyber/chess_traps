@@ -2,7 +2,7 @@ import 'dart:io';
 import 'dart:convert';
 
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
-import 'package:chess_traps/data/chess_move_node.dart';
+import 'package:chess_traps/data/play/chess_move_node.dart';
 
 const String outputFolder = 'lib/generated/chess';
 const String moveTrieFile = 'prebuilt_move_trie.dart';
@@ -105,7 +105,7 @@ void main() async {
   moveContent.writeln('// Prebuilt ChessMoveNode trie for fast move search\n');
 
   // NOTE: Removed `import 'base_chess_traps.dart';` because it was unused and violates strict lints
-  moveContent.writeln("import '../../data/chess_move_node.dart';\n");
+  moveContent.writeln("import 'package:chess_traps/data/play/chess_move_node.dart';\n");
 
   // Generates a fully cascading compile-time constant tree
   moveContent.writeln(

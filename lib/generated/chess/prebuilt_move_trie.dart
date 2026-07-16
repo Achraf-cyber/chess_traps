@@ -1,7 +1,7 @@
 // GENERATED FILE - DO NOT EDIT
 // Prebuilt ChessMoveNode trie for fast move search
 
-import '../../data/chess_move_node.dart';
+import 'package:chess_traps/data/play/chess_move_node.dart';
 
 const ChessMoveNode moveTrie = ChessMoveNode(
   move: "",

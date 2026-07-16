@@ -8,14 +8,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:chess_traps/providers/app_theme_provider.dart';
-import 'package:chess_traps/providers/settings_provider.dart';
-import 'package:chess_traps/services/app_open_ad_manager.dart';
-import 'package:chess_traps/services/rewarded_ad_manager.dart';
-import 'package:chess_traps/services/remote_config_service.dart';
-import 'package:chess_traps/services/notification_service.dart';
-import 'package:chess_traps/services/consent_manager.dart';
+import 'package:chess_traps/core/providers/app_theme_provider.dart';
+import 'package:chess_traps/core/providers/settings_provider.dart';
+import 'package:chess_traps/core/services/app_open_ad_manager.dart';
+import 'package:chess_traps/core/services/rewarded_ad_manager.dart';
+import 'package:chess_traps/core/services/remote_config_service.dart';
+import 'package:chess_traps/core/services/notification_service.dart';
+import 'package:chess_traps/core/services/consent_manager.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 
@@ -28,8 +29,7 @@ import 'router.dart';
 import 'theme/theme.dart';
 import 'theme/theme_utils.dart';
 
-import 'services/app_link_service.dart';
-
+import 'package:chess_traps/core/services/app_link_service.dart';
 Future<void> runMainApp() async {
   if (kIsWeb) {
     usePathUrlStrategy();
@@ -37,6 +37,10 @@ Future<void> runMainApp() async {
 
   debugPrint('app started');
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Read Onboarding State
+  final prefs = await SharedPreferences.getInstance();
+  hasCompletedOnboarding = prefs.getBool('has_completed_onboarding') ?? false;
 
   // Initialize Firebase
   try {
@@ -68,7 +72,7 @@ Future<void> runMainApp() async {
 
   debugPrint('widget binding');
 
-  await RemoteConfigService().initialize();
+  await RemoteConfigService().initialize().timeout(const Duration(seconds: 2)).catchError((e) {});
 
   // Defer first frame to keep the native splash screen until SplashMaster.resume() is called.
   SplashMaster.initialize();
@@ -79,17 +83,19 @@ Future<void> runMainApp() async {
       !kIsWeb &&
       (Platform.isAndroid || Platform.isIOS)) {
     try {
-      // Request privacy consent before initializing MobileAds
-      await ConsentManager().requestConsentUpdate();
-
-      // Initialize MobileAds and AppOpenAd
-      MobileAds.instance.initialize().then((_) {
-        debugPrint('initialize mobile ads');
-        final appOpenAdManager = AppOpenAdManager()..loadAd();
-        RewardedAdManager().loadAd();
-        AppLifecycleReactor(
-          appOpenAdManager: appOpenAdManager,
-        ).listenToAppStateChanges();
+      // Request privacy consent before initializing MobileAds, but don't block runApp
+      ConsentManager().requestConsentUpdate().timeout(const Duration(seconds: 5)).then((_) {
+        // Initialize MobileAds and AppOpenAd
+        MobileAds.instance.initialize().then((_) {
+          debugPrint('initialize mobile ads');
+          final appOpenAdManager = AppOpenAdManager()..loadAd();
+          RewardedAdManager().loadAd();
+          AppLifecycleReactor(
+            appOpenAdManager: appOpenAdManager,
+          ).listenToAppStateChanges();
+        });
+      }).catchError((e) {
+         debugPrint('Consent error/timeout: ');
       });
     } catch (e) {
       debugPrint('Consent/AdMob initialization failed: $e');
@@ -123,14 +129,33 @@ Future<void> runMainApp() async {
   WidgetsBinding.instance.addPostFrameCallback((_) => SplashMaster.resume());
 }
 
+/// Flat, non-elastic scrolling everywhere: no iOS bounce, no Android
+/// stretch/glow overscroll indicator.
+class _NoOverscrollBehavior extends MaterialScrollBehavior {
+  const _NoOverscrollBehavior();
+
+  @override
+  ScrollPhysics getScrollPhysics(BuildContext context) =>
+      const ClampingScrollPhysics();
+
+  @override
+  Widget buildOverscrollIndicator(
+    BuildContext context,
+    Widget child,
+    ScrollableDetails details,
+  ) {
+    return child;
+  }
+}
+
 class MainApp extends ConsumerWidget {
   const MainApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(appThemeProvider);
-    const quicksand = 'Quicksand';
-    final TextTheme textTheme = createTextTheme(context, quicksand, quicksand);
+    const inter = 'Inter';
+    final TextTheme textTheme = createTextTheme(context, inter, inter);
 
     final theme = MaterialTheme(textTheme);
     final settings = ref.watch(chessSettingsProvider);
@@ -152,6 +177,7 @@ class MainApp extends ConsumerWidget {
       builder: kDebugMode && (kIsWeb || Platform.isWindows)
           ? DevicePreview.appBuilder
           : null,
+      scrollBehavior: const _NoOverscrollBehavior(),
       theme: theme.light(),
       darkTheme: theme.dark(),
       themeMode: themeMode,

@@ -588,11 +588,23 @@ abstract class AppLocalizations {
   /// **'Trap completed! Well done!'**
   String get trapCompleted;
 
+  /// No description provided for @relatedTraps.
+  ///
+  /// In en, this message translates to:
+  /// **'Related traps'**
+  String get relatedTraps;
+
   /// No description provided for @incorrectMove.
   ///
   /// In en, this message translates to:
   /// **'Incorrect move. Try again!'**
   String get incorrectMove;
+
+  /// No description provided for @incorrectMoveWithHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Not quite — here\'s a hint.'**
+  String get incorrectMoveWithHint;
 
   /// No description provided for @goBack.
   ///
@@ -665,6 +677,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Better luck next time!'**
   String get better_luck_next_time;
+
+  /// No description provided for @you_resigned.
+  ///
+  /// In en, this message translates to:
+  /// **'You resigned'**
+  String get you_resigned;
 
   /// No description provided for @draw.
   ///
@@ -773,6 +791,150 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Resign'**
   String get resign;
+
+  /// No description provided for @hint.
+  ///
+  /// In en, this message translates to:
+  /// **'Hint'**
+  String get hint;
+
+  /// No description provided for @your_games.
+  ///
+  /// In en, this message translates to:
+  /// **'Your games'**
+  String get your_games;
+
+  /// No description provided for @moves.
+  ///
+  /// In en, this message translates to:
+  /// **'moves'**
+  String get moves;
+
+  /// No description provided for @first_move.
+  ///
+  /// In en, this message translates to:
+  /// **'First move'**
+  String get first_move;
+
+  /// No description provided for @previous_move.
+  ///
+  /// In en, this message translates to:
+  /// **'Previous move'**
+  String get previous_move;
+
+  /// No description provided for @next_move.
+  ///
+  /// In en, this message translates to:
+  /// **'Next move'**
+  String get next_move;
+
+  /// No description provided for @last_move.
+  ///
+  /// In en, this message translates to:
+  /// **'Last move'**
+  String get last_move;
+
+  /// No description provided for @choose_promotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Promote to'**
+  String get choose_promotion;
+
+  /// No description provided for @piecePawn.
+  ///
+  /// In en, this message translates to:
+  /// **'pawn'**
+  String get piecePawn;
+
+  /// No description provided for @pieceKnight.
+  ///
+  /// In en, this message translates to:
+  /// **'knight'**
+  String get pieceKnight;
+
+  /// No description provided for @pieceBishop.
+  ///
+  /// In en, this message translates to:
+  /// **'bishop'**
+  String get pieceBishop;
+
+  /// No description provided for @pieceRook.
+  ///
+  /// In en, this message translates to:
+  /// **'rook'**
+  String get pieceRook;
+
+  /// No description provided for @pieceQueen.
+  ///
+  /// In en, this message translates to:
+  /// **'queen'**
+  String get pieceQueen;
+
+  /// No description provided for @pieceKing.
+  ///
+  /// In en, this message translates to:
+  /// **'king'**
+  String get pieceKing;
+
+  /// No description provided for @andSeparator.
+  ///
+  /// In en, this message translates to:
+  /// **' and '**
+  String get andSeparator;
+
+  /// No description provided for @explainCheckmate.
+  ///
+  /// In en, this message translates to:
+  /// **'{piece} delivers checkmate!'**
+  String explainCheckmate(String piece);
+
+  /// No description provided for @explainSacrifice.
+  ///
+  /// In en, this message translates to:
+  /// **'Sacrifices the {piece} to open up the attack.'**
+  String explainSacrifice(String piece);
+
+  /// No description provided for @explainCapture.
+  ///
+  /// In en, this message translates to:
+  /// **'The {piece} captures the {captured}.'**
+  String explainCapture(String piece, String captured);
+
+  /// No description provided for @explainFork.
+  ///
+  /// In en, this message translates to:
+  /// **'The {piece} forks {targets}.'**
+  String explainFork(String piece, String targets);
+
+  /// No description provided for @explainCheck.
+  ///
+  /// In en, this message translates to:
+  /// **'The {piece} gives check, forcing a reply.'**
+  String explainCheck(String piece);
+
+  /// No description provided for @explainCastleKingside.
+  ///
+  /// In en, this message translates to:
+  /// **'Castles kingside, tucking the king away safely.'**
+  String get explainCastleKingside;
+
+  /// No description provided for @explainCastleQueenside.
+  ///
+  /// In en, this message translates to:
+  /// **'Castles queenside.'**
+  String get explainCastleQueenside;
+
+  /// No description provided for @explainPromotion.
+  ///
+  /// In en, this message translates to:
+  /// **'Promotes to a {piece}.'**
+  String explainPromotion(String piece);
+
+  /// No description provided for @explainDevelop.
+  ///
+  /// In en, this message translates to:
+  /// **'Develops the {piece}.'**
+  String explainDevelop(String piece);
 
   /// No description provided for @you.
   ///
@@ -1029,13 +1191,13 @@ abstract class AppLocalizations {
   /// No description provided for @whiteProfits.
   ///
   /// In en, this message translates to:
-  /// **'White Profits'**
+  /// **'Advantage for White'**
   String get whiteProfits;
 
   /// No description provided for @blackProfits.
   ///
   /// In en, this message translates to:
-  /// **'Black Profits'**
+  /// **'Advantage for Black'**
   String get blackProfits;
 
   /// No description provided for @engineUnavailable.

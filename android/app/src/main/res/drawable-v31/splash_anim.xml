@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Gentle looping pulse of the splash logo for the Android 12+ splash
+     screen. windowSplashScreenAnimatedIcon accepts an AnimationDrawable;
+     each frame is the same bitmap at a slightly different inset, which
+     reads as a breathing/pulsing logo and makes the app feel alive while
+     the first frame is being prepared. -->
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:duration="140">
+        <inset android:drawable="@drawable/splash_image_12" android:inset="0%" />
+    </item>
+    <item android:duration="140">
+        <inset android:drawable="@drawable/splash_image_12" android:inset="2%" />
+    </item>
+    <item android:duration="140">
+        <inset android:drawable="@drawable/splash_image_12" android:inset="4%" />
+    </item>
+    <item android:duration="140">
+        <inset android:drawable="@drawable/splash_image_12" android:inset="6%" />
+    </item>
+    <item android:duration="140">
+        <inset android:drawable="@drawable/splash_image_12" android:inset="4%" />
+    </item>
+    <item android:duration="140">
+        <inset android:drawable="@drawable/splash_image_12" android:inset="2%" />
+    </item>
+</animation-list>

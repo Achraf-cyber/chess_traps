@@ -53,12 +53,11 @@ class NotificationService {
       },
     );
 
-    // Request Android 13+ notification permission proactively at startup.
-    await flutterLocalNotificationsPlugin
-        .resolvePlatformSpecificImplementation<
-          AndroidFlutterLocalNotificationsPlugin
-        >()
-        ?.requestNotificationsPermission();
+    // Note: no permission request at startup. The dialog is shown
+    // contextually instead (end of onboarding, or when the user touches the
+    // notification settings) — a permission prompt must never gate app
+    // startup (it froze the splash for as long as the user hesitated), and
+    // cold-start prompts get denied far more often than contextual ones.
 
     // Default: Enabled, 9:00 AM
     final prefs = await SharedPreferences.getInstance();
@@ -72,7 +71,9 @@ class NotificationService {
     if (enabled) {
       final hour = prefs.getInt(_prefTimeHour) ?? 9;
       final minute = prefs.getInt(_prefTimeMinute) ?? 0;
-      await scheduleDailyNotification(TimeOfDay(hour: hour, minute: minute));
+      // Schedule silently: if permission was never granted the notification
+      // simply won't display until the user grants it via a contextual ask.
+      await _schedule(TimeOfDay(hour: hour, minute: minute));
     }
   }
 
@@ -102,8 +103,14 @@ class NotificationService {
     }
   }
 
+  /// User-facing path (settings screen): asks for permission, then schedules.
   Future<void> scheduleDailyNotification(TimeOfDay time) async {
     await requestPermission();
+    await _schedule(time);
+  }
+
+  /// Schedules the daily notification without prompting for permission.
+  Future<void> _schedule(TimeOfDay time) async {
     await flutterLocalNotificationsPlugin.cancelAll();
 
     final prefs = await SharedPreferences.getInstance();

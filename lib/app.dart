@@ -72,35 +72,8 @@ Future<void> runMainApp() async {
 
   debugPrint('widget binding');
 
-  await RemoteConfigService().initialize().timeout(const Duration(seconds: 2)).catchError((e) {});
-
   // Defer first frame to keep the native splash screen until SplashMaster.resume() is called.
   SplashMaster.initialize();
-
-  await NotificationService().init();
-
-  if (RemoteConfigService().adsEnabled &&
-      !kIsWeb &&
-      (Platform.isAndroid || Platform.isIOS)) {
-    try {
-      // Request privacy consent before initializing MobileAds, but don't block runApp
-      ConsentManager().requestConsentUpdate().timeout(const Duration(seconds: 5)).then((_) {
-        // Initialize MobileAds and AppOpenAd
-        MobileAds.instance.initialize().then((_) {
-          debugPrint('initialize mobile ads');
-          final appOpenAdManager = AppOpenAdManager()..loadAd();
-          RewardedAdManager().loadAd();
-          AppLifecycleReactor(
-            appOpenAdManager: appOpenAdManager,
-          ).listenToAppStateChanges();
-        });
-      }).catchError((e) {
-         debugPrint('Consent error/timeout: ');
-      });
-    } catch (e) {
-      debugPrint('Consent/AdMob initialization failed: $e');
-    }
-  }
 
   LicenseRegistry.addLicense(() async* {
     yield const LicenseEntryWithLineBreaks(<String>[
@@ -126,7 +99,63 @@ Future<void> runMainApp() async {
   }
 
   // Dismiss the native splash only after the first Flutter frame is drawn.
-  WidgetsBinding.instance.addPostFrameCallback((_) => SplashMaster.resume());
+  WidgetsBinding.instance.addPostFrameCallback((_) {
+    SplashMaster.resume();
+    _initSecondaryServices();
+  });
+}
+
+/// Everything the app needs *eventually* but that must never delay the first
+/// frame. Awaiting any of this before runApp was what froze the splash
+/// screen for up to ~30s (the notification-permission dialog blocks until
+/// the user answers it).
+Future<void> _initSecondaryServices() async {
+  // Remote Config: generous timeout is fine now that the UI is visible;
+  // defaults/cached values are used until (and if) the fetch completes.
+  try {
+    await RemoteConfigService().initialize().timeout(
+      const Duration(seconds: 5),
+    );
+  } catch (e) {
+    debugPrint('Remote Config init failed/timed out: $e');
+  }
+
+  if (RemoteConfigService().adsEnabled &&
+      !kIsWeb &&
+      (Platform.isAndroid || Platform.isIOS)) {
+    try {
+      // Request privacy consent before initializing MobileAds.
+      ConsentManager()
+          .requestConsentUpdate()
+          .timeout(const Duration(seconds: 5))
+          .then((_) {
+            // Initialize MobileAds and AppOpenAd
+            MobileAds.instance.initialize().then((_) {
+              debugPrint('initialize mobile ads');
+              final appOpenAdManager = AppOpenAdManager()..loadAd();
+              RewardedAdManager().loadAd();
+              AppLifecycleReactor(
+                appOpenAdManager: appOpenAdManager,
+              ).listenToAppStateChanges();
+            });
+          })
+          .catchError((e) {
+            debugPrint('Consent error/timeout: ');
+          });
+    } catch (e) {
+      debugPrint('Consent/AdMob initialization failed: $e');
+    }
+  }
+
+  // Notification setup last, and only after the first frames have settled:
+  // it synchronously parses the timezone database, which would jank the
+  // opening animation if run immediately.
+  await Future<void>.delayed(const Duration(seconds: 1));
+  try {
+    await NotificationService().init();
+  } catch (e) {
+    debugPrint('Notification init failed: $e');
+  }
 }
 
 /// Flat, non-elastic scrolling everywhere: no iOS bounce, no Android

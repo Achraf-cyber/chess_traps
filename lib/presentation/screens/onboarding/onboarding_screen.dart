@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chess_traps/router.dart';
 import 'package:chess_traps/core/constants/app_sizes.dart';
+import 'package:chess_traps/core/services/notification_service.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -47,6 +48,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     await prefs.setBool('has_completed_onboarding', true);
     // Update the global flag used by GoRouter redirect
     hasCompletedOnboarding = true;
+    // Contextual permission ask: the user just read the "Build Your Streak"
+    // slide, so the daily-reminder permission request makes sense here —
+    // and it must never happen at cold start (it froze the splash screen).
+    // Fire-and-forget: routing to home proceeds regardless of the answer.
+    NotificationService().requestPermission().catchError((Object e) {
+      debugPrint('Notification permission request failed: $e');
+    });
     if (mounted) {
       const HomeRoute().go(context);
     }

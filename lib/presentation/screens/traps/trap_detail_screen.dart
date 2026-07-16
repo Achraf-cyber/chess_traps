@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math' as math;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:chess_traps/presentation/state/traps/learned_traps_provider.dart';
 import 'package:chess_traps/core/services/audio_haptic_service.dart';
@@ -604,10 +605,29 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           const SizedBox(width: 8),
         ],
       ),
-      body: Column(
+      body: LayoutBuilder(
+        builder: (context, bodyConstraints) {
+          // Size the board area from the actual screen geometry instead of a
+          // fixed flex ratio: a fixed split starves the board on tall
+          // phones (tiny board, wasted space) or starves the info panel on
+          // short ones. The board wants the full width, capped at ~2/3 of
+          // the body height so the info panel always keeps a workable share.
+          const boardOverhead = 106.0; // eval bar + captures + paddings
+          final chrome = 16.0 + (isPracticeMode ? 0.0 : 80.0); // spacers + nav
+          final desiredBoard = math.min(
+            bodyConstraints.maxWidth - 32,
+            bodyConstraints.maxHeight * 0.66 - boardOverhead - chrome,
+          );
+          final desiredTop = (desiredBoard + boardOverhead + chrome)
+              .clamp(0.0, bodyConstraints.maxHeight);
+          final topFlex =
+              ((desiredTop / bodyConstraints.maxHeight) * 100).round().clamp(1, 99);
+          final bottomFlex = 100 - topFlex;
+
+          return Column(
         children: [
           Expanded(
-            flex: 11,
+            flex: topFlex,
             child: Column(
               children: [
                 const SizedBox(height: 8),
@@ -827,7 +847,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           ),
           if (!isPracticeMode && !isAvoidMode)
             Expanded(
-              flex: 9,
+              flex: bottomFlex,
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -954,7 +974,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
             ),
           if (isAvoidMode)
             Expanded(
-              flex: 5,
+              flex: bottomFlex,
               child: Container(
                 padding: const EdgeInsets.all(24),
                 decoration: BoxDecoration(
@@ -988,6 +1008,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               ),
             ),
         ],
+          );
+        },
       ),
     );
   }

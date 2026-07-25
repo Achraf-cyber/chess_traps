@@ -2,6 +2,7 @@ import 'package:chess_traps/core/constants/app_sizes.dart';
 import 'package:chess_traps/presentation/state/favorites/user_favorites_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chess_traps/core/providers/app_theme_provider.dart';
 import 'package:chess_traps/router.dart';
@@ -11,6 +12,9 @@ import '../../../utils.dart';
 import 'package:chess_traps/core/services/notification_service.dart';
 import 'package:chess_traps/core/providers/settings_provider.dart';
 import 'package:chess_traps/presentation/state/streak/streak_provider.dart';
+import 'package:chess_traps/presentation/state/play/play_history_provider.dart';
+import 'package:chess_traps/presentation/state/traps/learned_traps_provider.dart';
+import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 
 class UserProfileScreen extends ConsumerWidget {
   const UserProfileScreen({super.key});
@@ -21,6 +25,8 @@ class UserProfileScreen extends ConsumerWidget {
     final themeNotifier = ref.read(appThemeProvider.notifier);
     final favoritesCount = ref.watch(userFavoritesProvider).length;
     final streakCount = ref.watch(streakProvider).count;
+    final history = ref.watch(playHistoryProvider);
+    final learnedCount = ref.watch(learnedTrapsProvider).length;
     final scheme = Theme.of(context).colorScheme;
 
     return Scaffold(
@@ -35,6 +41,19 @@ class UserProfileScreen extends ConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  // Statistics dashboard
+                  _SectionTitle(title: context.phrase.statistics),
+                  const SizedBox(height: 12),
+                  _StatsDashboard(
+                    wins: history.wins,
+                    draws: history.draws,
+                    losses: history.losses,
+                    streak: streakCount,
+                    learned: learnedCount,
+                    totalTraps: chessTraps.length,
+                  ),
+                  const SizedBox(height: 28),
+
                   // Appearance
                   _SectionTitle(title: context.phrase.appearance),
                   const SizedBox(height: 12),
@@ -42,6 +61,14 @@ class UserProfileScreen extends ConsumerWidget {
                     currentMode: themeMode,
                     notifier: themeNotifier,
                   ),
+                  const SizedBox(height: 16),
+                  const _BoardThemeSelector(),
+                  const SizedBox(height: 28),
+
+                  // Sound & haptics
+                  _SectionTitle(title: context.phrase.soundAndHaptics),
+                  const SizedBox(height: 12),
+                  const _SoundHapticSettings(),
                   const SizedBox(height: 28),
 
                   // Language
@@ -59,12 +86,6 @@ class UserProfileScreen extends ConsumerWidget {
                   // Data
                   _SectionTitle(title: context.phrase.dataManagement),
                   const SizedBox(height: 12),
-                  _SettingsTile(
-                    icon: Icons.local_fire_department_rounded,
-                    iconColor: scheme.tertiary,
-                    title: 'Current Streak',
-                    subtitle: '$streakCount days',
-                  ),
                   _SettingsTile(
                     icon: Icons.favorite_rounded,
                     iconColor: scheme.error,
@@ -84,11 +105,7 @@ class UserProfileScreen extends ConsumerWidget {
                   // About
                   _SectionTitle(title: context.phrase.about),
                   const SizedBox(height: 12),
-                  _SettingsTile(
-                    icon: Icons.info_outline_rounded,
-                    title: context.phrase.appVersion,
-                    subtitle: '1.2.0',
-                  ),
+                  const _AppVersionTile(),
                   _SettingsTile(
                     icon: Icons.privacy_tip_outlined,
                     title: context.phrase.privacyPolicy,
@@ -105,7 +122,6 @@ class UserProfileScreen extends ConsumerWidget {
                     onTap: () => showLicensePage(
                       context: context,
                       applicationName: context.phrase.appName,
-                      applicationVersion: '1.2.0',
                     ),
                   ),
                   const SizedBox(height: 40),
@@ -611,6 +627,308 @@ class _NotificationSettingsState extends State<_NotificationSettings> {
             ),
         ],
       ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Statistics dashboard
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _StatsDashboard extends StatelessWidget {
+  const _StatsDashboard({
+    required this.wins,
+    required this.draws,
+    required this.losses,
+    required this.streak,
+    required this.learned,
+    required this.totalTraps,
+  });
+
+  final int wins;
+  final int draws;
+  final int losses;
+  final int streak;
+  final int learned;
+  final int totalTraps;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: _StatCard(
+                icon: Icons.emoji_events_rounded,
+                iconColor: Colors.green,
+                value: '$wins',
+                label: context.phrase.wins,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: _StatCard(
+                icon: Icons.handshake_rounded,
+                iconColor: Colors.orange,
+                value: '$draws',
+                label: context.phrase.draws,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: _StatCard(
+                icon: Icons.psychology_rounded,
+                iconColor: Colors.redAccent,
+                value: '$losses',
+                label: context.phrase.losses,
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Row(
+          children: [
+            Expanded(
+              child: _StatCard(
+                icon: Icons.local_fire_department_rounded,
+                iconColor: scheme.tertiary,
+                value: '$streak',
+                label: context.phrase.currentStreak,
+              ),
+            ),
+            const SizedBox(width: 10),
+            Expanded(
+              child: _StatCard(
+                icon: Icons.school_rounded,
+                iconColor: scheme.primary,
+                value: '$learned',
+                label: context.phrase.trapsLearned,
+                sublabel: context.phrase.learnedProgress(learned, totalTraps),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _StatCard extends StatelessWidget {
+  const _StatCard({
+    required this.icon,
+    required this.iconColor,
+    required this.value,
+    required this.label,
+    this.sublabel,
+  });
+
+  final IconData icon;
+  final Color iconColor;
+  final String value;
+  final String label;
+  final String? sublabel;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 12),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppSizes.radiusL),
+        border: Border.all(color: scheme.outline.withValues(alpha: 0.25)),
+      ),
+      child: Column(
+        children: [
+          Icon(icon, color: iconColor, size: 26),
+          const SizedBox(height: 8),
+          Text(
+            value,
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              fontWeight: FontWeight.w900,
+              color: scheme.onSurface,
+            ),
+          ),
+          const SizedBox(height: 2),
+          Text(
+            label,
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
+              color: scheme.onSurfaceVariant,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+          if (sublabel != null) ...[
+            const SizedBox(height: 1),
+            Text(
+              sublabel!,
+              style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                color: scheme.onSurfaceVariant.withValues(alpha: 0.6),
+                fontSize: 10,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Board theme selector
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _BoardThemeSelector extends ConsumerWidget {
+  const _BoardThemeSelector();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final settings = ref.watch(chessSettingsProvider);
+    final notifier = ref.read(chessSettingsProvider.notifier);
+    final scheme = Theme.of(context).colorScheme;
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppSizes.radiusL),
+        border: Border.all(color: scheme.outline.withValues(alpha: 0.25)),
+      ),
+      child: Row(
+        children: [
+          Icon(Icons.grid_view_rounded, size: 18, color: scheme.onSurfaceVariant),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Text(
+              context.phrase.boardTheme,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+          ),
+          DropdownButton<AppBoardTheme>(
+            value: settings.boardTheme,
+            underline: const SizedBox.shrink(),
+            borderRadius: BorderRadius.circular(AppSizes.radiusM),
+            items: AppBoardTheme.values.map((theme) {
+              return DropdownMenuItem(
+                value: theme,
+                child: Text(theme.label),
+              );
+            }).toList(),
+            onChanged: (theme) {
+              if (theme != null) notifier.updateBoardTheme(theme);
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Sound & haptics settings
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _SoundHapticSettings extends ConsumerWidget {
+  const _SoundHapticSettings();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final settings = ref.watch(chessSettingsProvider);
+    final notifier = ref.read(chessSettingsProvider.notifier);
+    final scheme = Theme.of(context).colorScheme;
+
+    return Container(
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppSizes.radiusL),
+        border: Border.all(color: scheme.outline.withValues(alpha: 0.25)),
+      ),
+      child: Column(
+        children: [
+          SwitchListTile(
+            secondary: Icon(Icons.volume_up_rounded, color: scheme.onSurfaceVariant),
+            title: Text(
+              context.phrase.soundEffects,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            value: settings.soundEnabled,
+            onChanged: notifier.updateSoundEnabled,
+            activeThumbColor: scheme.primary,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(AppSizes.radiusL),
+              ),
+            ),
+          ),
+          Divider(height: 1, color: scheme.outline.withValues(alpha: 0.15)),
+          SwitchListTile(
+            secondary: Icon(Icons.vibration_rounded, color: scheme.onSurfaceVariant),
+            title: Text(
+              context.phrase.hapticFeedback,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            value: settings.hapticsEnabled,
+            onChanged: notifier.updateHapticsEnabled,
+            activeThumbColor: scheme.primary,
+            shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(AppSizes.radiusL),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// App version tile (reads the real version at runtime)
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _AppVersionTile extends StatefulWidget {
+  const _AppVersionTile();
+
+  @override
+  State<_AppVersionTile> createState() => _AppVersionTileState();
+}
+
+class _AppVersionTileState extends State<_AppVersionTile> {
+  String? _version;
+
+  @override
+  void initState() {
+    super.initState();
+    _load();
+  }
+
+  Future<void> _load() async {
+    try {
+      final info = await PackageInfo.fromPlatform();
+      if (mounted) {
+        setState(() => _version = '${info.version} (${info.buildNumber})');
+      }
+    } catch (_) {
+      // Leave version null; the tile simply shows no subtitle.
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return _SettingsTile(
+      icon: Icons.info_outline_rounded,
+      title: context.phrase.appVersion,
+      subtitle: _version,
     );
   }
 }

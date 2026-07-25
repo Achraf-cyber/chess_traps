@@ -243,5 +243,31 @@
         "type": "int"
       }
     }
-  }
+  },
+  "statistics": "Estadísticas",
+  "currentStreak": "Racha actual",
+  "streakDays": "{count, plural, =1{1 día} other{{count} días}}",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "trapsLearned": "Trampas aprendidas",
+  "learnedProgress": "{learned} de {total}",
+  "@learnedProgress": {
+    "placeholders": {
+      "learned": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gamesPlayed": "Partidas jugadas",
+  "soundAndHaptics": "Sonido y vibración",
+  "soundEffects": "Efectos de sonido",
+  "hapticFeedback": "Respuesta háptica"
 }

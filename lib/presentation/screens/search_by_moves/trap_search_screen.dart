@@ -28,6 +28,10 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   ChessMoveNode? _currentNode = moveTrie;
   List<int> _currentTrapIds = [];
 
+  // Free-text name search, applied on top of the move-narrowed set.
+  final _searchController = TextEditingController();
+  String _searchQuery = '';
+
   // Rewarded Ad logic
   RewardedAd? _rewardedAd;
   int _bonusMoves = 0;
@@ -230,12 +234,14 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
           children: [
             _buildFloatingHeader(),
             const SizedBox(height: 8),
+            _buildNameSearchField(),
+            const SizedBox(height: 8),
             Expanded(flex: 7, child: _buildBoardLayer()),
             const SizedBox(height: 12),
             Expanded(
               flex: 4,
               child: _SearchResultsSection(
-                trapCount: _currentTrapIds.length,
+                trapCount: _displayedTrapIds.length,
                 phraseMatchingTraps: context.phrase.matchingTraps,
                 child: _buildInlineResults(),
               ),
@@ -309,6 +315,39 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
     );
   }
 
+  Widget _buildNameSearchField() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: TextField(
+        controller: _searchController,
+        onChanged: (value) => setState(() => _searchQuery = value),
+        textInputAction: TextInputAction.search,
+        decoration: InputDecoration(
+          isDense: true,
+          hintText: context.phrase.searchByName,
+          prefixIcon: const Icon(Icons.search_rounded, size: 20),
+          suffixIcon: _searchQuery.isEmpty
+              ? null
+              : IconButton(
+                  icon: const Icon(Icons.close_rounded, size: 18),
+                  onPressed: () {
+                    _searchController.clear();
+                    setState(() => _searchQuery = '');
+                    FocusScope.of(context).unfocus();
+                  },
+                ),
+          filled: true,
+          fillColor: context.colors.surfaceContainerHighest.withValues(alpha: 0.5),
+          contentPadding: const EdgeInsets.symmetric(vertical: 10),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(14),
+            borderSide: BorderSide.none,
+          ),
+        ),
+      ),
+    );
+  }
+
   Widget _buildFloatingHeader() {
     return _TrapSearchFloatingHeader(
       title: context.phrase.search,
@@ -320,7 +359,8 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   }
 
   Widget _buildInlineResults() {
-    if (_currentTrapIds.isEmpty) {
+    final ids = _displayedTrapIds;
+    if (ids.isEmpty) {
       return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -343,16 +383,31 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
 
     return ListView.builder(
       padding: const EdgeInsets.only(top: 8, bottom: 16),
-      itemCount: _currentTrapIds.length,
+      itemCount: ids.length,
       itemBuilder: (context, index) {
-        final trap = chessTraps[_currentTrapIds[index]];
+        final trap = chessTraps[ids[index]];
         return SearchResultTile(trap: trap, index: index);
       },
     );
   }
 
+  /// Move-narrowed ids further filtered by the free-text name query.
+  List<int> get _displayedTrapIds {
+    final q = _searchQuery.trim().toLowerCase();
+    if (q.isEmpty) return _currentTrapIds;
+    return _currentTrapIds.where((id) {
+      final t = chessTraps[id];
+      return t.trapName.toLowerCase().contains(q) ||
+          t.trapNameFr.toLowerCase().contains(q) ||
+          t.trapNameEs.toLowerCase().contains(q) ||
+          t.trapNameAr.toLowerCase().contains(q) ||
+          t.opening.toLowerCase().contains(q);
+    }).toList();
+  }
+
   @override
   void dispose() {
+    _searchController.dispose();
     _rewardedAd?.dispose();
     super.dispose();
   }

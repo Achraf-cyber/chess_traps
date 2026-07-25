@@ -11,22 +11,27 @@ class AudioHapticService {
 
   static final AudioHapticService _instance = AudioHapticService._internal();
 
+  /// User toggles, mirrored here from ChessSettings so this service (which
+  /// has no Riverpod ref) can honour them. Default on; loaded at startup.
+  static bool soundEnabled = true;
+  static bool hapticsEnabled = true;
+
   Future<void> playMove() async {
-    await HapticFeedback.lightImpact();
-    await SystemSound.play(SystemSoundType.click);
+    if (hapticsEnabled) await HapticFeedback.lightImpact();
+    if (soundEnabled) await SystemSound.play(SystemSoundType.click);
   }
 
   Future<void> playCapture() async {
-    await HapticFeedback.mediumImpact();
-    await SystemSound.play(SystemSoundType.click);
+    if (hapticsEnabled) await HapticFeedback.mediumImpact();
+    if (soundEnabled) await SystemSound.play(SystemSoundType.click);
   }
 
   Future<void> playCheck() async {
-    await HapticFeedback.heavyImpact();
-    await SystemSound.play(SystemSoundType.alert);
+    if (hapticsEnabled) await HapticFeedback.heavyImpact();
+    if (soundEnabled) await SystemSound.play(SystemSoundType.alert);
   }
 
   Future<void> playError() async {
-    await HapticFeedback.vibrate();
+    if (hapticsEnabled) await HapticFeedback.vibrate();
   }
 }

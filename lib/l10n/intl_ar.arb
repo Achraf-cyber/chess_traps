@@ -243,5 +243,31 @@
         "type": "int"
       }
     }
-  }
+  },
+  "statistics": "الإحصائيات",
+  "currentStreak": "السلسلة الحالية",
+  "streakDays": "{count, plural, =1{يوم واحد} other{{count} أيام}}",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "trapsLearned": "الفخاخ المتعلمة",
+  "learnedProgress": "{learned} من {total}",
+  "@learnedProgress": {
+    "placeholders": {
+      "learned": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gamesPlayed": "المباريات الملعوبة",
+  "soundAndHaptics": "الصوت والاهتزاز",
+  "soundEffects": "المؤثرات الصوتية",
+  "hapticFeedback": "الاهتزاز اللمسي"
 }

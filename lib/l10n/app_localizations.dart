@@ -1241,6 +1241,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Stockfish ({elo})'**
   String stockfishLabel(int elo);
+
+  /// No description provided for @statistics.
+  ///
+  /// In en, this message translates to:
+  /// **'Statistics'**
+  String get statistics;
+
+  /// No description provided for @currentStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Current streak'**
+  String get currentStreak;
+
+  /// No description provided for @streakDays.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day} other{{count} days}}'**
+  String streakDays(int count);
+
+  /// No description provided for @trapsLearned.
+  ///
+  /// In en, this message translates to:
+  /// **'Traps learned'**
+  String get trapsLearned;
+
+  /// No description provided for @learnedProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'{learned} of {total}'**
+  String learnedProgress(int learned, int total);
+
+  /// No description provided for @gamesPlayed.
+  ///
+  /// In en, this message translates to:
+  /// **'Games played'**
+  String get gamesPlayed;
+
+  /// No description provided for @soundAndHaptics.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound & haptics'**
+  String get soundAndHaptics;
+
+  /// No description provided for @soundEffects.
+  ///
+  /// In en, this message translates to:
+  /// **'Sound effects'**
+  String get soundEffects;
+
+  /// No description provided for @hapticFeedback.
+  ///
+  /// In en, this message translates to:
+  /// **'Haptic feedback'**
+  String get hapticFeedback;
 }
 
 class _AppLocalizationsDelegate

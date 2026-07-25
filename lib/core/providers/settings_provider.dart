@@ -2,6 +2,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chess_traps/core/services/notification_service.dart';
+import 'package:chess_traps/core/services/audio_haptic_service.dart';
 import 'package:flutter/material.dart';
 
 part 'settings_provider.g.dart';
@@ -49,20 +50,28 @@ class ChessSettings {
     this.arrowCount = 2,
     this.boardTheme = AppBoardTheme.brown,
     this.localeCode,
+    this.soundEnabled = true,
+    this.hapticsEnabled = true,
   });
 
   final int arrowCount;
   final AppBoardTheme boardTheme;
   final String? localeCode;
+  final bool soundEnabled;
+  final bool hapticsEnabled;
 
   ChessSettings copyWith({
     int? arrowCount,
     AppBoardTheme? boardTheme,
     String? localeCode,
+    bool? soundEnabled,
+    bool? hapticsEnabled,
   }) => ChessSettings(
     arrowCount: arrowCount ?? this.arrowCount,
     boardTheme: boardTheme ?? this.boardTheme,
     localeCode: localeCode ?? this.localeCode,
+    soundEnabled: soundEnabled ?? this.soundEnabled,
+    hapticsEnabled: hapticsEnabled ?? this.hapticsEnabled,
   );
 }
 
@@ -71,6 +80,8 @@ class ChessSettingsNotifier extends _$ChessSettingsNotifier {
   static const _arrowCountKey = 'arrowCount';
   static const _boardThemeKey = 'boardTheme';
   static const _localeKey = 'appLocale';
+  static const _soundKey = 'soundEnabled';
+  static const _hapticsKey = 'hapticsEnabled';
 
   @override
   ChessSettings build() {
@@ -89,18 +100,39 @@ class ChessSettingsNotifier extends _$ChessSettingsNotifier {
             orElse: () => AppBoardTheme.brown,
           )
         : AppBoardTheme.brown;
+    final soundEnabled = prefs.getBool(_soundKey) ?? true;
+    final hapticsEnabled = prefs.getBool(_hapticsKey) ?? true;
 
     state = ChessSettings(
       arrowCount: arrowCount,
       boardTheme: theme,
       localeCode: localeCode,
+      soundEnabled: soundEnabled,
+      hapticsEnabled: hapticsEnabled,
     );
+    // Mirror into the feedback service, which has no ref access of its own.
+    AudioHapticService.soundEnabled = soundEnabled;
+    AudioHapticService.hapticsEnabled = hapticsEnabled;
   }
 
   Future<void> updateArrowCount(int count) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setInt(_arrowCountKey, count);
     state = state.copyWith(arrowCount: count);
+  }
+
+  Future<void> updateSoundEnabled(bool enabled) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_soundKey, enabled);
+    AudioHapticService.soundEnabled = enabled;
+    state = state.copyWith(soundEnabled: enabled);
+  }
+
+  Future<void> updateHapticsEnabled(bool enabled) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(_hapticsKey, enabled);
+    AudioHapticService.hapticsEnabled = enabled;
+    state = state.copyWith(hapticsEnabled: enabled);
   }
 
   Future<void> updateBoardTheme(AppBoardTheme theme) async {

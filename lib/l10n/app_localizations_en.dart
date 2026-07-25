@@ -622,4 +622,41 @@ class AppLocalizationsEn extends AppLocalizations {
   String stockfishLabel(int elo) {
     return 'Stockfish ($elo)';
   }
+
+  @override
+  String get statistics => 'Statistics';
+
+  @override
+  String get currentStreak => 'Current streak';
+
+  @override
+  String streakDays(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count days',
+      one: '1 day',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get trapsLearned => 'Traps learned';
+
+  @override
+  String learnedProgress(int learned, int total) {
+    return '$learned of $total';
+  }
+
+  @override
+  String get gamesPlayed => 'Games played';
+
+  @override
+  String get soundAndHaptics => 'Sound & haptics';
+
+  @override
+  String get soundEffects => 'Sound effects';
+
+  @override
+  String get hapticFeedback => 'Haptic feedback';
 }

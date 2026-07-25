@@ -1,7 +1,7 @@
 name: chess_traps
 description: "A new Flutter project."
 publish_to: "none"
-version: 1.4.1+10
+version: 1.4.1+11
 
 environment:
   sdk: ^3.10.0
@@ -29,6 +29,7 @@ dependencies:
   riverpod_annotation: ^4.0.0
   shared_preferences: ^2.5.5
   url_launcher: ^6.3.2
+  package_info_plus: ^10.2.1
   fast_immutable_collections: ^11.1.0
   google_mobile_ads: ^8.0.0
   splash_master: ^0.0.3

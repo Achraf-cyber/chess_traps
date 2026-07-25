@@ -243,5 +243,31 @@
         "type": "int"
       }
     }
-  }
+  },
+  "statistics": "Statistiques",
+  "currentStreak": "Série actuelle",
+  "streakDays": "{count, plural, =1{1 jour} other{{count} jours}}",
+  "@streakDays": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "trapsLearned": "Pièges appris",
+  "learnedProgress": "{learned} sur {total}",
+  "@learnedProgress": {
+    "placeholders": {
+      "learned": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "gamesPlayed": "Parties jouées",
+  "soundAndHaptics": "Son et vibrations",
+  "soundEffects": "Effets sonores",
+  "hapticFeedback": "Retour haptique"
 }

@@ -12,6 +12,7 @@ import 'presentation/screens/search_by_moves/trap_search_screen.dart';
 import 'presentation/screens/traps/trap_list_screen.dart';
 import 'presentation/screens/play/play_screen.dart';
 import 'package:chess_traps/presentation/screens/onboarding/onboarding_screen.dart';
+import 'package:chess_traps/presentation/screens/splash/animated_splash_screen.dart';
 
 part 'router.g.dart';
 
@@ -20,13 +21,16 @@ final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 bool hasCompletedOnboarding = false;
 
 final GoRouter router = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/splash',
   navigatorKey: _rootNavigatorKey,
   observers: [
     FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
   ],
   redirect: (context, state) {
-    if (!hasCompletedOnboarding && state.matchedLocation != '/onboarding') {
+    final loc = state.matchedLocation;
+    // The animated splash routes itself onward once its animation finishes.
+    if (loc == '/splash') return null;
+    if (!hasCompletedOnboarding && loc != '/onboarding') {
       return '/onboarding';
     }
     return null;
@@ -131,4 +135,13 @@ class OnboardingRoute extends GoRouteData with $OnboardingRoute {
   @override
   Page<void> buildPage(BuildContext context, GoRouterState state) =>
       const NoTransitionPage(child: OnboardingScreen());
+}
+
+@TypedGoRoute<SplashRoute>(path: '/splash')
+class SplashRoute extends GoRouteData with $SplashRoute {
+  const SplashRoute();
+
+  @override
+  Page<void> buildPage(BuildContext context, GoRouterState state) =>
+      const NoTransitionPage(child: AnimatedSplashScreen());
 }

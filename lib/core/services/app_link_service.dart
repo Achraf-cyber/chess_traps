@@ -8,18 +8,25 @@ class AppLinkService {
   // Update this to your deployed Vercel/Website domain
   static const String _host = 'chess-traps.vercel.app';
 
+  /// Trap index from a deep link that launched the app while it was closed.
+  /// The splash screen consumes this after its animation so the link isn't
+  /// clobbered when the splash routes onward. Null when there is none.
+  static int? pendingInitialTrapIndex;
+
   static Future<void> init(GoRouter router) async {
-    // 1. Handle initial link (opened when app was closed)
+    // 1. Handle initial link (opened when app was closed). Store it rather
+    //    than navigating now — the animated splash is the initial route and
+    //    would otherwise overwrite the target when it finishes.
     try {
       final initialUri = await _appLinks.getInitialLink();
       if (initialUri != null) {
-        _handleUri(initialUri, router);
+        pendingInitialTrapIndex = _parseTrapIndex(initialUri);
       }
     } catch (e) {
       debugPrint('Failed to get initial app link: $e');
     }
 
-    // 2. Listen for incoming links while app is running
+    // 2. Listen for incoming links while app is running (navigate immediately).
     _appLinks.uriLinkStream
         .listen((uri) {
           _handleUri(uri, router);
@@ -27,6 +34,17 @@ class AppLinkService {
         .onError((Object err) {
           debugPrint('App Link Error: $err');
         });
+  }
+
+  /// Extracts the trap index from a `/trap/:id` link on our host, or null.
+  static int? _parseTrapIndex(Uri uri) {
+    final hostMatches = uri.host == _host || (kDebugMode && uri.host.isEmpty);
+    if (!hostMatches) return null;
+    final segments = uri.pathSegments;
+    if (segments.length >= 2 && segments.first == 'trap') {
+      return int.tryParse(segments[1]);
+    }
+    return null;
   }
 
   static void _handleUri(Uri uri, GoRouter router) {

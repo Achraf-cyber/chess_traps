@@ -19,6 +19,10 @@ part 'play_screen.g.dart';
 enum PlayerColor { white, black, random }
 enum GameResult { win, loss, draw }
 
+/// Who the opponent is: the Stockfish engine, or a second human sharing the
+/// device (local pass-and-play).
+enum GameMode { engine, friend }
+
 class PlayGameState {
   PlayGameState({
     required this.chess,
@@ -30,6 +34,8 @@ class PlayGameState {
     required this.avgEngineDelaySecs,
     required this.moveHistory,
     required this.fenHistory,
+    this.mode = GameMode.engine,
+    this.winnerSide,
     this.browseIndex,
     this.gameResult,
     this.lastMove,
@@ -50,6 +56,15 @@ class PlayGameState {
   final List<String> moveHistory;
   final List<String> fenHistory;
   final int? browseIndex;
+
+  /// Which opponent this game is against.
+  final GameMode mode;
+
+  /// The side that won (checkmate). Null for a draw or an ongoing game. Used
+  /// for friend-mode results, where there is no single "user" perspective.
+  final Side? winnerSide;
+
+  bool get isFriendMode => mode == GameMode.friend;
 
   /// Moves to mate; positive if white is delivering it, negative if black is.
   /// Null when the position isn't a forced mate.
@@ -83,6 +98,9 @@ class PlayGameState {
     int? mateIn,
     bool clearMateIn = false,
     bool? resigned,
+    GameMode? mode,
+    Side? winnerSide,
+    bool clearWinnerSide = false,
   }) {
     return PlayGameState(
       chess: chess ?? this.chess,
@@ -100,6 +118,10 @@ class PlayGameState {
       browseIndex: clearBrowseIndex ? null : (browseIndex ?? this.browseIndex),
       mateIn: clearMateIn ? null : (mateIn ?? this.mateIn),
       resigned: clearResult ? false : (resigned ?? this.resigned),
+      mode: mode ?? this.mode,
+      winnerSide: (clearResult || clearWinnerSide)
+          ? null
+          : (winnerSide ?? this.winnerSide),
     );
   }
 }
@@ -240,7 +262,12 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     state = state.copyWith(browseIndex: index, clearBrowseIndex: index == null);
   }
 
-  void startGame(PlayerColor color, int elo, {double avgDelaySecs = 1.0}) {
+  void startGame(
+    PlayerColor color,
+    int elo, {
+    double avgDelaySecs = 1.0,
+    GameMode mode = GameMode.engine,
+  }) {
     final actualColor = color == PlayerColor.random
         ? (DateTime.now().millisecondsSinceEpoch % 2 == 0
               ? PlayerColor.white
@@ -251,12 +278,14 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       chess: Chess.initial,
       userColor: actualColor,
       elo: elo,
+      mode: mode,
       isPlaying: true,
       engineThinking: false,
       evaluation: 0,
       clearResult: true,
       clearLastMove: true,
       clearMateIn: true,
+      clearWinnerSide: true,
       avgEngineDelaySecs: avgDelaySecs,
       moveHistory: [],
       fenHistory: [Chess.initial.fen],
@@ -264,7 +293,8 @@ class PlayGameNotifier extends _$PlayGameNotifier {
 
     _hapticService.playMove();
 
-    if (actualColor == PlayerColor.black) {
+    // Only the engine plays automatically; in friend mode both sides are human.
+    if (mode == GameMode.engine && actualColor == PlayerColor.black) {
       state = state.copyWith(engineThinking: true);
       ref.read(chessEngineProvider).playMove(Chess.initial.fen, elo);
     }
@@ -311,21 +341,61 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       _hapticService.playMove();
     }
 
-    if (nextPos.isCheckmate) {
-      final winnerSide = nextPos.turn.opposite;
-      final userSide = state.userColor == PlayerColor.white ? Side.white : Side.black;
-      final result = (winnerSide == userSide) ? GameResult.win : GameResult.loss;
-      _recordResult(result);
-      state = state.copyWith(isPlaying: false, gameResult: result);
-      return;
-    } else if (nextPos.outcome == Outcome.draw) {
-      _recordResult(GameResult.draw);
-      state = state.copyWith(isPlaying: false, gameResult: GameResult.draw);
-      return;
-    }
+    if (_maybeEndGame(nextPos)) return;
+
+    // Friend mode: the turn simply passes to the other human — no engine.
+    if (state.isFriendMode) return;
 
     state = state.copyWith(engineThinking: true);
     ref.read(chessEngineProvider).playMove(nextPos.fen, state.elo);
+  }
+
+  /// Handles a terminal position for either mode: records the result and
+  /// updates state. Returns true if the game is over. Assumes the moving
+  /// move is already reflected in [state.moveHistory].
+  bool _maybeEndGame(Position pos) {
+    if (pos.isCheckmate) {
+      final winner = pos.turn.opposite;
+      if (state.isFriendMode) {
+        ref.read(playHistoryProvider.notifier).addFriendGame(
+              winner == Side.white ? 'white' : 'black',
+              state.moveHistory,
+            );
+        // gameResult is only a "game over" sentinel here; friend-mode UI
+        // reads winnerSide for the actual result.
+        state = state.copyWith(
+          isPlaying: false,
+          gameResult: GameResult.win,
+          winnerSide: winner,
+        );
+      } else {
+        final userSide =
+            state.userColor == PlayerColor.white ? Side.white : Side.black;
+        final result = winner == userSide ? GameResult.win : GameResult.loss;
+        _recordResult(result);
+        state = state.copyWith(
+          isPlaying: false,
+          gameResult: result,
+          winnerSide: winner,
+        );
+      }
+      return true;
+    } else if (pos.outcome == Outcome.draw) {
+      if (state.isFriendMode) {
+        ref
+            .read(playHistoryProvider.notifier)
+            .addFriendGame('draw', state.moveHistory);
+      } else {
+        _recordResult(GameResult.draw);
+      }
+      state = state.copyWith(
+        isPlaying: false,
+        gameResult: GameResult.draw,
+        clearWinnerSide: true,
+      );
+      return true;
+    }
+    return false;
   }
 
   void _onEngineMove(String moveUci) {
@@ -366,16 +436,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
         _hapticService.playMove();
       }
 
-      if (nextPos.isCheckmate) {
-        final winnerSide = nextPos.turn.opposite;
-        final userSide = state.userColor == PlayerColor.white ? Side.white : Side.black;
-        final result = (winnerSide == userSide) ? GameResult.win : GameResult.loss;
-        _recordResult(result);
-        state = state.copyWith(isPlaying: false, gameResult: result);
-      } else if (nextPos.outcome == Outcome.draw) {
-        _recordResult(GameResult.draw);
-        state = state.copyWith(isPlaying: false, gameResult: GameResult.draw);
-      }
+      _maybeEndGame(nextPos);
     });
   }
 
@@ -391,11 +452,27 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     }
   }
 
-  /// User gives up mid-game: counts as a loss and shows the result dialog,
-  /// same as being checkmated, but flagged as [PlayGameState.resigned] so the
-  /// dialog can say so.
+  /// User gives up mid-game. In engine mode this is a user loss. In friend
+  /// mode the side to move resigns, so the other side wins.
   void resign() {
     if (!state.isPlaying) return;
+
+    if (state.isFriendMode) {
+      final loser = state.chess.turn;
+      final winner = loser.opposite;
+      ref.read(playHistoryProvider.notifier).addFriendGame(
+            winner == Side.white ? 'white' : 'black',
+            state.moveHistory,
+          );
+      state = state.copyWith(
+        isPlaying: false,
+        gameResult: GameResult.win, // sentinel; UI reads winnerSide
+        winnerSide: winner,
+        resigned: true,
+      );
+      return;
+    }
+
     _recordResult(GameResult.loss);
     state = state.copyWith(
       isPlaying: false,
@@ -433,6 +510,29 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       fenHistory.add(pos.fen);
     }
 
+    if (game.isFriendGame) {
+      final winner = switch (game.result) {
+        'white' => Side.white,
+        'black' => Side.black,
+        _ => null,
+      };
+      state = state.copyWith(
+        chess: pos,
+        isPlaying: false,
+        engineThinking: false,
+        evaluation: 0,
+        mode: GameMode.friend,
+        gameResult: GameResult.win, // sentinel; UI reads winnerSide
+        winnerSide: winner,
+        clearWinnerSide: winner == null,
+        clearLastMove: true,
+        moveHistory: game.pgnMoves,
+        fenHistory: fenHistory,
+        clearBrowseIndex: true,
+      );
+      return;
+    }
+
     final result = switch (game.result) {
       'win' => GameResult.win,
       'loss' => GameResult.loss,
@@ -444,7 +544,9 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       isPlaying: false,
       engineThinking: false,
       evaluation: 0,
+      mode: GameMode.engine,
       gameResult: result,
+      clearWinnerSide: true,
       clearLastMove: true,
       moveHistory: game.pgnMoves,
       fenHistory: fenHistory,
@@ -462,16 +564,24 @@ class PlayGameNotifier extends _$PlayGameNotifier {
 
   void takeback() {
     if (!state.isPlaying || state.engineThinking) return;
-    if (state.fenHistory.length <= 2) return; // Need at least user's move + engine's move to pop
 
-    final newFenHistory = List<String>.from(state.fenHistory)..removeLast()..removeLast();
-    final newMoveHistory = List<String>.from(state.moveHistory)..removeLast()..removeLast();
-    
+    // Friend mode: undo a single ply (both players share the device). Engine
+    // mode: pop the pair (user move + engine reply) so it stays the user's turn.
+    final plies = state.isFriendMode ? 1 : 2;
+    if (state.fenHistory.length <= plies) return;
+
+    final newFenHistory = List<String>.from(state.fenHistory);
+    final newMoveHistory = List<String>.from(state.moveHistory);
+    for (var i = 0; i < plies; i++) {
+      newFenHistory.removeLast();
+      newMoveHistory.removeLast();
+    }
+
     final previousFen = newFenHistory.last;
     final parsed = Setup.parseFen(previousFen);
 
     final newChess = Chess.fromSetup(parsed);
-    
+
     state = state.copyWith(
       chess: newChess,
       fenHistory: newFenHistory,
@@ -479,7 +589,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       clearLastMove: true,
       clearResult: true,
     );
-    ref.read(chessEngineProvider).stopAnalysis();
+    if (!state.isFriendMode) ref.read(chessEngineProvider).stopAnalysis();
   }
 }
 
@@ -493,6 +603,7 @@ class PlayScreen extends ConsumerStatefulWidget {
 class _PlayScreenState extends ConsumerState<PlayScreen> {
   int _currentElo = 1500;
   PlayerColor _currentColor = PlayerColor.white;
+  GameMode _currentMode = GameMode.engine;
   bool _boardFlipped = false;
 
   @override
@@ -608,7 +719,10 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         backgroundColor: context.colors.surface,
         surfaceTintColor: Colors.transparent,
         actions: [
-          if (gameState.isPlaying && !gameState.engineThinking)
+          // Hints come from the engine — not available in local friend games.
+          if (gameState.isPlaying &&
+              !gameState.engineThinking &&
+              !gameState.isFriendMode)
             IconButton(
               icon: const Icon(Icons.lightbulb_outline_rounded),
               tooltip: context.phrase.hint,
@@ -633,24 +747,39 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     GameResult result,
     PlayGameNotifier notifier,
   ) {
-    final resigned = ref.read(playGameProvider).resigned;
-    final (title, subtitle, icon) = switch (result) {
-      GameResult.win => (
-        context.phrase.you_won,
-        context.phrase.congratulations,
-        Icons.emoji_events_rounded
-      ),
-      GameResult.loss => (
-        context.phrase.stockfish_won,
-        resigned ? context.phrase.you_resigned : context.phrase.better_luck_next_time,
-        Icons.psychology_rounded,
-      ),
-      GameResult.draw => (
-        context.phrase.draw,
-        context.phrase.well_played,
-        Icons.handshake_rounded
-      ),
-    };
+    final playState = ref.read(playGameProvider);
+    final resigned = playState.resigned;
+
+    final (String title, String subtitle, IconData icon) = playState.isFriendMode
+        // Friend game: report which side won, not a user-relative result.
+        ? (playState.winnerSide == null
+            ? (context.phrase.draw, context.phrase.well_played, Icons.handshake_rounded)
+            : (
+                playState.winnerSide == Side.white
+                    ? context.phrase.whiteWins
+                    : context.phrase.blackWins,
+                resigned
+                    ? context.phrase.opponentResigned
+                    : context.phrase.congratulations,
+                Icons.emoji_events_rounded,
+              ))
+        : switch (result) {
+            GameResult.win => (
+              context.phrase.you_won,
+              context.phrase.congratulations,
+              Icons.emoji_events_rounded
+            ),
+            GameResult.loss => (
+              context.phrase.stockfish_won,
+              resigned ? context.phrase.you_resigned : context.phrase.better_luck_next_time,
+              Icons.psychology_rounded,
+            ),
+            GameResult.draw => (
+              context.phrase.draw,
+              context.phrase.well_played,
+              Icons.handshake_rounded
+            ),
+          };
 
     showDialog<void>(
       context: context,
@@ -672,7 +801,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
           ElevatedButton(
             onPressed: () {
               Navigator.pop(ctx);
-              notifier.startGame(_currentColor, _currentElo);
+              notifier.startGame(_currentColor, _currentElo, mode: _currentMode);
             },
             child: Text(context.phrase.play_again),
           ),
@@ -694,15 +823,48 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
-            context.phrase.opponent_strength,
-            style: context.textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.w800,
-            ),
-            textAlign: TextAlign.center,
+          // Opponent mode: engine vs local friend
+          SegmentedButton<GameMode>(
+            segments: [
+              ButtonSegment(
+                value: GameMode.engine,
+                label: Text(context.phrase.vsStockfish),
+                icon: const Icon(Icons.smart_toy_outlined),
+              ),
+              ButtonSegment(
+                value: GameMode.friend,
+                label: Text(context.phrase.vsFriend),
+                icon: const Icon(Icons.people_alt_outlined),
+              ),
+            ],
+            selected: {_currentMode},
+            onSelectionChanged: (set) =>
+                setState(() => _currentMode = set.first),
           ),
-          const SizedBox(height: 16),
-          // History Display
+          const SizedBox(height: 24),
+          if (_currentMode == GameMode.engine)
+            Text(
+              context.phrase.opponent_strength,
+              style: context.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w800,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          if (_currentMode == GameMode.engine) const SizedBox(height: 16),
+          if (_currentMode == GameMode.friend) ...[
+            Icon(Icons.people_alt_rounded,
+                size: 40, color: context.colors.primary),
+            const SizedBox(height: 12),
+            Text(
+              context.phrase.passAndPlayHint,
+              textAlign: TextAlign.center,
+              style: context.textTheme.bodyMedium?.copyWith(
+                color: context.colors.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 24),
+          ],
+          // History Display (vs-engine record)
           Container(
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(
@@ -740,53 +902,54 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             ),
           ),
           const SizedBox(height: 24),
-          Text(
-            context.phrase.eloLabel(_currentElo),
-            style: context.textTheme.headlineMedium?.copyWith(
-              color: context.colors.primary,
-              fontWeight: FontWeight.bold,
+          if (_currentMode == GameMode.engine) ...[
+            Text(
+              context.phrase.eloLabel(_currentElo),
+              style: context.textTheme.headlineMedium?.copyWith(
+                color: context.colors.primary,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
-          ),
-          Slider(
-            value: _currentElo.toDouble(),
-            min: 800,
-            max: 3200,
-            divisions: 24,
-            label: _currentElo.toString(),
-            onChanged: (val) => setState(() => _currentElo = val.toInt()),
-          ),
-
-          Text(
-            context.phrase.play_as,
-            style: context.textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.w800,
+            Slider(
+              value: _currentElo.toDouble(),
+              min: 800,
+              max: 3200,
+              divisions: 24,
+              label: _currentElo.toString(),
+              onChanged: (val) => setState(() => _currentElo = val.toInt()),
             ),
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 16),
-          SegmentedButton<PlayerColor>(
-            segments: [
-              ButtonSegment(
-                value: PlayerColor.white,
-                label: Text(context.phrase.white),
-                icon: const Icon(Icons.circle_outlined),
+            Text(
+              context.phrase.play_as,
+              style: context.textTheme.titleLarge?.copyWith(
+                fontWeight: FontWeight.w800,
               ),
-              ButtonSegment(
-                value: PlayerColor.random,
-                label: Text(context.phrase.random),
-                icon: const Icon(Icons.casino_outlined),
-              ),
-              ButtonSegment(
-                value: PlayerColor.black,
-                label: Text(context.phrase.black),
-                icon: const Icon(Icons.circle),
-              ),
-            ],
-            selected: {_currentColor},
-            onSelectionChanged: (set) =>
-                setState(() => _currentColor = set.first),
-          ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 16),
+            SegmentedButton<PlayerColor>(
+              segments: [
+                ButtonSegment(
+                  value: PlayerColor.white,
+                  label: Text(context.phrase.white),
+                  icon: const Icon(Icons.circle_outlined),
+                ),
+                ButtonSegment(
+                  value: PlayerColor.random,
+                  label: Text(context.phrase.random),
+                  icon: const Icon(Icons.casino_outlined),
+                ),
+                ButtonSegment(
+                  value: PlayerColor.black,
+                  label: Text(context.phrase.black),
+                  icon: const Icon(Icons.circle),
+                ),
+              ],
+              selected: {_currentColor},
+              onSelectionChanged: (set) =>
+                  setState(() => _currentColor = set.first),
+            ),
+          ],
           const Spacer(),
           if (history.savedGames.isNotEmpty)
             Padding(
@@ -802,7 +965,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             ),
           ElevatedButton(
             onPressed: () {
-              notifier.startGame(_currentColor, _currentElo);
+              notifier.startGame(_currentColor, _currentElo, mode: _currentMode);
             },
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -839,10 +1002,22 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
           itemBuilder: (ctx, index) {
             final game = games[index];
             final date = DateTime.tryParse(game.date);
-            final (icon, color) = switch (game.result) {
-              'win' => (Icons.emoji_events_rounded, Colors.green),
-              'loss' => (Icons.psychology_rounded, Colors.red),
-              _ => (Icons.handshake_rounded, Colors.orange),
+            final (icon, color) = game.isFriendGame
+                ? switch (game.result) {
+                    'white' => (Icons.emoji_events_rounded, Colors.blueGrey),
+                    'black' => (Icons.emoji_events_rounded, Colors.blueGrey),
+                    _ => (Icons.handshake_rounded, Colors.orange),
+                  }
+                : switch (game.result) {
+                    'win' => (Icons.emoji_events_rounded, Colors.green),
+                    'loss' => (Icons.psychology_rounded, Colors.red),
+                    _ => (Icons.handshake_rounded, Colors.orange),
+                  };
+            // Result summary for friend games shows the winning side.
+            final friendResult = switch (game.result) {
+              'white' => context.phrase.whiteWins,
+              'black' => context.phrase.blackWins,
+              _ => context.phrase.draw,
             };
             return ListTile(
               leading: Icon(icon, color: color),
@@ -851,7 +1026,26 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                     ? '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}'
                     : game.date,
               ),
-              subtitle: Text('${game.pgnMoves.length} ${context.phrase.moves}'),
+              subtitle: Text(
+                '${game.pgnMoves.length} ${context.phrase.moves}'
+                '${game.isFriendGame ? ' · $friendResult' : ''}',
+              ),
+              trailing: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                decoration: BoxDecoration(
+                  color: context.colors.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  game.isFriendGame
+                      ? context.phrase.vsFriend
+                      : context.phrase.vsStockfish,
+                  style: context.textTheme.labelSmall?.copyWith(
+                    fontWeight: FontWeight.w600,
+                    color: context.colors.onSurfaceVariant,
+                  ),
+                ),
+              ),
               onTap: () {
                 Navigator.pop(ctx);
                 notifier.viewSavedGame(game);
@@ -897,32 +1091,52 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     PlayGameState state,
     PlayGameNotifier notifier,
   ) {
+    final isFriend = state.isFriendMode;
     final isWhite = state.userColor == PlayerColor.white;
     final mySide = isWhite ? Side.white : Side.black;
     final opponentSide = isWhite ? Side.black : Side.white;
 
-    final currentFen = state.browseIndex != null 
-        ? state.fenHistory[state.browseIndex!] 
+    final currentFen = state.browseIndex != null
+        ? state.fenHistory[state.browseIndex!]
         : state.chess.fen;
-        
-    final baseOrientation = isWhite ? Side.white : Side.black;
+
+    // Friend mode auto-orients so the side to move sits at the bottom (based on
+    // the live game, not the browsed ply, so browsing doesn't spin the board).
+    final baseOrientation = isFriend
+        ? state.chess.turn
+        : (isWhite ? Side.white : Side.black);
     final boardOrientation = _boardFlipped ? baseOrientation.opposite : baseOrientation;
-    // Determine if it's the user's turn
-    final isUserTurn =
-        state.isPlaying &&
-        !state.engineThinking &&
-        state.browseIndex == null &&
-        ((state.chess.turn == Side.white && isWhite) ||
-            (state.chess.turn == Side.black && !isWhite));
+    final topSide = boardOrientation.opposite;
+    final bottomSide = boardOrientation;
+
+    // In friend mode both sides are human, so any non-browsed position is
+    // playable; in engine mode only when it's the user's colour to move.
+    final isUserTurn = isFriend
+        ? (state.isPlaying && state.browseIndex == null)
+        : (state.isPlaying &&
+            !state.engineThinking &&
+            state.browseIndex == null &&
+            ((state.chess.turn == Side.white && isWhite) ||
+                (state.chess.turn == Side.black && !isWhite)));
 
     final captured = getCapturedPieces(state.chess.board);
     final materialScore = calculateMaterialScore(state.chess.board);
-    final userAdvantage = isWhite ? materialScore : -materialScore;
+    // Which side sits at top/bottom of the board. Engine mode keeps the user
+    // at the bottom (unchanged); friend mode follows the auto-flip.
+    final bottomPlayerSide = isFriend ? bottomSide : mySide;
+    final topPlayerSide = isFriend ? topSide : opponentSide;
+    // Material advantage from the bottom player's perspective.
+    final bottomAdvantage =
+        bottomPlayerSide == Side.white ? materialScore : -materialScore;
+    // Whichever side is moving owns any promotion (for picker glyph colour).
+    final promotingIsWhite = isFriend ? state.chess.turn == Side.white : isWhite;
+    String sideName(Side s) =>
+        s == Side.white ? context.phrase.white : context.phrase.black;
 
     return Column(
       children: [
         const SizedBox(height: 16),
-        // Engine indicator
+        // Top player indicator (opponent / top side)
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: Row(
@@ -931,20 +1145,25 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 width: 10,
                 height: 10,
                 decoration: BoxDecoration(
-                  color: isWhite ? Colors.black87 : Colors.white,
+                  color: (isFriend ? topSide : (isWhite ? Side.black : Side.white)) ==
+                          Side.white
+                      ? Colors.white
+                      : Colors.black87,
                   shape: BoxShape.circle,
                   border: Border.all(color: context.colors.outline),
                 ),
               ),
               const SizedBox(width: 8),
               Text(
-                context.phrase.stockfishLabel(state.elo),
+                isFriend
+                    ? sideName(topSide)
+                    : context.phrase.stockfishLabel(state.elo),
                 style: context.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
               ),
               const Spacer(),
-              if (state.engineThinking)
+              if (!isFriend && state.engineThinking)
                 Row(
                   children: [
                     Text(
@@ -964,13 +1183,13 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             ],
           ),
         ),
-        // Opponent Captured Pieces (My pieces that opponent captured)
+        // Top player's captured pieces (pieces the top player has taken)
         Padding(
           padding: const EdgeInsets.only(left: 34.0, right: 16.0, top: 4.0, bottom: 8.0),
           child: _CapturedPiecesRow(
-            pieces: captured[opponentSide]!,
-            side: mySide,
-            advantage: userAdvantage < 0 ? -userAdvantage : null,
+            pieces: captured[topPlayerSide]!,
+            side: bottomPlayerSide,
+            advantage: bottomAdvantage < 0 ? -bottomAdvantage : null,
           ),
         ),
         // Chessboard and Evaluation Bar
@@ -979,23 +1198,28 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: LayoutBuilder(
               builder: (context, constraints) {
-                final maxBoardWidth = constraints.maxWidth - 20 - 8;
+                // No engine eval bar in friend mode, so the board gets the
+                // full width there.
+                final reserved = isFriend ? 0.0 : (20 + 8);
+                final maxBoardWidth = constraints.maxWidth - reserved;
                 final size = min(maxBoardWidth, constraints.maxHeight);
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      height: size,
-                      width: 20,
-                      child: EvaluationBar(
-                        evaluation: state.evaluation,
-                        isReversed: !isWhite,
-                        label: state.mateIn == null
-                            ? null
-                            : 'M${state.mateIn!.abs()}',
+                    if (!isFriend) ...[
+                      SizedBox(
+                        height: size,
+                        width: 20,
+                        child: EvaluationBar(
+                          evaluation: state.evaluation,
+                          isReversed: !isWhite,
+                          label: state.mateIn == null
+                              ? null
+                              : 'M${state.mateIn!.abs()}',
+                        ),
                       ),
-                    ),
-                    const SizedBox(width: 8),
+                      const SizedBox(width: 8),
+                    ],
                     SizedBox(
                       width: size,
                       height: size,
@@ -1015,7 +1239,15 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                                       ),
                                     }),
                               game: cg.GameData(
-                                playerSide: isWhite ? cg.PlayerSide.white : cg.PlayerSide.black,
+                                // Friend mode: whoever is to move controls the
+                                // board, so both humans can play in turn.
+                                playerSide: isFriend
+                                    ? (state.chess.turn == Side.white
+                                        ? cg.PlayerSide.white
+                                        : cg.PlayerSide.black)
+                                    : (isWhite
+                                        ? cg.PlayerSide.white
+                                        : cg.PlayerSide.black),
                                 sideToMove: state.chess.turn,
                                 validMoves: state.chess.legalMoves.asIMapSquareISet,
                                 // Promotion is handled by our own dialog in
@@ -1023,7 +1255,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                                 // selector is disabled here.
                                 promotionMove: null,
                                 onMove: (move, {bool? viaDragAndDrop}) =>
-                                    _handleUserMove(move, notifier, isWhite),
+                                    _handleUserMove(move, notifier, promotingIsWhite),
                                 isCheck: state.chess.isCheck,
                                 onPromotionSelection: (_) {},
                               ),
@@ -1041,7 +1273,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             ),
           ),
         ),
-        // Player indicator
+        // Bottom player indicator (you / bottom side)
         Padding(
           padding: const EdgeInsets.only(left: 16.0, right: 16.0, top: 12.0),
           child: Row(
@@ -1050,14 +1282,16 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 width: 10,
                 height: 10,
                 decoration: BoxDecoration(
-                  color: isWhite ? Colors.white : Colors.black87,
+                  color: (isFriend ? bottomSide : mySide) == Side.white
+                      ? Colors.white
+                      : Colors.black87,
                   shape: BoxShape.circle,
                   border: Border.all(color: context.colors.outline),
                 ),
               ),
               const SizedBox(width: 8),
               Text(
-                context.phrase.you,
+                isFriend ? sideName(bottomSide) : context.phrase.you,
                 style: context.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.w700,
                 ),
@@ -1075,7 +1309,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      context.phrase.your_turn,
+                      isFriend ? context.phrase.toMove : context.phrase.your_turn,
                       style: context.textTheme.labelSmall?.copyWith(
                         color: context.colors.onPrimaryContainer,
                         fontWeight: FontWeight.bold,
@@ -1086,13 +1320,13 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             ],
           ),
         ),
-        // My Captured Pieces (Opponent pieces I captured)
+        // Bottom player's captured pieces (pieces the bottom player has taken)
         Padding(
           padding: const EdgeInsets.only(left: 34.0, right: 16.0, top: 4.0),
           child: _CapturedPiecesRow(
-            pieces: captured[mySide]!,
-            side: opponentSide,
-            advantage: userAdvantage > 0 ? userAdvantage : null,
+            pieces: captured[bottomPlayerSide]!,
+            side: topPlayerSide,
+            advantage: bottomAdvantage > 0 ? bottomAdvantage : null,
           ),
         ),
         const SizedBox(height: 16),
@@ -1209,7 +1443,9 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             children: [
               Expanded(
                 child: OutlinedButton.icon(
-                  onPressed: (state.fenHistory.length > 2 && state.isPlaying && !state.engineThinking)
+                  onPressed: (state.fenHistory.length > (state.isFriendMode ? 1 : 2) &&
+                          state.isPlaying &&
+                          !state.engineThinking)
                       ? () {
                           notifier.takeback();
                         }

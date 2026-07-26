@@ -269,5 +269,12 @@
   "gamesPlayed": "Games played",
   "soundAndHaptics": "Sound & haptics",
   "soundEffects": "Sound effects",
-  "hapticFeedback": "Haptic feedback"
+  "hapticFeedback": "Haptic feedback",
+  "vsStockfish": "vs Stockfish",
+  "vsFriend": "vs Friend",
+  "passAndPlayHint": "Pass and play on one device — take turns with a friend.",
+  "whiteWins": "White wins!",
+  "blackWins": "Black wins!",
+  "toMove": "To move",
+  "opponentResigned": "Opponent resigned"
 }

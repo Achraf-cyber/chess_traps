@@ -1295,6 +1295,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Haptic feedback'**
   String get hapticFeedback;
+
+  /// No description provided for @vsStockfish.
+  ///
+  /// In en, this message translates to:
+  /// **'vs Stockfish'**
+  String get vsStockfish;
+
+  /// No description provided for @vsFriend.
+  ///
+  /// In en, this message translates to:
+  /// **'vs Friend'**
+  String get vsFriend;
+
+  /// No description provided for @passAndPlayHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Pass and play on one device — take turns with a friend.'**
+  String get passAndPlayHint;
+
+  /// No description provided for @whiteWins.
+  ///
+  /// In en, this message translates to:
+  /// **'White wins!'**
+  String get whiteWins;
+
+  /// No description provided for @blackWins.
+  ///
+  /// In en, this message translates to:
+  /// **'Black wins!'**
+  String get blackWins;
+
+  /// No description provided for @toMove.
+  ///
+  /// In en, this message translates to:
+  /// **'To move'**
+  String get toMove;
+
+  /// No description provided for @opponentResigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Opponent resigned'**
+  String get opponentResigned;
 }
 
 class _AppLocalizationsDelegate

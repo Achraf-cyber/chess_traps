@@ -665,4 +665,26 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get hapticFeedback => 'Respuesta háptica';
+
+  @override
+  String get vsStockfish => 'vs Stockfish';
+
+  @override
+  String get vsFriend => 'vs Amigo';
+
+  @override
+  String get passAndPlayHint =>
+      'Jugad en el mismo dispositivo, por turnos con un amigo.';
+
+  @override
+  String get whiteWins => '¡Ganan las blancas!';
+
+  @override
+  String get blackWins => '¡Ganan las negras!';
+
+  @override
+  String get toMove => 'Al turno';
+
+  @override
+  String get opponentResigned => 'El rival se rindió';
 }

@@ -269,5 +269,12 @@
   "gamesPlayed": "Parties jouées",
   "soundAndHaptics": "Son et vibrations",
   "soundEffects": "Effets sonores",
-  "hapticFeedback": "Retour haptique"
+  "hapticFeedback": "Retour haptique",
+  "vsStockfish": "vs Stockfish",
+  "vsFriend": "vs Ami",
+  "passAndPlayHint": "Jouez à deux sur le même appareil — chacun son tour.",
+  "whiteWins": "Les Blancs gagnent !",
+  "blackWins": "Les Noirs gagnent !",
+  "toMove": "Au trait",
+  "opponentResigned": "L'adversaire a abandonné"
 }

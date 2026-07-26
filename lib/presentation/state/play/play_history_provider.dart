@@ -3,22 +3,39 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SavedGame {
-  SavedGame({required this.date, required this.result, required this.pgnMoves});
+  SavedGame({
+    required this.date,
+    required this.result,
+    required this.pgnMoves,
+    this.mode = 'engine',
+  });
 
   factory SavedGame.fromJson(Map<String, dynamic> json) => SavedGame(
     date: json['date'] as String,
     result: json['result'] as String,
     pgnMoves: List<String>.from(json['pgnMoves'] as List),
+    // Backward compatible: games saved before local 1v1 existed have no
+    // mode field and were all played against the engine.
+    mode: (json['mode'] as String?) ?? 'engine',
   );
 
   final String date;
+
+  /// For engine games: 'win' | 'loss' | 'draw' (relative to the user).
+  /// For friend games: 'white' | 'black' | 'draw' (the winning side).
   final String result;
   final List<String> pgnMoves;
+
+  /// 'engine' (vs Stockfish) or 'friend' (local pass-and-play).
+  final String mode;
+
+  bool get isFriendGame => mode == 'friend';
 
   Map<String, dynamic> toJson() => {
     'date': date,
     'result': result,
     'pgnMoves': pgnMoves,
+    'mode': mode,
   };
 }
 
@@ -93,12 +110,25 @@ class PlayHistoryNotifier extends Notifier<PlayHistory> {
     _saveGame('draw', moveHistory);
   }
   
-  Future<void> _saveGame(String result, List<String> moveHistory) async {
+  /// Records a local pass-and-play game. These do NOT touch the vs-engine
+  /// W/D/L counters (there's no single "user" to attribute the result to);
+  /// they are only stored in the games list, tagged as friend games.
+  /// [result] is the winning side: 'white' | 'black' | 'draw'.
+  Future<void> addFriendGame(String result, List<String> moveHistory) async {
+    await _saveGame(result, moveHistory, mode: 'friend');
+  }
+
+  Future<void> _saveGame(
+    String result,
+    List<String> moveHistory, {
+    String mode = 'engine',
+  }) async {
     final prefs = await SharedPreferences.getInstance();
     final game = SavedGame(
       date: DateTime.now().toIso8601String(),
       result: result,
       pgnMoves: moveHistory,
+      mode: mode,
     );
     final newGames = [...state.savedGames, game];
     await prefs.setStringList(_gamesKey, newGames.map((g) => jsonEncode(g.toJson())).toList());

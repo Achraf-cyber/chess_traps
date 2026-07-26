@@ -269,5 +269,12 @@
   "gamesPlayed": "المباريات الملعوبة",
   "soundAndHaptics": "الصوت والاهتزاز",
   "soundEffects": "المؤثرات الصوتية",
-  "hapticFeedback": "الاهتزاز اللمسي"
+  "hapticFeedback": "الاهتزاز اللمسي",
+  "vsStockfish": "ضد ستوكفيش",
+  "vsFriend": "ضد صديق",
+  "passAndPlayHint": "العبا على نفس الجهاز — بالتناوب مع صديق.",
+  "whiteWins": "الأبيض يفوز!",
+  "blackWins": "الأسود يفوز!",
+  "toMove": "دورك",
+  "opponentResigned": "استسلم الخصم"
 }

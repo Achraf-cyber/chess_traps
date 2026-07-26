@@ -655,4 +655,25 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get hapticFeedback => 'الاهتزاز اللمسي';
+
+  @override
+  String get vsStockfish => 'ضد ستوكفيش';
+
+  @override
+  String get vsFriend => 'ضد صديق';
+
+  @override
+  String get passAndPlayHint => 'العبا على نفس الجهاز — بالتناوب مع صديق.';
+
+  @override
+  String get whiteWins => 'الأبيض يفوز!';
+
+  @override
+  String get blackWins => 'الأسود يفوز!';
+
+  @override
+  String get toMove => 'دورك';
+
+  @override
+  String get opponentResigned => 'استسلم الخصم';
 }

@@ -13,6 +13,10 @@ class RemoteConfigService {
   static const String _minTimeBetweenPopupsAdsInMinutesKey = 'min_time_between_popups_ads_in_minutes';
   static const String _maxNumberOfPopupAdsPerSessionKey = 'max_number_of_popup_ads_per_session';
   static const String _popupAdsActiveKey = 'popup_ads_active';
+  // How many trap detail views a user gets per day before the rewarded-unlock
+  // sheet appears. Deliberately generous by default so only heavy users ever
+  // see it; tune this remotely against retention without shipping a release.
+  static const String _dailyFreeTrapViewsKey = 'daily_free_trap_views';
 
   Future<void> initialize() async {
     try {
@@ -31,6 +35,7 @@ class RemoteConfigService {
         _minTimeBetweenPopupsAdsInMinutesKey: 5,
         _maxNumberOfPopupAdsPerSessionKey: 10,
         _popupAdsActiveKey: true,
+        _dailyFreeTrapViewsKey: 25,
       });
 
       await _remoteConfig.fetchAndActivate();
@@ -45,4 +50,11 @@ class RemoteConfigService {
   int get minTimeBetweenPopupsAdsInMinutes => _remoteConfig.getInt(_minTimeBetweenPopupsAdsInMinutesKey);
   int get maxNumberOfPopupAdsPerSession => _remoteConfig.getInt(_maxNumberOfPopupAdsPerSessionKey);
   bool get popupAdsActive => _remoteConfig.getBool(_popupAdsActiveKey);
+
+  /// Free trap views per day before the rewarded-unlock prompt. Falls back to
+  /// a generous default if the remote value is unset/zero.
+  int get dailyFreeTrapViews {
+    final v = _remoteConfig.getInt(_dailyFreeTrapViewsKey);
+    return v > 0 ? v : 25;
+  }
 }

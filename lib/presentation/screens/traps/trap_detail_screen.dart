@@ -14,6 +14,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
+import 'package:chess_traps/core/services/rewarded_ad_manager.dart';
+import 'package:chess_traps/core/services/remote_config_service.dart';
+import 'package:chess_traps/core/providers/daily_limit_provider.dart';
 
 import 'package:chess_traps/core/services/app_link_service.dart';
 import 'package:chess_traps/utils.dart';
@@ -58,11 +61,101 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
+      _enforceDailyLimit();
       Future.delayed(const Duration(seconds: 3), () {
         if (!mounted) return;
         InterstitialAdManager().onTrapViewed();
       });
     });
+  }
+
+  /// Rewarded-unlock gate: once the user has opened more than the (remote-
+  /// tunable, generous) daily free allowance of traps, offer to watch a
+  /// rewarded ad to unlock unlimited traps for the rest of the day. Declining
+  /// closes this trap. Ads-disabled builds never gate.
+  Future<void> _enforceDailyLimit() async {
+    if (!RemoteConfigService().adsEnabled) return;
+    final daily = ref.read(dailyLimitProvider.notifier);
+    await daily.ready;
+    if (!mounted) return;
+
+    if (daily.canViewTrap()) {
+      daily.incrementViewCount();
+      return;
+    }
+    _showDailyUnlockSheet(daily);
+  }
+
+  void _showDailyUnlockSheet(DailyLimitNotifier daily) {
+    showModalBottomSheet<void>(
+      context: context,
+      isDismissible: false,
+      enableDrag: false,
+      showDragHandle: false,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24)),
+      ),
+      builder: (sheetCtx) {
+        return SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(24, 24, 24, 24),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.lock_clock_rounded,
+                    size: 48, color: context.colors.primary),
+                const SizedBox(height: 16),
+                Text(
+                  context.phrase.daily_limit_reached,
+                  style: context.textTheme.titleLarge
+                      ?.copyWith(fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  context.phrase.limit_reached_body,
+                  textAlign: TextAlign.center,
+                  style: context.textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 24),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton.icon(
+                    icon: const Icon(Icons.play_circle_outline_rounded),
+                    label: Text(context.phrase.watchAd),
+                    style: ElevatedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 14),
+                    ),
+                    onPressed: () {
+                      RewardedAdManager().showAdIfAvailable(
+                        onRewardEarned: () {
+                          daily.unlockForToday();
+                          if (sheetCtx.mounted) Navigator.pop(sheetCtx);
+                        },
+                        onFailed: () {
+                          // No ad available: don't punish the user — grant the
+                          // unlock anyway so a failed fill never hard-blocks.
+                          daily.unlockForToday();
+                          if (sheetCtx.mounted) Navigator.pop(sheetCtx);
+                        },
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(height: 8),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(sheetCtx); // close sheet
+                    if (mounted) Navigator.of(context).maybePop(); // leave trap
+                  },
+                  child: Text(context.phrase.cancel),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
   }
 
   void _calculateBlunderIndex(ChessTrap trap) {

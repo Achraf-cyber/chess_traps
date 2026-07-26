@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:chess_traps/utils.dart';
 import 'package:chess_traps/core/services/audio_haptic_service.dart';
+import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
 import 'package:chess_traps/core/services/move_annotator.dart';
 import 'package:chess_traps/presentation/widgets/evaluation_bar.dart';
 import 'package:chess_traps/presentation/state/play/engine_analysis_provider.dart';
@@ -494,6 +495,13 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
   PlayerColor _currentColor = PlayerColor.white;
   bool _boardFlipped = false;
 
+  @override
+  void initState() {
+    super.initState();
+    // Preload so an interstitial is ready to show at the end-of-game break.
+    InterstitialAdManager().loadAd();
+  }
+
   /// Handles a move coming from the board. If it's a pawn reaching the last
   /// rank without a promotion role, ask the user which piece to promote to
   /// before committing the move.
@@ -653,7 +661,12 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         content: Text(subtitle, textAlign: TextAlign.center),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(ctx),
+            onPressed: () {
+              Navigator.pop(ctx);
+              // Monetize the "I'm done" moment — not "play again", to keep
+              // the replay loop friction-free. Capped by the shared cooldown.
+              InterstitialAdManager().onGameFinished();
+            },
             child: Text(context.phrase.close),
           ),
           ElevatedButton(

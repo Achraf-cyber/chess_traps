@@ -47,6 +47,17 @@ class InterstitialAdManager {
     }
   }
 
+  /// Natural break: the end of a completed game against the engine. Shows an
+  /// interstitial if the shared cooldown/session caps allow, otherwise just
+  /// preloads for next time. Not gated by the trap-view frequency counter.
+  void onGameFinished() {
+    if (AdHelper.canShowPopupAd() && _interstitialAd != null && !_isShowingAd) {
+      showAd();
+    } else if (_interstitialAd == null) {
+      loadAd();
+    }
+  }
+
   void showAd() {
     final ad = _interstitialAd;
     if (ad == null || _isShowingAd) return;

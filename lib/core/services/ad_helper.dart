@@ -26,7 +26,10 @@ class AdHelper {
     if (sessionPopupAdsShownCount >= remoteConfig.maxNumberOfPopupAdsPerSession) return false;
 
     final now = DateTime.now();
-    final cooldown = const Duration(minutes: 5);
+    // Honour the remote-configured cooldown instead of a hardcoded 5 min.
+    final cooldown = Duration(
+      minutes: remoteConfig.minTimeBetweenPopupsAdsInMinutes,
+    );
     if (lastPopupAdShownAt != null && now.difference(lastPopupAdShownAt!) < cooldown) {
       return false;
     }

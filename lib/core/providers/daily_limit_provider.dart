@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:chess_traps/core/services/remote_config_service.dart';
 
 part 'daily_limit_provider.g.dart';
 
@@ -24,12 +27,20 @@ class DailyLimitState {
   }
 }
 
-@riverpod
+@Riverpod(keepAlive: true)
 class DailyLimitNotifier extends _$DailyLimitNotifier {
   static const String _dateKey = 'daily_limit_date';
   static const String _viewsKey = 'daily_limit_views';
   static const String _unlockedKey = 'daily_limit_unlocked';
-  static const int maxFreeViews = 10;
+
+  /// Remote-tunable free-view threshold (generous default protects retention).
+  int get maxFreeViews => RemoteConfigService().dailyFreeTrapViews;
+
+  final Completer<void> _readyCompleter = Completer<void>();
+
+  /// Completes once today's persisted counts have loaded, so callers can gate
+  /// on an accurate [viewsToday] rather than the initial placeholder state.
+  Future<void> get ready => _readyCompleter.future;
 
   @override
   DailyLimitState build() {
@@ -57,6 +68,7 @@ class DailyLimitNotifier extends _$DailyLimitNotifier {
         state = const DailyLimitState(viewsToday: 0, isUnlocked: false);
       } catch (_) {}
     }
+    if (!_readyCompleter.isCompleted) _readyCompleter.complete();
   }
 
   String _getTodayDateString() {

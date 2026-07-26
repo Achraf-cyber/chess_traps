@@ -20,7 +20,7 @@ final class DailyLimitNotifierProvider
         argument: null,
         retry: null,
         name: r'dailyLimitProvider',
-        isAutoDispose: true,
+        isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );

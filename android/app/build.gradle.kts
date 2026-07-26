@@ -43,14 +43,22 @@ android {
         versionName = flutter.versionName
         multiDexEnabled = true
 
-        // Ship only real-phone ABIs. x86/x86_64 are emulator/Chromebook-only
-        // and were bloating every build with a second/third ~41 MB copy of the
-        // Stockfish native library. arm64 + armeabi-v7a covers ~all devices.
-        ndk {
-            abiFilters += listOf("armeabi-v7a", "arm64-v8a")
-        }
-
         resValue("string", "app_name", "Trapster")
+    }
+
+    // Drop the emulator-only ABIs. x86/x86_64 are not used by real phones, yet
+    // plugin AARs (notably multistockfish) ship a prebuilt ~41 MB .so for every
+    // ABI, which added ~46 MB of dead weight to each build.
+    //
+    // This is done at packaging time rather than via defaultConfig.ndk
+    // .abiFilters on purpose: abiFilters does not filter prebuilt jniLibs
+    // coming from dependency AARs, and it also conflicts with --split-per-abi
+    // ("Conflicting configuration ... cannot be present when splits abi filters
+    // are set"), which we use to produce the arm64-only test APK.
+    packaging {
+        jniLibs {
+            excludes += setOf("**/x86/**", "**/x86_64/**")
+        }
     }
 
     signingConfigs {

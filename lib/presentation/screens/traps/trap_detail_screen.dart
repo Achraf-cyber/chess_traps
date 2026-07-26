@@ -10,7 +10,6 @@ import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
@@ -24,11 +23,11 @@ import 'package:chess_traps/presentation/state/traps/trap_game_provider.dart';
 import 'package:chess_traps/presentation/state/play/engine_analysis_provider.dart';
 import 'package:chess_traps/core/providers/settings_provider.dart';
 
+import 'package:chess_traps/presentation/screens/traps/widgets/move_explanation_caption.dart';
+import 'package:chess_traps/presentation/screens/traps/widgets/related_traps_strip.dart';
+import 'package:chess_traps/presentation/widgets/chess/captured_pieces_row.dart';
 import 'package:chess_traps/presentation/widgets/evaluation_bar.dart';
 import 'package:chess_traps/data/traps/chess_trap.dart';
-import 'package:chess_traps/core/services/move_annotator.dart';
-import 'package:chess_traps/presentation/state/traps/traps_provider.dart';
-import 'package:chess_traps/presentation/widgets/explore_trap_card.dart';
 
 
 class TrapDetailScreen extends ConsumerStatefulWidget {
@@ -792,12 +791,11 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                               pieces: orientation == Side.white
                                   ? blackCaptured
                                   : whiteCaptured,
-                              isWhite: orientation == Side.black,
+                              side: orientation,
                               advantage: orientation == Side.white
-                                  ? (materialScore > 0 ? "+$materialScore" : "")
-                                  : (materialScore < 0
-                                        ? "+${-materialScore}"
-                                        : ""),
+                                  ? (materialScore > 0 ? materialScore : null)
+                                  : (materialScore < 0 ? -materialScore : null),
+                              height: 24,
                               width: size,
                             ),
                             const SizedBox(height: 4),
@@ -899,14 +897,11 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                               pieces: orientation == Side.white
                                   ? whiteCaptured
                                   : blackCaptured,
-                              isWhite: orientation == Side.white,
+                              side: orientation.opposite,
                               advantage: orientation == Side.white
-                                  ? (materialScore < 0
-                                        ? "+${-materialScore}"
-                                        : "")
-                                  : (materialScore > 0
-                                        ? "+$materialScore"
-                                        : ""),
+                                  ? (materialScore < 0 ? -materialScore : null)
+                                  : (materialScore > 0 ? materialScore : null),
+                              height: 24,
                               width: size,
                             ),
                           ],
@@ -1027,7 +1022,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                           ),
                           if (currentMoveIndex > 0) ...[
                             const SizedBox(height: 6),
-                            _MoveExplanationCaption(
+                            MoveExplanationCaption(
                               trapIndex: widget.trapIndex,
                               moveIndex: currentMoveIndex,
                               san: trap.moves[currentMoveIndex - 1],
@@ -1039,7 +1034,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                     const Divider(height: 1),
                     _buildVerticalMoveHistory(trap.moves, engineState),
                     if (currentMoveIndex >= maxMoves && !isPracticeMode)
-                      _RelatedTrapsStrip(trapId: trap.id),
+                      RelatedTrapsStrip(trapId: trap.id),
                   ],
                 ),
               ),
@@ -1358,175 +1353,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               ).animate().scale(duration: 150.ms, curve: Curves.easeOutBack),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class CapturedPiecesRow extends StatelessWidget {
-  const CapturedPiecesRow({
-    super.key,
-    required this.pieces,
-    required this.isWhite,
-    required this.advantage,
-    required this.width,
-  });
-  final List<Role> pieces;
-  final bool isWhite;
-  final String advantage;
-  final double width;
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      width: width,
-      height: 24,
-      child: Row(
-        children: [
-          Expanded(
-            child: Wrap(
-              children: pieces
-                  .map((role) => _PieceIcon(role: role, isWhite: !isWhite))
-                  .toList(),
-            ),
-          ),
-          if (advantage.isNotEmpty)
-            Text(
-              advantage,
-              style: context.textTheme.labelSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: context.colors.onSurfaceVariant,
-              ),
-            ),
-        ],
-      ),
-    );
-  }
-}
-
-class _PieceIcon extends StatelessWidget {
-  const _PieceIcon({required this.role, required this.isWhite});
-  final Role role;
-  final bool isWhite;
-
-  @override
-  Widget build(BuildContext context) {
-    FaIconData icon;
-    switch (role) {
-      case Role.pawn:
-        icon = FontAwesomeIcons.solidChessPawn;
-      case Role.knight:
-        icon = FontAwesomeIcons.solidChessKnight;
-      case Role.bishop:
-        icon = FontAwesomeIcons.solidChessBishop;
-      case Role.rook:
-        icon = FontAwesomeIcons.solidChessRook;
-      case Role.queen:
-        icon = FontAwesomeIcons.solidChessQueen;
-      default:
-        icon = FontAwesomeIcons.solidChessPawn;
-    }
-
-    return FaIcon(
-      icon,
-      size: 16,
-      color: isWhite ? Colors.grey[500] : Colors.grey[900],
-    );
-  }
-}
-
-/// Horizontal strip of related traps (same opening) shown once the current
-/// trap has been fully played through, so users have somewhere to go next.
-class _RelatedTrapsStrip extends ConsumerWidget {
-  const _RelatedTrapsStrip({required this.trapId});
-  final int trapId;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final related = ref.watch(relatedTrapsProvider(trapId));
-    if (related.isEmpty) return const SizedBox.shrink();
-
-    return Container(
-      padding: const EdgeInsets.fromLTRB(16, 12, 16, 16),
-      decoration: BoxDecoration(
-        border: Border(top: BorderSide(color: context.colors.outlineVariant.withValues(alpha: 0.3))),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            context.phrase.relatedTraps,
-            style: context.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
-          ),
-          const SizedBox(height: 10),
-          SizedBox(
-            height: 140,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemCount: related.length,
-              separatorBuilder: (_, _) => const SizedBox(width: 10),
-              itemBuilder: (context, index) => SizedBox(
-                width: 130,
-                child: ExploreTrapCard(trap: related[index]),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-/// One-line "why this move matters" caption under the board, computed
-/// offline via [explainMove] — no authoring, no network.
-class _MoveExplanationCaption extends ConsumerWidget {
-  const _MoveExplanationCaption({
-    required this.trapIndex,
-    required this.moveIndex,
-    required this.san,
-  });
-
-  final int trapIndex;
-  final int moveIndex; // position AFTER the move to explain
-  final String san;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final before = ref.watch(trapPositionProvider(trapIndex, moveIndex - 1));
-    final after = ref.watch(trapPositionProvider(trapIndex, moveIndex));
-    final move = before.parseSan(san);
-    if (move == null) return const SizedBox.shrink();
-
-    final explanation = explainMove(
-      context: context,
-      before: before,
-      move: move,
-      after: after,
-      san: san,
-    );
-
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-      decoration: BoxDecoration(
-        color: context.colors.primaryContainer.withValues(alpha: 0.4),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Row(
-        children: [
-          Icon(Icons.lightbulb_outline_rounded, size: 14, color: context.colors.primary),
-          const SizedBox(width: 6),
-          Expanded(
-            child: Text(
-              explanation,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: context.textTheme.labelSmall?.copyWith(
-                color: context.colors.onSurface,
-                fontWeight: FontWeight.w500,
-              ),
-            ),
-          ),
-        ],
       ),
     );
   }

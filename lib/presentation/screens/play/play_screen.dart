@@ -45,11 +45,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     bool isWhite,
   ) async {
     if (move is NormalMove && move.promotion == null) {
-      final piece = ref
-          .read(playGameProvider)
-          .chess
-          .board
-          .pieceAt(move.from);
+      final piece = ref.read(playGameProvider).chess.board.pieceAt(move.from);
       final rank = move.to.rank;
       if (piece?.role == Role.pawn && (rank == 0 || rank == 7)) {
         final role = await _showPromotionPicker(isWhite);
@@ -93,12 +89,12 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
   }
 
   String _promotionGlyph(Role role) => switch (role) {
-        Role.queen => '♛',
-        Role.rook => '♜',
-        Role.bishop => '♝',
-        Role.knight => '♞',
-        _ => '',
-      };
+    Role.queen => '♛',
+    Role.rook => '♜',
+    Role.bishop => '♝',
+    Role.knight => '♞',
+    _ => '',
+  };
 
   /// Converts a UCI move history into standard algebraic notation by replaying
   /// from the initial position.
@@ -190,34 +186,44 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     final playState = ref.read(playGameProvider);
     final resigned = playState.resigned;
 
-    final (String title, String subtitle, IconData icon) = playState.isFriendMode
+    final (
+      String title,
+      String subtitle,
+      IconData icon,
+    ) = playState.isFriendMode
         // Friend game: report which side won, not a user-relative result.
         ? (playState.winnerSide == null
-            ? (context.phrase.draw, context.phrase.well_played, Icons.handshake_rounded)
-            : (
-                playState.winnerSide == Side.white
-                    ? context.phrase.whiteWins
-                    : context.phrase.blackWins,
-                resigned
-                    ? context.phrase.opponentResigned
-                    : context.phrase.congratulations,
-                Icons.emoji_events_rounded,
-              ))
+              ? (
+                  context.phrase.draw,
+                  context.phrase.well_played,
+                  Icons.handshake_rounded,
+                )
+              : (
+                  playState.winnerSide == Side.white
+                      ? context.phrase.whiteWins
+                      : context.phrase.blackWins,
+                  resigned
+                      ? context.phrase.opponentResigned
+                      : context.phrase.congratulations,
+                  Icons.emoji_events_rounded,
+                ))
         : switch (result) {
             GameResult.win => (
               context.phrase.you_won,
               context.phrase.congratulations,
-              Icons.emoji_events_rounded
+              Icons.emoji_events_rounded,
             ),
             GameResult.loss => (
               context.phrase.stockfish_won,
-              resigned ? context.phrase.you_resigned : context.phrase.better_luck_next_time,
+              resigned
+                  ? context.phrase.you_resigned
+                  : context.phrase.better_luck_next_time,
               Icons.psychology_rounded,
             ),
             GameResult.draw => (
               context.phrase.draw,
               context.phrase.well_played,
-              Icons.handshake_rounded
+              Icons.handshake_rounded,
             ),
           };
 
@@ -241,7 +247,11 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
           ElevatedButton(
             onPressed: () {
               Navigator.pop(ctx);
-              notifier.startGame(_currentColor, _currentElo, mode: _currentMode);
+              notifier.startGame(
+                _currentColor,
+                _currentElo,
+                mode: _currentMode,
+              );
             },
             child: Text(context.phrase.play_again),
           ),
@@ -292,8 +302,11 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             ),
           if (_currentMode == GameMode.engine) const SizedBox(height: 16),
           if (_currentMode == GameMode.friend) ...[
-            Icon(Icons.people_alt_rounded,
-                size: 40, color: context.colors.primary),
+            Icon(
+              Icons.people_alt_rounded,
+              size: 40,
+              color: context.colors.primary,
+            ),
             const SizedBox(height: 12),
             Text(
               context.phrase.passAndPlayHint,
@@ -405,7 +418,11 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             ),
           ElevatedButton(
             onPressed: () {
-              notifier.startGame(_currentColor, _currentElo, mode: _currentMode);
+              notifier.startGame(
+                _currentColor,
+                _currentElo,
+                mode: _currentMode,
+              );
             },
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -548,7 +565,9 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     final baseOrientation = isFriend
         ? Side.white
         : (isWhite ? Side.white : Side.black);
-    final boardOrientation = _boardFlipped ? baseOrientation.opposite : baseOrientation;
+    final boardOrientation = _boardFlipped
+        ? baseOrientation.opposite
+        : baseOrientation;
     final topSide = boardOrientation.opposite;
     final bottomSide = boardOrientation;
 
@@ -557,10 +576,10 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     final isUserTurn = isFriend
         ? (state.isPlaying && state.browseIndex == null)
         : (state.isPlaying &&
-            !state.engineThinking &&
-            state.browseIndex == null &&
-            ((state.chess.turn == Side.white && isWhite) ||
-                (state.chess.turn == Side.black && !isWhite)));
+              !state.engineThinking &&
+              state.browseIndex == null &&
+              ((state.chess.turn == Side.white && isWhite) ||
+                  (state.chess.turn == Side.black && !isWhite)));
 
     final captured = getCapturedPieces(state.chess.board);
     final materialScore = calculateMaterialScore(state.chess.board);
@@ -569,10 +588,13 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     final bottomPlayerSide = isFriend ? bottomSide : mySide;
     final topPlayerSide = isFriend ? topSide : opponentSide;
     // Material advantage from the bottom player's perspective.
-    final bottomAdvantage =
-        bottomPlayerSide == Side.white ? materialScore : -materialScore;
+    final bottomAdvantage = bottomPlayerSide == Side.white
+        ? materialScore
+        : -materialScore;
     // Whichever side is moving owns any promotion (for picker glyph colour).
-    final promotingIsWhite = isFriend ? state.chess.turn == Side.white : isWhite;
+    final promotingIsWhite = isFriend
+        ? state.chess.turn == Side.white
+        : isWhite;
     String sideName(Side s) =>
         s == Side.white ? context.phrase.white : context.phrase.black;
 
@@ -596,7 +618,10 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 width: 10,
                 height: 10,
                 decoration: BoxDecoration(
-                  color: (isFriend ? topSide : (isWhite ? Side.black : Side.white)) ==
+                  color:
+                      (isFriend
+                              ? topSide
+                              : (isWhite ? Side.black : Side.white)) ==
                           Side.white
                       ? Colors.white
                       : Colors.black87,
@@ -657,7 +682,12 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         ),
         // Top player's captured pieces (pieces the top player has taken)
         Padding(
-          padding: const EdgeInsets.only(left: 34.0, right: 16.0, top: 4.0, bottom: 8.0),
+          padding: const EdgeInsets.only(
+            left: 34.0,
+            right: 16.0,
+            top: 4.0,
+            bottom: 8.0,
+          ),
           child: CapturedPiecesRow(
             pieces: captured[topPlayerSide]!,
             side: bottomPlayerSide,
@@ -719,7 +749,9 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                                   ? null
                                   : ISet({
                                       cg.Arrow(
-                                        color: Colors.green.withValues(alpha: 0.8),
+                                        color: Colors.green.withValues(
+                                          alpha: 0.8,
+                                        ),
                                         orig: state.hintMove!.from,
                                         dest: state.hintMove!.to,
                                       ),
@@ -729,19 +761,24 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                                 // board, so both humans can play in turn.
                                 playerSide: isFriend
                                     ? (state.chess.turn == Side.white
-                                        ? cg.PlayerSide.white
-                                        : cg.PlayerSide.black)
+                                          ? cg.PlayerSide.white
+                                          : cg.PlayerSide.black)
                                     : (isWhite
-                                        ? cg.PlayerSide.white
-                                        : cg.PlayerSide.black),
+                                          ? cg.PlayerSide.white
+                                          : cg.PlayerSide.black),
                                 sideToMove: state.chess.turn,
-                                validMoves: state.chess.legalMoves.asIMapSquareISet,
+                                validMoves:
+                                    state.chess.legalMoves.asIMapSquareISet,
                                 // Promotion is handled by our own dialog in
                                 // _handleUserMove, so chessground's inline
                                 // selector is disabled here.
                                 promotionMove: null,
                                 onMove: (move, {bool? viaDragAndDrop}) =>
-                                    _handleUserMove(move, notifier, promotingIsWhite),
+                                    _handleUserMove(
+                                      move,
+                                      notifier,
+                                      promotingIsWhite,
+                                    ),
                                 isCheck: state.chess.isCheck,
                                 onPromotionSelection: (_) {},
                               ),
@@ -800,7 +837,9 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Text(
-                      isFriend ? context.phrase.toMove : context.phrase.your_turn,
+                      isFriend
+                          ? context.phrase.toMove
+                          : context.phrase.your_turn,
                       style: context.textTheme.labelSmall?.copyWith(
                         color: context.colors.onPrimaryContainer,
                         fontWeight: FontWeight.bold,
@@ -832,7 +871,8 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
               : Builder(
                   builder: (context) {
                     final sans = _sanMoves(state.moveHistory);
-                    final browseIdx = state.browseIndex ?? state.fenHistory.length - 1;
+                    final browseIdx =
+                        state.browseIndex ?? state.fenHistory.length - 1;
                     return ListView.builder(
                       scrollDirection: Axis.horizontal,
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -842,27 +882,39 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                         final whiteIdx = index * 2;
                         final blackIdx = index * 2 + 1;
                         return Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 12,
+                            vertical: 4,
+                          ),
                           margin: const EdgeInsets.only(right: 8),
                           decoration: BoxDecoration(
-                            color: context.colors.surfaceContainerHighest.withValues(alpha: 0.5),
+                            color: context.colors.surfaceContainerHighest
+                                .withValues(alpha: 0.5),
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              Text('$moveNum. ', style: TextStyle(color: context.colors.outline, fontSize: 13)),
+                              Text(
+                                '$moveNum. ',
+                                style: TextStyle(
+                                  color: context.colors.outline,
+                                  fontSize: 13,
+                                ),
+                              ),
                               MoveChip(
                                 san: sans[whiteIdx],
                                 highlighted: browseIdx == whiteIdx + 1,
-                                onTap: () => notifier.setBrowseIndex(whiteIdx + 1),
+                                onTap: () =>
+                                    notifier.setBrowseIndex(whiteIdx + 1),
                               ),
                               if (blackIdx < sans.length) ...[
                                 const SizedBox(width: 8),
                                 MoveChip(
                                   san: sans[blackIdx],
                                   highlighted: browseIdx == blackIdx + 1,
-                                  onTap: () => notifier.setBrowseIndex(blackIdx + 1),
+                                  onTap: () =>
+                                      notifier.setBrowseIndex(blackIdx + 1),
                                 ),
                               ],
                             ],
@@ -877,51 +929,59 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         // board above doesn't resize the instant a nav row's fixed height
         // first appears in the Column.
         Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-            child: Builder(
-              builder: (context) {
-                final lastIndex = state.fenHistory.length - 1;
-                final curr = state.browseIndex ?? lastIndex;
-                final atStart = curr == 0;
-                final atEnd = curr == lastIndex;
-                return Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    IconButton(
-                      icon: const Icon(Icons.first_page_rounded),
-                      tooltip: context.phrase.first_move,
-                      onPressed: atStart ? null : () => notifier.setBrowseIndex(0),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.chevron_left_rounded),
-                      tooltip: context.phrase.previous_move,
-                      onPressed: atStart ? null : () => notifier.setBrowseIndex(curr - 1),
-                    ),
-                    SizedBox(
-                      width: 56,
-                      child: Text(
-                        '${curr + 1} / ${lastIndex + 1}',
-                        textAlign: TextAlign.center,
-                        style: context.textTheme.labelMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+          child: Builder(
+            builder: (context) {
+              final lastIndex = state.fenHistory.length - 1;
+              final curr = state.browseIndex ?? lastIndex;
+              final atStart = curr == 0;
+              final atEnd = curr == lastIndex;
+              return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.first_page_rounded),
+                    tooltip: context.phrase.first_move,
+                    onPressed: atStart
+                        ? null
+                        : () => notifier.setBrowseIndex(0),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.chevron_left_rounded),
+                    tooltip: context.phrase.previous_move,
+                    onPressed: atStart
+                        ? null
+                        : () => notifier.setBrowseIndex(curr - 1),
+                  ),
+                  SizedBox(
+                    width: 56,
+                    child: Text(
+                      '${curr + 1} / ${lastIndex + 1}',
+                      textAlign: TextAlign.center,
+                      style: context.textTheme.labelMedium?.copyWith(
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    IconButton(
-                      icon: const Icon(Icons.chevron_right_rounded),
-                      tooltip: context.phrase.next_move,
-                      onPressed: atEnd ? null : () => notifier.setBrowseIndex(curr + 1),
-                    ),
-                    IconButton(
-                      icon: const Icon(Icons.last_page_rounded),
-                      tooltip: context.phrase.last_move,
-                      onPressed: atEnd ? null : () => notifier.setBrowseIndex(lastIndex),
-                    ),
-                  ],
-                );
-              },
-            ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.chevron_right_rounded),
+                    tooltip: context.phrase.next_move,
+                    onPressed: atEnd
+                        ? null
+                        : () => notifier.setBrowseIndex(curr + 1),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.last_page_rounded),
+                    tooltip: context.phrase.last_move,
+                    onPressed: atEnd
+                        ? null
+                        : () => notifier.setBrowseIndex(lastIndex),
+                  ),
+                ],
+              );
+            },
           ),
+        ),
         if (state.gameResult != null)
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
@@ -934,7 +994,8 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             children: [
               Expanded(
                 child: OutlinedButton.icon(
-                  onPressed: (state.fenHistory.length > (state.isFriendMode ? 1 : 2) &&
+                  onPressed:
+                      (state.fenHistory.length > (state.isFriendMode ? 1 : 2) &&
                           state.isPlaying &&
                           !state.engineThinking)
                       ? () {

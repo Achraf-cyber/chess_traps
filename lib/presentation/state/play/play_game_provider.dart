@@ -12,6 +12,7 @@ import 'package:chess_traps/presentation/state/play/play_history_provider.dart';
 part 'play_game_provider.g.dart';
 
 enum PlayerColor { white, black, random }
+
 enum GameResult { win, loss, draw }
 
 /// The live engine evaluation, kept in its own provider so the fast-ticking
@@ -26,8 +27,9 @@ class PlayEvalNotifier extends Notifier<PlayEval> {
   void reset() => state = (cp: 0.0, mateIn: null);
 }
 
-final playEvalProvider =
-    NotifierProvider<PlayEvalNotifier, PlayEval>(PlayEvalNotifier.new);
+final playEvalProvider = NotifierProvider<PlayEvalNotifier, PlayEval>(
+  PlayEvalNotifier.new,
+);
 
 /// Who the opponent is: the Stockfish engine, or a second human sharing the
 /// device (local pass-and-play).
@@ -243,7 +245,9 @@ class PlayGameNotifier extends _$PlayGameNotifier {
         if (_pendingEval != null) {
           // Live eval lives in its own provider: this update repaints only the
           // evaluation bar, not the whole play screen.
-          ref.read(playEvalProvider.notifier).set(_pendingEval!, _pendingMateIn);
+          ref
+              .read(playEvalProvider.notifier)
+              .set(_pendingEval!, _pendingMateIn);
           _pendingEval = null;
         }
       });
@@ -365,7 +369,9 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     if (pos.isCheckmate) {
       final winner = pos.turn.opposite;
       if (state.isFriendMode) {
-        ref.read(playHistoryProvider.notifier).addFriendGame(
+        ref
+            .read(playHistoryProvider.notifier)
+            .addFriendGame(
               winner == Side.white ? 'white' : 'black',
               state.moveHistory,
             );
@@ -377,8 +383,9 @@ class PlayGameNotifier extends _$PlayGameNotifier {
           winnerSide: winner,
         );
       } else {
-        final userSide =
-            state.userColor == PlayerColor.white ? Side.white : Side.black;
+        final userSide = state.userColor == PlayerColor.white
+            ? Side.white
+            : Side.black;
         final result = winner == userSide ? GameResult.win : GameResult.loss;
         _recordResult(result);
         // A rare voice reward/commiseration on the game's outcome.
@@ -439,7 +446,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
         lastMove: move,
         moveHistory: [...state.moveHistory, move.uci],
         fenHistory: [...state.fenHistory, nextPos.fen],
-      clearBrowseIndex: true,
+        clearBrowseIndex: true,
       );
 
       if (nextPos.isCheck) {
@@ -453,7 +460,6 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       _maybeEndGame(nextPos);
     });
   }
-
 
   void _recordResult(GameResult result) {
     switch (result) {
@@ -474,7 +480,9 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     if (state.isFriendMode) {
       final loser = state.chess.turn;
       final winner = loser.opposite;
-      ref.read(playHistoryProvider.notifier).addFriendGame(
+      ref
+          .read(playHistoryProvider.notifier)
+          .addFriendGame(
             winner == Side.white ? 'white' : 'black',
             state.moveHistory,
           );

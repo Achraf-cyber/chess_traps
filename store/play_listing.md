@@ -7,18 +7,18 @@
 `Trapster: Traps & Gambits`  ← 25 chars
 
 ## Short description (max 80)
-`Master 871 chess traps & gambits. Practice openings, tactics & win faster.`  ← 74 chars
+`Master chess opening traps & gambits. Practice tactics and win faster.`  ← 70 chars
 
 ---
 
 ## Full description (max 4000)
 
-Trapster is the fastest way to learn the chess opening traps and gambits that win games. Study a library of **871 real traps** — from the Fried Liver and Légal's Mate to the Danish Gambit and Blackburne Shilling — then drill them until they're second nature.
+Trapster is the fastest way to learn the chess opening traps and gambits that win games. Study a huge library of **real, hand-picked traps** — from the Fried Liver and Légal's Mate to the Danish Gambit and Blackburne Shilling — then drill them until they're second nature.
 
 Whether you're a beginner who keeps falling for the same tricks or a club player hunting for a sharper opening repertoire, Trapster turns opening theory into muscle memory.
 
 ▶ WHY PLAYERS LOVE TRAPSTER
-• 871 hand-picked chess traps, gambits and opening tricks
+• A huge library of hand-picked chess traps, gambits and opening tricks
 • Learn the idea behind every move — not just memorization
 • Practice Mode: play the trap yourself, move by move
 • Avoid-the-Trap Mode: train to escape when the trap is set for YOU
@@ -46,9 +46,10 @@ Keywords: chess traps, opening traps, chess gambits, chess openings, chess tacti
 ---
 
 ## What's new (release notes template, max 500)
-`New: local 1v1 pass-and-play, natural piece flipping, sound effects, a refreshed premium look, and faster, smoother study. Now with 871 traps to master.`
+`New: local 1v1 pass-and-play, natural piece flipping, sound effects, a refreshed premium look, and faster, smoother study. Plus more traps to master.`
 
 ## ASO notes
 - Primary keyword to own: **Trapster** (brandable, no competitor collision).
+- Do NOT quote a trap count anywhere: the library grows, and a hardcoded number goes stale (and Play listings are slow to re-approve).
 - Keyword tail carries the search volume: traps, gambits, openings, tactics.
 - Keep the app name identical across Play title, icon label ("Trapster") and website `<title>` so brand searches converge.

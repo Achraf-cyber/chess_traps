@@ -20,12 +20,12 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Trapster — Master 871 Chess Traps & Gambits",
+    default: "Trapster — Master Chess Traps & Gambits",
     template: "%s | Trapster",
   },
   metadataBase: new URL("https://chess-traps.vercel.app"),
   description:
-    "Stop losing to early blunders. Learn and practice 871 chess opening traps and gambits with an interactive board, engine analysis and offline play — the Trapster app.",
+    "Stop losing to early blunders. Learn and practice chess opening traps and gambits with an interactive board, engine analysis and offline play — the Trapster app.",
   keywords: [
     "chess traps",
     "chess opening traps",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Trapster — Master 871 Chess Traps & Gambits",
+    title: "Trapster — Master Chess Traps & Gambits",
     description:
-      "Learn and practice 871 chess opening traps and gambits with an interactive board and engine analysis.",
+      "Learn and practice chess opening traps and gambits with an interactive board and engine analysis.",
     url: "https://chess-traps.vercel.app",
     siteName: "Trapster",
     locale: "en_US",
@@ -57,15 +57,15 @@ export const metadata: Metadata = {
         url: "/hero.png",
         width: 1200,
         height: 800,
-        alt: "Trapster — Master 871 Chess Traps & Gambits",
+        alt: "Trapster — Master Chess Traps & Gambits",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trapster — Master 871 Chess Traps & Gambits",
+    title: "Trapster — Master Chess Traps & Gambits",
     description:
-      "Learn and practice 871 chess opening traps and gambits with an interactive board and engine analysis.",
+      "Learn and practice chess opening traps and gambits with an interactive board and engine analysis.",
     images: ["/hero.png"],
   },
   robots: {

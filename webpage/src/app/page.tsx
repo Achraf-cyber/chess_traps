@@ -27,7 +27,7 @@ export default function Home() {
             <span className="accent-text">CHESS GAME</span>
           </h1>
           <p className="lede">
-            Learn 871 chess opening traps and gambits with an interactive board, play
+            Learn chess opening traps and gambits with an interactive board, play
             them out live against Stockfish, and get a hint or a plain-English
             explanation whenever you get stuck.
           </p>
@@ -36,7 +36,7 @@ export default function Home() {
               Get it on Google Play
             </Link>
             <Link href="/traps" className="btn-outline">
-              Browse All 871 Traps
+              Browse All Traps
             </Link>
           </div>
         </div>
@@ -56,8 +56,8 @@ export default function Home() {
         {/* Floating Stats */}
         <div className="floating-stats reveal" style={{ animationDelay: '0.5s' }}>
           <div className="stat-item">
-            <span className="stat-value">871</span>
-            <span className="stat-label">Unique Traps</span>
+            <span className="stat-value">FREE</span>
+            <span className="stat-label">No Subscription</span>
           </div>
           <div className="stat-item">
             <span className="stat-value">24/7</span>
@@ -115,7 +115,7 @@ export default function Home() {
         </div>
         <div style={{ marginTop: "2rem" }}>
           <Link href="/traps" className="btn-outline">
-            Browse all 871 traps →
+            Browse all traps →
           </Link>
         </div>
       </section>

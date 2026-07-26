@@ -180,8 +180,8 @@ export default async function TrapPage({ params }: Props) {
         <p className="trap-para">
           Open the {trap.trapName} in the {APP_NAME} app to play it out on a live
           board, drill it in practice mode, and learn how to avoid it when
-          it&apos;s set for you — plus 870 more chess traps and gambits, fully
-          offline.
+          it&apos;s set for you — along with the full library of chess traps and
+          gambits, fully offline.
         </p>
         <OpenInApp trapId={trap.id} />
       </section>
@@ -202,7 +202,7 @@ export default async function TrapPage({ params }: Props) {
 
       <div className="trap-foot">
         <Link href="/traps" className="btn-outline">
-          ← Browse all 871 chess traps
+          ← Browse all chess traps
         </Link>
       </div>
     </main>

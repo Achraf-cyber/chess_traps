@@ -1,21 +1,13 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import {
-  getAllTraps,
-  popularTraps,
-  trapsByOpening,
-  SITE_URL,
-  APP_NAME,
-} from "@/lib/traps";
-
-const total = getAllTraps().length;
+import { popularTraps, trapsByOpening, SITE_URL, APP_NAME } from "@/lib/traps";
 
 export const metadata: Metadata = {
   title: "All Chess Traps & Gambits — Complete List",
-  description: `Browse all ${total} chess opening traps and gambits — from the Scholar's Mate and Fried Liver to the Danish Gambit. Learn each one and practice it in the ${APP_NAME} app.`,
+  description: `Browse every chess opening trap and gambit — from the Scholar's Mate and Fried Liver to the Danish Gambit. Learn each one and practice it in the ${APP_NAME} app.`,
   alternates: { canonical: `${SITE_URL}/traps` },
   openGraph: {
-    title: `All ${total} Chess Traps & Gambits`,
+    title: "All Chess Traps & Gambits",
     description:
       "The complete library of chess opening traps — learn, practice and master them.",
     url: `${SITE_URL}/traps`,
@@ -32,8 +24,8 @@ export default function TrapsHub() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    name: `All ${total} Chess Traps & Gambits`,
-    description: `The complete library of ${total} chess opening traps and gambits.`,
+    name: "All Chess Traps & Gambits",
+    description: "The complete library of chess opening traps and gambits.",
     url: `${SITE_URL}/traps`,
   };
 
@@ -45,12 +37,12 @@ export default function TrapsHub() {
       />
 
       <header className="hub-header">
-        <span className="trap-tag">{total} traps · fully offline</span>
+        <span className="trap-tag">Complete library · fully offline</span>
         <h1 className="hub-title">Chess Traps &amp; Gambits</h1>
         <p className="lede">
-          The complete library of {total} chess opening traps — from beginner
-          classics like the Scholar&apos;s Mate to sharp master gambits. Tap any
-          trap to learn it, then master it move-by-move in the {APP_NAME} app.
+          The complete library of chess opening traps — from beginner classics
+          like the Scholar&apos;s Mate to sharp master gambits. Tap any trap to
+          learn it, then master it move-by-move in the {APP_NAME} app.
         </p>
       </header>
 

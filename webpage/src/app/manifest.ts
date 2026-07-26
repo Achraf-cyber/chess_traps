@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "Trapster — Chess Traps & Gambits",
     short_name: "Trapster",
     description:
-      "Learn and practice 871 chess opening traps and gambits with an interactive board and engine analysis.",
+      "Learn and practice chess opening traps and gambits with an interactive board and engine analysis.",
     start_url: "/",
     display: "standalone",
     background_color: "#000000",

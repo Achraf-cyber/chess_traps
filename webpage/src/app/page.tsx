@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { popularTraps } from "@/lib/traps";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com";
@@ -9,9 +10,9 @@ export default function Home() {
     <main className="relative min-h-screen">
       {/* Navigation */}
       <nav className="nav">
-        <div className="logo">Chess Traps</div>
+        <div className="logo">Trapster</div>
         <div className="flex gap-8 items-center">
-          <Link href="#features" className="btn-outline hidden md:flex">Features</Link>
+          <Link href="/traps" className="btn-outline hidden md:flex">Browse Traps</Link>
           <Link href={PLAY_STORE_URL} className="btn-primary">
             Download
           </Link>
@@ -26,15 +27,16 @@ export default function Home() {
             <span className="accent-text">CHESS GAME</span>
           </h1>
           <p className="lede">
-            Learn 1,000+ traps with an interactive board, play them out live against
-            Stockfish, and get a hint or a plain-English explanation whenever you get stuck.
+            Learn 871 chess opening traps and gambits with an interactive board, play
+            them out live against Stockfish, and get a hint or a plain-English
+            explanation whenever you get stuck.
           </p>
           <div className="cta-row">
             <Link href={PLAY_STORE_URL} className="btn-primary">
               Get it on Google Play
             </Link>
-            <Link href="#features" className="btn-outline">
-              Explore Features
+            <Link href="/traps" className="btn-outline">
+              Browse All 871 Traps
             </Link>
           </div>
         </div>
@@ -43,7 +45,7 @@ export default function Home() {
         <div className="hero-image-wrap reveal" style={{ animationDelay: '0.3s' }}>
           <Image
             src="/hero.png"
-            alt="Chess Traps App Mockup"
+            alt="Trapster app — chess trap library and interactive board"
             width={1200}
             height={800}
             priority
@@ -54,7 +56,7 @@ export default function Home() {
         {/* Floating Stats */}
         <div className="floating-stats reveal" style={{ animationDelay: '0.5s' }}>
           <div className="stat-item">
-            <span className="stat-value">1,000+</span>
+            <span className="stat-value">871</span>
             <span className="stat-label">Unique Traps</span>
           </div>
           <div className="stat-item">
@@ -100,6 +102,24 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Popular traps — internal links so crawlers reach the library fast */}
+      <section className="trap-page" style={{ paddingTop: 0 }}>
+        <h2 className="heading-section">Popular chess traps</h2>
+        <div className="related-grid">
+          {popularTraps(12).map((t) => (
+            <Link key={t.id} href={`/trap/${t.id}`} className="related-card">
+              <span className="related-name">{t.trapName}</span>
+              <span className="related-moves">{t.cleanMoves}</span>
+            </Link>
+          ))}
+        </div>
+        <div style={{ marginTop: "2rem" }}>
+          <Link href="/traps" className="btn-outline">
+            Browse all 871 traps →
+          </Link>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="section-cta reveal">
         <h2 className="heading-section">Ready to dominate?</h2>
@@ -111,7 +131,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-inner">
-          <div className="footer-logo logo">Chess Traps</div>
+          <div className="footer-logo logo">Trapster</div>
           <div className="footer-links">
             <Link href="https://achraf-cyber.github.io/privacy/privacy-policy.html">
               Privacy

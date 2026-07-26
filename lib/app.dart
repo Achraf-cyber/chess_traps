@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
@@ -17,6 +18,7 @@ import 'package:chess_traps/core/services/rewarded_ad_manager.dart';
 import 'package:chess_traps/core/services/remote_config_service.dart';
 import 'package:chess_traps/core/services/notification_service.dart';
 import 'package:chess_traps/core/services/consent_manager.dart';
+import 'package:chess_traps/core/services/audio_haptic_service.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_web_plugins/url_strategy.dart';
 
@@ -110,6 +112,10 @@ Future<void> runMainApp() async {
 /// screen for up to ~30s (the notification-permission dialog blocks until
 /// the user answers it).
 Future<void> _initSecondaryServices() async {
+  // Load the low-latency sound effects (move/capture/check). Non-blocking to
+  // the first frame; degrades to haptics-only if it fails.
+  unawaited(AudioHapticService().initialize());
+
   // Remote Config: generous timeout is fine now that the UI is visible;
   // defaults/cached values are used until (and if) the fetch completes.
   try {

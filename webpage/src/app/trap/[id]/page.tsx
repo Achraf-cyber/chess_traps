@@ -1,17 +1,65 @@
 import { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import ChessDiagram from "@/components/ChessDiagram";
+import OpenInApp from "@/components/OpenInApp";
+import {
+  getAllTraps,
+  getTrap,
+  seoTitle,
+  seoDescription,
+  explanationParagraphs,
+  movePairs,
+  moveCount,
+  isMate,
+  sideLabel,
+  openingLabel,
+  relatedTraps,
+  SITE_URL,
+  APP_NAME,
+} from "@/lib/traps";
 
-type Props = {
-  params: Promise<{ id: string }>;
-};
+type Props = { params: Promise<{ id: string }> };
+
+// Pre-render every trap page at build time (fast, fully indexable).
+export function generateStaticParams() {
+  return getAllTraps().map((t) => ({ id: String(t.id) }));
+}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
+  const trap = getTrap(Number(id));
+  if (!trap) return { title: "Trap not found" };
+
+  const title = seoTitle(trap);
+  const description = seoDescription(trap);
+  const url = `${SITE_URL}/trap/${trap.id}`;
+
   return {
-    title: `Opening Trap #${id}`,
-    description: `Discover the details of Chess Trap #${id}. Practice this sequence in the Chess Traps app with interactive analysis.`,
+    title,
+    description,
+    keywords: [
+      trap.trapName,
+      openingLabel(trap),
+      "chess trap",
+      "chess opening trap",
+      "chess gambit",
+      "chess tactics",
+      `${sideLabel(trap.targetSide)} wins`,
+    ],
+    alternates: { canonical: url },
     openGraph: {
-      title: `Master Chess Trap #${id}`,
-      description: `Learn the winning sequence for Trap #${id} in our premium chess app.`,
+      title,
+      description,
+      url,
+      siteName: APP_NAME,
+      type: "article",
+      images: ["/hero.png"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
       images: ["/hero.png"],
     },
   };
@@ -19,43 +67,143 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function TrapPage({ params }: Props) {
   const { id } = await params;
+  const trap = getTrap(Number(id));
+  if (!trap) notFound();
+
+  const winner = sideLabel(trap.targetSide);
+  const url = `${SITE_URL}/trap/${trap.id}`;
+  const paragraphs = explanationParagraphs(trap);
+  const pairs = movePairs(trap);
+  const related = relatedTraps(trap);
+  const opening = openingLabel(trap);
+
+  // Structured data: Article + Breadcrumb (rich results eligibility).
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        headline: `${trap.trapName} — Chess Trap`,
+        description: seoDescription(trap),
+        author: { "@type": "Organization", name: APP_NAME },
+        publisher: { "@type": "Organization", name: APP_NAME },
+        mainEntityOfPage: url,
+        about: opening,
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Chess Traps",
+            item: `${SITE_URL}/traps`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: trap.trapName,
+            item: url,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
-    <main className="min-h-screen flex-center p-10 text-center relative overflow-hidden">
-      <div className="hero-background" />
-      
-      <div className="glass-card max-w-lg w-full animate-fade-in">
-        <div className="logo mb-8 px-4 py-1 border border-white/20 rounded-full w-fit mx-auto text-xs uppercase tracking-widest text-accent">
-          CHESS TRAPS
+    <main className="trap-page">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <nav className="trap-crumbs" aria-label="Breadcrumb">
+        <Link href="/">Home</Link>
+        <span>/</span>
+        <Link href="/traps">Chess Traps</Link>
+        <span>/</span>
+        <span className="crumb-current">{trap.trapName}</span>
+      </nav>
+
+      <div className="trap-grid">
+        <div className="trap-board">
+          <ChessDiagram
+            fen={trap.fen}
+            alt={`Final position of the ${trap.trapName} — ${winner} wins`}
+          />
+          <p className="trap-board-cap">
+            Final position — {winner}{" "}
+            {isMate(trap) ? "delivers mate" : "is winning"}
+          </p>
         </div>
-        
-        <h1 className="heading-xl mb-6" style={{ fontSize: 'clamp(2rem, 8vw, 4rem)' }}>
-          TRAP <span style={{ color: 'var(--accent)' }}>#{id}</span>
-        </h1>
-        
-        <p className="text-subtle mb-10 leading-relaxed text-lg px-2">
-          This classic opening trap is available for exploration in the <br/>
-          <strong>Chess Traps</strong> application.
-        </p>
-        
-        <div className="flex-col gap-4">
-          <a href={`market://details?id=chesstraps.achrafcyber.com&url=https://chess-traps.vercel.app/trap/${id}`} 
-             className="btn-primary w-full py-4 rounded-xl font-bold text-lg shadow-xl shadow-accent/10 hover:shadow-accent/30 flex-center">
-            Open in App
-          </a>
-          
-          <div className="mt-6 flex-col gap-2">
-            <span className="text-faint text-sm">Don't have the app yet?</span>
-            <a href="https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com" 
-               className="text-subtle hover:text-accent transition-all duration-300 font-medium">
-              Get it on Google Play
-            </a>
-          </div>
+
+        <div className="trap-head">
+          <span className="trap-tag">{opening}</span>
+          <h1 className="trap-title">{trap.trapName}</h1>
+          <p className="trap-sub">
+            {winner} wins in {moveCount(trap)} moves
+            {isMate(trap) ? " by checkmate" : " with a decisive material gain"}.
+            {trap.metadata ? ` (${trap.metadata})` : ""}
+          </p>
+          <OpenInApp trapId={trap.id} />
         </div>
       </div>
 
-      <div className="absolute bottom-10 left-0 right-0 text-faint text-xs tracking-widest uppercase">
-        Master your openings • Chess Traps 2026
+      <section className="trap-section">
+        <h2>The moves</h2>
+        <div className="move-line">{trap.cleanMoves}</div>
+        <table className="move-table">
+          <tbody>
+            {pairs.map((p) => (
+              <tr key={p.n}>
+                <td className="mv-n">{p.n}.</td>
+                <td className="mv-w">{p.white}</td>
+                <td className="mv-b">{p.black ?? ""}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </section>
+
+      <section className="trap-section">
+        <h2>How the {trap.trapName} works</h2>
+        {paragraphs.map((para, i) => (
+          <p key={i} className="trap-para">
+            {para}
+          </p>
+        ))}
+      </section>
+
+      <section className="trap-section trap-cta-band">
+        <h2>Practice this trap move-by-move</h2>
+        <p className="trap-para">
+          Open the {trap.trapName} in the {APP_NAME} app to play it out on a live
+          board, drill it in practice mode, and learn how to avoid it when
+          it&apos;s set for you — plus 870 more chess traps and gambits, fully
+          offline.
+        </p>
+        <OpenInApp trapId={trap.id} />
+      </section>
+
+      {related.length > 0 && (
+        <section className="trap-section">
+          <h2>More {opening} traps</h2>
+          <div className="related-grid">
+            {related.map((r) => (
+              <Link key={r.id} href={`/trap/${r.id}`} className="related-card">
+                <span className="related-name">{r.trapName}</span>
+                <span className="related-moves">{r.cleanMoves}</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <div className="trap-foot">
+        <Link href="/traps" className="btn-outline">
+          ← Browse all 871 chess traps
+        </Link>
       </div>
     </main>
   );

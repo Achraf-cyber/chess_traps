@@ -1,10 +1,11 @@
 import { MetadataRoute } from "next";
+import { getAllTraps } from "@/lib/traps";
 
 const baseUrl = "https://chess-traps.vercel.app";
 
-// Keep in sync with the trap count shipped in the app
-// (lib/generated/chess/base_chess_traps.dart, ids 0..870).
-const TRAP_COUNT = 871;
+// Sourced from the same canonical data the trap pages render, so it can never
+// drift out of sync with the actual number of generated pages.
+const TRAP_COUNT = getAllTraps().length;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -15,6 +16,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: "monthly",
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/traps`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
     },
     {
       url: `${baseUrl}/terms`,

@@ -43,7 +43,14 @@ android {
         versionName = flutter.versionName
         multiDexEnabled = true
 
-        resValue("string", "app_name", "Chess Traps")
+        // Ship only real-phone ABIs. x86/x86_64 are emulator/Chromebook-only
+        // and were bloating every build with a second/third ~41 MB copy of the
+        // Stockfish native library. arm64 + armeabi-v7a covers ~all devices.
+        ndk {
+            abiFilters += listOf("armeabi-v7a", "arm64-v8a")
+        }
+
+        resValue("string", "app_name", "Trapster")
     }
 
     signingConfigs {

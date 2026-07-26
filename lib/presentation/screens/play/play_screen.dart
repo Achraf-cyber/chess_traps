@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:chess_traps/utils.dart';
 import 'package:chess_traps/core/services/audio_haptic_service.dart';
+import 'package:chess_traps/core/providers/settings_provider.dart';
 import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
 import 'package:chess_traps/core/services/move_annotator.dart';
 import 'package:chess_traps/presentation/widgets/evaluation_bar.dart';
@@ -18,6 +19,21 @@ part 'play_screen.g.dart';
 
 enum PlayerColor { white, black, random }
 enum GameResult { win, loss, draw }
+
+/// The live engine evaluation, kept in its own provider so the fast-ticking
+/// eval stream (up to ~5×/s while Stockfish thinks) only repaints the
+/// evaluation bar instead of rebuilding the entire play screen.
+typedef PlayEval = ({double cp, int? mateIn});
+
+class PlayEvalNotifier extends Notifier<PlayEval> {
+  @override
+  PlayEval build() => (cp: 0.0, mateIn: null);
+  void set(double cp, int? mateIn) => state = (cp: cp, mateIn: mateIn);
+  void reset() => state = (cp: 0.0, mateIn: null);
+}
+
+final playEvalProvider =
+    NotifierProvider<PlayEvalNotifier, PlayEval>(PlayEvalNotifier.new);
 
 /// Who the opponent is: the Stockfish engine, or a second human sharing the
 /// device (local pass-and-play).
@@ -224,22 +240,17 @@ class PlayGameNotifier extends _$PlayGameNotifier {
   }
 
   int? _pendingMateIn;
-  bool _pendingMateSet = false;
 
   void _throttleUpdate(double eval, {int? mateIn}) {
     _pendingEval = eval;
     _pendingMateIn = mateIn;
-    _pendingMateSet = true;
     if (_throttleTimer == null || !_throttleTimer!.isActive) {
       _throttleTimer = Timer(const Duration(milliseconds: 200), () {
         if (_pendingEval != null) {
-          state = state.copyWith(
-            evaluation: _pendingEval!,
-            mateIn: _pendingMateIn,
-            clearMateIn: _pendingMateSet && _pendingMateIn == null,
-          );
+          // Live eval lives in its own provider: this update repaints only the
+          // evaluation bar, not the whole play screen.
+          ref.read(playEvalProvider.notifier).set(_pendingEval!, _pendingMateIn);
           _pendingEval = null;
-          _pendingMateSet = false;
         }
       });
     }
@@ -273,6 +284,8 @@ class PlayGameNotifier extends _$PlayGameNotifier {
               ? PlayerColor.white
               : PlayerColor.black)
         : color;
+
+    ref.read(playEvalProvider.notifier).reset();
 
     state = state.copyWith(
       chess: Chess.initial,
@@ -343,7 +356,8 @@ class PlayGameNotifier extends _$PlayGameNotifier {
 
     if (_maybeEndGame(nextPos)) return;
 
-    // Friend mode: the turn simply passes to the other human — no engine.
+    // Friend mode: the turn simply passes to the other human — no engine. The
+    // board stays put; chessground flips the pieces to face the new mover.
     if (state.isFriendMode) return;
 
     state = state.copyWith(engineThinking: true);
@@ -373,6 +387,12 @@ class PlayGameNotifier extends _$PlayGameNotifier {
             state.userColor == PlayerColor.white ? Side.white : Side.black;
         final result = winner == userSide ? GameResult.win : GameResult.loss;
         _recordResult(result);
+        // A rare voice reward/commiseration on the game's outcome.
+        if (result == GameResult.win) {
+          _hapticService.playPraise();
+        } else {
+          _hapticService.playAww();
+        }
         state = state.copyWith(
           isPlaying: false,
           gameResult: result,
@@ -474,6 +494,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     }
 
     _recordResult(GameResult.loss);
+    _hapticService.playAww();
     state = state.copyWith(
       isPlaying: false,
       engineThinking: false,
@@ -502,6 +523,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
   /// Loads a previously saved game in read-only browse mode (no engine, no
   /// further moves) so the user can step through it.
   void viewSavedGame(SavedGame game) {
+    ref.read(playEvalProvider.notifier).reset();
     Position pos = Chess.initial;
     final fenHistory = <String>[pos.fen];
     for (final uci in game.pgnMoves) {
@@ -719,6 +741,23 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         backgroundColor: context.colors.surface,
         surfaceTintColor: Colors.transparent,
         actions: [
+          // Quick sound-effects mute toggle, always reachable during a game.
+          Builder(
+            builder: (context) {
+              final soundOn = ref.watch(
+                chessSettingsProvider.select((s) => s.soundEnabled),
+              );
+              return IconButton(
+                icon: Icon(
+                  soundOn ? Icons.volume_up_rounded : Icons.volume_off_rounded,
+                ),
+                tooltip: context.phrase.soundEffects,
+                onPressed: () => ref
+                    .read(chessSettingsProvider.notifier)
+                    .updateSoundEnabled(!soundOn),
+              );
+            },
+          ),
           // Hints come from the engine — not available in local friend games.
           if (gameState.isPlaying &&
               !gameState.engineThinking &&
@@ -1100,10 +1139,13 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         ? state.fenHistory[state.browseIndex!]
         : state.chess.fen;
 
-    // Friend mode auto-orients so the side to move sits at the bottom (based on
-    // the live game, not the browsed ply, so browsing doesn't spin the board).
+    // Friend mode keeps the board fixed (white at the bottom, black at the
+    // top — they never swap sides). Instead of rotating the whole board each
+    // turn, only the *pieces* flip to face whoever is to move (via the board's
+    // pieceOrientationBehavior below), which reads far more naturally across a
+    // shared device. The manual flip button still works via [_boardFlipped].
     final baseOrientation = isFriend
-        ? state.chess.turn
+        ? Side.white
         : (isWhite ? Side.white : Side.black);
     final boardOrientation = _boardFlipped ? baseOrientation.opposite : baseOrientation;
     final topSide = boardOrientation.opposite;
@@ -1132,6 +1174,14 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     final promotingIsWhite = isFriend ? state.chess.turn == Side.white : isWhite;
     String sideName(Side s) =>
         s == Side.white ? context.phrase.white : context.phrase.black;
+
+    // With the fixed friend-mode board, the "to move" badge follows whichever
+    // side is on the clock rather than always sitting at the bottom.
+    final friendLive = isFriend && state.isPlaying && state.browseIndex == null;
+    final showTopToMove = friendLive && state.chess.turn == topSide;
+    final showBottomToMove = isFriend
+        ? (friendLive && state.chess.turn == bottomSide)
+        : isUserTurn;
 
     return Column(
       children: [
@@ -1162,6 +1212,27 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
+              if (showTopToMove)
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 2,
+                    ),
+                    decoration: BoxDecoration(
+                      color: context.colors.primaryContainer,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      context.phrase.toMove,
+                      style: context.textTheme.labelSmall?.copyWith(
+                        color: context.colors.onPrimaryContainer,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
               const Spacer(),
               if (!isFriend && state.engineThinking)
                 Row(
@@ -1210,12 +1281,19 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                       SizedBox(
                         height: size,
                         width: 20,
-                        child: EvaluationBar(
-                          evaluation: state.evaluation,
-                          isReversed: !isWhite,
-                          label: state.mateIn == null
-                              ? null
-                              : 'M${state.mateIn!.abs()}',
+                        // Scoped to playEvalProvider so the fast eval stream
+                        // repaints only this bar, not the whole screen.
+                        child: Consumer(
+                          builder: (context, ref, _) {
+                            final PlayEval ev = ref.watch(playEvalProvider);
+                            return EvaluationBar(
+                              evaluation: ev.cp,
+                              isReversed: !isWhite,
+                              label: ev.mateIn == null
+                                  ? null
+                                  : 'M${ev.mateIn!.abs()}',
+                            );
+                          },
                         ),
                       ),
                       const SizedBox(width: 8),
@@ -1229,6 +1307,13 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                               orientation: boardOrientation,
                               fen: currentFen,
                               lastMove: state.lastMove,
+                              settings: cg.ChessboardSettings(
+                                // Friend mode: pieces flip to face whoever is
+                                // to move; the board itself never rotates.
+                                pieceOrientationBehavior: isFriend
+                                    ? cg.PieceOrientationBehavior.sideToPlay
+                                    : cg.PieceOrientationBehavior.facingUser,
+                              ),
                               shapes: state.hintMove == null
                                   ? null
                                   : ISet({
@@ -1265,6 +1350,11 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                               orientation: boardOrientation,
                               fen: currentFen,
                               lastMove: state.lastMove,
+                              settings: cg.ChessboardSettings(
+                                pieceOrientationBehavior: isFriend
+                                    ? cg.PieceOrientationBehavior.sideToPlay
+                                    : cg.PieceOrientationBehavior.facingUser,
+                              ),
                             ),
                     ),
                   ],
@@ -1296,7 +1386,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                   fontWeight: FontWeight.w700,
                 ),
               ),
-              if (isUserTurn)
+              if (showBottomToMove)
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Container(

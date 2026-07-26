@@ -4,7 +4,6 @@
 
 list(APPEND FLUTTER_PLUGIN_LIST
   app_links
-  audioplayers_windows
   firebase_core
   firebase_remote_config
   flutter_timezone

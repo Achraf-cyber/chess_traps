@@ -44,6 +44,9 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   Side orientation = Side.white;
   bool _orientationInitialized = false;
   final ScrollController _scrollController = ScrollController();
+  // Marks the currently-selected move row so the page can auto-scroll it into
+  // view when navigating with the arrows (the whole screen scrolls now).
+  final GlobalKey _selectedMoveKey = GlobalKey();
   Timer? _autoPlayTimer;
   bool isAutoPlaying = false;
   bool isPracticeMode = false;
@@ -171,18 +174,14 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   }
 
   void _scrollToCurrentMove() {
-    if (!_scrollController.hasClients) return;
-
-    final int rowIndex = (currentMoveIndex - 1) ~/ 2;
-    final double targetOffset = (rowIndex > 0) ? rowIndex * 44.0 : 0.0;
-
-    if (_scrollController.hasClients) {
-      _scrollController.animateTo(
-        targetOffset,
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    }
+    final ctx = _selectedMoveKey.currentContext;
+    if (ctx == null) return;
+    Scrollable.ensureVisible(
+      ctx,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+      alignment: 0.5,
+    );
   }
 
   void _updateMoveIndex(int newIndex, int maxMoves) {
@@ -254,6 +253,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           _updateMoveIndex(currentMoveIndex + 1, trap.moves.length);
 
           if (currentMoveIndex >= trap.moves.length) {
+            AudioHapticService().playPraise();
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(context.phrase.trapCompleted)),
             );
@@ -261,6 +261,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           }
         });
       } else {
+        AudioHapticService().playPraise();
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text(context.phrase.trapCompleted)),
         );
@@ -700,31 +701,26 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       ),
       body: LayoutBuilder(
         builder: (context, bodyConstraints) {
-          // Size the board area from the actual screen geometry instead of a
-          // fixed flex ratio: a fixed split starves the board on tall
-          // phones (tiny board, wasted space) or starves the info panel on
-          // short ones. The board wants the full width, capped at ~2/3 of
-          // the body height so the info panel always keeps a workable share.
+          // Make the whole screen scrollable. On short devices the board and
+          // the info panel can't both fit; rather than squeezing the bottom
+          // panel to nothing, everything is laid out at a comfortable size and
+          // the page scrolls. The board takes the full width, capped so it
+          // never eats more than ~58% of the viewport height.
+          final boardSize = math
+              .min(
+                bodyConstraints.maxWidth - 32,
+                bodyConstraints.maxHeight * 0.58,
+              )
+              .clamp(0.0, double.infinity);
           const boardOverhead = 106.0; // eval bar + captures + paddings
-          final chrome = 16.0 + (isPracticeMode ? 0.0 : 80.0); // spacers + nav
-          final desiredBoard = math.min(
-            bodyConstraints.maxWidth - 32,
-            bodyConstraints.maxHeight * 0.66 - boardOverhead - chrome,
-          );
-          final desiredTop = (desiredBoard + boardOverhead + chrome)
-              .clamp(0.0, bodyConstraints.maxHeight);
-          final topFlex =
-              ((desiredTop / bodyConstraints.maxHeight) * 100).round().clamp(1, 99);
-          final bottomFlex = 100 - topFlex;
+          final boardAreaHeight = boardSize + boardOverhead + 20;
 
-          return Column(
-        children: [
-          Expanded(
-            flex: topFlex,
+          return SingleChildScrollView(
+            controller: _scrollController,
             child: Column(
               children: [
-                const SizedBox(height: 8),
-                Expanded(
+                SizedBox(
+                  height: boardAreaHeight,
                   child: Center(
                     child: LayoutBuilder(
                       builder: (context, constraints) {
@@ -935,15 +931,10 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   _buildMoveNavigation(maxMoves, engineState),
                   const SizedBox(height: 4),
                 ],
-              ],
-            ),
-          ),
-          if (!isPracticeMode && !isAvoidMode)
-            Expanded(
-              flex: bottomFlex,
-              child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(
+                if (!isPracticeMode && !isAvoidMode)
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
                   color: context.colors.surfaceContainerLow,
                   borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(32),
@@ -957,6 +948,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   ],
                 ),
                 child: Column(
+                  mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                     Padding(
@@ -1056,51 +1048,48 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       ),
                     ),
                     const Divider(height: 1),
-                    Expanded(
-                      child: _buildVerticalMoveHistory(trap.moves, engineState),
-                    ),
+                    _buildVerticalMoveHistory(trap.moves, engineState),
                     if (currentMoveIndex >= maxMoves && !isPracticeMode)
                       _RelatedTrapsStrip(trapId: trap.id),
                   ],
                 ),
               ),
-            ),
-          if (isAvoidMode)
-            Expanded(
-              flex: bottomFlex,
-              child: Container(
-                padding: const EdgeInsets.all(24),
-                decoration: BoxDecoration(
-                  color: context.colors.primaryContainer.withValues(alpha: 0.3),
-                  borderRadius: const BorderRadius.vertical(
-                    top: Radius.circular(32),
+                if (isAvoidMode)
+                  Container(
+                    padding: const EdgeInsets.all(24),
+                    decoration: BoxDecoration(
+                      color: context.colors.primaryContainer.withValues(alpha: 0.3),
+                      borderRadius: const BorderRadius.vertical(
+                        top: Radius.circular(32),
+                      ),
+                    ),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.shield_rounded, size: 64, color: context.colors.primary),
+                        const SizedBox(height: 16),
+                        Text(
+                          context.phrase.avoidTrap,
+                          style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          context.phrase.findBetterMove,
+                          textAlign: TextAlign.center,
+                          style: context.textTheme.bodyLarge,
+                        ),
+                        const SizedBox(height: 24),
+                        OutlinedButton(
+                          onPressed: () => setState(() => isAvoidMode = false),
+                          child: Text(context.phrase.cancel),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.shield_rounded, size: 64, color: context.colors.primary),
-                    const SizedBox(height: 16),
-                    Text(
-                      context.phrase.avoidTrap,
-                      style: context.textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const SizedBox(height: 8),
-                    Text(
-                      context.phrase.findBetterMove,
-                      textAlign: TextAlign.center,
-                      style: context.textTheme.bodyLarge,
-                    ),
-                    const SizedBox(height: 24),
-                    OutlinedButton(
-                      onPressed: () => setState(() => isAvoidMode = false),
-                      child: Text(context.phrase.cancel),
-                    ),
-                  ],
-                ),
-              ),
+                const SizedBox(height: 24),
+              ],
             ),
-        ],
           );
         },
       ),
@@ -1171,6 +1160,22 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                           settingsNotifier.updateBoardTheme(theme);
                         }
                       },
+                    ),
+                    const SizedBox(height: 8),
+                    SwitchListTile(
+                      contentPadding: EdgeInsets.zero,
+                      secondary: Icon(
+                        settings.soundEnabled
+                            ? Icons.volume_up_rounded
+                            : Icons.volume_off_rounded,
+                        color: context.colors.onSurfaceVariant,
+                      ),
+                      title: Text(
+                        context.phrase.soundEffects,
+                        style: context.textTheme.labelLarge,
+                      ),
+                      value: settings.soundEnabled,
+                      onChanged: settingsNotifier.updateSoundEnabled,
                     ),
                   ],
                 ),
@@ -1249,7 +1254,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     }
 
     return ListView.builder(
-      controller: _scrollController,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       padding: const EdgeInsets.fromLTRB(24, 12, 24, 24),
       itemCount: pairs.length,
       itemBuilder: (context, index) {
@@ -1262,6 +1268,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
         final isBlackSelected = currentMoveIndex == blackMoveIndex;
 
         return Padding(
+          key: (isWhiteSelected || isBlackSelected) ? _selectedMoveKey : null,
           padding: const EdgeInsets.symmetric(vertical: 2.0),
           child: Row(
             children: [

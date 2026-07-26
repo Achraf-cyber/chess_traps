@@ -44,9 +44,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   Side orientation = Side.white;
   bool _orientationInitialized = false;
   final ScrollController _scrollController = ScrollController();
-  // Marks the currently-selected move row so the page can auto-scroll it into
-  // view when navigating with the arrows (the whole screen scrolls now).
-  final GlobalKey _selectedMoveKey = GlobalKey();
   Timer? _autoPlayTimer;
   bool isAutoPlaying = false;
   bool isPracticeMode = false;
@@ -173,17 +170,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     blunderIndex = lastLosingMoveIndex;
   }
 
-  void _scrollToCurrentMove() {
-    final ctx = _selectedMoveKey.currentContext;
-    if (ctx == null) return;
-    Scrollable.ensureVisible(
-      ctx,
-      duration: const Duration(milliseconds: 300),
-      curve: Curves.easeInOut,
-      alignment: 0.5,
-    );
-  }
-
   void _updateMoveIndex(int newIndex, int maxMoves) {
     if (newIndex < 0 || newIndex > maxMoves) {
       if (isAutoPlaying) _toggleAutoPlay(maxMoves);
@@ -194,7 +180,10 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     setState(() {
       currentMoveIndex = newIndex;
     });
-    WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToCurrentMove());
+    // Deliberately no auto-scroll: the whole page scrolls as one unit now, so
+    // pulling the move row into view would drag the board off-screen — exactly
+    // when the user most wants to watch it. The selected move stays
+    // highlighted; scrolling is left to the user.
   }
 
   void _toggleAutoPlay(int maxMoves) {
@@ -1268,7 +1257,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
         final isBlackSelected = currentMoveIndex == blackMoveIndex;
 
         return Padding(
-          key: (isWhiteSelected || isBlackSelected) ? _selectedMoveKey : null,
           padding: const EdgeInsets.symmetric(vertical: 2.0),
           child: Row(
             children: [

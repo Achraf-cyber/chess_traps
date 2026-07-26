@@ -1,7 +1,7 @@
 name: chess_traps
 description: "Trapster — learn, practice and master chess opening traps and gambits offline."
 publish_to: "none"
-version: 1.4.2+17
+version: 1.4.2+18
 
 environment:
   sdk: ^3.10.0

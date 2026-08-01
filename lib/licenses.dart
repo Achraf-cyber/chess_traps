@@ -118,6 +118,24 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """;
 
+const soundAttributions = """
+Some of the sound effects in this application come from Pixabay and are used
+under the Pixabay Content License (https://pixabay.com/service/license-summary/).
+
+- Sound Effect by Beto YT (https://pixabay.com/users/betoelguapillo-48669630/)
+  from Pixabay (https://pixabay.com/), content id 427528.
+
+- Sound Effect by freesound_community (https://pixabay.com/users/freesound_community-46691455/)
+  from Pixabay (https://pixabay.com/), content id 89142.
+
+- Sound Effect by DRAGON-STUDIO (https://pixabay.com/users/dragon-studio-38165424/)
+  from Pixabay (https://pixabay.com/sound-effects/), content id 499650.
+
+The success, castle, promotion, queen-capture, check-alert and defeat tones
+were synthesised for this application and are not derived from any
+third-party recording.
+""";
+
 const lichessAttributions = """
 The chess trap data in this application is sourced from public Lichess studies, 
 shared under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license.

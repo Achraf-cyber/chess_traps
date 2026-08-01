@@ -32,6 +32,7 @@ import 'theme/theme.dart';
 import 'theme/theme_utils.dart';
 
 import 'package:chess_traps/core/services/app_link_service.dart';
+
 Future<void> runMainApp() async {
   if (kIsWeb) {
     usePathUrlStrategy();
@@ -87,6 +88,9 @@ Future<void> runMainApp() async {
     yield const LicenseEntryWithLineBreaks(<String>[
       'lichess_data',
     ], lichessAttributions);
+    yield const LicenseEntryWithLineBreaks(<String>[
+      'sound_effects',
+    ], soundAttributions);
   });
 
   if (kDebugMode && (kIsWeb || Platform.isWindows)) {

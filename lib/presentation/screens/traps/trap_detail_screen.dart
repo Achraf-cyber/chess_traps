@@ -178,14 +178,41 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       return;
     }
 
-    HapticFeedback.lightImpact();
     setState(() {
       currentMoveIndex = newIndex;
     });
+    _voiceMoveAt(newIndex);
     // Deliberately no auto-scroll: the whole page scrolls as one unit now, so
     // pulling the move row into view would drag the board off-screen — exactly
     // when the user most wants to watch it. The selected move stays
     // highlighted; scrolling is left to the user.
+  }
+
+  /// Plays the sound for the move that *lands on* [index], so stepping forward
+  /// and stepping back both voice the move you can see highlighted.
+  ///
+  /// The trap trainer always uses [SoundProfile.simple]: the meme clips belong
+  /// to the play screen, and hearing them on every step of a study line would
+  /// wear thin fast.
+  void _voiceMoveAt(int index) {
+    if (index <= 0) {
+      // The starting position isn't a move; just acknowledge the tap.
+      if (AudioHapticService.hapticsEnabled) HapticFeedback.lightImpact();
+      return;
+    }
+    final audio = AudioHapticService();
+    final trap = ref.read(trapGameProvider(widget.trapIndex));
+    if (trap == null || index > trap.moves.length) return;
+
+    final before = ref.read(trapPositionProvider(widget.trapIndex, index - 1));
+    // parseSan only returns a legal move, so play() below cannot throw.
+    final move = before.parseSan(trap.moves[index - 1]);
+    if (move == null) {
+      // Unparseable SAN shouldn't happen, but a plain click beats silence.
+      audio.playQuietMove(SoundProfile.simple);
+      return;
+    }
+    audio.playMoveSound(SoundProfile.simple, before, move, before.play(move));
   }
 
   void _toggleAutoPlay(int maxMoves) {
@@ -234,7 +261,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
 
     if (san == expectedSan) {
       _wrongAttempts = 0;
-      HapticFeedback.heavyImpact();
+      // No sound here: _updateMoveIndex voices the move that was just played
+      // (and again for the opponent's reply below).
       _showFeedback(true);
       _updateMoveIndex(currentMoveIndex + 1, trap.moves.length);
 
@@ -244,7 +272,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           _updateMoveIndex(currentMoveIndex + 1, trap.moves.length);
 
           if (currentMoveIndex >= trap.moves.length) {
-            AudioHapticService().playPraise();
+            AudioHapticService().playSuccess(SoundProfile.simple);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(context.phrase.trapCompleted)),
             );
@@ -252,7 +280,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           }
         });
       } else {
-        AudioHapticService().playPraise();
+        AudioHapticService().playSuccess(SoundProfile.simple);
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text(context.phrase.trapCompleted)));
@@ -260,7 +288,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       }
     } else {
       _wrongAttempts++;
-      HapticFeedback.vibrate();
+      AudioHapticService().playFailure(SoundProfile.simple);
       _showFeedback(false);
       final showingHint = _wrongAttempts >= 2;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -310,7 +338,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     }
 
     if (isCorrect) {
-      HapticFeedback.heavyImpact();
+      AudioHapticService().playSuccess(SoundProfile.simple);
       _showFeedback(true);
       ScaffoldMessenger.of(
         context,
@@ -319,7 +347,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
         if (mounted) setState(() => isAvoidMode = false);
       });
     } else {
-      HapticFeedback.vibrate();
+      AudioHapticService().playFailure(SoundProfile.simple);
       _showFeedback(false);
       ScaffoldMessenger.of(
         context,
@@ -588,7 +616,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       .read(learnedTrapsProvider.notifier)
                       .toggleLearned(trap.id);
                   if (!isLearned) {
-                    AudioHapticService().playCapture();
+                    AudioHapticService().playSuccess(SoundProfile.simple);
                   }
                   break;
                 case 'share':

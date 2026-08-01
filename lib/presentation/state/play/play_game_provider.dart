@@ -302,7 +302,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       fenHistory: [Chess.initial.fen],
     );
 
-    _hapticService.playMove();
+    _hapticService.playQuietMove(SoundProfile.meme);
 
     // Only the engine plays automatically; in friend mode both sides are human.
     if (mode == GameMode.engine && actualColor == PlayerColor.black) {
@@ -327,8 +327,6 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       }
     }
 
-    final isCapture = move is NormalMove && pos.board.pieceAt(move.to) != null;
-
     Position nextPos;
     try {
       nextPos = pos.play(move);
@@ -344,13 +342,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       clearHintMove: true,
     );
 
-    if (nextPos.isCheck) {
-      _hapticService.playCheck();
-    } else if (isCapture) {
-      _hapticService.playCapture();
-    } else {
-      _hapticService.playMove();
-    }
+    _hapticService.playMoveSound(SoundProfile.meme, pos, move, nextPos);
 
     if (_maybeEndGame(nextPos)) return;
 
@@ -375,6 +367,8 @@ class PlayGameNotifier extends _$PlayGameNotifier {
               winner == Side.white ? 'white' : 'black',
               state.moveHistory,
             );
+        // Somebody at this device won, so it's always a cheer in friend mode.
+        _hapticService.playSuccess(SoundProfile.meme);
         // gameResult is only a "game over" sentinel here; friend-mode UI
         // reads winnerSide for the actual result.
         state = state.copyWith(
@@ -390,9 +384,9 @@ class PlayGameNotifier extends _$PlayGameNotifier {
         _recordResult(result);
         // A rare voice reward/commiseration on the game's outcome.
         if (result == GameResult.win) {
-          _hapticService.playPraise();
+          _hapticService.playSuccess(SoundProfile.meme);
         } else {
-          _hapticService.playAww();
+          _hapticService.playLoss(SoundProfile.meme, byCheckmate: true);
         }
         state = state.copyWith(
           isPlaying: false,
@@ -427,14 +421,14 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       if (!state.isPlaying) return;
 
       final move = NormalMove.fromUci(moveUci);
-      final isCapture = state.chess.board.pieceAt(move.to) != null;
+      final prevPos = state.chess;
       // Guard against the engine's move no longer being legal for the current
       // position (e.g. the position changed under this delayed callback).
       // Playing an illegal move throws PlayException; drop it and clear the
       // thinking flag rather than crashing.
       final Position nextPos;
       try {
-        nextPos = state.chess.play(move);
+        nextPos = prevPos.play(move);
       } on PlayException {
         state = state.copyWith(engineThinking: false);
         return;
@@ -449,13 +443,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
         clearBrowseIndex: true,
       );
 
-      if (nextPos.isCheck) {
-        _hapticService.playCheck();
-      } else if (isCapture) {
-        _hapticService.playCapture();
-      } else {
-        _hapticService.playMove();
-      }
+      _hapticService.playMoveSound(SoundProfile.meme, prevPos, move, nextPos);
 
       _maybeEndGame(nextPos);
     });
@@ -486,6 +474,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
             winner == Side.white ? 'white' : 'black',
             state.moveHistory,
           );
+      _hapticService.playLoss(SoundProfile.meme, byCheckmate: false);
       state = state.copyWith(
         isPlaying: false,
         gameResult: GameResult.win, // sentinel; UI reads winnerSide
@@ -496,7 +485,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     }
 
     _recordResult(GameResult.loss);
-    _hapticService.playAww();
+    _hapticService.playLoss(SoundProfile.meme, byCheckmate: false);
     state = state.copyWith(
       isPlaying: false,
       engineThinking: false,

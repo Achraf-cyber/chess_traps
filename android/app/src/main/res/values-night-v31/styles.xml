@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Hand-maintained; see values-v31/styles.xml. Without an explicit dark
+     windowSplashScreenBackground this inherits #FFFFFF from values-v31, which
+     flashes a white Android 12 splash at users in dark mode. -->
+<resources>
+  <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+    <item name="android:windowSplashScreenBackground">#000000</item>
+    <item name="android:windowSplashScreenAnimatedIcon">@drawable/splash_anim</item>
+    <item name="android:windowSplashScreenAnimationDuration">1000</item>
+  </style>
+</resources>

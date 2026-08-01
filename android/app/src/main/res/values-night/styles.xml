@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Hand-maintained. `dart run splash_master create` regenerates this file and
+     drops NormalTheme while forcing the light parent theme; re-apply this
+     version after ever running the generator again. -->
 <resources>
   <!-- Theme applied to the Android Window while the process is starting when the OS's Dark Mode setting is on -->
   <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">

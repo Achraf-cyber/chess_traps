@@ -7,6 +7,7 @@ import 'package:chess_traps/firebase_options.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -23,7 +24,6 @@ import 'package:chess_traps/core/services/audio_haptic_service.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 
 // import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:splash_master/splash_master.dart';
 
 import 'package:chess_traps/l10n/app_localizations.dart';
 import 'licenses.dart';
@@ -40,6 +40,13 @@ Future<void> runMainApp() async {
 
   debugPrint('app started');
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Draw behind the status and navigation bars. Android 15+ enforces
+  // edge-to-edge for apps targeting SDK 35 and above; declaring it here means
+  // we opt in on every version instead of getting the platform's fallback on
+  // some devices and not others. Screens already wrap their content in
+  // SafeArea, so nothing lands under the system bars.
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
 
   // Read Onboarding State
   final prefs = await SharedPreferences.getInstance();
@@ -75,8 +82,11 @@ Future<void> runMainApp() async {
 
   debugPrint('widget binding');
 
-  // Defer first frame to keep the native splash screen until SplashMaster.resume() is called.
-  SplashMaster.initialize();
+  // Hold the native splash screen up until the first Flutter frame is ready.
+  // splash_master 1.0.0 dropped its runtime API and is now a build-time
+  // generator only; these two framework calls are exactly what its
+  // initialize()/resume() wrapped, so the behaviour is unchanged.
+  WidgetsBinding.instance.deferFirstFrame();
 
   LicenseRegistry.addLicense(() async* {
     yield const LicenseEntryWithLineBreaks(<String>[
@@ -106,7 +116,7 @@ Future<void> runMainApp() async {
 
   // Dismiss the native splash only after the first Flutter frame is drawn.
   WidgetsBinding.instance.addPostFrameCallback((_) {
-    SplashMaster.resume();
+    WidgetsBinding.instance.allowFirstFrame();
     _initSecondaryServices();
   });
 }

@@ -1,21 +1,20 @@
 
-# Flutter
+# Flutter. The engine registers plugins reflectively, so the embedding stays
+# kept wholesale. Everything below it does not need to be.
 -keep class io.flutter.** { *; }
--keep class io.flutter.plugins.** { *; }
 
-# AdMob
--keep class com.google.android.gms.ads.** { *; }
-
-# Firebase
--keep class com.google.firebase.** { *; }
-
-# Local Notifications
+# Local Notifications — this plugin deserialises scheduled notifications from
+# disk by class name, so it genuinely needs its classes kept.
 -keep class com.dexterous.** { *; }
 
-# Lichess
--keep class com.chessground.** { *; }
--keep class com.github.lichess.** { *; }
--keep class io.flutter.plugins.** { *; }
+# AdMob and Firebase are deliberately NOT kept wholesale: both ship their own
+# consumer-proguard-rules.pro inside their AARs, which keep exactly what their
+# reflection needs. Blanket -keep rules here only stopped R8 from shrinking
+# them, which is what Play's "R8 optimisation" recommendation flags.
+
+# Chessground and dartchess are pure Dart — there was never a com.chessground
+# or com.github.lichess package on the Java side for these rules to match.
+
 -keepattributes *Annotation*
 -keepclassmembers class * {
     @android.webkit.JavascriptInterface <methods>;

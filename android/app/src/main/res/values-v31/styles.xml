@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Hand-maintained. `dart run splash_master create` rewrites the animated
+     icon to the static splash_image_12 and drops the animation duration;
+     re-apply this version after ever running the generator again. -->
 <resources>
   <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
     <item name="android:windowSplashScreenBackground">#FFFFFF</item>

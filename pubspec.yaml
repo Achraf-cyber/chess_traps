@@ -1,7 +1,7 @@
 name: chess_traps
 description: "Trapster — learn, practice and master chess opening traps and gambits offline."
 publish_to: "none"
-version: 1.4.3+20
+version: 1.4.4+21
 
 environment:
   sdk: ^3.10.0
@@ -32,7 +32,7 @@ dependencies:
   package_info_plus: ^10.2.1
   fast_immutable_collections: ^11.1.0
   google_mobile_ads: ^8.0.0
-  splash_master: ^0.0.3
+  splash_master: ^1.0.0
   flutter_local_notifications: ^21.0.0
   flutter_timezone: ^4.1.1
   timezone: ^0.11.0
@@ -86,20 +86,16 @@ splash_master:
   # Android gravity options: center, clip_horizontal, clip_vertical, fill_horizontal, fill, center_vertical, 
   # bottom, fill_vertical, center_horizontal, top, end, left, right, start
   android_gravity: 'center'
-  # Use to specifies the splash image
-  background_image: 'assets/app/background_image.png'
-  # Provided content mode for splash image in background for iOS
-  ios_background_content_mode: 'scaleToFill'
-  # Provides gravity for background image in Android
-  # Android gravity options: center, clip_horizontal, clip_vertical, fill_horizontal, fill, center_vertical, 
-  # bottom, fill_vertical, center_horizontal, top, end, left, right, start
-  android_background_image_gravity: 'fill'
-  # Use to specifies image for android in dark mode
-  image_dark_android: 'assets/app/splash_image_dark.png'
+  # No background_image: the asset it used to name has never existed in this
+  # repo. splash_master 0.0.3 ignored the dangling path silently; 1.0.0 stops
+  # on it. The splash is the image over a flat colour, which is what shipped.
+  # Dark-mode splash image. Renamed from image_dark_android in splash_master
+  # 1.0.0, which also made it apply to iOS rather than Android only.
+  image_dark: 'assets/app/splash_image_dark.png'
   # Provides gravity for splash image for Android in dark mode
-  android_dark_gravity_key: 'center'
-  # Use to specifies the color for the splash screen for Android in dark mode
-  color_dark_android: '#000000'
+  android_dark_gravity: 'center'
+  # Dark-mode splash colour (was color_dark_android before 1.0.0)
+  color_dark: '#000000'
   # Section to specifies the configuration for the splash in Android 12+
   android_12_and_above:
     # Provides the background color of splash screen

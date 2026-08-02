@@ -4,10 +4,32 @@
 > Keywords are woven in naturally (Play indexes the full description for search).
 
 ## App name (max 30)
-`Trapster: Traps & Gambits`  ← 25 chars
+`Trapster: Chess Opening Traps`  ← 29 chars
+
+The earlier name, `Trapster: Traps & Gambits`, carried no occurrence of
+"chess" at all. Play weights the title above every other indexed field, so the
+app was unreachable on the query that matters most and surfaced only on the
+brand term. `Trapster: Chess Traps & Gambits` is 31 chars — one over the limit —
+which is why the wording lands on "Opening" instead of "& Gambits".
 
 ## Short description (max 80)
 `Master chess opening traps & gambits. Practice tactics and win faster.`  ← 70 chars
+
+## Localized name + short description
+
+The app ships English, French, Spanish and Arabic, but the listing existed only
+in en-US. Each locale is a separate search index on Play, so translating the
+listing multiplies reachable queries at no engineering cost.
+
+| Locale | Name (max 30) | Short description (max 80) |
+|---|---|---|
+| en-US | `Trapster: Chess Opening Traps` | `Master chess opening traps & gambits. Practice tactics and win faster.` |
+| fr-FR | `Trapster: Pièges d'échecs` | `Maîtrisez les pièges et gambits d'ouverture. Entraînez-vous, gagnez vite.` |
+| es-ES | `Trapster: Trampas de ajedrez` | `Domina trampas y gambitos de apertura. Practica tácticas y gana antes.` |
+| ar | `Trapster: فخاخ الشطرنج` | `أتقن فخاخ وغامبيتات الافتتاح. تدرّب على التكتيكات واربح أسرع.` |
+
+The Arabic strings have not been reviewed by a native speaker — check them
+before they go live.
 
 ---
 

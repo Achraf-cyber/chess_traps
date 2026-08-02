@@ -113,9 +113,15 @@ export default async function TrapPage({ params }: Props) {
 
   return (
     <main className="trap-page">
+      {/* `<` is escaped because trap names and opening labels come from the
+          data file and land inside a <script> block: an unescaped "</script>"
+          in any of them would break out of the tag. Next.js documents this
+          replace as required, and it was missing. */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
       />
 
       <nav className="trap-crumbs" aria-label="Breadcrumb">

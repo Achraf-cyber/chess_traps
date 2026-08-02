@@ -1,20 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Syne:wght@700;800&display=swap');
+/* Fonts are loaded by next/font in layout.tsx, not by an @import here — a
+   stylesheet @import blocks first paint on a third-party round trip. */
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --accent: #FFD700; /* Vibrant Gold */
-  --accent-rgb: 255, 215, 0;
-  --card-bg: #0a0a0a;
-  --border-color: #1a1a1a;
-  --text-muted: #888888;
+  /* Chess sets are boxwood and ebony, and tournament boards are buff and
+     green. The palette is pulled from those materials rather than the
+     pure-black-plus-saturated-gold that every dark landing page uses.
+     Slightly warm neutrals read as chosen; #000 reads as a default. */
+  --background: #0d0c0b;
+  --foreground: #f5f2ec;
+  --accent: #c9922e; /* brass, not #FFD700 — survives on a light surface too */
+  --accent-rgb: 201, 146, 46;
+  --accent-bright: #e0b055;
+  --card-bg: #17150f;
+  --border-color: #2a261e;
+  --text-muted: #9a9284;
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  cursor: default;
+}
+
+/* Interactive elements must look interactive. The previous `cursor: default`
+   on `*` overrode the pointer on every link and button on the site. */
+a,
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/* Keyboard users need to see where they are. */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-bright);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html {
@@ -24,13 +56,14 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-body), 'Outfit', system-ui, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, .logo {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display), 'Syne', system-ui, sans-serif;
+  text-wrap: balance;
 }
 
 .nav {
@@ -111,9 +144,17 @@ h1, h2, h3, .logo {
 }
 
 .feature-card .icon {
-  font-size: 2.5rem;
+  /* Icons are inline SVG now and inherit currentColor, so the accent is set
+     here rather than baked into each path. */
+  color: var(--accent);
   margin-bottom: 2rem;
   display: block;
+  line-height: 0;
+  transition: color 0.3s ease;
+}
+
+.feature-card:hover .icon {
+  color: var(--accent-bright);
 }
 
 /* Typography */

@@ -2,6 +2,44 @@ import Image from "next/image";
 import Link from "next/link";
 import { popularTraps } from "@/lib/traps";
 
+/* Feature icons as inline SVG rather than emoji. Emoji render as full-colour
+   glyphs on some platforms and flat text on others — ♟️ carries a variation
+   selector and ♞ does not, so the old set was inconsistent on the same row —
+   and a chart emoji next to two chess pieces never matched. These inherit the
+   accent colour and stay identical everywhere. */
+const iconProps = {
+  width: 40,
+  height: 40,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.5,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  "aria-hidden": true,
+};
+
+const BoardIcon = () => (
+  <svg {...iconProps}>
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
+  </svg>
+);
+
+const EngineIcon = () => (
+  <svg {...iconProps}>
+    <rect x="7" y="7" width="10" height="10" rx="2" />
+    <path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4" />
+  </svg>
+);
+
+const ProgressIcon = () => (
+  <svg {...iconProps}>
+    <path d="M3 21h18" />
+    <path d="M6 21V13M11 21V8M16 21V15M21 21V4" />
+  </svg>
+);
+
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com";
 
@@ -73,7 +111,7 @@ export default function Home() {
       {/* Features Section */}
       <section id="features" className="grid-features">
         <div className="feature-card reveal" style={{ animationDelay: '0.1s' }}>
-          <span className="icon">♟️</span>
+          <span className="icon"><BoardIcon /></span>
           <h3>Interactive Training</h3>
           <p>
             Don&apos;t just memorize. Play through every trap on an interactive board that
@@ -83,7 +121,7 @@ export default function Home() {
         </div>
 
         <div className="feature-card reveal" style={{ animationDelay: '0.2s' }}>
-          <span className="icon">♞</span>
+          <span className="icon"><EngineIcon /></span>
           <h3>Play Stockfish</h3>
           <p>
             Play a full game against the Stockfish engine at any strength, get a hint when
@@ -93,7 +131,7 @@ export default function Home() {
         </div>
 
         <div className="feature-card reveal" style={{ animationDelay: '0.3s' }}>
-          <span className="icon">📈</span>
+          <span className="icon"><ProgressIcon /></span>
           <h3>Personal Progress</h3>
           <p>
             Track your mastery. Mark traps as learned, revisit your saved games any time,

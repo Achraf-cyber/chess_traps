@@ -119,8 +119,15 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """;
 
 const soundAttributions = """
-Some of the sound effects in this application come from Pixabay and are used
-under the Pixabay Content License (https://pixabay.com/service/license-summary/).
+SYNTHESISED FOR THIS APPLICATION
+
+The castle, defeat, promotion, queen-capture and success tones were
+generated for Trapster and are not derived from any third-party recording.
+
+FROM PIXABAY
+
+Three of the bundled effects come from Pixabay and are used under the
+Pixabay Content License (https://pixabay.com/service/license-summary/):
 
 - Sound Effect by Beto YT (https://pixabay.com/users/betoelguapillo-48669630/)
   from Pixabay (https://pixabay.com/), content id 427528.
@@ -131,9 +138,13 @@ under the Pixabay Content License (https://pixabay.com/service/license-summary/)
 - Sound Effect by DRAGON-STUDIO (https://pixabay.com/users/dragon-studio-38165424/)
   from Pixabay (https://pixabay.com/sound-effects/), content id 499650.
 
-The success, castle, promotion, queen-capture, check-alert and defeat tones
-were synthesised for this application and are not derived from any
-third-party recording.
+EVERYTHING ELSE
+
+The remaining board tones and short voice clips were collected from public
+sound archives that do not record who authored them. No claim of ownership
+is made over any of them. If you hold rights to a sound used in this
+application, write to the developer address published on its Google Play
+listing and it will be removed in the next release.
 """;
 
 const lichessAttributions = """

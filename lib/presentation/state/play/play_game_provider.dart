@@ -403,6 +403,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       } else {
         _recordResult(GameResult.draw);
       }
+      _hapticService.playDraw(SoundProfile.meme);
       state = state.copyWith(
         isPlaying: false,
         gameResult: GameResult.draw,

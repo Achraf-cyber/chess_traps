@@ -33,6 +33,7 @@ typedef MoveFacts = ({
   bool promotion,
   bool capture,
   bool knight,
+  bool rook,
 });
 
 /// Board feedback: low-latency bundled sound effects (via the [SoundEffect]
@@ -52,12 +53,9 @@ class AudioHapticService {
   static const _castleId = 'castle';
   // Synthesised stand-ins for the clips pulled over copyright. They are tonal
   // rather than funny, but a takedown on the listing costs more than a gag
-  // does. [_alertId] is still distinct from the trainer's [_checkId] — a
-  // repeated siren figure rather than a single chime — so the two profiles
-  // keep their own voice.
+  // does.
   static const _queenId = 'queen_down';
   static const _defeatId = 'defeat';
-  static const _alertId = 'alert';
 
   // Simple profile.
   static const _captureId = 'capture';
@@ -69,6 +67,7 @@ class AudioHapticService {
   // Meme profile.
   static const _eatIds = <String>['eat1', 'eat2', 'eat3'];
   static const _horseId = 'horse';
+  static const _rookId = 'the_rook';
   static const _teleportId = 'teleport';
   static const _transformId = 'transform';
   static const _praiseId = 'praise';
@@ -88,11 +87,11 @@ class AudioHapticService {
     _successId: 'assets/sounds/success.wav',
     _queenId: 'assets/sounds/queen_down.wav',
     _defeatId: 'assets/sounds/defeat.wav',
-    _alertId: 'assets/sounds/alert.wav',
     'eat1': 'assets/audio/eat1.mp3',
     'eat2': 'assets/audio/eat2.mp3',
     'eat3': 'assets/audio/eat3.mp3',
     _horseId: 'assets/audio/horse.mp3',
+    _rookId: 'assets/audio/the-rook.mp3',
     _teleportId: 'assets/audio/teleport.mp3',
     _transformId: 'assets/audio/transform.mp3',
     _praiseId: 'assets/audio/du_bist_gut_genug.mp3',
@@ -143,6 +142,7 @@ class AudioHapticService {
         promotion: false,
         capture: false,
         knight: false,
+        rook: false,
       );
     }
 
@@ -167,6 +167,7 @@ class AudioHapticService {
       promotion: move.promotion != null,
       capture: !castle && (victim != null || enPassant),
       knight: mover?.role == Role.knight,
+      rook: mover?.role == Role.rook,
     );
   }
 
@@ -201,6 +202,17 @@ class AudioHapticService {
     await _play(profile == SoundProfile.meme ? _awwId : _errorId);
   }
 
+  /// The game ended in a draw.
+  ///
+  /// Haptics only for now: a draw is neither a win nor a loss, and every tone
+  /// currently bundled carries one of those two meanings. Borrowing [_successId]
+  /// or [_defeatId] here would tell the player something untrue about the
+  /// result, which is worse than the silence this replaces — so the buzz gives
+  /// the game closure and the sound waits for an asset of its own.
+  Future<void> playDraw(SoundProfile profile) async {
+    await _haptic(HapticFeedback.mediumImpact);
+  }
+
   /// The game is lost.
   ///
   /// Losing to mate gets a two-beat reaction — the disappointed "aww" lands
@@ -229,12 +241,13 @@ class AudioHapticService {
     switch (profile) {
       case SoundProfile.meme:
         if (f.queenCapture) return _queenId;
-        if (f.check) return _alertId;
+        if (f.check) return _awwId;
         if (f.enPassant) return _teleportId;
         if (f.promotion) return _transformId;
         if (f.castle) return _castleId;
         if (f.capture) return _nextEat();
         if (f.knight) return _horseId;
+        if (f.rook) return _rookId;
         return _moveId;
       case SoundProfile.simple:
         if (f.check) return _checkId;

@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:chess_traps/presentation/state/traps/learned_traps_provider.dart';
 import 'package:chess_traps/core/services/audio_haptic_service.dart';
+import 'package:chess_traps/core/services/promotion_utils.dart';
 import 'package:chess_traps/presentation/state/favorites/user_favorites_provider.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:dartchess/dartchess.dart';
@@ -237,16 +238,30 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     final trap = ref.read(trapGameProvider(widget.trapIndex));
     if (trap == null) return;
 
+    final position = ref.read(
+      trapPositionProvider(widget.trapIndex, currentMoveIndex),
+    );
+
+    // A pawn landing on the back rank arrives here with no promotion role, and
+    // dartchess rejects that as illegal — makeSan throws below and the move is
+    // dropped without a word, which is why promotions could never be completed.
+    // Hand the move to chessground's selector instead; it calls
+    // _onPromotionSelection, which comes back through here carrying a role.
+    //
+    // This sits above the avoid-mode branch on purpose: that path compares
+    // move.uci against the engine's best moves, and a UCI missing its
+    // promotion suffix would never match either.
+    if (isPromotionPending(position, move)) {
+      setState(() => promotionMove = move as NormalMove);
+      return;
+    }
+
     if (isAvoidMode) {
       _handleAvoidMove(move);
       return;
     }
 
     if (currentMoveIndex >= trap.moves.length) return;
-
-    final position = ref.read(
-      trapPositionProvider(widget.trapIndex, currentMoveIndex),
-    );
     // The board only offers legal moves, but a queued pointer event or a
     // stale promotion selection can arrive after the position has already
     // advanced. Making an illegal move throws PlayException, so guard it

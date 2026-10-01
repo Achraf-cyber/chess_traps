@@ -1,5 +1,6 @@
 import 'package:chess_traps/core/services/remote_config_service.dart';
 import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
+import 'package:chess_traps/core/services/promotion_utils.dart';
 import 'package:chess_traps/core/providers/ads_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -110,6 +111,15 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   }
 
   void onMove(Move move, {bool? viaDragAndDrop}) {
+    // Same defect as the practice board had: a pawn reaching the back rank
+    // arrives without a promotion role, makeSan throws below, and the move
+    // vanishes. Route it to chessground's selector first. Checked before the
+    // ad gate so an abandoned promotion never burns one of the free moves.
+    if (isPromotionPending(position, move)) {
+      setState(() => promotionMove = move as NormalMove);
+      return;
+    }
+
     final adsEnabled = RemoteConfigService().adsEnabled;
     final freeLimit = 6 + _bonusMoves;
 
@@ -119,9 +129,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
       } else {
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text(context.phrase.move_limit_reached),
-            ),
+            SnackBar(content: Text(context.phrase.move_limit_reached)),
           );
         }
       }
@@ -228,18 +236,29 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // One scroll surface instead of two fixed panes. The board used to sit
+      // in Expanded(flex: 7) wrapped in its own SingleChildScrollView — so it
+      // scrolled, pointlessly, while the results were pinned to 4/11 of the
+      // screen and could never be given more room. Now the board scrolls
+      // away and the results take the whole viewport, which is what you want
+      // once you have played a few moves and are reading the matches.
       body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _buildFloatingHeader(),
-            const SizedBox(height: 8),
-            _buildNameSearchField(),
-            const SizedBox(height: 8),
-            Expanded(flex: 7, child: _buildBoardLayer()),
-            const SizedBox(height: 12),
-            Expanded(
-              flex: 4,
+        child: CustomScrollView(
+          slivers: [
+            SliverToBoxAdapter(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  _buildFloatingHeader(),
+                  const SizedBox(height: 8),
+                  _buildNameSearchField(),
+                  const SizedBox(height: 8),
+                  _buildBoardLayer(),
+                  const SizedBox(height: 12),
+                ],
+              ),
+            ),
+            SliverFillRemaining(
               child: _SearchResultsSection(
                 trapCount: _displayedTrapIds.length,
                 phraseMatchingTraps: context.phrase.matchingTraps,
@@ -255,61 +274,63 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   Widget _buildBoardLayer() {
     return LayoutBuilder(
       builder: (context, constraints) {
-        final totalHeight = constraints.maxHeight;
         final totalWidth = constraints.maxWidth;
-        final boardMaxHeight = totalHeight * 0.72;
+        // Sized off the width and capped against the screen, not against the
+        // incoming maxHeight: inside a sliver that height is unbounded, so the
+        // old `constraints.maxHeight * 0.72` would have produced infinity. The
+        // cap keeps the board from swallowing a tall screen and leaves the
+        // first results visible without scrolling.
+        final boardMaxHeight = MediaQuery.sizeOf(context).height * 0.46;
         final boardSize = boardMaxHeight < totalWidth
             ? boardMaxHeight
             : totalWidth;
 
-        return SingleChildScrollView(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const SizedBox(height: 4),
-              Center(
-                child: Container(
-                  width: boardSize,
-                  height: boardSize,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.15),
-                        blurRadius: 28,
-                        offset: const Offset(0, 12),
-                      ),
-                    ],
-                  ),
-                  clipBehavior: Clip.antiAlias,
-                  child: Chessboard(
-                    size: boardSize,
-                    orientation: orientation,
-                    fen: position.fen,
-                    lastMove: lastMove,
-                    game: GameData(
-                      playerSide: position.turn == .white ? .white : .black,
-                      sideToMove: position.turn,
-                      validMoves: position.legalMoves.asIMapSquareISet,
-                      promotionMove: promotionMove,
-                      onMove: onMove,
-                      isCheck: position.isCheck,
-                      onPromotionSelection: onPromotionSelection,
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 4),
+            Center(
+              child: Container(
+                width: boardSize,
+                height: boardSize,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.15),
+                      blurRadius: 28,
+                      offset: const Offset(0, 12),
                     ),
+                  ],
+                ),
+                clipBehavior: Clip.antiAlias,
+                child: Chessboard(
+                  size: boardSize,
+                  orientation: orientation,
+                  fen: position.fen,
+                  lastMove: lastMove,
+                  game: GameData(
+                    playerSide: position.turn == .white ? .white : .black,
+                    sideToMove: position.turn,
+                    validMoves: position.legalMoves.asIMapSquareISet,
+                    promotionMove: promotionMove,
+                    onMove: onMove,
+                    isCheck: position.isCheck,
+                    onPromotionSelection: onPromotionSelection,
                   ),
                 ),
               ),
-              const SizedBox(height: 12),
-              _SearchControlsRow(
-                onUndo: _undo,
-                onFlip: _flip,
-                canUndo: history.isNotEmpty,
-              ),
-              const SizedBox(height: 12),
-              _SearchMoveHistoryBar(history: history),
-              const SizedBox(height: 4),
-            ],
-          ),
+            ),
+            const SizedBox(height: 12),
+            _SearchControlsRow(
+              onUndo: _undo,
+              onFlip: _flip,
+              canUndo: history.isNotEmpty,
+            ),
+            const SizedBox(height: 12),
+            _SearchMoveHistoryBar(history: history),
+            const SizedBox(height: 4),
+          ],
         );
       },
     );
@@ -337,7 +358,9 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
                   },
                 ),
           filled: true,
-          fillColor: context.colors.surfaceContainerHighest.withValues(alpha: 0.5),
+          fillColor: context.colors.surfaceContainerHighest.withValues(
+            alpha: 0.5,
+          ),
           contentPadding: const EdgeInsets.symmetric(vertical: 10),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),

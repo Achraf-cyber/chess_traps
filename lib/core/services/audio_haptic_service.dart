@@ -101,25 +101,43 @@ class AudioHapticService {
   /// Per-clip playback gain, so one master volume setting is usable.
   ///
   /// The bundled clips come from different sources and were mastered at wildly
-  /// different levels — measured RMS ran from -8.1 dB (du_bist_gut_genug) to
-  /// -30.8 dB (faah, since re-encoded), a spread of roughly 13x in amplitude.
-  /// Whatever volume the user picked, half the sounds shouted and the other
-  /// half were inaudible.
+  /// different levels: about 15 dB apart, from -6.2 LUFS (du_bist_gut_genug)
+  /// down to -21.7 LUFS (eat2). Whatever volume the user picked, some sounds
+  /// shouted and others were barely there.
   ///
-  /// Each value is 10^((-17 dB - measured RMS) / 20), targeting a common
-  /// -17 dB. Only attenuation appears here: the plugin clamps at 1.0, so clips
-  /// quieter than the target are left alone and fixed in the file instead.
-  /// Anything absent from this map plays at full volume.
+  /// Loudness is measured in LUFS, which weights frequencies the way the ear
+  /// does. An earlier pass used plain RMS, which under-rates voice and
+  /// mid-range clips, so the meme clips still came out several dB too loud.
+  /// Most clips are shorter than the 400 ms a LUFS reading needs, so each is
+  /// measured with silence stripped and the clip looped:
+  ///
+  ///   ffmpeg -stream_loop 40 -i CLIP -af "silenceremove=start_periods=1:
+  ///     start_threshold=-45dB:stop_periods=-1:stop_threshold=-45dB:
+  ///     stop_silence=0,atrim=duration=6,ebur128" -f null -
+  ///
+  /// Each value is 10^((-18 - measured LUFS) / 20), targeting -18 LUFS. The
+  /// plugin clamps at 1.0, so only attenuation is possible here: eat2, the one
+  /// clip below target, was raised in the file instead (+3.9 dB, limited at
+  /// -1 dBFS). Clips within 0.2 dB of target are absent and play at 1.0.
+  /// Re-measure and update this table whenever a clip is replaced.
   static const _gains = <String, double>{
-    _checkId: 0.60, // -12.6 dB
-    _errorId: 0.55, // -11.5 dB
-    _moveId: 0.95, // -16.5 dB
-    _promoteId: 0.85, // -15.6 dB
-    _praiseId: 0.36, // -8.1 dB — by far the loudest clip in the bundle
-    _horseId: 0.56, // -12.0 dB
-    _teleportId: 0.52, // -11.4 dB
-    _rookId: 0.95, // -16.7 dB
-    _transformId: 0.64, // -13.1 dB
+    // Simple tones.
+    _moveId: 0.88, // -16.9 LUFS
+    _castleId: 0.92, // -17.3
+    _checkId: 0.51, // -12.1
+    _errorId: 0.54, // -12.6
+    _successId: 0.77, // -15.7
+    _promoteId: 0.65, // -14.2
+    _queenId: 0.92, // -17.3
+    _defeatId: 0.92, // -17.3
+    // Meme clips.
+    'eat3': 0.66, // -14.4
+    _horseId: 0.28, // -6.9
+    _rookId: 0.64, // -14.1
+    _teleportId: 0.37, // -9.4
+    _transformId: 0.59, // -13.4
+    _praiseId: 0.26, // -6.2, by far the loudest clip in the bundle
+    _awwId: 0.60, // -13.5
   };
 
   final SoundEffect _soundEffect = SoundEffect();

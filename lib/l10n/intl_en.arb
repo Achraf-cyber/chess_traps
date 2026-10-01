@@ -328,5 +328,36 @@
   "gameHistoryTitle": "Game history",
   "allGames": "All",
   "noSavedGames": "No games saved yet",
-  "viewAllGames": "View all games"
+  "viewAllGames": "View all games",
+  "club": "Club",
+  "joinClub": "Join a club",
+  "joinClubHint": "Enter the code your chess club gave you",
+  "clubCodeLabel": "Club code",
+  "joinAction": "Join",
+  "clubCodeNotFound": "No club found with this code",
+  "clubJoined": "Welcome to {club}!",
+  "@clubJoined": {
+    "placeholders": {
+      "club": {
+        "type": "String"
+      }
+    }
+  },
+  "leaveClub": "Leave club",
+  "leaveClubConfirm": "Leave {club}? You can join again with the code.",
+  "@leaveClubConfirm": {
+    "placeholders": {
+      "club": {
+        "type": "String"
+      }
+    }
+  },
+  "clubCodeValue": "Code: {code}",
+  "@clubCodeValue": {
+    "placeholders": {
+      "code": {
+        "type": "String"
+      }
+    }
+  }
 }

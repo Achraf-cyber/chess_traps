@@ -328,5 +328,15 @@
   "gameHistoryTitle": "سجل المباريات",
   "allGames": "الكل",
   "noSavedGames": "لا توجد مباريات محفوظة بعد",
-  "viewAllGames": "عرض كل المباريات"
+  "viewAllGames": "عرض كل المباريات",
+  "club": "النادي",
+  "joinClub": "الانضمام إلى نادٍ",
+  "joinClubHint": "أدخل الرمز الذي أعطاك إياه نادي الشطرنج",
+  "clubCodeLabel": "رمز النادي",
+  "joinAction": "انضمام",
+  "clubCodeNotFound": "لم يتم العثور على نادٍ بهذا الرمز",
+  "clubJoined": "مرحبًا بك في {club}!",
+  "leaveClub": "مغادرة النادي",
+  "leaveClubConfirm": "مغادرة {club}؟ يمكنك الانضمام مجددًا باستخدام الرمز.",
+  "clubCodeValue": "الرمز: {code}"
 }

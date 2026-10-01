@@ -328,5 +328,15 @@
   "gameHistoryTitle": "Historial de partidas",
   "allGames": "Todas",
   "noSavedGames": "Aún no hay partidas guardadas",
-  "viewAllGames": "Ver todas las partidas"
+  "viewAllGames": "Ver todas las partidas",
+  "club": "Club",
+  "joinClub": "Unirse a un club",
+  "joinClubHint": "Introduce el código que te dio tu club de ajedrez",
+  "clubCodeLabel": "Código del club",
+  "joinAction": "Unirse",
+  "clubCodeNotFound": "No se encontró ningún club con este código",
+  "clubJoined": "¡Bienvenido a {club}!",
+  "leaveClub": "Salir del club",
+  "leaveClubConfirm": "¿Salir de {club}? Puedes volver a unirte con el código.",
+  "clubCodeValue": "Código: {code}"
 }

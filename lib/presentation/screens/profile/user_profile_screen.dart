@@ -12,6 +12,8 @@ import '../../../utils.dart';
 import 'package:chess_traps/core/services/notification_service.dart';
 import 'package:chess_traps/core/providers/settings_provider.dart';
 import 'package:chess_traps/presentation/state/streak/streak_provider.dart';
+import 'package:chess_traps/presentation/state/club/club_provider.dart';
+import 'package:chess_traps/presentation/widgets/club_avatar.dart';
 import 'package:chess_traps/presentation/state/play/play_history_provider.dart';
 import 'package:chess_traps/presentation/state/traps/learned_traps_provider.dart';
 import 'package:chess_traps/generated/chess/base_chess_traps.dart';
@@ -52,6 +54,12 @@ class UserProfileScreen extends ConsumerWidget {
                     learned: learnedCount,
                     totalTraps: chessTraps.length,
                   ),
+                  const SizedBox(height: 28),
+
+                  // Club
+                  _SectionTitle(title: context.phrase.club),
+                  const SizedBox(height: 12),
+                  const _ClubSettings(),
                   const SizedBox(height: 28),
 
                   // Appearance
@@ -341,6 +349,190 @@ class _SettingsTile extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Club
+// ─────────────────────────────────────────────────────────────────────────────
+
+class _ClubSettings extends ConsumerWidget {
+  const _ClubSettings();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final club = ref.watch(clubProvider);
+    final scheme = Theme.of(context).colorScheme;
+
+    if (club == null) {
+      return _SettingsTile(
+        icon: Icons.groups_rounded,
+        iconColor: scheme.primary,
+        title: context.phrase.joinClub,
+        subtitle: context.phrase.joinClubHint,
+        onTap: () => showDialog<void>(
+          context: context,
+          builder: (_) => const _JoinClubDialog(),
+        ),
+      );
+    }
+
+    return Container(
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: scheme.surfaceContainerLow,
+        borderRadius: BorderRadius.circular(AppSizes.radiusL),
+        border: Border.all(color: scheme.outline.withValues(alpha: 0.25)),
+      ),
+      child: Row(
+        children: [
+          ClubAvatar(club: club, size: 44),
+          const SizedBox(width: 14),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  club.name,
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                const SizedBox(height: 1),
+                Text(
+                  context.phrase.clubCodeValue(club.code),
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                    color: scheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          TextButton(
+            onPressed: () => _confirmLeave(context, ref, club.name),
+            child: Text(
+              context.phrase.leaveClub,
+              style: TextStyle(color: scheme.error),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _confirmLeave(BuildContext context, WidgetRef ref, String name) {
+    showDialog<void>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: Text(context.phrase.leaveClub),
+        content: Text(context.phrase.leaveClubConfirm(name)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(context.phrase.clearFavoritesCancel),
+          ),
+          TextButton(
+            onPressed: () {
+              ref.read(clubProvider.notifier).leave();
+              Navigator.pop(ctx);
+            },
+            child: Text(
+              context.phrase.leaveClub,
+              style: TextStyle(color: Theme.of(ctx).colorScheme.error),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _JoinClubDialog extends ConsumerStatefulWidget {
+  const _JoinClubDialog();
+
+  @override
+  ConsumerState<_JoinClubDialog> createState() => _JoinClubDialogState();
+}
+
+class _JoinClubDialogState extends ConsumerState<_JoinClubDialog> {
+  final _controller = TextEditingController();
+  bool _busy = false;
+  bool _notFound = false;
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Future<void> _submit() async {
+    if (_busy || _controller.text.trim().isEmpty) return;
+    setState(() {
+      _busy = true;
+      _notFound = false;
+    });
+    final joined = await ref.read(clubProvider.notifier).join(_controller.text);
+    if (!mounted) return;
+    if (!joined) {
+      setState(() {
+        _busy = false;
+        _notFound = true;
+      });
+      return;
+    }
+    final name = ref.read(clubProvider)?.name ?? '';
+    final messenger = ScaffoldMessenger.of(context);
+    final message = context.phrase.clubJoined(name);
+    Navigator.pop(context);
+    messenger.showSnackBar(SnackBar(content: Text(message)));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text(context.phrase.joinClub),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(context.phrase.joinClubHint),
+          const SizedBox(height: 16),
+          TextField(
+            controller: _controller,
+            autofocus: true,
+            enabled: !_busy,
+            textCapitalization: TextCapitalization.characters,
+            autocorrect: false,
+            textInputAction: TextInputAction.done,
+            onSubmitted: (_) => _submit(),
+            onChanged: (_) {
+              if (_notFound) setState(() => _notFound = false);
+            },
+            decoration: InputDecoration(
+              labelText: context.phrase.clubCodeLabel,
+              errorText: _notFound ? context.phrase.clubCodeNotFound : null,
+              border: const OutlineInputBorder(),
+            ),
+          ),
+        ],
+      ),
+      actions: [
+        TextButton(
+          onPressed: _busy ? null : () => Navigator.pop(context),
+          child: Text(context.phrase.clearFavoritesCancel),
+        ),
+        FilledButton(
+          onPressed: _busy ? null : _submit,
+          child: _busy
+              ? const SizedBox(
+                  width: 18,
+                  height: 18,
+                  child: CircularProgressIndicator(strokeWidth: 2),
+                )
+              : Text(context.phrase.joinAction),
+        ),
+      ],
     );
   }
 }

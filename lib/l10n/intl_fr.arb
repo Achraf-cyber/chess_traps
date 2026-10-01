@@ -328,5 +328,15 @@
   "gameHistoryTitle": "Historique des parties",
   "allGames": "Toutes",
   "noSavedGames": "Aucune partie enregistrée",
-  "viewAllGames": "Voir toutes les parties"
+  "viewAllGames": "Voir toutes les parties",
+  "club": "Club",
+  "joinClub": "Rejoindre un club",
+  "joinClubHint": "Entrez le code donné par votre club d'échecs",
+  "clubCodeLabel": "Code du club",
+  "joinAction": "Rejoindre",
+  "clubCodeNotFound": "Aucun club trouvé avec ce code",
+  "clubJoined": "Bienvenue au {club} !",
+  "leaveClub": "Quitter le club",
+  "leaveClubConfirm": "Quitter {club} ? Vous pourrez revenir avec le code.",
+  "clubCodeValue": "Code : {code}"
 }

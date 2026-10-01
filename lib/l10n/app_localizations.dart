@@ -1361,6 +1361,66 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'View all games'**
   String get viewAllGames;
+
+  /// No description provided for @club.
+  ///
+  /// In en, this message translates to:
+  /// **'Club'**
+  String get club;
+
+  /// No description provided for @joinClub.
+  ///
+  /// In en, this message translates to:
+  /// **'Join a club'**
+  String get joinClub;
+
+  /// No description provided for @joinClubHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter the code your chess club gave you'**
+  String get joinClubHint;
+
+  /// No description provided for @clubCodeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Club code'**
+  String get clubCodeLabel;
+
+  /// No description provided for @joinAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Join'**
+  String get joinAction;
+
+  /// No description provided for @clubCodeNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No club found with this code'**
+  String get clubCodeNotFound;
+
+  /// No description provided for @clubJoined.
+  ///
+  /// In en, this message translates to:
+  /// **'Welcome to {club}!'**
+  String clubJoined(String club);
+
+  /// No description provided for @leaveClub.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave club'**
+  String get leaveClub;
+
+  /// No description provided for @leaveClubConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Leave {club}? You can join again with the code.'**
+  String leaveClubConfirm(String club);
+
+  /// No description provided for @clubCodeValue.
+  ///
+  /// In en, this message translates to:
+  /// **'Code: {code}'**
+  String clubCodeValue(String code);
 }
 
 class _AppLocalizationsDelegate

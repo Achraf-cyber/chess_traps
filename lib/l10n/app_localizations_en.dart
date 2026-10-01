@@ -1,5 +1,6 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
+
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -693,4 +694,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get viewAllGames => 'View all games';
+
+  @override
+  String get club => 'Club';
+
+  @override
+  String get joinClub => 'Join a club';
+
+  @override
+  String get joinClubHint => 'Enter the code your chess club gave you';
+
+  @override
+  String get clubCodeLabel => 'Club code';
+
+  @override
+  String get joinAction => 'Join';
+
+  @override
+  String get clubCodeNotFound => 'No club found with this code';
+
+  @override
+  String clubJoined(String club) {
+    return 'Welcome to $club!';
+  }
+
+  @override
+  String get leaveClub => 'Leave club';
+
+  @override
+  String leaveClubConfirm(String club) {
+    return 'Leave $club? You can join again with the code.';
+  }
+
+  @override
+  String clubCodeValue(String code) {
+    return 'Code: $code';
+  }
 }

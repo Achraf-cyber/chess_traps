@@ -85,6 +85,43 @@ class AnalyticsService {
     }
   }
 
+  /// Tags every later event with the user's club, or clears the tag when
+  /// [code] is null. Register `club_code` as a custom dimension in the
+  /// Firebase console to break retention and DAU down per club.
+  Future<void> setClubCode(String? code) async {
+    try {
+      await _analytics?.setUserProperty(name: 'club_code', value: code);
+    } catch (e) {
+      debugPrint('Error setting club_code: $e');
+    }
+  }
+
+  /// [source] is 'code' when typed by hand, 'link' when joined from a club link.
+  Future<void> logClubJoined({
+    required String code,
+    required String source,
+  }) async {
+    try {
+      await _analytics?.logEvent(
+        name: 'club_joined',
+        parameters: {'club_code': code, 'source': source},
+      );
+    } catch (e) {
+      debugPrint('Error logging club_joined: $e');
+    }
+  }
+
+  Future<void> logClubLeft({required String code}) async {
+    try {
+      await _analytics?.logEvent(
+        name: 'club_left',
+        parameters: {'club_code': code},
+      );
+    } catch (e) {
+      debugPrint('Error logging club_left: $e');
+    }
+  }
+
   /// Set user properties for better segmentation
   Future<void> setUserProperties({required String theme}) async {
     try {

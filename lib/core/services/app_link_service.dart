@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:app_links/app_links.dart';
 import 'package:flutter/foundation.dart';
 import 'package:go_router/go_router.dart';
@@ -13,6 +15,21 @@ class AppLinkService {
   /// clobbered when the splash routes onward. Null when there is none.
   static int? pendingInitialTrapIndex;
 
+  /// Club code from a `/club/:code` link that launched the app. The club
+  /// provider takes it once it has loaded the device's saved club.
+  static String? _pendingInitialClubCode;
+
+  static String? takePendingClubCode() {
+    final code = _pendingInitialClubCode;
+    _pendingInitialClubCode = null;
+    return code;
+  }
+
+  static final _clubLinks = StreamController<String>.broadcast();
+
+  /// Club codes from `/club/:code` links opened while the app is running.
+  static Stream<String> get clubLinks => _clubLinks.stream;
+
   static Future<void> init(GoRouter router) async {
     // 1. Handle initial link (opened when app was closed). Store it rather
     //    than navigating now — the animated splash is the initial route and
@@ -21,6 +38,7 @@ class AppLinkService {
       final initialUri = await _appLinks.getInitialLink();
       if (initialUri != null) {
         pendingInitialTrapIndex = _parseTrapIndex(initialUri);
+        _pendingInitialClubCode = _parseClubCode(initialUri);
       }
     } catch (e) {
       debugPrint('Failed to get initial app link: $e');
@@ -47,12 +65,32 @@ class AppLinkService {
     return null;
   }
 
+  /// Extracts the code from a `/club/:code` link on our host, or null.
+  static String? _parseClubCode(Uri uri) {
+    final hostMatches = uri.host == _host || (kDebugMode && uri.host.isEmpty);
+    if (!hostMatches) return null;
+    final segments = uri.pathSegments;
+    if (segments.length >= 2 && segments.first == 'club') {
+      final code = segments[1].trim();
+      return code.isEmpty ? null : code;
+    }
+    return null;
+  }
+
   static void _handleUri(Uri uri, GoRouter router) {
     debugPrint('Received App Link: $uri');
 
     // Check if the link belongs to our domain
     // In release mode, uri.host must match _host exactly.
     final hostMatches = uri.host == _host || (kDebugMode && uri.host.isEmpty);
+
+    final clubCode = _parseClubCode(uri);
+    if (clubCode != null) {
+      _clubLinks.add(clubCode);
+      // Home is where the club's badge appears, confirming the join.
+      router.go('/');
+      return;
+    }
 
     if (hostMatches) {
       final segments = uri.pathSegments;
@@ -79,4 +117,7 @@ class AppLinkService {
     // This generates a link to your website that Android will intercept
     return 'https://$_host/trap/$trapIndex';
   }
+
+  static String buildClubLink(String code) =>
+      'https://$_host/club/${Uri.encodeComponent(code)}';
 }

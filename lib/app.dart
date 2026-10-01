@@ -13,6 +13,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/core/providers/app_theme_provider.dart';
+import 'package:chess_traps/presentation/state/club/club_provider.dart';
 import 'package:chess_traps/core/providers/settings_provider.dart';
 import 'package:chess_traps/core/services/app_open_ad_manager.dart';
 import 'package:chess_traps/core/services/rewarded_ad_manager.dart';
@@ -203,6 +204,9 @@ class MainApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(appThemeProvider);
+    // Start the club provider with the app, not with the first screen that
+    // shows the club, so a club link opened on any screen is still handled.
+    ref.listen(clubProvider, (_, _) {});
     const inter = 'Inter';
     final TextTheme textTheme = createTextTheme(context, inter, inter);
 

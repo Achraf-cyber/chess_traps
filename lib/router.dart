@@ -27,6 +27,9 @@ final GoRouter router = GoRouter(
     FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
   ],
   redirect: (context, state) {
+    // Club links are handled by AppLinkService; if the platform also hands
+    // one to the router, there is no screen for it, so land on home.
+    if (state.uri.path.startsWith('/club/')) return '/';
     final loc = state.matchedLocation;
     // The animated splash routes itself onward once its animation finishes.
     if (loc == '/splash') return null;

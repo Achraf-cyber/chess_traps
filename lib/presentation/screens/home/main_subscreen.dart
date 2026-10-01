@@ -8,6 +8,9 @@ import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
 import 'package:chess_traps/utils.dart';
 import 'package:chess_traps/presentation/state/traps/traps_provider.dart';
 import 'package:chess_traps/presentation/state/streak/streak_provider.dart';
+import 'package:chess_traps/presentation/state/club/club_provider.dart';
+import 'package:chess_traps/presentation/widgets/club_avatar.dart';
+import 'package:chess_traps/data/club/club.dart';
 import 'package:chess_traps/data/traps/chess_trap.dart';
 import 'package:chessground/chessground.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +25,7 @@ class MainSubscreen extends ConsumerWidget {
     final trapOfTheDay = ref.watch(trapOfTheDayProvider);
     final allTraps = ref.watch(trapsProvider);
     final streak = ref.watch(streakProvider);
+    final club = ref.watch(clubProvider);
     final trapsGroups = ref.watch(trapsGroupSourceProvider);
     final scheme = Theme.of(context).colorScheme;
 
@@ -30,7 +34,12 @@ class MainSubscreen extends ConsumerWidget {
       slivers: [
         // ── Heroic Header ─────────────────────────────────────────────
         SliverToBoxAdapter(
-          child: _HomeHeader(scheme: scheme, totalTraps: allTraps.length, streak: streak.count),
+          child: _HomeHeader(
+            scheme: scheme,
+            totalTraps: allTraps.length,
+            streak: streak.count,
+            club: club,
+          ),
         ),
 
         // ── Trap of the Day ───────────────────────────────────────────
@@ -131,10 +140,16 @@ class MainSubscreen extends ConsumerWidget {
 // ─────────────────────────────────────────────────────────────────────────────
 
 class _HomeHeader extends StatelessWidget {
-  const _HomeHeader({required this.scheme, required this.totalTraps, required this.streak});
+  const _HomeHeader({
+    required this.scheme,
+    required this.totalTraps,
+    required this.streak,
+    this.club,
+  });
   final ColorScheme scheme;
   final int totalTraps;
   final int streak;
+  final Club? club;
 
   @override
   Widget build(BuildContext context) {
@@ -151,16 +166,26 @@ class _HomeHeader extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Flexible(
-                child: Text(
-                  context.phrase.appName,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: -1.2,
-                    color: scheme.onSurface,
-                    height: 1.05,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      context.phrase.appName,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
+                        fontWeight: FontWeight.w900,
+                        letterSpacing: -1.2,
+                        color: scheme.onSurface,
+                        height: 1.05,
+                      ),
+                    ),
+                    if (club != null) ...[
+                      const SizedBox(height: 10),
+                      _ClubBadge(club: club!),
+                    ],
+                  ],
                 ),
               ),
               const SizedBox(width: 12),
@@ -202,6 +227,46 @@ class _HomeHeader extends StatelessWidget {
         .animate()
         .fadeIn(duration: 500.ms)
         .slideY(begin: -0.1, end: 0, curve: Curves.easeOutCubic);
+  }
+}
+
+/// The club's logo and name under the app title: the "in their name" part of
+/// the club offer, so members see their own club every time they open the app.
+class _ClubBadge extends StatelessWidget {
+  const _ClubBadge({required this.club});
+  final Club club;
+
+  @override
+  Widget build(BuildContext context) {
+    final scheme = Theme.of(context).colorScheme;
+    final accent = club.color ?? scheme.primary;
+    return Container(
+      padding: const EdgeInsetsDirectional.fromSTEB(4, 4, 12, 4),
+      decoration: BoxDecoration(
+        color: accent.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: accent.withValues(alpha: 0.35)),
+      ),
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ClubAvatar(club: club, size: 28),
+          const SizedBox(width: 8),
+          Flexible(
+            child: Text(
+              club.name,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: scheme.onSurface,
+                fontWeight: FontWeight.w800,
+                fontSize: 14,
+              ),
+            ),
+          ),
+        ],
+      ),
+    ).animate().fadeIn(duration: 300.ms);
   }
 }
 

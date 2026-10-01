@@ -140,21 +140,69 @@
   "pieceKing": "roi",
   "andSeparator": " et ",
   "explainCheckmate": "Le {piece} livre échec et mat !",
-  "@explainCheckmate": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainCheckmate": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainSacrifice": "Sacrifie le {piece} pour ouvrir l'attaque.",
-  "@explainSacrifice": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainSacrifice": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainCapture": "Le {piece} capture le {captured}.",
-  "@explainCapture": { "placeholders": { "piece": { "type": "String" }, "captured": { "type": "String" } } },
+  "@explainCapture": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      },
+      "captured": {
+        "type": "String"
+      }
+    }
+  },
   "explainFork": "Le {piece} fourchette {targets}.",
-  "@explainFork": { "placeholders": { "piece": { "type": "String" }, "targets": { "type": "String" } } },
+  "@explainFork": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      },
+      "targets": {
+        "type": "String"
+      }
+    }
+  },
   "explainCheck": "Le {piece} met le roi en échec.",
-  "@explainCheck": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainCheck": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainCastleKingside": "Roque du côté roi, mettant le roi à l'abri.",
   "explainCastleQueenside": "Roque du côté dame.",
   "explainPromotion": "Promeut en {piece}.",
-  "@explainPromotion": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainPromotion": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainDevelop": "Développe le {piece}.",
-  "@explainDevelop": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainDevelop": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "you": "Vous",
   "featured_trap": "Piège en vedette",
   "loading_ads": "Chargement des publicités...",
@@ -276,5 +324,9 @@
   "whiteWins": "Les Blancs gagnent !",
   "blackWins": "Les Noirs gagnent !",
   "toMove": "Au trait",
-  "opponentResigned": "L'adversaire a abandonné"
+  "opponentResigned": "L'adversaire a abandonné",
+  "gameHistoryTitle": "Historique des parties",
+  "allGames": "Toutes",
+  "noSavedGames": "Aucune partie enregistrée",
+  "viewAllGames": "Voir toutes les parties"
 }

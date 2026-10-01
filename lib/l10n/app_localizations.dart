@@ -1337,6 +1337,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Opponent resigned'**
   String get opponentResigned;
+
+  /// No description provided for @gameHistoryTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Game history'**
+  String get gameHistoryTitle;
+
+  /// No description provided for @allGames.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get allGames;
+
+  /// No description provided for @noSavedGames.
+  ///
+  /// In en, this message translates to:
+  /// **'No games saved yet'**
+  String get noSavedGames;
+
+  /// No description provided for @viewAllGames.
+  ///
+  /// In en, this message translates to:
+  /// **'View all games'**
+  String get viewAllGames;
 }
 
 class _AppLocalizationsDelegate

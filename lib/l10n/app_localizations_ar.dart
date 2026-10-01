@@ -676,4 +676,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get opponentResigned => 'استسلم الخصم';
+
+  @override
+  String get gameHistoryTitle => 'سجل المباريات';
+
+  @override
+  String get allGames => 'الكل';
+
+  @override
+  String get noSavedGames => 'لا توجد مباريات محفوظة بعد';
+
+  @override
+  String get viewAllGames => 'عرض كل المباريات';
 }

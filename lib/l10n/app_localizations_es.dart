@@ -687,4 +687,16 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get opponentResigned => 'El rival se rindió';
+
+  @override
+  String get gameHistoryTitle => 'Historial de partidas';
+
+  @override
+  String get allGames => 'Todas';
+
+  @override
+  String get noSavedGames => 'Aún no hay partidas guardadas';
+
+  @override
+  String get viewAllGames => 'Ver todas las partidas';
 }

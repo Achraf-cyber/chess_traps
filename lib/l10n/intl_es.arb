@@ -142,21 +142,69 @@
   "pieceKing": "rey",
   "andSeparator": " y ",
   "explainCheckmate": "¡El {piece} da jaque mate!",
-  "@explainCheckmate": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainCheckmate": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainSacrifice": "Sacrifica el {piece} para abrir el ataque.",
-  "@explainSacrifice": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainSacrifice": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainCapture": "El {piece} captura el {captured}.",
-  "@explainCapture": { "placeholders": { "piece": { "type": "String" }, "captured": { "type": "String" } } },
+  "@explainCapture": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      },
+      "captured": {
+        "type": "String"
+      }
+    }
+  },
   "explainFork": "El {piece} hace una horquilla sobre {targets}.",
-  "@explainFork": { "placeholders": { "piece": { "type": "String" }, "targets": { "type": "String" } } },
+  "@explainFork": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      },
+      "targets": {
+        "type": "String"
+      }
+    }
+  },
   "explainCheck": "El {piece} da jaque, forzando una respuesta.",
-  "@explainCheck": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainCheck": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainCastleKingside": "Enroca corto, poniendo al rey a salvo.",
   "explainCastleQueenside": "Enroca largo.",
   "explainPromotion": "Corona a {piece}.",
-  "@explainPromotion": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainPromotion": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainDevelop": "Desarrolla el {piece}.",
-  "@explainDevelop": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainDevelop": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "you": "Tú",
   "featured_trap": "Trampa destacada",
   "loading_ads": "Cargando anuncios...",
@@ -276,5 +324,9 @@
   "whiteWins": "¡Ganan las blancas!",
   "blackWins": "¡Ganan las negras!",
   "toMove": "Al turno",
-  "opponentResigned": "El rival se rindió"
+  "opponentResigned": "El rival se rindió",
+  "gameHistoryTitle": "Historial de partidas",
+  "allGames": "Todas",
+  "noSavedGames": "Aún no hay partidas guardadas",
+  "viewAllGames": "Ver todas las partidas"
 }

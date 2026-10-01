@@ -687,4 +687,16 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get opponentResigned => 'L\'adversaire a abandonné';
+
+  @override
+  String get gameHistoryTitle => 'Historique des parties';
+
+  @override
+  String get allGames => 'Toutes';
+
+  @override
+  String get noSavedGames => 'Aucune partie enregistrée';
+
+  @override
+  String get viewAllGames => 'Voir toutes les parties';
 }

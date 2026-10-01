@@ -140,21 +140,69 @@
   "pieceKing": "king",
   "andSeparator": " and ",
   "explainCheckmate": "{piece} delivers checkmate!",
-  "@explainCheckmate": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainCheckmate": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainSacrifice": "Sacrifices the {piece} to open up the attack.",
-  "@explainSacrifice": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainSacrifice": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainCapture": "The {piece} captures the {captured}.",
-  "@explainCapture": { "placeholders": { "piece": { "type": "String" }, "captured": { "type": "String" } } },
+  "@explainCapture": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      },
+      "captured": {
+        "type": "String"
+      }
+    }
+  },
   "explainFork": "The {piece} forks {targets}.",
-  "@explainFork": { "placeholders": { "piece": { "type": "String" }, "targets": { "type": "String" } } },
+  "@explainFork": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      },
+      "targets": {
+        "type": "String"
+      }
+    }
+  },
   "explainCheck": "The {piece} gives check, forcing a reply.",
-  "@explainCheck": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainCheck": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainCastleKingside": "Castles kingside, tucking the king away safely.",
   "explainCastleQueenside": "Castles queenside.",
   "explainPromotion": "Promotes to a {piece}.",
-  "@explainPromotion": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainPromotion": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainDevelop": "Develops the {piece}.",
-  "@explainDevelop": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainDevelop": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "you": "You",
   "featured_trap": "Featured Trap",
   "loading_ads": "Loading ads...",
@@ -276,5 +324,9 @@
   "whiteWins": "White wins!",
   "blackWins": "Black wins!",
   "toMove": "To move",
-  "opponentResigned": "Opponent resigned"
+  "opponentResigned": "Opponent resigned",
+  "gameHistoryTitle": "Game history",
+  "allGames": "All",
+  "noSavedGames": "No games saved yet",
+  "viewAllGames": "View all games"
 }

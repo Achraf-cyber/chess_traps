@@ -681,4 +681,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get opponentResigned => 'Opponent resigned';
+
+  @override
+  String get gameHistoryTitle => 'Game history';
+
+  @override
+  String get allGames => 'All';
+
+  @override
+  String get noSavedGames => 'No games saved yet';
+
+  @override
+  String get viewAllGames => 'View all games';
 }

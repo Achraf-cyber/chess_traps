@@ -9,6 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:chess_traps/core/providers/settings_provider.dart';
 import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
 import 'package:chess_traps/presentation/state/play/play_game_provider.dart';
+import 'package:chess_traps/presentation/screens/play/game_history_screen.dart';
 import 'package:chess_traps/presentation/state/play/play_history_provider.dart';
 import 'package:chess_traps/presentation/screens/play/widgets/move_chip.dart';
 import 'package:chess_traps/presentation/screens/play/widgets/post_game_explanation_caption.dart';
@@ -453,62 +454,102 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
       context: context,
       showDragHandle: true,
       builder: (ctx) => SafeArea(
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: games.length,
-          itemBuilder: (ctx, index) {
-            final game = games[index];
-            final date = DateTime.tryParse(game.date);
-            final (icon, color) = game.isFriendGame
-                ? switch (game.result) {
-                    'white' => (Icons.emoji_events_rounded, Colors.blueGrey),
-                    'black' => (Icons.emoji_events_rounded, Colors.blueGrey),
-                    _ => (Icons.handshake_rounded, Colors.orange),
-                  }
-                : switch (game.result) {
-                    'win' => (Icons.emoji_events_rounded, Colors.green),
-                    'loss' => (Icons.psychology_rounded, Colors.red),
-                    _ => (Icons.handshake_rounded, Colors.orange),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            // The sheet stays the fast path to the last few games; anyone with
+            // a real history wants the full screen, which can filter by mode.
+            Align(
+              alignment: AlignmentDirectional.centerEnd,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: TextButton.icon(
+                  onPressed: () {
+                    Navigator.pop(ctx);
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const GameHistoryScreen(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.open_in_full_rounded, size: 18),
+                  label: Text(context.phrase.viewAllGames),
+                ),
+              ),
+            ),
+            Flexible(
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: games.length,
+                itemBuilder: (ctx, index) {
+                  final game = games[index];
+                  final date = DateTime.tryParse(game.date);
+                  final (icon, color) = game.isFriendGame
+                      ? switch (game.result) {
+                          'white' => (
+                            Icons.emoji_events_rounded,
+                            Colors.blueGrey,
+                          ),
+                          'black' => (
+                            Icons.emoji_events_rounded,
+                            Colors.blueGrey,
+                          ),
+                          _ => (Icons.handshake_rounded, Colors.orange),
+                        }
+                      : switch (game.result) {
+                          'win' => (Icons.emoji_events_rounded, Colors.green),
+                          'loss' => (Icons.psychology_rounded, Colors.red),
+                          _ => (Icons.handshake_rounded, Colors.orange),
+                        };
+                  // Result summary for friend games shows the winning side.
+                  final friendResult = switch (game.result) {
+                    'white' => context.phrase.whiteWins,
+                    'black' => context.phrase.blackWins,
+                    _ => context.phrase.draw,
                   };
-            // Result summary for friend games shows the winning side.
-            final friendResult = switch (game.result) {
-              'white' => context.phrase.whiteWins,
-              'black' => context.phrase.blackWins,
-              _ => context.phrase.draw,
-            };
-            return ListTile(
-              leading: Icon(icon, color: color),
-              title: Text(
-                date != null
-                    ? '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}'
-                    : game.date,
+                  return ListTile(
+                    leading: Icon(icon, color: color),
+                    title: Text(
+                      date != null
+                          ? '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}'
+                          : game.date,
+                    ),
+                    subtitle: Text(
+                      // pgnMoves holds plies. Chess counts a move as White plus
+                      // Black, so 40 plies is a 20-move game — dividing here stops
+                      // every saved game reading as twice its real length. Rounds up
+                      // so a game ending on White's move still counts that move.
+                      '${(game.pgnMoves.length / 2).ceil()} ${context.phrase.moves}'
+                      '${game.isFriendGame ? ' · $friendResult' : ''}',
+                    ),
+                    trailing: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 3,
+                      ),
+                      decoration: BoxDecoration(
+                        color: context.colors.surfaceContainerHighest,
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(
+                        game.isFriendGame
+                            ? context.phrase.vsFriend
+                            : context.phrase.vsStockfish,
+                        style: context.textTheme.labelSmall?.copyWith(
+                          fontWeight: FontWeight.w600,
+                          color: context.colors.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.pop(ctx);
+                      notifier.viewSavedGame(game);
+                    },
+                  );
+                },
               ),
-              subtitle: Text(
-                '${game.pgnMoves.length} ${context.phrase.moves}'
-                '${game.isFriendGame ? ' · $friendResult' : ''}',
-              ),
-              trailing: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                decoration: BoxDecoration(
-                  color: context.colors.surfaceContainerHighest,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  game.isFriendGame
-                      ? context.phrase.vsFriend
-                      : context.phrase.vsStockfish,
-                  style: context.textTheme.labelSmall?.copyWith(
-                    fontWeight: FontWeight.w600,
-                    color: context.colors.onSurfaceVariant,
-                  ),
-                ),
-              ),
-              onTap: () {
-                Navigator.pop(ctx);
-                notifier.viewSavedGame(game);
-              },
-            );
-          },
+            ),
+          ],
         ),
       ),
     );

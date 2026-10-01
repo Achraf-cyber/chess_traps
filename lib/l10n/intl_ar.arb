@@ -142,21 +142,69 @@
   "pieceKing": "الملك",
   "andSeparator": " و ",
   "explainCheckmate": "{piece} يحقق كش ملك!",
-  "@explainCheckmate": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainCheckmate": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainSacrifice": "يضحي بـ{piece} لفتح الهجوم.",
-  "@explainSacrifice": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainSacrifice": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainCapture": "يأسر {piece} الـ{captured}.",
-  "@explainCapture": { "placeholders": { "piece": { "type": "String" }, "captured": { "type": "String" } } },
+  "@explainCapture": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      },
+      "captured": {
+        "type": "String"
+      }
+    }
+  },
   "explainFork": "يشوك {piece} {targets}.",
-  "@explainFork": { "placeholders": { "piece": { "type": "String" }, "targets": { "type": "String" } } },
+  "@explainFork": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      },
+      "targets": {
+        "type": "String"
+      }
+    }
+  },
   "explainCheck": "يكشف {piece} الملك.",
-  "@explainCheck": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainCheck": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainCastleKingside": "تبييت قصير، يؤمّن الملك.",
   "explainCastleQueenside": "تبييت طويل.",
   "explainPromotion": "يترقى إلى {piece}.",
-  "@explainPromotion": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainPromotion": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "explainDevelop": "يطوّر {piece}.",
-  "@explainDevelop": { "placeholders": { "piece": { "type": "String" } } },
+  "@explainDevelop": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
   "you": "أنت",
   "featured_trap": "مصيدة مميزة",
   "loading_ads": "جارٍ تحميل الإعلانات...",
@@ -276,5 +324,9 @@
   "whiteWins": "الأبيض يفوز!",
   "blackWins": "الأسود يفوز!",
   "toMove": "دورك",
-  "opponentResigned": "استسلم الخصم"
+  "opponentResigned": "استسلم الخصم",
+  "gameHistoryTitle": "سجل المباريات",
+  "allGames": "الكل",
+  "noSavedGames": "لا توجد مباريات محفوظة بعد",
+  "viewAllGames": "عرض كل المباريات"
 }

@@ -98,6 +98,30 @@ class AudioHapticService {
     _awwId: 'assets/audio/faah.mp3',
   };
 
+  /// Per-clip playback gain, so one master volume setting is usable.
+  ///
+  /// The bundled clips come from different sources and were mastered at wildly
+  /// different levels — measured RMS ran from -8.1 dB (du_bist_gut_genug) to
+  /// -30.8 dB (faah, since re-encoded), a spread of roughly 13x in amplitude.
+  /// Whatever volume the user picked, half the sounds shouted and the other
+  /// half were inaudible.
+  ///
+  /// Each value is 10^((-17 dB - measured RMS) / 20), targeting a common
+  /// -17 dB. Only attenuation appears here: the plugin clamps at 1.0, so clips
+  /// quieter than the target are left alone and fixed in the file instead.
+  /// Anything absent from this map plays at full volume.
+  static const _gains = <String, double>{
+    _checkId: 0.60, // -12.6 dB
+    _errorId: 0.55, // -11.5 dB
+    _moveId: 0.95, // -16.5 dB
+    _promoteId: 0.85, // -15.6 dB
+    _praiseId: 0.36, // -8.1 dB — by far the loudest clip in the bundle
+    _horseId: 0.56, // -12.0 dB
+    _teleportId: 0.52, // -11.4 dB
+    _rookId: 0.95, // -16.7 dB
+    _transformId: 0.64, // -13.1 dB
+  };
+
   final SoundEffect _soundEffect = SoundEffect();
   final Random _random = Random();
 
@@ -283,7 +307,7 @@ class AudioHapticService {
   Future<void> _play(String id) async {
     if (!soundEnabled || !_ready) return;
     try {
-      await _soundEffect.play(id);
+      await _soundEffect.play(id, volume: _gains[id] ?? 1.0);
     } catch (e) {
       if (kDebugMode) debugPrint('AudioHapticService play($id) failed: $e');
     }

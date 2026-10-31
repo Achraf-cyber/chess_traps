@@ -13,23 +13,24 @@ plugins {
     // START: FlutterFire Configuration
     id("com.google.gms.google-services")
     // END: FlutterFire Configuration
-    id("kotlin-android")
     // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
     namespace = "chesstraps.achrafcyber.com"
-    compileSdk = flutter.compileSdkVersion
+    // permission_handler 13 requires 37; targetSdk below is what sets behavior.
+    compileSdk = 37
     ndkVersion = flutter.ndkVersion
+
+    // Off by default since AGP 9; resValue below sets the launcher name.
+    buildFeatures { resValues = true }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
     }
-
-    kotlinOptions { jvmTarget = "17" }
 
     defaultConfig {
         // TODO: Specify your own unique Application ID
@@ -57,6 +58,11 @@ android {
     // are set"), which we use to produce the arm64-only test APK.
     packaging {
         jniLibs {
+            // 16 KB page sizes (Play requirement): native libs must be stored
+            // uncompressed and page-aligned in the APK so they can be mmapped.
+            // AGP 8.5.1+ with NDK r28+ (Flutter's default) aligns them to 16 KB;
+            // this makes the uncompressed packaging explicit.
+            useLegacyPackaging = false
             excludes += setOf("**/x86/**", "**/x86_64/**")
         }
     }
@@ -92,6 +98,12 @@ android {
                 "proguard-rules.pro",
             )
         }
+    }
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 

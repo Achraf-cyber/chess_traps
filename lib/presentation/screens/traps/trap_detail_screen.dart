@@ -563,6 +563,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                         mode: 'practice',
                       );
                       currentMoveIndex = 0; // Reset to start
+                      // The trapper's side, which the user plays here.
+                      orientation = trap.targetSide;
                       if (isAutoPlaying) {
                         _toggleAutoPlay(maxMoves);
                       }
@@ -598,6 +600,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       isPracticeMode = false;
                       isAutoPlaying = false;
                       _calculateBlunderIndex(trap);
+                      // The side falling into the trap, which the user plays.
+                      orientation = trap.targetSide.opposite;
 
                       // Auto play until blunder
                       currentMoveIndex = 0;
@@ -612,12 +616,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                             _updateMoveIndex(currentMoveIndex + 1, maxMoves);
                           } else {
                             timer.cancel();
-                            // Flip board to losing side
-                            setState(() {
-                              orientation = trap.targetSide == Side.white
-                                  ? Side.black
-                                  : Side.white;
-                            });
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text(context.phrase.avoidModeActive),
@@ -727,19 +725,21 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   ],
                 ),
               ),
-              PopupMenuItem(
-                value: 'flip',
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.flip_camera_android_rounded,
-                      color: context.colors.onSurfaceVariant,
-                    ),
-                    const SizedBox(width: 12),
-                    Text(context.phrase.flipBoard),
-                  ],
+              // Training keeps the user's side at the bottom.
+              if (!isPracticeMode && !isAvoidMode)
+                PopupMenuItem(
+                  value: 'flip',
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.flip_camera_android_rounded,
+                        color: context.colors.onSurfaceVariant,
+                      ),
+                      const SizedBox(width: 12),
+                      Text(context.phrase.flipBoard),
+                    ],
+                  ),
                 ),
-              ),
               const PopupMenuDivider(),
               PopupMenuItem(
                 value: 'learned',

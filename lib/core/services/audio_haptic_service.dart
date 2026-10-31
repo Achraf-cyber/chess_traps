@@ -7,10 +7,12 @@ import 'package:sound_effect/sound_effect.dart';
 
 /// Which family of sounds a screen speaks in.
 ///
-/// This is a deliberate product split, not a technical one: **Play** is loud
-/// and funny (voice clips, chomping, a whinnying horse) because it is where
-/// people mess around, while the **trap trainer** stays on clean, short,
-/// neutral tones so it remains bearable over a long study session.
+/// This is a deliberate product split, not a technical one: **Play** is a comic
+/// stage show (a clown horn, a crowd that laughs at you, a kazoo band) because
+/// it is where people mess around, while the **trap trainer** stays on clean,
+/// short, neutral tones so it remains bearable over a long study session. The
+/// trainer's only jokes are one-offs too rare to wear out: [playTrapSprung] and
+/// [playTrapLearned].
 enum SoundProfile {
   /// Play screen — meme clips.
   meme,
@@ -51,11 +53,8 @@ class AudioHapticService {
   // exhausting.
   static const _moveId = 'move';
   static const _castleId = 'castle';
-  // Synthesised stand-ins for the clips pulled over copyright. They are tonal
-  // rather than funny, but a takedown on the listing costs more than a gag
-  // does.
+  // Tonal rather than funny: the trainer's queen capture and draw.
   static const _queenId = 'queen_down';
-  static const _defeatId = 'defeat';
   static const _drawId = 'draw';
 
   // Simple profile.
@@ -73,10 +72,28 @@ class AudioHapticService {
   static const _transformId = 'transform';
   static const _praiseId = 'praise';
   static const _awwId = 'aww';
+  static const _honkId = 'honk';
+  static const _gaspId = 'gasp';
+  static const _crowdLaughId = 'crowd_laugh';
+  static const _kazooId = 'kazoo';
+  static const _applauseId = 'applause';
+  static const _sadHornId = 'sad_horn';
+  static const _slideDownId = 'slide_down';
+  static const _whoopeeId = 'whoopee';
+  static const _cricketsId = 'crickets';
+  static const _recordScratchId = 'record_scratch';
+  static const _squeakId = 'squeak';
 
-  /// Playing length of [_awwId] after trimming, used to space the two-part
-  /// checkmate reaction. Keep in step with `assets/audio/faah.mp3`.
+  // The trainer's rare jokes, and the streak.
+  static const _evilLaughId = 'evil_laugh';
+  static const _rimshotId = 'rimshot';
+  static const _roosterId = 'rooster';
+
+  // Playing lengths, used to space the two-part reactions. Keep in step with
+  // the files in `assets/audio/`. Applause enters just before the kazoo ends.
   static const _awwLength = Duration(milliseconds: 1220);
+  static const _kazooLength = Duration(milliseconds: 2600);
+  static const _slideDownLength = Duration(milliseconds: 1420);
 
   static const _assets = <String, String>{
     _moveId: 'assets/sounds/move.wav',
@@ -87,7 +104,6 @@ class AudioHapticService {
     _errorId: 'assets/sounds/error.wav',
     _successId: 'assets/sounds/success.wav',
     _queenId: 'assets/sounds/queen_down.wav',
-    _defeatId: 'assets/sounds/defeat.wav',
     _drawId: 'assets/sounds/draw.wav',
     'eat1': 'assets/audio/eat1.mp3',
     'eat2': 'assets/audio/eat2.mp3',
@@ -98,6 +114,20 @@ class AudioHapticService {
     _transformId: 'assets/audio/transform.mp3',
     _praiseId: 'assets/audio/du_bist_gut_genug.mp3',
     _awwId: 'assets/audio/faah.mp3',
+    _honkId: 'assets/audio/honk.mp3',
+    _gaspId: 'assets/audio/gasp.mp3',
+    _crowdLaughId: 'assets/audio/crowd_laugh.mp3',
+    _kazooId: 'assets/audio/kazoo.mp3',
+    _applauseId: 'assets/audio/applause.mp3',
+    _sadHornId: 'assets/audio/sad_horn.mp3',
+    _slideDownId: 'assets/audio/slide_down.mp3',
+    _whoopeeId: 'assets/audio/whoopee.mp3',
+    _cricketsId: 'assets/audio/crickets.mp3',
+    _recordScratchId: 'assets/audio/record_scratch.mp3',
+    _squeakId: 'assets/audio/squeak.mp3',
+    _evilLaughId: 'assets/audio/evil_laugh.mp3',
+    _rimshotId: 'assets/audio/rimshot.mp3',
+    _roosterId: 'assets/audio/rooster.mp3',
   };
 
   /// Per-clip playback gain, so one master volume setting is usable.
@@ -121,7 +151,9 @@ class AudioHapticService {
   /// plugin clamps at 1.0, so only attenuation is possible here: eat2, the one
   /// clip below target, was raised in the file instead (+3.9 dB, limited at
   /// -1 dBFS). Clips within 0.2 dB of target are absent and play at 1.0.
-  /// Re-measure and update this table whenever a clip is replaced.
+  /// Re-measure and update this table whenever a clip is replaced. The comic
+  /// clips added later were levelled in the file to -18 LUFS, so they need no
+  /// entry. Rimshot and squeak are too short to reach it and sit 2-4 dB under.
   static const _gains = <String, double>{
     // Simple tones.
     _moveId: 0.88, // -16.9 LUFS
@@ -131,7 +163,6 @@ class AudioHapticService {
     _successId: 0.77, // -15.7
     _promoteId: 0.65, // -14.2
     _queenId: 0.92, // -17.3
-    _defeatId: 0.92, // -17.3
     // Meme clips.
     'eat3': 0.66, // -14.4
     _horseId: 0.28, // -6.9
@@ -153,6 +184,10 @@ class AudioHapticService {
   /// side) until then, so an early call never crashes.
   bool _ready = false;
 
+  /// The load in progress, so that a caller during it waits rather than
+  /// loading everything a second time.
+  Future<void>? _initializing;
+
   /// User toggles, mirrored here from ChessSettings so this service (which
   /// has no Riverpod ref) can honour them. Default on; loaded at startup.
   static bool soundEnabled = true;
@@ -161,8 +196,12 @@ class AudioHapticService {
   /// Loads all sound effects. Safe to call more than once. Failures are
   /// swallowed so audio problems never block app start — the app just runs
   /// without move sounds.
-  Future<void> initialize() async {
-    if (_ready) return;
+  Future<void> initialize() {
+    if (_ready) return Future.value();
+    return _initializing ??= _load().whenComplete(() => _initializing = null);
+  }
+
+  Future<void> _load() async {
     try {
       await _soundEffect.initialize();
       for (final entry in _assets.entries) {
@@ -216,15 +255,21 @@ class AudioHapticService {
   }
 
   /// Classifies [move] and plays the matching sound for [profile].
+  ///
+  /// [byOpponent] decides who the joke is on: the crowd gasps when you take a
+  /// queen and laughs when you lose yours. Checkmate is left silent in Play,
+  /// where the end-of-game sound follows and would clash.
   Future<void> playMoveSound(
     SoundProfile profile,
     Position before,
     Move move,
-    Position after,
-  ) async {
+    Position after, {
+    bool byOpponent = false,
+  }) async {
     final facts = describe(before, move, after);
     await _haptic(_hapticFor(facts));
-    await _play(_soundFor(profile, facts));
+    if (profile == SoundProfile.meme && after.isCheckmate) return;
+    await _play(_soundFor(profile, facts, byOpponent: byOpponent));
   }
 
   /// A plain move tick, for the few places with no position to inspect (the
@@ -235,9 +280,50 @@ class AudioHapticService {
   }
 
   /// Something went right: a trap completed, a game won, a trap marked learned.
+  ///
+  /// A win on the Play screen gets either the kazoo band and its applause or
+  /// the voice clip, so that it doesn't go stale.
   Future<void> playSuccess(SoundProfile profile) async {
     await _haptic(HapticFeedback.heavyImpact);
-    await _play(profile == SoundProfile.meme ? _praiseId : _successId);
+    if (profile == SoundProfile.simple) {
+      await _play(_successId);
+    } else if (_random.nextInt(4) == 0) {
+      await _play(_praiseId);
+    } else {
+      await _play(_kazooId);
+      await Future<void>.delayed(_kazooLength);
+      await _play(_applauseId);
+    }
+  }
+
+  /// The final move of a trap in practice. It's the moment the app is about.
+  Future<void> playTrapSprung() async {
+    await _haptic(HapticFeedback.heavyImpact);
+    await _play(_evilLaughId);
+  }
+
+  /// A trap marked as learned. Ba-dum-tss.
+  Future<void> playTrapLearned() async {
+    await _haptic(HapticFeedback.mediumImpact);
+    await _play(_rimshotId);
+  }
+
+  /// The streak grew today: a rooster, because it's a new day.
+  Future<void> playStreak() async {
+    await initialize();
+    await _play(_roosterId);
+  }
+
+  /// A move taken back. The needle comes off the record.
+  Future<void> playUndo() async {
+    await _haptic(HapticFeedback.lightImpact);
+    await _play(_recordScratchId);
+  }
+
+  /// A hint was asked for in a game.
+  Future<void> playHint() async {
+    await _haptic(HapticFeedback.lightImpact);
+    await _play(_squeakId);
   }
 
   /// A single-shot "no": a wrong move in trap practice.
@@ -248,19 +334,19 @@ class AudioHapticService {
 
   /// The game ended in a draw.
   ///
-  /// A level two-note tone of its own: a draw is neither a win nor a loss, and
-  /// borrowing [_successId] or [_defeatId] would tell the player something
-  /// untrue about the result.
+  /// A sound of its own: a draw is neither a win nor a loss, and borrowing
+  /// either would tell the player something untrue about the result. Play gets
+  /// a rimshot to an audience that doesn't laugh.
   Future<void> playDraw(SoundProfile profile) async {
     await _haptic(HapticFeedback.mediumImpact);
-    await _play(_drawId);
+    await _play(profile == SoundProfile.meme ? _cricketsId : _drawId);
   }
 
   /// The game is lost.
   ///
-  /// Losing to mate gets a two-beat reaction — the disappointed "aww" lands
-  /// first, then the defeat sting once it has finished. Resigning skips
-  /// straight to the sting: you saw it coming.
+  /// Losing to mate gets a two-beat reaction: the disappointed "aww" lands
+  /// first, then the sad horn once it has finished. Resigning is a slide
+  /// whistle down to a whoopee cushion: you saw it coming.
   Future<void> playLoss(
     SoundProfile profile, {
     required bool byCheckmate,
@@ -273,18 +359,26 @@ class AudioHapticService {
     if (byCheckmate) {
       await _play(_awwId);
       await Future<void>.delayed(_awwLength);
+      await _play(_sadHornId);
+    } else {
+      await _play(_slideDownId);
+      await Future<void>.delayed(_slideDownLength);
+      await _play(_whoopeeId);
     }
-    await _play(_defeatId);
   }
 
   /// Play's priority: a dead queen first (rare and dramatic), then check, then
   /// the piece-specific gags. The trainer's priority: check first, always —
   /// it's the one thing a student must not miss — and no gags at all.
-  String _soundFor(SoundProfile profile, MoveFacts f) {
+  String _soundFor(
+    SoundProfile profile,
+    MoveFacts f, {
+    bool byOpponent = false,
+  }) {
     switch (profile) {
       case SoundProfile.meme:
-        if (f.queenCapture) return _queenId;
-        if (f.check) return _awwId;
+        if (f.queenCapture) return byOpponent ? _crowdLaughId : _gaspId;
+        if (f.check) return byOpponent ? _awwId : _honkId;
         if (f.enPassant) return _teleportId;
         if (f.promotion) return _transformId;
         if (f.castle) return _castleId;
@@ -294,6 +388,7 @@ class AudioHapticService {
         return _moveId;
       case SoundProfile.simple:
         if (f.check) return _checkId;
+        if (f.queenCapture) return _queenId;
         if (f.capture) return _captureId;
         if (f.promotion) return _promoteId;
         if (f.castle) return _castleId;

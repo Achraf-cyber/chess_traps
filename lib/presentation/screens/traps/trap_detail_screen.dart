@@ -289,7 +289,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
 
           if (currentMoveIndex >= trap.moves.length) {
             _logPracticeCompleted(trap.id, 'practice');
-            AudioHapticService().playSuccess(SoundProfile.simple);
+            AudioHapticService().playTrapSprung();
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(context.phrase.trapCompleted)),
             );
@@ -298,7 +298,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
         });
       } else {
         _logPracticeCompleted(trap.id, 'practice');
-        AudioHapticService().playSuccess(SoundProfile.simple);
+        AudioHapticService().playTrapSprung();
         ScaffoldMessenger.of(
           context,
         ).showSnackBar(SnackBar(content: Text(context.phrase.trapCompleted)));
@@ -644,7 +644,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       .read(learnedTrapsProvider.notifier)
                       .toggleLearned(trap.id);
                   if (!isLearned) {
-                    AudioHapticService().playSuccess(SoundProfile.simple);
+                    AudioHapticService().playTrapLearned();
                   }
                   break;
                 case 'share':

@@ -1,3 +1,4 @@
+import 'package:chess_traps/core/services/audio_haptic_service.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:intl/intl.dart';
@@ -36,6 +37,7 @@ class StreakNotifier extends Notifier<StreakState> {
       if (difference == 1) {
         // Logged in exactly yesterday
         count += 1;
+        AudioHapticService().playStreak();
       } else if (difference > 1) {
         // Missed a day
         count = 1;

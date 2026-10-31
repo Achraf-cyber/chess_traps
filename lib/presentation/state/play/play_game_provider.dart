@@ -459,7 +459,13 @@ class PlayGameNotifier extends _$PlayGameNotifier {
         clearBrowseIndex: true,
       );
 
-      _hapticService.playMoveSound(SoundProfile.meme, prevPos, move, nextPos);
+      _hapticService.playMoveSound(
+        SoundProfile.meme,
+        prevPos,
+        move,
+        nextPos,
+        byOpponent: true,
+      );
 
       _maybeEndGame(nextPos);
     });
@@ -595,6 +601,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     if (!state.isPlaying || state.engineThinking || _hintPending) return;
     _hintPending = true;
     AnalyticsService.instance.logHintUsed(source: 'game');
+    _hapticService.playHint();
     ref
         .read(chessEngineProvider)
         .playMove(state.chess.fen, state.elo, fallback: false);
@@ -620,6 +627,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
 
     final newChess = Chess.fromSetup(parsed);
 
+    _hapticService.playUndo();
     state = state.copyWith(
       chess: newChess,
       fenHistory: newFenHistory,

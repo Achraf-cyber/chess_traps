@@ -11,6 +11,7 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/core/providers/app_theme_provider.dart';
 import 'package:chess_traps/core/providers/settings_provider.dart';
@@ -39,6 +40,10 @@ Future<void> runMainApp() async {
   }
 
   debugPrint('app started');
+  // Both families ship in assets/google_fonts/. Left on, a first launch without
+  // a connection threw from the download, which reached Crashlytics as a crash
+  // on startup while the app itself carried on with a fallback font.
+  GoogleFonts.config.allowRuntimeFetching = false;
   // Device Preview 3 is a binding, so it has to go in before any other.
   if (kDebugMode && (kIsWeb || Platform.isWindows)) {
     DevicePreview.enable();
@@ -97,6 +102,9 @@ Future<void> runMainApp() async {
     yield const LicenseEntryWithLineBreaks(<String>[
       'google_fonts',
     ], quicksandLicense);
+    yield const LicenseEntryWithLineBreaks(<String>[
+      'google_fonts',
+    ], bundledFontsLicense);
     yield const LicenseEntryWithLineBreaks(<String>[
       'stockfish',
     ], stockfishLicense);

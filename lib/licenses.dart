@@ -118,10 +118,22 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """;
 
+const bundledFontsLicense = """
+Newsreader: Copyright 2020 The Newsreader Project Authors
+(https://github.com/productiontype/Newsreader)
+
+Public Sans: Copyright 2015 The Public Sans Project Authors
+(https://github.com/uswds/public-sans)
+
+Both are licensed under the SIL Open Font License, Version 1.1
+(https://openfontlicense.org), the full text of which is listed under
+Quicksand above.
+""";
+
 const soundAttributions = """
 SYNTHESISED FOR THIS APPLICATION
 
-The castle, defeat, promotion, queen-capture and success tones were
+The castle, draw, promotion, queen-capture and success tones were
 generated for Trapster and are not derived from any third-party recording.
 
 FROM PIXABAY
@@ -137,6 +149,27 @@ Pixabay Content License (https://pixabay.com/service/license-summary/):
 
 - Sound Effect by DRAGON-STUDIO (https://pixabay.com/users/dragon-studio-38165424/)
   from Pixabay (https://pixabay.com/sound-effects/), content id 499650.
+
+FROM FREESOUND
+
+These clips were released into the public domain under CC0 1.0
+(https://creativecommons.org/publicdomain/zero/1.0/). Credit is not required,
+and is given anyway. All were trimmed and levelled for this application.
+
+- sad horn: TaranP, freesound.org/s/362206/
+- kazoo fanfare: pel2na, freesound.org/s/321937/
+- clown horn: inplay, freesound.org/s/251611/
+- crowd gasp: a deleted Freesound user, freesound.org/s/324898/
+- crowd laugh: a deleted Freesound user, freesound.org/s/324894/
+- rimshot and crickets: DJczyszy, freesound.org/s/431813/
+- record scratch: ludvique, freesound.org/s/71853/
+- evil laugh: kintana24, freesound.org/s/478934/
+- rooster: BenjaminNelan, freesound.org/s/435508/
+- whoopee cushion: FlashTrauma, freesound.org/s/398284/
+- rimshot: Sajmund, freesound.org/s/132418/
+- applause: soundmary, freesound.org/s/117592/
+- slide whistle: sheepfilms, freesound.org/s/202753/
+- squeaky toy: Breviceps, freesound.org/s/468443/
 
 EVERYTHING ELSE
 

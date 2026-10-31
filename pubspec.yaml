@@ -70,6 +70,8 @@ flutter:
     - assets/app/
     - assets/images/
     - assets/google_fonts/
+    - assets/google_fonts/Newsreader/
+    - assets/google_fonts/PublicSans/
     - assets/sounds/
     - assets/audio/
 splash_master:

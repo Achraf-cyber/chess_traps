@@ -56,6 +56,7 @@ class AudioHapticService {
   // does.
   static const _queenId = 'queen_down';
   static const _defeatId = 'defeat';
+  static const _drawId = 'draw';
 
   // Simple profile.
   static const _captureId = 'capture';
@@ -87,6 +88,7 @@ class AudioHapticService {
     _successId: 'assets/sounds/success.wav',
     _queenId: 'assets/sounds/queen_down.wav',
     _defeatId: 'assets/sounds/defeat.wav',
+    _drawId: 'assets/sounds/draw.wav',
     'eat1': 'assets/audio/eat1.mp3',
     'eat2': 'assets/audio/eat2.mp3',
     'eat3': 'assets/audio/eat3.mp3',
@@ -246,13 +248,12 @@ class AudioHapticService {
 
   /// The game ended in a draw.
   ///
-  /// Haptics only for now: a draw is neither a win nor a loss, and every tone
-  /// currently bundled carries one of those two meanings. Borrowing [_successId]
-  /// or [_defeatId] here would tell the player something untrue about the
-  /// result, which is worse than the silence this replaces — so the buzz gives
-  /// the game closure and the sound waits for an asset of its own.
+  /// A level two-note tone of its own: a draw is neither a win nor a loss, and
+  /// borrowing [_successId] or [_defeatId] would tell the player something
+  /// untrue about the result.
   Future<void> playDraw(SoundProfile profile) async {
     await _haptic(HapticFeedback.mediumImpact);
+    await _play(_drawId);
   }
 
   /// The game is lost.

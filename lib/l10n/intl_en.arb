@@ -23,7 +23,7 @@
   "dataManagement": "Data management",
   "about": "About",
   "yourFavorites": "Your favorites",
-  "favoritesCount": "{count} traps saved",
+  "favoritesCount": "{count, plural, =0{No traps saved} =1{1 trap saved} other{{count} traps saved}}",
   "@favoritesCount": {
     "placeholders": {
       "count": {
@@ -104,7 +104,7 @@
   "pieceQueen": "queen",
   "pieceKing": "king",
   "andSeparator": " and ",
-  "explainCheckmate": "The {piece} delivers checkmate!",
+  "explainCheckmate": "{piece} delivers checkmate!",
   "@explainCheckmate": {
     "placeholders": {
       "piece": {
@@ -112,7 +112,7 @@
       }
     }
   },
-  "explainSacrifice": "Sacrifices the {piece} to open up the attack.",
+  "explainSacrifice": "Sacrifices {piece} to open up the attack.",
   "@explainSacrifice": {
     "placeholders": {
       "piece": {
@@ -120,7 +120,7 @@
       }
     }
   },
-  "explainCapture": "The {piece} captures the {captured}.",
+  "explainCapture": "{piece} captures {captured}.",
   "@explainCapture": {
     "placeholders": {
       "piece": {
@@ -131,7 +131,7 @@
       }
     }
   },
-  "explainFork": "The {piece} forks {targets}.",
+  "explainFork": "{piece} forks {targets}.",
   "@explainFork": {
     "placeholders": {
       "piece": {
@@ -142,7 +142,7 @@
       }
     }
   },
-  "explainCheck": "The {piece} gives check, forcing a reply.",
+  "explainCheck": "{piece} gives check, forcing a reply.",
   "@explainCheck": {
     "placeholders": {
       "piece": {
@@ -160,7 +160,7 @@
       }
     }
   },
-  "explainDevelop": "Develops the {piece}.",
+  "explainDevelop": "Develops {piece}.",
   "@explainDevelop": {
     "placeholders": {
       "piece": {
@@ -270,5 +270,39 @@
   "onboardingStreakBody": "Come back daily to keep your streak alive and save the traps you like.",
   "removeFromFavorites": "Remove from favorites",
   "trapForWhite": "Trap for White",
-  "trapForBlack": "Trap for Black"
+  "trapForBlack": "Trap for Black",
+  "language": "Language",
+  "thePawn": "the pawn",
+  "theKnight": "the knight",
+  "theBishop": "the bishop",
+  "theRook": "the rook",
+  "theQueen": "the queen",
+  "theKing": "the king",
+  "explainPawnMove": "Advances {piece}.",
+  "explainQuietMove": "Moves {piece}.",
+  "whiteResigned": "White resigned",
+  "blackResigned": "Black resigned",
+  "@explainPawnMove": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
+  "@explainQuietMove": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
+  "boardThemeBrown": "Brown",
+  "boardThemeBlue": "Blue",
+  "boardThemeGreen": "Green",
+  "boardThemeWood": "Wood",
+  "boardThemeWood2": "Wood II",
+  "boardThemeMetal": "Metal",
+  "boardThemeMarble": "Marble",
+  "boardThemeHorsey": "Horsey",
+  "boardThemePurple": "Purple"
 }

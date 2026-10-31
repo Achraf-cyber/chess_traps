@@ -23,7 +23,7 @@
   "dataManagement": "Gestión de datos",
   "about": "Acerca de",
   "yourFavorites": "Tus favoritos",
-  "favoritesCount": "{count} trampas guardadas",
+  "favoritesCount": "{count, plural, =0{Ninguna trampa guardada} =1{1 trampa guardada} other{{count} trampas guardadas}}",
   "@favoritesCount": {
     "placeholders": {
       "count": {
@@ -104,7 +104,7 @@
   "pieceQueen": "dama",
   "pieceKing": "rey",
   "andSeparator": " y ",
-  "explainCheckmate": "¡El {piece} da jaque mate!",
+  "explainCheckmate": "¡{piece} da jaque mate!",
   "@explainCheckmate": {
     "placeholders": {
       "piece": {
@@ -112,7 +112,7 @@
       }
     }
   },
-  "explainSacrifice": "Sacrifica el {piece} para abrir el ataque.",
+  "explainSacrifice": "Sacrifica {piece} para abrir el ataque.",
   "@explainSacrifice": {
     "placeholders": {
       "piece": {
@@ -120,7 +120,7 @@
       }
     }
   },
-  "explainCapture": "El {piece} captura el {captured}.",
+  "explainCapture": "{piece} captura {captured}.",
   "@explainCapture": {
     "placeholders": {
       "piece": {
@@ -131,7 +131,7 @@
       }
     }
   },
-  "explainFork": "El {piece} hace una horquilla sobre {targets}.",
+  "explainFork": "{piece} hace una horquilla sobre {targets}.",
   "@explainFork": {
     "placeholders": {
       "piece": {
@@ -142,7 +142,7 @@
       }
     }
   },
-  "explainCheck": "El {piece} da jaque, forzando una respuesta.",
+  "explainCheck": "{piece} da jaque, forzando una respuesta.",
   "@explainCheck": {
     "placeholders": {
       "piece": {
@@ -160,7 +160,7 @@
       }
     }
   },
-  "explainDevelop": "Desarrolla el {piece}.",
+  "explainDevelop": "Desarrolla {piece}.",
   "@explainDevelop": {
     "placeholders": {
       "piece": {
@@ -270,5 +270,39 @@
   "onboardingStreakBody": "Vuelve cada día para mantener tu racha y guarda tus trampas favoritas.",
   "removeFromFavorites": "Quitar de favoritos",
   "trapForWhite": "Trampa para las blancas",
-  "trapForBlack": "Trampa para las negras"
+  "trapForBlack": "Trampa para las negras",
+  "language": "Idioma",
+  "thePawn": "el peón",
+  "theKnight": "el caballo",
+  "theBishop": "el alfil",
+  "theRook": "la torre",
+  "theQueen": "la dama",
+  "theKing": "el rey",
+  "explainPawnMove": "Avanza {piece}.",
+  "explainQuietMove": "Mueve {piece}.",
+  "whiteResigned": "Las blancas se rindieron",
+  "blackResigned": "Las negras se rindieron",
+  "@explainPawnMove": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
+  "@explainQuietMove": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
+  "boardThemeBrown": "Marrón",
+  "boardThemeBlue": "Azul",
+  "boardThemeGreen": "Verde",
+  "boardThemeWood": "Madera",
+  "boardThemeWood2": "Madera II",
+  "boardThemeMetal": "Metal",
+  "boardThemeMarble": "Mármol",
+  "boardThemeHorsey": "Horsey",
+  "boardThemePurple": "Morado"
 }

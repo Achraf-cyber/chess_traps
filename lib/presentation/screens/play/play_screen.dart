@@ -59,9 +59,12 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     final gameState = ref.watch<PlayGameState>(playGameProvider);
     final notifier = ref.read<PlayGameNotifier>(playGameProvider.notifier);
 
-    // Show result dialog when game ends
+    // Show result dialog when a game ends, not when a saved one is opened.
     ref.listen<PlayGameState>(playGameProvider, (prev, next) {
-      if (prev?.gameResult == null && next.gameResult != null) {
+      if (prev != null &&
+          prev.isPlaying &&
+          prev.gameResult == null &&
+          next.gameResult != null) {
         WidgetsBinding.instance.addPostFrameCallback((_) {
           _showResultDialog(context, next.gameResult!, notifier);
         });
@@ -143,9 +146,11 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                   playState.winnerSide == Side.white
                       ? context.phrase.whiteWins
                       : context.phrase.blackWins,
-                  resigned
-                      ? context.phrase.opponentResigned
-                      : context.phrase.congratulations,
+                  !resigned
+                      ? context.phrase.congratulations
+                      : playState.winnerSide == Side.white
+                      ? context.phrase.blackResigned
+                      : context.phrase.whiteResigned,
                   Icons.emoji_events_rounded,
                 ))
         : switch (result) {
@@ -259,43 +264,46 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             const SizedBox(height: 24),
           ],
           // History Display (vs-engine record)
-          Container(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-            decoration: BoxDecoration(
-              color: context.colors.secondaryContainer.withValues(alpha: 0.5),
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: context.colors.outlineVariant.withValues(alpha: 0.5),
+          // These count games against Stockfish, which a friend game isn't.
+          if (_currentMode != GameMode.friend) ...[
+            Container(
+              padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+              decoration: BoxDecoration(
+                color: context.colors.secondaryContainer.withValues(alpha: 0.5),
+                borderRadius: BorderRadius.circular(10),
+                border: Border.all(
+                  color: context.colors.outlineVariant.withValues(alpha: 0.5),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  _buildStatColumn(
+                    context.phrase.wins,
+                    history.wins.toString(),
+                    Colors.green,
+                    Icons.emoji_events_rounded,
+                    context,
+                  ),
+                  _buildStatColumn(
+                    context.phrase.draws,
+                    history.draws.toString(),
+                    context.colors.onSurfaceVariant,
+                    Icons.handshake_rounded,
+                    context,
+                  ),
+                  _buildStatColumn(
+                    context.phrase.losses,
+                    history.losses.toString(),
+                    Colors.red,
+                    Icons.psychology_rounded,
+                    context,
+                  ),
+                ],
               ),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                _buildStatColumn(
-                  context.phrase.wins,
-                  history.wins.toString(),
-                  Colors.green,
-                  Icons.emoji_events_rounded,
-                  context,
-                ),
-                _buildStatColumn(
-                  context.phrase.draws,
-                  history.draws.toString(),
-                  context.colors.onSurfaceVariant,
-                  Icons.handshake_rounded,
-                  context,
-                ),
-                _buildStatColumn(
-                  context.phrase.losses,
-                  history.losses.toString(),
-                  Colors.red,
-                  Icons.psychology_rounded,
-                  context,
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 24),
+            const SizedBox(height: 24),
+          ],
           if (_currentMode == GameMode.engine) ...[
             Text(
               context.phrase.eloLabel(_currentElo),
@@ -326,7 +334,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 ButtonSegment(
                   value: PlayerColor.white,
                   label: Text(context.phrase.white),
-                  icon: const Icon(Icons.circle_outlined),
+                  icon: const _SideDot(color: Colors.white),
                 ),
                 ButtonSegment(
                   value: PlayerColor.random,
@@ -336,7 +344,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 ButtonSegment(
                   value: PlayerColor.black,
                   label: Text(context.phrase.black),
-                  icon: const Icon(Icons.circle),
+                  icon: const _SideDot(color: Colors.black87),
                 ),
               ],
               selected: {_currentColor},
@@ -997,6 +1005,26 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
           ),
         ),
       ],
+    );
+  }
+}
+
+/// A side's colour, literal so that Black stays black in the dark theme.
+class _SideDot extends StatelessWidget {
+  const _SideDot({required this.color});
+
+  final Color color;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 16,
+      height: 16,
+      decoration: BoxDecoration(
+        color: color,
+        shape: BoxShape.circle,
+        border: Border.all(color: context.colors.outline),
+      ),
     );
   }
 }

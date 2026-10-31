@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:math' as math;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:chess_traps/presentation/state/traps/learned_traps_provider.dart';
+import 'package:chess_traps/core/services/analytics_service.dart';
 import 'package:chess_traps/core/services/audio_haptic_service.dart';
 import 'package:chess_traps/presentation/widgets/game_board.dart';
 import 'package:chess_traps/presentation/state/favorites/user_favorites_provider.dart';
@@ -51,6 +52,9 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   Timer? _feedbackTimer;
   NormalMove? _hintMove;
   int _wrongAttempts = 0;
+
+  /// Across the whole run, where [_wrongAttempts] restarts at each move.
+  int _totalWrongAttempts = 0;
   Timer? _hintTimer;
 
   @override
@@ -58,6 +62,13 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
+      final trap = ref.read(trapGameProvider(widget.trapIndex));
+      if (trap != null) {
+        AnalyticsService.instance.logTrapViewed(
+          id: trap.id,
+          name: trap.trapName,
+        );
+      }
       _enforceDailyLimit();
       Future.delayed(const Duration(seconds: 3), () {
         if (!mounted) return;
@@ -130,12 +141,18 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                     onPressed: () {
                       RewardedAdManager().showAdIfAvailable(
                         onRewardEarned: () {
+                          AnalyticsService.instance.logRewardedAdEarned(
+                            placement: 'daily_limit',
+                          );
                           daily.unlockForToday();
                           if (sheetCtx.mounted) Navigator.pop(sheetCtx);
                         },
                         onFailed: () {
                           // No ad available: don't punish the user — grant the
                           // unlock anyway so a failed fill never hard-blocks.
+                          AnalyticsService.instance.logRewardedAdUnavailable(
+                            placement: 'daily_limit',
+                          );
                           daily.unlockForToday();
                           if (sheetCtx.mounted) Navigator.pop(sheetCtx);
                         },
@@ -271,6 +288,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           _updateMoveIndex(currentMoveIndex + 1, trap.moves.length);
 
           if (currentMoveIndex >= trap.moves.length) {
+            _logPracticeCompleted(trap.id, 'practice');
             AudioHapticService().playSuccess(SoundProfile.simple);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(context.phrase.trapCompleted)),
@@ -279,6 +297,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
           }
         });
       } else {
+        _logPracticeCompleted(trap.id, 'practice');
         AudioHapticService().playSuccess(SoundProfile.simple);
         ScaffoldMessenger.of(
           context,
@@ -287,6 +306,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       }
     } else {
       _wrongAttempts++;
+      _totalWrongAttempts++;
       AudioHapticService().playFailure(SoundProfile.simple);
       _showFeedback(false);
       final showingHint = _wrongAttempts >= 2;
@@ -305,7 +325,11 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       );
       if (showingHint) {
         _wrongAttempts = 0;
-        _showHint(ref.read(engineAnalysisProvider(position.fen)));
+        // The trap's own move: the engine's choice would be refused above.
+        if (position.parseSan(expectedSan) case final NormalMove hint) {
+          AnalyticsService.instance.logHintUsed(source: 'trap');
+          _flashHint(hint);
+        }
       }
     }
   }
@@ -337,6 +361,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     }
 
     if (isCorrect) {
+      _logPracticeCompleted(widget.trapIndex, 'avoid');
       AudioHapticService().playSuccess(SoundProfile.simple);
       _showFeedback(true);
       ScaffoldMessenger.of(
@@ -368,22 +393,32 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     });
   }
 
+  void _logPracticeCompleted(int id, String mode) {
+    AnalyticsService.instance.logTrapPracticeCompleted(
+      id: id,
+      mode: mode,
+      wrongAttempts: _totalWrongAttempts,
+    );
+  }
+
   void _showHint(EngineAnalysisState engineState) {
     if (!engineState.engineAvailable || engineState.multiPv.isEmpty) return;
+    AnalyticsService.instance.logHintUsed(source: 'trap');
 
     final sortedEntries = engineState.multiPv.entries.toList()
       ..sort((a, b) => a.key.compareTo(b.key));
 
     if (sortedEntries.first.value.isNotEmpty) {
-      final uci = sortedEntries.first.value.first;
-      setState(() {
-        _hintMove = NormalMove.fromUci(uci);
-      });
-      _hintTimer?.cancel();
-      _hintTimer = Timer(const Duration(seconds: 2), () {
-        if (mounted) setState(() => _hintMove = null);
-      });
+      _flashHint(NormalMove.fromUci(sortedEntries.first.value.first));
     }
+  }
+
+  void _flashHint(NormalMove move) {
+    setState(() => _hintMove = move);
+    _hintTimer?.cancel();
+    _hintTimer = Timer(const Duration(seconds: 2), () {
+      if (mounted) setState(() => _hintMove = null);
+    });
   }
 
   @override
@@ -475,17 +510,16 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       }
     }
 
-    if (_hintMove != null) {
-      arrowList.add(
+    final Set<cg.Shape> hintArrow = {
+      if (_hintMove case final hint?)
         cg.Arrow(
           color: Colors.green.withValues(alpha: 0.8),
-          orig: _hintMove!.from,
-          dest: _hintMove!.to,
+          orig: hint.from,
+          dest: hint.to,
         ),
-      );
-    }
+    };
 
-    final Set<cg.Shape> arrows = arrowList.toSet();
+    final Set<cg.Shape> arrows = {...arrowList, ...hintArrow};
 
     return Scaffold(
       backgroundColor: context.colors.surface,
@@ -522,7 +556,12 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                     isPracticeMode = !isPracticeMode;
                     isAvoidMode = false;
                     _wrongAttempts = 0;
+                    _totalWrongAttempts = 0;
                     if (isPracticeMode) {
+                      AnalyticsService.instance.logTrapPracticeStarted(
+                        id: trap.id,
+                        mode: 'practice',
+                      );
                       currentMoveIndex = 0; // Reset to start
                       if (isAutoPlaying) {
                         _toggleAutoPlay(maxMoves);
@@ -552,6 +591,10 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   setState(() {
                     isAvoidMode = !isAvoidMode;
                     if (isAvoidMode) {
+                      AnalyticsService.instance.logTrapPracticeStarted(
+                        id: trap.id,
+                        mode: 'avoid',
+                      );
                       isPracticeMode = false;
                       isAutoPlaying = false;
                       _calculateBlunderIndex(trap);
@@ -605,6 +648,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   }
                   break;
                 case 'share':
+                  AnalyticsService.instance.logTrapShared(id: trap.id);
                   await SharePlus.instance.share(
                     ShareParams(
                       text: context.phrase.canYouSurvive(
@@ -869,12 +913,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                     size: size,
                                     orientation: orientation,
                                     fen: position.fen,
-                                    settings: cg.ChessboardSettings(
-                                      colorScheme:
-                                          settings.boardTheme.colorScheme,
-                                    ),
                                     shapes: isPracticeMode || isAvoidMode
-                                        ? const {}
+                                        ? hintArrow
                                         : arrows,
                                     playerSide:
                                         !(isAvoidMode ||
@@ -1056,7 +1096,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                       ),
                                       style: context.textTheme.labelSmall
                                           ?.copyWith(
-                                            color: context.colors.outline,
+                                            color: context.colors.onSurfaceVariant,
                                           ),
                                     ),
                                 ],
@@ -1190,7 +1230,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       items: AppBoardTheme.values.map((theme) {
                         return DropdownMenuItem(
                           value: theme,
-                          child: Text(theme.name),
+                          child: Text(theme.label(context.phrase)),
                         );
                       }).toList(),
                       onChanged: (AppBoardTheme? theme) {

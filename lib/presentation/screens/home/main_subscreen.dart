@@ -52,12 +52,12 @@ class MainSubscreen extends ConsumerWidget {
                 _ActionRow(
                   icon: Icons.castle_outlined,
                   label: context.phrase.play_mode,
-                  onTap: () => const PlayRoute().go(context),
+                  onTap: () => const PlayRoute().push<void>(context),
                 ),
                 _ActionRow(
                   icon: Icons.manage_search_rounded,
                   label: context.phrase.search,
-                  onTap: () => const SearchByMovesRoute().go(context),
+                  onTap: () => const SearchByMovesRoute().push<void>(context),
                 ),
                 const SizedBox(height: 32),
                 _SectionLabel(label: context.phrase.browseByOpening),

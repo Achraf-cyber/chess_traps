@@ -73,7 +73,14 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String favoritesCount(int count) {
-    return 'تم حفظ $count فخاخ';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count فخاخ محفوظة',
+      one: 'فخ واحد محفوظ',
+      zero: 'لا توجد فخاخ محفوظة',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -309,7 +316,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String explainCapture(String piece, String captured) {
-    return 'يأسر $piece الـ$captured.';
+    return 'يأسر $piece $captured.';
   }
 
   @override
@@ -537,4 +544,68 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get trapForBlack => 'فخ للأسود';
+
+  @override
+  String get language => 'اللغة';
+
+  @override
+  String get thePawn => 'البيدق';
+
+  @override
+  String get theKnight => 'الحصان';
+
+  @override
+  String get theBishop => 'الفيل';
+
+  @override
+  String get theRook => 'الرخ';
+
+  @override
+  String get theQueen => 'الوزير';
+
+  @override
+  String get theKing => 'الملك';
+
+  @override
+  String explainPawnMove(String piece) {
+    return 'يتقدم $piece.';
+  }
+
+  @override
+  String explainQuietMove(String piece) {
+    return 'يحرك $piece.';
+  }
+
+  @override
+  String get whiteResigned => 'استسلم الأبيض';
+
+  @override
+  String get blackResigned => 'استسلم الأسود';
+
+  @override
+  String get boardThemeBrown => 'بني';
+
+  @override
+  String get boardThemeBlue => 'أزرق';
+
+  @override
+  String get boardThemeGreen => 'أخضر';
+
+  @override
+  String get boardThemeWood => 'خشب';
+
+  @override
+  String get boardThemeWood2 => 'خشب 2';
+
+  @override
+  String get boardThemeMetal => 'معدني';
+
+  @override
+  String get boardThemeMarble => 'رخام';
+
+  @override
+  String get boardThemeHorsey => 'Horsey';
+
+  @override
+  String get boardThemePurple => 'بنفسجي';
 }

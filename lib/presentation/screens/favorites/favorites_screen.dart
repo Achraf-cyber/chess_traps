@@ -14,6 +14,7 @@ class FavoritesScreen extends ConsumerWidget {
     final elements = ref.watch(userFavoritesProvider).map(indexToChessTrap).toList();
 
     return Scaffold(
+      appBar: AppBar(),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [

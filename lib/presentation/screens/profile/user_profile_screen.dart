@@ -72,7 +72,7 @@ class UserProfileScreen extends ConsumerWidget {
                   const SizedBox(height: 28),
 
                   // Language
-                  _SectionTitle(title: context.phrase.localeName),
+                  _SectionTitle(title: context.phrase.language),
                   const SizedBox(height: 12),
                   const _LanguageSelector(),
                   const SizedBox(height: 28),
@@ -91,7 +91,7 @@ class UserProfileScreen extends ConsumerWidget {
                     iconColor: scheme.error,
                     title: context.phrase.yourFavorites,
                     subtitle: context.phrase.favoritesCount(favoritesCount),
-                    onTap: () => const FavoritesRoute().go(context),
+                    onTap: () => const FavoritesRoute().push<void>(context),
                   ),
                   _SettingsTile(
                     icon: Icons.delete_sweep_rounded,
@@ -815,7 +815,7 @@ class _BoardThemeSelector extends ConsumerWidget {
             items: AppBoardTheme.values.map((theme) {
               return DropdownMenuItem(
                 value: theme,
-                child: Text(theme.label),
+                child: Text(theme.label(context.phrase)),
               );
             }).toList(),
             onChanged: (theme) {

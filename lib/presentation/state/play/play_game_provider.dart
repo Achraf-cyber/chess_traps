@@ -5,6 +5,7 @@ import 'package:dartchess/dartchess.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import 'package:chess_traps/core/services/analytics_service.dart';
 import 'package:chess_traps/core/services/audio_haptic_service.dart';
 import 'package:chess_traps/core/services/uci.dart';
 import 'package:chess_traps/presentation/state/play/engine_analysis_provider.dart';
@@ -302,6 +303,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     );
 
     _hapticService.playQuietMove(SoundProfile.meme);
+    AnalyticsService.instance.logGameStarted(mode: mode.name, elo: elo);
 
     // Only the engine plays automatically; in friend mode both sides are human.
     if (mode == GameMode.engine && actualColor == PlayerColor.black) {
@@ -353,6 +355,16 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     ref.read(chessEngineProvider).playMove(nextPos.fen, state.elo);
   }
 
+  void _logGameFinished(String result, {bool resigned = false}) {
+    AnalyticsService.instance.logGameFinished(
+      mode: state.mode.name,
+      result: result,
+      elo: state.elo,
+      plies: state.moveHistory.length,
+      resigned: resigned,
+    );
+  }
+
   /// Handles a terminal position for either mode: records the result and
   /// updates state. Returns true if the game is over. Assumes the moving
   /// move is already reflected in [state.moveHistory].
@@ -360,6 +372,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     if (pos.isCheckmate) {
       final winner = pos.turn.opposite;
       if (state.isFriendMode) {
+        _logGameFinished(winner.name);
         ref
             .read(playHistoryProvider.notifier)
             .addFriendGame(
@@ -381,6 +394,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
             : Side.black;
         final result = winner == userSide ? GameResult.win : GameResult.loss;
         _recordResult(result);
+        _logGameFinished(result.name);
         // A rare voice reward/commiseration on the game's outcome.
         if (result == GameResult.win) {
           _hapticService.playSuccess(SoundProfile.meme);
@@ -395,6 +409,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       }
       return true;
     } else if (pos.outcome == Outcome.draw) {
+      _logGameFinished(GameResult.draw.name);
       if (state.isFriendMode) {
         ref
             .read(playHistoryProvider.notifier)
@@ -469,6 +484,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     if (state.isFriendMode) {
       final loser = state.chess.turn;
       final winner = loser.opposite;
+      _logGameFinished(winner.name, resigned: true);
       ref
           .read(playHistoryProvider.notifier)
           .addFriendGame(
@@ -486,6 +502,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     }
 
     _recordResult(GameResult.loss);
+    _logGameFinished(GameResult.loss.name, resigned: true);
     _hapticService.playLoss(SoundProfile.meme, byCheckmate: false);
     state = state.copyWith(
       isPlaying: false,
@@ -577,6 +594,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
   void requestHint() {
     if (!state.isPlaying || state.engineThinking || _hintPending) return;
     _hintPending = true;
+    AnalyticsService.instance.logHintUsed(source: 'game');
     ref
         .read(chessEngineProvider)
         .playMove(state.chess.fen, state.elo, fallback: false);

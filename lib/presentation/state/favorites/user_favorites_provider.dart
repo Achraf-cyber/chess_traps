@@ -1,3 +1,4 @@
+import 'package:chess_traps/core/services/analytics_service.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -32,6 +33,10 @@ class UserFavoritesNotifier extends _$UserFavoritesNotifier {
     }
 
     state = newSet;
+    AnalyticsService.instance.logFavoriteToggled(
+      id: index,
+      isAdded: newSet.contains(index),
+    );
 
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(_key, newSet.map((e) => e.toString()).toList());

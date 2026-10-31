@@ -74,7 +74,14 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String favoritesCount(int count) {
-    return '$count trampas guardadas';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count trampas guardadas',
+      one: '1 trampa guardada',
+      zero: 'Ninguna trampa guardada',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -301,27 +308,27 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String explainCheckmate(String piece) {
-    return '¡El $piece da jaque mate!';
+    return '¡$piece da jaque mate!';
   }
 
   @override
   String explainSacrifice(String piece) {
-    return 'Sacrifica el $piece para abrir el ataque.';
+    return 'Sacrifica $piece para abrir el ataque.';
   }
 
   @override
   String explainCapture(String piece, String captured) {
-    return 'El $piece captura el $captured.';
+    return '$piece captura $captured.';
   }
 
   @override
   String explainFork(String piece, String targets) {
-    return 'El $piece hace una horquilla sobre $targets.';
+    return '$piece hace una horquilla sobre $targets.';
   }
 
   @override
   String explainCheck(String piece) {
-    return 'El $piece da jaque, forzando una respuesta.';
+    return '$piece da jaque, forzando una respuesta.';
   }
 
   @override
@@ -337,7 +344,7 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String explainDevelop(String piece) {
-    return 'Desarrolla el $piece.';
+    return 'Desarrolla $piece.';
   }
 
   @override
@@ -545,4 +552,68 @@ class AppLocalizationsEs extends AppLocalizations {
 
   @override
   String get trapForBlack => 'Trampa para las negras';
+
+  @override
+  String get language => 'Idioma';
+
+  @override
+  String get thePawn => 'el peón';
+
+  @override
+  String get theKnight => 'el caballo';
+
+  @override
+  String get theBishop => 'el alfil';
+
+  @override
+  String get theRook => 'la torre';
+
+  @override
+  String get theQueen => 'la dama';
+
+  @override
+  String get theKing => 'el rey';
+
+  @override
+  String explainPawnMove(String piece) {
+    return 'Avanza $piece.';
+  }
+
+  @override
+  String explainQuietMove(String piece) {
+    return 'Mueve $piece.';
+  }
+
+  @override
+  String get whiteResigned => 'Las blancas se rindieron';
+
+  @override
+  String get blackResigned => 'Las negras se rindieron';
+
+  @override
+  String get boardThemeBrown => 'Marrón';
+
+  @override
+  String get boardThemeBlue => 'Azul';
+
+  @override
+  String get boardThemeGreen => 'Verde';
+
+  @override
+  String get boardThemeWood => 'Madera';
+
+  @override
+  String get boardThemeWood2 => 'Madera II';
+
+  @override
+  String get boardThemeMetal => 'Metal';
+
+  @override
+  String get boardThemeMarble => 'Mármol';
+
+  @override
+  String get boardThemeHorsey => 'Horsey';
+
+  @override
+  String get boardThemePurple => 'Morado';
 }

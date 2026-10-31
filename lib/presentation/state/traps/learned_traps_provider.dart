@@ -1,3 +1,4 @@
+import 'package:chess_traps/core/services/analytics_service.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -29,6 +30,10 @@ class LearnedTraps extends _$LearnedTraps {
       newState.add(id);
     }
     state = newState;
+    AnalyticsService.instance.logTrapLearned(
+      id: id,
+      learned: newState.contains(id),
+    );
 
     final prefs = await SharedPreferences.getInstance();
     await prefs.setStringList(_key, state.map((e) => e.toString()).toList());

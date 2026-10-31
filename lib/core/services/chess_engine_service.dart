@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:multistockfish/multistockfish.dart';
 import 'package:dartchess/dartchess.dart';
+import 'package:chess_traps/core/services/analytics_service.dart';
 import 'package:chess_traps/core/services/uci.dart';
 
 class ChessEngineService {
@@ -72,7 +73,9 @@ class ChessEngineService {
   }
 
   Future<void> _start() async {
+    final analytics = AnalyticsService.instance;
     for (var attempt = 1; attempt <= _startAttempts; attempt++) {
+      final stopwatch = Stopwatch()..start();
       try {
         // The light flavor's net is embedded and about 1 MB, so it loads well
         // inside multistockfish's fixed 5s start timeout even on low-end
@@ -82,6 +85,10 @@ class ChessEngineService {
         engine.state.addListener(_onStateChanged);
         engineAvailableNotifier.value = true;
         debugPrint('Stockfish: Native bridge is fully READY');
+        analytics.logEngineStarted(
+          attempt: attempt,
+          elapsed: stopwatch.elapsed,
+        );
 
         final pending = _pending;
         _pending = null;
@@ -89,6 +96,11 @@ class ChessEngineService {
         return;
       } catch (e) {
         debugPrint('Stockfish start failed (attempt $attempt): $e');
+        analytics.logEngineStartFailed(
+          attempt: attempt,
+          willRetry: attempt < _startAttempts,
+          error: e,
+        );
         if (attempt < _startAttempts) {
           await Future<void>.delayed(Duration(milliseconds: 500 * attempt));
         }
@@ -106,6 +118,10 @@ class ChessEngineService {
     if (engine == null || engine.state.value == StockfishState.ready) return;
 
     debugPrint('Stockfish died: ${engine.state.value} ${engine.diagnostics}');
+    AnalyticsService.instance.logEngineCrashed(
+      state: engine.state.value.name,
+      diagnostics: engine.diagnostics.toString(),
+    );
     engine.state.removeListener(_onStateChanged);
     unawaited(engine.dispose());
     _stockfish = null;
@@ -186,7 +202,10 @@ class ChessEngineService {
           'go movetime 1000', // Think for 1 second
         ],
         onUnavailable: fallback
-            ? () => _playFallbackMove(fen)
+            ? () {
+                AnalyticsService.instance.logEngineFallbackUsed();
+                _playFallbackMove(fen);
+              }
             : () => _outputController.add('bestmove (none)'),
       ),
     );

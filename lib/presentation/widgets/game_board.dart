@@ -1,6 +1,8 @@
+import 'package:chess_traps/core/providers/settings_provider.dart';
 import 'package:chessground/chessground.dart';
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// An interactive board described declaratively by [fen], on top of
 /// chessground's imperative [ChessboardController].
@@ -9,7 +11,7 @@ import 'package:flutter/widgets.dart';
 /// [PlayerSide.none] when they can't), so a move made by the opponent or by
 /// stepping through a line slides across the board instead of the piece
 /// jumping because the board was rebuilt.
-class GameBoard extends StatefulWidget {
+class GameBoard extends ConsumerStatefulWidget {
   const GameBoard({
     super.key,
     required this.size,
@@ -35,10 +37,10 @@ class GameBoard extends StatefulWidget {
   final void Function(Move, {bool? viaDragAndDrop})? onMove;
 
   @override
-  State<GameBoard> createState() => _GameBoardState();
+  ConsumerState<GameBoard> createState() => _GameBoardState();
 }
 
-class _GameBoardState extends State<GameBoard> {
+class _GameBoardState extends ConsumerState<GameBoard> {
   late final _controller = ChessboardController(game: _gameData());
 
   GameData _gameData() {
@@ -82,7 +84,10 @@ class _GameBoardState extends State<GameBoard> {
       controller: _controller,
       size: widget.size,
       orientation: widget.orientation,
-      settings: widget.settings.copyWith(enablePremoves: false),
+      settings: widget.settings.copyWith(
+        enablePremoves: false,
+        colorScheme: ref.watch(chessSettingsProvider).boardTheme.colorScheme,
+      ),
       shapes: widget.shapes,
       onMove: widget.onMove,
     );

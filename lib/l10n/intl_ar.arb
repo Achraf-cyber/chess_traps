@@ -23,7 +23,7 @@
   "dataManagement": "إدارة البيانات",
   "about": "حول",
   "yourFavorites": "مفضلاتك",
-  "favoritesCount": "تم حفظ {count} فخاخ",
+  "favoritesCount": "{count, plural, =0{لا توجد فخاخ محفوظة} =1{فخ واحد محفوظ} other{{count} فخاخ محفوظة}}",
   "@favoritesCount": {
     "placeholders": {
       "count": {
@@ -120,7 +120,7 @@
       }
     }
   },
-  "explainCapture": "يأسر {piece} الـ{captured}.",
+  "explainCapture": "يأسر {piece} {captured}.",
   "@explainCapture": {
     "placeholders": {
       "piece": {
@@ -270,5 +270,39 @@
   "onboardingStreakBody": "عد يوميًا لمواصلة سلسلة دخولك واحفظ فخاخك المفضلة.",
   "removeFromFavorites": "إزالة من المفضلة",
   "trapForWhite": "فخ للأبيض",
-  "trapForBlack": "فخ للأسود"
+  "trapForBlack": "فخ للأسود",
+  "language": "اللغة",
+  "thePawn": "البيدق",
+  "theKnight": "الحصان",
+  "theBishop": "الفيل",
+  "theRook": "الرخ",
+  "theQueen": "الوزير",
+  "theKing": "الملك",
+  "explainPawnMove": "يتقدم {piece}.",
+  "explainQuietMove": "يحرك {piece}.",
+  "whiteResigned": "استسلم الأبيض",
+  "blackResigned": "استسلم الأسود",
+  "@explainPawnMove": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
+  "@explainQuietMove": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
+  "boardThemeBrown": "بني",
+  "boardThemeBlue": "أزرق",
+  "boardThemeGreen": "أخضر",
+  "boardThemeWood": "خشب",
+  "boardThemeWood2": "خشب 2",
+  "boardThemeMetal": "معدني",
+  "boardThemeMarble": "رخام",
+  "boardThemeHorsey": "Horsey",
+  "boardThemePurple": "بنفسجي"
 }

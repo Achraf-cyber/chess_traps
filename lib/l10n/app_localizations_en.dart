@@ -73,7 +73,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String favoritesCount(int count) {
-    return '$count traps saved';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count traps saved',
+      one: '1 trap saved',
+      zero: 'No traps saved',
+    );
+    return '$_temp0';
   }
 
   @override
@@ -300,27 +307,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String explainCheckmate(String piece) {
-    return 'The $piece delivers checkmate!';
+    return '$piece delivers checkmate!';
   }
 
   @override
   String explainSacrifice(String piece) {
-    return 'Sacrifices the $piece to open up the attack.';
+    return 'Sacrifices $piece to open up the attack.';
   }
 
   @override
   String explainCapture(String piece, String captured) {
-    return 'The $piece captures the $captured.';
+    return '$piece captures $captured.';
   }
 
   @override
   String explainFork(String piece, String targets) {
-    return 'The $piece forks $targets.';
+    return '$piece forks $targets.';
   }
 
   @override
   String explainCheck(String piece) {
-    return 'The $piece gives check, forcing a reply.';
+    return '$piece gives check, forcing a reply.';
   }
 
   @override
@@ -337,7 +344,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String explainDevelop(String piece) {
-    return 'Develops the $piece.';
+    return 'Develops $piece.';
   }
 
   @override
@@ -543,4 +550,68 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get trapForBlack => 'Trap for Black';
+
+  @override
+  String get language => 'Language';
+
+  @override
+  String get thePawn => 'the pawn';
+
+  @override
+  String get theKnight => 'the knight';
+
+  @override
+  String get theBishop => 'the bishop';
+
+  @override
+  String get theRook => 'the rook';
+
+  @override
+  String get theQueen => 'the queen';
+
+  @override
+  String get theKing => 'the king';
+
+  @override
+  String explainPawnMove(String piece) {
+    return 'Advances $piece.';
+  }
+
+  @override
+  String explainQuietMove(String piece) {
+    return 'Moves $piece.';
+  }
+
+  @override
+  String get whiteResigned => 'White resigned';
+
+  @override
+  String get blackResigned => 'Black resigned';
+
+  @override
+  String get boardThemeBrown => 'Brown';
+
+  @override
+  String get boardThemeBlue => 'Blue';
+
+  @override
+  String get boardThemeGreen => 'Green';
+
+  @override
+  String get boardThemeWood => 'Wood';
+
+  @override
+  String get boardThemeWood2 => 'Wood II';
+
+  @override
+  String get boardThemeMetal => 'Metal';
+
+  @override
+  String get boardThemeMarble => 'Marble';
+
+  @override
+  String get boardThemeHorsey => 'Horsey';
+
+  @override
+  String get boardThemePurple => 'Purple';
 }

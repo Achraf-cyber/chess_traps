@@ -1,3 +1,6 @@
+import 'dart:math';
+
+import 'package:chess_traps/core/services/analytics_service.dart';
 import 'package:chess_traps/core/services/remote_config_service.dart';
 import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
 import 'package:chess_traps/presentation/widgets/game_board.dart';
@@ -30,6 +33,10 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   // Free-text name search, applied on top of the move-narrowed set.
   final _searchController = TextEditingController();
   String _searchQuery = '';
+  final _searchFocus = FocusNode();
+
+  // The results sheet, resting at its minimum size below the board.
+  final _sheetController = DraggableScrollableController();
 
   // Rewarded Ad logic
   RewardedAd? _rewardedAd;
@@ -38,11 +45,23 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   @override
   void initState() {
     super.initState();
+    _searchFocus.addListener(_onSearchFocusChanged);
     _updateTraps();
     _loadRewardedAd();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       InterstitialAdManager().onTrapViewed();
     });
+  }
+
+  /// Typing a name needs the results in view, not the board.
+  void _onSearchFocusChanged() {
+    if (_searchFocus.hasFocus && _sheetController.isAttached) {
+      _sheetController.animateTo(
+        1,
+        duration: const Duration(milliseconds: 250),
+        curve: Curves.easeOutCubic,
+      );
+    }
   }
 
   void _loadRewardedAd() {
@@ -79,6 +98,9 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
 
     _rewardedAd!.show(
       onUserEarnedReward: (ad, reward) {
+        AnalyticsService.instance.logRewardedAdEarned(
+          placement: 'search_limit',
+        );
         setState(() {
           _bonusMoves += 5;
         });
@@ -211,167 +233,210 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // One scroll surface instead of two fixed panes. The board used to sit
-      // in Expanded(flex: 7) wrapped in its own SingleChildScrollView — so it
-      // scrolled, pointlessly, while the results were pinned to 4/11 of the
-      // screen and could never be given more room. Now the board scrolls
-      // away and the results take the whole viewport, which is what you want
-      // once you have played a few moves and are reading the matches.
+      // The board never sits in a scrollable: a drag that starts on it is
+      // always a move. The results are a sheet of their own, resting below the
+      // board and pulled up over it when there is a list to read.
       body: SafeArea(
-        child: CustomScrollView(
-          slivers: [
-            SliverToBoxAdapter(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _buildFloatingHeader(),
-                  const SizedBox(height: 8),
-                  _buildNameSearchField(),
-                  const SizedBox(height: 8),
-                  _buildBoardLayer(),
-                  const SizedBox(height: 12),
-                ],
-              ),
-            ),
-            SliverFillRemaining(
-              child: _SearchResultsSection(
-                trapCount: _displayedTrapIds.length,
-                phraseMatchingTraps: context.phrase.matchingTraps,
-                child: _buildInlineResults(),
-              ),
-            ),
-          ],
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            const headerHeight = 56.0;
+            const historyHeight = 44.0;
+            const minimumSheetHeight = 150.0;
+
+            final height = constraints.maxHeight;
+            final boardSize = min(
+              constraints.maxWidth - 24,
+              height - headerHeight - historyHeight - minimumSheetHeight,
+            ).clamp(120.0, double.infinity);
+            final sheetSize =
+                ((height - headerHeight - historyHeight - boardSize) / height)
+                    .clamp(0.15, 1.0);
+
+            return Stack(
+              children: [
+                Column(
+                  children: [
+                    SizedBox(height: headerHeight, child: _buildHeader()),
+                    GameBoard(
+                      size: boardSize,
+                      orientation: orientation,
+                      fen: position.fen,
+                      lastMove: lastMove,
+                      playerSide: position.turn == .white ? .white : .black,
+                      onMove: onMove,
+                    ),
+                    SizedBox(
+                      height: historyHeight,
+                      child: _SearchMoveHistoryBar(history: history),
+                    ),
+                  ],
+                ),
+                DraggableScrollableSheet(
+                  controller: _sheetController,
+                  initialChildSize: sheetSize,
+                  minChildSize: sheetSize,
+                  snap: true,
+                  builder: (context, scrollController) =>
+                      _buildResultsSheet(scrollController),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
   }
 
-  Widget _buildBoardLayer() {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final totalWidth = constraints.maxWidth;
-        // Sized off the width and capped against the screen, not against the
-        // incoming maxHeight: inside a sliver that height is unbounded, so the
-        // old `constraints.maxHeight * 0.72` would have produced infinity. The
-        // cap keeps the board from swallowing a tall screen and leaves the
-        // first results visible without scrolling.
-        final boardMaxHeight = MediaQuery.sizeOf(context).height * 0.46;
-        final boardSize = boardMaxHeight < totalWidth
-            ? boardMaxHeight
-            : totalWidth;
+  Widget _buildHeader() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: Row(
+        children: [
+          Text(context.phrase.search, style: context.textTheme.titleLarge),
+          const Spacer(),
+          IconButton(
+            onPressed: history.isEmpty ? null : _undo,
+            icon: const Icon(Icons.undo_rounded),
+            tooltip: context.phrase.undo,
+          ),
+          IconButton(
+            onPressed: _flip,
+            icon: const Icon(Icons.flip_camera_android_rounded),
+            tooltip: context.phrase.flip,
+          ),
+          IconButton(
+            onPressed: history.isEmpty ? null : _reset,
+            icon: const Icon(Icons.refresh_rounded),
+            tooltip: context.phrase.resetBoard,
+          ),
+        ],
+      ),
+    );
+  }
 
-        return Column(
+  Widget _buildResultsSheet(ScrollController scrollController) {
+    final ids = _displayedTrapIds;
+    return Material(
+      color: context.colors.surfaceContainerLow,
+      shape: RoundedRectangleBorder(
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(16)),
+        side: BorderSide(color: context.colors.outlineVariant),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: CustomScrollView(
+        controller: scrollController,
+        slivers: [
+          PinnedHeaderSliver(child: _buildSheetHeader(ids.length)),
+          if (ids.isEmpty)
+            SliverFillRemaining(
+              hasScrollBody: false,
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Text(
+                  context.phrase.noTrapsFoundForSequence,
+                  style: context.textTheme.bodyMedium?.copyWith(
+                    color: context.colors.onSurfaceVariant,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            )
+          else
+            SliverList.separated(
+              itemCount: ids.length,
+              separatorBuilder: (context, _) =>
+                  const Divider(height: 1, indent: 102),
+              itemBuilder: (context, index) => SearchResultTile(
+                trap: chessTraps[ids[index]],
+                ply: history.length,
+              ),
+            ),
+          SliverPadding(
+            padding: EdgeInsets.only(
+              bottom: 16 + MediaQuery.viewInsetsOf(context).bottom,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// The grip, the count and the name field. Part of the scrollable, so that a
+  /// drag anywhere on it moves the sheet.
+  Widget _buildSheetHeader(int trapCount) {
+    return ColoredBox(
+      color: context.colors.surfaceContainerLow,
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+        child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(height: 4),
             Center(
               child: Container(
-                width: boardSize,
-                height: boardSize,
+                width: 36,
+                height: 4,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                clipBehavior: Clip.antiAlias,
-                child: GameBoard(
-                  size: boardSize,
-                  orientation: orientation,
-                  fen: position.fen,
-                  lastMove: lastMove,
-                  playerSide: position.turn == .white ? .white : .black,
-                  onMove: onMove,
+                  color: context.colors.outlineVariant,
+                  borderRadius: BorderRadius.circular(2),
                 ),
               ),
             ),
-            const SizedBox(height: 12),
-            _SearchControlsRow(
-              onUndo: _undo,
-              onFlip: _flip,
-              canUndo: history.isNotEmpty,
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    context.phrase.matchingTraps,
+                    style: context.textTheme.titleMedium,
+                  ),
+                ),
+                Text(
+                  '$trapCount',
+                  style: context.textTheme.titleMedium?.copyWith(
+                    color: context.colors.primary,
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 12),
-            _SearchMoveHistoryBar(history: history),
-            const SizedBox(height: 4),
+            const SizedBox(height: 8),
+            _buildNameSearchField(),
           ],
-        );
-      },
+        ),
+      ),
     );
   }
 
   Widget _buildNameSearchField() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: TextField(
-        controller: _searchController,
-        onChanged: (value) => setState(() => _searchQuery = value),
-        textInputAction: TextInputAction.search,
-        decoration: InputDecoration(
-          isDense: true,
-          hintText: context.phrase.searchByName,
-          prefixIcon: const Icon(Icons.search_rounded, size: 20),
-          suffixIcon: _searchQuery.isEmpty
-              ? null
-              : IconButton(
-                  icon: const Icon(Icons.close_rounded, size: 18),
-                  onPressed: () {
-                    _searchController.clear();
-                    setState(() => _searchQuery = '');
-                    FocusScope.of(context).unfocus();
-                  },
-                ),
-          filled: true,
-          fillColor: context.colors.surfaceContainerHighest.withValues(
-            alpha: 0.5,
-          ),
-          contentPadding: const EdgeInsets.symmetric(vertical: 10),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide.none,
-          ),
+    return TextField(
+      controller: _searchController,
+      focusNode: _searchFocus,
+      onChanged: (value) => setState(() => _searchQuery = value),
+      onTapOutside: (_) => _searchFocus.unfocus(),
+      textInputAction: TextInputAction.search,
+      decoration: InputDecoration(
+        isDense: true,
+        hintText: context.phrase.searchByName,
+        prefixIcon: const Icon(Icons.search_rounded, size: 20),
+        suffixIcon: _searchQuery.isEmpty
+            ? null
+            : IconButton(
+                icon: const Icon(Icons.close_rounded, size: 18),
+                onPressed: () {
+                  _searchController.clear();
+                  setState(() => _searchQuery = '');
+                },
+              ),
+        filled: true,
+        fillColor: context.colors.surfaceContainerHighest.withValues(
+          alpha: 0.5,
+        ),
+        contentPadding: const EdgeInsets.symmetric(vertical: 10),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide.none,
         ),
       ),
-    );
-  }
-
-  Widget _buildFloatingHeader() {
-    return _TrapSearchFloatingHeader(
-      title: context.phrase.search,
-      resetTooltip: context.phrase.resetBoard,
-      onUndo: _undo,
-      onFlip: _flip,
-      onReset: _reset,
-    );
-  }
-
-  Widget _buildInlineResults() {
-    final ids = _displayedTrapIds;
-    if (ids.isEmpty) {
-      return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.search_off_rounded,
-              size: 48,
-              color: context.colors.outline.withValues(alpha: 0.5),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              context.phrase.noTrapsFoundForSequence,
-              style: context.textTheme.labelLarge,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      );
-    }
-
-    return ListView.builder(
-      padding: const EdgeInsets.only(top: 8, bottom: 16),
-      itemCount: ids.length,
-      itemBuilder: (context, index) {
-        final trap = chessTraps[ids[index]];
-        return SearchResultTile(trap: trap, index: index);
-      },
     );
   }
 
@@ -392,138 +457,10 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   @override
   void dispose() {
     _searchController.dispose();
+    _searchFocus.dispose();
+    _sheetController.dispose();
     _rewardedAd?.dispose();
     super.dispose();
-  }
-}
-
-class _TrapSearchFloatingHeader extends StatelessWidget {
-  const _TrapSearchFloatingHeader({
-    required this.title,
-    required this.resetTooltip,
-    required this.onUndo,
-    required this.onFlip,
-    required this.onReset,
-  });
-
-  final String title;
-  final String resetTooltip;
-  final VoidCallback onUndo;
-  final VoidCallback onFlip;
-  final VoidCallback onReset;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(12, 6, 12, 0),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
-        decoration: BoxDecoration(
-          color: context.colors.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: context.colors.outlineVariant.withValues(alpha: 0.25),
-          ),
-        ),
-        child: Row(
-          children: [
-            const SizedBox(width: 4),
-            Text(
-              title,
-              style: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w600,
-                color: context.colors.primary,
-              ),
-            ),
-            const Spacer(),
-            IconButton(
-              onPressed: onUndo,
-              icon: const Icon(Icons.undo_rounded, size: 20),
-              tooltip: context.phrase.undo,
-              visualDensity: VisualDensity.compact,
-            ),
-            IconButton(
-              onPressed: onFlip,
-              icon: const Icon(Icons.flip_camera_android_rounded, size: 20),
-              tooltip: context.phrase.flip,
-              visualDensity: VisualDensity.compact,
-            ),
-            IconButton.filledTonal(
-              onPressed: onReset,
-              icon: const Icon(Icons.refresh_rounded, size: 20),
-              tooltip: resetTooltip,
-              visualDensity: VisualDensity.compact,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _SearchControlsRow extends StatelessWidget {
-  const _SearchControlsRow({
-    required this.onUndo,
-    required this.onFlip,
-    required this.canUndo,
-  });
-
-  final VoidCallback onUndo;
-  final VoidCallback onFlip;
-  final bool canUndo;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _SearchNavButton(
-          icon: Icons.undo_rounded,
-          label: context.phrase.undo,
-          onPressed: canUndo ? onUndo : null,
-        ),
-        const SizedBox(width: 16),
-        _SearchNavButton(
-          icon: Icons.flip_camera_android_rounded,
-          label: context.phrase.flip,
-          onPressed: onFlip,
-        ),
-      ],
-    );
-  }
-}
-
-class _SearchNavButton extends StatelessWidget {
-  const _SearchNavButton({
-    required this.icon,
-    required this.label,
-    required this.onPressed,
-  });
-
-  final IconData icon;
-  final String label;
-  final VoidCallback? onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final enabled = onPressed != null;
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        IconButton.filledTonal(
-          onPressed: onPressed,
-          iconSize: 24,
-          icon: Icon(icon),
-        ),
-        Text(
-          label,
-          style: context.textTheme.labelSmall?.copyWith(
-            fontWeight: FontWeight.bold,
-            color: enabled ? context.colors.onSurface : context.colors.outline,
-          ),
-        ),
-      ],
-    );
   }
 }
 
@@ -534,7 +471,7 @@ class _SearchMoveHistoryBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (history.isEmpty) return const SizedBox(height: 40);
+    if (history.isEmpty) return const SizedBox.shrink();
 
     final sanMoves = <String>[];
     var pos = Position.initialPosition(Rule.chess);
@@ -544,22 +481,20 @@ class _SearchMoveHistoryBar extends StatelessWidget {
       pos = nextPos;
     }
 
-    return Container(
-      height: 44,
-      margin: const EdgeInsets.symmetric(horizontal: 24),
-      decoration: BoxDecoration(
-        color: context.colors.surfaceContainerHighest.withValues(alpha: 0.5),
-        borderRadius: BorderRadius.circular(10),
-      ),
+    return Directionality(
+      textDirection: TextDirection.ltr,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        reverse: true,
         padding: const EdgeInsets.symmetric(horizontal: 16),
         itemCount: sanMoves.length,
-        itemBuilder: (context, index) {
+        itemBuilder: (context, reversed) {
+          // Reversed so that the latest move stays in view as the line grows.
+          final index = sanMoves.length - 1 - reversed;
           final isWhite = index % 2 == 0;
           final moveNum = (index / 2).floor() + 1;
           return Padding(
-            padding: const EdgeInsets.only(right: 12),
+            padding: const EdgeInsets.only(left: 12),
             child: Center(
               child: Text(
                 "${isWhite ? '$moveNum. ' : ''}${sanMoves[index]}",
@@ -571,70 +506,6 @@ class _SearchMoveHistoryBar extends StatelessWidget {
             ),
           );
         },
-      ),
-    );
-  }
-}
-
-class _SearchResultsSection extends StatelessWidget {
-  const _SearchResultsSection({
-    required this.trapCount,
-    required this.phraseMatchingTraps,
-    required this.child,
-  });
-
-  final int trapCount;
-  final String phraseMatchingTraps;
-  final Widget child;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.fromLTRB(12, 0, 12, 12),
-      padding: const EdgeInsets.only(top: 10),
-      decoration: BoxDecoration(
-        color: context.colors.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: context.colors.outlineVariant.withValues(alpha: 0.3),
-        ),
-      ),
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
-            child: Row(
-              children: [
-                Text(
-                  phraseMatchingTraps,
-                  style: context.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-                const Spacer(),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 2,
-                  ),
-                  decoration: BoxDecoration(
-                    color: context.colors.secondaryContainer,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Text(
-                    '$trapCount',
-                    style: context.textTheme.labelSmall?.copyWith(
-                      color: context.colors.onSecondaryContainer,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(height: 8),
-          Expanded(child: child),
-        ],
       ),
     );
   }

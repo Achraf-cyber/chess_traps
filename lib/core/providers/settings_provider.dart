@@ -1,3 +1,4 @@
+import 'package:chess_traps/l10n/app_localizations.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -8,18 +9,27 @@ import 'package:flutter/material.dart';
 part 'settings_provider.g.dart';
 
 enum AppBoardTheme {
-  brown('Brown'),
-  blue('Blue'),
-  green('Green'),
-  wood('Wood'),
-  wood2('Wood II'),
-  metal('Metal'),
-  marble('Marble'),
-  horsey('Horsey'),
-  purple('Purple');
+  brown,
+  blue,
+  green,
+  wood,
+  wood2,
+  metal,
+  marble,
+  horsey,
+  purple;
 
-  const AppBoardTheme(this.label);
-  final String label;
+  String label(AppLocalizations phrase) => switch (this) {
+    AppBoardTheme.brown => phrase.boardThemeBrown,
+    AppBoardTheme.blue => phrase.boardThemeBlue,
+    AppBoardTheme.green => phrase.boardThemeGreen,
+    AppBoardTheme.wood => phrase.boardThemeWood,
+    AppBoardTheme.wood2 => phrase.boardThemeWood2,
+    AppBoardTheme.metal => phrase.boardThemeMetal,
+    AppBoardTheme.marble => phrase.boardThemeMarble,
+    AppBoardTheme.horsey => phrase.boardThemeHorsey,
+    AppBoardTheme.purple => phrase.boardThemePurple,
+  };
 
   cg.ChessboardColorScheme get colorScheme {
     switch (this) {

@@ -23,7 +23,7 @@
   "dataManagement": "Gestion des données",
   "about": "À propos",
   "yourFavorites": "Vos favoris",
-  "favoritesCount": "{count} pièges enregistrés",
+  "favoritesCount": "{count, plural, =0{Aucun piège enregistré} =1{1 piège enregistré} other{{count} pièges enregistrés}}",
   "@favoritesCount": {
     "placeholders": {
       "count": {
@@ -104,7 +104,7 @@
   "pieceQueen": "dame",
   "pieceKing": "roi",
   "andSeparator": " et ",
-  "explainCheckmate": "Le {piece} donne échec et mat !",
+  "explainCheckmate": "{piece} donne échec et mat !",
   "@explainCheckmate": {
     "placeholders": {
       "piece": {
@@ -112,7 +112,7 @@
       }
     }
   },
-  "explainSacrifice": "Sacrifie le {piece} pour ouvrir l'attaque.",
+  "explainSacrifice": "Sacrifie {piece} pour ouvrir l'attaque.",
   "@explainSacrifice": {
     "placeholders": {
       "piece": {
@@ -120,7 +120,7 @@
       }
     }
   },
-  "explainCapture": "Le {piece} capture le {captured}.",
+  "explainCapture": "{piece} capture {captured}.",
   "@explainCapture": {
     "placeholders": {
       "piece": {
@@ -131,7 +131,7 @@
       }
     }
   },
-  "explainFork": "Le {piece} fait une fourchette sur {targets}.",
+  "explainFork": "{piece} fait une fourchette sur {targets}.",
   "@explainFork": {
     "placeholders": {
       "piece": {
@@ -142,7 +142,7 @@
       }
     }
   },
-  "explainCheck": "Le {piece} donne échec et force une réponse.",
+  "explainCheck": "{piece} donne échec et force une réponse.",
   "@explainCheck": {
     "placeholders": {
       "piece": {
@@ -160,7 +160,7 @@
       }
     }
   },
-  "explainDevelop": "Développe le {piece}.",
+  "explainDevelop": "Développe {piece}.",
   "@explainDevelop": {
     "placeholders": {
       "piece": {
@@ -270,5 +270,39 @@
   "onboardingStreakBody": "Revenez chaque jour pour prolonger votre série et enregistrez vos pièges préférés.",
   "removeFromFavorites": "Retirer des favoris",
   "trapForWhite": "Piège pour les Blancs",
-  "trapForBlack": "Piège pour les Noirs"
+  "trapForBlack": "Piège pour les Noirs",
+  "language": "Langue",
+  "thePawn": "le pion",
+  "theKnight": "le cavalier",
+  "theBishop": "le fou",
+  "theRook": "la tour",
+  "theQueen": "la dame",
+  "theKing": "le roi",
+  "explainPawnMove": "Avance {piece}.",
+  "explainQuietMove": "Déplace {piece}.",
+  "whiteResigned": "Les Blancs ont abandonné",
+  "blackResigned": "Les Noirs ont abandonné",
+  "@explainPawnMove": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
+  "@explainQuietMove": {
+    "placeholders": {
+      "piece": {
+        "type": "String"
+      }
+    }
+  },
+  "boardThemeBrown": "Marron",
+  "boardThemeBlue": "Bleu",
+  "boardThemeGreen": "Vert",
+  "boardThemeWood": "Bois",
+  "boardThemeWood2": "Bois II",
+  "boardThemeMetal": "Métal",
+  "boardThemeMarble": "Marbre",
+  "boardThemeHorsey": "Horsey",
+  "boardThemePurple": "Violet"
 }

@@ -26,10 +26,10 @@ String explainMove({
 }) {
   final phrase = context.phrase;
   final piece = move is NormalMove ? before.board.pieceAt(move.from) : null;
-  final pieceName = piece != null ? _pieceName(context, piece.role) : '';
+  final pieceName = piece != null ? _namedPiece(context, piece.role) : '';
 
   if (after.isCheckmate) {
-    return phrase.explainCheckmate(pieceName);
+    return _sentence(phrase.explainCheckmate(pieceName));
   }
 
   if (move is NormalMove) {
@@ -44,20 +44,20 @@ String explainMove({
     }
 
     if (isCapture) {
-      final capturedName = _pieceName(context, captured.role);
-      return phrase.explainCapture(pieceName, capturedName);
+      final capturedName = _namedPiece(context, captured.role);
+      return _sentence(phrase.explainCapture(pieceName, capturedName));
     }
 
     final forkedRoles = _forkedRoles(after, move.to, piece?.color);
     if (forkedRoles.length >= 2) {
-      final names = forkedRoles.map((r) => _pieceName(context, r)).join(
+      final names = forkedRoles.map((r) => _namedPiece(context, r)).join(
         phrase.andSeparator,
       );
-      return phrase.explainFork(pieceName, names);
+      return _sentence(phrase.explainFork(pieceName, names));
     }
 
     if (after.isCheck) {
-      return phrase.explainCheck(pieceName);
+      return _sentence(phrase.explainCheck(pieceName));
     }
   }
 
@@ -67,8 +67,18 @@ String explainMove({
     return phrase.explainPromotion(_pieceName(context, move.promotion!));
   }
 
-  return phrase.explainDevelop(pieceName);
+  return switch (piece?.role) {
+    Role.pawn => phrase.explainPawnMove(pieceName),
+    Role.knight || Role.bishop => phrase.explainDevelop(pieceName),
+    _ => phrase.explainQuietMove(pieceName),
+  };
 }
+
+/// Capitalises a message that opens with a piece's name.
+String _sentence(String text) => text.replaceFirstMapped(
+  RegExp(r'\p{L}', unicode: true),
+  (match) => match[0]!.toUpperCase(),
+);
 
 /// A move is a sacrifice if it hands over material value greater than what
 /// (if anything) was captured, and the destination square is now attacked by
@@ -135,4 +145,14 @@ String _pieceName(BuildContext context, Role role) => switch (role) {
       Role.rook => context.phrase.pieceRook,
       Role.queen => context.phrase.pieceQueen,
       Role.king => context.phrase.pieceKing,
+    };
+
+/// The piece with its article, which carries its gender in French and Spanish.
+String _namedPiece(BuildContext context, Role role) => switch (role) {
+      Role.pawn => context.phrase.thePawn,
+      Role.knight => context.phrase.theKnight,
+      Role.bishop => context.phrase.theBishop,
+      Role.rook => context.phrase.theRook,
+      Role.queen => context.phrase.theQueen,
+      Role.king => context.phrase.theKing,
     };

@@ -27,6 +27,8 @@ class MainScreen extends ConsumerWidget {
     }
 
     void onTap(int idx) {
+      // Search and Play are pushed: tapping them again must not stack copies.
+      if (idx == currentIndex) return;
       switch (idx) {
         case 0:
           const HomeRoute().go(context);

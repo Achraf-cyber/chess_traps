@@ -231,7 +231,7 @@ abstract class AppLocalizations {
   /// No description provided for @favoritesCount.
   ///
   /// In en, this message translates to:
-  /// **'{count} traps saved'**
+  /// **'{count, plural, =0{No traps saved} =1{1 trap saved} other{{count} traps saved}}'**
   String favoritesCount(int count);
 
   /// No description provided for @appVersion.
@@ -675,31 +675,31 @@ abstract class AppLocalizations {
   /// No description provided for @explainCheckmate.
   ///
   /// In en, this message translates to:
-  /// **'The {piece} delivers checkmate!'**
+  /// **'{piece} delivers checkmate!'**
   String explainCheckmate(String piece);
 
   /// No description provided for @explainSacrifice.
   ///
   /// In en, this message translates to:
-  /// **'Sacrifices the {piece} to open up the attack.'**
+  /// **'Sacrifices {piece} to open up the attack.'**
   String explainSacrifice(String piece);
 
   /// No description provided for @explainCapture.
   ///
   /// In en, this message translates to:
-  /// **'The {piece} captures the {captured}.'**
+  /// **'{piece} captures {captured}.'**
   String explainCapture(String piece, String captured);
 
   /// No description provided for @explainFork.
   ///
   /// In en, this message translates to:
-  /// **'The {piece} forks {targets}.'**
+  /// **'{piece} forks {targets}.'**
   String explainFork(String piece, String targets);
 
   /// No description provided for @explainCheck.
   ///
   /// In en, this message translates to:
-  /// **'The {piece} gives check, forcing a reply.'**
+  /// **'{piece} gives check, forcing a reply.'**
   String explainCheck(String piece);
 
   /// No description provided for @explainCastleKingside.
@@ -723,7 +723,7 @@ abstract class AppLocalizations {
   /// No description provided for @explainDevelop.
   ///
   /// In en, this message translates to:
-  /// **'Develops the {piece}.'**
+  /// **'Develops {piece}.'**
   String explainDevelop(String piece);
 
   /// No description provided for @you.
@@ -1097,6 +1097,126 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Trap for Black'**
   String get trapForBlack;
+
+  /// No description provided for @language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get language;
+
+  /// No description provided for @thePawn.
+  ///
+  /// In en, this message translates to:
+  /// **'the pawn'**
+  String get thePawn;
+
+  /// No description provided for @theKnight.
+  ///
+  /// In en, this message translates to:
+  /// **'the knight'**
+  String get theKnight;
+
+  /// No description provided for @theBishop.
+  ///
+  /// In en, this message translates to:
+  /// **'the bishop'**
+  String get theBishop;
+
+  /// No description provided for @theRook.
+  ///
+  /// In en, this message translates to:
+  /// **'the rook'**
+  String get theRook;
+
+  /// No description provided for @theQueen.
+  ///
+  /// In en, this message translates to:
+  /// **'the queen'**
+  String get theQueen;
+
+  /// No description provided for @theKing.
+  ///
+  /// In en, this message translates to:
+  /// **'the king'**
+  String get theKing;
+
+  /// No description provided for @explainPawnMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Advances {piece}.'**
+  String explainPawnMove(String piece);
+
+  /// No description provided for @explainQuietMove.
+  ///
+  /// In en, this message translates to:
+  /// **'Moves {piece}.'**
+  String explainQuietMove(String piece);
+
+  /// No description provided for @whiteResigned.
+  ///
+  /// In en, this message translates to:
+  /// **'White resigned'**
+  String get whiteResigned;
+
+  /// No description provided for @blackResigned.
+  ///
+  /// In en, this message translates to:
+  /// **'Black resigned'**
+  String get blackResigned;
+
+  /// No description provided for @boardThemeBrown.
+  ///
+  /// In en, this message translates to:
+  /// **'Brown'**
+  String get boardThemeBrown;
+
+  /// No description provided for @boardThemeBlue.
+  ///
+  /// In en, this message translates to:
+  /// **'Blue'**
+  String get boardThemeBlue;
+
+  /// No description provided for @boardThemeGreen.
+  ///
+  /// In en, this message translates to:
+  /// **'Green'**
+  String get boardThemeGreen;
+
+  /// No description provided for @boardThemeWood.
+  ///
+  /// In en, this message translates to:
+  /// **'Wood'**
+  String get boardThemeWood;
+
+  /// No description provided for @boardThemeWood2.
+  ///
+  /// In en, this message translates to:
+  /// **'Wood II'**
+  String get boardThemeWood2;
+
+  /// No description provided for @boardThemeMetal.
+  ///
+  /// In en, this message translates to:
+  /// **'Metal'**
+  String get boardThemeMetal;
+
+  /// No description provided for @boardThemeMarble.
+  ///
+  /// In en, this message translates to:
+  /// **'Marble'**
+  String get boardThemeMarble;
+
+  /// No description provided for @boardThemeHorsey.
+  ///
+  /// In en, this message translates to:
+  /// **'Horsey'**
+  String get boardThemeHorsey;
+
+  /// No description provided for @boardThemePurple.
+  ///
+  /// In en, this message translates to:
+  /// **'Purple'**
+  String get boardThemePurple;
 }
 
 class _AppLocalizationsDelegate

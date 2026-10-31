@@ -36,3 +36,11 @@
 -dontwarn com.google.android.play.core.tasks.OnFailureListener
 -dontwarn com.google.android.play.core.tasks.OnSuccessListener
 -dontwarn com.google.android.play.core.tasks.Task
+# WorkManager (pulled in by the ads and Firebase SDKs) creates these by
+# reflection. Under AGP 9's R8 their constructors were stripped, and the app
+# crashed at startup in androidx.startup before Flutter ever ran.
+-keep class * extends androidx.room.RoomDatabase { <init>(); }
+-keep class * extends androidx.work.ListenableWorker {
+    <init>(android.content.Context, androidx.work.WorkerParameters);
+}
+-keep class * extends androidx.work.InputMerger { <init>(); }

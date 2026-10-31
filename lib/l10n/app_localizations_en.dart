@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -10,13 +9,10 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get authorName => 'Simbre Achraf';
+  String get appName => 'Trapster';
 
   @override
-  String get appName => 'Chess Traps';
-
-  @override
-  String get chessTraps => 'Chess Traps';
+  String get chessTraps => 'Trapster';
 
   @override
   String get home => 'Home';
@@ -25,40 +21,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get traps => 'Traps';
 
   @override
-  String get favorite => 'Favorite';
-
-  @override
-  String get training => 'Training';
-
-  @override
   String get profile => 'Profile';
 
   @override
   String get trapOfTheDay => 'Trap of the day';
-
-  @override
-  String get recentTraps => 'Recent Traps';
-
-  @override
-  String get exampleTrap => 'Fried Liver Attack';
-
-  @override
-  String get lastTimeChecked => 'Last time checked';
-
-  @override
-  String get explore => 'Explore';
-
-  @override
-  String get viewAllTraps => 'View All Traps';
-
-  @override
-  String get errorLoadingTraps => 'Error loading traps';
-
-  @override
-  String get noTrapsFound => 'No traps found';
-
-  @override
-  String get theme => 'Theme';
 
   @override
   String get system => 'System';
@@ -70,51 +36,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dark => 'Dark';
 
   @override
-  String get appLanguage => 'App Language';
-
-  @override
   String get openSourceLicense => 'Open source license';
 
   @override
-  String get usedPackages => 'Packages that were used';
+  String get usedPackages => 'Open-source packages';
 
   @override
-  String get developer => 'Developer';
+  String get randomTrap => 'Random trap';
 
   @override
-  String get editProfile => 'Edit Profile';
-
-  @override
-  String get logout => 'Logout';
-
-  @override
-  String masteredTraps(Object count, Object percentage) {
-    return '$count Mastered traps ($percentage%)';
-  }
-
-  @override
-  String get english => 'English';
-
-  @override
-  String get randomTrap => 'Random Trap';
-
-  @override
-  String get yourFavoriteChessTraps => 'You favorite chess traps';
-
-  @override
-  String get wildGambit => 'Wild Gambit';
+  String get yourFavoriteChessTraps => 'Your favorite traps';
 
   @override
   String get search => 'Search';
 
   @override
-  String get playTheMoves => 'Play the moves';
-
-  @override
   String get matchingTraps => 'Matching traps';
-
-  @override
-  String get playMovesToNarrow => 'Play moves to narrow results';
 
   @override
   String get resetBoard => 'Reset board';
@@ -146,7 +83,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get profileTitle => 'Chess player';
 
   @override
-  String get copyright => 'Chess Traps © 2026';
+  String get copyright => 'Trapster © 2026';
 
   @override
   String get clearFavoritesTitle => 'Clear favorites';
@@ -169,44 +106,17 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get yourPersonalCollectionOfTacticalBrilliance =>
-      'Your personal collection of tactical brilliance.';
+      'The traps you\'ve saved.';
 
   @override
   String get noFavoriteYet => 'No favorites yet';
 
   @override
   String get taptheHeartIconAction =>
-      'Tap the heart icon on any trap detail screen to save it here for quick access.';
+      'Tap the heart on any trap to save it here.';
 
   @override
-  String get elevateYourGame => 'Elevate Your Game';
-
-  @override
-  String get discoverWinningSequencesByMasters =>
-      'Discover winning sequences used by masters.';
-
-  @override
-  String get highlight => 'Highlights';
-
-  @override
-  String get exploreMore => 'Explore More';
-
-  @override
-  String get testYourPatternRecog =>
-      'Test your pattern recognition with a mystery trap.';
-
-  @override
-  String get strategyGuide => 'Strategy Guide';
-
-  @override
-  String get comingSoonDeepDives =>
-      'Coming soon: Deep dives into opening theory.';
-
-  @override
-  String get account => 'Account';
-
-  @override
-  String get sequenceHistory => 'Sequence History';
+  String get exploreMore => 'Explore more';
 
   @override
   String get theory => 'Theory';
@@ -218,94 +128,79 @@ class AppLocalizationsEn extends AppLocalizations {
   String get flip => 'Flip';
 
   @override
-  String get privacyPolicy => 'Privacy Policy';
+  String get privacyPolicy => 'Privacy policy';
 
   @override
-  String get termsOfUse => 'Terms of Use';
+  String get browseByOpening => 'Browse by opening';
 
   @override
-  String get browseByOpening => 'Browse by Opening';
+  String get allTraps => 'All traps';
 
   @override
-  String get allTraps => 'All Traps';
+  String get searchResults => 'Search results';
 
   @override
-  String get searchResults => 'Search Results';
+  String get featuredTrap => 'Featured trap';
 
   @override
-  String get featuredTrap => 'Featured Trap';
+  String get startTraining => 'Start training';
 
   @override
-  String get startTraining => 'Start Training';
+  String get unlockedExtraMoves => '5 more moves unlocked';
 
   @override
-  String get beginner => 'Beginner';
+  String get cancel => 'Cancel';
 
   @override
-  String get intermediate => 'Intermediate';
+  String get watchAd => 'Watch ad';
 
   @override
-  String get advanced => 'Advanced';
-
-  @override
-  String get unlockedExtraMoves => 'Unlocked 5 extra moves!';
-
-  @override
-  String get limitReached => 'Limit Reached';
-
-  @override
-  String get cancel => 'CANCEL';
-
-  @override
-  String get watchAd => 'WATCH AD';
-
-  @override
-  String get trapCompleted => 'Trap completed! Well done!';
+  String get trapCompleted => 'Trap complete. Well played!';
 
   @override
   String get relatedTraps => 'Related traps';
 
   @override
-  String get incorrectMove => 'Incorrect move. Try again!';
+  String get incorrectMove => 'Not that one. Try again!';
 
   @override
-  String get incorrectMoveWithHint => 'Not quite — here\'s a hint.';
+  String get incorrectMoveWithHint => 'Not quite. Here\'s a hint.';
 
   @override
-  String get goBack => 'Go Back';
+  String get goBack => 'Go back';
 
   @override
-  String get boardTheme => 'Board Theme';
+  String get boardTheme => 'Board theme';
 
   @override
-  String get learnNow => 'Learn Now';
+  String get learnNow => 'Learn now';
 
   @override
-  String get avoidTrap => 'Avoid the Trap';
+  String get avoidTrap => 'Avoid the trap';
 
   @override
-  String get avoidModeActive => 'Avoid Mode active. Find the best move!';
+  String get avoidModeActive => 'Avoid mode: find the safe move.';
 
   @override
-  String get blunderPrevented => 'Great! You avoided the trap.';
+  String get blunderPrevented => 'Nice! You avoided the trap.';
 
   @override
-  String get findBetterMove => 'Find a better move to avoid the trap.';
+  String get findBetterMove => 'Find a safer move.';
 
   @override
   String get play => 'Play';
 
   @override
-  String get you_won => 'You Won! 🎉';
+  String get you_won => 'You won!';
 
   @override
   String get congratulations => 'Congratulations!';
 
   @override
-  String get stockfish_won => 'Stockfish Won';
+  String get stockfish_won => 'Stockfish wins';
 
   @override
-  String get better_luck_next_time => 'Better luck next time!';
+  String get better_luck_next_time => 'Better luck next time.';
 
   @override
   String get you_resigned => 'You resigned';
@@ -320,10 +215,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get close => 'Close';
 
   @override
-  String get play_again => 'Play Again';
+  String get play_again => 'Play again';
 
   @override
-  String get opponent_strength => 'Opponent Strength';
+  String get opponent_strength => 'Opponent strength';
 
   @override
   String get wins => 'Wins';
@@ -333,9 +228,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get losses => 'Losses';
-
-  @override
-  String get engine_response => 'Engine Response';
 
   @override
   String get play_as => 'Play as';
@@ -350,16 +242,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get black => 'Black';
 
   @override
-  String get start_game => 'Start Game';
+  String get start_game => 'Start game';
 
   @override
-  String get thinking => 'Thinking...';
+  String get thinking => 'Thinking…';
 
   @override
   String get your_turn => 'Your turn';
 
   @override
-  String get back_to_setup => 'Back to Setup';
+  String get back_to_setup => 'New game';
 
   @override
   String get resign => 'Resign';
@@ -386,9 +278,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get last_move => 'Last move';
 
   @override
-  String get choose_promotion => 'Promote to';
-
-  @override
   String get piecePawn => 'pawn';
 
   @override
@@ -411,7 +300,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String explainCheckmate(String piece) {
-    return '$piece delivers checkmate!';
+    return 'The $piece delivers checkmate!';
   }
 
   @override
@@ -455,145 +344,92 @@ class AppLocalizationsEn extends AppLocalizations {
   String get you => 'You';
 
   @override
-  String get featured_trap => 'Featured Trap';
-
-  @override
-  String get loading_ads => 'Loading ads...';
-
-  @override
   String get daily_limit_reached => 'Daily limit reached';
 
   @override
-  String get ad_load_failed => 'Ad could not be loaded. Try again later.';
-
-  @override
-  String get ad_not_ready => 'Ad not ready yet. Try again later.';
-
-  @override
   String get limit_reached_body =>
-      'You\'ve viewed your 10 free traps for today! Watch a short ad to unlock all traps for the rest of the day.';
+      'That\'s your 10 free traps for today. Watch a short ad to unlock every trap for the rest of the day.';
 
   @override
   String get no_traps_in_group => 'No traps available for this opening yet.';
 
   @override
-  String get surprise_me => 'Surprise me';
-
-  @override
-  String get play_mode => 'Play Mode';
-
-  @override
-  String get vs_engine => 'vs Engine';
-
-  @override
-  String get by_moves => 'By Moves';
-
-  @override
-  String get find_by_position => 'Find by position';
-
-  @override
-  String traps_count(Object count) {
-    return '$count traps';
-  }
-
-  @override
-  String opening_traps_count(Object count) {
-    return '$count Opening Traps';
-  }
-
-  @override
-  String get hero_title => 'Outplay Your\nOpponent';
-
-  @override
-  String get hero_subtitle => 'Master the traps that grandmasters use.';
-
-  @override
-  String get openings => 'Openings';
-
-  @override
-  String get languages => 'Languages';
+  String get play_mode => 'Play';
 
   @override
   String get move_limit_reached =>
-      'Move limit reached. Ad not ready yet, please wait or reset.';
+      'Move limit reached and the ad isn\'t ready. Wait a moment or reset the board.';
 
   @override
   String get search_limit_body =>
-      'You\'ve reached the free move limit for this search. Watch a short video ad to unlock 5 more moves.';
+      'You\'ve used your free moves for this search. Watch a short ad to unlock 5 more.';
 
   @override
   String get notifications => 'Notifications';
 
   @override
-  String get daily_trap_reminder => 'Daily Trap Reminder';
+  String get daily_trap_reminder => 'Daily reminder';
 
   @override
   String get daily_trap_reminder_subtitle =>
-      'Get notified to check the trap of the day';
+      'A nudge to open the trap of the day';
 
   @override
-  String get reminder_time => 'Reminder Time';
+  String get reminder_time => 'Reminder time';
 
   @override
-  String get notification_trap_ready_title => 'Trap of the Day is Ready!';
+  String get notification_trap_ready_title => 'Today\'s trap is ready';
 
   @override
   String get notification_trap_ready_body =>
-      'Jump in to learn a new opening trap and boost your rating ♟️';
+      'Learn it before your next game ♟️';
 
   @override
   String get trapNotFound => 'Trap not found';
 
   @override
-  String get practiceModeActive =>
-      'Practice mode active. Play the correct moves!';
+  String get practiceModeActive => 'Practice mode: play the correct moves.';
 
   @override
   String canYouSurvive(String trapName, String link) {
-    return 'Can you survive this trap? Check out $trapName!\n$link';
+    return 'Could you avoid this trap? Try $trapName.\n$link';
   }
 
   @override
-  String get exitPractice => 'Exit Practice';
+  String get exitPractice => 'Exit practice';
 
   @override
-  String get practiceMode => 'Practice Mode';
+  String get practiceMode => 'Practice';
 
   @override
-  String get exitAvoidMode => 'Exit Avoid Mode';
+  String get exitAvoidMode => 'Exit avoid mode';
 
   @override
-  String get avoidTrapMode => 'Avoid Trap Mode';
+  String get avoidTrapMode => 'Avoid the trap';
 
   @override
-  String get stopAutoPlay => 'Stop Auto Play';
+  String get stopAutoPlay => 'Stop';
 
   @override
-  String get autoPlay => 'Auto Play';
+  String get autoPlay => 'Autoplay';
 
   @override
-  String get flipBoard => 'Flip Board';
+  String get flipBoard => 'Flip board';
 
   @override
-  String get markedAsLearned => 'Marked as learned';
+  String get markedAsLearned => 'Learned';
 
   @override
   String get markAsLearned => 'Mark as learned';
 
   @override
-  String get shareTrap => 'Share Trap';
+  String get shareTrap => 'Share trap';
 
   @override
   String get settings => 'Settings';
 
   @override
-  String get engineStarting => 'Engine starting...';
-
-  @override
-  String get whiteProfits => 'Advantage for White';
-
-  @override
-  String get blackProfits => 'Advantage for Black';
+  String get engineStarting => 'Starting engine…';
 
   @override
   String get engineUnavailable => 'Engine unavailable';
@@ -604,19 +440,14 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get analysisSettings => 'Analysis Settings';
+  String get analysisSettings => 'Analysis';
 
   @override
-  String get engineBestMoves => 'Engine Best Moves (Arrows)';
+  String get engineBestMoves => 'Engine arrows';
 
   @override
   String eloLabel(int elo) {
     return 'Elo: $elo';
-  }
-
-  @override
-  String engineResponseLabel(String delay) {
-    return 'Engine Response: ${delay}s avg';
   }
 
   @override
@@ -631,26 +462,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get currentStreak => 'Current streak';
 
   @override
-  String streakDays(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count days',
-      one: '1 day',
-    );
-    return '$_temp0';
-  }
-
-  @override
   String get trapsLearned => 'Traps learned';
 
   @override
   String learnedProgress(int learned, int total) {
     return '$learned of $total';
   }
-
-  @override
-  String get gamesPlayed => 'Games played';
 
   @override
   String get soundAndHaptics => 'Sound & haptics';
@@ -665,17 +482,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get vsStockfish => 'vs Stockfish';
 
   @override
-  String get vsFriend => 'vs Friend';
+  String get vsFriend => 'vs a friend';
 
   @override
-  String get passAndPlayHint =>
-      'Pass and play on one device — take turns with a friend.';
+  String get passAndPlayHint => 'Two players, one phone. Take turns.';
 
   @override
-  String get whiteWins => 'White wins!';
+  String get whiteWins => 'White wins';
 
   @override
-  String get blackWins => 'Black wins!';
+  String get blackWins => 'Black wins';
 
   @override
   String get toMove => 'To move';
@@ -696,38 +512,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get viewAllGames => 'View all games';
 
   @override
-  String get club => 'Club';
+  String get onboardingSkip => 'Skip';
 
   @override
-  String get joinClub => 'Join a club';
+  String get onboardingWelcomeTitle => 'Welcome to Trapster';
 
   @override
-  String get joinClubHint => 'Enter the code your chess club gave you';
+  String get onboardingWelcomeBody =>
+      'Learn the openings and catch your opponents with traps that win games.';
 
   @override
-  String get clubCodeLabel => 'Club code';
+  String get onboardingPlayTitle => 'Play against Stockfish';
 
   @override
-  String get joinAction => 'Join';
+  String get onboardingPlayBody =>
+      'Try your new traps on the board against Stockfish.';
 
   @override
-  String get clubCodeNotFound => 'No club found with this code';
+  String get onboardingStreakTitle => 'Build your streak';
 
   @override
-  String clubJoined(String club) {
-    return 'Welcome to $club!';
-  }
+  String get onboardingStreakBody =>
+      'Come back daily to keep your streak alive and save the traps you like.';
 
   @override
-  String get leaveClub => 'Leave club';
+  String get removeFromFavorites => 'Remove from favorites';
 
   @override
-  String leaveClubConfirm(String club) {
-    return 'Leave $club? You can join again with the code.';
-  }
+  String get trapForWhite => 'Trap for White';
 
   @override
-  String clubCodeValue(String code) {
-    return 'Code: $code';
-  }
+  String get trapForBlack => 'Trap for Black';
 }

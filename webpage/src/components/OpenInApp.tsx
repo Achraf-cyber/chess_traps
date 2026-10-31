@@ -14,18 +14,7 @@ const PLAY_URL = `https://play.google.com/store/apps/details?id=${PACKAGE}`;
  * which is the only reliable way to "open app OR go to store" in one tap.
  * Everywhere else (iOS with no app yet, desktop) we simply point at the store.
  */
-export default function OpenInApp({
-  trapId,
-  path = `/trap/${trapId}`,
-  openLabel = "▶ Open in Trapster",
-  storeLabel = "Get it on Google Play",
-}: {
-  trapId?: number;
-  /** App-link path to open, e.g. `/club/ECHECS-LYON`. Defaults to the trap. */
-  path?: string;
-  openLabel?: string;
-  storeLabel?: string;
-}) {
+export default function OpenInApp({ trapId }: { trapId: number }) {
   const [href, setHref] = useState(PLAY_URL);
 
   useEffect(() => {
@@ -33,18 +22,18 @@ export default function OpenInApp({
     if (isAndroid) {
       const fallback = encodeURIComponent(PLAY_URL);
       setHref(
-        `intent://${HOST}${path}#Intent;scheme=https;package=${PACKAGE};S.browser_fallback_url=${fallback};end`,
+        `intent://${HOST}/trap/${trapId}#Intent;scheme=https;package=${PACKAGE};S.browser_fallback_url=${fallback};end`,
       );
     }
-  }, [path]);
+  }, [trapId]);
 
   return (
     <div className="cta-row" style={{ justifyContent: "flex-start" }}>
       <a href={href} className="btn-primary">
-        {openLabel}
+        ▶ Open in Trapster
       </a>
       <a href={PLAY_URL} className="btn-outline">
-        {storeLabel}
+        Get it on Google Play
       </a>
     </div>
   );

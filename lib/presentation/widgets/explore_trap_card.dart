@@ -96,7 +96,6 @@ class ExploreTrapCard extends ConsumerWidget {
                           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                             fontWeight: FontWeight.w700,
                             color: scheme.onSurface,
-                            letterSpacing: -0.1,
                             height: 1.25,
                           ),
                           maxLines: 2,
@@ -104,7 +103,7 @@ class ExploreTrapCard extends ConsumerWidget {
                         ),
                       ),
                       Text(
-                        trap.opening,
+                        trap.getLocalizedOpening(context),
                         style: TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.w500,

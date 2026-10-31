@@ -1,6 +1,6 @@
 import 'package:chess_traps/core/services/remote_config_service.dart';
 import 'package:chess_traps/core/services/interstitial_ad_manager.dart';
-import 'package:chess_traps/core/services/promotion_utils.dart';
+import 'package:chess_traps/presentation/widgets/game_board.dart';
 import 'package:chess_traps/core/providers/ads_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -9,7 +9,6 @@ import 'package:chess_traps/generated/chess/base_chess_traps.dart';
 import 'package:chess_traps/generated/chess/prebuilt_move_trie.dart';
 import 'package:chess_traps/presentation/widgets/search_result_tile.dart';
 import 'package:chess_traps/utils.dart';
-import 'package:chessground/chessground.dart';
 import 'package:dartchess/dartchess.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +22,6 @@ class TrapSearchScreen extends ConsumerStatefulWidget {
 class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   var position = Position.initialPosition(Rule.chess);
   var orientation = Side.white;
-  NormalMove? promotionMove;
   Move? lastMove;
   List<Move> history = [];
   ChessMoveNode? _currentNode = moveTrie;
@@ -111,15 +109,6 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
   }
 
   void onMove(Move move, {bool? viaDragAndDrop}) {
-    // Same defect as the practice board had: a pawn reaching the back rank
-    // arrives without a promotion role, makeSan throws below, and the move
-    // vanishes. Route it to chessground's selector first. Checked before the
-    // ad gate so an abandoned promotion never burns one of the free moves.
-    if (isPromotionPending(position, move)) {
-      setState(() => promotionMove = move as NormalMove);
-      return;
-    }
-
     final adsEnabled = RemoteConfigService().adsEnabled;
     final freeLimit = 6 + _bonusMoves;
 
@@ -177,20 +166,6 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
         ],
       ),
     );
-  }
-
-  void onPromotionSelection(Role? role) {
-    if (promotionMove != null && role != null) {
-      final move = NormalMove(
-        from: promotionMove!.from,
-        to: promotionMove!.to,
-        promotion: role,
-      );
-      onMove(move);
-      setState(() {
-        promotionMove = null;
-      });
-    }
   }
 
   void _undo() {
@@ -294,30 +269,16 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
                 width: boardSize,
                 height: boardSize,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(16),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.15),
-                      blurRadius: 28,
-                      offset: const Offset(0, 12),
-                    ),
-                  ],
+                  borderRadius: BorderRadius.circular(10),
                 ),
                 clipBehavior: Clip.antiAlias,
-                child: Chessboard(
+                child: GameBoard(
                   size: boardSize,
                   orientation: orientation,
                   fen: position.fen,
                   lastMove: lastMove,
-                  game: GameData(
-                    playerSide: position.turn == .white ? .white : .black,
-                    sideToMove: position.turn,
-                    validMoves: position.legalMoves.asIMapSquareISet,
-                    promotionMove: promotionMove,
-                    onMove: onMove,
-                    isCheck: position.isCheck,
-                    onPromotionSelection: onPromotionSelection,
-                  ),
+                  playerSide: position.turn == .white ? .white : .black,
+                  onMove: onMove,
                 ),
               ),
             ),
@@ -363,7 +324,7 @@ class _TrapSearchScreenState extends ConsumerState<TrapSearchScreen> {
           ),
           contentPadding: const EdgeInsets.symmetric(vertical: 10),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide.none,
           ),
         ),
@@ -459,7 +420,7 @@ class _TrapSearchFloatingHeader extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
         decoration: BoxDecoration(
           color: context.colors.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(14),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: context.colors.outlineVariant.withValues(alpha: 0.25),
           ),
@@ -470,7 +431,7 @@ class _TrapSearchFloatingHeader extends StatelessWidget {
             Text(
               title,
               style: context.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
                 color: context.colors.primary,
               ),
             ),
@@ -588,7 +549,7 @@ class _SearchMoveHistoryBar extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(
         color: context.colors.surfaceContainerHighest.withValues(alpha: 0.5),
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -603,7 +564,7 @@ class _SearchMoveHistoryBar extends StatelessWidget {
               child: Text(
                 "${isWhite ? '$moveNum. ' : ''}${sanMoves[index]}",
                 style: context.textTheme.bodyMedium?.copyWith(
-                  fontWeight: FontWeight.w900,
+                  fontWeight: FontWeight.w700,
                   color: context.colors.onSurface,
                 ),
               ),
@@ -633,7 +594,7 @@ class _SearchResultsSection extends StatelessWidget {
       padding: const EdgeInsets.only(top: 10),
       decoration: BoxDecoration(
         color: context.colors.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: context.colors.outlineVariant.withValues(alpha: 0.3),
         ),
@@ -647,8 +608,7 @@ class _SearchResultsSection extends StatelessWidget {
                 Text(
                   phraseMatchingTraps,
                   style: context.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w900,
-                    letterSpacing: -0.2,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
                 const Spacer(),

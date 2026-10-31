@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -10,13 +9,10 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get authorName => 'سيمبري أشرف';
+  String get appName => 'Trapster';
 
   @override
-  String get appName => 'فخاخ الشطرنج';
-
-  @override
-  String get chessTraps => 'فخاخ الشطرنج';
+  String get chessTraps => 'Trapster';
 
   @override
   String get home => 'الرئيسية';
@@ -25,40 +21,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get traps => 'الفخاخ';
 
   @override
-  String get favorite => 'المفضلة';
-
-  @override
-  String get training => 'التدريب';
-
-  @override
   String get profile => 'الملف الشخصي';
 
   @override
   String get trapOfTheDay => 'فخ اليوم';
-
-  @override
-  String get recentTraps => 'الفخاخ الأخيرة';
-
-  @override
-  String get exampleTrap => 'هجوم كبد المقلية';
-
-  @override
-  String get lastTimeChecked => 'آخر وقت للفحص';
-
-  @override
-  String get explore => 'استكشاف';
-
-  @override
-  String get viewAllTraps => 'عرض جميع الفخاخ';
-
-  @override
-  String get errorLoadingTraps => 'خطأ في تحميل الفخاخ';
-
-  @override
-  String get noTrapsFound => 'لم يتم العثور على فخاخ';
-
-  @override
-  String get theme => 'المظهر';
 
   @override
   String get system => 'النظام';
@@ -70,51 +36,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dark => 'داكن';
 
   @override
-  String get appLanguage => 'لغة التطبيق';
-
-  @override
   String get openSourceLicense => 'رخصة المصدر المفتوح';
 
   @override
-  String get usedPackages => 'الحزم المستخدمة';
-
-  @override
-  String get developer => 'المطور';
-
-  @override
-  String get editProfile => 'تعديل الملف الشخصي';
-
-  @override
-  String get logout => 'تسجيل الخروج';
-
-  @override
-  String masteredTraps(Object count, Object percentage) {
-    return '$count فخاخ متقنة ($percentage%)';
-  }
-
-  @override
-  String get english => 'الإنجليزية';
+  String get usedPackages => 'الحزم مفتوحة المصدر';
 
   @override
   String get randomTrap => 'فخ عشوائي';
 
   @override
-  String get yourFavoriteChessTraps => 'فخاخ الشطرنج المفضلة لديك';
-
-  @override
-  String get wildGambit => 'المناورة الجامحة';
+  String get yourFavoriteChessTraps => 'فخاخك المفضلة';
 
   @override
   String get search => 'بحث';
 
   @override
-  String get playTheMoves => 'العب النقلات';
-
-  @override
   String get matchingTraps => 'الفخاخ المطابقة';
-
-  @override
-  String get playMovesToNarrow => 'العب النقلات لتضييق النتائج';
 
   @override
   String get resetBoard => 'إعادة ضبط الرقعة';
@@ -146,7 +83,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get profileTitle => 'لاعب شطرنج';
 
   @override
-  String get copyright => 'فخاخ الشطرنج © 2026';
+  String get copyright => 'Trapster © 2026';
 
   @override
   String get clearFavoritesTitle => 'مسح المفضلة';
@@ -169,57 +106,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get yourPersonalCollectionOfTacticalBrilliance =>
-      'مجموعتك الشخصية من التألق التكتيكي.';
+      'الفخاخ التي حفظتها.';
 
   @override
   String get noFavoriteYet => 'لا توجد مفضلات بعد';
 
   @override
-  String get taptheHeartIconAction =>
-      'اضغط على أيقونة القلب في أي شاشة تفاصيل للفخ لحفظه هنا للوصول السريع.';
-
-  @override
-  String get elevateYourGame => 'ارفع مستوى لعبك';
-
-  @override
-  String get discoverWinningSequencesByMasters =>
-      'اكتشف تسلسلات الفوز التي يستخدمها الأساتذة.';
-
-  @override
-  String get highlight => 'أبرز النقاط';
+  String get taptheHeartIconAction => 'اضغط على القلب في أي فخ لحفظه هنا.';
 
   @override
   String get exploreMore => 'استكشف المزيد';
 
   @override
-  String get testYourPatternRecog => 'اختبر تعرفك على الأنماط مع فخ غامض.';
-
-  @override
-  String get strategyGuide => 'دليل الإستراتيجية';
-
-  @override
-  String get comingSoonDeepDives => 'قريباً: تعمق في نظرية الافتتاحيات.';
-
-  @override
-  String get account => 'الحساب';
-
-  @override
-  String get sequenceHistory => 'سجل التسلسل';
-
-  @override
-  String get theory => 'نظري';
+  String get theory => 'نظرية';
 
   @override
   String get undo => 'تراجع';
 
   @override
-  String get flip => 'قلب';
+  String get flip => 'اقلب';
 
   @override
   String get privacyPolicy => 'سياسة الخصوصية';
-
-  @override
-  String get termsOfUse => 'شروط الاستخدام';
 
   @override
   String get browseByOpening => 'تصفح حسب الافتتاحية';
@@ -234,22 +142,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get featuredTrap => 'فخ مميز';
 
   @override
-  String get startTraining => 'بدء التدريب';
+  String get startTraining => 'ابدأ التدريب';
 
   @override
-  String get beginner => 'مبتدئ';
-
-  @override
-  String get intermediate => 'متوسط';
-
-  @override
-  String get advanced => 'متقدم';
-
-  @override
-  String get unlockedExtraMoves => 'تم فتح 5 حركات إضافية!';
-
-  @override
-  String get limitReached => 'تم بلوغ الحد الأقصى';
+  String get unlockedExtraMoves => 'تم فتح 5 نقلات إضافية';
 
   @override
   String get cancel => 'إلغاء';
@@ -258,16 +154,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get watchAd => 'مشاهدة إعلان';
 
   @override
-  String get trapCompleted => 'اكتمل الفخ! أحسنت!';
+  String get trapCompleted => 'اكتمل الفخ. أحسنت اللعب!';
 
   @override
   String get relatedTraps => 'فخاخ ذات صلة';
 
   @override
-  String get incorrectMove => 'حركة خاطئة. حاول مرة أخرى!';
+  String get incorrectMove => 'ليست هذه النقلة. حاول مرة أخرى!';
 
   @override
-  String get incorrectMoveWithHint => 'ليست صحيحة تمامًا — إليك تلميحًا.';
+  String get incorrectMoveWithHint => 'ليس تمامًا. إليك تلميحًا.';
 
   @override
   String get goBack => 'العودة';
@@ -279,22 +175,22 @@ class AppLocalizationsAr extends AppLocalizations {
   String get learnNow => 'تعلم الآن';
 
   @override
-  String get avoidTrap => 'تجنب الفخ';
+  String get avoidTrap => 'تجنّب الفخ';
 
   @override
-  String get avoidModeActive => 'تجنب الوضع النشط. العثور على أفضل خطوة!';
+  String get avoidModeActive => 'وضع التجنب: ابحث عن النقلة الآمنة.';
 
   @override
-  String get blunderPrevented => 'عظيم! لقد تجنبت الفخ.';
+  String get blunderPrevented => 'أحسنت! لقد تجنبت الفخ.';
 
   @override
-  String get findBetterMove => 'العثور على خطوة أفضل لتجنب الفخ.';
+  String get findBetterMove => 'ابحث عن نقلة أكثر أمانًا.';
 
   @override
-  String get play => 'يلعب';
+  String get play => 'العب';
 
   @override
-  String get you_won => 'لقد فزت! 🎉';
+  String get you_won => 'لقد فزت!';
 
   @override
   String get congratulations => 'تهانينا!';
@@ -303,19 +199,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get stockfish_won => 'فاز ستوكفيش';
 
   @override
-  String get better_luck_next_time => 'حظا أفضل في المرة القادمة!';
+  String get better_luck_next_time => 'حظًا أوفر في المرة القادمة.';
 
   @override
   String get you_resigned => 'لقد استسلمت';
 
   @override
-  String get draw => 'يرسم';
+  String get draw => 'تعادل';
 
   @override
-  String get well_played => 'لعبت بشكل جيد!';
+  String get well_played => 'أحسنت اللعب!';
 
   @override
-  String get close => 'يغلق';
+  String get close => 'إغلاق';
 
   @override
   String get play_again => 'العب مرة أخرى';
@@ -327,40 +223,37 @@ class AppLocalizationsAr extends AppLocalizations {
   String get wins => 'انتصارات';
 
   @override
-  String get draws => 'يرسم';
+  String get draws => 'تعادلات';
 
   @override
-  String get losses => 'خسائر';
+  String get losses => 'هزائم';
 
   @override
-  String get engine_response => 'استجابة المحرك';
+  String get play_as => 'العب بـ';
 
   @override
-  String get play_as => 'العب ك';
-
-  @override
-  String get white => 'أبيض';
+  String get white => 'الأبيض';
 
   @override
   String get random => 'عشوائي';
 
   @override
-  String get black => 'أسود';
+  String get black => 'الأسود';
 
   @override
-  String get start_game => 'ابدأ اللعبة';
+  String get start_game => 'ابدأ المباراة';
 
   @override
-  String get thinking => 'أفكر...';
+  String get thinking => 'يفكر…';
 
   @override
   String get your_turn => 'دورك';
 
   @override
-  String get back_to_setup => 'العودة إلى الإعداد';
+  String get back_to_setup => 'مباراة جديدة';
 
   @override
-  String get resign => 'استقالة';
+  String get resign => 'استسلام';
 
   @override
   String get hint => 'تلميح';
@@ -384,9 +277,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get last_move => 'آخر نقلة';
 
   @override
-  String get choose_promotion => 'الترقية إلى';
-
-  @override
   String get piecePawn => 'البيدق';
 
   @override
@@ -396,10 +286,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get pieceBishop => 'الفيل';
 
   @override
-  String get pieceRook => 'القلعة';
+  String get pieceRook => 'الرخ';
 
   @override
-  String get pieceQueen => 'الملكة';
+  String get pieceQueen => 'الوزير';
 
   @override
   String get pieceKing => 'الملك';
@@ -409,7 +299,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String explainCheckmate(String piece) {
-    return '$piece يحقق كش ملك!';
+    return 'يعطي $piece كش مات!';
   }
 
   @override
@@ -424,16 +314,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String explainFork(String piece, String targets) {
-    return 'يشوك $piece $targets.';
+    return 'يهاجم $piece $targets في شوكة.';
   }
 
   @override
   String explainCheck(String piece) {
-    return 'يكشف $piece الملك.';
+    return 'يعطي $piece كش ويفرض الرد.';
   }
 
   @override
-  String get explainCastleKingside => 'تبييت قصير، يؤمّن الملك.';
+  String get explainCastleKingside => 'تبييت قصير يؤمّن الملك.';
 
   @override
   String get explainCastleQueenside => 'تبييت طويل.';
@@ -452,129 +342,81 @@ class AppLocalizationsAr extends AppLocalizations {
   String get you => 'أنت';
 
   @override
-  String get featured_trap => 'مصيدة مميزة';
-
-  @override
-  String get loading_ads => 'جارٍ تحميل الإعلانات...';
-
-  @override
   String get daily_limit_reached => 'تم الوصول إلى الحد اليومي';
 
   @override
-  String get ad_load_failed => 'لا يمكن تحميل الإعلان. حاول مرة أخرى لاحقًا.';
-
-  @override
-  String get ad_not_ready => 'الإعلان ليس جاهزا بعد حاول مرة أخرى لاحقًا.';
-
-  @override
   String get limit_reached_body =>
-      'لقد شاهدت 10 مصائد مجانية لهذا اليوم! شاهد إعلانًا قصيرًا لفتح جميع الأفخاخ لبقية اليوم.';
+      'لقد شاهدت فخاخك العشرة المجانية لهذا اليوم. شاهد إعلانًا قصيرًا لفتح جميع الفخاخ حتى الغد.';
 
   @override
-  String get no_traps_in_group => 'لا توجد مصائد متاحة لهذا الافتتاح حتى الآن.';
+  String get no_traps_in_group => 'لا توجد فخاخ لهذا الافتتاح حتى الآن.';
 
   @override
-  String get surprise_me => 'فاجأني';
-
-  @override
-  String get play_mode => 'وضع التشغيل';
-
-  @override
-  String get vs_engine => 'مقابل المحرك';
-
-  @override
-  String get by_moves => 'بواسطة التحركات';
-
-  @override
-  String get find_by_position => 'البحث حسب الموقف';
-
-  @override
-  String traps_count(Object count) {
-    return '$count الفخاخ';
-  }
-
-  @override
-  String opening_traps_count(Object count) {
-    return '$count فتح الفخاخ';
-  }
-
-  @override
-  String get hero_title => 'التفوق على الخاص بك\nالخصم';
-
-  @override
-  String get hero_subtitle => 'إتقان الفخاخ التي يستخدمها السادة الكبار.';
-
-  @override
-  String get openings => 'الفتحات';
-
-  @override
-  String get languages => 'اللغات';
+  String get play_mode => 'العب';
 
   @override
   String get move_limit_reached =>
-      'تم الوصول إلى حد الحركة. الإعلان ليس جاهزًا بعد، يرجى الانتظار أو إعادة التعيين.';
+      'بلغت حد النقلات والإعلان غير جاهز. انتظر قليلًا أو أعد ضبط الرقعة.';
 
   @override
   String get search_limit_body =>
-      'لقد وصلت إلى الحد الأقصى للحركة المجانية لهذا البحث. شاهد إعلان فيديو قصيرًا لفتح 5 حركات أخرى.';
+      'استخدمت نقلاتك المجانية لهذا البحث. شاهد إعلانًا قصيرًا لفتح 5 نقلات إضافية.';
 
   @override
   String get notifications => 'إشعارات';
 
   @override
-  String get daily_trap_reminder => 'تذكير الفخ اليومي';
+  String get daily_trap_reminder => 'تذكير يومي';
 
   @override
-  String get daily_trap_reminder_subtitle =>
-      'الحصول على إخطار للتحقق من فخ اليوم';
+  String get daily_trap_reminder_subtitle => 'تنبيه لمشاهدة فخ اليوم';
 
   @override
   String get reminder_time => 'وقت التذكير';
 
   @override
-  String get notification_trap_ready_title => 'فخ اليوم جاهز!';
+  String get notification_trap_ready_title => 'فخ اليوم جاهز';
 
   @override
-  String get notification_trap_ready_body =>
-      'انضم لتتعلم فخًا افتتاحيًا جديدًا وتعزز تقييمك ♟️';
+  String get notification_trap_ready_body => 'تعلّمه قبل مباراتك القادمة ♟️';
 
   @override
   String get trapNotFound => 'لم يتم العثور على الفخ';
 
   @override
-  String get practiceModeActive => 'وضع الممارسة نشط. لعب التحركات الصحيحة!';
+  String get practiceModeActive => 'وضع التدريب: العب النقلات الصحيحة.';
 
   @override
   String canYouSurvive(String trapName, String link) {
-    return 'هل يمكنك النجاة من هذا الفخ؟ تحقق من $trapName!\n$link';
+    return 'هل تستطيع تجنب هذا الفخ؟ جرّب $trapName.\n$link';
   }
 
   @override
-  String get exitPractice => 'ممارسة الخروج';
+  String get exitPractice => 'الخروج من التدريب';
 
   @override
-  String get practiceMode => 'وضع الممارسة';
+  String get practiceMode => 'وضع التدريب';
 
   @override
   String get exitAvoidMode => 'الخروج من وضع التجنب';
 
   @override
-  String get avoidTrapMode => 'تجنب وضع الاعتراض';
+  String get avoidTrapMode => 'تجنّب الفخ';
 
   @override
-  String get stopAutoPlay => 'إيقاف التشغيل التلقائي';
+  String get stopAutoPlay => 'إيقاف';
 
   @override
-  String get autoPlay => 'اللعب التلقائي';
+  String get autoPlay => 'تشغيل تلقائي';
 
   @override
-  String get flipBoard => 'الوجه المجلس';
+  String get flipBoard => 'اقلب الرقعة';
 
   @override
-  String get markedAsLearned => 'تم وضع علامة على أنه تم تعلمه';
+  String get markedAsLearned => 'تم التعلّم';
 
   @override
-  String get markAsLearned => 'وضع علامة كما تعلمت';
+  String get markAsLearned => 'تحديد كمتعلَّم';
 
   @override
   String get shareTrap => 'مشاركة الفخ';
@@ -583,13 +425,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settings => 'إعدادات';
 
   @override
-  String get engineStarting => 'بدء تشغيل المحرك...';
-
-  @override
-  String get whiteProfits => 'أفضلية للأبيض';
-
-  @override
-  String get blackProfits => 'أفضلية للأسود';
+  String get engineStarting => 'جارٍ تشغيل المحرك…';
 
   @override
   String get engineUnavailable => 'المحرك غير متوفر';
@@ -600,19 +436,14 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get analysisSettings => 'إعدادات التحليل';
+  String get analysisSettings => 'التحليل';
 
   @override
-  String get engineBestMoves => 'أفضل تحركات المحرك (الأسهم)';
+  String get engineBestMoves => 'أسهم المحرك';
 
   @override
   String eloLabel(int elo) {
     return 'إيلو: $elo';
-  }
-
-  @override
-  String engineResponseLabel(String delay) {
-    return 'استجابة المحرك: ${delay}s متوسط';
   }
 
   @override
@@ -627,26 +458,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get currentStreak => 'السلسلة الحالية';
 
   @override
-  String streakDays(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count أيام',
-      one: 'يوم واحد',
-    );
-    return '$_temp0';
-  }
-
-  @override
-  String get trapsLearned => 'الفخاخ المتعلمة';
+  String get trapsLearned => 'الفخاخ التي تعلّمتها';
 
   @override
   String learnedProgress(int learned, int total) {
     return '$learned من $total';
   }
-
-  @override
-  String get gamesPlayed => 'المباريات الملعوبة';
 
   @override
   String get soundAndHaptics => 'الصوت والاهتزاز';
@@ -664,16 +481,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String get vsFriend => 'ضد صديق';
 
   @override
-  String get passAndPlayHint => 'العبا على نفس الجهاز — بالتناوب مع صديق.';
+  String get passAndPlayHint => 'لاعبان وهاتف واحد. بالتناوب.';
 
   @override
-  String get whiteWins => 'الأبيض يفوز!';
+  String get whiteWins => 'فاز الأبيض';
 
   @override
-  String get blackWins => 'الأسود يفوز!';
+  String get blackWins => 'فاز الأسود';
 
   @override
-  String get toMove => 'دورك';
+  String get toMove => 'دور اللعب';
 
   @override
   String get opponentResigned => 'استسلم الخصم';
@@ -691,38 +508,33 @@ class AppLocalizationsAr extends AppLocalizations {
   String get viewAllGames => 'عرض كل المباريات';
 
   @override
-  String get club => 'النادي';
+  String get onboardingSkip => 'تخطي';
 
   @override
-  String get joinClub => 'الانضمام إلى نادٍ';
+  String get onboardingWelcomeTitle => 'مرحبًا بك في Trapster';
 
   @override
-  String get joinClubHint => 'أدخل الرمز الذي أعطاك إياه نادي الشطرنج';
+  String get onboardingWelcomeBody => 'تعلّم الافتتاحيات وأوقع خصومك في الفخ.';
 
   @override
-  String get clubCodeLabel => 'رمز النادي';
+  String get onboardingPlayTitle => 'العب ضد ستوكفيش';
 
   @override
-  String get joinAction => 'انضمام';
+  String get onboardingPlayBody => 'جرّب فخاخك الجديدة ضد ستوكفيش.';
 
   @override
-  String get clubCodeNotFound => 'لم يتم العثور على نادٍ بهذا الرمز';
+  String get onboardingStreakTitle => 'واصل سلسلتك';
 
   @override
-  String clubJoined(String club) {
-    return 'مرحبًا بك في $club!';
-  }
+  String get onboardingStreakBody =>
+      'عد يوميًا لمواصلة سلسلة دخولك واحفظ فخاخك المفضلة.';
 
   @override
-  String get leaveClub => 'مغادرة النادي';
+  String get removeFromFavorites => 'إزالة من المفضلة';
 
   @override
-  String leaveClubConfirm(String club) {
-    return 'مغادرة $club؟ يمكنك الانضمام مجددًا باستخدام الرمز.';
-  }
+  String get trapForWhite => 'فخ للأبيض';
 
   @override
-  String clubCodeValue(String code) {
-    return 'الرمز: $code';
-  }
+  String get trapForBlack => 'فخ للأسود';
 }

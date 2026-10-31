@@ -63,7 +63,7 @@ class EvaluationBar extends StatelessWidget {
                   label!,
                   style: context.textTheme.labelSmall?.copyWith(
                     fontSize: 9,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w600,
                     color: Colors.grey, // Ensure contrast
                     fontFamily: 'monospace',
                   ),

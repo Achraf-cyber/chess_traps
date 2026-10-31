@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:chessground/chessground.dart' as cg;
+import 'package:chess_traps/presentation/widgets/game_board.dart';
 import 'package:dartchess/dartchess.dart';
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -36,66 +36,6 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     // Preload so an interstitial is ready to show at the end-of-game break.
     InterstitialAdManager().loadAd();
   }
-
-  /// Handles a move coming from the board. If it's a pawn reaching the last
-  /// rank without a promotion role, ask the user which piece to promote to
-  /// before committing the move.
-  Future<void> _handleUserMove(
-    Move move,
-    PlayGameNotifier notifier,
-    bool isWhite,
-  ) async {
-    if (move is NormalMove && move.promotion == null) {
-      final piece = ref.read(playGameProvider).chess.board.pieceAt(move.from);
-      final rank = move.to.rank;
-      if (piece?.role == Role.pawn && (rank == 0 || rank == 7)) {
-        final role = await _showPromotionPicker(isWhite);
-        if (role == null) return; // cancelled — leave the piece where it was
-        notifier.onUserMove(move.withPromotion(role));
-        return;
-      }
-    }
-    notifier.onUserMove(move);
-  }
-
-  Future<Role?> _showPromotionPicker(bool isWhite) {
-    const roles = [Role.queen, Role.rook, Role.bishop, Role.knight];
-    return showDialog<Role>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(
-          context.phrase.choose_promotion,
-          textAlign: TextAlign.center,
-        ),
-        content: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: roles.map((role) {
-            return IconButton(
-              iconSize: 44,
-              onPressed: () => Navigator.pop(ctx, role),
-              icon: Text(
-                _promotionGlyph(role),
-                style: TextStyle(
-                  fontSize: 40,
-                  color: isWhite ? Colors.white : Colors.black87,
-                  shadows: const [Shadow(color: Colors.black45, blurRadius: 2)],
-                ),
-              ),
-            );
-          }).toList(),
-        ),
-      ),
-    );
-  }
-
-  String _promotionGlyph(Role role) => switch (role) {
-    Role.queen => '♛',
-    Role.rook => '♜',
-    Role.bishop => '♝',
-    Role.knight => '♞',
-    _ => '',
-  };
 
   /// Converts a UCI move history into standard algebraic notation by replaying
   /// from the initial position.
@@ -133,7 +73,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
       appBar: AppBar(
         title: Text(
           context.phrase.play,
-          style: const TextStyle(fontWeight: FontWeight.w800),
+          style: const TextStyle(fontWeight: FontWeight.w600),
         ),
         centerTitle: true,
         backgroundColor: context.colors.surface,
@@ -297,7 +237,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             Text(
               context.phrase.opponent_strength,
               style: context.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.center,
             ),
@@ -323,7 +263,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(
               color: context.colors.secondaryContainer.withValues(alpha: 0.5),
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: context.colors.outlineVariant.withValues(alpha: 0.5),
               ),
@@ -341,7 +281,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                 _buildStatColumn(
                   context.phrase.draws,
                   history.draws.toString(),
-                  Colors.orange,
+                  context.colors.onSurfaceVariant,
                   Icons.handshake_rounded,
                   context,
                 ),
@@ -376,7 +316,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
             Text(
               context.phrase.play_as,
               style: context.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w800,
+                fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.center,
             ),
@@ -430,7 +370,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
               backgroundColor: context.colors.primary,
               foregroundColor: context.colors.onPrimary,
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
             child: Text(
@@ -488,18 +428,18 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                       ? switch (game.result) {
                           'white' => (
                             Icons.emoji_events_rounded,
-                            Colors.blueGrey,
+                            context.colors.onSurfaceVariant,
                           ),
                           'black' => (
                             Icons.emoji_events_rounded,
-                            Colors.blueGrey,
+                            context.colors.onSurfaceVariant,
                           ),
-                          _ => (Icons.handshake_rounded, Colors.orange),
+                          _ => (Icons.handshake_rounded, context.colors.onSurfaceVariant),
                         }
                       : switch (game.result) {
                           'win' => (Icons.emoji_events_rounded, Colors.green),
                           'loss' => (Icons.psychology_rounded, Colors.red),
-                          _ => (Icons.handshake_rounded, Colors.orange),
+                          _ => (Icons.handshake_rounded, context.colors.onSurfaceVariant),
                         };
                   // Result summary for friend games shows the winning side.
                   final friendResult = switch (game.result) {
@@ -569,7 +509,7 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
         Text(
           value,
           style: context.textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.w900,
+            fontWeight: FontWeight.w700,
             color: context.colors.onSurface,
           ),
         ),
@@ -594,8 +534,14 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     final mySide = isWhite ? Side.white : Side.black;
     final opponentSide = isWhite ? Side.black : Side.white;
 
-    final currentFen = state.browseIndex != null
-        ? state.fenHistory[state.browseIndex!]
+    // Bounds-checked as well as cleared on takeback: a stale index should show
+    // the live position, never take the screen down.
+    final browseIndex = state.browseIndex;
+    final currentFen =
+        browseIndex != null &&
+            browseIndex >= 0 &&
+            browseIndex < state.fenHistory.length
+        ? state.fenHistory[browseIndex]
         : state.chess.fen;
 
     // Friend mode keeps the board fixed (white at the bottom, black at the
@@ -632,10 +578,6 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
     final bottomAdvantage = bottomPlayerSide == Side.white
         ? materialScore
         : -materialScore;
-    // Whichever side is moving owns any promotion (for picker glyph colour).
-    final promotingIsWhite = isFriend
-        ? state.chess.turn == Side.white
-        : isWhite;
     String sideName(Side s) =>
         s == Side.white ? context.phrase.white : context.phrase.black;
 
@@ -773,68 +715,36 @@ class _PlayScreenState extends ConsumerState<PlayScreen> {
                     SizedBox(
                       width: size,
                       height: size,
-                      child: isUserTurn
-                          ? cg.Chessboard(
-                              size: size,
-                              orientation: boardOrientation,
-                              fen: currentFen,
-                              lastMove: state.lastMove,
-                              settings: cg.ChessboardSettings(
-                                // Friend mode: pieces flip to face whoever is
-                                // to move; the board itself never rotates.
-                                pieceOrientationBehavior: isFriend
-                                    ? cg.PieceOrientationBehavior.sideToPlay
-                                    : cg.PieceOrientationBehavior.facingUser,
-                              ),
-                              shapes: state.hintMove == null
-                                  ? null
-                                  : ISet({
-                                      cg.Arrow(
-                                        color: Colors.green.withValues(
-                                          alpha: 0.8,
-                                        ),
-                                        orig: state.hintMove!.from,
-                                        dest: state.hintMove!.to,
-                                      ),
-                                    }),
-                              game: cg.GameData(
-                                // Friend mode: whoever is to move controls the
-                                // board, so both humans can play in turn.
-                                playerSide: isFriend
-                                    ? (state.chess.turn == Side.white
-                                          ? cg.PlayerSide.white
-                                          : cg.PlayerSide.black)
-                                    : (isWhite
-                                          ? cg.PlayerSide.white
-                                          : cg.PlayerSide.black),
-                                sideToMove: state.chess.turn,
-                                validMoves:
-                                    state.chess.legalMoves.asIMapSquareISet,
-                                // Promotion is handled by our own dialog in
-                                // _handleUserMove, so chessground's inline
-                                // selector is disabled here.
-                                promotionMove: null,
-                                onMove: (move, {bool? viaDragAndDrop}) =>
-                                    _handleUserMove(
-                                      move,
-                                      notifier,
-                                      promotingIsWhite,
-                                    ),
-                                isCheck: state.chess.isCheck,
-                                onPromotionSelection: (_) {},
-                              ),
-                            )
-                          : cg.Chessboard.fixed(
-                              size: size,
-                              orientation: boardOrientation,
-                              fen: currentFen,
-                              lastMove: state.lastMove,
-                              settings: cg.ChessboardSettings(
-                                pieceOrientationBehavior: isFriend
-                                    ? cg.PieceOrientationBehavior.sideToPlay
-                                    : cg.PieceOrientationBehavior.facingUser,
-                              ),
+                      child: GameBoard(
+                        size: size,
+                        orientation: boardOrientation,
+                        fen: currentFen,
+                        lastMove: state.lastMove,
+                        settings: cg.ChessboardSettings(
+                          // Friend mode: pieces flip to face whoever is to
+                          // move; the board itself never rotates.
+                          pieceOrientationBehavior: isFriend
+                              ? cg.PieceOrientationBehavior.sideToPlay
+                              : cg.PieceOrientationBehavior.facingUser,
+                        ),
+                        shapes: {
+                          if (state.hintMove case final hint?)
+                            cg.Arrow(
+                              color: Colors.green.withValues(alpha: 0.8),
+                              orig: hint.from,
+                              dest: hint.to,
                             ),
+                        },
+                        playerSide: !isUserTurn
+                            ? cg.PlayerSide.none
+                            // Friend mode: whoever is to move controls the
+                            // board, so both humans can play in turn.
+                            : (isFriend ? state.chess.turn : mySide) == Side.white
+                            ? cg.PlayerSide.white
+                            : cg.PlayerSide.black,
+                        onMove: (move, {bool? viaDragAndDrop}) =>
+                            notifier.onUserMove(move),
+                      ),
                     ),
                   ],
                 );

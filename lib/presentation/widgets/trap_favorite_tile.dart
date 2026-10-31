@@ -19,9 +19,9 @@ class TrapFavoriteTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       child: Material(
         color: context.colors.surfaceContainerLow,
-        borderRadius: BorderRadius.circular(20),
+        borderRadius: BorderRadius.circular(10),
         child: InkWell(
-          borderRadius: BorderRadius.circular(20),
+          borderRadius: BorderRadius.circular(10),
           onTap: () {
             InterstitialAdManager().onTrapViewed();
             TrapDetailRoute(index: trap.id).push<void>(context);
@@ -41,13 +41,6 @@ class TrapFavoriteTile extends StatelessWidget {
                         alpha: 0.4,
                       ),
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withValues(alpha: 0.08),
-                        blurRadius: 8,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
                   ),
                   clipBehavior: Clip.antiAlias,
                   child: Center(
@@ -70,7 +63,7 @@ class TrapFavoriteTile extends StatelessWidget {
                       Text(
                         trap.getLocalizedName(context),
                         style: context.textTheme.titleSmall?.copyWith(
-                          fontWeight: FontWeight.w800,
+                          fontWeight: FontWeight.w600,
                           height: 1.2,
                         ),
                         maxLines: 2,
@@ -78,7 +71,7 @@ class TrapFavoriteTile extends StatelessWidget {
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        trap.opening,
+                        trap.getLocalizedOpening(context),
                         style: context.textTheme.labelSmall?.copyWith(
                           color: context.colors.onSurfaceVariant,
                         ),
@@ -117,7 +110,7 @@ class TrapFavoriteTile extends StatelessWidget {
                     icon: const Icon(Icons.favorite_rounded),
                     color: Colors.red.shade400,
                     iconSize: 22,
-                    tooltip: 'Remove from favorites',
+                    tooltip: context.phrase.removeFromFavorites,
                   ),
               ],
             ),

@@ -21,7 +21,7 @@ class GroupTrapCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           color: context.colors.surfaceContainerLow,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: context.colors.outlineVariant.withValues(alpha: 0.3),
           ),
@@ -43,8 +43,7 @@ class GroupTrapCard extends StatelessWidget {
                           Text(
                             trap.getLocalizedName(context),
                             style: context.textTheme.titleMedium?.copyWith(
-                              fontWeight: FontWeight.w900,
-                              letterSpacing: -0.5,
+                              fontWeight: FontWeight.w700,
                             ),
                           ),
                           const SizedBox(height: 4),

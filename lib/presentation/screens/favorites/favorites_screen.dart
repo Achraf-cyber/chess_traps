@@ -25,8 +25,7 @@ class FavoritesScreen extends ConsumerWidget {
                     Text(
                       context.phrase.yourFavoriteChessTraps,
                       style: context.textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.w900,
-                        letterSpacing: -0.5,
+                        fontWeight: FontWeight.w700,
                         color: context.colors.primary,
                       ),
                     ),

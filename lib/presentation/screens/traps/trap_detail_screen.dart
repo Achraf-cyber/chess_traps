@@ -3,11 +3,10 @@ import 'dart:math' as math;
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:chess_traps/presentation/state/traps/learned_traps_provider.dart';
 import 'package:chess_traps/core/services/audio_haptic_service.dart';
-import 'package:chess_traps/core/services/promotion_utils.dart';
+import 'package:chess_traps/presentation/widgets/game_board.dart';
 import 'package:chess_traps/presentation/state/favorites/user_favorites_provider.dart';
 import 'package:chessground/chessground.dart' as cg;
 import 'package:dartchess/dartchess.dart';
-import 'package:fast_immutable_collections/fast_immutable_collections.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -48,7 +47,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
   bool isPracticeMode = false;
   bool isAvoidMode = false;
   int? blunderIndex;
-  NormalMove? promotionMove;
   bool? _isLastMoveCorrect;
   Timer? _feedbackTimer;
   NormalMove? _hintMove;
@@ -242,20 +240,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       trapPositionProvider(widget.trapIndex, currentMoveIndex),
     );
 
-    // A pawn landing on the back rank arrives here with no promotion role, and
-    // dartchess rejects that as illegal — makeSan throws below and the move is
-    // dropped without a word, which is why promotions could never be completed.
-    // Hand the move to chessground's selector instead; it calls
-    // _onPromotionSelection, which comes back through here carrying a role.
-    //
-    // This sits above the avoid-mode branch on purpose: that path compares
-    // move.uci against the engine's best moves, and a UCI missing its
-    // promotion suffix would never match either.
-    if (isPromotionPending(position, move)) {
-      setState(() => promotionMove = move as NormalMove);
-      return;
-    }
-
     if (isAvoidMode) {
       _handleAvoidMove(move);
       return;
@@ -402,20 +386,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
     }
   }
 
-  void _onPromotionSelection(Role? role) {
-    if (promotionMove != null && role != null) {
-      final move = NormalMove(
-        from: promotionMove!.from,
-        to: promotionMove!.to,
-        promotion: role,
-      );
-      _onPracticeMove(move);
-      setState(() {
-        promotionMove = null;
-      });
-    }
-  }
-
   @override
   void dispose() {
     _autoPlayTimer?.cancel();
@@ -515,7 +485,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
       );
     }
 
-    final ISet<cg.Shape> arrows = ISet(arrowList);
+    final Set<cg.Shape> arrows = arrowList.toSet();
 
     return Scaffold(
       backgroundColor: context.colors.surface,
@@ -525,7 +495,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
         scrolledUnderElevation: 0,
         leading: BackButton(onPressed: () => context.pop()),
         title: Text(
-          trap.opening,
+          trap.getLocalizedOpening(context),
           style: context.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
           ),
@@ -680,7 +650,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                           ? Icons.shield_rounded
                           : Icons.shield_outlined,
                       color: isAvoidMode
-                          ? Colors.orange
+                          ? context.colors.tertiary
                           : context.colors.onSurfaceVariant,
                     ),
                     const SizedBox(width: 12),
@@ -842,14 +812,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                     evaluation: engineState.displayScore * 100,
                                     isReversed: orientation == Side.black,
                                     orientation: Axis.horizontal,
-                                    label: engineState.mateIn != null
-                                        ? "M${engineState.mateIn!.abs()}"
-                                        : (engineState.scoreInCentipawns > 0
-                                                  ? "+"
-                                                  : "") +
-                                              (engineState.scoreInCentipawns /
-                                                      100.0)
-                                                  .toStringAsFixed(1),
+                                    label: engineState.displayLabel,
                                   ),
                                 ),
                               ),
@@ -898,57 +861,32 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                               height: size,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black.withValues(alpha: 0.15),
-                                    blurRadius: 15,
-                                    offset: const Offset(0, 8),
-                                  ),
-                                ],
                               ),
                               clipBehavior: Clip.antiAlias,
                               child: Stack(
                                 children: [
-                                  (isPracticeMode &&
-                                              position.turn ==
-                                                  trap.targetSide) ||
-                                          isAvoidMode
-                                      ? cg.Chessboard(
-                                          size: size,
-                                          orientation: orientation,
-                                          fen: position.fen,
-                                          settings: cg.ChessboardSettings(
-                                            colorScheme:
-                                                settings.boardTheme.colorScheme,
-                                          ),
-                                          game: cg.GameData(
-                                            playerSide:
-                                                position.turn == Side.white
-                                                ? cg.PlayerSide.white
-                                                : cg.PlayerSide.black,
-                                            sideToMove: position.turn,
-                                            validMoves: position
-                                                .legalMoves
-                                                .asIMapSquareISet,
-                                            promotionMove: promotionMove,
-                                            onMove: _onPracticeMove,
-                                            isCheck: position.isCheck,
-                                            onPromotionSelection:
-                                                _onPromotionSelection,
-                                          ),
-                                        )
-                                      : cg.Chessboard.fixed(
-                                          size: size,
-                                          orientation: orientation,
-                                          fen: position.fen,
-                                          settings: cg.ChessboardSettings(
-                                            colorScheme:
-                                                settings.boardTheme.colorScheme,
-                                          ),
-                                          shapes: isPracticeMode || isAvoidMode
-                                              ? ISet()
-                                              : arrows,
-                                        ),
+                                  GameBoard(
+                                    size: size,
+                                    orientation: orientation,
+                                    fen: position.fen,
+                                    settings: cg.ChessboardSettings(
+                                      colorScheme:
+                                          settings.boardTheme.colorScheme,
+                                    ),
+                                    shapes: isPracticeMode || isAvoidMode
+                                        ? const {}
+                                        : arrows,
+                                    playerSide:
+                                        !(isAvoidMode ||
+                                            (isPracticeMode &&
+                                                position.turn ==
+                                                    trap.targetSide))
+                                        ? cg.PlayerSide.none
+                                        : position.turn == Side.white
+                                        ? cg.PlayerSide.white
+                                        : cg.PlayerSide.black,
+                                    onMove: _onPracticeMove,
+                                  ),
                                   if (_isLastMoveCorrect != null)
                                     Positioned.fill(
                                       child:
@@ -1020,13 +958,6 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       borderRadius: const BorderRadius.vertical(
                         top: Radius.circular(32),
                       ),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withValues(alpha: 0.05),
-                          blurRadius: 10,
-                          offset: const Offset(0, -5),
-                        ),
-                      ],
                     ),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -1041,7 +972,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                 trap.getLocalizedName(context),
                                 style: context.textTheme.headlineSmall
                                     ?.copyWith(
-                                      fontWeight: FontWeight.w900,
+                                      fontWeight: FontWeight.w700,
                                       color: context.colors.primary,
                                       height: 1.1,
                                     ),
@@ -1088,8 +1019,8 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                                       ),
                                       child: Text(
                                         trap.targetSide == Side.white
-                                            ? context.phrase.whiteProfits
-                                            : context.phrase.blackProfits,
+                                            ? context.phrase.trapForWhite
+                                            : context.phrase.trapForBlack,
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                         style: context.textTheme.labelSmall
@@ -1259,7 +1190,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                       items: AppBoardTheme.values.map((theme) {
                         return DropdownMenuItem(
                           value: theme,
-                          child: Text(theme.name.toUpperCase()),
+                          child: Text(theme.name),
                         );
                       }).toList(),
                       onChanged: (AppBoardTheme? theme) {
@@ -1316,7 +1247,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
             Icons.lightbulb_outline_rounded,
             () => _showHint(engineState),
             engineState.engineAvailable && engineState.multiPv.isNotEmpty,
-            color: Colors.amber,
+            color: context.colors.tertiary,
           ),
           const SizedBox(width: 12),
           _buildNavButton(
@@ -1455,7 +1386,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
               curve: Curves.easeOutCubic,
               style:
                   context.textTheme.bodyMedium?.copyWith(
-                    fontWeight: isSelected ? FontWeight.w900 : FontWeight.w600,
+                    fontWeight: isSelected ? FontWeight.w700 : FontWeight.w600,
                     color: isSelected
                         ? context.colors.onPrimaryContainer
                         : context.colors.onSurface,
@@ -1471,12 +1402,7 @@ class _TrapDetailScreenState extends ConsumerState<TrapDetailScreen> {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text(
-                  state.mateIn != null
-                      ? "M${state.mateIn!.abs()}"
-                      : (state.scoreInCentipawns > 0 ? "+" : "") +
-                            (state.scoreInCentipawns / 100.0).toStringAsFixed(
-                              1,
-                            ),
+                  state.displayLabel,
                   style: context.textTheme.labelSmall?.copyWith(
                     fontFamily: 'monospace',
                     fontWeight: FontWeight.bold,

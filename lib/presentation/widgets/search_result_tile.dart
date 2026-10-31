@@ -58,7 +58,7 @@ class SearchResultTile extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       Text(
-                        trap.opening,
+                        trap.getLocalizedOpening(context),
                         style: context.textTheme.bodySmall?.copyWith(
                           color: context.colors.onSurfaceVariant,
                         ),

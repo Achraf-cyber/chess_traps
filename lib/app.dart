@@ -13,7 +13,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:chess_traps/core/providers/app_theme_provider.dart';
-import 'package:chess_traps/presentation/state/club/club_provider.dart';
 import 'package:chess_traps/core/providers/settings_provider.dart';
 import 'package:chess_traps/core/services/app_open_ad_manager.dart';
 import 'package:chess_traps/core/services/rewarded_ad_manager.dart';
@@ -40,7 +39,12 @@ Future<void> runMainApp() async {
   }
 
   debugPrint('app started');
-  WidgetsFlutterBinding.ensureInitialized();
+  // Device Preview 3 is a binding, so it has to go in before any other.
+  if (kDebugMode && (kIsWeb || Platform.isWindows)) {
+    DevicePreview.enable();
+  } else {
+    WidgetsFlutterBinding.ensureInitialized();
+  }
 
   // Draw behind the status and navigation bars. Android 15+ enforces
   // edge-to-edge for apps targeting SDK 35 and above; declaring it here means
@@ -104,16 +108,7 @@ Future<void> runMainApp() async {
     ], soundAttributions);
   });
 
-  if (kDebugMode && (kIsWeb || Platform.isWindows)) {
-    // Animate.restartOnHotReload = true;
-    runApp(
-      DevicePreview(
-        builder: (context) => const ProviderScope(child: MainApp()),
-      ),
-    );
-  } else {
-    runApp(const ProviderScope(child: MainApp()));
-  }
+  runApp(const ProviderScope(child: MainApp()));
 
   // Dismiss the native splash only after the first Flutter frame is drawn.
   WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -204,11 +199,11 @@ class MainApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeMode = ref.watch(appThemeProvider);
-    // Start the club provider with the app, not with the first screen that
-    // shows the club, so a club link opened on any screen is still handled.
-    ref.listen(clubProvider, (_, _) {});
-    const inter = 'Inter';
-    final TextTheme textTheme = createTextTheme(context, inter, inter);
+    final TextTheme textTheme = createTextTheme(
+      context,
+      'Public Sans',
+      'Newsreader',
+    );
 
     final theme = MaterialTheme(textTheme);
     final settings = ref.watch(chessSettingsProvider);
@@ -222,14 +217,7 @@ class MainApp extends ConsumerWidget {
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appName,
       supportedLocales: AppLocalizations.supportedLocales,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      locale:
-          locale ??
-          (kDebugMode && (kIsWeb || Platform.isWindows)
-              ? DevicePreview.locale(context)
-              : null),
-      builder: kDebugMode && (kIsWeb || Platform.isWindows)
-          ? DevicePreview.appBuilder
-          : null,
+      locale: locale,
       scrollBehavior: const _NoOverscrollBehavior(),
       theme: theme.light(),
       darkTheme: theme.dark(),

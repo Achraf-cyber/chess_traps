@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:chess_traps/router.dart';
 import 'package:chess_traps/core/constants/app_sizes.dart';
 import 'package:chess_traps/core/services/notification_service.dart';
+import 'package:chess_traps/utils.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -16,24 +17,21 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   int _currentIndex = 0;
 
-  final List<_OnboardingSlide> _slides = [
-    const _OnboardingSlide(
-      icon: Icons.auto_awesome_rounded,
-      title: 'Welcome to Chess Traps',
-      description: 'Master the openings and surprise your opponents with devastating traps.',
-      color: Colors.blue,
+  List<_OnboardingSlide> get _slides => [
+    _OnboardingSlide(
+      icon: Icons.menu_book_rounded,
+      title: context.phrase.onboardingWelcomeTitle,
+      description: context.phrase.onboardingWelcomeBody,
     ),
-    const _OnboardingSlide(
-      icon: Icons.sports_esports_rounded,
-      title: 'Play Against the Engine',
-      description: 'Test your newly learned traps directly on the board against Stockfish.',
-      color: Colors.orange,
+    _OnboardingSlide(
+      icon: Icons.castle_rounded,
+      title: context.phrase.onboardingPlayTitle,
+      description: context.phrase.onboardingPlayBody,
     ),
-    const _OnboardingSlide(
+    _OnboardingSlide(
       icon: Icons.local_fire_department_rounded,
-      title: 'Build Your Streak',
-      description: 'Return daily to build your login streak and save your favorite traps.',
-      color: Colors.red,
+      title: context.phrase.onboardingStreakTitle,
+      description: context.phrase.onboardingStreakBody,
     ),
   ];
 
@@ -81,10 +79,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         child: Column(
           children: [
             Align(
-              alignment: Alignment.topRight,
+              alignment: AlignmentDirectional.topEnd,
               child: TextButton(
                 onPressed: _completeOnboarding,
-                child: Text('Skip', style: TextStyle(color: scheme.onSurfaceVariant)),
+                child: Text(
+                  context.phrase.onboardingSkip,
+                  style: TextStyle(color: scheme.onSurfaceVariant),
+                ),
               ),
             ),
             Expanded(
@@ -104,13 +105,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         Container(
                           padding: const EdgeInsets.all(32),
                           decoration: BoxDecoration(
-                            color: slide.color.withValues(alpha: 0.1),
+                            color: scheme.primaryContainer,
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             slide.icon,
                             size: 80,
-                            color: slide.color,
+                            color: scheme.primary,
                           ),
                         ).animate().scale(delay: 100.ms, duration: 400.ms, curve: Curves.easeOutBack),
                         const SizedBox(height: 48),
@@ -118,7 +119,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           slide.title,
                           textAlign: TextAlign.center,
                           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                             color: scheme.onSurface,
                           ),
                         ).animate().fadeIn(delay: 200.ms).slideY(begin: 0.2, end: 0),
@@ -172,8 +173,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         _currentIndex == _slides.length - 1 ? 'Get Started' : 'Next',
                         style: const TextStyle(
                           fontSize: 18,
-                          fontWeight: FontWeight.w800,
-                          letterSpacing: 0.5,
+                          fontWeight: FontWeight.w600,
                         ),
                       ),
                     ),
@@ -193,10 +193,8 @@ class _OnboardingSlide {
     required this.icon,
     required this.title,
     required this.description,
-    required this.color,
   });
   final IconData icon;
   final String title;
   final String description;
-  final Color color;
 }

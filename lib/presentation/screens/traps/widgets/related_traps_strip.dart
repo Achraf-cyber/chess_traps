@@ -24,7 +24,7 @@ class RelatedTrapsStrip extends ConsumerWidget {
         children: [
           Text(
             context.phrase.relatedTraps,
-            style: context.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w800),
+            style: context.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
           ),
           const SizedBox(height: 10),
           SizedBox(

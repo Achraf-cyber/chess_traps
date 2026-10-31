@@ -1,6 +1,5 @@
 // ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -10,13 +9,10 @@ class AppLocalizationsFr extends AppLocalizations {
   AppLocalizationsFr([String locale = 'fr']) : super(locale);
 
   @override
-  String get authorName => 'Simbre Achraf';
+  String get appName => 'Trapster';
 
   @override
-  String get appName => 'Pièges d\'échecs';
-
-  @override
-  String get chessTraps => 'Pièges d\'échecs';
+  String get chessTraps => 'Trapster';
 
   @override
   String get home => 'Accueil';
@@ -25,40 +21,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get traps => 'Pièges';
 
   @override
-  String get favorite => 'Favoris';
-
-  @override
-  String get training => 'Entraînement';
-
-  @override
   String get profile => 'Profil';
 
   @override
   String get trapOfTheDay => 'Piège du jour';
-
-  @override
-  String get recentTraps => 'Pièges récents';
-
-  @override
-  String get exampleTrap => 'Attaque Fried Liver';
-
-  @override
-  String get lastTimeChecked => 'Dernière consultation';
-
-  @override
-  String get explore => 'Explorer';
-
-  @override
-  String get viewAllTraps => 'Voir tous les pièges';
-
-  @override
-  String get errorLoadingTraps => 'Erreur lors du chargement des pièges';
-
-  @override
-  String get noTrapsFound => 'Aucun piège trouvé';
-
-  @override
-  String get theme => 'Thème';
 
   @override
   String get system => 'Système';
@@ -70,51 +36,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dark => 'Sombre';
 
   @override
-  String get appLanguage => 'Langue de l\'application';
-
-  @override
   String get openSourceLicense => 'Licence open source';
 
   @override
-  String get usedPackages => 'Packages utilisés';
+  String get usedPackages => 'Packages open source';
 
   @override
-  String get developer => 'Développeur';
+  String get randomTrap => 'Piège au hasard';
 
   @override
-  String get editProfile => 'Modifier le profil';
-
-  @override
-  String get logout => 'Déconnexion';
-
-  @override
-  String masteredTraps(Object count, Object percentage) {
-    return '$count Pièges maîtrisés ($percentage%)';
-  }
-
-  @override
-  String get english => 'Anglais';
-
-  @override
-  String get randomTrap => 'Piège aléatoire';
-
-  @override
-  String get yourFavoriteChessTraps => 'Vos pièges d\'échecs favoris';
-
-  @override
-  String get wildGambit => 'Gambit sauvage';
+  String get yourFavoriteChessTraps => 'Vos pièges favoris';
 
   @override
   String get search => 'Rechercher';
 
   @override
-  String get playTheMoves => 'Jouer les coups';
-
-  @override
   String get matchingTraps => 'Pièges correspondants';
-
-  @override
-  String get playMovesToNarrow => 'Jouez des coups pour affiner les résultats';
 
   @override
   String get resetBoard => 'Réinitialiser l\'échiquier';
@@ -147,7 +84,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get profileTitle => 'Joueur d\'échecs';
 
   @override
-  String get copyright => 'Pièges d\'échecs © 2026';
+  String get copyright => 'Trapster © 2026';
 
   @override
   String get clearFavoritesTitle => 'Effacer les favoris';
@@ -170,44 +107,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get yourPersonalCollectionOfTacticalBrilliance =>
-      'Votre collection personnelle de brillance tactique.';
+      'Les pièges que vous avez enregistrés.';
 
   @override
   String get noFavoriteYet => 'Pas encore de favoris';
 
   @override
   String get taptheHeartIconAction =>
-      'Appuyez sur l\'icône de cœur sur n\'importe quel écran de détail de piège pour l\'enregistrer ici pour un accès rapide.';
-
-  @override
-  String get elevateYourGame => 'Élevez votre jeu';
-
-  @override
-  String get discoverWinningSequencesByMasters =>
-      'Découvrez des séquences gagnantes utilisées par des maîtres.';
-
-  @override
-  String get highlight => 'Points forts';
+      'Touchez le cœur sur un piège pour le retrouver ici.';
 
   @override
   String get exploreMore => 'Explorer plus';
-
-  @override
-  String get testYourPatternRecog =>
-      'Testez votre reconnaissance de motifs avec un piège mystère.';
-
-  @override
-  String get strategyGuide => 'Guide de stratégie';
-
-  @override
-  String get comingSoonDeepDives =>
-      'Prochainement : plongée profonde dans la théorie des ouvertures.';
-
-  @override
-  String get account => 'Compte';
-
-  @override
-  String get sequenceHistory => 'Historique des séquences';
 
   @override
   String get theory => 'Théorie';
@@ -222,9 +132,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get privacyPolicy => 'Politique de Confidentialité';
 
   @override
-  String get termsOfUse => 'Conditions d\'Utilisation';
-
-  @override
   String get browseByOpening => 'Parcourir par ouverture';
 
   @override
@@ -234,43 +141,31 @@ class AppLocalizationsFr extends AppLocalizations {
   String get searchResults => 'Résultats de recherche';
 
   @override
-  String get featuredTrap => 'Piège en vedette';
+  String get featuredTrap => 'Piège à la une';
 
   @override
   String get startTraining => 'Commencer l\'entraînement';
 
   @override
-  String get beginner => 'Débutant';
+  String get unlockedExtraMoves => '5 coups de plus débloqués';
 
   @override
-  String get intermediate => 'Intermédiaire';
+  String get cancel => 'Annuler';
 
   @override
-  String get advanced => 'Avancé';
+  String get watchAd => 'Voir la pub';
 
   @override
-  String get unlockedExtraMoves => '5 coups supplémentaires débloqués !';
-
-  @override
-  String get limitReached => 'Limite atteinte';
-
-  @override
-  String get cancel => 'ANNULER';
-
-  @override
-  String get watchAd => 'VOIR UNE PUB';
-
-  @override
-  String get trapCompleted => 'Piège complété ! Bien joué !';
+  String get trapCompleted => 'Piège terminé. Bien joué !';
 
   @override
   String get relatedTraps => 'Pièges similaires';
 
   @override
-  String get incorrectMove => 'Coup incorrect. Réessayez !';
+  String get incorrectMove => 'Pas ce coup-là. Réessayez !';
 
   @override
-  String get incorrectMoveWithHint => 'Pas tout à fait — voici un indice.';
+  String get incorrectMoveWithHint => 'Pas tout à fait. Voici un indice.';
 
   @override
   String get goBack => 'Retour';
@@ -285,35 +180,34 @@ class AppLocalizationsFr extends AppLocalizations {
   String get avoidTrap => 'Éviter le piège';
 
   @override
-  String get avoidModeActive =>
-      'Mode Évitement actif. Trouvez le meilleur coup !';
+  String get avoidModeActive => 'Mode évitement : trouvez le coup sûr.';
 
   @override
-  String get blunderPrevented => 'Génial ! Vous avez évité le piège.';
+  String get blunderPrevented => 'Bravo ! Vous avez évité le piège.';
 
   @override
-  String get findBetterMove => 'Trouvez un meilleur coup pour éviter le piège.';
+  String get findBetterMove => 'Cherchez un coup plus sûr.';
 
   @override
   String get play => 'Jouer';
 
   @override
-  String get you_won => 'Vous avez gagné ! 🎉';
+  String get you_won => 'Vous avez gagné !';
 
   @override
   String get congratulations => 'Félicitations !';
 
   @override
-  String get stockfish_won => 'Stockfish a gagné';
+  String get stockfish_won => 'Stockfish gagne';
 
   @override
-  String get better_luck_next_time => 'Meilleure chance la prochaine fois !';
+  String get better_luck_next_time => 'Vous ferez mieux la prochaine fois.';
 
   @override
   String get you_resigned => 'Vous avez abandonné';
 
   @override
-  String get draw => 'Nul';
+  String get draw => 'Partie nulle';
 
   @override
   String get well_played => 'Bien joué !';
@@ -337,10 +231,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get losses => 'Défaites';
 
   @override
-  String get engine_response => 'Réponse du moteur';
-
-  @override
-  String get play_as => 'Jouer avec';
+  String get play_as => 'Jouer les';
 
   @override
   String get white => 'Blancs';
@@ -352,16 +243,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get black => 'Noirs';
 
   @override
-  String get start_game => 'Commencer la partie';
+  String get start_game => 'Lancer la partie';
 
   @override
-  String get thinking => 'Réflexion...';
+  String get thinking => 'Réflexion…';
 
   @override
   String get your_turn => 'À vous de jouer';
 
   @override
-  String get back_to_setup => 'Retour à la configuration';
+  String get back_to_setup => 'Nouvelle partie';
 
   @override
   String get resign => 'Abandonner';
@@ -388,9 +279,6 @@ class AppLocalizationsFr extends AppLocalizations {
   String get last_move => 'Dernier coup';
 
   @override
-  String get choose_promotion => 'Promouvoir en';
-
-  @override
   String get piecePawn => 'pion';
 
   @override
@@ -413,7 +301,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String explainCheckmate(String piece) {
-    return 'Le $piece livre échec et mat !';
+    return 'Le $piece donne échec et mat !';
   }
 
   @override
@@ -428,24 +316,23 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String explainFork(String piece, String targets) {
-    return 'Le $piece fourchette $targets.';
+    return 'Le $piece fait une fourchette sur $targets.';
   }
 
   @override
   String explainCheck(String piece) {
-    return 'Le $piece met le roi en échec.';
+    return 'Le $piece donne échec et force une réponse.';
   }
 
   @override
-  String get explainCastleKingside =>
-      'Roque du côté roi, mettant le roi à l\'abri.';
+  String get explainCastleKingside => 'Petit roque : le roi est à l\'abri.';
 
   @override
-  String get explainCastleQueenside => 'Roque du côté dame.';
+  String get explainCastleQueenside => 'Grand roque.';
 
   @override
   String explainPromotion(String piece) {
-    return 'Promeut en $piece.';
+    return 'Se promeut en $piece.';
   }
 
   @override
@@ -457,75 +344,26 @@ class AppLocalizationsFr extends AppLocalizations {
   String get you => 'Vous';
 
   @override
-  String get featured_trap => 'Piège en vedette';
-
-  @override
-  String get loading_ads => 'Chargement des publicités...';
-
-  @override
   String get daily_limit_reached => 'Limite quotidienne atteinte';
 
   @override
-  String get ad_load_failed =>
-      'La publicité n\'a pas pu être chargée. Réessayez plus tard.';
-
-  @override
-  String get ad_not_ready =>
-      'La publicité n\'est pas encore prête. Réessayez plus tard.';
-
-  @override
   String get limit_reached_body =>
-      'Vous avez vu vos 10 pièges gratuits pour aujourd\'hui ! Regardez une courte publicité pour débloquer tous les pièges pour le reste de la journée.';
+      'Vous avez vu vos 10 pièges gratuits du jour. Regardez une courte pub pour tout débloquer jusqu\'à demain.';
 
   @override
   String get no_traps_in_group =>
       'Aucun piège n\'est encore disponible pour cette ouverture.';
 
   @override
-  String get surprise_me => 'Surprenez-moi';
-
-  @override
-  String get play_mode => 'Mode Jeu';
-
-  @override
-  String get vs_engine => 'contre l\'Ordi';
-
-  @override
-  String get by_moves => 'Par Coups';
-
-  @override
-  String get find_by_position => 'Trouver par position';
-
-  @override
-  String traps_count(Object count) {
-    return '$count pièges';
-  }
-
-  @override
-  String opening_traps_count(Object count) {
-    return '$count Pièges d\'ouverture';
-  }
-
-  @override
-  String get hero_title => 'Surprenez Votre\nAdversaire';
-
-  @override
-  String get hero_subtitle =>
-      'Maîtrisez les pièges utilisés par les grands maîtres.';
-
-  @override
-  String get openings => 'Ouvertures';
-
-  @override
-  String get languages => 'Langues';
+  String get play_mode => 'Jouer';
 
   @override
   String get move_limit_reached =>
-      'Limite de coups atteinte. La publicité n\'est pas prête, veuillez patienter ou réinitialiser.';
+      'Limite de coups atteinte et la pub n\'est pas prête. Patientez ou réinitialisez l\'échiquier.';
 
   @override
   String get search_limit_body =>
-      'Vous avez atteint la limite de coups gratuits pour cette recherche. Regardez une courte vidéo publicitaire pour débloquer 5 coups supplémentaires.';
+      'Vous avez utilisé vos coups gratuits pour cette recherche. Regardez une courte pub pour en débloquer 5 de plus.';
 
   @override
   String get notifications => 'Notifications';
@@ -535,53 +373,52 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get daily_trap_reminder_subtitle =>
-      'Recevez une notification pour le piège du jour';
+      'Un rappel pour découvrir le piège du jour';
 
   @override
   String get reminder_time => 'Heure du rappel';
 
   @override
-  String get notification_trap_ready_title => 'Le piège du jour est prêt !';
+  String get notification_trap_ready_title => 'Le piège du jour est prêt';
 
   @override
   String get notification_trap_ready_body =>
-      'Apprenez un nouveau piège d\'ouverture et boostez votre classement ♟️';
+      'Apprenez-le avant votre prochaine partie ♟️';
 
   @override
   String get trapNotFound => 'Piège non trouvé';
 
   @override
-  String get practiceModeActive =>
-      'Mode Entraînement actif. Jouez les bons coups !';
+  String get practiceModeActive => 'Mode entraînement : jouez les bons coups.';
 
   @override
   String canYouSurvive(String trapName, String link) {
-    return 'Pouvez-vous survivre à ce piège ? Découvrez $trapName !\n$link';
+    return 'Sauriez-vous éviter ce piège ? Essayez $trapName.\n$link';
   }
 
   @override
   String get exitPractice => 'Quitter l\'entraînement';
 
   @override
-  String get practiceMode => 'Mode Entraînement';
+  String get practiceMode => 'Entraînement';
 
   @override
-  String get exitAvoidMode => 'Quitter le mode Évitement';
+  String get exitAvoidMode => 'Quitter le mode évitement';
 
   @override
-  String get avoidTrapMode => 'Mode Éviter le piège';
+  String get avoidTrapMode => 'Éviter le piège';
 
   @override
-  String get stopAutoPlay => 'Arrêter la lecture';
+  String get stopAutoPlay => 'Arrêter';
 
   @override
-  String get autoPlay => 'Lecture automatique';
+  String get autoPlay => 'Lecture auto';
 
   @override
   String get flipBoard => 'Retourner l\'échiquier';
 
   @override
-  String get markedAsLearned => 'Marqué comme appris';
+  String get markedAsLearned => 'Appris';
 
   @override
   String get markAsLearned => 'Marquer comme appris';
@@ -593,13 +430,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settings => 'Paramètres';
 
   @override
-  String get engineStarting => 'Démarrage du moteur...';
-
-  @override
-  String get whiteProfits => 'Avantage pour les blancs';
-
-  @override
-  String get blackProfits => 'Avantage pour les noirs';
+  String get engineStarting => 'Démarrage du moteur…';
 
   @override
   String get engineUnavailable => 'Moteur indisponible';
@@ -610,19 +441,14 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get analysisSettings => 'Paramètres d\'analyse';
+  String get analysisSettings => 'Analyse';
 
   @override
-  String get engineBestMoves => 'Meilleurs coups (Flèches)';
+  String get engineBestMoves => 'Flèches du moteur';
 
   @override
   String eloLabel(int elo) {
     return 'Elo : $elo';
-  }
-
-  @override
-  String engineResponseLabel(String delay) {
-    return 'Réponse : ${delay}s moy';
   }
 
   @override
@@ -637,26 +463,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get currentStreak => 'Série actuelle';
 
   @override
-  String streakDays(int count) {
-    String _temp0 = intl.Intl.pluralLogic(
-      count,
-      locale: localeName,
-      other: '$count jours',
-      one: '1 jour',
-    );
-    return '$_temp0';
-  }
-
-  @override
   String get trapsLearned => 'Pièges appris';
 
   @override
   String learnedProgress(int learned, int total) {
     return '$learned sur $total';
   }
-
-  @override
-  String get gamesPlayed => 'Parties jouées';
 
   @override
   String get soundAndHaptics => 'Son et vibrations';
@@ -668,20 +480,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get hapticFeedback => 'Retour haptique';
 
   @override
-  String get vsStockfish => 'vs Stockfish';
+  String get vsStockfish => 'contre Stockfish';
 
   @override
-  String get vsFriend => 'vs Ami';
+  String get vsFriend => 'contre un ami';
 
   @override
-  String get passAndPlayHint =>
-      'Jouez à deux sur le même appareil — chacun son tour.';
+  String get passAndPlayHint => 'Deux joueurs, un téléphone. Chacun son tour.';
 
   @override
-  String get whiteWins => 'Les Blancs gagnent !';
+  String get whiteWins => 'Les Blancs gagnent';
 
   @override
-  String get blackWins => 'Les Noirs gagnent !';
+  String get blackWins => 'Les Noirs gagnent';
 
   @override
   String get toMove => 'Au trait';
@@ -702,38 +513,35 @@ class AppLocalizationsFr extends AppLocalizations {
   String get viewAllGames => 'Voir toutes les parties';
 
   @override
-  String get club => 'Club';
+  String get onboardingSkip => 'Passer';
 
   @override
-  String get joinClub => 'Rejoindre un club';
+  String get onboardingWelcomeTitle => 'Bienvenue sur Trapster';
 
   @override
-  String get joinClubHint => 'Entrez le code donné par votre club d\'échecs';
+  String get onboardingWelcomeBody =>
+      'Apprenez les ouvertures et piégez vos adversaires.';
 
   @override
-  String get clubCodeLabel => 'Code du club';
+  String get onboardingPlayTitle => 'Affrontez Stockfish';
 
   @override
-  String get joinAction => 'Rejoindre';
+  String get onboardingPlayBody =>
+      'Essayez vos nouveaux pièges contre Stockfish.';
 
   @override
-  String get clubCodeNotFound => 'Aucun club trouvé avec ce code';
+  String get onboardingStreakTitle => 'Construisez votre série';
 
   @override
-  String clubJoined(String club) {
-    return 'Bienvenue au $club !';
-  }
+  String get onboardingStreakBody =>
+      'Revenez chaque jour pour prolonger votre série et enregistrez vos pièges préférés.';
 
   @override
-  String get leaveClub => 'Quitter le club';
+  String get removeFromFavorites => 'Retirer des favoris';
 
   @override
-  String leaveClubConfirm(String club) {
-    return 'Quitter $club ? Vous pourrez revenir avec le code.';
-  }
+  String get trapForWhite => 'Piège pour les Blancs';
 
   @override
-  String clubCodeValue(String code) {
-    return 'Code : $code';
-  }
+  String get trapForBlack => 'Piège pour les Noirs';
 }

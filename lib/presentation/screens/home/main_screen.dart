@@ -81,10 +81,10 @@ class _AppBottomNav extends StatelessWidget {
 
   static const _icons = <(IconData, IconData)>[
     (Icons.home_outlined, Icons.home_rounded),
-    (Icons.school_outlined, Icons.school_rounded),
+    (Icons.menu_book_outlined, Icons.menu_book_rounded),
     (Icons.search_outlined, Icons.search_rounded),
-    (Icons.sports_esports_outlined, Icons.sports_esports_rounded),
-    (Icons.manage_accounts_outlined, Icons.manage_accounts_rounded),
+    (Icons.castle_outlined, Icons.castle_rounded),
+    (Icons.person_outline_rounded, Icons.person_rounded),
   ];
 
   @override
@@ -95,10 +95,8 @@ class _AppBottomNav extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: scheme.surfaceContainerLow,
-        border: Border(
-          top: BorderSide(color: scheme.outline.withValues(alpha: 0.2)),
-        ),
+        color: scheme.surface,
+        border: Border(top: BorderSide(color: scheme.outline)),
       ),
       padding: EdgeInsets.only(bottom: bottomPadding),
       child: SizedBox(
@@ -139,48 +137,28 @@ class _NavItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
 
+    final color = selected ? scheme.onSurface : scheme.onSurfaceVariant;
+
     return InkWell(
       onTap: onTap,
       splashColor: scheme.primary.withValues(alpha: 0.08),
-      highlightColor: scheme.primary.withValues(alpha: 0.04),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 8),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          curve: Curves.easeOutCubic,
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // Pill indicator + icon
-              AnimatedContainer(
-                duration: const Duration(milliseconds: 200),
-                curve: Curves.easeOutCubic,
-                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-                decoration: BoxDecoration(
-                  color: selected
-                      ? scheme.primaryContainer
-                      : Colors.transparent,
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Icon(
-                  icon,
-                  size: 22,
-                  color: selected ? scheme.primary : scheme.onSurfaceVariant,
-                ),
-              ),
-              const SizedBox(height: 2),
-              AnimatedDefaultTextStyle(
-                duration: const Duration(milliseconds: 200),
-                style: TextStyle(
-                  fontSize: 10,
-                  fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
-                  color: selected ? scheme.primary : scheme.onSurfaceVariant,
-                ),
-                child: Text(label, maxLines: 1, overflow: TextOverflow.ellipsis),
-              ),
-            ],
+      highlightColor: Colors.transparent,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, size: 23, color: color),
+          const SizedBox(height: 3),
+          Text(
+            label,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontSize: 11,
+              fontWeight: selected ? FontWeight.w600 : FontWeight.w400,
+              color: color,
+            ),
           ),
-        ),
+        ],
       ),
     );
   }

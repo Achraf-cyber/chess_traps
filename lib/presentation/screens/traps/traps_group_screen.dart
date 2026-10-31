@@ -24,9 +24,9 @@ class TrapsGroupScreen extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              groupName,
+              localizedOpening(context, groupName),
               style: context.textTheme.titleLarge?.copyWith(
-                fontWeight: FontWeight.w900,
+                fontWeight: FontWeight.w700,
               ),
             ),
             if (ecoLabel.isNotEmpty)

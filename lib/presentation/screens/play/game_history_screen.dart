@@ -125,7 +125,7 @@ class _SummaryBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           _stat(context, context.phrase.wins, history.wins, Colors.green),
-          _stat(context, context.phrase.draws, history.draws, Colors.orange),
+          _stat(context, context.phrase.draws, history.draws, context.colors.onSurfaceVariant),
           _stat(context, context.phrase.losses, history.losses, Colors.red),
         ],
       ),
@@ -186,12 +186,12 @@ class _GameTile extends StatelessWidget {
     final (icon, color) = game.isFriendGame
         ? switch (game.result) {
             'white' || 'black' => (Icons.emoji_events_rounded, Colors.blueGrey),
-            _ => (Icons.handshake_rounded, Colors.orange),
+            _ => (Icons.handshake_rounded, context.colors.onSurfaceVariant),
           }
         : switch (game.result) {
             'win' => (Icons.emoji_events_rounded, Colors.green),
             'loss' => (Icons.psychology_rounded, Colors.red),
-            _ => (Icons.handshake_rounded, Colors.orange),
+            _ => (Icons.handshake_rounded, context.colors.onSurfaceVariant),
           };
 
     final resultLabel = game.isFriendGame

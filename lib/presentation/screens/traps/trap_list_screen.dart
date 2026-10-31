@@ -47,8 +47,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
               title: Text(
                 context.phrase.chessTraps,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.w900,
-                  letterSpacing: -0.5,
+                  fontWeight: FontWeight.w700,
                 ),
               ),
               actions: [
@@ -96,8 +95,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
                   child: Text(
                     context.phrase.browseByOpening,
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 0.5,
+                      fontWeight: FontWeight.w600,
                       color: scheme.onSurfaceVariant,
                     ),
                   ),
@@ -114,8 +112,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
                   child: Text(
                     context.phrase.allTraps,
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 0.5,
+                      fontWeight: FontWeight.w600,
                       color: scheme.onSurfaceVariant,
                     ),
                   ),
@@ -128,8 +125,7 @@ class _TrapListScreenState extends ConsumerState<TrapListScreen> {
                   child: Text(
                     context.phrase.searchResults,
                     style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 0.5,
+                      fontWeight: FontWeight.w600,
                       color: scheme.onSurfaceVariant,
                     ),
                   ),
@@ -185,7 +181,7 @@ class _OpeningGroupsRow extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    entry.key,
+                    localizedOpening(context, entry.key),
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w700,

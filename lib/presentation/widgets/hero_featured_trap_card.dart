@@ -85,12 +85,11 @@ class HeroFeaturedTrapCard extends StatelessWidget {
                                 BorderRadius.circular(AppSizes.radiusS),
                           ),
                           child: Text(
-                            context.phrase.featuredTrap.toUpperCase(),
+                            context.phrase.featuredTrap,
                             style: TextStyle(
                               color: scheme.primary,
                               fontSize: 10,
-                              fontWeight: FontWeight.w800,
-                              letterSpacing: 0.6,
+                              fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
@@ -98,10 +97,9 @@ class HeroFeaturedTrapCard extends StatelessWidget {
                         Text(
                           trap.getLocalizedName(context),
                           style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            fontWeight: FontWeight.w900,
+                            fontWeight: FontWeight.w700,
                             color: scheme.onSurface,
                             height: 1.15,
-                            letterSpacing: -0.3,
                           ),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -112,7 +110,7 @@ class HeroFeaturedTrapCard extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Text(
-                              trap.opening,
+                              trap.getLocalizedOpening(context),
                               style: TextStyle(
                                 fontSize: 11,
                                 color: scheme.onSurfaceVariant,

@@ -1,12 +1,8 @@
 import React from "react";
 
+// Black's glyph set for both sides: filled shapes take the side's colour, where
+// the outline set can't be filled. The selector keeps ♟ out of emoji rendering.
 const GLYPH: Record<string, string> = {
-  K: "♔",
-  Q: "♕",
-  R: "♖",
-  B: "♗",
-  N: "♘",
-  P: "♙",
   k: "♚",
   q: "♛",
   r: "♜",
@@ -15,112 +11,95 @@ const GLYPH: Record<string, string> = {
   p: "♟",
 };
 
-const LIGHT = "#EBECD0";
-const DARK = "#B58863";
-const FILES = ["a", "b", "c", "d", "e", "f", "g", "h"];
+const LIGHT = "#f0d9b5";
+const DARK = "#b58863";
+const HIGHLIGHT = "rgba(155, 199, 0, 0.45)";
+const SQUARE = 45;
 
-/**
- * Renders the final position of a trap from its FEN as an inline, crawlable
- * SVG board. No client JS, no external assets — good for LCP and for OG.
- */
+/** A FEN as an inline SVG board: no client JS, no assets, readable by crawlers. */
 export default function ChessDiagram({
   fen,
-  size = 360,
   alt,
+  orientation = "white",
+  lastMove,
 }: {
   fen: string;
-  size?: number;
-  alt?: string;
+  alt: string;
+  orientation?: "white" | "black";
+  /** A UCI move, whose two squares are highlighted. */
+  lastMove?: string;
 }) {
-  const placement = fen.split(" ")[0];
-  const rows = placement.split("/");
-  const sq = size / 8;
-  const cells: React.ReactNode[] = [];
-
-  rows.forEach((row, r) => {
-    let file = 0;
-    for (const ch of row) {
-      if (/\d/.test(ch)) {
-        file += parseInt(ch, 10);
-        continue;
-      }
-      const x = file * sq;
-      const y = r * sq;
-      const isLight = (r + file) % 2 === 0;
-      cells.push(
-        <rect
-          key={`s-${r}-${file}`}
-          x={x}
-          y={y}
-          width={sq}
-          height={sq}
-          fill={isLight ? LIGHT : DARK}
-        />,
-      );
-      const glyph = GLYPH[ch];
-      if (glyph) {
-        const white = ch === ch.toUpperCase();
-        cells.push(
-          <text
-            key={`p-${r}-${file}`}
-            x={x + sq / 2}
-            y={y + sq / 2}
-            fontSize={sq * 0.82}
-            textAnchor="middle"
-            dominantBaseline="central"
-            fill={white ? "#ffffff" : "#111111"}
-            stroke={white ? "#111111" : "none"}
-            strokeWidth={white ? 0.6 : 0}
-          >
-            {glyph}
-          </text>,
-        );
-      }
-      file += 1;
-    }
+  const flipped = orientation === "black";
+  const place = (file: number, rank: number) => ({
+    x: (flipped ? 7 - file : file) * SQUARE,
+    y: (flipped ? 7 - rank : rank) * SQUARE,
   });
 
-  // Empty background squares for files skipped via digits are already covered
-  // because we only draw occupied files; add a full base board underneath.
-  const base: React.ReactNode[] = [];
-  for (let r = 0; r < 8; r++) {
-    for (let f = 0; f < 8; f++) {
-      base.push(
+  const squares: React.ReactNode[] = [];
+  for (let rank = 0; rank < 8; rank++) {
+    for (let file = 0; file < 8; file++) {
+      squares.push(
         <rect
-          key={`b-${r}-${f}`}
-          x={f * sq}
-          y={r * sq}
-          width={sq}
-          height={sq}
-          fill={(r + f) % 2 === 0 ? LIGHT : DARK}
+          key={`${file}${rank}`}
+          {...place(file, rank)}
+          width={SQUARE}
+          height={SQUARE}
+          fill={(rank + file) % 2 === 0 ? LIGHT : DARK}
         />,
       );
     }
   }
 
+  const highlights = (lastMove?.match(/[a-h][1-8]/g) ?? []).map((square) => (
+    <rect
+      key={square}
+      {...place(square.charCodeAt(0) - 97, 8 - Number(square[1]))}
+      width={SQUARE}
+      height={SQUARE}
+      fill={HIGHLIGHT}
+    />
+  ));
+
+  const pieces: React.ReactNode[] = [];
+  fen
+    .split(" ")[0]
+    .split("/")
+    .forEach((row, rank) => {
+      let file = 0;
+      for (const ch of row) {
+        if (/\d/.test(ch)) {
+          file += Number(ch);
+          continue;
+        }
+        const { x, y } = place(file, rank);
+        const white = ch === ch.toUpperCase();
+        pieces.push(
+          <text
+            key={`${file}${rank}`}
+            x={x + SQUARE / 2}
+            y={y + SQUARE / 2}
+            fontSize={SQUARE * 0.86}
+            textAnchor="middle"
+            dominantBaseline="central"
+            fill={white ? "#ffffff" : "#1c1a17"}
+            stroke={white ? "#1c1a17" : "none"}
+            strokeWidth={white ? 0.9 : 0}
+          >
+            {GLYPH[ch.toLowerCase()]}
+            {"︎"}
+          </text>,
+        );
+        file += 1;
+      }
+    });
+
   return (
-    <svg
-      viewBox={`0 0 ${size} ${size}`}
-      width="100%"
-      height="100%"
-      role="img"
-      aria-label={alt ?? "Chess trap final position"}
-      style={{ display: "block", borderRadius: 8, maxWidth: size }}
-    >
-      {base}
-      {cells}
-      {FILES.map((f, i) => (
-        <text
-          key={`f-${f}`}
-          x={i * sq + sq * 0.12}
-          y={size - sq * 0.08}
-          fontSize={sq * 0.16}
-          fill={(7 + i) % 2 === 0 ? DARK : LIGHT}
-          opacity={0.9}
-        >
-          {f}
-        </text>
-      ))}
-    </svg>
+    <div className="diagram">
+      <svg viewBox={`0 0 ${SQUARE * 8} ${SQUARE * 8}`} role="img" aria-label={alt}>
+        {squares}
+        {highlights}
+        {pieces}
+      </svg>
+    </div>
   );
 }

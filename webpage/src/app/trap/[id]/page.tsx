@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ChessDiagram from "@/components/ChessDiagram";
 import OpenInApp from "@/components/OpenInApp";
+import { articleForTrap } from "@/lib/articles";
 import {
   getAllTraps,
   getTrap,
@@ -14,6 +15,7 @@ import {
   isMate,
   sideLabel,
   openingLabel,
+  OG_IMAGE,
   relatedTraps,
   SITE_URL,
   APP_NAME,
@@ -38,15 +40,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    keywords: [
-      trap.trapName,
-      openingLabel(trap),
-      "chess trap",
-      "chess opening trap",
-      "chess gambit",
-      "chess tactics",
-      `${sideLabel(trap.targetSide)} wins`,
-    ],
     alternates: { canonical: url },
     openGraph: {
       title,
@@ -54,13 +47,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url,
       siteName: APP_NAME,
       type: "article",
-      images: ["/hero.png"],
+      images: [OG_IMAGE],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
-      images: ["/hero.png"],
+      images: [OG_IMAGE],
     },
   };
 }
@@ -76,6 +69,7 @@ export default async function TrapPage({ params }: Props) {
   const pairs = movePairs(trap);
   const related = relatedTraps(trap);
   const opening = openingLabel(trap);
+  const guide = articleForTrap(trap.id);
 
   // Structured data: Article + Breadcrumb (rich results eligibility).
   const jsonLd = {
@@ -83,7 +77,7 @@ export default async function TrapPage({ params }: Props) {
     "@graph": [
       {
         "@type": "Article",
-        headline: `${trap.trapName} — Chess Trap`,
+        headline: seoTitle(trap),
         description: seoDescription(trap),
         author: { "@type": "Organization", name: APP_NAME },
         publisher: { "@type": "Organization", name: APP_NAME },
@@ -112,7 +106,7 @@ export default async function TrapPage({ params }: Props) {
   };
 
   return (
-    <main className="trap-page">
+    <main className="page">
       {/* `<` is escaped because trap names and opening labels come from the
           data file and land inside a <script> block: an unescaped "</script>"
           in any of them would break out of the tag. Next.js documents this
@@ -124,93 +118,72 @@ export default async function TrapPage({ params }: Props) {
         }}
       />
 
-      <nav className="trap-crumbs" aria-label="Breadcrumb">
+      <nav className="crumbs" aria-label="Breadcrumb">
         <Link href="/">Home</Link>
         <span>/</span>
-        <Link href="/traps">Chess Traps</Link>
+        <Link href="/traps">Chess traps</Link>
         <span>/</span>
-        <span className="crumb-current">{trap.trapName}</span>
+        <span>{trap.trapName}</span>
       </nav>
 
       <div className="trap-grid">
-        <div className="trap-board">
-          <ChessDiagram
-            fen={trap.fen}
-            alt={`Final position of the ${trap.trapName} — ${winner} wins`}
-          />
-          <p className="trap-board-cap">
-            Final position — {winner}{" "}
-            {isMate(trap) ? "delivers mate" : "is winning"}
-          </p>
-        </div>
-
-        <div className="trap-head">
-          <span className="trap-tag">{opening}</span>
-          <h1 className="trap-title">{trap.trapName}</h1>
+        <ChessDiagram
+          fen={trap.fen}
+          orientation={trap.targetSide}
+          alt={`Final position of the ${trap.trapName}`}
+        />
+        <div>
+          <span className="eyebrow">{opening}</span>
+          <h1>{trap.trapName}</h1>
           <p className="trap-sub">
-            {winner} wins in {moveCount(trap)} moves
-            {isMate(trap) ? " by checkmate" : " with a decisive material gain"}.
-            {trap.metadata ? ` (${trap.metadata})` : ""}
+            A trap for {winner}, {moveCount(trap)} moves long
+            {isMate(trap) ? ", ending in checkmate" : ""}.
           </p>
           <OpenInApp trapId={trap.id} />
         </div>
       </div>
 
-      <section className="trap-section">
+      <section className="section">
         <h2>The moves</h2>
-        <div className="move-line">{trap.cleanMoves}</div>
         <table className="move-table">
           <tbody>
             {pairs.map((p) => (
               <tr key={p.n}>
                 <td className="mv-n">{p.n}.</td>
-                <td className="mv-w">{p.white}</td>
-                <td className="mv-b">{p.black ?? ""}</td>
+                <td>{p.white}</td>
+                <td>{p.black ?? ""}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </section>
 
-      <section className="trap-section">
-        <h2>How the {trap.trapName} works</h2>
-        {paragraphs.map((para, i) => (
-          <p key={i} className="trap-para">
-            {para}
-          </p>
+      <section className="section prose-block">
+        <h2>How it works</h2>
+        {paragraphs.map((para) => (
+          <p key={para}>{para}</p>
         ))}
-      </section>
-
-      <section className="trap-section trap-cta-band">
-        <h2>Practice this trap move-by-move</h2>
-        <p className="trap-para">
-          Open the {trap.trapName} in the {APP_NAME} app to play it out on a live
-          board, drill it in practice mode, and learn how to avoid it when
-          it&apos;s set for you — along with the full library of chess traps and
-          gambits, fully offline.
-        </p>
-        <OpenInApp trapId={trap.id} />
+        {guide && (
+          <p>
+            Read the full guide:{" "}
+            <Link href={`/learn/${guide.slug}`}>{guide.title}</Link>
+          </p>
+        )}
       </section>
 
       {related.length > 0 && (
-        <section className="trap-section">
+        <section className="section">
           <h2>More {opening} traps</h2>
-          <div className="related-grid">
+          <div className="card-grid">
             {related.map((r) => (
-              <Link key={r.id} href={`/trap/${r.id}`} className="related-card">
-                <span className="related-name">{r.trapName}</span>
-                <span className="related-moves">{r.cleanMoves}</span>
+              <Link key={r.id} href={`/trap/${r.id}`} className="card-link">
+                <span className="card-title">{r.trapName}</span>
+                <span className="card-meta">{r.cleanMoves}</span>
               </Link>
             ))}
           </div>
         </section>
       )}
-
-      <div className="trap-foot">
-        <Link href="/traps" className="btn-outline">
-          ← Browse all chess traps
-        </Link>
-      </div>
     </main>
   );
 }

@@ -23,6 +23,11 @@ export const PLAY_URL = `https://play.google.com/store/apps/details?id=${PACKAGE
 
 const traps = trapsData as Trap[];
 
+export const TRAP_TOTAL = traps.length;
+
+/** The share image, for pages whose own openGraph replaces the inherited one. */
+export const OG_IMAGE = "/opengraph-image";
+
 export function getAllTraps(): Trap[] {
   return traps;
 }
@@ -67,48 +72,45 @@ export function openingLabel(trap: Trap): string {
   return o.length > 0 ? o : "Chess Opening";
 }
 
-/** <title> — unique per trap, keyword-front-loaded, under ~60 chars where possible. */
+/** <title>, kept short enough that the name isn't cut off in search results. */
 export function seoTitle(trap: Trap): string {
   const name = trap.trapName.trim();
   const op = (trap.opening || "").trim();
-  if (op && !name.toLowerCase().includes(op.toLowerCase().split(" ")[0])) {
-    return `${name} — ${op} Trap`;
-  }
-  return `${name} — Chess Trap`;
+  const withOpening = `${name}: ${op}`;
+  if (op && withOpening.length <= 50) return withOpening;
+  return /trap|mate/i.test(name) ? name : `${name} Trap`;
 }
 
-/** Meta description — real moves + outcome, keyword-rich, ~150 chars. */
+/** Meta description: the real moves, so that each one is unique. */
 export function seoDescription(trap: Trap): string {
-  const winner = sideLabel(trap.targetSide);
-  const finish = isMate(trap) ? "checkmate" : "a winning position";
   const op = (trap.opening || "").trim();
-  const opPart = op ? ` in the ${op}` : "";
-  return `Learn the ${trap.trapName}${opPart}: ${trap.cleanMoves} — ${winner} reaches ${finish} in ${moveCount(
-    trap,
-  )} moves. Play it move-by-move in the ${APP_NAME} app.`.slice(0, 300);
+  const place = op ? ` in the ${op}` : "";
+  const end = isMate(trap) ? "checkmate" : "the final position";
+  return `The ${trap.trapName}${place}, a trap for ${sideLabel(trap.targetSide)}: ${trap.cleanMoves}. See the moves to ${end} and practise them in ${APP_NAME}.`.slice(
+    0,
+    300,
+  );
 }
 
-/** A short, unique multi-paragraph explanation built from the trap's own data. */
+/** A short explanation from the trap's own data, claiming nothing beyond it. */
 export function explanationParagraphs(trap: Trap): string[] {
-  const winner = sideLabel(trap.targetSide);
-  const loser = sideLabel(trap.targetSide === "white" ? "black" : "white");
+  const side = sideLabel(trap.targetSide);
+  const other = sideLabel(trap.targetSide === "white" ? "black" : "white");
   const op = (trap.opening || "").trim();
-  const finish = isMate(trap)
-    ? `delivers checkmate on move ${moveCount(trap)}`
-    : `wins decisive material by move ${moveCount(trap)}`;
+  const ending = isMate(trap)
+    ? `ends in checkmate on move ${moveCount(trap)}`
+    : `runs for ${moveCount(trap)} moves`;
 
-  const p1 = `The ${trap.trapName} is a classic chess opening trap${
-    op ? ` arising from the ${op}` : ""
-  }. In this line ${winner} ${finish}, punishing a natural-looking but losing idea from ${loser}.`;
-
-  const p2 = `The full sequence runs ${trap.cleanMoves}. Each move looks reasonable, which is exactly why the trap is so effective over the board — ${loser} walks into it while trying to play "normal" developing moves.`;
-
-  const p3 =
-    trap.metadata && trap.metadata.trim().length > 0
-      ? `This pattern is well known from master and correspondence play (${trap.metadata.trim()}). Recognising it early lets you either spring it as ${winner} or sidestep it as ${loser}.`
-      : `Recognising this pattern early lets you either spring it as ${winner} or calmly sidestep it when you are ${loser}.`;
-
-  return [p1, p2, p3];
+  const paragraphs = [
+    `The ${trap.trapName} is a trap for ${side}${
+      op ? ` from the ${op}` : ""
+    }. The line ${ending}: ${trap.cleanMoves}.`,
+    `If you play ${side}, this is a sequence to steer towards. If you play ${other}, look at where the line goes wrong and find a different move before you reach that point. ${APP_NAME}'s Avoid mode drills exactly that.`,
+  ];
+  if (trap.metadata.trim()) {
+    paragraphs.push(`Recorded from the game ${trap.metadata.trim()}.`);
+  }
+  return paragraphs;
 }
 
 const POPULAR_KEYWORDS = [

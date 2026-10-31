@@ -1,81 +1,58 @@
 import type { Metadata, Viewport } from "next";
-import { Outfit, Syne } from "next/font/google";
+import { Newsreader, Public_Sans } from "next/font/google";
+import Link from "next/link";
+import { APP_NAME, OG_IMAGE, PLAY_URL, SITE_URL, TRAP_TOTAL } from "@/lib/traps";
 import "./globals.css";
 
-// These are the two families globals.css actually styles with. They used to be
-// pulled in by an `@import url(fonts.googleapis.com)` at the top of the
-// stylesheet, which blocks the first paint on a third-party round trip, while
-// next/font separately downloaded Geist that nothing ever referenced. Loading
-// them here self-hosts the files and removes both problems.
-const outfit = Outfit({
-  variable: "--font-body",
+// The app's two families, self-hosted by next/font so that nothing blocks the
+// first paint on a third-party request.
+const newsreader = Newsreader({
+  variable: "--font-display",
   subsets: ["latin"],
-  weight: ["300", "400", "600", "800"],
+  weight: ["500", "600"],
   display: "swap",
 });
 
-const syne = Syne({
-  variable: "--font-display",
+const publicSans = Public_Sans({
+  variable: "--font-body",
   subsets: ["latin"],
-  weight: ["700", "800"],
+  weight: ["400", "600"],
   display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0a",
-  width: "device-width",
-  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f7f2eb" },
+    { media: "(prefers-color-scheme: dark)", color: "#161513" },
+  ],
 };
 
+const SITE_TITLE = "Trapster: Learn Chess Opening Traps";
+const SITE_DESCRIPTION = `Learn ${TRAP_TOTAL} chess opening traps on an interactive board. Practise them from memory, learn to avoid them, and check your ideas with Stockfish 19.`;
+
 export const metadata: Metadata = {
-  title: {
-    default: "Trapster — Master Chess Traps & Gambits",
-    template: "%s | Trapster",
-  },
-  metadataBase: new URL("https://chess-traps.vercel.app"),
-  description:
-    "Stop losing to early blunders. Learn and practice chess opening traps and gambits with an interactive board, engine analysis and offline play — the Trapster app.",
-  keywords: [
-    "chess traps",
-    "chess opening traps",
-    "chess gambits",
-    "chess openings",
-    "chess tactics",
-    "learn chess",
-    "chess trainer",
-    "Trapster",
-  ],
-  authors: [{ name: "Achraf Cyber" }],
-  creator: "Achraf Cyber",
-  publisher: "Achraf Cyber",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  metadataBase: new URL(SITE_URL),
+  title: { default: SITE_TITLE, template: `%s | ${APP_NAME}` },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: SITE_URL },
+  authors: [{ name: "Achraf Simbre" }],
+  creator: "Achraf Simbre",
+  publisher: "Achraf Simbre",
+  formatDetection: { email: false, address: false, telephone: false },
   openGraph: {
-    title: "Trapster — Master Chess Traps & Gambits",
-    description:
-      "Learn and practice chess opening traps and gambits with an interactive board and engine analysis.",
-    url: "https://chess-traps.vercel.app",
-    siteName: "Trapster",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: SITE_URL,
+    siteName: APP_NAME,
     locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/hero.png",
-        width: 1200,
-        height: 800,
-        alt: "Trapster — Master Chess Traps & Gambits",
-      },
-    ],
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trapster — Master Chess Traps & Gambits",
-    description:
-      "Learn and practice chess opening traps and gambits with an interactive board and engine analysis.",
-    images: ["/hero.png"],
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   robots: {
     index: true,
@@ -90,66 +67,80 @@ export const metadata: Metadata = {
   },
 };
 
-// Structured data. Google reads this to decide whether the site earns a rich
-// result; without it a page is just prose to a crawler. SoftwareApplication is
-// the type that can surface the rating, price and platform directly in search.
-const appJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Trapster",
-  alternateName: "Trapster: Chess Opening Traps",
-  applicationCategory: "GameApplication",
-  applicationSubCategory: "Chess",
-  operatingSystem: "Android",
-  url: "https://chess-traps.vercel.app",
-  downloadUrl:
-    "https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com",
-  installUrl:
-    "https://play.google.com/store/apps/details?id=chesstraps.achrafcyber.com",
-  description:
-    "Learn and practice chess opening traps and gambits with an interactive board, Stockfish analysis and full offline play.",
-  inLanguage: ["en", "fr", "es", "ar"],
-  license: "https://www.gnu.org/licenses/gpl-3.0.html",
-  isAccessibleForFree: true,
-  // No aggregateRating: the app has no ratings yet, and inventing one is both
-  // a policy violation and grounds for a manual action.
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: APP_NAME,
+    alternateName: "Trapster: Chess Opening Traps",
+    applicationCategory: "GameApplication",
+    applicationSubCategory: "Chess",
+    operatingSystem: "Android",
+    url: SITE_URL,
+    downloadUrl: PLAY_URL,
+    installUrl: PLAY_URL,
+    description: SITE_DESCRIPTION,
+    inLanguage: ["en", "fr", "es", "ar"],
+    license: "https://www.gnu.org/licenses/gpl-3.0.html",
+    isAccessibleForFree: true,
+    // No aggregateRating: inventing one breaks Google's rules, so it waits for
+    // real Play Store ratings.
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    author: { "@type": "Person", name: "Achraf Simbre" },
   },
-  author: {
-    "@type": "Person",
-    name: "Achraf Simbre",
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: APP_NAME,
+    url: SITE_URL,
+    inLanguage: "en",
   },
-};
-
-const siteJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Trapster",
-  url: "https://chess-traps.vercel.app",
-  inLanguage: "en",
-};
+];
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${outfit.variable} ${syne.variable}`}>
-      <body className="antialiased">
+    <html lang="en" className={`${newsreader.variable} ${publicSans.variable}`}>
+      <body>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify([appJsonLd, siteJsonLd]).replace(
-              /</g,
-              "\\u003c",
-            ),
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        {children}
+        <a className="skip-link" href="#content">
+          Skip to content
+        </a>
+        <header className="site-header">
+          <div className="site-header-inner">
+            <Link href="/" className="logo">
+              {APP_NAME}
+            </Link>
+            <nav className="site-nav" aria-label="Main">
+              <Link href="/learn">Guides</Link>
+              <Link href="/traps">All traps</Link>
+              <a href={PLAY_URL} className="btn-primary">
+                Get the app
+              </a>
+            </nav>
+          </div>
+        </header>
+        <div id="content">{children}</div>
+        <footer className="site-footer">
+          <div className="site-footer-inner">
+            <span>&copy; 2026 Achraf Simbre</span>
+            <nav aria-label="Footer">
+              <Link href="/learn">Guides</Link>
+              <Link href="/traps">All traps</Link>
+              <a href="https://achraf-cyber.github.io/privacy/privacy-policy.html">
+                Privacy
+              </a>
+              <Link href="/terms">Terms</Link>
+              <a href="mailto:achrafsimbre@gmail.com">Contact</a>
+            </nav>
+          </div>
+        </footer>
       </body>
     </html>
   );

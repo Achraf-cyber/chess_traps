@@ -1,19 +1,26 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { popularTraps, trapsByOpening, SITE_URL, APP_NAME } from "@/lib/traps";
+import {
+  APP_NAME,
+  OG_IMAGE,
+  popularTraps,
+  SITE_URL,
+  TRAP_TOTAL,
+  trapsByOpening,
+} from "@/lib/traps";
 
 export const metadata: Metadata = {
-  title: "All Chess Traps & Gambits — Complete List",
-  description: `Browse every chess opening trap and gambit — from the Scholar's Mate and Fried Liver to the Danish Gambit. Learn each one and practice it in the ${APP_NAME} app.`,
+  title: `All ${TRAP_TOTAL} Chess Traps, by Opening`,
+  description: `Browse ${TRAP_TOTAL} chess opening traps by opening, from Scholar's Mate and the Fried Liver Attack to the Stafford Gambit, with the full moves of each one.`,
   alternates: { canonical: `${SITE_URL}/traps` },
   openGraph: {
     title: "All Chess Traps & Gambits",
     description:
-      "The complete library of chess opening traps — learn, practice and master them.",
+      `${TRAP_TOTAL} chess opening traps, grouped by opening.`,
     url: `${SITE_URL}/traps`,
     siteName: APP_NAME,
     type: "website",
-    images: ["/hero.png"],
+    images: [OG_IMAGE],
   },
 };
 
@@ -25,44 +32,44 @@ export default function TrapsHub() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "All Chess Traps & Gambits",
-    description: "The complete library of chess opening traps and gambits.",
+    description: `${TRAP_TOTAL} chess opening traps, grouped by opening.`,
     url: `${SITE_URL}/traps`,
   };
 
   return (
-    <main className="hub-page">
+    <main className="page">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
 
-      <header className="hub-header">
-        <span className="trap-tag">Complete library · fully offline</span>
-        <h1 className="hub-title">Chess Traps &amp; Gambits</h1>
-        <p className="lede">
-          The complete library of chess opening traps — from beginner classics
-          like the Scholar&apos;s Mate to sharp master gambits. Tap any trap to
-          learn it, then master it move-by-move in the {APP_NAME} app.
-        </p>
-      </header>
+      <span className="eyebrow">Complete library</span>
+      <h1 className="heading-section" style={{ fontSize: "clamp(2.1rem, 6vw, 3rem)" }}>
+        Every chess trap in {APP_NAME}
+      </h1>
+      <p className="lede">
+        {TRAP_TOTAL} traps, from beginner classics to sharp gambits. Pick one to
+        see its moves, or read a <Link href="/learn">full guide</Link> to the
+        most popular ones.
+      </p>
 
-      <section className="trap-section">
-        <h2>Most popular chess traps</h2>
-        <div className="related-grid">
+      <section className="section">
+        <h2>Most popular</h2>
+        <div className="card-grid">
           {popular.map((t) => (
-            <Link key={t.id} href={`/trap/${t.id}`} className="related-card">
-              <span className="related-name">{t.trapName}</span>
-              <span className="related-moves">{t.cleanMoves}</span>
+            <Link key={t.id} href={`/trap/${t.id}`} className="card-link">
+              <span className="card-title">{t.trapName}</span>
+              <span className="card-meta">{t.cleanMoves}</span>
             </Link>
           ))}
         </div>
       </section>
 
-      <section className="trap-section">
+      <section className="section">
         <h2>Browse by opening</h2>
         {groups.map((g) => (
           <div key={g.opening} className="opening-group">
-            <h3 className="opening-name">
+            <h3>
               {g.opening}{" "}
               <span className="opening-count">({g.traps.length})</span>
             </h3>

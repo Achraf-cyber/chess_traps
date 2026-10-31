@@ -2,25 +2,26 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
-  description: "Terms of use for the Chess Traps app and website.",
+  alternates: { canonical: "/terms" },
+  description: "Terms of use for the Trapster app and website.",
 };
 
 export default function TermsPage() {
   return (
-    <main className="legal-page">
+    <main className="page narrow legal-page">
       <h1>Terms of Use</h1>
       <p className="updated">Last updated: July 2026</p>
 
       <p>
-        These terms apply to the Chess Traps mobile app and this website. By downloading
-        or using Chess Traps, you agree to the following.
+        These terms apply to the Trapster mobile app and this website. By downloading
+        or using Trapster, you agree to the following.
       </p>
 
       <h2>Using the app</h2>
       <p>
-        Chess Traps is provided for personal, non-commercial use to learn and practice
+        Trapster is provided for personal, non-commercial use to learn and practice
         chess openings. You may not redistribute, resell, or reverse-engineer the app,
-        or attempt to disrupt the Stockfish-powered analysis service it depends on.
+        or attempt to disrupt its Stockfish analysis.
       </p>
 
       <h2>Content</h2>

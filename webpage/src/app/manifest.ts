@@ -2,14 +2,14 @@ import { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Trapster — Chess Traps & Gambits",
+    name: "Trapster: Chess Traps",
     short_name: "Trapster",
     description:
-      "Learn and practice chess opening traps and gambits with an interactive board and engine analysis.",
+      "Learn and practise chess opening traps on an interactive board.",
     start_url: "/",
     display: "standalone",
-    background_color: "#000000",
-    theme_color: "#000000",
+    background_color: "#f7f2eb",
+    theme_color: "#2f5d48",
     icons: [
       { src: "/icon-192.png", sizes: "192x192", type: "image/png" },
       { src: "/icon-512.png", sizes: "512x512", type: "image/png" },

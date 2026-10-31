@@ -1,0 +1,905 @@
+[
+  {
+    "slug": "scholars-mate",
+    "trapId": 0,
+    "title": "Scholar's Mate: The 4-Move Checkmate and How to Stop It",
+    "headline": "Scholar's Mate",
+    "description": "Scholar's Mate wins in four moves: 1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#. Learn how it works, why it only beats beginners, and the two moves that stop it.",
+    "intro": "Almost every chess player loses to Scholar's Mate once. It takes four moves, it ends the game on the f7 square, and it is the first trap most people learn. It is also easy to refute once you know what to look for.",
+    "orientation": "white",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "White brings the queen and the light-squared bishop out early and aims both at f7, the one square in Black's camp that only the king defends."
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkb1r/pppp1Qpp/2n2n2/4p3/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 0 4",
+        "line": "1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#",
+        "lastMove": "h5f7",
+        "caption": "Checkmate. The queen on f7 is protected by the bishop, so the king cannot capture it.",
+        "orientation": "white"
+      },
+      {
+        "type": "p",
+        "text": "Black's last move is the natural one. 3...Nf6 develops a piece and attacks the queen, and it is exactly what a beginner is taught to do. It simply ignores the threat on f7."
+      },
+      {
+        "type": "h2",
+        "text": "Why f7 is the target"
+      },
+      {
+        "type": "p",
+        "text": "At the start of the game f7 has one defender, the king. Once White has two attackers on it, Black has to respond, and that is the whole idea behind this trap. The same weakness powers the [Fried Liver Attack](/learn/fried-liver-attack) and many other opening attacks."
+      },
+      {
+        "type": "h2",
+        "text": "How to stop it"
+      },
+      {
+        "type": "p",
+        "text": "After 3.Qh5 you have two good answers. Both defend f7 and keep the e5 pawn safe."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**3...g6** blocks the queen's path to f7 and forces her to move. After 4.Qf3 Nf6 Black has developed and White's queen has spent three moves going nowhere.",
+          "**3...Qe7** defends f7 directly. It is solid, though it temporarily blocks the f8 bishop."
+        ]
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkb1r/pppp1p1p/2n2np1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 5",
+        "line": "1.e4 e5 2.Bc4 Nc6 3.Qh5 g6 4.Qf3 Nf6",
+        "lastMove": "g8f6",
+        "caption": "After 3...g6 4.Qf3 Nf6, Black is comfortable and ahead in development.",
+        "orientation": "black"
+      },
+      {
+        "type": "h2",
+        "text": "Should you play it?"
+      },
+      {
+        "type": "p",
+        "text": "Only as an experiment. Against anyone who defends correctly, the early queen sortie costs White time, and Black can gain more tempi by chasing her. It teaches a useful lesson about f7, but it is not an opening to build on."
+      }
+    ],
+    "faq": [
+      {
+        "q": "How many moves does Scholar's Mate take?",
+        "a": "Four moves by White: e4, Bc4, Qh5 and Qxf7#."
+      },
+      {
+        "q": "What is the difference between Scholar's Mate and Fool's Mate?",
+        "a": "Scholar's Mate is White attacking f7 in four moves. [Fool's Mate](/learn/fools-mate) is Black mating in two after White weakens their own king with f3 and g4."
+      }
+    ]
+  },
+  {
+    "slug": "fools-mate",
+    "trapId": 1,
+    "title": "Fool's Mate: The Fastest Checkmate in Chess, in Two Moves",
+    "headline": "Fool's Mate",
+    "description": "Fool's Mate is the fastest possible checkmate: 1.f3 e5 2.g4 Qh4#. See how the two-move mate works, the versions of it, and the lesson behind it.",
+    "intro": "Fool's Mate is the shortest game of chess that can end in checkmate: two moves by White, two by Black. You will rarely see it in a real game, but the idea behind it decides plenty of them.",
+    "orientation": "black",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "White moves the f-pawn and the g-pawn, the two pawns that shield the king along the diagonal from h4 to e1. Black's queen slides straight through."
+      },
+      {
+        "type": "board",
+        "fen": "rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3",
+        "line": "1.f3 e5 2.g4 Qh4#",
+        "lastMove": "d8h4",
+        "caption": "Mate on move two. No white piece can capture the queen or block the diagonal, and the king has no square.",
+        "orientation": "black"
+      },
+      {
+        "type": "p",
+        "text": "The order of White's pawn moves does not matter, and neither does Black's first move, as long as it opens the queen's diagonal. 1.f4 e6 2.g4 Qh4# and 1.g4 e5 2.f3 Qh4# reach the same picture."
+      },
+      {
+        "type": "h2",
+        "text": "Can White do it to Black?"
+      },
+      {
+        "type": "p",
+        "text": "Yes, one move later, because White moves first. If Black plays 1...g5 and 2...f6 against 1.e4 and 2.d4, White mates with 3.Qh5#."
+      },
+      {
+        "type": "board",
+        "fen": "rnbqkbnr/ppppp2p/5p2/6pQ/3PP3/8/PPP2PPP/RNB1KBNR b KQkq - 1 3",
+        "line": "1.e4 g5 2.d4 f6 3.Qh5#",
+        "lastMove": "d1h5",
+        "caption": "The mirror image. The queen on h5 mates along the same diagonal.",
+        "orientation": "white"
+      },
+      {
+        "type": "h2",
+        "text": "The lesson"
+      },
+      {
+        "type": "p",
+        "text": "Pawns in front of your king are a shield, and each one you push leaves a hole behind it. Weakening the e1-h4 or e8-h5 diagonal early is dangerous even when it does not lose on the spot. The same pattern appears in the [Fishing Pole Trap](/learn/fishing-pole-trap), where Black attacks a king whose pawns have been pulled forward."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is the fastest checkmate in chess?",
+        "a": "Fool's Mate. It ends on Black's second move, and no game can reach checkmate sooner."
+      },
+      {
+        "q": "Does Fool's Mate happen in real games?",
+        "a": "Almost never between experienced players, since White has to make two very poor pawn moves in a row. Complete beginners do occasionally stumble into it."
+      }
+    ]
+  },
+  {
+    "slug": "legal-trap",
+    "trapId": 2,
+    "title": "Légal Trap (Légal's Mate): Sacrifice the Queen, Mate in 7",
+    "headline": "Légal's Mate",
+    "description": "In Légal's Mate White gives up the queen and mates with three minor pieces: 1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 h6 5.Nxe5! Learn the trap and how to avoid it.",
+    "intro": "Légal's Mate is the most famous queen sacrifice in the opening. White appears to blunder the queen by moving a pinned knight, then mates with three minor pieces two moves later. It is named after Sire de Légal, the French master who taught Philidor, and it has been catching players out for over 250 years.",
+    "orientation": "white",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "The setup is ordinary. Black pins the knight on f3 to the queen with ...Bg4, and a pin like that feels absolute. It isn't."
+      },
+      {
+        "type": "board",
+        "fen": "rn1qkbnr/ppp2pp1/3p3p/4p3/2B1P1b1/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5",
+        "line": "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 h6",
+        "lastMove": "h7h6",
+        "caption": "Black has just played a quiet pawn move, and White's knight looks pinned to the queen.",
+        "orientation": "white"
+      },
+      {
+        "type": "p",
+        "text": "White plays **5.Nxe5!**, leaving the queen on d1 to be taken."
+      },
+      {
+        "type": "board",
+        "fen": "rn1q1bnr/ppp1kBp1/3p3p/3NN3/4P3/8/PPPP1PPP/R1BbK2R b KQ - 2 7",
+        "line": "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 h6 5.Nxe5 Bxd1 6.Bxf7+ Ke7 7.Nd5#",
+        "lastMove": "c3d5",
+        "caption": "Mate. The bishop guards e6 and e8, the knights cover everything else, and Black is a queen up.",
+        "orientation": "white"
+      },
+      {
+        "type": "h2",
+        "text": "Why the pin fails"
+      },
+      {
+        "type": "p",
+        "text": "A bishop pinning a knight to a queen is a **relative pin**: the knight can legally move, and the only question is whether losing the queen matters. Here it doesn't, because f7 is weak and the knight on c3 is ready to jump to d5. The king has no flight squares after 6.Bxf7+ Ke7, and 7.Nd5 finishes it."
+      },
+      {
+        "type": "h2",
+        "text": "How Black should respond"
+      },
+      {
+        "type": "p",
+        "text": "The mistake is taking the queen. If Black plays 5...dxe5 instead, White recaptures on g4 and comes out a pawn ahead, which is a bad position but a playable game."
+      },
+      {
+        "type": "board",
+        "fen": "rn1qkbnr/ppp2pp1/7p/4p3/2B1P1Q1/2N5/PPPP1PPP/R1B1K2R b KQkq - 0 6",
+        "line": "1.e4 e5 2.Nf3 d6 3.Bc4 Bg4 4.Nc3 h6 5.Nxe5 dxe5 6.Qxg4",
+        "lastMove": "d1g4",
+        "caption": "Black has lost a pawn, but not the game.",
+        "orientation": "black"
+      },
+      {
+        "type": "p",
+        "text": "Better still, avoid the problem: develop with 4...Nc6 instead of spending a move on ...h6. The knight protects e5, so the sacrifice no longer works in this form."
+      },
+      {
+        "type": "h2",
+        "text": "Other versions"
+      },
+      {
+        "type": "p",
+        "text": "The pattern travels. It works whenever a bishop aims at f7, a knight can take on e5, and a second knight can reach d5. The [Three Knights version](/trap/796) reaches the same mate a move later."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Who was Légal?",
+        "a": "François Antoine de Légal (1702-1792) was a leading French player of the Café de la Régence in Paris and the teacher of François-André Danican Philidor."
+      },
+      {
+        "q": "Does the Légal Trap always work?",
+        "a": "No. It relies on Black taking the queen. After 5...dxe5 6.Qxg4 White is only a pawn up, and the mate never happens."
+      }
+    ]
+  },
+  {
+    "slug": "fried-liver-attack",
+    "trapId": 802,
+    "title": "Fried Liver Attack: How It Works and How Black Avoids It",
+    "headline": "Fried Liver Attack",
+    "description": "The Fried Liver Attack sacrifices a knight on f7 to drag Black's king into the open. Learn the moves, the attack after 6.Nxf7, and Black's best reply, 5...Na5.",
+    "intro": "The Fried Liver Attack is one of the oldest and most feared attacks in the Two Knights Defence. White gives up a whole knight on f7 and hunts the black king across the board. It is less a trap than a punishment for one natural recapture.",
+    "orientation": "white",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "The line starts from the Italian setup. White's 4.Ng5 attacks f7 twice, and Black has to block with 4...d5. After 5.exd5, the critical moment arrives."
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkb1r/ppp2ppp/2n2n2/3Pp1N1/2B5/8/PPPP1PPP/RNBQK2R b KQkq - 0 5",
+        "line": "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5",
+        "lastMove": "e4d5",
+        "caption": "The decision. 5...Nxd5 looks obvious and is the mistake.",
+        "orientation": "black"
+      },
+      {
+        "type": "p",
+        "text": "Recapturing feels automatic, but it lets White strike at once."
+      },
+      {
+        "type": "board",
+        "fen": "r1bq1b1r/ppp3pp/2n1k3/3np3/2B5/2N2Q2/PPPP1PPP/R1B1K2R b KQ - 3 8",
+        "line": "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Nxd5 6.Nxf7 Kxf7 7.Qf3+ Ke6 8.Nc3",
+        "lastMove": "b1c3",
+        "caption": "Black's king stands on e6 in the middle of the board, and the pinned knight on d5 needs defending.",
+        "orientation": "white"
+      },
+      {
+        "type": "h2",
+        "text": "Why the sacrifice works"
+      },
+      {
+        "type": "p",
+        "text": "After 6.Nxf7 Kxf7 7.Qf3+ the king has to protect the knight on d5, so 7...Ke6 is the only way to keep the piece. White then piles up on d5 with 8.Nc3 and follows with d4 to tear open the centre. Black is a knight ahead, but the king has no shelter and the extra piece can't do much about it."
+      },
+      {
+        "type": "p",
+        "text": "If the king steps away instead, White collects the knight on d5. After [7...Ke8 8.Qxd5](/trap/802) White has regained the piece and is a pawn up, and [7...Kg8](/trap/795) runs into a short mating attack."
+      },
+      {
+        "type": "h2",
+        "text": "How Black should respond"
+      },
+      {
+        "type": "p",
+        "text": "The main line is **5...Na5!**, attacking the bishop instead of recapturing. Black gives up a pawn for active play, and after 6.Bb5+ c6 7.dxc6 bxc6 Black has quick development and a lead in time."
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkb1r/p4ppp/2p2n2/nB2p1N1/8/8/PPPP1PPP/RNBQK2R w KQkq - 0 8",
+        "line": "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nf6 4.Ng5 d5 5.exd5 Na5 6.Bb5+ c6 7.dxc6 bxc6",
+        "lastMove": "b7c6",
+        "caption": "Black is a pawn down, but has real activity. This is the critical position of the Two Knights.",
+        "orientation": "black"
+      },
+      {
+        "type": "p",
+        "text": "Players who would rather skip all this can answer 3.Bc4 with 3...Bc5, the Italian Game, and never allow Ng5 in this form."
+      },
+      {
+        "type": "h2",
+        "text": "Should you play it?"
+      },
+      {
+        "type": "p",
+        "text": "As White, yes, particularly at club level, where many opponents recapture on d5 by instinct. Just know the follow-up: 8.Nc3 and d4 are the ideas, and the attack fizzles if you play slowly. A trap collection is the fastest way to drill it, because the attack depends on remembering several exact moves."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Why is it called the Fried Liver Attack?",
+        "a": "It comes from the Italian name, Fegatello, a liver dish. The name is usually explained as Black's king being cooked, though its exact origin isn't certain."
+      },
+      {
+        "q": "Is the Fried Liver Attack sound?",
+        "a": "Yes. After 5...Nxd5 6.Nxf7 engines favour White. Black's way to avoid it is not to recapture on move 5."
+      }
+    ]
+  },
+  {
+    "slug": "blackburne-shilling-gambit",
+    "trapId": 3,
+    "title": "Blackburne Shilling Gambit: The Trap After 3...Nd4",
+    "headline": "Blackburne Shilling Gambit",
+    "description": "The Blackburne Shilling Gambit (1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4) baits 4.Nxe5 and mates on move seven. Learn the trap, the refutation, and whether to play it.",
+    "intro": "Offer a free pawn, wait for the grab, and mate on move seven. The Blackburne Shilling Gambit is a cheeky trap for Black from the Italian Game. The story goes that the English master Joseph Henry Blackburne used it to win shilling stakes from casual players, which is where the name comes from.",
+    "orientation": "black",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "Black moves the same knight twice and leaves the e5 pawn hanging. It looks like a beginner's mistake, and that's the bait."
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+        "line": "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4",
+        "lastMove": "c6d4",
+        "caption": "The offer. e5 is undefended and the knight on d4 can be taken.",
+        "orientation": "white"
+      },
+      {
+        "type": "p",
+        "text": "If White takes the pawn with 4.Nxe5?, Black strikes with **4...Qg5!**, forking the knight on e5 and the pawn on g2."
+      },
+      {
+        "type": "board",
+        "fen": "r1b1kbnr/pppp1Npp/8/8/4q3/5n2/PPPPBP1P/RNBQKR2 w Qkq - 2 8",
+        "line": "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxe5 Qg5 5.Nxf7 Qxg2 6.Rf1 Qxe4+ 7.Be2 Nf3#",
+        "lastMove": "d4f3",
+        "caption": "Smothered mate. White's own pieces take the king's last squares.",
+        "orientation": "black"
+      },
+      {
+        "type": "h2",
+        "text": "Why it works"
+      },
+      {
+        "type": "p",
+        "text": "White's 5.Nxf7 grabs a second pawn and forks the queen and rook, so it feels like a winning move. But the queen takes g2 with tempo on the rook, and after 6.Rf1 the e4 pawn falls with check. White blocks with 7.Be2, and that bishop takes away the king's last escape. The knight jumps to f3 for a **smothered mate**."
+      },
+      {
+        "type": "h2",
+        "text": "How White should respond"
+      },
+      {
+        "type": "p",
+        "text": "The gambit only works if White takes on e5. Calm moves give White a clear edge, because Black has wasted time."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**4.Nxd4 exd4 5.O-O** is the simplest. White trades off the odd knight and is well ahead in development.",
+          "**4.c3** kicks the knight at once, gaining time and building a centre."
+        ]
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkbnr/pppp1ppp/8/8/2BpP3/8/PPPP1PPP/RNBQ1RK1 b kq - 1 5",
+        "line": "1.e4 e5 2.Nf3 Nc6 3.Bc4 Nd4 4.Nxd4 exd4 5.O-O",
+        "lastMove": "e1g1",
+        "caption": "White has castled and developed, while Black has a doubled-up pawn structure to fix.",
+        "orientation": "white"
+      },
+      {
+        "type": "h2",
+        "text": "Should you play it?"
+      },
+      {
+        "type": "p",
+        "text": "For fun in fast games, sure. Objectively 3...Nd4 is a weak move, and a prepared opponent walks away with a better position. Use it knowing the risk, and always learn the refutation before you meet it from the other side."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is the Blackburne Shilling Gambit good?",
+        "a": "Not objectively. It sets a nasty trap, but after 4.Nxd4 or 4.c3 White stands better."
+      },
+      {
+        "q": "What is a smothered mate?",
+        "a": "A checkmate delivered by a knight, where the king's escape squares are all blocked by its own pieces."
+      }
+    ]
+  },
+  {
+    "slug": "englund-gambit-trap",
+    "trapId": 5,
+    "title": "Englund Gambit Trap: Black's Mate on c1 Against 1.d4",
+    "headline": "Englund Gambit Trap",
+    "description": "The Englund Gambit (1.d4 e5) hides a sharp trap: 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3?? Bb4! and mate on c1. Learn it and how White avoids it.",
+    "intro": "If you're tired of quiet games against 1.d4, the Englund Gambit is an immediate fight. Black offers a pawn on move one and, in the main trap line, turns a natural bishop move into checkmate on c1.",
+    "orientation": "black",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "Black gambits the e-pawn, attacks it back with the queen, and then goes after b2."
+      },
+      {
+        "type": "board",
+        "fen": "r1b1kbnr/pppp1ppp/2n5/4P3/8/5N2/PqPBPPPP/RN1QKB1R w KQkq - 0 6",
+        "line": "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2",
+        "lastMove": "b4b2",
+        "caption": "Black's queen has taken b2 and attacks the rook on a1.",
+        "orientation": "black"
+      },
+      {
+        "type": "p",
+        "text": "The rook needs help, and 6.Bc3?? does that while attacking the queen. It is the natural move and it loses by force."
+      },
+      {
+        "type": "board",
+        "fen": "r1b1k1nr/pppp1ppp/2n5/4P3/8/2Q2N2/P1P1PPPP/RNq1KB1R w KQkq - 1 9",
+        "line": "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Bc3 Bb4 7.Qd2 Bxc3 8.Qxc3 Qc1#",
+        "lastMove": "b2c1",
+        "caption": "Back-rank mate. The queen has left d1 and nothing covers c1.",
+        "orientation": "black"
+      },
+      {
+        "type": "h2",
+        "text": "Why it works"
+      },
+      {
+        "type": "p",
+        "text": "6...Bb4! pins the bishop on c3 to the white king, so it can no longer take the queen. White defends with 7.Qd2, but that takes the queen off the back rank. After 7...Bxc3 8.Qxc3 Black's queen drops into c1 with mate, because White's queen has been pulled away from the d1-c1 squares."
+      },
+      {
+        "type": "h2",
+        "text": "How White should respond"
+      },
+      {
+        "type": "p",
+        "text": "Answer the threat with **6.Nc3!** instead. The knight develops and clears b1, so the queen on d1 protects the rook along the back rank. White keeps the extra pawn and a lead in development."
+      },
+      {
+        "type": "board",
+        "fen": "r1b1kbnr/pppp1ppp/2n5/4P3/8/2N2N2/PqPBPPPP/R2QKB1R b KQkq - 1 6",
+        "line": "1.d4 e5 2.dxe5 Nc6 3.Nf3 Qe7 4.Bf4 Qb4+ 5.Bd2 Qxb2 6.Nc3",
+        "lastMove": "b1c3",
+        "caption": "The right way. The queen now guards a1, and White is a healthy pawn up.",
+        "orientation": "white"
+      },
+      {
+        "type": "h2",
+        "text": "Should you play it?"
+      },
+      {
+        "type": "p",
+        "text": "It's a surprise weapon for blitz, not a serious defence. White can simply return the pawn or develop normally and stand clearly better. Its value is that many 1.d4 players have never seen it. The app's library has [several other Englund traps](/trap/792) if you want more ideas."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is the Englund Gambit sound?",
+        "a": "No. With correct play White keeps a clear advantage. It works best as a surprise in fast games."
+      },
+      {
+        "q": "What move stops the Englund Gambit trap?",
+        "a": "6.Nc3 lets the queen protect the rook on a1 and keeps White's extra pawn. Avoid 6.Bc3??, which runs into 6...Bb4!."
+      }
+    ]
+  },
+  {
+    "slug": "elephant-trap",
+    "trapId": 7,
+    "title": "Elephant Trap: Winning a Piece in the Queen's Gambit Declined",
+    "headline": "Elephant Trap",
+    "description": "The Elephant Trap punishes 6.Nxd5?? in the Queen's Gambit Declined with 6...Nxd5! and a hidden check on b4. See the moves and why the pin isn't real.",
+    "intro": "The Elephant Trap is one of the oldest traps in the Queen's Gambit Declined. White wins a pawn with a neat-looking tactic based on a pin, and Black reveals that the pin never existed.",
+    "orientation": "black",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "This is a completely normal Queen's Gambit Declined until move six. White's bishop on g5 pins the knight on f6 to the queen, and the d5 pawn looks like it's hanging."
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkb1r/pppn1ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq - 0 6",
+        "line": "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5",
+        "lastMove": "e6d5",
+        "caption": "The knight on f6 is pinned, and d5 has only that knight defending it. It looks like White can win a pawn.",
+        "orientation": "white"
+      },
+      {
+        "type": "p",
+        "text": "White plays 6.Nxd5??, and Black answers **6...Nxd5!**, moving the pinned knight and letting the queen go."
+      },
+      {
+        "type": "board",
+        "fen": "r1bk3r/pppn1ppp/8/3n4/3P4/8/PP1KPPPP/R4BNR w - - 0 10",
+        "line": "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.Nxd5 Nxd5 7.Bxd8 Bb4+ 8.Qd2 Bxd2+ 9.Kxd2 Kxd8",
+        "lastMove": "e8d8",
+        "caption": "After the queens and bishops trade, Black is a knight up for a pawn.",
+        "orientation": "black"
+      },
+      {
+        "type": "h2",
+        "text": "Why it works"
+      },
+      {
+        "type": "p",
+        "text": "White expects 6...Nxd5 7.Bxd8 to win the queen, but 7...Bb4+ is a check. White must block with 8.Qd2, and Black takes that queen. When the dust settles both queens are gone, the bishops have been exchanged, and White has lost the knight from d5 in return for one pawn."
+      },
+      {
+        "type": "p",
+        "text": "The key piece is the one that looks asleep: the bishop on f8 has had a clear diagonal to b4 ever since Black played ...e6. Before capturing on d5, always ask what checks your opponent has."
+      },
+      {
+        "type": "h2",
+        "text": "How White should respond"
+      },
+      {
+        "type": "p",
+        "text": "There's nothing to fix except the capture. In the position after 5...exd5, simply develop with 6.e3, the standard plan in this structure, and White has a good game with no risk."
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkb1r/pppn1ppp/5n2/3p2B1/3P4/2N1P3/PP3PPP/R2QKBNR b KQkq - 0 6",
+        "line": "1.d4 d5 2.c4 e6 3.Nc3 Nf6 4.Bg5 Nbd7 5.cxd5 exd5 6.e3",
+        "lastMove": "e2e3",
+        "caption": "The normal continuation. White keeps a small, comfortable edge.",
+        "orientation": "white"
+      }
+    ],
+    "faq": [
+      {
+        "q": "Why is it called the Elephant Trap?",
+        "a": "Nobody knows for sure. The name has been in use for a long time, and its origin hasn't been documented."
+      },
+      {
+        "q": "Is a pin always real?",
+        "a": "No. A pin to a queen is only relative: the pinned piece can move, and it will if the tactic behind it wins more than the queen."
+      }
+    ]
+  },
+  {
+    "slug": "lasker-trap",
+    "trapId": 8,
+    "title": "Lasker Trap: The Knight Underpromotion on Move 7",
+    "headline": "Lasker Trap",
+    "description": "The Lasker Trap in the Albin Countergambit ends with one of chess's rarest ideas in the opening: 7...fxg1=N+!, promoting to a knight. See the full line and the fix.",
+    "intro": "Underpromotion on move seven sounds like a puzzle composition, but it is the point of the Lasker Trap. In the Albin Countergambit, Black pushes a pawn all the way to g1 and turns it into a knight rather than a queen, because a knight comes with check.",
+    "orientation": "black",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "Black answers the Queen's Gambit with 2...e5, the Albin Countergambit. After 3.dxe5 d4, the pawn on d4 cramps White and 4.e3? tries to challenge it. That is the first mistake."
+      },
+      {
+        "type": "board",
+        "fen": "rnbqk1nr/ppp2ppp/8/4P3/1bP5/4p3/PP1B1PPP/RN1QKBNR w KQkq - 0 6",
+        "line": "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3",
+        "lastMove": "d4e3",
+        "caption": "Black's pawn has reached e3. If the bishop takes on b4, the pawn keeps running.",
+        "orientation": "white"
+      },
+      {
+        "type": "p",
+        "text": "White takes the free bishop with 6.Bxb4??, and the pawn runs: 6...exf2+ 7.Ke2. The pawn can take on g1, but a new queen would be no good. Black promotes differently."
+      },
+      {
+        "type": "board",
+        "fen": "rn1qk1nr/ppp2ppp/8/4P3/1BP3b1/8/PP2K1PP/RN1Q1BR1 w kq - 1 9",
+        "line": "1.d4 d5 2.c4 e5 3.dxe5 d4 4.e3 Bb4+ 5.Bd2 dxe3 6.Bxb4 exf2+ 7.Ke2 fxg1=N+ 8.Rxg1 Bg4+",
+        "lastMove": "c8g4",
+        "caption": "The bishop check wins the white queen on d1.",
+        "orientation": "black"
+      },
+      {
+        "type": "h2",
+        "text": "Why a knight?"
+      },
+      {
+        "type": "p",
+        "text": "7...fxg1=N+ is check, and that's everything. After 7...fxg1=Q 8.Qxd8+ White trades the queens off first and wins. The knight check gives White no time for that."
+      },
+      {
+        "type": "p",
+        "text": "If White takes the new knight with 8.Rxg1, then 8...Bg4+ skewers king and queen. If the king runs with 8.Ke1, then [8...Qh4+ 9.Kd2 Nc6](/trap/797) brings everything into the attack, with the knight on g1 still alive."
+      },
+      {
+        "type": "h2",
+        "text": "How White should respond"
+      },
+      {
+        "type": "p",
+        "text": "The cleanest path is to avoid 4.e3 altogether and play **4.Nf3**, the main line against the Albin. White keeps the extra pawn, develops, and leaves Black's d4 pawn as a target rather than a battering ram."
+      },
+      {
+        "type": "board",
+        "fen": "rnbqkbnr/ppp2ppp/8/4P3/2Pp4/5N2/PP2PPPP/RNBQKB1R b KQkq - 1 4",
+        "line": "1.d4 d5 2.c4 e5 3.dxe5 d4 4.Nf3",
+        "lastMove": "g1f3",
+        "caption": "The main line. White develops and stays a pawn up.",
+        "orientation": "white"
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is underpromotion in chess?",
+        "a": "Promoting a pawn to a knight, bishop or rook instead of a queen. It's rare, and it usually has a tactical reason, like the check in the Lasker Trap."
+      },
+      {
+        "q": "Is the Albin Countergambit good?",
+        "a": "It's playable at club level and offers practical chances, though White keeps an edge with 4.Nf3."
+      }
+    ]
+  },
+  {
+    "slug": "fishing-pole-trap",
+    "trapId": 6,
+    "title": "Fishing Pole Trap: Baiting the Hook in the Ruy Lopez",
+    "headline": "Fishing Pole Trap",
+    "description": "The Fishing Pole Trap offers a knight on g4 to pry open the h-file: 4...Ng4 5.h3 h5! 6.hxg4 hxg4. Learn how Black mates on h1, and why White shouldn't bite.",
+    "intro": "The Fishing Pole Trap is exactly what it sounds like. Black dangles a knight on g4, White takes the bait, and the h-file opens straight onto the castled king. It works especially well against players who castle on autopilot.",
+    "orientation": "black",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "It starts from the Berlin side of the Ruy Lopez. After White castles, Black plays the odd-looking 4...Ng4, and 5.h3 appears to win a piece."
+      },
+      {
+        "type": "board",
+        "fen": "r1bqkb1r/pppp1pp1/2n5/1B2p2p/4P1n1/5N1P/PPPP1PP1/RNBQ1RK1 w kq - 0 6",
+        "line": "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5",
+        "lastMove": "h7h5",
+        "caption": "The hook. The knight is hanging, but the h-pawn has just changed what capturing it means.",
+        "orientation": "white"
+      },
+      {
+        "type": "p",
+        "text": "If 6.hxg4 hxg4, Black's rook on h8 suddenly looks down an open file, and the g4 pawn hits the f3 knight. The queen is about to join in with ...Qh4."
+      },
+      {
+        "type": "board",
+        "fen": "r1b1kb1r/pppp1pp1/2n5/1B2p3/3PP3/5Pp1/PPP3P1/RNBQNRKq w kq - 1 10",
+        "line": "1.e4 e5 2.Nf3 Nc6 3.Bb5 Nf6 4.O-O Ng4 5.h3 h5 6.hxg4 hxg4 7.Ne1 Qh4 8.f3 g3 9.d4 Qh1#",
+        "lastMove": "h4h1",
+        "caption": "Mate. The rook backs up the queen and the pawn on g3 takes f2 and h2 away from the king.",
+        "orientation": "black"
+      },
+      {
+        "type": "h2",
+        "text": "Why it works"
+      },
+      {
+        "type": "p",
+        "text": "Black needs only the queen, the rook and one pawn, and White's pieces are all on the wrong side of the board. The trap depends on White's king having castled into the attack, and on White grabbing the knight without counting attackers on the h-file."
+      },
+      {
+        "type": "h2",
+        "text": "How White should respond"
+      },
+      {
+        "type": "p",
+        "text": "**Don't take on g4 automatically.** Nothing forces White to capture on move six. Count what the h-file opens first, and look for a developing move or a central break before you grab anything."
+      },
+      {
+        "type": "p",
+        "text": "Black's opening is a gamble, because the knight has moved twice and nothing else is developed. The trap is a tool for fast games, not a line to trust against an opponent who knows it."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Why is it called the Fishing Pole Trap?",
+        "a": "The knight on g4 is the bait and the h-pawn is the line. White bites by capturing the knight and gets pulled into a mating attack."
+      },
+      {
+        "q": "Does the Fishing Pole work in other openings?",
+        "a": "Yes. The pattern of ...Ng4, ...h5 and an open h-file can appear in many openings once White has castled and played h3. The [Exchange Ruy Lopez version](/trap/821) is one example."
+      }
+    ]
+  },
+  {
+    "slug": "stafford-gambit",
+    "trapId": 17,
+    "title": "Stafford Gambit: The Trap That Took Over Online Chess",
+    "headline": "Stafford Gambit",
+    "description": "The Stafford Gambit (1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6) is full of traps, including 6.Bg5?? Nxe4! with mate on g4. Learn the main trap and White's safe replies.",
+    "intro": "Nobody took the Stafford Gambit seriously until online chess content creators, Eric Rosen most famously, showed how many ways White can go wrong. Black gives up a pawn in the Petrov and sets one trap after another.",
+    "orientation": "black",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "The moves"
+      },
+      {
+        "type": "p",
+        "text": "Instead of recapturing on e5, Black offers the knight on c6 as a second helping. After 4.Nxc6 dxc6, Black's bishops and queen have open lines toward the white king."
+      },
+      {
+        "type": "board",
+        "fen": "r1bqk2r/ppp2ppp/2p2n2/2b5/4P3/3P4/PPP2PPP/RNBQKB1R w KQkq - 1 6",
+        "line": "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5",
+        "lastMove": "f8c5",
+        "caption": "Black is a pawn down, but the bishop on c5 is already staring at f2.",
+        "orientation": "white"
+      },
+      {
+        "type": "p",
+        "text": "The tempting move is 6.Bg5?, pinning the knight to the queen. Black ignores the pin completely."
+      },
+      {
+        "type": "board",
+        "fen": "r2Bk2r/ppp2ppp/2p5/8/4n1b1/3P4/PPP1KbPP/RN1Q1B1R w kq - 2 9",
+        "line": "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Bg5 Nxe4 7.Bxd8 Bxf2+ 8.Ke2 Bg4#",
+        "lastMove": "c8g4",
+        "caption": "Mate with two bishops. Black's queen is gone, and it doesn't matter.",
+        "orientation": "black"
+      },
+      {
+        "type": "h2",
+        "text": "Why it works"
+      },
+      {
+        "type": "p",
+        "text": "6...Nxe4! gives up the queen and threatens f2 twice. If White takes the queen, 7...Bxf2+ 8.Ke2 Bg4# mates at once. If White takes the knight with 7.dxe4, then 7...Bxf2+ deflects the king, and 8.Kxf2 Qxd1 wins the queen back with a large advantage."
+      },
+      {
+        "type": "h2",
+        "text": "How White should respond"
+      },
+      {
+        "type": "p",
+        "text": "The Stafford relies on White playing naturally and quickly. Slow down and refuse the bait."
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**6.Be2** covers g4, shields d1 and keeps the king's position intact. White simply stays a pawn ahead.",
+          "**5.e5** gains time on the knight, though it comes with [its own trap](/trap/800): 5...Ne4 6.d3 Bc5 7.dxe4?? Bxf2+ 8.Ke2 Bg4+ 9.Kxf2 Qxd1."
+        ]
+      },
+      {
+        "type": "board",
+        "fen": "r1bqk2r/ppp2ppp/2p2n2/2b5/4P3/3P4/PPP1BPPP/RNBQK2R b KQkq - 2 6",
+        "line": "1.e4 e5 2.Nf3 Nf6 3.Nxe5 Nc6 4.Nxc6 dxc6 5.d3 Bc5 6.Be2",
+        "lastMove": "f1e2",
+        "caption": "The calm reply. White is a pawn up and castles next.",
+        "orientation": "white"
+      },
+      {
+        "type": "h2",
+        "text": "Should you play it?"
+      },
+      {
+        "type": "p",
+        "text": "In blitz and bullet it scores far above what it deserves, because every natural move has a sting. In long games a prepared opponent stays a pawn up with a safe king. If you face it often, learning the traps once is worth more than any amount of general theory."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is the Stafford Gambit sound?",
+        "a": "No. With accurate play White stays a pawn up and is clearly better. It's dangerous because the correct moves aren't the natural ones."
+      },
+      {
+        "q": "How do you beat the Stafford Gambit?",
+        "a": "Keep your king safe and don't rush. After 5.d3 Bc5, play 6.Be2 instead of the tempting 6.Bg5."
+      }
+    ]
+  },
+  {
+    "slug": "best-chess-traps",
+    "trapId": null,
+    "title": "10 Chess Traps Every Player Should Know",
+    "headline": "10 chess traps every player should know",
+    "description": "The 10 best chess opening traps to learn: Scholar's Mate, the Fried Liver, Légal's Mate, the Stafford Gambit and more, with moves, ideas and how to defend.",
+    "intro": "A chess trap teaches more than a quick win. Each one is a pattern you'll meet again: a weak f7 square, a pin that isn't real, a king with no flight squares. These ten are the most searched and most useful. Learn them from both sides, so you can spring them and sidestep them.",
+    "orientation": "white",
+    "published": "2026-10-31",
+    "blocks": [
+      {
+        "type": "h2",
+        "text": "Traps for beginners"
+      },
+      {
+        "type": "p",
+        "text": "**[1. Scholar's Mate](/learn/scholars-mate).** The four-move mate on f7 that everyone meets first. 1.e4 e5 2.Bc4 Nc6 3.Qh5 Nf6 4.Qxf7#. Learn 3...g6 and it will never beat you."
+      },
+      {
+        "type": "p",
+        "text": "**[2. Fool's Mate](/learn/fools-mate).** The fastest checkmate in chess, 1.f3 e5 2.g4 Qh4#. It's a two-move lesson in why you shouldn't push the pawns next to your king."
+      },
+      {
+        "type": "p",
+        "text": "**[3. Légal's Mate](/learn/legal-trap).** White gives up the queen and mates with three minor pieces. It teaches the difference between a real pin and one that only looks real."
+      },
+      {
+        "type": "h2",
+        "text": "Traps in popular openings"
+      },
+      {
+        "type": "p",
+        "text": "**[4. Fried Liver Attack](/learn/fried-liver-attack).** A knight sacrifice on f7 that drags the black king into the centre. It's a must-know if you play 1.e4 e5 from either side."
+      },
+      {
+        "type": "p",
+        "text": "**[5. Elephant Trap](/learn/elephant-trap).** A Queen's Gambit Declined trap where Black lets the queen go, because of a hidden check on b4."
+      },
+      {
+        "type": "p",
+        "text": "**[6. Lasker Trap](/learn/lasker-trap).** The Albin Countergambit line with a knight underpromotion on move seven, one of the most memorable ideas in the opening."
+      },
+      {
+        "type": "p",
+        "text": "**[7. Fishing Pole Trap](/learn/fishing-pole-trap).** Black baits a knight on g4 to rip open the h-file against a castled king."
+      },
+      {
+        "type": "h2",
+        "text": "Gambit traps"
+      },
+      {
+        "type": "p",
+        "text": "**[8. Blackburne Shilling Gambit](/learn/blackburne-shilling-gambit).** Black offers the e5 pawn and mates on f3 with a smothered mate if White gets greedy."
+      },
+      {
+        "type": "p",
+        "text": "**[9. Englund Gambit Trap](/learn/englund-gambit-trap).** A sharp answer to 1.d4 that ends with mate on c1 after one natural bishop move."
+      },
+      {
+        "type": "p",
+        "text": "**[10. Stafford Gambit](/learn/stafford-gambit).** The online favourite, where nearly every natural White move has a tactical sting."
+      },
+      {
+        "type": "h2",
+        "text": "How to learn traps properly"
+      },
+      {
+        "type": "p",
+        "text": "Reading a trap once won't help in a game. The move order has to feel familiar when it appears on your board. Three habits make the difference:"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "**Play both sides.** Know how to set each trap and how to refuse it.",
+          "**Learn the idea, not just the moves.** Ask which square or piece the trap depends on, so you'll recognise it in a different move order.",
+          "**Practise from memory.** Replay the line on a board until you can do it without hints."
+        ]
+      },
+      {
+        "type": "p",
+        "text": "That's what the [full library of 956 traps](/traps) is for. Every line on this site can be practised move by move in the Trapster app, with Stockfish checking your ideas."
+      }
+    ],
+    "faq": [
+      {
+        "q": "What is the best chess trap for beginners?",
+        "a": "Scholar's Mate is the one to learn first, mostly so you can stop it. Légal's Mate is the most instructive after that."
+      },
+      {
+        "q": "Do chess traps work against good players?",
+        "a": "Rarely in slow games, since strong players know them. In blitz they work surprisingly often, and studying them improves your tactical vision at any level."
+      }
+    ]
+  }
+]

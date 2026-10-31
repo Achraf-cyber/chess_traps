@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:dartchess/dartchess.dart';
+import 'package:chess_traps/generated/chess/opening_names.dart';
 
 class ChessTrap {
   const ChessTrap({
@@ -36,6 +37,9 @@ class ChessTrap {
   final String fen;
   final Side targetSide;
 
+  String getLocalizedOpening(BuildContext context) =>
+      localizedOpening(context, opening);
+
   String getLocalizedName(BuildContext context) {
     final languageCode = Localizations.localeOf(context).languageCode;
     switch (languageCode) {
@@ -51,4 +55,14 @@ class ChessTrap {
   }
 }
 
-
+/// [opening] in the app's language, or as is if it has no translation.
+String localizedOpening(BuildContext context, String opening) {
+  final index = switch (Localizations.localeOf(context).languageCode) {
+    'fr' => 0,
+    'es' => 1,
+    'ar' => 2,
+    _ => null,
+  };
+  if (index == null) return opening;
+  return openingNames[opening]?[index] ?? opening;
+}

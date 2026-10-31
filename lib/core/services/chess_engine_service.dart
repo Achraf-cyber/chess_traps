@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:multistockfish/multistockfish.dart';
 import 'package:dartchess/dartchess.dart';
+import 'package:chess_traps/core/services/uci.dart';
 
 class ChessEngineService {
   factory ChessEngineService() => _instance;
@@ -11,148 +12,129 @@ class ChessEngineService {
 
   static final ChessEngineService _instance = ChessEngineService._internal();
 
-  final Stockfish _stockfish = Stockfish.instance;
+  /// How often a start is tried before giving up until the next request.
+  static const _startAttempts = 3;
+
+  /// How many times in a row a dead engine is restarted without a search
+  /// completing in between, so a position that crashes it can't loop forever.
+  static const _maxRestarts = 3;
+
+  Stockfish? _stockfish;
+  Future<void>? _starting;
+  int _restarts = 0;
+
   final _outputController = StreamController<String>.broadcast();
   Stream<String> get engineOutput => _outputController.stream;
-  StreamSubscription<String>? _stdoutSubscription;
 
-  bool _isInit = false;
-  bool _isInitializing = false;
+  late final _searches = UciSearchQueue(
+    write: _safeWrite,
+    emit: (line) {
+      if (line.startsWith('bestmove')) _restarts = 0;
+      if (!_outputController.isClosed) _outputController.add(line);
+    },
+  );
+
   // This notifier allows the UI to wait indefinitely for the slow extraction
   final ValueNotifier<bool> engineAvailableNotifier = ValueNotifier(false);
 
   bool get engineAvailable => engineAvailableNotifier.value;
   int _multiPv = 4;
-  void Function()? _pendingCommand;
+
+  /// The latest search asked for, kept until an engine is there to run it.
+  _Search? _pending;
+
+  /// The search running on the engine, re-issued if the engine dies under it.
+  _Search? _current;
 
   Timer? _fallbackAnalysisTimer;
   Timer? _fallbackMoveTimer;
+  String? _fallbackFen;
 
   bool get _isSupportedPlatform =>
       !kIsWeb && (Platform.isAndroid || Platform.isIOS);
 
-  Future<void> init() async {
-    if (_isInit || _isInitializing) return;
-    _isInitializing = true;
+  /// The position [engineOutput] is currently reporting on. Scores are relative
+  /// to the side to move, so this is what they must be read against, and
+  /// output for any other position is not about what's on screen.
+  String? get searchFen =>
+      _isSupportedPlatform ? _searches.fen : _fallbackFen;
 
+  /// Starts the engine if it isn't running. Safe to call at any time and from
+  /// anywhere: a start that failed is simply tried again.
+  Future<void> init() {
     if (!_isSupportedPlatform) {
       debugPrint('Stockfish: Using fallback chess engine on this platform');
       engineAvailableNotifier.value = true;
-      _isInit = true;
-      _isInitializing = false;
-      return;
+      return Future.value();
     }
-
-    try {
-      // (Re)wire stdout before starting so we never miss the engine's first
-      // lines. Guard against closed controller during teardown races.
-      await _stdoutSubscription?.cancel();
-      _stdoutSubscription = _stockfish.stdout.listen((line) {
-        if (!_outputController.isClosed) _outputController.add(line);
-      });
-
-      _stockfish.state.removeListener(_onStateChanged);
-      _stockfish.state.addListener(_onStateChanged);
-
-      final engineState = _stockfish.state.value;
-      if (engineState == StockfishState.ready) {
-        // Native engine already running — reuse it rather than spawning a
-        // second one on top of it.
-        _setEngineReady();
-        _isInit = true;
-      } else if (engineState == StockfishState.initial ||
-          engineState == StockfishState.error) {
-        // Start with one retry: on low-end devices a cold start can exceed
-        // multistockfish's fixed 5s timeout, and a second attempt (with the
-        // binary now warm) usually succeeds.
-        var started = false;
-        for (var attempt = 0; attempt < 2 && !started; attempt++) {
-          try {
-            await _stockfish.start();
-            started = _stockfish.state.value == StockfishState.ready;
-          } on TimeoutException catch (e) {
-            debugPrint('Stockfish start timed out (attempt ${attempt + 1}): $e');
-            try {
-              await _stockfish.quit().timeout(const Duration(seconds: 2));
-            } catch (_) {}
-          }
-        }
-        if (started) _setEngineReady();
-        _isInit = started;
-      } else {
-        // `starting`: _onStateChanged finishes wiring up when ready.
-        _isInit = true;
-      }
-    } on StateError catch (e) {
-      // start() throws if the engine is already running; treat as ready.
-      debugPrint('Stockfish already running: $e');
-      if (_stockfish.state.value == StockfishState.ready) {
-        _setEngineReady();
-      }
-      _isInit = true;
-    } catch (e) {
-      debugPrint('Stockfish init error: $e');
-      _isInit = false;
-    } finally {
-      _isInitializing = false;
-    }
+    if (_stockfish != null) return Future.value();
+    return _starting ??= _start().whenComplete(() => _starting = null);
   }
 
-  void _setEngineReady() {
-    if (!_isSupportedPlatform) return;
-    if (!engineAvailableNotifier.value) {
-      _safeWrite('setoption name MultiPV value $_multiPv');
-      _safeWrite('isready');
-      engineAvailableNotifier.value = true;
-      debugPrint('Stockfish: Native bridge is fully READY');
+  Future<void> _start() async {
+    for (var attempt = 1; attempt <= _startAttempts; attempt++) {
+      try {
+        // The light flavor's net is embedded and about 1 MB, so it loads well
+        // inside multistockfish's fixed 5s start timeout even on low-end
+        // devices, where the 38 MB net of the old default often did not.
+        final engine = await Stockfish.create(onStdout: _searches.onLine);
+        _stockfish = engine;
+        engine.state.addListener(_onStateChanged);
+        engineAvailableNotifier.value = true;
+        debugPrint('Stockfish: Native bridge is fully READY');
+
+        final pending = _pending;
+        _pending = null;
+        if (pending != null) _run(pending);
+        return;
+      } catch (e) {
+        debugPrint('Stockfish start failed (attempt $attempt): $e');
+        if (attempt < _startAttempts) {
+          await Future<void>.delayed(Duration(milliseconds: 500 * attempt));
+        }
+      }
     }
+
+    // No engine to answer with: a game mustn't sit waiting for a reply forever.
+    final pending = _pending;
+    _pending = null;
+    pending?.onUnavailable?.call();
   }
 
   void _onStateChanged() {
-    if (!_isSupportedPlatform) return;
-    final state = _stockfish.state.value;
-    if (state == StockfishState.ready) {
-      _setEngineReady();
-      if (_pendingCommand != null) {
-        final command = _pendingCommand!;
-        _pendingCommand = null;
-        command();
-      }
-    } else if (state == StockfishState.error) {
-      engineAvailableNotifier.value = false;
-    }
+    final engine = _stockfish;
+    if (engine == null || engine.state.value == StockfishState.ready) return;
+
+    debugPrint('Stockfish died: ${engine.state.value} ${engine.diagnostics}');
+    engine.state.removeListener(_onStateChanged);
+    unawaited(engine.dispose());
+    _stockfish = null;
+    _searches.reset();
+    engineAvailableNotifier.value = false;
+
+    _pending ??= _current;
+    _current = null;
+    if (_restarts++ < _maxRestarts) unawaited(init());
   }
 
   void _safeWrite(String command) {
-    if (!_isSupportedPlatform) return;
+    final engine = _stockfish;
+    if (engine == null) return;
     try {
-      // Direct FFI access: only call if state is ready to avoid Release crash
-      if (_stockfish.state.value == StockfishState.ready) {
-        _stockfish.stdin = command;
-      } else {
-        debugPrint(
-          'Stockfish: Blocked stdin write while state is ${_stockfish.state.value}',
-        );
-      }
+      engine.stdin = command;
     } catch (e) {
       debugPrint('Stockfish FFI Write Error: $e');
     }
   }
 
+  /// Applied by the next [startAnalysis]; the caller re-analyses after a change.
   void updateOptions({int? multiPv}) {
-    if (multiPv != null && multiPv != _multiPv) {
-      _multiPv = multiPv;
-      if (_isSupportedPlatform) {
-        _sendWhenReady(() {
-          _safeWrite('setoption name MultiPV value $_multiPv');
-          _safeWrite('isready');
-        });
-      }
-    }
+    if (multiPv != null) _multiPv = multiPv;
   }
 
   void startAnalysis(String fen) {
     if (!_isSupportedPlatform) {
+      _fallbackFen = fen;
       _fallbackAnalysisTimer?.cancel();
       _fallbackAnalysisTimer = Timer.periodic(const Duration(seconds: 1), (
         timer,
@@ -161,107 +143,134 @@ class ChessEngineService {
       });
       return;
     }
-    _sendWhenReady(() {
-      _safeWrite('stop');
-      _safeWrite('position fen $fen');
-      _safeWrite('go depth 20');
-    });
+    _search(
+      _Search(fen, [
+        // Options outlive a search: a game played just before must not leave
+        // the analysis weakened.
+        'setoption name UCI_LimitStrength value false',
+        'setoption name MultiPV value $_multiPv',
+        'position fen $fen',
+        'go depth 20',
+      ]),
+    );
   }
 
-  void playMove(String fen, int elo) {
+  /// Asks for the engine's move in [fen], answered with a `bestmove` line.
+  ///
+  /// If no engine can be started, [fallback] answers with [_playFallbackMove]
+  /// so that a game carries on; otherwise the answer is `bestmove (none)`.
+  void playMove(String fen, int elo, {bool fallback = true}) {
     if (!_isSupportedPlatform) {
+      _fallbackFen = fen;
       _fallbackMoveTimer?.cancel();
-      _fallbackMoveTimer = Timer(const Duration(milliseconds: 500), () {
-        try {
-          final setup = Setup.parseFen(fen);
-          final position = Chess.fromSetup(setup);
-          final List<NormalMove> moves = [];
-          for (final entry in position.legalMoves.entries) {
-            final from = entry.key;
-            final toSet = entry.value;
-            final isPawn = position.board.pieceAt(from)?.role == Role.pawn;
-            for (final to in toSet.squares) {
-              // Pawn moves reaching the back rank require an explicit
-              // promotion role: dartchess treats a NormalMove without one as
-              // legal but leaves the piece as a pawn instead of promoting it.
-              final isPromotion =
-                  isPawn && (to.rank == Rank.first || to.rank == Rank.eighth);
-              moves.add(
-                NormalMove(
-                  from: from,
-                  to: to,
-                  promotion: isPromotion ? Role.queen : null,
-                ),
-              );
-            }
-          }
-
-          if (moves.isEmpty) {
-            _outputController.add('bestmove (none)');
-            return;
-          }
-
-          // Heuristic: Checkmate first
-          NormalMove? selectedMove;
-          for (final m in moves) {
-            if (position.play(m).isCheckmate) {
-              selectedMove = m;
-              break;
-            }
-          }
-
-          // Heuristic: Capture next
-          if (selectedMove == null) {
-            final captures = moves
-                .where((m) => position.board.pieceAt(m.to) != null)
-                .toList();
-            if (captures.isNotEmpty) {
-              selectedMove = captures[Random().nextInt(captures.length)];
-            }
-          }
-
-          // Heuristic: Check next
-          if (selectedMove == null) {
-            final checks = moves
-                .where((m) => position.play(m).isCheck)
-                .toList();
-            if (checks.isNotEmpty) {
-              selectedMove = checks[Random().nextInt(checks.length)];
-            }
-          }
-
-          // Default: Random
-          selectedMove ??= moves[Random().nextInt(moves.length)];
-
-          _outputController.add('bestmove ${selectedMove.uci}');
-        } catch (e) {
-          debugPrint('Fallback playMove error: $e');
-          _outputController.add('bestmove (none)');
-        }
-      });
+      _fallbackMoveTimer = Timer(
+        const Duration(milliseconds: 500),
+        () => _playFallbackMove(fen),
+      );
       return;
     }
 
-    _sendWhenReady(() {
-      // UCI_LimitStrength + UCI_Elo alone drive playing strength. Skill Level
-      // is a separate (weaker) knob that fights UCI_Elo when both are set, so
-      // it must stay unset while strength-limiting is active.
-      final clampedElo = elo.clamp(1320, 3190);
+    // UCI_LimitStrength + UCI_Elo alone drive playing strength. Skill Level
+    // is a separate (weaker) knob that fights UCI_Elo when both are set, so
+    // it must stay unset while strength-limiting is active.
+    final clampedElo = elo.clamp(1320, 3190);
 
-      _safeWrite('stop');
-      _safeWrite('setoption name UCI_LimitStrength value true');
-      _safeWrite('setoption name UCI_Elo value $clampedElo');
-      _safeWrite('position fen $fen');
-      _safeWrite('go movetime 1000'); // Think for 1 second
-    });
+    _search(
+      _Search(
+        fen,
+        [
+          'setoption name MultiPV value 1',
+          'setoption name UCI_LimitStrength value true',
+          'setoption name UCI_Elo value $clampedElo',
+          'position fen $fen',
+          'go movetime 1000', // Think for 1 second
+        ],
+        onUnavailable: fallback
+            ? () => _playFallbackMove(fen)
+            : () => _outputController.add('bestmove (none)'),
+      ),
+    );
   }
 
-  void _sendWhenReady(void Function() send) {
-    if (_stockfish.state.value == StockfishState.ready) {
-      send();
-    } else {
-      _pendingCommand = send;
+  void _playFallbackMove(String fen) {
+    try {
+      final setup = Setup.parseFen(fen);
+      final position = Chess.fromSetup(setup);
+      final List<NormalMove> moves = [];
+      for (final entry in position.legalMoves.entries) {
+        final from = entry.key;
+        final toSet = entry.value;
+        final isPawn = position.board.pieceAt(from)?.role == Role.pawn;
+        for (final to in toSet.squares) {
+          // Pawn moves reaching the back rank require an explicit
+          // promotion role: dartchess treats a NormalMove without one as
+          // legal but leaves the piece as a pawn instead of promoting it.
+          final isPromotion =
+              isPawn && (to.rank == Rank.first || to.rank == Rank.eighth);
+          moves.add(
+            NormalMove(
+              from: from,
+              to: to,
+              promotion: isPromotion ? Role.queen : null,
+            ),
+          );
+        }
+      }
+
+      if (moves.isEmpty) {
+        _outputController.add('bestmove (none)');
+        return;
+      }
+
+      // Heuristic: Checkmate first
+      NormalMove? selectedMove;
+      for (final m in moves) {
+        if (position.play(m).isCheckmate) {
+          selectedMove = m;
+          break;
+        }
+      }
+
+      // Heuristic: Capture next
+      if (selectedMove == null) {
+        final captures = moves
+            .where((m) => position.board.pieceAt(m.to) != null)
+            .toList();
+        if (captures.isNotEmpty) {
+          selectedMove = captures[Random().nextInt(captures.length)];
+        }
+      }
+
+      // Heuristic: Check next
+      if (selectedMove == null) {
+        final checks = moves.where((m) => position.play(m).isCheck).toList();
+        if (checks.isNotEmpty) {
+          selectedMove = checks[Random().nextInt(checks.length)];
+        }
+      }
+
+      // Default: Random
+      selectedMove ??= moves[Random().nextInt(moves.length)];
+
+      _outputController.add('bestmove ${selectedMove.uci}');
+    } catch (e) {
+      debugPrint('Fallback playMove error: $e');
+      _outputController.add('bestmove (none)');
     }
+  }
+
+  void _search(_Search search) {
+    if (_stockfish != null) {
+      _run(search);
+    } else {
+      _pending = search;
+      unawaited(init());
+    }
+  }
+
+  void _run(_Search search) {
+    _current = search;
+    _searches.start(search.fen, search.commands);
   }
 
   void stopAnalysis() {
@@ -270,9 +279,9 @@ class ChessEngineService {
       _fallbackAnalysisTimer = null;
       return;
     }
-    if (_stockfish.state.value == StockfishState.ready) {
-      _safeWrite('stop');
-    }
+    _pending = null;
+    _current = null;
+    _searches.stop();
   }
 
   /// Stops the native engine and releases its two isolates, but keeps the
@@ -287,22 +296,34 @@ class ChessEngineService {
     _fallbackAnalysisTimer = null;
     _fallbackMoveTimer?.cancel();
     _fallbackMoveTimer = null;
-    _pendingCommand = null;
+    _pending = null;
+    _current = null;
 
     if (_isSupportedPlatform) {
+      await _starting;
+      final engine = _stockfish;
+      _stockfish = null;
+      _searches.reset();
+      engine?.state.removeListener(_onStateChanged);
       try {
-        _stockfish.state.removeListener(_onStateChanged);
-        await _stdoutSubscription?.cancel();
-        _stdoutSubscription = null;
         // Sends `quit`, which lets both engine isolates exit their loops.
-        await _stockfish.quit().timeout(const Duration(seconds: 2));
+        await engine?.dispose();
       } catch (e) {
         debugPrint('Stockfish shutdown error: $e');
       }
     }
 
     engineAvailableNotifier.value = false;
-    _isInit = false;
-    _isInitializing = false;
   }
+}
+
+/// A search to run on the engine.
+class _Search {
+  _Search(this.fen, this.commands, {this.onUnavailable});
+
+  final String fen;
+  final List<String> commands;
+
+  /// Called if no engine could be started to run this search.
+  final void Function()? onUnavailable;
 }

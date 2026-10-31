@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'package:chess_traps/core/services/audio_haptic_service.dart';
+import 'package:chess_traps/core/services/uci.dart';
 import 'package:chess_traps/presentation/state/play/engine_analysis_provider.dart';
 import 'package:chess_traps/presentation/state/play/play_history_provider.dart';
 
@@ -144,13 +145,18 @@ class PlayGameNotifier extends _$PlayGameNotifier {
   StreamSubscription<String>? _sub;
   Timer? _throttleTimer;
   Timer? _hintClearTimer;
+
+  /// Holds back the engine's reply for a human-looking "thinking" delay.
+  /// A Timer rather than Future.delayed so it can be cancelled: the provider
+  /// is auto-disposed when the player leaves the Play screen, and a reply
+  /// landing after that touched a dead Ref (Crashlytics, 1.4.3).
+  Timer? _engineMoveTimer;
   double? _pendingEval;
 
   /// True while a `bestmove` response should be treated as a hint for the
   /// user rather than the opponent's actual move. Requesting a hint reuses
-  /// the same engine session as gameplay (multistockfish only supports one
-  /// running engine), so the two purposes are distinguished by this flag
-  /// instead of sending overlapping/competing engine commands.
+  /// the same engine as gameplay, so the two purposes are distinguished by
+  /// this flag instead of sending overlapping/competing engine commands.
   bool _hintPending = false;
 
   @override
@@ -165,6 +171,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       _sub?.cancel();
       _throttleTimer?.cancel();
       _hintClearTimer?.cancel();
+      _engineMoveTimer?.cancel();
     });
 
     return PlayGameState(
@@ -182,56 +189,46 @@ class PlayGameNotifier extends _$PlayGameNotifier {
 
   void _onEngineLine(String line) {
     if (line.startsWith('bestmove')) {
+      // Analysis elsewhere in the app shares this engine; only answers to what
+      // this game asked for count.
+      if (!_hintPending && !state.engineThinking) return;
+
       final parts = line.split(' ');
       if (parts.length > 1) {
         final moveStr = parts[1];
-        if (moveStr != '(none)') {
-          if (_hintPending) {
-            _hintPending = false;
-            state = state.copyWith(hintMove: NormalMove.fromUci(moveStr));
-            _hintClearTimer?.cancel();
-            _hintClearTimer = Timer(const Duration(seconds: 3), () {
-              state = state.copyWith(clearHintMove: true);
-            });
-            return;
-          }
-          _onEngineMove(moveStr);
+        if (_hintPending) {
+          _hintPending = false;
+          if (moveStr == '(none)') return;
+          state = state.copyWith(hintMove: NormalMove.fromUci(moveStr));
+          _hintClearTimer?.cancel();
+          _hintClearTimer = Timer(const Duration(seconds: 3), () {
+            state = state.copyWith(clearHintMove: true);
+          });
+          return;
         }
+        if (moveStr != '(none)') _onEngineMove(moveStr);
       }
-    } else if (line.contains('score cp')) {
+    } else {
       _parseEvaluation(line);
-    } else if (line.contains('score mate')) {
-      _parseMate(line);
     }
   }
 
   void _parseEvaluation(String line) {
-    final parts = line.split(' ');
-    final index = parts.indexOf('cp');
-    if (index != -1 && index + 1 < parts.length) {
-      final cp = double.tryParse(parts[index + 1]);
-      if (cp != null) {
-        // Adjust score for side to move
-        final sign = state.chess.turn == Side.white ? 1.0 : -1.0;
-        final eval = cp * sign;
-        _throttleUpdate(eval);
-      }
-    }
-  }
+    final info = UciInfo.parse(line);
+    final fen = ref.read(chessEngineProvider).searchFen;
+    // Only the engine's best line is the evaluation of the position.
+    if (info == null || info.multiPv != 1 || fen == null) return;
 
-  void _parseMate(String line) {
-    final parts = line.split(' ');
-    final index = parts.indexOf('mate');
-    if (index != -1 && index + 1 < parts.length) {
-      final mate = int.tryParse(parts[index + 1]);
-      if (mate != null && mate != 0) {
-        final sign = state.chess.turn == Side.white ? 1.0 : -1.0;
-        final eval = mate > 0 ? 999.0 * sign : -999.0 * sign;
-        // Mate count reported by the engine is relative to the side to
-        // move; re-sign it so positive always means "white delivers mate".
-        final mateIn = mate.abs() * (eval > 0 ? 1 : -1);
-        _throttleUpdate(eval, mateIn: mateIn);
-      }
+    // Scores are relative to the side to move in the searched position, which
+    // the game may already have moved past.
+    final sign = isWhiteToMove(fen) ? 1 : -1;
+    final mate = info.mate;
+    if (mate != null) {
+      if (mate == 0) return;
+      final mateIn = mate * sign;
+      _throttleUpdate(mateIn > 0 ? 999.0 : -999.0, mateIn: mateIn);
+    } else {
+      _throttleUpdate(info.cp! * sign);
     }
   }
 
@@ -277,6 +274,8 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     double avgDelaySecs = 1.0,
     GameMode mode = GameMode.engine,
   }) {
+    // A reply still pending from the previous game must not land in this one.
+    _engineMoveTimer?.cancel();
     final actualColor = color == PlayerColor.random
         ? (DateTime.now().millisecondsSinceEpoch % 2 == 0
               ? PlayerColor.white
@@ -418,8 +417,9 @@ class PlayGameNotifier extends _$PlayGameNotifier {
     if (!state.isPlaying) return;
 
     final delay = _powerLawDelay(state.avgEngineDelaySecs);
-    Future<void>.delayed(delay, () {
-      if (!state.isPlaying) return;
+    _engineMoveTimer?.cancel();
+    _engineMoveTimer = Timer(delay, () {
+      if (!ref.mounted || !state.isPlaying) return;
 
       final move = NormalMove.fromUci(moveUci);
       final prevPos = state.chess;
@@ -493,6 +493,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       gameResult: GameResult.loss,
       resigned: true,
     );
+    _hintPending = false;
     ref.read(chessEngineProvider).stopAnalysis();
   }
 
@@ -500,6 +501,7 @@ class PlayGameNotifier extends _$PlayGameNotifier {
   /// recording anything (the result was already recorded when the game
   /// ended, whether by checkmate, draw, or resignation).
   void backToSetup() {
+    _engineMoveTimer?.cancel();
     state = state.copyWith(
       isPlaying: false,
       engineThinking: false,
@@ -509,12 +511,14 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       clearMateIn: true,
       clearBrowseIndex: true,
     );
+    _hintPending = false;
     ref.read(chessEngineProvider).stopAnalysis();
   }
 
   /// Loads a previously saved game in read-only browse mode (no engine, no
   /// further moves) so the user can step through it.
   void viewSavedGame(SavedGame game) {
+    _engineMoveTimer?.cancel();
     ref.read(playEvalProvider.notifier).reset();
     Position pos = Chess.initial;
     final fenHistory = <String>[pos.fen];
@@ -573,7 +577,9 @@ class PlayGameNotifier extends _$PlayGameNotifier {
   void requestHint() {
     if (!state.isPlaying || state.engineThinking || _hintPending) return;
     _hintPending = true;
-    ref.read(chessEngineProvider).playMove(state.chess.fen, state.elo);
+    ref
+        .read(chessEngineProvider)
+        .playMove(state.chess.fen, state.elo, fallback: false);
   }
 
   void takeback() {
@@ -602,7 +608,14 @@ class PlayGameNotifier extends _$PlayGameNotifier {
       moveHistory: newMoveHistory,
       clearLastMove: true,
       clearResult: true,
+      // The history just got shorter, so a position being reviewed may no
+      // longer exist. Leaving browseIndex set crashed the next build with a
+      // RangeError on fenHistory (Crashlytics, 1.4.3).
+      clearBrowseIndex: true,
     );
-    if (!state.isFriendMode) ref.read(chessEngineProvider).stopAnalysis();
+    if (!state.isFriendMode) {
+      _hintPending = false;
+      ref.read(chessEngineProvider).stopAnalysis();
+    }
   }
 }

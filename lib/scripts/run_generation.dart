@@ -62,11 +62,7 @@ class MyApp extends StatelessWidget {
       }
     }
 
-    final engine = Stockfish.instance;
-    await engine.start();
-    while (engine.state.value != StockfishState.ready) {
-      await Future<void>.delayed(const Duration(milliseconds: 100));
-    }
+    final engine = await Stockfish.create();
 
     String? currentBestMove;
     int currentScore = 0;
@@ -173,7 +169,7 @@ class MyApp extends StatelessWidget {
     }
     content.writeln('];');
 
-    await engine.quit();
+    await engine.dispose();
 
     const outputFolder = 'lib/generated/chess';
     await Directory(outputFolder).create(recursive: true);

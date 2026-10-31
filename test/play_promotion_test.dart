@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 /// Regression tests for the play-screen promotion fix.
 ///
 /// The original bug: a pawn reaching the last rank was handed to the engine as
-/// a promotion-less [NormalMove], which dartchess rejects — so the move
+/// a promotion-less [NormalMove], which dartchess does not promote — so the move
 /// silently did nothing. The fix asks the user which piece to promote to and,
 /// as a safety net, defaults to a queen for any promotion-less last-rank pawn
 /// move. These tests pin down the dartchess behaviour that fix relies on.
@@ -15,9 +15,12 @@ void main() {
       Setup.parseFen('8/P7/8/8/8/8/8/k6K w - - 0 1'),
     );
 
-    test('a promotion-less last-rank pawn move is illegal', () {
+    test('a promotion-less last-rank pawn move stays a pawn', () {
+      // Since dartchess 0.14 this no longer throws: it leaves a pawn sitting on
+      // the back rank, which is why the safety net has to add a role itself.
       final move = NormalMove.fromUci('a7a8'); // no promotion role
-      expect(() => beforePromotion.play(move), throwsA(isA<PlayException>()));
+      final after = beforePromotion.play(move);
+      expect(after.board.pieceAt(Square.a8)?.role, Role.pawn);
     });
 
     test('withPromotion makes the same move legal (safety net behaviour)', () {

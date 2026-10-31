@@ -3,6 +3,7 @@ import 'package:chess_traps/core/providers/settings_provider.dart';
 import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:chess_traps/core/services/chess_engine_service.dart';
+import 'package:chess_traps/core/services/uci.dart';
 
 part 'engine_analysis_provider.g.dart';
 
@@ -42,15 +43,27 @@ class EngineAnalysisState {
     );
   }
 
+  /// The evaluation as shown to the user: `M3` for a forced mate, `#` once it's
+  /// on the board, otherwise pawns like `+1.2`.
+  String get displayLabel {
+    final mate = mateIn;
+    if (mate == 0) return '#';
+    if (mate != null) return 'M${mate.abs()}';
+    final pawns = (scoreInCentipawns / 100.0).toStringAsFixed(1);
+    return scoreInCentipawns > 0 ? '+$pawns' : pawns;
+  }
+
   double get displayScore {
+    // Mate 0 has no sign of its own: the side to move is the one mated.
+    if (mateIn == 0) return isWhiteToMove(fen) ? -10.0 : 10.0;
     if (mateIn != null) return mateIn! > 0 ? 10.0 : -10.0;
     return (scoreInCentipawns / 100.0).clamp(-10.0, 10.0);
   }
 }
 
 // Kept alive for the whole app run: the engine is expensive to start (it can
-// take several seconds on low-end devices) and multistockfish only tolerates a
-// single running instance, so tearing it down and restarting on navigation
+// take several seconds on low-end devices) and multistockfish only allows one
+// live engine per flavor, so tearing it down and restarting on navigation
 // causes start-timeouts and an engine that never stabilises.
 @Riverpod(keepAlive: true)
 ChessEngineService chessEngine(Ref ref) {
@@ -83,6 +96,8 @@ class EngineAnalysis extends _$EngineAnalysis {
     service.updateOptions(multiPv: settings.arrowCount);
 
     if (!isReady) {
+      // Retries a start that failed; a no-op while one is in progress.
+      service.init();
       return EngineAnalysisState(fen: fen, engineAvailable: false);
     }
 
@@ -113,57 +128,33 @@ class EngineAnalysis extends _$EngineAnalysis {
 
   void _onLine(String line) {
     try {
-      if (!line.startsWith('info') ||
-          !line.contains('score') ||
-          !line.contains(' pv ')) {
-        return;
-      }
+      // A search still winding down from the previous position, or one that
+      // isn't this provider's at all.
+      if (ref.read(chessEngineProvider).searchFen != state.fen) return;
 
-      int? depth;
-      int multipv = 1;
-      double? cp;
-      int? mate;
-      List<String> pv = [];
+      final info = UciInfo.parse(line);
+      if (info == null) return;
 
-      final parts = line.split(' ');
-      for (int i = 0; i < parts.length; i++) {
-        final part = parts[i];
-        if (i + 1 >= parts.length) continue;
-        switch (part) {
-          case 'depth':
-            depth = int.tryParse(parts[i + 1]);
-          case 'multipv':
-            multipv = int.tryParse(parts[i + 1]) ?? 1;
-          case 'score':
-            if (i + 2 < parts.length) {
-              if (parts[i + 1] == 'cp') {
-                cp = double.tryParse(parts[i + 2]);
-              } else if (parts[i + 1] == 'mate') {
-                mate = int.tryParse(parts[i + 2]);
-              }
-            }
-          case 'pv':
-            pv = parts.sublist(i + 1);
-        }
-      }
-
-      if (pv.isEmpty) return;
-
-      final currentFenParts = state.fen.split(' ');
-      final isWhiteToMove =
-          currentFenParts.length > 1 && currentFenParts[1] == 'w';
-      final sign = isWhiteToMove ? 1.0 : -1.0;
-
+      // Scores are relative to the side to move; this state is white-relative.
+      final sign = isWhiteToMove(state.fen) ? 1 : -1;
       final targetState = _pendingState ?? state;
-      final pvMap = Map<int, List<String>>.from(targetState.multiPv)
-        ..[multipv] = pv;
+
+      // Every MultiPV line carries its own score, but only line 1 evaluates
+      // the position. Taking them all let a weaker alternative's rating
+      // overwrite the mate found by the best line.
+      final isBestLine = info.multiPv == 1;
+      final mate = info.mate;
+      final cp = info.cp;
 
       _pendingState = targetState.copyWith(
-        scoreCp: cp != null ? cp * sign : targetState.scoreInCentipawns,
-        mateIn: mate != null ? (mate * sign).round() : null,
-        clearMate: mate == null && cp != null,
-        multiPv: pvMap,
-        depth: depth ?? targetState.depth,
+        scoreCp: isBestLine && cp != null ? cp * sign : null,
+        mateIn: isBestLine && mate != null ? mate * sign : null,
+        clearMate: isBestLine && mate == null,
+        multiPv: info.pv.isEmpty
+            ? null
+            : (Map<int, List<String>>.from(targetState.multiPv)
+                ..[info.multiPv] = info.pv),
+        depth: info.depth,
       );
 
       if (_throttleTimer == null || !_throttleTimer!.isActive) {
